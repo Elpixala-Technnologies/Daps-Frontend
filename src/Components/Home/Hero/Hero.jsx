@@ -13,6 +13,8 @@ import {
 } from '@/src/Assets';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Link from 'next/link';
+import { FaShoppingCart } from 'react-icons/fa';
 
 const Hero = () => {
     const [isMobile, setIsMobile] = useState(false);
@@ -45,35 +47,43 @@ const Hero = () => {
 
     return (
         <div>
-        <Swiper
-            spaceBetween={30}
-            centeredSlides={true}
-            autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-            }}
-            loop={true}
-            modules={[Autoplay, Pagination, Navigation]}
-            className="product-swiper"
-        >
-            {slidesData &&
-                slidesData.map((slide) => {
-                    return (
-                        <SwiperSlide key={slide.id} data-aos="fade-up"> {/* Add data-aos attribute */}
-                            <div className="slider-images">
-                                <Image
-                                    src={isMobile ? slide.mobileImage : slide.desktopImage}
-                                    alt="Banner Image"
-                                    className="w-full h-auto"
-                                    width={isMobile ? 768 : 1920}
-                                    height={isMobile ? 768 : 500}
-                                />
-                            </div>
-                        </SwiperSlide>
-                    );
-                })}
-        </Swiper>
-    </div>
+            <Swiper
+                spaceBetween={30}
+                centeredSlides={true}
+                autoplay={{
+                    delay: 6000,
+                    disableOnInteraction: false,
+                }}
+                loop={true}
+                modules={[Autoplay, Pagination, Navigation]}
+                className="product-swiper"
+            >
+                {slidesData &&
+                    slidesData.map((slide) => {
+                        return (
+                            <SwiperSlide key={slide.id}>
+                                <Link className="slider-images relative" href='/'>
+                                    <Image
+                                        src={isMobile ? slide.mobileImage : slide.desktopImage}
+                                        alt="Banner Image"
+                                        className="w-full "
+                                        width={isMobile ? 768 : 1920}
+                                        height={isMobile ? 768 : 500}
+                                    />
+
+                                    {/* <div className='absolute top-[50%] bottom-0 left-0 right-0 w-full '>
+                                    <Link href='/' className='flex items-center w-fit justify-center gap-4 common-btn'> 
+                                    <FaShoppingCart
+                                        className='text-[1.5rem]'
+                                    /> Shop Now
+                                    </Link>
+                                </div> */}
+                                </Link>
+                            </SwiperSlide>
+                        );
+                    })}
+            </Swiper>
+        </div>
     );
 };
 

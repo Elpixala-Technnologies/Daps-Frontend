@@ -80,3 +80,25 @@ img {
         }
     }
 }
+
+.common-btn{
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: $secondary_color;
+    color: $primary_color;
+    font-weight: 600;
+    transition: all 4s ease-in-out;
+
+    &:hover{
+        border: 2px solid $secondary_color;
+        
+    }
+}
+
+
+.title{
+   font-size:1.5rem;
+   padding-top:0.5rem;
+   padding-bottom:0.5rem;
+
+}

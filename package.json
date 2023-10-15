@@ -23,7 +23,7 @@
     "react-dom": "^18",
     "react-icons": "^4.11.0",
     "sweetalert2": "^11.7.32",
-    "swiper": "^8.4.7",
+    "swiper": "^8.4.7"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
