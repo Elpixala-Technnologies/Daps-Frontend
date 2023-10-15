@@ -1,5 +1,6 @@
+import Home from '@/src/Components/Home/Home/Home'
+import RootLayout from '@/src/Layouts/RootLayout'
 import Head from 'next/head'
-
 
 export default function HomePage() {
   return (
@@ -10,9 +11,9 @@ export default function HomePage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        hey there
-      </main>
+      <RootLayout>
+        <Home />
+      </RootLayout>
     </>
   )
 }
