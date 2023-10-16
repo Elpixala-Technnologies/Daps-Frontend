@@ -11,6 +11,7 @@
 $primary_color: #FFFFFF;
 $secondary_color: #18568C;
 $common_color: #000000;
+$card_color: #EFF4F7;
 
 
 /**
@@ -29,7 +30,8 @@ html {
 
 body {
     font-family: 'Nunito Sans', sans-serif;
-    background-color: #f9f9f9dc;
+    // background-color: #f9f9f9dc;
+    background-color: #FFFFFF;
 }
 
 a {
@@ -81,7 +83,7 @@ img {
     }
 }
 
-.common-btn{
+.common-btn {
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     background-color: $secondary_color;
@@ -89,16 +91,112 @@ img {
     font-weight: 600;
     transition: all 4s ease-in-out;
 
-    &:hover{
+    &:hover {
         border: 2px solid $secondary_color;
-        
+
+    }
+}
+
+.common-btn-outline {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: $primary_color;
+    color: $secondary_color;
+    font-weight: 600;
+    transition: all 4s ease-in-out;
+
+    &:hover {
+        border: 2px solid $secondary_color;
+        background-color: $secondary_color;
+        color: $primary_color;
     }
 }
 
 
-.title{
-   font-size:1.5rem;
-   padding-top:0.5rem;
-   padding-bottom:0.5rem;
+.hover {
+    @apply transition-all duration-300;
 
+    &:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+}
+
+.text-hover {
+    @apply transition-all duration-300;
+
+    &:hover {
+        color: inherit;
+        box-shadow: 0 0 10px rgba(227, 224, 224, 0.51)
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  
+}
+
+
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+.title {
+    font-size: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-weight: 600;
+
+    & span {
+        color: $secondary_color;
+        font-weight: 800;
+
+        ::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: $secondary_color;
+            margin-bottom: 0.5rem;
+        }
+    }
+}
+
+.nav-category-title {
+    padding-top: 0.5rem;
+    font-size: inherit;
+    padding-bottom: 0.5rem;
+    font-weight: 600;
+    color: $secondary_color;
+    letter-spacing: 1px;
+}
+
+
+.bottom-banner-section{
+    background-image: url("../src/Assets/OfferBanner/BannerTwo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    background-blend-mode: color;
+    background-color: #000000a6;
 }

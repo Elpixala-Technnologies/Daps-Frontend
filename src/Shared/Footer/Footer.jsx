@@ -6,7 +6,7 @@ import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <footer className="px-4 divide-y bg-[#000000] text-[#fff] ">
+        <footer className="px-4 divide-y bg-[#EFF4F7] text-[#00000] ">
             <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
                 <div className="lg:w-1/3 flex flex-col gap-4">
                     <Link rel="noopener noreferrer" href="/" className="flex justify-center md:justify-start">

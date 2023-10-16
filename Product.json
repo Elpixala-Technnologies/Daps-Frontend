@@ -1,0 +1,1012 @@
+{
+  "products": [
+    {
+      "name": "Compact LED Flashlight",
+      "categories": "LED",
+      "brand": "BrandX",
+      "price": 14.99,
+      "quantity": 80,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 5,
+      "type": "Flashlight",
+      "status": "Tranding",
+      "details": "Bright and compact LED flashlight for various uses.",
+      "features": [
+        "Water-Resistant",
+        "Portable Design"
+      ],
+      "coupons": [
+        "couponId21"
+      ]
+    },
+    {
+      "name": "High-Intensity HID Bulbs",
+      "categories": "HIDs",
+      "brand": "BrandY",
+      "price": 34.99,
+      "quantity": 60,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 8,
+      "type": "HID Bulbs",
+      "status": "Tranding",
+      "details": "Upgrade your vehicle's lighting with high-intensity HID bulbs.",
+      "features": [
+        "Bright and Durable",
+        "Easy Replacement"
+      ],
+      "coupons": [
+        "couponId22"
+      ]
+    },
+    {
+      "name": "D-Series Off-Road Lights Set",
+      "categories": "D-Series",
+      "brand": "BrandZ",
+      "price": 129.99,
+      "quantity": 40,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 15,
+      "type": "Off-Road Lights Set",
+      "status": "Tranding",
+      "details": "Equip your off-road vehicle with this D-Series lights set for superior illumination.",
+      "features": [
+        "Spot and Flood Beam",
+        "Rugged Construction"
+      ],
+      "coupons": [
+        "couponId23"
+      ]
+    },
+    {
+      "name": "Car Android Player with Bluetooth",
+      "categories": "Car Android Player",
+      "brand": "BrandA",
+      "price": 139.99,
+      "quantity": 70,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 10,
+      "type": "Android Player with Bluetooth",
+      "status": "Tranding",
+      "details": "Upgrade your car's entertainment system with Bluetooth-enabled Android player.",
+      "features": [
+        "Bluetooth Connectivity",
+        "Touchscreen Display"
+      ],
+      "coupons": [
+        "couponId24"
+      ]
+    },
+    {
+      "name": "Fiat Punto Brake Pads",
+      "categories": "Fiat Punto",
+      "brand": "BrandB",
+      "price": 29.99,
+      "quantity": 90,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 5,
+      "type": "Brake Pads",
+      "status": "Tranding",
+      "details": "Ensure safe braking with high-quality Fiat Punto brake pads.",
+      "features": [
+        "Long-Lasting",
+        "Noise-Free"
+      ],
+      "coupons": [
+        "couponId25"
+      ]
+    },
+    {
+      "name": "FM-BT Car Radio with USB",
+      "categories": "FM-BT",
+      "brand": "BrandC",
+      "price": 99.99,
+      "quantity": 55,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 12,
+      "type": "Car Radio with USB",
+      "status": "Tranding",
+      "details": "Stay connected and enjoy music on the go with this FM-BT car radio with USB.",
+      "features": [
+        "USB Playback",
+        "Bluetooth Streaming"
+      ],
+      "coupons": [
+        "couponId26"
+      ]
+    },
+    {
+      "name": "Sound Damping Mat",
+      "categories": "Damping Sheets",
+      "brand": "BrandD",
+      "price": 19.99,
+      "quantity": 120,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 5,
+      "type": "Damping Mat",
+      "status": "Tranding",
+      "details": "Reduce noise and vibrations in your vehicle with this sound damping mat.",
+      "features": [
+        "Adhesive Backing",
+        "Easy Installation"
+      ],
+      "coupons": [
+        "couponId27"
+      ]
+    },
+    {
+      "name": "Car Speaker Pair",
+      "categories": "Speakers",
+      "brand": "BrandE",
+      "price": 59.99,
+      "quantity": 65,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 10,
+      "type": "Speaker Pair",
+      "status": "Tranding",
+      "details": "Upgrade your car's audio with this high-quality speaker pair for clear sound.",
+      "features": [
+        "Crisp Audio",
+        "Mounting Accessories Included"
+      ],
+      "coupons": [
+        "couponId28"
+      ]
+    },
+    {
+      "name": "Tweeter Set",
+      "categories": "Silk Dome Tweeter",
+      "brand": "BrandF",
+      "price": 19.99,
+      "quantity": 85,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 8,
+      "type": "Tweeter Set",
+      "status": "Tranding",
+      "details": "Enhance your car's audio with this tweeter set for improved highs.",
+      "features": [
+        "Silk Dome Material",
+        "Easy Installation"
+      ],
+      "coupons": [
+        "couponId29"
+      ]
+    },
+    {
+      "name": "Compact Bass Tube Subwoofer",
+      "categories": "Basstube",
+      "brand": "BrandG",
+      "price": 49.99,
+      "quantity": 75,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 10,
+      "type": "Compact Subwoofer",
+      "status": "Tranding",
+      "details": "Experience deep bass in a compact package with this subwoofer.",
+      "features": [
+        "Powerful Bass",
+        "Space-Saving Design"
+      ],
+      "coupons": [
+        "couponId30"
+      ]
+    },
+    {
+      "name": "Car Backup Camera with Parking Lines",
+      "categories": "Camera",
+      "brand": "BrandH",
+      "price": 59.99,
+      "quantity": 90,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 7,
+      "type": "Backup Camera with Lines",
+      "status": "Tranding",
+      "details": "Enhance parking safety with this camera featuring parking lines and night vision.",
+      "features": [
+        "Parking Lines",
+        "Night Vision"
+      ],
+      "coupons": [
+        "couponId31"
+      ]
+    },
+    {
+      "name": "Fast Charging USB Charger",
+      "categories": "Charger",
+      "brand": "BrandI",
+      "price": 8.99,
+      "quantity": 150,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 3,
+      "type": "USB Charger",
+      "status": "Tranding",
+      "details": "Charge your devices quickly with this fast charging USB charger cable.",
+      "features": [
+        "Quick Charge",
+        "Universal Compatibility"
+      ],
+      "coupons": [
+        "couponId32"
+      ]
+    },
+    {
+      "name": "Premium Wiper Blades Set",
+      "categories": "Wiper",
+      "brand": "BrandJ",
+      "price": 24.99,
+      "quantity": 110,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 5,
+      "type": "Wiper Blades Set",
+      "status": "Tranding",
+      "details": "Experience crystal-clear visibility in all weather conditions with premium wiper blades.",
+      "features": [
+        "Easy Installation",
+        "Long-Lasting"
+      ],
+      "coupons": [
+        "couponId33"
+      ]
+    },
+    {
+      "name": "Dual-Tone Car Horn Kit",
+      "categories": "Horn",
+      "brand": "BrandK",
+      "price": 19.99,
+      "quantity": 130,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 4,
+      "type": "Dual-Tone Horn Kit",
+      "status": "Tranding",
+      "details": "Upgrade your car's horn with a dual-tone horn kit for a distinctive sound.",
+      "features": [
+        "Loud and Unique Sound"
+      ],
+      "coupons": [
+        "couponId34"
+      ]
+    },
+    {
+      "name": "LED Fog Lights",
+      "categories": "LED",
+      "brand": "BrandX",
+      "price": 39.99,
+      "quantity": 95,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 6,
+      "type": "Fog Lights",
+      "status": "Tranding",
+      "details": "Enhance visibility in foggy conditions with these bright LED fog lights.",
+      "features": [
+        "Wide Illumination",
+        "Easy Installation"
+      ],
+      "coupons": [
+        "couponId35"
+      ]
+    },
+    {
+      "name": "HID Conversion Kit with Canbus",
+      "categories": "HIDs",
+      "brand": "BrandY",
+      "price": 79.99,
+      "quantity": 65,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 10,
+      "type": "HID Conversion with Canbus",
+      "status": "New Arrival",
+      "details": "Upgrade your vehicle's lighting with this HID conversion kit featuring Canbus support.",
+      "features": [
+        "Plug and Play",
+        "Canbus Compatibility"
+      ],
+      "coupons": [
+        "couponId36"
+      ]
+    },
+    {
+      "name": "D-Series Round LED Lights",
+      "categories": "D-Series",
+      "brand": "BrandZ",
+      "price": 69.99,
+      "quantity": 50,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 10,
+      "type": "Round LED Lights",
+      "status": "New Arrival",
+      "details": "Illuminate your off-road adventures with these round D-Series LED lights.",
+      "features": [
+        "Spot and Flood Beam",
+        "Sturdy Design"
+      ],
+      "coupons": [
+        "couponId37"
+      ]
+    },
+    {
+      "name": "Car Android Player with Wi-Fi",
+      "categories": "Car Android Player",
+      "brand": "BrandA",
+      "price": 149.99,
+      "quantity": 60,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 8,
+      "type": "Android Player with Wi-Fi",
+      "status": "New Arrival",
+      "details": "Stay connected and stream with this Android player featuring Wi-Fi connectivity.",
+      "features": [
+        "Wi-Fi Streaming",
+        "Large Touchscreen"
+      ],
+      "coupons": [
+        "couponId38"
+      ]
+    },
+    {
+      "name": "Fiat Punto Air Filter",
+      "categories": "Fiat Punto",
+      "brand": "BrandB",
+      "price": 9.99,
+      "quantity": 80,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 3,
+      "type": "Air Filter",
+      "status": "New Arrival",
+      "details": "Ensure clean air for your engine with this affordable air filter for Fiat Punto.",
+      "features": [
+        "Effective Filtration",
+        "Easy Replacement"
+      ],
+      "coupons": [
+        "couponId39"
+      ]
+    },
+    {
+      "name": "FM-BT Car Radio with CD Player",
+      "categories": "FM-BT",
+      "brand": "BrandC",
+      "price": 119.99,
+      "quantity": 45,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 12,
+      "type": "Car Radio with CD Player",
+      "status": "New Arrival",
+      "details": "Enjoy your favorite music on the go with this FM-BT car radio featuring a CD player.",
+      "features": [
+        "CD Playback",
+        "Bluetooth Connectivity"
+      ],
+      "coupons": [
+        "couponId40"
+      ]
+    },
+    {
+      "name": "Sound Damping Spray",
+      "categories": "Damping Sheets",
+      "brand": "BrandD",
+      "price": 14.99,
+      "quantity": 100,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 5,
+      "type": "Damping Spray",
+      "status": "New Arrival",
+      "details": "Reduce noise and vibrations with this easy-to-apply sound damping spray.",
+      "features": [
+        "Spray Application",
+        "Effective Sound Damping"
+      ],
+      "coupons": [
+        "couponId41"
+      ]
+    },
+    {
+      "name": "Premium Car Speaker Set",
+      "categories": "Speakers",
+      "brand": "BrandE",
+      "price": 99.99,
+      "quantity": 75,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 15,
+      "type": "Car Speaker Set",
+      "status": "New Arrival",
+      "details": "Upgrade your car's audio system with this premium speaker set for exceptional sound quality.",
+      "features": [
+        "Clear and Crisp Sound",
+        "Easy Installation"
+      ],
+      "coupons": [
+        "couponId42"
+      ]
+    },
+    {
+      "name": "Silk Dome Tweeter Set",
+      "categories": "Silk Dome Tweeter",
+      "brand": "BrandF",
+      "price": 24.99,
+      "quantity": 85,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 6,
+      "type": "Tweeter Set",
+      "status": "Best Sell",
+      "details": "Enhance your car's audio with this silk dome tweeter set for clear and balanced highs.",
+      "features": [
+        "Silk Dome Material",
+        "Easy Installation"
+      ],
+      "coupons": [
+        "couponId43"
+      ]
+    },
+    {
+      "name": "Bass Tube Subwoofer with Amplifier",
+      "categories": "Basstube",
+      "brand": "BrandG",
+      "price": 99.99,
+      "quantity": 70,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 12,
+      "type": "Subwoofer with Amplifier",
+      "status": "Best Sell",
+      "details": "Experience powerful bass with this bass tube subwoofer equipped with an amplifier.",
+      "features": [
+        "Deep Bass",
+        "Amplifier Included"
+      ],
+      "coupons": [
+        "couponId44"
+      ]
+    },
+    {
+      "name": "Car Backup Camera with LCD Monitor",
+      "categories": "Camera",
+      "brand": "BrandH",
+      "price": 79.99,
+      "quantity": 80,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 8,
+      "type": "Backup Camera with Monitor",
+      "status": "Best Sell",
+      "details": "Enhance parking safety with this camera system featuring an LCD monitor.",
+      "features": [
+        "Large LCD Monitor",
+        "Night Vision"
+      ],
+      "coupons": [
+        "couponId45"
+      ]
+    },
+    {
+      "name": "Multi-Port USB Charger",
+      "categories": "Charger",
+      "brand": "BrandI",
+      "price": 12.99,
+      "quantity": 95,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 4,
+      "type": "Multi-Port Charger",
+      "status": "Best Sell",
+      "details": "Charge multiple devices simultaneously with this multi-port USB charger.",
+      "features": [
+        "Multiple Ports",
+        "Fast Charging"
+      ],
+      "coupons": [
+        "couponId46"
+      ]
+    },
+    {
+      "name": "Premium Wiper Blades Pair",
+      "categories": "Wiper",
+      "brand": "BrandJ",
+      "price": 29.99,
+      "quantity": 100,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 5,
+      "type": "Wiper Blades Pair",
+      "status": "Best Sell",
+      "details": "Ensure clear visibility in all weather conditions with premium wiper blades in a pair.",
+      "features": [
+        "Easy Installation",
+        "Long-Lasting"
+      ],
+      "coupons": [
+        "couponId47"
+      ]
+    },
+    {
+      "name": "Car Horn Kit with Relay",
+      "categories": "Horn",
+      "brand": "BrandK",
+      "price": 29.99,
+      "quantity": 110,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 6,
+      "type": "Horn Kit with Relay",
+      "status": "Best Sell",
+      "details": "Upgrade your car's horn with this kit featuring a relay for consistent sound.",
+      "features": [
+        "Relay Included",
+        "Distinct Sound"
+      ],
+      "coupons": [
+        "couponId48"
+      ]
+    },
+    {
+      "name": "LED Light Bar",
+      "categories": "LED",
+      "brand": "BrandX",
+      "price": 59.99,
+      "quantity": 70,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 8,
+      "type": "Light Bar",
+      "status": "Best Sell",
+      "details": "Illuminate your surroundings with this bright and versatile LED light bar.",
+      "features": [
+        "Spot and Flood Beam",
+        "Durable Construction"
+      ],
+      "coupons": [
+        "couponId49"
+      ]
+    },
+    {
+      "name": "HID Ballast Replacement Kit",
+      "categories": "HIDs",
+      "brand": "BrandY",
+      "price": 24.99,
+      "quantity": 80,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 5,
+      "type": "Ballast Replacement Kit",
+      "status": "Best Sell",
+      "details": "Replace faulty HID ballasts with this reliable replacement kit for improved lighting.",
+      "features": [
+        "Plug and Play",
+        "Durable Ballasts"
+      ],
+      "coupons": [
+        "couponId50"
+      ]
+    },
+    {
+      "name": "LED Headlight Kit",
+      "brand": "BrandX",
+      "categories": "LED",
+      "price": 49.99,
+      "quantity": 100,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 10,
+      "type": "LED Headlight",
+      "status": "Best Offers",
+      "details": "High-quality LED headlight kit for improved visibility on the road.",
+      "features": [
+        "Easy Installation",
+        "Energy-Efficient"
+      ],
+      "coupons": [
+        "couponId1",
+        "couponId2"
+      ]
+    },
+    {
+      "name": "HID Conversion Kit",
+      "categories": "HIDs",
+      "brand": "BrandY",
+      "price": 69.99,
+      "quantity": 80,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 15,
+      "type": "HID Conversion",
+      "status": "Best Offers",
+      "details": "Upgrade your vehicle's lighting with this HID conversion kit.",
+      "features": [
+        "Plug and Play",
+        "Bright and Durable"
+      ],
+      "coupons": [
+        "couponId3"
+      ]
+    },
+    {
+      "name": "D-Series Light Bar",
+      "categories": "D-Series",
+      "brand": "BrandZ",
+      "price": 99.99,
+      "quantity": 50,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 20,
+      "type": "Light Bar",
+      "status": "Best Offers",
+      "details": "Powerful D-Series light bar for off-road adventures.",
+      "features": [
+        "Waterproof Design",
+        "Long Range"
+      ],
+      "coupons": [
+        "couponId4"
+      ]
+    },
+    {
+      "name": "Car Android Player",
+      "categories": "Car Android Player",
+      "brand": "BrandA",
+      "price": 129.99,
+      "quantity": 60,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 8,
+      "type": "Android Player",
+      "status": "Best Offers",
+      "details": "Upgrade your car's entertainment system with this Android player.",
+      "features": [
+        "Touchscreen Display",
+        "Bluetooth Connectivity"
+      ],
+      "coupons": [
+        "couponId5"
+      ]
+    },
+    {
+      "name": "Fiat Punto Spark Plugs",
+      "categories": "Fiat Punto",
+      "brand": "BrandB",
+      "price": 19.99,
+      "quantity": 70,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 5,
+      "type": "Spark Plugs",
+      "status": "Best Offers",
+      "details": "Replace worn-out spark plugs with these high-quality ones.",
+      "features": [
+        "Improved Engine Performance"
+      ],
+      "coupons": [
+        "couponId6"
+      ]
+    },
+    {
+      "name": "FM-BT Car Radio",
+      "categories": "FM-BT",
+      "brand": "BrandC",
+      "price": 89.99,
+      "quantity": 40,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 12,
+      "type": "Car Radio",
+      "status": "Active",
+      "details": "Stay connected on the road with this FM-BT car radio.",
+      "features": [
+        "Bluetooth Streaming",
+        "USB Connectivity"
+      ],
+      "coupons": [
+        "couponId7"
+      ]
+    },
+    {
+      "name": "Damping Sheets Kit",
+      "categories": "Damping Sheets",
+      "brand": "BrandD",
+      "price": 39.99,
+      "quantity": 90,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 10,
+      "type": "Damping Sheets",
+      "status": "Best Offers",
+      "details": "Reduce noise and vibrations in your vehicle with this damping sheets kit.",
+      "features": [
+        "Easy Installation",
+        "High-Quality Material"
+      ],
+      "coupons": [
+        "couponId8"
+      ]
+    },
+    {
+      "name": "Speaker System",
+      "categories": "Speakers",
+      "brand": "BrandE",
+      "price": 79.99,
+      "quantity": 55,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 15,
+      "type": "Speaker System",
+      "status": "Best Offers",
+      "details": "Enhance your car's audio system with this high-quality speaker system.",
+      "features": [
+        "Clear Sound",
+        "Multiple Mounting Options"
+      ],
+      "coupons": [
+        "couponId9"
+      ]
+    },
+    {
+      "name": "Silk Dome Tweeter Pair",
+      "categories": "Silk Dome Tweeter",
+      "brand": "BrandF",
+      "price": 29.99,
+      "quantity": 65,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 8,
+      "type": "Tweeter Pair",
+      "status": "Best Offers",
+      "details": "Upgrade your car's audio with these silk dome tweeters.",
+      "features": [
+        "Crystal Clear Highs"
+      ],
+      "coupons": [
+        "couponId10"
+      ]
+    },
+    {
+      "name": "Bass Tube Subwoofer",
+      "categories": "Basstube",
+      "brand": "BrandG",
+      "price": 59.99,
+      "quantity": 75,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 10,
+      "type": "Subwoofer",
+      "status": "Best Offers",
+      "details": "Experience powerful bass with this bass tube subwoofer.",
+      "features": [
+        "Deep Bass",
+        "Easy Installation"
+      ],
+      "coupons": [
+        "couponId11"
+      ]
+    },
+    {
+      "name": "Car Backup Camera",
+      "categories": "Camera",
+      "brand": "BrandH",
+      "price": 49.99,
+      "quantity": 85,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 5,
+      "type": "Backup Camera",
+      "status": "Best Offers",
+      "details": "Enhance safety with a high-resolution car backup camera.",
+      "features": [
+        "Wide-Angle View",
+        "Night Vision"
+      ],
+      "coupons": [
+        "couponId12"
+      ]
+    },
+    {
+      "name": "Charger Cable",
+      "categories": "Charger",
+      "brand": "BrandI",
+      "price": 9.99,
+      "quantity": 150,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 3,
+      "type": "Charger Cable",
+      "status": "Best Offers",
+      "details": "Fast charging with this durable charger cable.",
+      "features": [
+        "Quick Charge"
+      ],
+      "coupons": [
+        "couponId13"
+      ]
+    },
+    {
+      "name": "Wiper Blades Set",
+      "categories": "Wiper",
+      "brand": "BrandJ",
+      "price": 19.99,
+      "quantity": 120,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 5,
+      "type": "Wiper Blades",
+      "status": "Best Offers",
+      "details": "Ensure clear visibility in all weather conditions with these wiper blades.",
+      "features": [
+        "Easy Installation",
+        "Durable"
+      ],
+      "coupons": [
+        "couponId14"
+      ]
+    },
+    {
+      "name": "Car Horn Kit",
+      "categories": "Horn",
+      "brand": "BrandK",
+      "price": 24.99,
+      "quantity": 110,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 4,
+      "type": "Horn Kit",
+      "status": "Best Offers",
+      "details": "Upgrade your car's horn with this reliable horn kit.",
+      "features": [
+        "Loud and Clear"
+      ],
+      "coupons": [
+        "couponId15"
+      ]
+    },
+    {
+      "name": "LED Bulbs",
+      "categories": "LED",
+      "brand": "BrandX",
+      "price": 14.99,
+      "quantity": 120,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 5,
+      "type": "LED Bulbs",
+      "status": "Best Offers",
+      "details": "Energy-efficient LED bulbs for various applications.",
+      "features": [
+        "Long Lifespan",
+        "Multiple Sizes"
+      ],
+      "coupons": [
+        "couponId16"
+      ]
+    },
+    {
+      "name": "Car Android Player with GPS",
+      "categories": "Car Android Player",
+      "brand": "BrandA",
+      "price": 149.99,
+      "quantity": 40,
+      "images": [
+        "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      ],
+      "discount": 10,
+      "type": "Android Player with GPS",
+      "status": "Best Offers",
+      "details": "Stay connected and navigate with this feature-rich car Android player.",
+      "features": [
+        "GPS Navigation",
+        "Touchscreen Display"
+      ],
+      "coupons": [
+        "couponId17"
+      ]
+    }
+  ]
+}

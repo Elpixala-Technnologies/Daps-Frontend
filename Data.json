@@ -2,97 +2,113 @@
     {
         "name": "LED",
         "slug": "led",
-        "image": "led_image.jpg",
-        "status": "best sell"
+        "image": "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "status": "best sell",
+        "icon": "https://res.cloudinary.com/elpixala/image/upload/v1697462399/Daps/Categories/btpltu9sl8fvzd7lsipv.png"
     },
     {
         "name": "LED Headlight",
         "slug": "led_headlight",
-        "image": "led_headlight_image.jpg",
-        "status": "best sell"
+        "image": "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "status": "best sell",
+        "icon": "https://res.cloudinary.com/elpixala/image/upload/v1697462399/Daps/Categories/btpltu9sl8fvzd7lsipv.png"
     },
     {
         "name": "HIDs",
         "slug": "hids",
-        "image": "hids_image.jpg",
-        "status": "best sell"
+        "image": "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "status": "best sell",
+        "icon": "https://res.cloudinary.com/elpixala/image/upload/v1697462399/Daps/Categories/btpltu9sl8fvzd7lsipv.png"
     },
     {
         "name": "D-Series",
         "slug": "d-series",
-        "image": "d-series_image.jpg",
-        "status": "best sell"
+        "image": "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "status": "best sell",
+        "icon": "https://res.cloudinary.com/elpixala/image/upload/v1697462399/Daps/Categories/btpltu9sl8fvzd7lsipv.png"
     },
     {
         "name": "Car Android Player",
         "slug": "car_android_player",
-        "image": "car_android_player_image.jpg",
-        "status": "best sell"
+        "image": "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "status": "best sell",
+        "icon": "https://res.cloudinary.com/elpixala/image/upload/v1697462399/Daps/Categories/btpltu9sl8fvzd7lsipv.png"
     },
     {
         "name": "Special Car Android Player",
         "slug": "special_car_android_player",
-        "image": "special_car_android_player_image.jpg",
-        "status": "popular"
+        "image": "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "status": "popular",
+        "icon": "https://res.cloudinary.com/elpixala/image/upload/v1697462399/Daps/Categories/btpltu9sl8fvzd7lsipv.png"
     },
     {
         "name": "Fiat Punto",
         "slug": "fiat_punto",
-        "image": "fiat_punto_image.jpg",
-        "status": "popular"
+        "image": "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "status": "popular",
+        "icon": "https://res.cloudinary.com/elpixala/image/upload/v1697462399/Daps/Categories/btpltu9sl8fvzd7lsipv.png"
     },
     {
         "name": "FM-BT",
         "slug": "fm-bt",
-        "image": "fm-bt_image.jpg",
-        "status": "popular"
+        "image": "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "status": "popular",
+        "icon": "https://res.cloudinary.com/elpixala/image/upload/v1697462399/Daps/Categories/btpltu9sl8fvzd7lsipv.png"
     },
     {
         "name": "Damping Sheets",
         "slug": "damping_sheets",
-        "image": "damping_sheets_image.jpg",
-        "status": "popular"
+        "image": "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "status": "popular",
+        "icon": "https://res.cloudinary.com/elpixala/image/upload/v1697462399/Daps/Categories/btpltu9sl8fvzd7lsipv.png"
     },
     {
         "name": "Speakers",
         "slug": "speakers",
-        "image": "speakers_image.jpg",
-        "status": "popular"
+        "image": "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "status": "popular",
+        "icon": "https://res.cloudinary.com/elpixala/image/upload/v1697462399/Daps/Categories/btpltu9sl8fvzd7lsipv.png"
     },
     {
         "name": "Silk Dome Tweeter",
         "slug": "silk_dome_tweeter",
-        "image": "silk_dome_tweeter_image.jpg",
-        "status": "popular"
+        "image": "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "status": "popular",
+        "icon": "https://res.cloudinary.com/elpixala/image/upload/v1697462399/Daps/Categories/btpltu9sl8fvzd7lsipv.png"
     },
     {
         "name": "Basstube",
         "slug": "basstube",
-        "image": "basstube_image.jpg",
-        "status": "popular"
+        "image": "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "status": "popular",
+        "icon": "https://res.cloudinary.com/elpixala/image/upload/v1697462399/Daps/Categories/btpltu9sl8fvzd7lsipv.png"
     },
     {
         "name": "Camera",
         "slug": "camera",
-        "image": "camera_image.jpg",
-        "status": "best sell"
+        "image": "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "status": "best sell",
+        "icon": "https://res.cloudinary.com/elpixala/image/upload/v1697462399/Daps/Categories/btpltu9sl8fvzd7lsipv.png"
     },
     {
         "name": "Charger",
         "slug": "charger",
-        "image": "charger_image.jpg",
-        "status": "best sell"
+        "image": "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "status": "best sell",
+        "icon": "https://res.cloudinary.com/elpixala/image/upload/v1697462399/Daps/Categories/btpltu9sl8fvzd7lsipv.png"
     },
     {
         "name": "Wiper",
         "slug": "wiper",
-        "image": "wiper_image.jpg",
-        "status": "best sell"
+        "image": "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "status": "best sell",
+        "icon": "https://res.cloudinary.com/elpixala/image/upload/v1697462399/Daps/Categories/btpltu9sl8fvzd7lsipv.png"
     },
     {
         "name": "Horn",
         "slug": "horn",
-        "image": "horn_image.jpg",
-        "status": "popular"
+        "image": "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
+        "status": "popular",
+        "icon": "https://res.cloudinary.com/elpixala/image/upload/v1697462399/Daps/Categories/btpltu9sl8fvzd7lsipv.png"
     }
 ]

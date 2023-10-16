@@ -6,17 +6,15 @@ import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper';
 import Image from 'next/image';
 import {
-    HomeSliderOne,
-    HomeSliderTow,
-    HomeSliderThree,
-    HomeSliderFour
+    OfferBannerTwo,
+    OfferBannerThree,
+    OfferBannerFour,
+    OfferBannerFive
 } from '@/src/Assets';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Link from 'next/link';
-import { FaShoppingCart } from 'react-icons/fa';
 
-const Hero = () => {
+const ProductSlider = () => {
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
@@ -35,13 +33,23 @@ const Hero = () => {
     const slidesData = [
         {
             id: 1,
-            desktopImage: HomeSliderOne,
-            mobileImage: HomeSliderOne, // Add mobile image for slide 1
+            desktopImage:  OfferBannerTwo,
+            mobileImage: OfferBannerTwo, // Add mobile image for slide 1
         },
         {
             id: 2,
-            desktopImage: HomeSliderTow,
-            mobileImage: HomeSliderTow, // Add mobile image for slide 2
+            desktopImage: OfferBannerThree,
+            mobileImage: OfferBannerThree, // Add mobile image for slide 2
+        },
+        {
+            id: 3,
+            desktopImage: OfferBannerFour,
+            mobileImage: OfferBannerFour, // Add mobile image for slide 2
+        },
+        {
+            id: 4,
+            desktopImage: OfferBannerFive,
+            mobileImage: OfferBannerFive, // Add mobile image for slide 2
         },
     ];
 
@@ -51,26 +59,27 @@ const Hero = () => {
                 spaceBetween={30}
                 centeredSlides={true}
                 autoplay={{
-                    delay: 6000,
+                    delay: 2500,
                     disableOnInteraction: false,
                 }}
                 loop={true}
                 modules={[Autoplay, Pagination, Navigation]}
                 className="product-swiper"
+                data-aos="fade-up"
             >
                 {slidesData &&
                     slidesData.map((slide) => {
                         return (
-                            <SwiperSlide key={slide?._id}>
-                                <Link className="slider-images relative" href='/products'>
+                            <SwiperSlide key={slide.id}> 
+                                <div className="slider-images">
                                     <Image
                                         src={isMobile ? slide.mobileImage : slide.desktopImage}
                                         alt="Banner Image"
-                                        className="w-full "
+                                        className="w-full h-auto"
                                         width={isMobile ? 768 : 1920}
                                         height={isMobile ? 768 : 500}
                                     />
-                                </Link>
+                                </div>
                             </SwiperSlide>
                         );
                     })}
@@ -79,4 +88,4 @@ const Hero = () => {
     );
 };
 
-export default Hero;
+export default ProductSlider;

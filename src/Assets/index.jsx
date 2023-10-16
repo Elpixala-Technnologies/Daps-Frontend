@@ -2,10 +2,17 @@ import MainLogo from "./Logo/logo.png"
 import NotFoundIcon from "./Images/NotFoundImag.png";
 import AuthIcons from "./Images/usersignUp.jpeg";
 
-import HomeSliderOne from "./Banner/home-slider-01.jpg"
-import HomeSliderTow from "./Banner/home-slider-02.jpeg"
-import HomeSliderThree from "./Banner/home-slider-03.png"
-import HomeSliderFour from "./Banner/home-slider-04.jpg"
+import HomeSliderOne from "./Banner/HomeBannerOne.jpg";
+import HomeSliderTow from "./Banner/HomeBannerTwo.jpg";
+
+import TodayOffersBannerOne from "./OfferBanner/BannerFive.jpg"
+
+import OfferBannerTwo from "./OfferBanner/BannerTwo.jpg"
+import OfferBannerThree from './OfferBanner/BannerThree.jpg'
+import OfferBannerFour from './OfferBanner/BannerFour.jpg'
+import OfferBannerFive from './OfferBanner/BannerOne.jpg'
+
+
 
 export {
     MainLogo,
@@ -15,6 +22,12 @@ export {
 
     HomeSliderOne,
     HomeSliderTow,
-    HomeSliderThree,
-    HomeSliderFour
+
+    TodayOffersBannerOne,
+    OfferBannerTwo,
+    OfferBannerThree,
+    OfferBannerFour,
+    OfferBannerFive
+
+
 }
