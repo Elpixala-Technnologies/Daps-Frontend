@@ -2,15 +2,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
-const ProductCard = ({product}) => {
+const ProductCard = ({productValueData}) => {
     return (
         <div
-            key={product._id}
             className="group flex flex-col overflow-hidden border border-gray-100 bg-[#EFF4F7] shadow-md rounded"
         >
             <div className="relative flex h-[18rem] p-4 overflow-hidden">
                 {
-                    product?.images?.map((image, index) => {
+                   productValueData?.images?.map((image, index) => {
                         return (
                             <Image
                                 key={index}
@@ -46,23 +45,23 @@ const ProductCard = ({product}) => {
                 </div>
             </div>
             <div className="mt-4 px-5 pb-5">
-                <Link href={`/products/${product?._id}`}>
+                <Link href={`/products/${productValueData?._id}`}>
                     <h5 className="text-xl font-semibold tracking-tight text-slate-900">
-                        {product?.name.slice(0, 26) + ".."}
+                        {productValueData?.name.slice(0, 26) + ".."}
                     </h5>
                 </Link>
                 <div className='flex gap-4 my-2'>
                     <h1 className="font-bold text-slate-900">
-                        {product?.discount
-                            ? `₹ ${Math.floor(product?.price - (product?.price * product?.discount) / 100)}`
-                            : `₹ ${Math.floor(product?.price)}`
+                        {productValueData?.discount
+                            ? `₹ ${Math.floor(productValueData?.price - (productValueData?.price * productValueData?.discount) / 100)}`
+                            : `₹ ${Math.floor(productValueData?.price)}`
                         }
                     </h1>
                     <span className="text-sm text-slate-900 line-through mt-1">
-                        ₹ {Math.floor(product?.price)}
+                        ₹ {Math.floor(productValueData?.price)}
                     </span>
                     <span className='text-[#18568C]'>
-                        {Math.floor(product?.discount)} % off
+                        {Math.floor(productValueData?.discount)} % off
                     </span>
                 </div>
 
