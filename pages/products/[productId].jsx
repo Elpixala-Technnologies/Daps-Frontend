@@ -27,18 +27,19 @@ const ProductDetailsPage = () => {
     } else {
         console.error(`No data found for ID: ${productId}`);
     }
-    let product 
+    
+    let product
 
     if (filterproductData && filterproductData.length > 0) {
-       product = filterproductData[0];
+        product = filterproductData[0];
         // Access other properties of 'product' as needed
-      } else {
+    } else {
         console.error(`No data found for ID: ${productId}`);
-      }
-      
+    }
+
 
     const addToCart = async (id) => {
-        const convertPrice = parseInt(price);
+        const convertPrice = parseInt(product?.price);
         // Check if the user is logged in
         if (!user) {
             // User is not logged in, show an alert
@@ -56,13 +57,11 @@ const ProductDetailsPage = () => {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                product: _id,
+                product: product?._id,
                 quantity: 1,
                 totalPrice: convertPrice,
                 email: user?.email,
                 status: "unpaid",
-                size: selectedSize,
-                color: selectedColorData?.color,
             }),
         });
 
@@ -81,7 +80,7 @@ const ProductDetailsPage = () => {
     }
 
     const handelBuyNow = async (id) => {
-        const convertPrice = parseInt(price);
+        const convertPrice = parseInt(product?.price);
         // Check if the user is logged in
         if (!user) {
             // User is not logged in, show an alert
@@ -99,13 +98,11 @@ const ProductDetailsPage = () => {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                product: _id,
+                product: product?._id,
                 quantity: 1,
                 totalPrice: convertPrice,
                 email: user?.email,
                 status: "unpaid",
-                size: selectedSize,
-                color: selectedColorData?.color,
             }),
         });
 
@@ -121,9 +118,6 @@ const ProductDetailsPage = () => {
             })
             router.push('/checkout');
         }
-
-
-
     }
     const [copiedCoupon, setCopiedCoupon] = useState(null);
 
@@ -180,8 +174,25 @@ const ProductDetailsPage = () => {
                                 <h1 className="sm: text-2xl font-bold text-gray-900 sm:text-3xl">
                                     {product?.name}
                                 </h1>
+                                <div className="flex items-end">
+                                        <div className='flex gap-4 my-2'>
+                                            <h1 className="font-bold text-[1.8rem] text-slate-900">
+                                                {product?.discount
+                                                    ? `₹ ${Math.floor(product?.price - (product?.price * product?.discount) / 100)}`
+                                                    : `₹ ${Math.floor(product?.price)}`
+                                                }
+                                            </h1>
+                                            <span className="text-sm text-slate-900 line-through mt-1">
+                                                ₹ {Math.floor(product?.price)}
+                                            </span>
+                                            <span className='text-[#18568C]'>
+                                                {Math.floor(product?.discount)} % off
+                                            </span>
+                                        </div>
 
-                                <h2 className="mt-8 text-base text-gray-900">Brand</h2>
+                                    </div>
+
+                                <h2 className="mt-4 text-base text-gray-900">Brand</h2>
                                 <div className="mt-3 flex select-none flex-wrap items-center gap-1">
                                     <label className="">
                                         <input
@@ -212,27 +223,12 @@ const ProductDetailsPage = () => {
                                     </label>
 
                                 </div>
+                                   
                                 <div className="mt-10 flex flex-col items-center justify-between space-y-4 border-t border-b py-4 sm:flex-row sm:space-y-0">
-                                    <div className="flex items-end">
-                                        <div className='flex gap-4 my-2'>
-                                            <h1 className="font-bold text-[1.8rem] text-slate-900">
-                                                {product?.discount
-                                                    ? `₹ ${Math.floor(product?.price - (product?.price * product?.discount) / 100)}`
-                                                    : `₹ ${Math.floor(product?.price)}`
-                                                }
-                                            </h1>
-                                            <span className="text-sm text-slate-900 line-through mt-1">
-                                                ₹ {Math.floor(product?.price)}
-                                            </span>
-                                            <span className='text-[#18568C]'>
-                                                {Math.floor(product?.discount)} % off
-                                            </span>
-                                        </div>
-
-                                    </div>
                                     <button
                                         type="button"
                                         className="inline-flex items-center justify-center rounded-md border-2 border-transparent bg-[#18568C] bg-none px-12 py-3 text-center text-base font-bold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-800"
+                                        onClick={()=>addToCart(product?._id)}
                                     >
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -249,6 +245,27 @@ const ProductDetailsPage = () => {
                                             />
                                         </svg>
                                         Add to cart
+                                    </button>
+                                    <button
+                                        type="button"
+                                        className="inline-flex items-center justify-center rounded-md border-2 border-transparent bg-[#18568C] bg-none px-12 py-3 text-center text-base font-bold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-800"
+                                        onClick={()=>handelBuyNow(product?._id)}
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className="shrink-0 mr-3 h-5 w-5"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                            strokeWidth={2}
+                                        >
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                                            />
+                                        </svg>
+                                       Buy Now
                                     </button>
                                 </div>
                                 <ul className="mt-8 space-y-2">
