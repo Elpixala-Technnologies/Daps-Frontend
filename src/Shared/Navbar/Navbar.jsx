@@ -114,7 +114,7 @@ const Navbar = () => {
                                 return (
                                   <div
                                     key={index} >
-                                    <Link href={`/category-product/${item?.name}`}
+                                    <Link href={`/category/${item?.name}`}
                                       className='flex items-center justify-center gap-2 cursor-pointer hover:scale-105 duration-300 transform'
                                     >
                                       <Image
@@ -264,7 +264,7 @@ const Navbar = () => {
                               return (
                                 <div
                                   key={index} >
-                                  <Link href={`/category-product/${item?.name}`}
+                                  <Link href={`/category/${item?.name}`}
                                     className='flex items-center justify-center gap-2 cursor-pointer hover:scale-105 duration-300 transform'
                                   >
                                     <Image

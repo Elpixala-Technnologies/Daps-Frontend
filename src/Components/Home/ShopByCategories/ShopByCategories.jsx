@@ -48,7 +48,7 @@ const ShopByCategories = () => {
                         data-aos-duration="1000" // Set animation duration in milliseconds
                         key={_id}
                       >
-                        <Link href={`/category-product/${name}`}>
+                        <Link href={`/category/${name}`}>
                           <Image
                             alt="image"
                             src={icon}

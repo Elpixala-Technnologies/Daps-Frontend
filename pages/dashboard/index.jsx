@@ -92,15 +92,8 @@ const DashboardPage = () => {
                                                 scope="col"
                                                 className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                                             >
-                                                Total Color Available
+                                              Brand
                                             </th>
-                                            {/* <th
-                                                scope="col"
-                                                className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
-                                            >
-                                                Status
-                                            </th> */}
-
                                             <th
                                                 scope="col"
                                                 className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
@@ -120,7 +113,7 @@ const DashboardPage = () => {
                                                             </div>
                                                         </td>
                                                         <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                                                            {product?.colors && <img src={product?.colors[0]?.images[0]} alt="product" className="w-10 h-10" />}
+                                                            {product?.colors && <img src={product?.images[0]} alt="product" className="w-10 h-10" />}
                                                         </td>
                                                         <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
                                                             {product?.name}
@@ -132,9 +125,7 @@ const DashboardPage = () => {
                                                             {product?.discount}
                                                         </td>
                                                         <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                                                            {
-                                                                product?.colors?.length  > 0 ? <span className="text-green-500">{product?.colors?.length}</span> : <span className="text-red-500">No Color Available</span>
-                                                            }
+                                                         {product?.brand}
                                                         </td>
                                                         <td className="px-4 py-4 text-sm whitespace-nowrap">
                                                             <div className="flex items-center gap-x-6">

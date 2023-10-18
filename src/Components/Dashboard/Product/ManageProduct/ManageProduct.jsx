@@ -1,29 +1,42 @@
 import useProducts from "@/src/Hooks/useProducts";
-import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from 'react';
-import { FaRegEdit, FaRegTrashAlt } from 'react-icons/fa';
+import { FaRegEdit, FaRegTrashAlt,FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+
 
 const ManageProduct = () => {
     const { handelProductDelete, productData } = useProducts();
+    const itemsPerPage = 9; // Number of items per page
+    const [page, setPage] = useState(1);
+
+    // Calculate the starting and ending indexes for the current page
+    const startIndex = (page - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+
+    // Filter products to display only the ones for the current page
+    const productsToDisplay = productData.slice(startIndex, endIndex);
+
+    const totalPages = Math.ceil(productData.length / itemsPerPage);
+
+    const handlePrevPage = () => {
+        if (page > 1) {
+            setPage(page - 1);
+        }
+    };
+
+    const handleNextPage = () => {
+        if (page < totalPages) {
+            setPage(page + 1);
+        }
+    };
+
     return (
         <section>
-            <div className="grid md:grid-cols-3 gap-4 justify-center items-center">
-
-                <div>
-                    {
-                        productData && productData?.length === 0 && <div className="flex justify-center items-center">
-                            <h2>
-                                No Product Found !
-                            </h2>
-                        </div>
-                    }
-                </div>
-
-                {productData &&
-                    productData?.length &&
-                    productData?.map((porductData) => {
-                        const { _id, name, price, colors, discount } = porductData;
+            <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
+                {productsToDisplay &&
+                    productsToDisplay?.length &&
+                    productsToDisplay?.map((porductData) => {
+                        const { _id, name, price,  discount ,images} = porductData;
                         return (
                             <div className="relative flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md"
                                 key={_id}
@@ -36,7 +49,7 @@ const ManageProduct = () => {
                                     <img
                                         width={300}
                                         height={300}
-                                        src={colors[0]?.images[0]}
+                                        src={images[0]}
                                         className="w-full h-full object-cover object-center"
                                         alt="product image"
                                     />
@@ -76,6 +89,42 @@ const ManageProduct = () => {
                             </div>
                         )
                     })}
+            </div>
+
+            <div className="flex items-center justify-center gap-4 mt-11 mb-16" data-aos="fade-up" data-aos-delay="200">
+                <button
+                    title="Previous"
+                    className={`h-14 w-14 text-center ${page === 1 ? "bg-gray-400 cursor-not-allowed" : "hover:bg-red-10"
+                        } text-white bg-black rounded-l-md border ${page === 1 ? "bg-gray-400" : "bg-[#18568C]"
+                        } flex items-center justify-center`}
+                    onClick={handlePrevPage}
+                    disabled={page === 1}
+                >
+                    <FaArrowLeft className="text-white" />
+                </button>
+                {Array.from({ length: totalPages }).map((_, index) => (
+                    <button
+                        key={index}
+                        className={`h-14 w-14 hover:text-white bg-[#18568C] ${page === index + 1 ? "text-white bg-[#18568C]" : "bg-black-10"
+                            } text-center hover-bg-red-10 text-white border`}
+                        onClick={() => setPage(index + 1)}
+                        disabled={page === index + 1}
+                    >
+                        {index + 1}
+                    </button>
+                ))}
+                <button
+                    title="Next"
+                    className={`h-14 w-14 text-center ${page === totalPages
+                        ? "bg-gray-400 cursor-not-allowed"
+                        : "hover:bg-red-10"
+                        } text-white bg-black rounded-r-md border ${page === totalPages ? "bg-gray-400" : "bg-[#18568C]"
+                        } flex items-center justify-center`}
+                    onClick={handleNextPage}
+                    disabled={page === totalPages}
+                >
+                    <FaArrowRight className="text-white" />
+                </button>
             </div>
         </section>
     );

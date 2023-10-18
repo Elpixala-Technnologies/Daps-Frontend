@@ -162,7 +162,6 @@ const useProducts = () => {
           timer: 3500,
         });
         refetchCategory();
-        refetchAllCategory();
       }
     }
   };

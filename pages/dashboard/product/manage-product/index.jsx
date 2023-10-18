@@ -8,7 +8,9 @@ const ManagePorductPage = () => {
         <div className='manage-porduct-title my-2'>
           <h2 className='font-bold text-2xl'>Update Porducts</h2>
         </div>
+        <div>
         <ManageProduct />
+        </div>
       </div>
     </DashboardLayout>
   );

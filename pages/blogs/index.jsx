@@ -1,14 +1,16 @@
+import RootLayout from '@/src/Layouts/RootLayout';
+import React from 'react';
 import useBlogs from "@/src/Hooks/useBlogs";
 import Link from "next/link";
 import {FaArrowRight} from "react-icons/fa"
 
-const RecentBlogs = () => {
+const BlogPage = () => {
     const { blogData } = useBlogs();
-
     return (
-        <section>
+        <RootLayout>
+            <section className='mx-2  md:container'>
             <div className='title'>
-                <h1>Recents <span>Blogs</span></h1>
+                <h1>All <span>Blogs</span></h1>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 my-4">
@@ -52,15 +54,9 @@ const RecentBlogs = () => {
                     })
                 }
             </div>
-            <div className="flex justify-end items-end">
-                <Link className="text-[#18568C]  text-center flex items-center gap-2"
-                    href="/blogs"
-                >
-                    View All Blogs <FaArrowRight/>
-                </Link>
-            </div>
-        </section>
+            </section>
+        </RootLayout>
     );
 };
 
-export default RecentBlogs;
+export default BlogPage;

@@ -73,7 +73,7 @@ const BestSealer = () => {
                                 return (
                                     <SwiperSlide className="cursor-grab" key={product?._id}
                                     >
-                                        <Link href='/' className="cardBody md:m-0  mx-auto  flex flex-col hover:border-[#18568C] p-2 md:p-3 rounded-md duration-300 transform  hover:-translate-y-1.5   hover:bg-red-10 ">
+                                        <Link href={`/category/${product?.name}`} className="cardBody md:m-0  mx-auto  flex flex-col hover:border-[#18568C] p-2 md:p-3 rounded-md duration-300 transform  hover:-translate-y-1.5   hover:bg-red-10 ">
                                             <div className="productImage ">
                                                 <Image
                                                     src={product?.image}

@@ -1,7 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { Dialog, Disclosure, Transition } from '@headlessui/react';
-import Menu from '@headlessui/react';
-import { XIcon as XMarkIcon } from '@heroicons/react/24/outline';
 import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, ViewGridIcon } from '@heroicons/react/20/solid';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import useProducts from '@/src/Hooks/useProducts';
@@ -69,19 +67,13 @@ const ProductPage = () => {
 
 
     return (
-        <RootLayout className="bg-white">
+        <RootLayout className="bg-white mx-2 md:mx-0 md:container">
             <div className="product-banner">
                 <ProductSlider />
             </div>
             <div>
-
-
                 <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
                     {/* Mobile filter dialog */}
-
-
-
                     <section aria-labelledby="products-heading" className="my-4">
                         <h2 id="products-heading" className="sr-only">
                             Products
