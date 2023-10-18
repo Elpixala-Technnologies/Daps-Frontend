@@ -1,6 +1,6 @@
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { useCallback, useContext, useEffect, useRef } from "react";
 import Image from "next/image";
-import { FaCartPlus, FaEye, FaPhabricator } from "react-icons/fa";
+import { FaCartPlus} from "react-icons/fa";
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { TbArrowBigLeft, TbArrowBigRight } from "react-icons/tb";
@@ -8,6 +8,10 @@ import Link from "next/link";
 import useProducts from "@/src/Hooks/useProducts";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { AuthContext } from "@/src/Context/UserContext";
+import { useRouter } from "next/router";
+import { addToCartUrl } from "@/src/Utils/Urls/ProductUrl";
+import Swal from "sweetalert2";
 
 
 const NewArrivals = () => {
@@ -16,6 +20,9 @@ const NewArrivals = () => {
     const filterProductData = productData?.filter((data) => {
         return data?.status === "New Arrival";
     });
+
+    const { user } = useContext(AuthContext);
+    const router = useRouter();
 
     const sliderRef = useRef(null);
     const handlePrev = useCallback(() => {
@@ -34,6 +41,48 @@ const NewArrivals = () => {
             once: true, // Only trigger the animation once
         });
     }, []);
+
+    const addToCart = async (productId, price) => {
+        const convertPrice = parseInt(price);
+    
+        // Check if the user is logged in
+        if (!user) {
+          // User is not logged in, show an alert
+          Swal.fire({
+            icon: 'error',
+            title: 'Please log in to add the product to your cart',
+            showConfirmButton: true,
+          });
+          return;
+        }
+    
+        const res = await fetch(addToCartUrl(productId), {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            product: productId,
+            quantity: 1,
+            totalPrice: convertPrice,
+            email: user.email,
+            status: "unpaid",
+          }),
+        });
+    
+        const data = await res.json();
+    
+        if (data.success) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Your product added to the cart',
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          router.push('/cart'); 
+        }
+      };
+    
 
 
     return (
@@ -139,7 +188,9 @@ const NewArrivals = () => {
                                                 </p>
                                                 <div className="productAddToCart flex gap-5 items-center">
                                                     <div>
-                                                        <button className="border  px-4 py-4 flex justify-center items-center gap-4 hover:border-[#18568C] common-btn p-2 md:p-3 text-center rounded-md duration-300 transform  shadow-sm hover:-translate-y-1.5 border-t border-slate-100 hover:bg-red-10 hover:text-red-500" >
+                                                        <button 
+                                                        onClick={() => addToCart(product._id, product?.price)}
+                                                        className="border  px-4 py-4 flex justify-center items-center gap-4 hover:border-[#18568C] common-btn p-2 md:p-3 text-center rounded-md duration-300 transform  shadow-sm hover:-translate-y-1.5 border-t border-slate-100 hover:bg-red-10 hover:text-red-500" >
                                                             <FaCartPlus />
                                                             Add To Cart
                                                         </button>

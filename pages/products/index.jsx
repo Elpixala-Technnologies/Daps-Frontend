@@ -65,6 +65,8 @@ const ProductPage = () => {
         setSelectedStatus('All');
     };
 
+    
+
 
     return (
         <RootLayout className="bg-white mx-2 md:mx-0 md:container">

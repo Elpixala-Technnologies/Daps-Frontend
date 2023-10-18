@@ -1,8 +1,56 @@
 import Image from 'next/image';
+import React, { useContext } from "react";
 import Link from 'next/link';
-import React from 'react';
+import { AuthContext } from "@/src/Context/UserContext";
+import { useRouter } from "next/router";
+import { addToCartUrl } from "@/src/Utils/Urls/ProductUrl";
+import Swal from "sweetalert2";
 
 const ProductCard = ({productValueData}) => {
+    const { user } = useContext(AuthContext);
+    const router = useRouter();
+
+    const addToCart = async (productId, price) => {
+        const convertPrice = parseInt(price);
+    
+        // Check if the user is logged in
+        if (!user) {
+          // User is not logged in, show an alert
+          Swal.fire({
+            icon: 'error',
+            title: 'Please log in to add the product to your cart',
+            showConfirmButton: true,
+          });
+          return;
+        }
+    
+        const res = await fetch(addToCartUrl(productId), {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            product: productId,
+            quantity: 1,
+            totalPrice: convertPrice,
+            email: user.email,
+            status: "unpaid",
+          }),
+        });
+    
+        const data = await res.json();
+    
+        if (data.success) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Your product added to the cart',
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          router.push('/cart'); 
+        }
+      };
+
     return (
         <div
             className="group flex flex-col overflow-hidden border border-gray-100 bg-[#EFF4F7] shadow-md rounded"
@@ -46,7 +94,7 @@ const ProductCard = ({productValueData}) => {
             </div>
             <div className="mt-4 px-5 pb-5">
                 <Link href={`/products/${productValueData?._id}`}>
-                    <h5 className="text-xl font-semibold tracking-tight text-slate-900">
+                    <h5 className="text-[1rem] font-semibold tracking-tight text-slate-900">
                         {productValueData?.name.slice(0, 26) + ".."}
                     </h5>
                 </Link>
@@ -65,7 +113,9 @@ const ProductCard = ({productValueData}) => {
                     </span>
                 </div>
 
-                <button className="flex items-center justify-center common-btn px-2 py-1 text-sm text-white transition hover:bg-gray-700">
+                <button className="flex items-center justify-center common-btn px-2 py-1 text-sm text-white transition hover:bg-gray-700"
+                      onClick={() => addToCart(productValueData._id, productValueData?.price)}
+                >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="mr-2 h-5 w-5"

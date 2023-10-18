@@ -192,7 +192,7 @@ const category_product = () => {
                         <button
                             title="Previous"
                             className={`h-14 w-14 text-center ${categoriesPage === 1 ? "bg-gray-400 cursor-not-allowed" : "hover:bg-red-10"
-                                } text-white bg-black-10 rounded-l-md border ${categoriesPage === 1 ? "bg-gray-400" : "bg-red-500"
+                                } text-white bg-black-10 rounded-l-md border ${categoriesPage === 1 ? "bg-gray-400" : "bg-[#18568C]"
                                 } flex items-center justify-center`}
                             onClick={handlePrevCategoriesPage}
                             disabled={categoriesPage === 1}
@@ -202,7 +202,7 @@ const category_product = () => {
                         {Array.from({ length: categoriesTotalPages }).map((_, index) => (
                             <button
                                 key={index}
-                                className={`h-14 w-14 hover:text-white bg-[#18568C] ${categoriesPage === index + 1 ? "text-white bg-red-600" : "bg-black-10"
+                                className={`h-14 w-14 hover:text-white bg-[#18568C] ${categoriesPage === index + 1 ? "text-white bg-[#18568C]" : "bg-black-10"
                                     } text-center hover:bg-red-10 text-white border`}
                                 onClick={() => setPage(index + 1)}
                                 disabled={categoriesPage === index + 1}
@@ -269,7 +269,7 @@ const category_product = () => {
                                         </p>
                                         <div className="productAddToCart flex gap-5 items-center">
                                             <div>
-                                                <Link className="border  px-4 py-4 flex justify-center items-center gap-4 hover:border-red-500 color-b bg-white p-2 md:p-3 text-center rounded-md duration-300 transform  shadow-sm hover:-translate-y-1.5 border-t border-slate-100 hover:bg-red-10 hover:text-red-500" href={`/product/${product?._id}`}>
+                                                <Link className="border  px-4 py-4 flex justify-center items-center gap-4 hover:border-[#18568C] color-b bg-white p-2 md:p-3 text-center rounded-md duration-300 transform  shadow-sm hover:-translate-y-1.5 border-t border-slate-100 hover:bg-red-10 hover:text-red-500" href={`/product/${product?._id}`}>
                                                     <FaCartPlus />
                                                     Product Detail
                                                 </Link>
@@ -292,7 +292,7 @@ const category_product = () => {
                         <button
                             title="Previous"
                             className={`h-14 w-14 text-center ${page === 1 ? "bg-gray-400 cursor-not-allowed" : "hover:bg-red-10"
-                                } text-white bg-black-10 rounded-l-md border ${page === 1 ? "bg-gray-400" : "bg-red-500"
+                                } text-white bg-black-10 rounded-l-md border ${page === 1 ? "bg-gray-400" : "bg-[#18568C]"
                                 } flex items-center justify-center`}
                             onClick={handlePrevPage}
                             disabled={page === 1}
@@ -302,7 +302,7 @@ const category_product = () => {
                         {Array.from({ length: totalPages }).map((_, index) => (
                             <button
                                 key={index}
-                                className={`h-14 w-14 hover:text-white bg-red-500 ${page === index + 1 ? "text-white bg-red-600" : "bg-black-10"
+                                className={`h-14 w-14 hover:text-white bg-[#18568C] ${page === index + 1 ? "text-white bg-[#18568C]" : "bg-black-10"
                                     } text-center hover:bg-red-10 text-white border`}
                                 onClick={() => setPage(index + 1)}
                                 disabled={page === index + 1}
@@ -315,7 +315,7 @@ const category_product = () => {
                             className={`h-14 w-14 text-center ${page === totalPages
                                 ? "bg-gray-400 cursor-not-allowed"
                                 : "hover:bg-red-10"
-                                } text-white bg-black-10 rounded-r-md border ${page === totalPages ? "bg-gray-400" : "bg-red-500"
+                                } text-white bg-black-10 rounded-r-md border ${page === totalPages ? "bg-gray-400" : "bg-[#18568C]"
                                 } flex items-center justify-center`}
                             onClick={handleNextPage}
                             disabled={page === totalPages}
