@@ -68,7 +68,7 @@ const Navbar = () => {
 
   return (
       <header className="sticky top-0 z-50 mx-auto" >
-        <nav className="bg-[#FAFAFA]  border-b py-2 flex items-center text-black md:container relative  md:px-4 px-2">
+        <nav className="shadow bg-[#fff]  border-b py-4 flex items-center text-black md:container relative  md:px-4 px-2">
           <div className="md:container  flex items-center mx-2 justify-between w-full md:mx-auto">
             <div>
               <Link className='text-2xl font-bold text-black' href="/">
@@ -159,7 +159,7 @@ const Navbar = () => {
               <div
                 className='search-bar hidden md:block '
               >
-                <li className="flex items-center  bg-[white] p-2 rounded-full gap-2">
+                <li className="flex items-center border bg-[fafafa] p-2 rounded-full gap-2">
                   <input type="text" className='w-full pl-2 text-black' placeholder='Search' />
                   <AiOutlineSearch className='text-black text-[1.5rem]' />
                 </li>
@@ -248,8 +248,7 @@ const Navbar = () => {
                   </div>
                   {megaMenuVisible.categorys && (
                     <div
-                      // className={`mega-menu border bg-white z-50 absolute w-[100%]  left-0 right-0  rounded p-4 transition-opacity opacity-100`}
-                      // data-aos="fade-up"
+                     
                       className={`mega-menu border bg-white z-50 absolute w-[100%] left-0 right-0 rounded p-4 transition-opacity opacity-100`}
                       data-aos="fade-up"
                       style={{

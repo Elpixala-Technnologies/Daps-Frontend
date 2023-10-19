@@ -48,7 +48,7 @@ const Hero = () => {
     return (
         <div>
             <Swiper
-                spaceBetween={30}
+                spaceBetween={20}
                 centeredSlides={true}
                 autoplay={{
                     delay: 6000,
@@ -66,7 +66,7 @@ const Hero = () => {
                                     <Image
                                         src={isMobile ? slide.mobileImage : slide.desktopImage}
                                         alt="Banner Image"
-                                        className="w-full "
+                                        className="w-[100%] "
                                         width={isMobile ? 768 : 1920}
                                         height={isMobile ? 768 : 500}
                                     />

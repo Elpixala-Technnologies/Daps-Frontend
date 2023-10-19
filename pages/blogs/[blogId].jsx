@@ -26,14 +26,14 @@ const BlogDetailPage = () => {
 
     return (
         <RootLayout>
-            <section className='mx-2 md:mx-0 md:container'>
+            <section className='container'>
                 <div className="mt-6 bg-gray-50">
                     <div className=" px-10 py-6 mx-auto">
                         {/*author*/}
                         <div className="max-w-6xl px-10 py-6 mx-auto bg-gray-50">
                             <a
                                 href="#_"
-                                className="block transition duration-200 ease-out transform hover:scale-110"
+                                className="block transition"
                             >
                                 <img
                                     className="object-cover w-full shadow-sm h-full"
@@ -43,7 +43,6 @@ const BlogDetailPage = () => {
                             </a>
                             {/*post categories*/}
                             <div className="flex items-center justify-start mt-4 mb-4">
-
                                 {blog?.tags.map((tag) => {
                                     return (
                                         <span key={tag} className="px-2 py-1 font-bold bg-red-400 text-white rounded-lg hover:bg-gray-500 mr-4"> #{tag} </span>
@@ -55,35 +54,12 @@ const BlogDetailPage = () => {
                                 {/*post heading*/}
                                 <a
                                     href="#"
-                                    className="sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl font-bold text-purple-500  hover:underline"
+                                    className="sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl font-bold text-[#18568C]  hover:underline"
                                 >
                                     {blog?.title}
                                 </a>
-                                {/*post views*/}
-                                {/* <div className="flex justify-start items-center mt-2">
-                                    <p className="text-sm text-green-500 font-bold bg-gray-100 rounded-full py-2 px-2 hover:text-red-500">
-                                        3000
-                                    </p>
-                                    <p className="text-sm text-gray-400 font-bold ml-5">Views</p>
-                                </div> */}
-                                {/*author avator*/}
-                                <div className="font-light text-gray-600">
-                                    <a href="#" className="flex items-center mt-6 mb-6">
-                                        <img
-                                            src="https://avatars.githubusercontent.com/u/71964085?v=4"
-                                            alt="avatar"
-                                            className="hidden object-cover w-14 h-14 mx-4 rounded-full sm:block"
-                                        />
-                                        <h1 className="font-bold text-gray-700 hover:underline">
-                                           {blog?.author}
-                                        </h1>
-                                    </a>
-                                </div>
                             </div>
-                            {/*end post header*/}
-                            {/*post content*/}
-                            <div className="max-w-4xl px-10  mx-auto text-2xl text-gray-700 mt-4 rounded bg-gray-100">
-                                {/*content body*/}
+                            <div className=" w-full  mx-auto text-2xl text-gray-700 mt-4 rounded bg-gray-100">
                                 <div>
                                     <p className="mt-2 p-8">
                                         {blog?.content}
@@ -91,7 +67,6 @@ const BlogDetailPage = () => {
                                 </div>
                             </div>
                         </div>
-                        {/*related posts*/}
                         <h2 className="text-2xl mt-4 text-gray-500 font-bold text-center">
                             Related Posts
                         </h2>
@@ -116,11 +91,10 @@ const BlogDetailPage = () => {
                                                         <span>{blogD?.tags[0]}</span>
                                                     </div>
                                                     <h2 className="text-base text-gray-500 font-bold sm:text-lg md:text-xl">
-                                                        <Link href="#_">
+                                                        <Link href={`/blogs/${blog?._id}`}>
                                                             {blogD?.title}
                                                         </Link>
                                                     </h2>
-                                                    {/* <p class="mt-2 text-sm text-gray-500">Learn how to authenticate users to your application using facebook.</p> */}
                                                 </div>
                                             </div>
                                         )

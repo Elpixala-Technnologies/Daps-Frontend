@@ -6,20 +6,24 @@ import ShopByCategories from '../ShopByCategories/ShopByCategories';
 import NewArrivals from '../NewArrivals/NewArrivals';
 import RecentBlogs from '../RecentBlogs/RecentBlogs';
 import NewOfferBanner from '../NewOfferBanner/NewOfferBanner';
+import AboutBanner from '../AboutBanner/AboutBanner'
 
 const Home = () => {
     return (
         <section >
             {/* ===== Hero =====  */}
-            <Hero />
             {/* ====== Best Sealer */}
             <section className='container'>
-                <BestSealer />
-                <TodayOffers />
-                <ShopByCategories />
-                <NewOfferBanner />
-                <NewArrivals />
-                <RecentBlogs />
+                <Hero />
+                <div className='px-4'>
+                    <BestSealer />
+                    <TodayOffers />
+                    <NewOfferBanner />
+                    <ShopByCategories />
+                    <AboutBanner/>
+                    <NewArrivals />
+                    <RecentBlogs />
+                </div>
 
             </section>
         </section>

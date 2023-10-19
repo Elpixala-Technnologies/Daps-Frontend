@@ -21,7 +21,7 @@ const BestSealer = () => {
     const filterProductData = categoryData && categoryData?.filter((category) => category?.status === 'best sell');
     
     return (
-        <section>
+        <section className="mt-8">
             <div className='title'>
                 <h1>Explore <span>Bestsellers</span></h1>
             </div>
@@ -71,21 +71,19 @@ const BestSealer = () => {
                         {filterProductData &&
                             filterProductData.map((product) => {
                                 return (
-                                    <SwiperSlide className="cursor-grab" key={product?._id}
+                                    <SwiperSlide  key={product?._id}
                                     >
-                                        <Link href={`/category/${product?.name}`} className="cardBody md:m-0  mx-auto  flex flex-col hover:border-[#18568C] p-2 md:p-3 rounded-md duration-300 transform  hover:-translate-y-1.5   hover:bg-red-10 ">
+                                        <Link href={`/category/${product?.name}`} className="cardBody md:m-0  mx-auto  flex flex-col  p-2 md:p-3 rounded-md duration-300 transform  hover:-translate-y-1.5    ">
                                             <div className="productImage ">
                                                 <Image
                                                     src={product?.image}
                                                     width={322}
                                                     height={320}
-                                                    className="w-[320px] h-[320px] rounded-[1rem] object-cover border-slate-100  shadow-sm "
+                                                    className="w-[320px] h-[320px] rounded-[1rem] object-cover   shadow-sm "
                                                 />
                                             </div>
-                                            <hr className="w-full bg-slate-400" />
-
-                                            <div className="productInfo mt-2 p-2">
-                                                <h2 className="productName font-bold text-left ">
+                                            <div className="productInfo p-2">
+                                                <h2 className="productName font-bold text-[16px]">
                                                     {product?.name}
                                                 </h2>
                                             </div>

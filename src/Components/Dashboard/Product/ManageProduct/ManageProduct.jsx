@@ -1,8 +1,7 @@
 import useProducts from "@/src/Hooks/useProducts";
 import Link from "next/link";
 import React, { useState } from 'react';
-import { FaRegEdit, FaRegTrashAlt,FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-
+import { FaRegEdit, FaRegTrashAlt, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 const ManageProduct = () => {
     const { handelProductDelete, productData } = useProducts();
@@ -14,9 +13,9 @@ const ManageProduct = () => {
     const endIndex = startIndex + itemsPerPage;
 
     // Filter products to display only the ones for the current page
-    const productsToDisplay = productData.slice(startIndex, endIndex);
+    const productsToDisplay = productData?.slice(startIndex, endIndex);
 
-    const totalPages = Math.ceil(productData.length / itemsPerPage);
+    const totalPages = Math.ceil(productData?.length / itemsPerPage);
 
     const handlePrevPage = () => {
         if (page > 1) {
@@ -30,13 +29,14 @@ const ManageProduct = () => {
         }
     };
 
+
     return (
         <section>
             <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
                 {productsToDisplay &&
                     productsToDisplay?.length &&
                     productsToDisplay?.map((porductData) => {
-                        const { _id, name, price,  discount ,images} = porductData;
+                        const { _id, name, price, discount, images } = porductData;
                         return (
                             <div className="relative flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md"
                                 key={_id}
@@ -45,7 +45,6 @@ const ManageProduct = () => {
                                     className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl"
                                     href="#"
                                 >
-
                                     <img
                                         width={300}
                                         height={300}
@@ -65,12 +64,20 @@ const ManageProduct = () => {
                                         </h5>
                                     </a>
                                     <div className="mt-2 mb-5 flex items-center justify-between">
-                                        <p>
-                                            <span className="text-3xl font-bold text-slate-900">{price}</span>
-                                            <span className="text-sm text-slate-900 line-through">
-                                                {Math.round(price + (price * discount) / 100)}
+                                        <div className='flex gap-4 my-2'>
+                                            <h1 className="font-bold text-[1.8rem] text-slate-900">
+                                                {porductData?.discount
+                                                    ? `₹ ${Math?.floor(porductData?.price - (porductData?.price * porductData?.discount) / 100)}`
+                                                    : `₹ ${Math?.floor(porductData?.price)}`
+                                                }
+                                            </h1>
+                                            <span className="text-sm text-slate-900 line-through mt-1">
+                                                ₹ {Math.floor(porductData?.price)}
                                             </span>
-                                        </p>
+                                            <span className='text-[#18568C]'>
+                                                {Math.floor(porductData?.discount)} % off
+                                            </span>
+                                        </div>
                                     </div>
 
                                     <div className='flex gap-4  items-center'>
@@ -102,7 +109,7 @@ const ManageProduct = () => {
                 >
                     <FaArrowLeft className="text-white" />
                 </button>
-                {Array.from({ length: totalPages }).map((_, index) => (
+                {Array?.from({ length: totalPages })?.map((_, index) => (
                     <button
                         key={index}
                         className={`h-14 w-14 hover:text-white bg-[#18568C] ${page === index + 1 ? "text-white bg-[#18568C]" : "bg-black-10"

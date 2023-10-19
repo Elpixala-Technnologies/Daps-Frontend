@@ -52,97 +52,120 @@ const TodayOffers = () => {
         showConfirmButton: false,
         timer: 1500,
       });
-      router.push('/cart'); 
+      // router.push('/cart');
     }
   };
 
 
   return (
-    <section>
+    <section className='mt-8'>
       <div className='title'>
         <h1>Today’s <span>Offers</span></h1>
       </div>
-
-      <div className='offer-timer'>
-        <Image
-          src={TodayOffersBannerOne}
-          alt='offer-timer'
-          width={1000}
-          height={280}
-          className='w-full h-full object-cover rounded'
-        />
-      </div>
-
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 my-4">
         {filterdPrductData &&
           filterdPrductData.slice(0, 8).map((product) => {
             return (
-              <div
-                key={product._id}
-                className="group flex flex-col overflow-hidden border border-gray-100 bg-[#EFF4F7] shadow-md rounded"
-              >
-                <div className="relative flex h-[18rem] p-4 overflow-hidden">
-                  {
-                    product?.images?.map((image, index) => {
-                      return (
-                        <Image
-                          key={index}
-                          src={image}
-                          alt={image?.name}
-                          width={500}
-                          height={500}
-                          className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition duration-500 ease-in-out"
-                        />
-                      )
-                    })
-                  }
-                  <div className="absolute bottom-0 mb-4 flex w-full justify-center space-x-4">
-                    <div className="h-3 w-3 rounded-full border-2 border-white bg-white" />
-                    <div className="h-3 w-3 rounded-full border-2 border-white bg-transparent" />
-                    <div className="h-3 w-3 rounded-full border-2 border-white bg-transparent" />
-                  </div>
-                  <div className="absolute -right-16 bottom-0 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
-                    <button className="flex h-10 w-10 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                <div className="mt-4 px-5 pb-5">
-                  <Link href={`/products/${product?._id}`}>
-                    <h5 className="text-xl font-semibold tracking-tight text-slate-900">
-                      {product?.name.slice(0, 26) + ".."}
-                    </h5>
-                  </Link>
-                  <div className='flex gap-4 my-2'>
-                    <h1 className="font-bold text-slate-900">
-                      {product?.discount
-                        ? `₹ ${Math.floor(product?.price - (product?.price * product?.discount) / 100)}`
-                        : `₹ ${Math.floor(product?.price)}`
-                      }
-                    </h1>
-                    <span className="text-sm text-slate-900 line-through mt-1">
-                      ₹ {Math.floor(product?.price)}
-                    </span>
-                    <span className='text-[#18568C]'>
-                      {Math.floor(product?.discount)} % off
-                    </span>
-                  </div>
+              // <div
+              //   key={product._id}
+              //   className="group flex flex-col overflow-hidden border border-gray-100 bg-[#EFF4F7] shadow-md rounded"
+              // >
+              //   <div className="relative flex h-[18rem] p-4 overflow-hidden">
+              //     {
+              //       product?.images?.map((image, index) => {
+              //         return (
+              //           <Image
+              //             key={index}
+              //             src={image}
+              //             alt={image?.name}
+              //             width={500}
+              //             height={500}
+              //             className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition duration-500 ease-in-out"
+              //           />
+              //         )
+              //       })
+              //     }
+              //     <div className="absolute bottom-0 mb-4 flex w-full justify-center space-x-4">
+              //       <div className="h-3 w-3 rounded-full border-2 border-white bg-white" />
+              //       <div className="h-3 w-3 rounded-full border-2 border-white bg-transparent" />
+              //       <div className="h-3 w-3 rounded-full border-2 border-white bg-transparent" />
+              //     </div>
+              // <div className="absolute -right-16 bottom-0 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
+              //   <button className="flex h-10 w-10 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
+              //     <svg
+              //       xmlns="http://www.w3.org/2000/svg"
+              //       className="h-5 w-5"
+              //       viewBox="0 0 20 20"
+              //       fill="currentColor"
+              //     >
+              //       <path
+              //         fillRule="evenodd"
+              //         d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+              //         clipRule="evenodd"
+              //       />
+              //     </svg>
+              //   </button>
+              // </div>
+              //   </div>
+              //   <div className="mt-4 px-5 pb-5">
+              //     <Link href={`/products/${product?._id}`}>
+              //       <h5 className="text-xl font-semibold tracking-tight text-slate-900">
+              //         {product?.name.slice(0, 26) + ".."}
+              //       </h5>
+              //     </Link>
+              //     <div className='flex gap-4 my-2'>
+              //       <h1 className="font-bold text-slate-900">
+              // {product?.discount
+              //   ? `₹ ${Math.floor(product?.price - (product?.price * product?.discount) / 100)}`
+              //   : `₹ ${Math.floor(product?.price)}`
+              // }
+              //       </h1>
+              // <span className="text-sm text-slate-900 line-through mt-1">
+              //   ₹ {Math.floor(product?.price)}
+              // </span>
+              // <span className='text-[#18568C]'>
+              //   {Math.floor(product?.discount)} % off
+              // </span>
+              //     </div>
 
-                  <button 
-                  onClick={() => addToCart(product._id, product?.price)}
-                  className="flex items-center justify-center common-btn px-2 py-1 text-sm text-white transition hover:bg-gray-700">
+              //     <button 
+              //     onClick={() => addToCart(product._id, product?.price)}
+              //     className="flex items-center justify-center common-btn px-2 py-1 text-sm text-white transition hover:bg-gray-700">
+              // <svg
+              //   xmlns="http://www.w3.org/2000/svg"
+              //   className="mr-2 h-5 w-5"
+              //   viewBox="0 0 20 20"
+              //   fill="currentColor"
+              // >
+              //   <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+              // </svg>
+              //       Add to cart
+              //     </button>
+              //   </div>
+              // </div>
+
+
+              <div className="group relative overflow-hidden">
+                <div className="aspect-h-1 border aspect-w-1 w-full overflow-hidden rounded-t-md bg-transparent lg:aspect-none group-hover:opacity-75 lg:h-80">
+                  <img
+                    src={product?.images[0]}
+                    alt={product?.name}
+                    className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                  />
+                </div>
+                <div className="aspect-h-1 border aspect-w-1 w-full overflow-hidden rounded-t-md bg-transparent lg:aspect-none group-hover:opacity-75 lg:h-80 absolute top-0 left-0 opacity-0 transition duration-300"
+                >
+                  <img
+                    src={product?.images[1] || product?.images[0]}
+                    alt={product?.name}
+                    className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                  />
+                </div>
+
+                <div className="absolute -right-16 bottom-20 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
+                  <button
+                    onClick={() => addToCart(product._id, product?.price)}
+                    className="flex h-10 w-10 items-center justify-center bg-[#fff]text-white transition hover:bg-gray-700">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="mr-2 h-5 w-5"
@@ -151,8 +174,38 @@ const TodayOffers = () => {
                     >
                       <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
                     </svg>
-                    Add to cart
                   </button>
+                </div>
+                <div className='absolute left-[5%] top-[5%]'>
+                  <p className='bg-[#FCC50B] px-4 rounded-md shadow'>
+                    Best Offer
+                  </p>
+                </div>
+                <div className="flex p-2 flex-col border rounded-b-md">
+                  <div>
+                    <h3 className="text-[16px] mt-2 font-semibold text-gray-700">
+                      <Link href={`/products/${product?._id}`}>
+                        <span aria-hidden="true" className="absolute inset-0" />
+                        {product?.name}
+                      </Link>
+                    </h3>
+                  </div>
+                  <div >
+                    <p className="text-[16px] text-gray-900 mt-1">
+                      <span className='font-semibold'>
+                        {product?.discount
+                          ? `₹ ${Math.floor(product?.price - (product?.price * product?.discount) / 100)}`
+                          : `₹ ${Math.floor(product?.price)}`
+                        }
+                      </span>
+                      <span className="text-sm text-gray-300 line-through mx-2">
+                        ₹ {Math.floor(product?.price)}
+                      </span>
+                      <span className='text-[#18568C] text-sm'>
+                        {Math.floor(product?.discount)} % off
+                      </span>
+                    </p>
+                  </div>
                 </div>
               </div>
             );

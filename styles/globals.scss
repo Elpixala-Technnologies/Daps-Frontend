@@ -1,5 +1,6 @@
 //font**
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,700;0,6..12,800;0,6..12,900;0,6..12,1000;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700;1,6..12,900;1,6..12,1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,700');
+
 /**
   * Tailwind CSS
 */
@@ -29,9 +30,14 @@ html {
 }
 
 body {
-    font-family: 'Nunito Sans', sans-serif;
-    // background-color: #f9f9f9dc;
-    background-color: #FFFFFF;
+   font-family: 'Rubik', sans-serif;
+
+	font-weight: normal;
+
+	font-style: normal;
+
+    // background-color: #FFFFFF;
+    // background: linear-gradient(176.98deg, #fff3f8 -4.94%, #e1f9f0 42.2%, rgba(244, 213, 255, 0.96) 110.23%);
 }
 
 a {
@@ -73,10 +79,8 @@ img {
 @layer base {
     .container {
         @apply mx-auto;
-        max-width: 1080px;
-        padding-right: 1rem;
-        padding-left: 1rem;
-
+        max-width: 1420px;
+       
         @screen sm {
             max-width: 720px;
         }
@@ -130,11 +134,11 @@ img {
     }
 }
 
-::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+// ::-webkit-scrollbar {
+//     width: 10px;
+//     height: 10px;
   
-}
+// }
 
 
 .swiper {
@@ -192,11 +196,11 @@ img {
 
 
 .bottom-banner-section{
-    background-image: url("../src/Assets/OfferBanner/BannerTwo.jpg");
+    background-image: url("../src/Assets/OfferBanner/BannerOne.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     padding: 100px 0;
     background-blend-mode: color;
-    background-color: #000000a6;
+    // background-color: #000000a1;
 }

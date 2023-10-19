@@ -6,7 +6,7 @@ const RootLayout = ({ children }) => {
     return (
         <main className='w-full '>
             <Navbar />
-            <section className='py-4'>
+            <section className='pb-4'>
                 {children}
             </section>
             <Footer />

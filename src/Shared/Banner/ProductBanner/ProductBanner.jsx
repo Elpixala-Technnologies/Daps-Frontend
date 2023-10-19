@@ -55,7 +55,15 @@ const ProductSlider = () => {
 
     return (
         <div>
-            <Swiper
+              <Image
+                                        src={isMobile ? OfferBannerTwo : OfferBannerTwo}
+                                        alt="Banner Image"
+                                        className="w-full h-auto"
+                                        width={isMobile ? 768 : 1920}
+                                        height={isMobile ? 768 : 500}
+                                    />
+
+            {/* <Swiper
                 spaceBetween={30}
                 centeredSlides={true}
                 autoplay={{
@@ -83,7 +91,7 @@ const ProductSlider = () => {
                             </SwiperSlide>
                         );
                     })}
-            </Swiper>
+            </Swiper> */}
         </div>
     );
 };

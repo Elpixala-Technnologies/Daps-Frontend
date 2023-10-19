@@ -13,14 +13,14 @@ const NewOfferBanner = () => {
     }, []);
 
     return (
-        <section className="w-[100%] bottom-banner-section" data-aos="fade-up"> {/* Add data-aos attribute */}
+        <section className="w-[100%] bottom-banner-section mt-8" data-aos="fade-up"> {/* Add data-aos attribute */}
             <div className="container">
                 <div className="row">
                     <div className="col-lg-6 col-md-6 col-sm-12 col-12">
                         <div className="flex flex-col items-center justify-center gap-4 offer-banner-content">
-                            <h2 className='text-[#ffff] text-[1rem]'>Explore Our Offer</h2>
-                            <p className='text-[#ffff] text-center font-bold md:text-[2rem]'>Up to <span className='text-[#f0ab4bf2]'>50% Off </span></p>
-                            <Link href="/products" className='common-btn'>Shop Now</Link>
+                            {/* <h2 className='text-[#ffff] text-[1rem]'>Explore Our Offer</h2>
+                            <p className='text-[#ffff] text-center font-bold md:text-[2rem]'>Up to <span className='text-[#f0ab4bf2]'>50% Off </span></p> */}
+                            <Link href="/products" className='common-btn mt-[8%]'>Shop Now</Link>
                         </div>
                     </div>
                 </div>
