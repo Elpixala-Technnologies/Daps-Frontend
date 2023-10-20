@@ -8,11 +8,12 @@ import { useContext, useState, useEffect, } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import the AOS CSS
 import { AiOutlineClose, AiOutlineMenu, AiOutlineSearch } from 'react-icons/ai';
-import { FaAlignLeft, FaArrowDown, FaChevronDown, FaChevronUp, FaMicrosoft, FaPowerOff, FaUserAlt, FaAngleDown } from 'react-icons/fa';
-import { MdOutlineShoppingBag } from 'react-icons/md';
+import { FaChevronDown, FaChevronUp, FaMicrosoft, FaPowerOff, FaUserAlt, FaAngleDown } from 'react-icons/fa';
 import { CiUser } from 'react-icons/ci'
+import {GiHamburgerMenu} from 'react-icons/gi'
 import { CgShoppingBag } from 'react-icons/cg'
 import useProducts from '@/src/Hooks/useProducts';
+
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -22,6 +23,7 @@ const Navbar = () => {
   const [isAdmin] = useAdmin();
   const { categoryData } = useProducts()
   const [profileToggle, setProfileToggle] = useState(false)
+  const [selectedMenu, setSelectedMenu] = useState("");
 
   useEffect(() => {
     AOS.init({
@@ -67,37 +69,21 @@ const Navbar = () => {
 
 
   return (
-      <header className="sticky top-0 z-50 mx-auto" >
-        <nav className="shadow bg-[#fff]  border-b py-4 flex items-center text-black md:container relative  md:px-4 px-2">
-          <div className="md:container  flex items-center mx-2 justify-between w-full md:mx-auto">
-            <div>
-              <Link className='text-2xl font-bold text-black' href="/">
-                <Image src={MainLogo} alt="logo" width={130} height={80}
-                  className='cursor-pointer hover:scale-105 duration-300 transform'
-                />
-              </Link>
-            </div>
-
+      <header className='shadow bg-[#fff]'>
+        <nav className="  border-b py-4 flex items-center text-black container relative  md:px-4 px-2">
+          <div className="  flex items-center mx-2 justify-between w-full md:mx-auto">
             <div className='manu-items md:flex gap-4 justify-center items-center hidden '>
               <ul className='flex gap-4 justify-center items-center '>
-                <li>
-                  <Link
-                    href="/"
-                    className="common-hover">
-                    Home
-                  </Link>
-                </li>
-
                 <li>
                   <div
                     onMouseLeave={() => handleMouseLeave('categorys')}
                     onMouseEnter={() => handleMouseEnter('categorys')}
                     className='cursor-pointer'
                   >
-                    <span className="relative cursor-pointer flex gap-2 items-center">Categories <FaAngleDown /> </span>
+                    <span className="relative cursor-pointer flex gap-3 text-[1.2rem] font-semibold items-center"><GiHamburgerMenu className='text-[1.5rem] text-[#18568C]'/> Categories  </span>
                     {megaMenuVisible.categorys && (
                       <div
-                        className={`mega-menu border bg-white z-50 absolute w-[80%] top-[80%] left-[10%] right-0  rounded p-4 transition-opacity opacity-100`}
+                        className={`mega-menu border bg-white z-50 absolute  top-[90%]  left-0   rounded p-4 transition-opacity opacity-100`}
                         data-aos="fade-up"
                       >
                         <ul>
@@ -108,7 +94,7 @@ const Navbar = () => {
                             </h1>
                           </li>
                           <hr className="border border-gray-300 my-2" />
-                          <div className='grid md:grid-cols-4 gap-4 p-4'>
+                          <div className='flex flex-col gap-4 p-4'>
                             {
                               categoryData && categoryData?.map((item, index) => {
                                 return (
@@ -137,17 +123,37 @@ const Navbar = () => {
                     )}
                   </div>
                 </li>
+
+                <li>
+                  <Link
+                    href="/"
+                    className={`common-hover ${
+                      selectedMenu === "Home" ? "selected-manu" : ""
+                    }`}
+                    onClick={() => setSelectedMenu("Home")}
+                    >
+                    Home
+                  </Link>
+                </li>
                 <li>
                   <Link
                     href="/products"
-                    className="common-hover">
+                    className={`common-hover ${
+                      selectedMenu === "Products" ? "selected-manu" : ""
+                    }`}
+                    onClick={() => setSelectedMenu("Products")}
+                    >
                     Products
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="/blogs"
-                    className="common-hover">
+                    className={`common-hover ${
+                      selectedMenu === "Blogs" ? "selected-manu" : ""
+                    }`}
+                    onClick={() => setSelectedMenu("Blogs")}
+                    >
                     Blogs
                   </Link>
                 </li>
@@ -156,69 +162,9 @@ const Navbar = () => {
             </div>
             <ul style={{ display: "flex", gap: '0.8rem' }}
               className='flex gap-4 justify-center items-center'>
-              <div
-                className='search-bar hidden md:block '
-              >
-                <li className="flex items-center border bg-[fafafa] p-2 rounded-full gap-2">
-                  <input type="text" className='w-full pl-2 text-black' placeholder='Search' />
-                  <AiOutlineSearch className='text-black text-[1.5rem]' />
-                </li>
-              </div>
-              <div className='cursor-pointer'
-                onClick={() => handelProfileToggle()}
-
-              >
-                <CiUser className='text-2xl text-[#335187]' />
-                <div>
-                  {
-                    profileToggle && (
-                      <div
-                        className="absolute right-0 w-60 px-5 py-3 dark:bg-gray-800 bg-white rounded-lg shadow border dark:border-transparent mt-5"
-                      >
-                        <ul className="space-y-3 dark:text-white">
-
-                          {
-                            !userEmail ? (
-                              <>
-                                <Link href="/auth/login" className="flex items-center  gap-2 border-common-btn common-hover">
-                                  <FaUserAlt /> SignIn
-                                </Link>
-                              </>
-                            ) : (
-                              <div className="flex flex-col gap-2">
-                                {
-                                  isAdmin && <Link href="/dashboard" className="flex items-center  gap-2 border-common-btn common-hover">
-                                    <FaMicrosoft /> Dashboard
-                                  </Link>
-                                }
-                                {
-                                  userEmail && !isAdmin && < Link href="/userdashboard" className="flex items-center  gap-2 border-common-btn common-hover">
-                                    <FaUserAlt /> Profile
-                                  </Link>
-                                }
-                                <button className="flex items-center gap-2 my-2 border-common-btn common-hover"
-                                  onClick={() => handleLogout()}
-                                >
-                                  <FaPowerOff /> Logout
-                                </button>
-                              </div>
-                            )
-                          }
-                        </ul>
-                      </div>
-
-                    )
-                  }
-                </div>
-              </div>
-
-
-              <Link href="/cart">
-                <CgShoppingBag className='text-2xl text-[#335187]' />
-              </Link>
               <div className="flex  gap-4 md:hidden">
                 <button className='block md:hidden' onClick={() => setOpen(!open)}>
-                  <AiOutlineMenu className='text-2xl text-[#335187]' />
+                  <AiOutlineMenu className='text-[1.8rem] text-[#335187]' />
                 </button>
               </div>
             </ul>

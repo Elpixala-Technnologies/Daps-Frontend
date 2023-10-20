@@ -86,13 +86,11 @@ const NewArrivals = () => {
 
 
   return (
-    <section className="mt-8 mx-2" >
-      <div className="title my-6 flex justify-between items-center">
-        <div className='title'>
+    <section className=" container" >
+      <div className='mt-[40px]'>
+        <div className='title mb-4'>
           <h1>Latest <span> Products </span></h1>
         </div>
-      </div>
-
       <div>
         <Swiper
           ref={sliderRef}
@@ -137,14 +135,14 @@ const NewArrivals = () => {
                   <SwiperSlide className="cursor-grab" key={product?._id}
                   >
                     <div className="group relative overflow-hidden">
-                      <div className="aspect-h-1 border aspect-w-1 w-full overflow-hidden rounded-t-md bg-transparent lg:aspect-none group-hover:opacity-75 lg:h-80">
+                      <div className="aspect-h-1 border aspect-w-1 w-full overflow-hidden rounded-t-md bg-transparent lg:aspect-none group-hover:opacity-75 h-80">
                         <img
                           src={product?.images[0]}
                           alt={product?.name}
                           className="h-full w-full object-cover object-center lg:h-full lg:w-full"
                         />
                       </div>
-                      <div className="aspect-h-1 border aspect-w-1 w-full overflow-hidden rounded-t-md bg-transparent lg:aspect-none group-hover:opacity-75 lg:h-80 absolute top-0 left-0 opacity-0 transition duration-300"
+                      <div className="aspect-h-1 border aspect-w-1 w-full overflow-hidden rounded-t-md bg-transparent lg:aspect-none group-hover:opacity-75 h-80 absolute top-0 left-0 opacity-0 transition duration-300"
                       >
                         <img
                           src={product?.images[1] || product?.images[0]}
@@ -204,6 +202,7 @@ const NewArrivals = () => {
               })}
           </div>
         </Swiper>
+      </div>
       </div>
     </section>
   );

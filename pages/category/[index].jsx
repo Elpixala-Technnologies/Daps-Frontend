@@ -118,9 +118,6 @@ const category_product = () => {
         });
     }, []);
 
-
-
-
     return (
         <RootLayout>
             <div className="container">
@@ -133,21 +130,21 @@ const category_product = () => {
                     height={isMobile ? 768 : 500}
                 />
             </div>
-            <section className="container px-4" >
-                <h3 className='font-semibold md:text-3xl text-lg'>Category {categoryName}</h3>
+            <section className="container px-4 " >
+                <h3 className='font-semibold md:text-3xl text-lg my-[40px]'>Category {categoryName}</h3>
                 <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
                     {
                         categoriesProductsToDisplay && categoriesProductsToDisplay?.map(product => (
                             <Link href={`/products/${product?._id}`}>
                                  <div className="group relative overflow-hidden">
-                                    <div className="aspect-h-1 border aspect-w-1 w-full overflow-hidden rounded-t-md bg-transparent lg:aspect-none group-hover:opacity-75 lg:h-80">
+                                    <div className="aspect-h-1 border aspect-w-1 w-full overflow-hidden rounded-t-md bg-transparent lg:aspect-none group-hover:opacity-75 h-80">
                                         <img
                                             src={product?.images[0]}
                                             alt={product?.name}
                                             className="h-full w-full object-cover object-center lg:h-full lg:w-full"
                                         />
                                     </div>
-                                    <div className="aspect-h-1 border aspect-w-1 w-full overflow-hidden rounded-t-md bg-transparent lg:aspect-none group-hover:opacity-75 lg:h-80 absolute top-0 left-0 opacity-0 transition duration-300"
+                                    <div className="aspect-h-1 border aspect-w-1 w-full overflow-hidden rounded-t-md bg-transparent lg:aspect-none group-hover:opacity-75 h-80 absolute top-0 left-0 opacity-0 transition duration-300"
                                     >
                                         <img
                                             src={product?.images[1] || product?.images[0]}
@@ -254,14 +251,14 @@ const category_product = () => {
                                
                             >
                                 <div className="group relative overflow-hidden">
-                                    <div className="aspect-h-1 border aspect-w-1 w-full overflow-hidden rounded-t-md bg-transparent lg:aspect-none group-hover:opacity-75 lg:h-80">
+                                    <div className="aspect-h-1 border aspect-w-1 w-full overflow-hidden rounded-t-md bg-transparent lg:aspect-none group-hover:opacity-75 h-80">
                                         <img
                                             src={product?.images[0]}
                                             alt={product?.name}
                                             className="h-full w-full object-cover object-center lg:h-full lg:w-full"
                                         />
                                     </div>
-                                    <div className="aspect-h-1 border aspect-w-1 w-full overflow-hidden rounded-t-md bg-transparent lg:aspect-none group-hover:opacity-75 lg:h-80 absolute top-0 left-0 opacity-0 transition duration-300"
+                                    <div className="aspect-h-1 border aspect-w-1 w-full overflow-hidden rounded-t-md bg-transparent lg:aspect-none group-hover:opacity-75 h-80 absolute top-0 left-0 opacity-0 transition duration-300"
                                     >
                                         <img
                                             src={product?.images[1] || product?.images[0]}

@@ -6,7 +6,7 @@ const RecentBlogs = () => {
   const { blogData } = useBlogs();
 
   return (
-    <section>
+    <section className='container'>
 
       <section className="py-6 sm:py-8 lg:py-12">
         <div className=" max-w-screen-xl px-4 ">
@@ -60,7 +60,7 @@ const RecentBlogs = () => {
                         })}
                       </span>
                       <div>
-                        <Link className="common-btn-outline w-full text-left flex items-center gap-2 "
+                        <Link className="text-[#18568C]  text-center flex items-center gap-2 w-full text-left flex items-center gap-2 "
                           href={`/blogs/${blog?._id}`}
                         >
                           Read More <FaArrowRight />

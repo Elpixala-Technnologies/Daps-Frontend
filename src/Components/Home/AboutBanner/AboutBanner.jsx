@@ -4,10 +4,10 @@ import React from 'react';
 
 const AboutBanner = () => {
     return (
-        <section className='my-6 md:my-10'>
-            <div className="hero  bg-base-200 py-6">
+        <section className='my-6  bg-[#F6F6F6]'>
+            <div className="hero container md:py-[8rem] py-[2rem]">
                 <div className="hero-content flex gap-10 flex-col md:flex-row">
-                    <div className="md:w-2/4 relative border">
+                    <div className="md:w-2/4 relative ">
                         <Image src={PersonImage} 
                         width={100}
                         height={100}

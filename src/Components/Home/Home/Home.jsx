@@ -7,20 +7,24 @@ import NewArrivals from '../NewArrivals/NewArrivals';
 import RecentBlogs from '../RecentBlogs/RecentBlogs';
 import NewOfferBanner from '../NewOfferBanner/NewOfferBanner';
 import AboutBanner from '../AboutBanner/AboutBanner'
+import HomeOffers from '../HomeOffers/HomeOffers';
+import OurProducts from "../OurProducts/OurProducts"
 
 const Home = () => {
     return (
         <section >
             {/* ===== Hero =====  */}
+            <Hero />
             {/* ====== Best Sealer */}
-            <section className='container'>
-                <Hero />
-                <div className='px-4'>
+            <section>
+                <div>
+                    <HomeOffers/>
                     <BestSealer />
-                    <TodayOffers />
+                    <OurProducts/>
+                    {/* <TodayOffers /> */}
                     <NewOfferBanner />
                     <ShopByCategories />
-                    <AboutBanner/>
+                    <AboutBanner />
                     <NewArrivals />
                     <RecentBlogs />
                 </div>
