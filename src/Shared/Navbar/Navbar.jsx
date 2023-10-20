@@ -80,10 +80,10 @@ const Navbar = () => {
                     onMouseEnter={() => handleMouseEnter('categorys')}
                     className='cursor-pointer'
                   >
-                    <span className="relative cursor-pointer flex gap-3 text-[1.2rem] font-semibold items-center"><GiHamburgerMenu className='text-[1.5rem] text-[#18568C]'/> Categories  </span>
+                    <span className="relative cursor-pointer flex gap-3 text-[1.1rem] font-semibold items-center"><GiHamburgerMenu className='text-[1.5rem] text-[#18568C]'/>Shop By Categories <FaAngleDown className='text-[1.5rem] text-[#18568C] border-r-2'/> </span>
                     {megaMenuVisible.categorys && (
                       <div
-                        className={`mega-menu border bg-white z-50 absolute  top-[90%]  left-0   rounded p-4 transition-opacity opacity-100`}
+                        className={`mega-menu border bg-white z-50 absolute w-[80%]  top-[90%]  left-0   rounded p-4 transition-opacity opacity-100`}
                         data-aos="fade-up"
                       >
                         <ul>
@@ -94,7 +94,7 @@ const Navbar = () => {
                             </h1>
                           </li>
                           <hr className="border border-gray-300 my-2" />
-                          <div className='flex flex-col gap-4 p-4'>
+                          <div className='grid grid-cols-3 gap-4 p-4'>
                             {
                               categoryData && categoryData?.map((item, index) => {
                                 return (
@@ -109,7 +109,7 @@ const Navbar = () => {
                                         width={50}
                                         height={50}
                                       />
-                                      <h1 className="w-[70%] nav-category-title">
+                                      <h1 className="w-[75%] nav-category-title">
                                         {item?.name}
                                       </h1>
                                     </Link>
@@ -127,7 +127,7 @@ const Navbar = () => {
                 <li>
                   <Link
                     href="/"
-                    className={`common-hover ${
+                    className={`common-hover text-[#29679e]:hover font-semibold ${
                       selectedMenu === "Home" ? "selected-manu" : ""
                     }`}
                     onClick={() => setSelectedMenu("Home")}
@@ -138,7 +138,7 @@ const Navbar = () => {
                 <li>
                   <Link
                     href="/products"
-                    className={`common-hover ${
+                    className={`common-hover font-semibold ${
                       selectedMenu === "Products" ? "selected-manu" : ""
                     }`}
                     onClick={() => setSelectedMenu("Products")}
@@ -149,12 +149,23 @@ const Navbar = () => {
                 <li>
                   <Link
                     href="/blogs"
-                    className={`common-hover ${
+                    className={`common-hover font-semibold ${
                       selectedMenu === "Blogs" ? "selected-manu" : ""
                     }`}
                     onClick={() => setSelectedMenu("Blogs")}
                     >
                     Blogs
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/blogs"
+                    className={`common-hover font-semibold ${
+                      selectedMenu === "Blogs" ? "selected-manu" : ""
+                    }`}
+                    onClick={() => setSelectedMenu("Blogs")}
+                    >
+                   Hot Deals
                   </Link>
                 </li>
 
