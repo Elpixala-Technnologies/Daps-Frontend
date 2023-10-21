@@ -113,7 +113,7 @@ const DashboardPage = () => {
                                                             </div>
                                                         </td>
                                                         <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                                                            {product?.colors && <img src={product?.images[0]} alt="product" className="w-10 h-10" />}
+                                                            {product?.images && <img src={product?.images[0]} alt="product" className="w-10 h-10" />}
                                                         </td>
                                                         <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
                                                             {product?.name}

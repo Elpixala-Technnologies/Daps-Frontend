@@ -207,7 +207,7 @@ const LoginPage = () => {
               </form>
               <div className="social-login">
                 <div
-                  className="flex items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600 cursor-pointer"
+                  className="flex items-center  mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600 cursor-pointer"
                   onClick={() => handleGoogleSingnIn()}
                 >
                   <div className="px-4 py-2">
@@ -230,7 +230,7 @@ const LoginPage = () => {
                       />
                     </svg>
                   </div>
-                  <span className="w-5/6 px-4 py-3 font-bold text-center">
+                  <span className="w-5/6 px-2 text-[1.5rem] py-3 font-bold ">
                     Sign in with Google
                   </span>
                 </div>

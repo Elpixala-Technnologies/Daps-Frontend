@@ -18,13 +18,13 @@ const HomeOffers = () => {
                         alt={"HomeOfferBannerOne"}
                         width={500}
                         height={530}
-                        className="h-full w-full rounded object-cover transition duration-200 ease-out transform hover:scale-105"
+                        className="rounded  w-full h-full object-cover transition duration-200 ease-out transform hover:scale-105"
                     />
 
-                    <div className='absolute top-[30%] bottom-0 left-[15%] right-0'>
+                    <div className='absolute top-[20%] bottom-0 left-[15%] right-0'>
                         <div>
-                            <p className='font-semibold'>TOOLS & ACCESSORIES</p>
-                            <h1 className='font-bold text-[2rem]'>
+                            <p className='font-semibold text-black'>TOOLS & ACCESSORIES</p>
+                            <h1 className='font-bold text-[2rem] text-black'>
                                 SAVE TIME <br /> AND MONEY
                             </h1>
                             <h4 className='font-semibold text-[#009EE2] text-[1.2rem] mb-4'>
@@ -37,7 +37,7 @@ const HomeOffers = () => {
                         </div>
                     </div>
                 </div>
-                <div className='banner-content  text-[#000] flex flex-col gap-4'>
+                <div className='banner-content  text-[#000] flex flex-col gap-[2rem]'>
                     <div className='banner-content relative'>
                         <Image
                             src={HomeOfferBannerTwo}
@@ -47,7 +47,7 @@ const HomeOffers = () => {
                             className="h-full w-full transition duration-200 ease-out transform hover:scale-105"
                         />
 
-                        <div className='absolute top-[30%] bottom-0 left-[50%] right-0'>
+                        <div className='absolute top-[15%] bottom-0 left-[10%] right-0'>
                             <div>
                                 <p className='font-semibold'>NEW ARRIVAL</p>
                                 <h1 className='font-bold text-[1.5rem] mt-2'>
@@ -69,10 +69,10 @@ const HomeOffers = () => {
                             className="h-full w-full transition duration-200 ease-out transform hover:scale-105"
                         />
 
-                        <div className='absolute top-[30%] bottom-0 left-[15%] right-0'>
+                        <div className='absolute top-[15%] bottom-0 left-[55%] right-0'>
                             <div>
-                                <p className='font-semibold'>BEST PRICE</p>
-                                <h1 className='font-bold text-[1.5rem] mt-2'>
+                                <p className='font-semibold text-black'>BEST PRICE</p>
+                                <h1 className='font-bold text-[1.5rem] text-black mt-2'>
                                     FLEX VOLT
                                     <br />60V BATTERY
                                 </h1>
@@ -82,38 +82,16 @@ const HomeOffers = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='banner-content relative'>
-                        <Image
-                            src={HomeOfferBannerTwo}
-                            alt={"HomeOfferBannerOne"}
-                            width={300}
-                            height={300}
-                            className="h-full w-full transition duration-200 ease-out transform hover:scale-105"
-                        />
-
-                        <div className='absolute top-[30%] bottom-0 left-[50%] right-0'>
-                            <div>
-                                <p className='font-semibold'>NEW ARRIVAL</p>
-                                <h1 className='font-bold text-[1.5rem] mt-2'>
-                                    POWER
-                                    <br /> HAND TOOLS
-                                </h1>
-                                <h4 className='font-semibold text-[#009EE2] text-[1.2rem] mb-4'>
-                                    ₹ 1562
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div className='banner-content  relative'>
                     <Image
                         src={HomeOfferBannerFour}
                         alt={"HomeOfferBannerOne"}
-                        width={500}
-                        height={530}
-                        className="h-full rounded object-cover w-full transition duration-200 ease-out transform hover:scale-105"
+                        width={530}
+                        height={510}
+                        className="w-full h-full  rounded object-cover transition duration-200 ease-out transform hover:scale-105"
                     />
-                     <div className='absolute top-[15%]  bottom-0 left-[15%] right-0'>
+                    <div className='absolute top-[15%]  bottom-0 left-[15%] right-0'>
                         <div className='text-[#000]'>
                             <p className='font-semibold'>ONLINE SHOP</p>
                             <h1 className='font-bold text-[2rem]'>
@@ -130,9 +108,6 @@ const HomeOffers = () => {
                     </div>
                 </div>
             </div>
-
-            {/* =====  */}
-            
         </section>
     );
 };

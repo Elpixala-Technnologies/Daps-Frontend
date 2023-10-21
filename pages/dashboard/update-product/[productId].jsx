@@ -174,7 +174,7 @@ const UpdatePorductPage = () => {
                 status: inputValue?.status,
                 details: inputValue?.description,
                 features: featuresArray,
-                coupon: coupon,
+                coupon: couponSelected,
                 quantity: inputValue?.quantity,
             }
 

@@ -8,13 +8,13 @@ import useProducts from "@/src/Hooks/useProducts";
 
 const ShopByCategories = () => {
   const { categoryData } = useProducts();
-  const [updateData, setUpdateData] = React.useState(8);
+  const [updateData, setUpdateData] = React.useState(10);
 
   const showCard = () => {
-    if (updateData === 8) {
+    if (updateData === 10) {
       setUpdateData(categoryData.length);
     } else {
-      setUpdateData(8);
+      setUpdateData(10);
     }
   };
 
@@ -66,14 +66,14 @@ const ShopByCategories = () => {
                 })}
             </div>
             <p
-              className="flex justify-end items-center text-black hover:text-red-500 text-[12px] my-2 px-1 pr-4 tracking-wide  hover:text-red-10 cursor-pointer"
+              className="flex justify-end items-center text-black hover:[#29679e] text-[14px] my-4 px-2 pr-4 tracking-wide  hover:text-red-10 cursor-pointer"
               onClick={() => showCard()}
             >
-              {`Read ${updateData === 12 ? "Less" : "More"}`}{" "}
-              {updateData === 12 ? (
-                <AiFillCaretUp className="mt-1 text-[15px]" />
-              ) : (
+              {`Read ${updateData === 10 ? "More" : "Less"}`}{" "}
+              {updateData === 10 ? (
                 <AiFillCaretDown className="mt-1 text-[15px]" />
+                ) : (
+                <AiFillCaretUp className="mt-1 text-[15px]" />
               )}
             </p>
           </div>

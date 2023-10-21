@@ -71,17 +71,14 @@ const HomeSeconBanner = () => {
     });
   }, []);
 
-
-
-
   return (
-    <section className='flex gap-4 justify-center items-center flex-col md:flex-row'>
-      <div className="grid grid-cols-1 justify-center items-center mx-auto md:grid-cols-2 lg:grid-cols-2 gap-4">
+    <section className='flex w-full gap-8 justify-center items-center flex-col md:flex-row'>
+      <div className="grid w-full grid-cols-1 justify-center items-center mx-auto md:grid-cols-2 lg:grid-cols-2 gap-4">
         {filteredProducts &&
           filteredProducts?.slice(0, 2)?.map((product) => {
             return (
               <div className="group relative overflow-hidden">
-                <div className="aspect-h-1 border aspect-w-1 w-full overflow-hidden rounded-t-md bg-transparent lg:aspect-none group-hover:opacity-75 h-80">
+                 <div className="aspect-h-1 border aspect-w-1 w-full overflow-hidden rounded-t-md bg-transparent lg:aspect-none group-hover:opacity-75 h-80">
                   <img
                     src={product?.images[0]}
                     alt={product?.name}
@@ -92,7 +89,7 @@ const HomeSeconBanner = () => {
                 >
                   <img
                     src={product?.images[1] || product?.images[0]}
-                    alt={product?.name}
+                    alt={name}
                     className="h-full w-full object-cover object-center lg:h-full lg:w-full"
                   />
                 </div>
@@ -111,7 +108,7 @@ const HomeSeconBanner = () => {
                     </svg>
                   </button>
                 </div>
-                <div className="flex p-2 flex-col border rounded-b-md">
+                <div className="flex p-2 flex-col border rounded-b-md bg-white">
                   <div>
                     <h3 className="text-[14px] mt-2 font-semibold text-gray-700 text-left">
                       <Link href={`/products/${product?._id}`}>
@@ -142,16 +139,16 @@ const HomeSeconBanner = () => {
           })}
       </div>
 
-      <div className='banner-content  relative'>
+      <div className='banner-content w-full  relative'>
         <Image
           src={HomeSeconBannerImage}
           alt={"HomeOfferBannerOne"}
           width={650}
-          height={480}
-          className=" rounded object-cover transition duration-200 ease-out transform hover:scale-105"
+          height={400}
+          className="w-full lg:h-[400px] rounded object-cover transition duration-200 ease-out transform hover:scale-105"
         />
         <div className='absolute top-[15%]  bottom-0 left-[15%] right-0'>
-          <div className='text-[#fff]'>
+          <div className='text-[#000]'>
             <p className='font-semibold'>ONLINE SHOP</p>
             <h1 className='font-bold text-[2rem]'>
               SAVE TIME <br /> AND MONEY

@@ -9,6 +9,7 @@ import { addToCartUrl } from '@/src/Utils/Urls/ProductUrl';
 import Swal from 'sweetalert2';
 import { AuthContext } from '@/src/Context/UserContext';
 import useProducts from '@/src/Hooks/useProducts';
+import { PaymentIcons } from '@/src/Assets';
 
 const ProductDetailsPage = () => {
     const { productData } = useProducts();
@@ -127,7 +128,7 @@ const ProductDetailsPage = () => {
             })
             .catch((err) => console.error('Failed to copy:', err));
     };
-    
+
     const [selectedImage, setSelectedImage] = useState(product?.images[0]);
 
     const handleImageClick = (image) => {
@@ -137,7 +138,7 @@ const ProductDetailsPage = () => {
 
     return (
         <RootLayout>
-            <section className='mx-2 md:mx-0 md:container'>
+            <section className='container'>
                 <section className=" sm:py-8">
                     <div className="container mx-auto px-4">
                         <div className="lg:col-gap-12 xl:col-gap-16  grid grid-cols-1 gap-12 lg:mt-12 lg:grid-cols-5 lg:gap-16">
@@ -147,7 +148,7 @@ const ProductDetailsPage = () => {
                                         <div className="max-w-xl overflow-hidden rounded-lg">
                                             <img
                                                 className="h-full w-full max-w-full object-cover"
-                                                src={selectedImage}
+                                                src={selectedImage || product?.images[0]}
                                                 alt={product?.name}
                                             />
                                         </div>
@@ -173,60 +174,36 @@ const ProductDetailsPage = () => {
                                 </div>
                             </div>
                             <div className="lg:col-span-2 lg:row-span-2 lg:row-end-2">
-                                <h1 className="sm: text-2xl font-bold text-gray-900 sm:text-3xl">
+                                <h1 className="sm: text-2xl font-semibold sm:text-3xl">
                                     {product?.name}
                                 </h1>
                                 <div className="flex items-end">
-                                    <div className='flex gap-4 my-2'>
-                                        <h1 className="font-bold text-[1.8rem] text-slate-900">
+                                    <div className='flex gap-2 items-center my-2'>
+                                        <h1 className="font-semibold text-[1.8rem]">
                                             {product?.discount
                                                 ? `₹ ${Math.floor(product?.price - (product?.price * product?.discount) / 100)}`
                                                 : `₹ ${Math.floor(product?.price)}`
                                             }
                                         </h1>
-                                        <span className="text-sm text-slate-900 line-through mt-1">
+                                        <span className="text-sm  line-through mt-1">
                                             ₹ {Math.floor(product?.price)}
                                         </span>
-                                        <span className='text-[#18568C]'>
-                                            {Math.floor(product?.discount)} % off
-                                        </span>
+
                                     </div>
-
                                 </div>
 
-                                <h2 className="mt-4 text-base text-gray-900">Brand</h2>
-                                <div className="mt-3 flex select-none flex-wrap items-center gap-1">
-                                    <label className="">
-                                        <input
-                                            type="radio"
-                                            name="type"
-                                            defaultValue={product?.brand}
-                                            className="peer sr-only"
-                                            defaultChecked=""
-                                        />
-                                        <p className="peer-checked:bg-[#18568C] peer-checked:text-white rounded-lg border border-[#18568C] px-6 py-2 font-bold">
-                                            {product?.brand}
-                                        </p>
-                                    </label>
-
+                                <h2 className="mt-2">{product?.details.slice(0, 150)}</h2>
+                                <h2 className="mt-2  text-[#29679e]">{product?.discount} % Discount</h2>
+                                <div className='my-2'>
+                                    <Image
+                                        src={PaymentIcons}
+                                        alt={"payment"}
+                                        width={100}
+                                        height={100}
+                                        className='w-full h-full'
+                                    />
                                 </div>
-                                <h2 className="mt-8 text-base text-gray-900">Categories</h2>
-                                <div className="mt-3 flex select-none flex-wrap items-center gap-1">
-                                    <label className="">
-                                        <input
-                                            type="radio"
-                                            name="subscription"
-                                            defaultValue={product?.categories}
-                                            className="peer sr-only"
-                                        />
-                                        <p className="peer-checked:bg-[#18568C] peer-checked:text-white rounded-lg border border-[#18568C] px-6 py-2 font-bold">
-                                            {product?.categories}
-                                        </p>
-                                    </label>
-
-                                </div>
-
-                                <div className="mt-10 flex flex-col items-center justify-between space-y-4 border-t border-b py-4 sm:flex-row sm:space-y-0">
+                                <div className="mt-4 flex flex-col items-center justify-between space-y-4 border-t border-b py-4 sm:flex-row sm:space-y-0">
                                     <button
                                         type="button"
                                         className="inline-flex items-center justify-center rounded-md border-2 border-transparent bg-[#18568C] bg-none px-12 py-3 text-center text-base font-bold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-800"
@@ -315,7 +292,7 @@ const ProductDetailsPage = () => {
                                         slidesPerView={1}
                                         loop={true}
                                     >
-                                        {product?.coupons && product?.coupons?.map((coupon, index) => (
+                                        {product?.coupon && product?.coupon?.map((coupon, index) => (
                                             <SwiperSlide key={index}
 
                                             >

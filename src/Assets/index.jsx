@@ -16,11 +16,11 @@ import OfferBannerFive from './OfferBanner/BannerOne.png'
 import PersonImage from './Images/person.jpg'
 import PartsImage from './Images/parse.jpg'
 
-import HomeOfferBannerOne from './HomeOffer/offer-banner-01.webp'
-import HomeOfferBannerTwo from './HomeOffer/offer-banner-02.webp'
-import HomeOfferBannerThree from './HomeOffer/offer-banner-03.webp'
-import HomeOfferBannerFour from './HomeOffer/Offer-banner-4.webp'
-import HomeSeconBannerImage from './Banner/home-second-banner.webp'
+import HomeOfferBannerOne from './HomeOffer/Home-banner-2.png'
+import HomeOfferBannerTwo from './HomeOffer/offer-banner-02.png'
+import HomeOfferBannerThree from './HomeOffer/offer-banner-03.png'
+import HomeOfferBannerFour from './HomeOffer/Home-banner-01.png'
+import HomeSeconBannerImage from './Banner/home-second-banner.png'
 
 import PaymentIcons from "./Images/paymentImage.png"
  

@@ -94,31 +94,34 @@ const OurProducts = () => {
         </div>
 
         <div className='gelaryComponent'>
-          <div className="flex overflow-x-auto justify-center overflow-y-hidden border-b border-gray-200 whitespace-nowrap dark:border-gray-700">
-            <button
-              onClick={() => setActiveCategory('FEATURED')}
-              className={`inline-flex font-bold items-center h-10 px-4 -mb-px text-sm text-center text-blue-600 bg-transparent border-b-2 ${activeCategory === 'FEATURED' ? 'border-blue-500' : 'border-transparent'
-                } sm:text-base dark:border-blue-400 dark:text-blue-300 whitespace-nowrap focus:outline-none`}
-            >
-              FEATURED
-            </button>
+          <div className="overflow-x-auto">
+            <div className="flex justify-center border-b border-gray-400 whitespace-nowrap dark:border-gray-700">
+              <button
+                onClick={() => setActiveCategory('FEATURED')}
+                className={`inline-flex font-bold items-center h-10 px-4 -mb-px text-sm text-center ${activeCategory === 'FEATURED' ? 'text-blue-600 border-b-2 border-blue-500' : 'text-gray-700 border-transparent'
+                  } sm:text-base dark:border-blue-400 dark:text-blue-300 whitespace-nowrap focus:outline-none`}
+              >
+                FEATURED
+              </button>
 
-            <button
-              onClick={() => setActiveCategory('LATEST')}
-              className={`inline-flex font-bold items-center h-10 px-4 -mb-px text-sm text-center text-gray-700 bg-transparent border-b-2 ${activeCategory === 'LATEST' ? 'border-gray-400' : 'border-transparent'
-                } sm:text-base dark:text-white whitespace-nowrap cursor-base focus:outline-none hover:border-gray-400`}
-            >
-              TRANDING
-            </button>
+              <button
+                onClick={() => setActiveCategory('LATEST')}
+                className={`inline-flex font-bold items-center h-10 px-4 -mb-px text-sm text-center ${activeCategory === 'LATEST' ? 'text-gray-700 border-b-2 border-gray-400' : 'text-gray-700 border-transparent'
+                  } sm:text-base dark:text-white whitespace-nowrap cursor-base focus:outline-none hover:border-gray-400`}
+              >
+                TRENDING
+              </button>
 
-            <button
-              onClick={() => setActiveCategory('BESTSELLER')}
-              className={`inline-flex font-bold items-center h-10 px-4 -mb-px text-sm text-center text-gray-700 bg-transparent border-b-2 ${activeCategory === 'BESTSELLER' ? 'border-gray-400' : 'border-transparent'
-                } sm:text-base dark:text-white whitespace-nowrap cursor-base focus:outline-none hover:border-gray-400`}
-            >
-              BESTSELLER
-            </button>
+              <button
+                onClick={() => setActiveCategory('BESTSELLER')}
+                className={`inline-flex font-bold items-center h-10 px-4 -mb-px text-sm text-center ${activeCategory === 'BESTSELLER' ? 'text-gray-700 border-b-2 border-gray-400' : 'text-gray-700 border-transparent'
+                  } sm:text-base dark:text-white whitespace-nowrap cursor-base focus:outline-none hover:border-gray-400`}
+              >
+                BESTSELLER
+              </button>
+            </div>
           </div>
+
 
           {/* ======= Gallery Data ====== */}
           <div className='photogalleryComponent py-4'>
@@ -166,21 +169,21 @@ const OurProducts = () => {
                       <SwiperSlide className="cursor-grab" key={product?._id}
                       >
                         <div className="group relative overflow-hidden">
-                        <div className="aspect-h-1 border aspect-w-1 w-full overflow-hidden rounded-t-md bg-transparent lg:aspect-none group-hover:opacity-75 h-80">
-                  <img
-                    src={product?.images[0]}
-                    alt={product?.name}
-                    className="h-full w-full object-cover object-center lg:h-full lg:w-full"
-                  />
-                </div>
-                <div className="aspect-h-1 border aspect-w-1 w-full overflow-hidden rounded-t-md bg-transparent lg:aspect-none group-hover:opacity-75 h-80 absolute top-0 left-0 opacity-0 transition duration-300"
-                >
-                  <img
-                    src={product?.images[1] || product?.images[0]}
-                    alt={product?.name}
-                    className="h-full w-full object-cover object-center lg:h-full lg:w-full"
-                  />
-                </div>
+                          <div className="aspect-h-1 border aspect-w-1 w-full overflow-hidden rounded-t-md bg-transparent lg:aspect-none group-hover:opacity-75 h-80">
+                            <img
+                              src={product?.images[0]}
+                              alt={product?.name}
+                              className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                            />
+                          </div>
+                          <div className="aspect-h-1 border aspect-w-1 w-full overflow-hidden rounded-t-md bg-transparent lg:aspect-none group-hover:opacity-75 h-80 absolute top-0 left-0 opacity-0 transition duration-300"
+                          >
+                            <img
+                              src={product?.images[1] || product?.images[0]}
+                              alt={product?.name}
+                              className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                            />
+                          </div>
 
                           <div className="absolute -right-16 bottom-20 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
                             <button
@@ -230,12 +233,10 @@ const OurProducts = () => {
             </Swiper>
           </div>
         </div>
-      <div className="mt-4">
-        <HomeSeconBanner/>          
+        <div className="mt-4">
+          <HomeSeconBanner />
+        </div>
       </div>
-      </div>
-
-
     </section>
   );
 };

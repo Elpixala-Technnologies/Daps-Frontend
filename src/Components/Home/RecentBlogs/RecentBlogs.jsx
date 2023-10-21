@@ -1,14 +1,15 @@
 import useBlogs from "@/src/Hooks/useBlogs";
 import Link from "next/link";
-import { FaArrowRight } from "react-icons/fa"
+import { FaArrowRight, FaRegComment } from "react-icons/fa";
+import Image from 'next/image';
 
 const RecentBlogs = () => {
   const { blogData } = useBlogs();
 
   return (
-    <section className='container'>
+    <section className='bg-[#F6F6F6] py-10 mt-[4rem]'>
 
-      <section className="py-6 sm:py-8 lg:py-12">
+      <section className="container py-6 sm:py-8 lg:py-12">
         <div className=" max-w-screen-xl px-4 ">
           {/* Heading */}
           <div className="mb-10 md:mb-8">
@@ -23,61 +24,53 @@ const RecentBlogs = () => {
           </div>
           {/* /Heading */}
 
-          <div className="grid gap-8 sm:grid-cols-2 sm:gap-12 lg:grid-cols-2 xl:grid-cols-2 xl:gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {
-              blogData && blogData?.slice(0, 4)?.map((blog) => {
+              blogData && blogData?.slice(0, 3)?.map((blog) => {
                 return (
-                  <article className="flex flex-col items-center justify-center gap-4 md:flex-row lg:gap-6">
-                    <a
-                      href="#"
-                      className="group relative block h-56 w-full shrink-0 self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-24 md:w-24 lg:h-40 lg:w-40"
-                    >
-                      <img
-                        src={blog?.image}
-                        loading="lazy"
-                        alt={blog?.title}
-                        className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
-                      />
-                    </a>
-                    <div className="flex flex-col gap-2">
-                      <span className="text-sm text-gray-400">April 2, 2023</span>
-                      <h2 className="text-xl font-bold text-gray-800">
-                        <a
-                          href="#"
-                          className="transition duration-100 hover:text-[#18568C] active:text-rose-600"
-                        >
-                          {blog?.title}
-                        </a>
-                      </h2>
-                      <p className="text-gray-500">
-                        {blog?.content.slice(0,80)}
-                      </p>
-                      <span>
-                        {blog?.tags.slice(0, 2).map((tag) => {
-                          return (
-                            <span key={tag} className="inline-block bg-gray-200 rounded-full px-2 py-1 text-sm font-semibold text-gray-700 mr-2"> #{tag} </span>
-                          )
-                        })}
-                      </span>
-                      <div>
-                        <Link className="text-[#18568C]  text-center flex items-center gap-2 w-full text-left flex items-center gap-2 "
-                          href={`/blogs/${blog?._id}`}
-                        >
-                          Read More <FaArrowRight />
-                        </Link>
-                      </div>
+
+                  <div
+                className="cardBody md:m-0 flex flex-col justify-center  duration-200 hover:border-[#29679e] w-full"
+                key={blog._id}
+              >
+                <div className="blogImage">
+                  <Image
+                    src={blog?.image}
+                    width={"500"}
+                    height={"200"}
+                    alt="blog Image"
+                    className="w-full h-[18rem] rounded-t"
+                  />
+                </div>
+                <hr className="w-full bg-slate-400" />
+                <div className="blogIntarection flex text-gray-500  py-2 items-center gap-4">
+                  <div>{blog?.author}</div>
+                  <div>{blog?.publushDate || Date.now()}</div>
+                  <div className="blogLike">
+                    <div className="flex justify-center items-center gap-2">
+                      <FaRegComment /> 25
                     </div>
-                  </article>
+                  </div>
+                </div>
+                <div className="blogInfo mt-2 p-2">
+                  <h2 className="blogName font-bold ">{blog?.title}</h2>
+                  <p className="blogDescription py-3">{blog?.content}</p>
+                </div>
+
+                <div className="blogAddToCart flex gap-5 items-center">
+                  <div>
+                    <Link href={`/blogs/${blog?._id}`} className="border w-full px-4 py-4 flex justify-center items-center gap-4  hover:border-red-500 color-b bg-white p-2 md:p-3 text-center rounded-md duration-300 transform  shadow-sm hover:-translate-y-1.5 border-t border-slate-100 hover:bg-red-10 hover:text-[#29679e]">
+                     Read More <FaArrowRight />
+                    </Link>
+                  </div>
+                </div>
+              </div>
                 )
               })
             }
           </div>
 
         </div>
-      </section>
-
-
-
       <div className="flex justify-end items-end">
         <Link className="text-[#18568C]  text-center flex items-center gap-2"
           href="/blogs"
@@ -85,6 +78,7 @@ const RecentBlogs = () => {
           View All Blogs <FaArrowRight />
         </Link>
       </div>
+      </section>
     </section>
   );
 };

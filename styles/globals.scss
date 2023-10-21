@@ -231,7 +231,7 @@ $letterStagger: 0.1s;
 .slider {
     overflow: hidden;
     position: relative;
-    height: 100vh;
+    height: 80vh;
     color: #fff;
 
     @mixin sliderReady {
@@ -322,12 +322,12 @@ $letterStagger: 0.1s;
         }
 
         &-heading {
-            $fontSize: 60px;
+            $fontSize: 40px;
 
             display: flex;
             margin-bottom: 20px;
             font-size: $fontSize;
-            letter-spacing: 12px;
+            letter-spacing: 10;
 
             span {
                 display: block;
@@ -385,7 +385,7 @@ $letterStagger: 0.1s;
                 top: -3px;
                 width: calc(100% + 4px);
                 height: calc(100% + 6px);
-                background: rgba(255, 255, 255, 0.4);
+                // background: rgba(255, 255, 255, 0.4);
                 transform: scaleX(0.3);
                 transform-origin: 0 50%;
                 transition: transform 0.3s;
