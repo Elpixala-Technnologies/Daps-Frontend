@@ -104,14 +104,14 @@ function CitiesSlider(props) {
                       ))}
                     </h1>
                     <h4 className="text-[1.2rem] font-semibold mb-2 slider__slide-subheading">
-                      High Performance <br /> Industrial Tools
+                      High Performance  Industrial Tools
                     </h4>
-                    <h3 className="font-semibold text-[1.6rem] text-[#29679e] slider__slide-subheading">{slide?.price}</h3>
+                    <h3 className="font-semibold text-[1.4rem] text-[#29679e] slider__slide-subheading">{slide?.price}</h3>
                   </div>
 
                   <div>
                     <div className='mt-[2rem] '>
-                      <Link href="/product" className="common-btn text-left mt-[2rem] slider__slide-readmore">
+                      <Link href="/product" className="common-btn uppercase text-left mt-[1.2rem] slider__slide-readmore">
                         Shop Now
                       </Link>
                     </div>
@@ -171,3 +171,4 @@ const slides = [
 export default function CitiesSliderContainer() {
   return <CitiesSlider slides={slides} />;
 }
+

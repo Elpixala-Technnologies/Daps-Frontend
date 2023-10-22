@@ -14,7 +14,7 @@ import {
     FaThLarge,
 } from "react-icons/fa";
 import { useRouter } from "next/router";
-import Navbar from "../Shared/Navbar/Navbar";
+import MainNav from "../Shared/Navbar/MainNav";
 const { Header, Sider, Content } = Layout;
 
 const UserdashboardLayout = ({ children }) => {
@@ -106,7 +106,7 @@ const UserdashboardLayout = ({ children }) => {
 
             <Layout className="bg-transparent">
                 <div>
-                    <Navbar />
+                    <MainNav />
                 </div>
                 <Header
                     style={{

@@ -10,6 +10,20 @@ import Swal from 'sweetalert2';
 import { AuthContext } from '@/src/Context/UserContext';
 import useProducts from '@/src/Hooks/useProducts';
 import { PaymentIcons } from '@/src/Assets';
+import { BsCart } from 'react-icons/bs'
+import {
+    PolicyIcons,
+    MapIcons,
+    DelivaryIcons
+} from "@/src/Assets"
+import {FaRegPlusSquare} from 'react-icons/fa'
+import {BiSolidOffer} from 'react-icons/bi'
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
 
 const ProductDetailsPage = () => {
     const { productData } = useProducts();
@@ -136,10 +150,12 @@ const ProductDetailsPage = () => {
     };
 
 
+
+
     return (
         <RootLayout>
             <section className='container'>
-                <section className=" sm:py-8">
+                <section className="py-8">
                     <div className="container mx-auto px-4">
                         <div className="lg:col-gap-12 xl:col-gap-16  grid grid-cols-1 gap-12 lg:mt-12 lg:grid-cols-5 lg:gap-16">
                             <div className="lg:col-span-3 lg:row-end-1">
@@ -174,26 +190,36 @@ const ProductDetailsPage = () => {
                                 </div>
                             </div>
                             <div className="lg:col-span-2 lg:row-span-2 lg:row-end-2">
-                                <h1 className="sm: text-2xl font-semibold sm:text-3xl">
+                                <h1 className="text-2xl font-semibold">
                                     {product?.name}
                                 </h1>
-                                <div className="flex items-end">
-                                    <div className='flex gap-2 items-center my-2'>
-                                        <h1 className="font-semibold text-[1.8rem]">
+                                <div className='my-2'>
+                                    <p className="text-[1.5rem] text-gray-900 font-semibold">
+                                        <span className=''>
                                             {product?.discount
                                                 ? `₹ ${Math.floor(product?.price - (product?.price * product?.discount) / 100)}`
                                                 : `₹ ${Math.floor(product?.price)}`
                                             }
-                                        </h1>
-                                        <span className="text-sm  line-through mt-1">
+                                        </span>
+                                        <span className=" text-gray-300 line-through mx-4">
                                             ₹ {Math.floor(product?.price)}
                                         </span>
-
-                                    </div>
+                                        <span className='text-[#18568C] '>
+                                            {Math.floor(product?.discount)} % off
+                                        </span>
+                                    </p>
                                 </div>
 
-                                <h2 className="mt-2">{product?.details.slice(0, 150)}</h2>
-                                <h2 className="mt-2  text-[#29679e]">{product?.discount} % Discount</h2>
+                                <h2 className="my-2">{product?.details.slice(0, 150)}</h2>
+
+                                <div className='border p-2 rounded bg-[#E7F3EC]'>
+                                    <h1 className='font-bold text-[1.2rem]'>Get this for as low as  <span className='text-[#29679e]'>Rs. {Math.round(product?.price)}</span> </h1>
+                                    <p>
+                                        with these offers.
+                                    </p>
+                                </div>
+
+                                <h2 className="my-2  text-[#29679e]">{product?.discount} % Discount</h2>
                                 <div className='my-2'>
                                     <Image
                                         src={PaymentIcons}
@@ -203,50 +229,134 @@ const ProductDetailsPage = () => {
                                         className='w-full h-full'
                                     />
                                 </div>
-                                <div className="mt-4 flex flex-col items-center justify-between space-y-4 border-t border-b py-4 sm:flex-row sm:space-y-0">
+                                <div className="mt-4 flex flex-col items-center  space-y-4 border-t border-b py-4  w-full">
                                     <button
-                                        type="button"
-                                        className="inline-flex items-center justify-center rounded-md border-2 border-transparent bg-[#18568C] bg-none px-12 py-3 text-center text-base font-bold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-800"
                                         onClick={() => addToCart(product?._id)}
-                                    >
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="shrink-0 mr-3 h-5 w-5"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                            strokeWidth={2}
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
-                                            />
-                                        </svg>
-                                        Add to cart
+                                        className="font-semibold hover:before:bg-blackborder-black relative h-[50px] w-full rounded overflow-hidden border border-black bg-white px-3 text-black shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-black before:transition-all before:duration-500 hover:text-white hover:shadow-white hover:before:left-0 hover:before:w-full">
+                                        <span className="relative z-10 flex items-center gap-2 justify-center">
+                                            <BsCart className='text-[1.2rem]' />   Add to cart
+                                        </span>
                                     </button>
+
                                     <button
-                                        type="button"
-                                        className="inline-flex items-center justify-center rounded-md border-2 border-transparent bg-[#18568C] bg-none px-12 py-3 text-center text-base font-bold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-800"
                                         onClick={() => handelBuyNow(product?._id)}
-                                    >
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="shrink-0 mr-3 h-5 w-5"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                            strokeWidth={2}
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
-                                            />
-                                        </svg>
-                                        Buy Now
+                                        className="relative flex h-[50px] w-full items-center justify-center overflow-hidden bg-blue-600 font-medium text-white shadow-2xl transition-all duration-300 before:absolute before:inset-0 before:border-0 before:border-white before:duration-100 before:ease-linear hover:bg-white hover:text-blue-600 hover:shadow-blue-600 hover:before:border-[25px]">
+                                        <span className="relative z-10 flex items-center gap-2 justify-center">
+                                            <BsCart className='text-[1.2rem]' />  Buy Now
+                                        </span>
                                     </button>
                                 </div>
+
+                                <div className='border text-center p-2 mt-4 flex items-center justify-center gap-4 rounded bg-[#E7F3EC]'>
+                                    <div className='flex flex-col items-center justify-center gap-2'>
+                                        <Image
+                                            src={PolicyIcons}
+                                            alt={"policy"}
+                                            width={50}
+                                            height={50}
+                                            className='w-[3.5rem] h-[3.5rem] object-cover'
+                                        />
+                                        <h1 className='text-center font-semibold'>
+                                            7 Days free exchange policy
+                                        </h1>
+                                    </div>
+                                    <div className='flex flex-col items-center justify-center gap-2'>
+                                        <Image
+                                            src={MapIcons}
+                                            alt={"policy"}
+                                            width={50}
+                                            height={50}
+                                            className='w-[3.5rem] h-[3.5rem] object-cover'
+                                        />
+                                        <h1 className='text-center font-semibold'>
+                                            Made in India with love
+                                        </h1>
+                                    </div>
+                                    <div className='flex flex-col items-center justify-center gap-2'>
+                                        <Image
+                                            src={DelivaryIcons}
+                                            alt={"DelivaryIcons"}
+                                            width={50}
+                                            height={50}
+                                            className='w-[3.5rem] h-[3.5rem] object-cover'
+                                        />
+                                        <h1 className='text-center font-semibold'>
+                                            Free delivery* within 4-5 days
+                                        </h1>
+                                    </div>
+                                </div>
+                                <hr className='my-4' />
+                                <div>
+                                    <Accordion>
+                                        <AccordionSummary
+                                            expandIcon={<ExpandMoreIcon />}
+                                            aria-controls="panel1a-content"
+                                            id="panel1a-header"
+                                        >
+                                            <Typography className='font-semibold'>REASONS TO BUY</Typography>
+                                        </AccordionSummary>
+                                        <AccordionDetails>
+                                          <div className='flex flex-col gap-4'>
+                                            <h1 className='flex items-center gap-2'>
+                                                <FaRegPlusSquare className='text-[1.5rem]'/> <span>Vehicle History Reports</span>
+                                            </h1>
+                                            <h1 className='flex items-center gap-2'>
+                                                <FaRegPlusSquare className='text-[1.5rem]'/> <span>Environmentally Friendly Options</span>
+                                            </h1>
+                                            <h1 className='flex items-center gap-2'>
+                                                <FaRegPlusSquare className='text-[1.5rem]'/> <span>Price Comparison</span>
+                                            </h1>
+                                          </div>
+                                        </AccordionDetails>
+                                    </Accordion>
+                                    <Accordion>
+                                        <AccordionSummary
+                                            expandIcon={<ExpandMoreIcon />}
+                                            aria-controls="panel2a-content"
+                                            id="panel2a-header"
+                                        >
+                                            <Typography className='font-semibold'>OFFERS</Typography>
+                                        </AccordionSummary>
+                                        <AccordionDetails>
+                                        <div className='flex flex-col gap-4'>
+                                            <div className='flex items-center gap-4'>
+                                            <h1 className='flex items-center border p-4 rounded-full gap-2'>
+                                            <BiSolidOffer className='text-[2rem]'/>
+                                            </h1>
+                                            <div>
+                                                
+                                            <p> <span>Special 5% off,</span> only this weekend. Use code <span className='font-semibold'> FESTIVE5 </span></p>
+                                            <p> Discounted Price: 
+                                                 {product?.discount
+                                                    ? `₹ ${Math.floor(product?.price - (product?.price * product?.discount) / 100)}`
+                                                    : `₹ ${Math.floor(product?.price)}`
+                                                }
+                                            </p> 
+                                            </div>
+                                            </div>
+                                         
+                                          </div>
+                                        </AccordionDetails>
+                                    </Accordion>
+
+                                    <Accordion>
+                                        <AccordionSummary
+                                            expandIcon={<ExpandMoreIcon />}
+                                            aria-controls="panel2a-content"
+                                            id="panel2a-header"
+                                        >
+                                            <Typography className='font-semibold'>DESCRIPTION</Typography>
+                                        </AccordionSummary>
+                                        <AccordionDetails>
+                                        <div className='flex flex-col gap-4'>
+                                            <h1 className='flex items-center border p-4 rounded-full gap-2'>
+                                            {product?.details}
+                                            </h1>
+                                          </div>
+                                        </AccordionDetails>
+                                    </Accordion>
+                                </div>
+                                <hr />
                                 <ul className="mt-8 space-y-2">
                                     <li className="flex items-center text-left text-sm font-medium text-gray-600">
                                         <svg
@@ -288,7 +398,7 @@ const ProductDetailsPage = () => {
                                 <div className='my-4 '>
                                     <Swiper
                                         className="couponSwiper"
-                                        spaceBetween={30}
+                                        spaceBetween={20}
                                         slidesPerView={1}
                                         loop={true}
                                     >

@@ -23,6 +23,10 @@ import HomeOfferBannerFour from './HomeOffer/Home-banner-01.png'
 import HomeSeconBannerImage from './Banner/home-second-banner.png'
 
 import PaymentIcons from "./Images/paymentImage.png"
+
+import DelivaryIcons from "./Icons/delivary.png"
+import MapIcons from "./Icons/map.png"
+import PolicyIcons from "./Icons/policy.png"
  
 
 
@@ -52,6 +56,10 @@ export {
     HomeOfferBannerFour,
 
     HomeSeconBannerImage,
-    PaymentIcons
+    PaymentIcons,
+
+    PolicyIcons,
+    MapIcons,
+    DelivaryIcons
 
 }
