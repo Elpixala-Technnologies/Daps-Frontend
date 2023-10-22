@@ -147,10 +147,10 @@ const HomeSeconBanner = () => {
           height={400}
           className="w-full lg:h-[400px] rounded object-cover transition duration-200 ease-out transform hover:scale-105"
         />
-        <div className='absolute top-[15%]  bottom-0 left-[15%] right-0'>
+        <div className='absolute md:top-[15%] top-[6%] left-[5%] bottom-0 md:left-[15%] right-0'>
           <div className='text-[#000]'>
             <p className='font-semibold'>ONLINE SHOP</p>
-            <h1 className='font-bold text-[2rem]'>
+            <h1 className='font-bold text-[1.4rem] md:text-[2rem]'>
               SAVE TIME <br /> AND MONEY
             </h1>
             <h4 className='font-semibold text-[#009EE2] text-[1.2rem] mb-4'>

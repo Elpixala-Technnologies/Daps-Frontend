@@ -326,7 +326,7 @@ $letterStagger: 0.1s;
 
             display: flex;
             margin-bottom: 20px;
-            font-size: $fontSize;
+            // font-size: $fontSize;
             letter-spacing: 10;
 
             span {
@@ -549,3 +549,4 @@ $letterStagger: 0.1s;
         right: 5px;
     }
 }
+

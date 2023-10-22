@@ -21,10 +21,10 @@ const HomeOffers = () => {
                         className="rounded  w-full h-full object-cover transition duration-200 ease-out transform hover:scale-105"
                     />
 
-                    <div className='absolute top-[20%] bottom-0 left-[15%] right-0'>
+                    <div className='absolute top-[5%] md:top-[20%] bottom-0 left-[15%] right-0'>
                         <div>
                             <p className='font-semibold text-black'>TOOLS & ACCESSORIES</p>
-                            <h1 className='font-bold text-[2rem] text-black'>
+                            <h1 className='font-bold text-[1.5rem] md:text-[2rem] text-black'>
                                 SAVE TIME <br /> AND MONEY
                             </h1>
                             <h4 className='font-semibold text-[#009EE2] text-[1.2rem] mb-4'>
@@ -91,10 +91,10 @@ const HomeOffers = () => {
                         height={510}
                         className="w-full h-full  rounded object-cover transition duration-200 ease-out transform hover:scale-105"
                     />
-                    <div className='absolute top-[15%]  bottom-0 left-[15%] right-0'>
+                    <div className='absolute top-[5%] md:top-[15%]  bottom-0 left-[15%] right-0'>
                         <div className='text-[#000]'>
                             <p className='font-semibold'>ONLINE SHOP</p>
-                            <h1 className='font-bold text-[2rem]'>
+                            <h1 className='font-bold text-[1.5rem] md:text-[2rem]'>
                                 SAVE TIME <br /> AND MONEY
                             </h1>
                             <h4 className='font-semibold text-[#009EE2] text-[1.2rem] mb-4'>

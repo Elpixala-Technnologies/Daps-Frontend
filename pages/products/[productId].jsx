@@ -398,8 +398,35 @@ const ProductDetailsPage = () => {
                                 <div className='my-4 '>
                                     <Swiper
                                         className="couponSwiper"
-                                        spaceBetween={20}
-                                        slidesPerView={1}
+                                        breakpoints={{
+                                            320: {
+                                              slidesPerView: 1,
+                                              spaceBetween: 20,
+                                            },
+                                            360: {
+                                              slidesPerView: 1,
+                                              spaceBetween: 20,
+                                            },
+                                            480: {
+                                              slidesPerView: 1,
+                                              spaceBetween: 20,
+                                            },
+                                            640: {
+                                              slidesPerView: 1,
+                                              spaceBetween: 20,
+                                            },
+                                            768: {
+                                              slidesPerView: 1,
+                                              spaceBetween: 30,
+                                            },
+                                            1024: {
+                                              slidesPerView:2,
+                                              spaceBetween: 20,
+                                            },
+                                          }}
+                                        spaceBetween={10}
+                                        slidesPerView={2}
+                                        
                                         loop={true}
                                     >
                                         {product?.coupon && product?.coupon?.map((coupon, index) => (
@@ -407,10 +434,10 @@ const ProductDetailsPage = () => {
 
                                             >
                                                 <div className="bg-gradient-to-br w-full from-purple-600 to-indigo-600 text-white text-center py-6 px-6 rounded-lg shadow-md relative">
-                                                    <h3 className="text-2xl font-semibold mb-4">
+                                                    <h3 className="text-[1.2rem] font-semibold mb-4">
                                                         {coupon?.couponText}
                                                     </h3>
-                                                    <div className="flex items-center justify-center md:flex-row gap-4 flex-col space-x-2 mb-6">
+                                                    <div className="flex items-center justify-center  gap-4 flex-col space-x-2 mb-6">
                                                         <span
                                                             id="cpnCode"
                                                             className="border-dashed border text-white px-4 py-2 rounded-l"
