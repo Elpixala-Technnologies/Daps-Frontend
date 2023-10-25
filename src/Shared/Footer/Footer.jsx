@@ -12,7 +12,7 @@ const Footer = () => {
         <section className=' bg-[#000000]'>
             <footer className="md:px-8 px-4 container  py-10 divide-y text-[#fff] ">
       
-            <div className="grid grid-cols-2 text-sm gap-x-4 gap-y-8 sm:grid-cols-5 p-6">
+            <div className="grid  text-sm gap-x-4 gap-y-8 sm:grid-cols-5 p-6">
                         <div className="flex flex-col gap-4 ">
                             <Link rel="noopener noreferrer" href="/" className="flex justify-center md:justify-start">
                                 <Image
@@ -22,6 +22,11 @@ const Footer = () => {
                                     width={180}
                                 />
                             </Link>
+                            <div>
+                                <p>
+                                Welcome to DAPS, your ultimate online destination for the finest car accessories that elevate your driving experience to a whole new level. 
+                                </p>
+                            </div>
                             <div>
                                 <div className="flex  flex-col  gap-4 mt-4">
                                     <div className='flex gap-2 items-center  transition duration-200 ease-out transform hover:scale-105'>
@@ -33,6 +38,17 @@ const Footer = () => {
                                     
                                 </div>
                             </div>
+                        </div>
+                        <div className="space-y-3">
+                            <h3 className="tracki uppercase font-semibold">Company</h3>
+                            <ul className="space-y-4 ">
+                                <li>
+                                    <a rel="noopener noreferrer" href="#">Privacy</a>
+                                </li>
+                                <li>
+                                    <a rel="noopener noreferrer" href="#">Terms of Service</a>
+                                </li>
+                            </ul>
                         </div>
                         <div className="space-y-3">
                             <h3 className="tracki uppercase font-semibold">Categories</h3>
@@ -48,17 +64,7 @@ const Footer = () => {
                                     }
                             </ul>
                         </div>
-                        <div className="space-y-3">
-                            <h3 className="tracki uppercase font-semibold">Company</h3>
-                            <ul className="space-y-4 ">
-                                <li>
-                                    <a rel="noopener noreferrer" href="#">Privacy</a>
-                                </li>
-                                <li>
-                                    <a rel="noopener noreferrer" href="#">Terms of Service</a>
-                                </li>
-                            </ul>
-                        </div>
+                       
                         <div className="space-y-3">
                             <h3 className="uppercase font-semibold">Recent Products</h3>
                             <ul className="space-y-4 ">
@@ -92,7 +98,7 @@ const Footer = () => {
                 <div className="py-6 text-sm text-center dark:text-gray-400 mt-4 flex justify-between items-center flex-col md:flex-row gap-4">
                     <p>© {new Date().getFullYear()} DAPS. All rights reserved.</p>
 
-                    <div>
+                    {/* <div>
                         <Image
                             src={PaymentIcons}
                             alt={"payment"}
@@ -100,7 +106,7 @@ const Footer = () => {
                             height={100}
                             className='w-full h-full'
                         />
-                    </div>
+                    </div> */}
                 </div>
             </footer>
         </section>

@@ -226,9 +226,7 @@ const MainNav = () => {
 
             <div className='cursor-pointer'
               onClick={() => handelProfileToggle()}
-              style={{
-                zIndex: '99999999'
-              }}
+
             >
               <h1 className='border p-2 rounded-full bg-[#000]'>
               <CiUser className='text-[1.5rem] text-[#fff] ' />
@@ -294,6 +292,10 @@ const MainNav = () => {
               <AiOutlineClose className='text-5xl' />
             </button><br />
             <ul className="flex flex-col gap-6">
+            <li className="flex items-center  bg-[white] p-1 rounded-md gap-2">
+                <input type="text" className='w-full pl-2 text-black' placeholder='Search' />
+                <AiOutlineSearch className='text-black' />
+              </li>
               <li className="common-hover">
                 <Link href="/">Home</Link>
               </li>
@@ -311,7 +313,7 @@ const MainNav = () => {
                 </div>
                 {megaMenuVisible.categorys && (
                   <div
-                    className={`mega-menu border bg-white z-50 absolute w-[100%] left-0 right-0 rounded p-4 transition-opacity opacity-100`}
+                    className={`mega-menu border bg-white z-50 absolute w-[100%] left-0 right-0 top-[19%] rounded  transition-opacity opacity-100`}
                     data-aos="fade-up"
                     style={{
                       maxHeight: '80vh',
@@ -319,20 +321,19 @@ const MainNav = () => {
                     }}
                   >
                     <ul>
-                      <div className='flex flex-col gap-4 p-4 overflow-auto'>
+                      <div className='flex flex-col px-4 gap-2 my-4 overflow-auto'>
                         {
                           categoryData && categoryData?.map((item, index) => {
                             return (
-                              <div
-                                key={index} >
-                                <Link href={`/category/${item?.name}`}
-                                  className='flex items-center justify-center gap-2 cursor-pointer hover:scale-105 duration-300 transform'
-                                >
-                                  <h1 className="w-[70%] nav-category-title">
-                                    {item?.name}
-                                  </h1>
-                                </Link>
-                              </div>
+                              <div key={index} >
+                                  <Link href={`/category/${item?.name}`}
+                                    className='cursor-pointer hover:scale-105 duration-300 transform'
+                                  >
+                                    <h1 className="font-normal text-black">
+                                      {item?.name}
+                                    </h1>
+                                  </Link>
+                                </div>
                             )
                           })
                         }
@@ -348,10 +349,7 @@ const MainNav = () => {
                 <Link href="/blogs" >Blogs</Link>
               </li>
 
-              <li className="flex items-center jsutif bg-[white] p-1 rounded-md gap-2">
-                <input type="text" className='w-full pl-2 text-black' placeholder='Search' />
-                <AiOutlineSearch className='text-black' />
-              </li>
+            
 
             </ul>
           </div>

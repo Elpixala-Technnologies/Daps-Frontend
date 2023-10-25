@@ -317,7 +317,11 @@ function MobileBanners(props) {
   }
 
   return (
-    <div className={`slider ${sliderReady ? 's--ready' : ''}`}>
+    <div 
+      style={{
+        height:"70vh"
+      }}
+    className={`slider ${sliderReady ? 's--ready' : ''}`}>
     <div className="slider__slides">
       {props.slides.map((slide, index) => (
         <div
@@ -326,16 +330,21 @@ function MobileBanners(props) {
         >
           <div className="slider__slide-content">
             <div className="text-[#fff] top-[30%] text-left absolute left-[16%]">
-              <div>
+              <div className=''>
                 <h1 className="text-[1.5rem] font-bold slider__slide-heading">
                   {slide.title.split('').map((l, i) => (
                     <span key={i}>{l}</span>
                   ))}
                 </h1>
-                <h4 className="text-[1.2rem] font-semibold mb-2 slider__slide-subheading">
+                <h4 className="text-[1.2rem] font-semibold mb-2 slider__slide-subheading"
+                  style={{
+                    fontSize:"1.2rem"
+                  }}
+                >
                   High Performance Industrial Tools
                 </h4>
-                <h3 className="font-semibold text-[1.4rem] text-[#29679e] slider__slide-subheading">{slide?.price}</h3>
+                {/* <h3 className="font-semibold text-[1.4rem] text-[#29679e] slider__slide-subheading">{slide?.price}</h3> */}
+                <h3 className="font-semibold text-[1.2rem] text-[#29679e] slider__slide-subheading">SAVE UP TO <span className='text-[#fff]'>₹ 469</span></h3>
               </div>
               <div>
                 <div className="mt-[2rem]">
@@ -359,8 +368,16 @@ function MobileBanners(props) {
         </div>
       ))}
     </div>
-    <div className="slider__control" onClick={() => changeSlides(1)} />
-    <div className="slider__control slider__control--right" onClick={() => changeSlides(-1)} />
+    <div className="slider__control" onClick={() => changeSlides(1)}
+      style={{
+        left: "2%",
+      }}
+    />
+    <div 
+     style={{
+      right: "2%",
+    }}
+    className="slider__control slider__control--right" onClick={() => changeSlides(-1)} />
   </div>
   );
 }

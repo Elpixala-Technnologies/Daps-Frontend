@@ -16,8 +16,8 @@ import {
     MapIcons,
     DelivaryIcons
 } from "@/src/Assets"
-import {FaRegPlusSquare} from 'react-icons/fa'
-import {BiSolidOffer} from 'react-icons/bi'
+import { FaRegPlusSquare } from 'react-icons/fa'
+import { BiSolidOffer } from 'react-icons/bi'
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -219,16 +219,6 @@ const ProductDetailsPage = () => {
                                     </p>
                                 </div>
 
-                                <h2 className="my-2  text-[#29679e]">{product?.discount} % Discount</h2>
-                                <div className='my-2'>
-                                    <Image
-                                        src={PaymentIcons}
-                                        alt={"payment"}
-                                        width={100}
-                                        height={100}
-                                        className='w-full h-full'
-                                    />
-                                </div>
                                 <div className="mt-4 flex flex-col items-center  space-y-4 border-t border-b py-4  w-full">
                                     <button
                                         onClick={() => addToCart(product?._id)}
@@ -247,44 +237,45 @@ const ProductDetailsPage = () => {
                                     </button>
                                 </div>
 
-                                <div className='border text-center p-2 mt-4 flex items-center justify-center gap-4 rounded bg-[#E7F3EC]'>
-                                    <div className='flex flex-col items-center justify-center gap-2'>
+                                <div class='border text-center p-2 mt-4 flex flex-col md:flex-row items-center justify-center gap-4 rounded bg-[#E7F3EC]'>
+                                    <div class='flex flex-col items-center justify-center gap-2'>
                                         <Image
                                             src={PolicyIcons}
-                                            alt={"policy"}
+                                            alt="policy"
                                             width={50}
                                             height={50}
-                                            className='w-[3.5rem] h-[3.5rem] object-cover'
+                                            class='w-12 h-12 object-cover'
                                         />
-                                        <h1 className='text-center font-semibold'>
+                                        <h1 class='text-center font-semibold'>
                                             7 Days free exchange policy
                                         </h1>
                                     </div>
-                                    <div className='flex flex-col items-center justify-center gap-2'>
+                                    <div class='flex flex-col items-center justify-center gap-2'>
                                         <Image
                                             src={MapIcons}
-                                            alt={"policy"}
+                                            alt="policy"
                                             width={50}
                                             height={50}
-                                            className='w-[3.5rem] h-[3.5rem] object-cover'
+                                            class='w-12 h-12 object-cover'
                                         />
-                                        <h1 className='text-center font-semibold'>
+                                        <h1 class='text-center font-semibold'>
                                             Made in India with love
                                         </h1>
                                     </div>
-                                    <div className='flex flex-col items-center justify-center gap-2'>
+                                    <div class='flex flex-col items-center justify-center gap-2'>
                                         <Image
                                             src={DelivaryIcons}
-                                            alt={"DelivaryIcons"}
+                                            alt="DelivaryIcons"
                                             width={50}
                                             height={50}
-                                            className='w-[3.5rem] h-[3.5rem] object-cover'
+                                            class='w-12 h-12 object-cover'
                                         />
-                                        <h1 className='text-center font-semibold'>
+                                        <h1 class='text-center font-semibold'>
                                             Free delivery* within 4-5 days
                                         </h1>
                                     </div>
                                 </div>
+
                                 <hr className='my-4' />
                                 <div>
                                     <Accordion>
@@ -296,17 +287,17 @@ const ProductDetailsPage = () => {
                                             <Typography className='font-semibold'>REASONS TO BUY</Typography>
                                         </AccordionSummary>
                                         <AccordionDetails>
-                                          <div className='flex flex-col gap-4'>
-                                            <h1 className='flex items-center gap-2'>
-                                                <FaRegPlusSquare className='text-[1.5rem]'/> <span>Vehicle History Reports</span>
-                                            </h1>
-                                            <h1 className='flex items-center gap-2'>
-                                                <FaRegPlusSquare className='text-[1.5rem]'/> <span>Environmentally Friendly Options</span>
-                                            </h1>
-                                            <h1 className='flex items-center gap-2'>
-                                                <FaRegPlusSquare className='text-[1.5rem]'/> <span>Price Comparison</span>
-                                            </h1>
-                                          </div>
+                                            <div className='flex flex-col gap-4'>
+                                                <h1 className='flex items-center gap-2'>
+                                                    <FaRegPlusSquare className='text-[1.5rem]' /> <span>Vehicle History Reports</span>
+                                                </h1>
+                                                <h1 className='flex items-center gap-2'>
+                                                    <FaRegPlusSquare className='text-[1.5rem]' /> <span>Environmentally Friendly Options</span>
+                                                </h1>
+                                                <h1 className='flex items-center gap-2'>
+                                                    <FaRegPlusSquare className='text-[1.5rem]' /> <span>Price Comparison</span>
+                                                </h1>
+                                            </div>
                                         </AccordionDetails>
                                     </Accordion>
                                     <Accordion>
@@ -318,24 +309,24 @@ const ProductDetailsPage = () => {
                                             <Typography className='font-semibold'>OFFERS</Typography>
                                         </AccordionSummary>
                                         <AccordionDetails>
-                                        <div className='flex flex-col gap-4'>
-                                            <div className='flex items-center gap-4'>
-                                            <h1 className='flex items-center border p-4 rounded-full gap-2'>
-                                            <BiSolidOffer className='text-[2rem]'/>
-                                            </h1>
-                                            <div>
-                                                
-                                            <p> <span>Special 5% off,</span> only this weekend. Use code <span className='font-semibold'> FESTIVE5 </span></p>
-                                            <p> Discounted Price: 
-                                                 {product?.discount
-                                                    ? `₹ ${Math.floor(product?.price - (product?.price * product?.discount) / 100)}`
-                                                    : `₹ ${Math.floor(product?.price)}`
-                                                }
-                                            </p> 
+                                            <div className='flex flex-col gap-4'>
+                                                <div className='flex items-center gap-4'>
+                                                    <h1 className='flex items-center border p-4 rounded-full gap-2'>
+                                                        <BiSolidOffer className='text-[2rem]' />
+                                                    </h1>
+                                                    <div>
+
+                                                        <p> <span>Special 5% off,</span> only this weekend. Use code <span className='font-semibold'> FESTIVE5 </span></p>
+                                                        <p> Discounted Price:
+                                                            {product?.discount
+                                                                ? `₹ ${Math.floor(product?.price - (product?.price * product?.discount) / 100)}`
+                                                                : `₹ ${Math.floor(product?.price)}`
+                                                            }
+                                                        </p>
+                                                    </div>
+                                                </div>
+
                                             </div>
-                                            </div>
-                                         
-                                          </div>
                                         </AccordionDetails>
                                     </Accordion>
 
@@ -348,11 +339,11 @@ const ProductDetailsPage = () => {
                                             <Typography className='font-semibold'>DESCRIPTION</Typography>
                                         </AccordionSummary>
                                         <AccordionDetails>
-                                        <div className='flex flex-col gap-4'>
-                                            <h1 className='flex items-center border p-4 rounded-full gap-2'>
-                                            {product?.details}
-                                            </h1>
-                                          </div>
+                                            <div className='flex flex-col gap-4'>
+                                                <h1 className='flex items-center border p-4 rounded-full gap-2'>
+                                                    {product?.details}
+                                                </h1>
+                                            </div>
                                         </AccordionDetails>
                                     </Accordion>
                                 </div>
@@ -400,33 +391,33 @@ const ProductDetailsPage = () => {
                                         className="couponSwiper"
                                         breakpoints={{
                                             320: {
-                                              slidesPerView: 1,
-                                              spaceBetween: 20,
+                                                slidesPerView: 1,
+                                                spaceBetween: 20,
                                             },
                                             360: {
-                                              slidesPerView: 1,
-                                              spaceBetween: 20,
+                                                slidesPerView: 1,
+                                                spaceBetween: 20,
                                             },
                                             480: {
-                                              slidesPerView: 1,
-                                              spaceBetween: 20,
+                                                slidesPerView: 1,
+                                                spaceBetween: 20,
                                             },
                                             640: {
-                                              slidesPerView: 1,
-                                              spaceBetween: 20,
+                                                slidesPerView: 1,
+                                                spaceBetween: 20,
                                             },
                                             768: {
-                                              slidesPerView: 1,
-                                              spaceBetween: 30,
+                                                slidesPerView: 1,
+                                                spaceBetween: 30,
                                             },
                                             1024: {
-                                              slidesPerView:2,
-                                              spaceBetween: 20,
+                                                slidesPerView: 2,
+                                                spaceBetween: 20,
                                             },
-                                          }}
+                                        }}
                                         spaceBetween={10}
                                         slidesPerView={2}
-                                        
+
                                         loop={true}
                                     >
                                         {product?.coupon && product?.coupon?.map((coupon, index) => (
