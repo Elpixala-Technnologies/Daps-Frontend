@@ -23,6 +23,9 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 
 const ProductDetailsPage = () => {
@@ -142,15 +145,18 @@ const ProductDetailsPage = () => {
             })
             .catch((err) => console.error('Failed to copy:', err));
     };
-
     const [selectedImage, setSelectedImage] = useState(product?.images[0]);
+
+    const settings = {
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4, // Number of images to display in the slider
+        slidesToScroll: 1,
+    };
 
     const handleImageClick = (image) => {
         setSelectedImage(image);
     };
-
-
-
 
     return (
         <RootLayout>

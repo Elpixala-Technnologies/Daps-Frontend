@@ -66,7 +66,7 @@ const Footer = () => {
                         </div>
                        
                         <div className="space-y-3">
-                            <h3 className="uppercase font-semibold">Recent Products</h3>
+                            <h3 className="uppercase font-semibold">Our Products</h3>
                             <ul className="space-y-4 ">
                             {
                                     productData && productData?.slice(0,5)?.map((product)=>{

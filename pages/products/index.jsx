@@ -1,13 +1,13 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import { XMarkIcon } from '@heroicons/react/24/outline'
-import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react'
-import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/react/20/solid'
+import { XMarkIcon } from '@heroicons/react/24/outline';
+import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react';
+import { ChevronDownIcon, FunnelIcon, Squares2X2Icon } from '@heroicons/react/20/solid';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import useProducts from '@/src/Hooks/useProducts';
 import ProductSlider from '@/src/Shared/Banner/ProductBanner/ProductBanner';
 import RootLayout from '@/src/Layouts/RootLayout';
 import ProductCard from '@/src/Shared/Card/ProductCard/ProductCard';
-import { BsFilter } from 'react-icons/bs'
+import useCar from '@/src/Hooks/useCar';
 
 const sortOptions = [
     { name: 'Most Popular', href: '#', current: true },
@@ -15,23 +15,20 @@ const sortOptions = [
     { name: 'Newest', href: '#', current: false },
     { name: 'Price: Low to High', href: '#', current: false },
     { name: 'Price: High to Low', href: '#', current: false },
-]
-
+];
 
 function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
+    return classes.filter(Boolean).join(' ');
 }
-
 
 const ProductPage = () => {
     const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
     const { productData, categoryData } = useProducts();
+    const { CarData } = useCar()
     const itemsPerPage = 8; // Number of items per page
     const [page, setPage] = useState(1);
     const [currentPageData, setCurrentPageData] = useState([]);
     const [selectedCategories, setSelectedCategories] = useState(['All']);
-    const [selectedBrand, setSelectedBrand] = useState('All');
-    const [selectedStatus, setSelectedStatus] = useState('All');
 
     const updateCurrentPageData = () => {
         const start = (page - 1) * itemsPerPage;
@@ -43,13 +40,11 @@ const ProductPage = () => {
         if (productData) {
             updateCurrentPageData();
         }
-    }, [productData, page, selectedCategories, selectedBrand, selectedStatus]);
+    }, [productData, page, selectedCategories]);
 
     const filteredProducts = productData?.filter((product) => {
         const categoryMatch = selectedCategories.includes('All') || selectedCategories.includes(product.categories);
-        const brandMatch = selectedBrand === 'All' || product.brand === selectedBrand;
-        const statusMatch = selectedStatus === 'All' || product.status === selectedStatus;
-        return categoryMatch && brandMatch && statusMatch;
+        return categoryMatch;
     });
 
     const totalPages = Math.ceil((filteredProducts?.length || 0) / itemsPerPage);
@@ -76,17 +71,7 @@ const ProductPage = () => {
 
     const clearFilters = () => {
         setSelectedCategories(['All']);
-        setSelectedBrand('All');
-        setSelectedStatus('All');
     };
-
-    const [dropdownToggle, setDropdownToggle] = useState(false)
-
-    const handelDropdownToggle = () => {
-        setDropdownToggle(!dropdownToggle)
-    }
-
-
 
 
     return (
@@ -120,7 +105,7 @@ const ProductPage = () => {
                                 leaveFrom="translate-x-0"
                                 leaveTo="translate-x-full"
                             >
-                                <Dialog.Panel className="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-white py-4 pb-12 shadow-xl">
+                                <Dialog.Panel className="relative ml-auto pt-20 flex h-full w-full max-w-xs flex-col overflow-y-auto bg-white py-4 pb-12 shadow-xl">
                                     <div className="flex items-center justify-between px-4">
                                         <h2 className="text-lg font-medium text-gray-900">Filters</h2>
                                         <button
@@ -134,23 +119,16 @@ const ProductPage = () => {
                                     </div>
 
                                     {/* Filters */}
-                                    <form className="mt-4 border-t border-gray-200">
+                                    <div className="mt-4 border-t border-gray-200">
                                         <Disclosure as="div" className="border-b border-gray-200 py-6">
                                             {({ open }) => (
                                                 <>
                                                     <h3 className="-my-3 flow-root">
-                                                        <Disclosure.Button className="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500">
+                                                        <Disclosure.Button className="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500 ml-10">
                                                             <span className="font-medium text-gray-900">Category</span>
-                                                            <span className="ml-6 flex items-center">
-                                                                {open ? (
-                                                                    <MinusIcon className="h-5 w-5" aria-hidden="true" />
-                                                                ) : (
-                                                                    <PlusIcon className="h-5 w-5" aria-hidden="true" />
-                                                                )}
-                                                            </span>
                                                         </Disclosure.Button>
                                                     </h3>
-                                                    <Disclosure.Panel className="pt-6">
+                                                    <Disclosure.Panel className="pt-6 ml-10">
                                                         <div className="space-y-4">
                                                             {categoryData && categoryData.length > 0 ? (
                                                                 categoryData.map((category) => {
@@ -168,7 +146,7 @@ const ProductPage = () => {
                                                                             />
                                                                             {category.name}
                                                                         </li>
-                                                                    )
+                                                                    );
                                                                 })
                                                             ) : (
                                                                 <div>Loading categories...</div>
@@ -178,12 +156,13 @@ const ProductPage = () => {
                                                 </>
                                             )}
                                         </Disclosure>
-                                    </form>
+                                    </div>
                                 </Dialog.Panel>
                             </Transition.Child>
                         </div>
                     </Dialog>
                 </Transition.Root>
+
 
                 <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-24">
@@ -256,75 +235,67 @@ const ProductPage = () => {
                         <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
                             {/* Filters */}
                             <div className="hidden lg:block">
-                                <Disclosure as="div" className="border-b border-gray-200 py-6">
-                                    {({ open }) => (
-                                        <>
-                                            <h3 className="-my-3 flow-root">
-                                                <Disclosure.Button className="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500">
-                                                    <span className="font-medium text-gray-900">Category</span>
-                                                    <span className="ml-6 flex items-center">
-                                                        {open ? (
-                                                            <MinusIcon className="h-5 w-5" aria-hidden="true" />
-                                                        ) : (
-                                                            <PlusIcon className="h-5 w-5" aria-hidden="true" />
-                                                        )}
-                                                    </span>
-                                                </Disclosure.Button>
-                                            </h3>
-                                            <Disclosure.Panel className="pt-6">
-                                                <div className="space-y-4">
-                                                    {categoryData && categoryData.length > 0 ? (
-                                                        categoryData.map((category) => {
-                                                            return (
-                                                                <li
-                                                                    key={category._id} // or key={category.slug} depending on your unique identifier
-                                                                    className={`cursor-pointer ${selectedCategories.includes(category.name) ? 'text-[#18568C]' : ''}`}
-                                                                    onClick={() => toggleCategory(category.name)}
-                                                                >
-                                                                    <input
-                                                                        type="checkbox"
-                                                                        checked={selectedCategories.includes(category.name)}
-                                                                        readOnly
-                                                                        className="mr-2"
-                                                                    />
-                                                                    {category.name}
-                                                                </li>
-                                                            )
-                                                        })
-                                                    ) : (
-                                                        <div>Loading categories...</div>
-                                                    )}
-                                                </div>
-                                            </Disclosure.Panel>
-                                        </>
-                                    )}
-                                </Disclosure>
+                                {
+                                  CarData && CarData?.map((car) => {
+                                        return (
+                                            <Disclosure as="div" className="border-b border-gray-200 py-6">
+                                                {({ open }) => (
+                                                    <>
+                                                        <h3 className="-my-3 flow-root">
+                                                            <Disclosure.Button className="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500">
+                                                                <span className="font-medium text-gray-900">{car?.name}</span>
+                                                            </Disclosure.Button>
+                                                        </h3>
+                                                        <Disclosure.Panel className="pt-6 sticky">
+                                                            <div className="space-y-4 flex flex-col my-2 ">
+                                                                {car.model && car.model.length > 0 ? (
+                                                                   car?.model?.map((carModel) => {
+                                                                        return (
+                                                                            <li
+                                                                                key={category._id} // or key={category.slug} depending on your unique identifier
+                                                                                className={`cursor-pointer ${selectedCategories.includes(category.name) ? 'text-[#18568C]' : ''}`}
+                                                                                onClick={() => toggleCategory(category.name)}
+                                                                            >
+                                                                                <input
+                                                                                    type="checkbox"
+                                                                                    checked={selectedCategories.includes(category.name)}
+                                                                                    readOnly
+                                                                                    className="mr-2"
+                                                                                />
+                                                                                {carModel}
+                                                                            </li>
+                                                                        );
+                                                                    })
+                                                                ) : (
+                                                                    <div>Loading car...</div>
+                                                                )}
+                                                            </div>
+                                                        </Disclosure.Panel>
+                                                    </>
+                                                )}
+                                            </Disclosure>
+                                        )
+                                    })
+                                }
+
+
                             </div>
+
 
                             {/* Product grid */}
                             <div className="lg:col-span-3">
                                 <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
                                     {/* Product grid with category filtering */}
                                     <div className="lg:col-span-4">
-                                        {/* <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
-                                            {currentPageData && currentPageData.map((productValueData) => {
-                                                return (
-                                                    <ProductCard key={productValueData._id + "productvalue"} productValueData={productValueData} />
-                                                )
-                                            })}
-                                        </div> */}
-
-
-<div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
-                {filteredProducts && filteredProducts.map((productValueData) => {
-                    return (
-                        <ProductCard key={productValueData._id + "productvalue"} productValueData={productValueData} />
-                    );
-                })}
-            </div>
+                                        {/* Product grid code */}
+                                        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
+                                            {currentPageData.map((productValueData) => (
+                                                <ProductCard key={productValueData._id + "productvalue"} productValueData={productValueData} />
+                                            ))}
+                                        </div>
 
                                         {/* Pagination */}
-                                        <div className={`flex items-center justify-center gap-4 mt-11 mb-16`} data-aos="fade-up" data-aos-delay="200">
+                                        <div className="flex items-center justify-center gap-4 mt-11 mb-16">
                                             <button
                                                 title="Previous"
                                                 className={`h-14 w-14 rounded-full text-center ${page === 1 ? "bg-gray-400 cursor-not-allowed" : "hover:bg-red-10"
@@ -350,7 +321,7 @@ const ProductPage = () => {
                                                 title="Next"
                                                 className={`h-14 w-14 text-center rounded-full ${page === totalPages
                                                     ? "bg-gray-400 cursor-not-allowed"
-                                                    : "hover:bg-red-10"
+                                                    : "hover-bg-red-10"
                                                     } text-white bg-black  border ${page === totalPages ? "bg-gray-400" : "bg-[#18568C]"
                                                     } flex items-center justify-center`}
                                                 onClick={handleNextPage}
@@ -362,12 +333,13 @@ const ProductPage = () => {
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </section>
                 </main>
             </div>
         </RootLayout>
-    )
-}
+    );
+};
 
 export default ProductPage;

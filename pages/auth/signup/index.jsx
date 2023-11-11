@@ -12,6 +12,7 @@ import { signupUrl } from "@/src/Utils/Urls/AuthUrl";
 const Index = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showCPassword, setShowCPassword] = useState(false);
+  
   const {
     register,
     handleSubmit,
@@ -43,7 +44,7 @@ const Index = () => {
       .then(() => {
         router.push("/");
         Swal.fire({
-          position: "top-end",
+          position: "center",
           timerProgressBar: true,
           title: "Successfully Login!",
           iconColor: "#ED1C24",

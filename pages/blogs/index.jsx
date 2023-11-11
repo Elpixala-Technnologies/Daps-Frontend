@@ -9,7 +9,7 @@ const BlogPage = () => {
     return (
         <RootLayout>
             <section className='px-4  md:container'>
-                <div className='title my-6'>
+                <div className='title my-10 text-center'>
                     <h1>All <span>Blogs</span></h1>
                 </div>
 

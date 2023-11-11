@@ -28,15 +28,24 @@ const BlogDetailPage = () => {
         <RootLayout>
             <section className='container'>
                 <div className="mt-6 bg-gray-50">
-                    <div className=" px-10 py-6 mx-auto">
+                    <div className=" px-10 py-6 mx-auto ">
                         {/*author*/}
-                        <div className="max-w-6xl px-10 py-6 mx-auto bg-gray-50">
+                        <div className="mt-2 text-center pt-30 font-serif">
+                                {/*post heading*/}
+                                <a
+                                    href="#"
+                                    className="sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl font-bold text-[#18568C]  hover:underline"
+                                >
+                                    {blog?.title}
+                                </a>
+                            </div>
+                        <div className="max-w-5xl px-10 py-6 mx-auto bg-gray-50 pt-30   ">
                             <a
                                 href="#_"
                                 className="block transition"
                             >
                                 <img
-                                    className="object-cover w-full shadow-sm h-full"
+                                    className="object-cover w-full shadow-sm h-full max-w-3xl items-center"
                                     src={blog?.image}
                                     alt={blog?.title}
                                 />
@@ -50,19 +59,14 @@ const BlogDetailPage = () => {
                                 })}
 
                             </div>
-                            <div className="mt-2">
-                                {/*post heading*/}
-                                <a
-                                    href="#"
-                                    className="sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl font-bold text-[#18568C]  hover:underline"
-                                >
-                                    {blog?.title}
-                                </a>
-                            </div>
-                            <div className=" w-full  mx-auto text-2xl text-gray-700 mt-4 rounded bg-gray-100">
+                            
+                            <div className=" w-full  mx-auto text-2xl text-gray-700 mt-4 rounded bg-gray-100 flex flex-row">
                                 <div>
-                                    <p className="mt-2 p-8">
+                                    <p className="mt-2 p-8 font-bold">
                                         {blog?.content}
+                                    </p>
+                                    <p className="mt-2 p-8 ">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam velit esse dolor corporis quas animi voluptate corrupti minus aliquam, obcaecati atque officia optio. Deleniti molestiae adipisci mollitia rem, dolores illum dignissimos neque odio quia amet fugit eum dolorum cum repudiandae temporibus laudantium placeat saepe iste corrupti! Explicabo magnam ab repellendus dolorum? Sapiente ipsa velit eos libero! Ad facilis sunt nam quam quod, unde qui praesentium, error ipsa iusto cupiditate et, eaque suscipit velit vitae magni dolore minus. Eius, facilis! Magni veritatis debitis maxime culpa, amet id, modi ratione et adipisci tempora ab quod fugit voluptate, aperiam aut placeat perferendis expedita.
                                     </p>
                                 </div>
                             </div>
@@ -70,8 +74,8 @@ const BlogDetailPage = () => {
                         <h2 className="text-2xl mt-4 text-gray-500 font-bold text-center">
                             Related Posts
                         </h2>
-                        <div className=" grid h-full grid-cols-12 gap-10 pb-10 mt-8 sm:mt-16">
-                            <div className="grid grid-cols-12 col-span-12 gap-7">
+                        <div className=" grid h-full grid-cols-12 gap-10 pb-10 mt-8 sm:mt-16 ">
+                            <div className="grid grid-cols-12 col-span-12 gap-7 ">
                                 {
                                     blogData && blogData?.slice(0, 3)?.map((blogD) => {
                                         return (

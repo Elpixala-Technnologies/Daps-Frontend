@@ -18,7 +18,7 @@ const NewArrivals = () => {
   const { productData } = useProducts();
 
   const filterProductData = productData?.filter((data) => {
-    return data?.status === "New Arrival";
+    return data?.status === "New Arrivals";
   });
 
   const { user } = useContext(AuthContext);
@@ -88,7 +88,7 @@ const NewArrivals = () => {
   return (
     <section className=" container" >
       <div className='mt-[40px]'>
-        <div className='title mb-4'>
+        <div className='title mb-4 text-center pt-30'>
           <h1>Latest <span> Products </span></h1>
         </div>
       <div>
@@ -128,7 +128,7 @@ const NewArrivals = () => {
           data-aos="fade-up"
           data-aos-anchor-placement="center-bottom"
         >
-          <div className="grid grid-cols-1 justify-center items-center mx-auto md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 justify-center items-center mx-auto md:grid-cols-2 lg:grid-cols-3 gap-4 pt-30">
             {filterProductData &&
               filterProductData.map((product) => {
                 return (
@@ -167,7 +167,7 @@ const NewArrivals = () => {
                       </div>
                       <div className='absolute left-[5%] top-[5%]'>
                         <p className='bg-[#FCC50B] px-4 rounded-md shadow'>
-                          New
+                          New 
                         </p>
                       </div>
                       <div className="flex p-2 flex-col border rounded-b-md">

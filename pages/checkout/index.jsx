@@ -15,7 +15,7 @@ const CheckoutPage = () => {
     const [cartData, setCartData] = useState([]);
     const { user } = useContext(AuthContext);
     const [currentStep, setCurrentStep] = useState(0);
-
+    const [totalPrice, setTotalPrice] = useState(0);
     const { register, handleSubmit } = useForm();
 
     useEffect(() => {
@@ -435,7 +435,8 @@ const CheckoutPage = () => {
                                         <div className="mt-6 border-t border-b py-2">
                                             <div className="flex items-center justify-between">
                                                 <p className="text-sm font-medium text-gray-900">Subtotal</p>
-                                                <p className="font-semibold text-gray-900">$399.00</p>
+                                                <p className="font-semibold text-gray-900">{
+                                                Math.round(totalPrice)}</p>
                                             </div>
                                             <div className="flex items-center justify-between">
                                                 <p className="text-sm font-medium text-gray-900">Shipping</p>
@@ -444,7 +445,7 @@ const CheckoutPage = () => {
                                         </div>
                                         <div className="mt-6 flex items-center justify-between">
                                             <p className="text-sm font-medium text-gray-900">Total</p>
-                                            <p className="text-2xl font-semibold text-gray-900">$408.00</p>
+                                            <p className="text-2xl font-semibold text-gray-900">{Math.round(totalPrice)}</p>
                                         </div>
                                     </div>
                                     <button className="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white">

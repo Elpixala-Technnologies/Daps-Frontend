@@ -23,6 +23,7 @@ const AddProduct = () => {
   const [brand, setBrand] = useState("");
   const [type, setType] = useState("")
   const [status, setStatus] = useState("")
+  const [isAndroid, setIsAndroid] = useState(false)
 
   const [loading, setLoading] = useState(false);
 
@@ -34,6 +35,9 @@ const AddProduct = () => {
   const handleCouponChange = (value) => {
     setCoupon(value);
   };
+
+
+
 
   // ==== Cloudinary ==== 
   const upload_preset = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET;
@@ -233,19 +237,9 @@ const AddProduct = () => {
             onChange={(e) => setStatus(e.target.value)}
           />
 
-          <TextArea
-            rows={4}
-            placeholder="Description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
+          <div>
 
-          <TextArea
-            rows={4}
-            placeholder="Features"
-            value={features}
-            onChange={(e) => setFeatures(e.target.value)}
-          />
+          </div>
 
           <div className="w-full h-full">
             <div className="rounded-lg shadow-xl bg-gray-50 p-4">

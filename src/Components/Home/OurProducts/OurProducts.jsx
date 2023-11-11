@@ -9,7 +9,7 @@ import { AuthContext } from "@/src/Context/UserContext";
 import { useRouter } from "next/router";
 import { addToCartUrl } from "@/src/Utils/Urls/ProductUrl";
 import Swal from "sweetalert2";
-import HomeSeconBanner from "../HomeSeconBanner/HomeSeconBanner";
+
 
 
 const OurProducts = () => {
@@ -27,7 +27,7 @@ const OurProducts = () => {
       return product.status === 'Tranding';
     } else if (activeCategory === 'LATEST') {
       // You can define your own logic here based on the 'productData' structure
-      return product.status === 'New Arrival'; // Modify this as needed
+      return product.status === 'New Arrivals'; // Modify this as needed
     } else if (activeCategory === 'BESTSELLER') {
       // You can define your own logic here based on the 'productData' structure
       return product.status === 'Bestseller'; // Modify this as needed
@@ -95,27 +95,27 @@ const OurProducts = () => {
 
         <div className='gelaryComponent'>
           <div className="overflow-x-auto">
-            <div className="flex justify-center border-b border-gray-400 whitespace-nowrap dark:border-gray-700">
+            <div className="flex justify-center border-b border-gray-400 whitespace-nowrap ">
               <button
                 onClick={() => setActiveCategory('FEATURED')}
-                className={`inline-flex font-bold items-center h-10 px-4 -mb-px text-sm text-center ${activeCategory === 'FEATURED' ? 'text-blue-600 border-b-2 border-blue-500' : 'text-gray-700 border-transparent'
-                  } sm:text-base dark:border-blue-400 dark:text-blue-300 whitespace-nowrap focus:outline-none`}
+                className={`inline-flex font-extrabold items-center h-10 px-4 -mb-px text-sm text-center ${activeCategory === 'FEATURED' ? 'text-blue-600 border-b-2 border-blue-500' : ' border-transparent'
+                  } sm:text-base dark:border-blue-400 dark:text-gradient-to-r from-cyan-500 to-blue-500 whitespace-nowrap focus:outline-none`}
               >
                 FEATURED
               </button>
 
               <button
                 onClick={() => setActiveCategory('LATEST')}
-                className={`inline-flex font-bold items-center h-10 px-4 -mb-px text-sm text-center ${activeCategory === 'LATEST' ? 'text-gray-700 border-b-2 border-gray-400' : 'text-gray-700 border-transparent'
-                  } sm:text-base dark:text-white whitespace-nowrap cursor-base focus:outline-none hover:border-gray-400`}
+                className={`inline-flex font-extrabold items-center h-10 px-4 -mb-px text-sm text-center ${activeCategory === 'LATEST' ? 'text-blue-600 border-b-2 border-blue-500' : ' border-transparent'
+                  } sm:text-base dark:border-blue-400 dark:text-gradient-to-r from-cyan-500 to-blue-500 whitespace-nowrap focus:outline-none hover:border-gray-400`}
               >
                 TRENDING
               </button>
 
               <button
                 onClick={() => setActiveCategory('BESTSELLER')}
-                className={`inline-flex font-bold items-center h-10 px-4 -mb-px text-sm text-center ${activeCategory === 'BESTSELLER' ? 'text-gray-700 border-b-2 border-gray-400' : 'text-gray-700 border-transparent'
-                  } sm:text-base dark:text-white whitespace-nowrap cursor-base focus:outline-none hover:border-gray-400`}
+                className={`inline-flex font-bold items-center h-10 px-4 -mb-px text-sm text-center ${activeCategory === 'BESTSELLER' ? 'text-blue-600 border-b-2 border-blue-500' : ' border-transparent'
+                  } sm:text-base dark:border-blue-400 dark:text-gradient-to-r from-cyan-500 to-blue-500 whitespace-nowrap focus:outline-none hover:border-gray-400`}
               >
                 BESTSELLER
               </button>
@@ -162,7 +162,7 @@ const OurProducts = () => {
               data-aos="fade-up"
               data-aos-anchor-placement="center-bottom"
             >
-              <div className="grid grid-cols-1 justify-center items-center mx-auto md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 justify-center items-center  md:grid-cols-2  gap-4">
                 {filteredProducts &&
                   filteredProducts?.map((product) => {
                     return (
@@ -233,9 +233,7 @@ const OurProducts = () => {
             </Swiper>
           </div>
         </div>
-        <div className="mt-4">
-          <HomeSeconBanner />
-        </div>
+        
       </div>
     </section>
   );

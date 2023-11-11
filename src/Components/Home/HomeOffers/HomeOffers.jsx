@@ -11,6 +11,7 @@ import {
 const HomeOffers = () => {
     return (
         <section className='container'>
+            
             <div className='mt-[62px] grid text-white grid-cols-1 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8 gap-4'>
                 <div className='banner-content  w-full relative'>
                     <Image
@@ -31,7 +32,7 @@ const HomeOffers = () => {
                                 UP TO 20% OFF
                             </h4>
 
-                            <Link href='/prodcts' className='common-btn-outline py-4 px-4 mt-6'>
+                            <Link href='/products' className='common-btn-outline py-4 px-4 mt-6'>
                                 Shop Now
                             </Link>
                         </div>
@@ -57,6 +58,9 @@ const HomeOffers = () => {
                                 <h4 className='font-semibold text-[#009EE2] text-[1.2rem] mb-4'>
                                     ₹ 1562
                                 </h4>
+                                <Link href='products' className='common-btn-outline py-4 px-4 mt-6'>
+                                Shop Now
+                            </Link>
                             </div>
                         </div>
                     </div>
@@ -79,6 +83,9 @@ const HomeOffers = () => {
                                 <h4 className='font-semibold text-[#009EE2] text-[1.2rem] mb-4'>
                                     ₹153
                                 </h4>
+                                <Link href='products' className='common-btn-outline py-4 px-4 mt-6'>
+                                Shop Now
+                            </Link>
                             </div>
                         </div>
                     </div>
@@ -101,7 +108,7 @@ const HomeOffers = () => {
                                 UP TO 20% OFF
                             </h4>
 
-                            <Link href='/prodcts' className='common-btn-outline py-4 px-4 mt-6'>
+                            <Link href='products' className='common-btn-outline py-4 px-4 mt-6'>
                                 Shop Now
                             </Link>
                         </div>

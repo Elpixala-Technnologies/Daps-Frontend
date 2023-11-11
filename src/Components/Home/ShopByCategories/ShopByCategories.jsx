@@ -7,12 +7,12 @@ import "aos/dist/aos.css"; // Import AOS styles
 import useProducts from "@/src/Hooks/useProducts";
 
 const ShopByCategories = () => {
-  const { categoryData } = useProducts();
+  const { categoryMainData } = useProducts();
   const [updateData, setUpdateData] = React.useState(10);
 
   const showCard = () => {
     if (updateData === 10) {
-      setUpdateData(categoryData.length);
+      setUpdateData(categoryMainData.length);
     } else {
       setUpdateData(10);
     }
@@ -31,19 +31,18 @@ const ShopByCategories = () => {
   return (
     <section className='container'>
       <div className="">
-        <div className="md:w-[100%] mx-auto mt-7 md:mt-10  md:block ">
-          <div className='title'>
+        <div className="md:w-[100%] mx-auto mt-7 md:block ">
+          <div className='title text-center pt-30'>
             <h1>Shop by <span>Categories</span></h1>
           </div>
           <div className="rounded-lg pb-[1px]">
             <div className="grid grid-cols-2 gap-5 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 md:pt-5">
-              {categoryData &&
-                categoryData.slice(0, updateData).map((child) => {
-                  const { _id, name, icon } = child;
-
+              {categoryMainData &&
+                categoryMainData.slice(0, updateData).map((child) => {
+                  const { _id, name, icons } = child;
                   return (
                     <div
-                      className="color-b bg-white p-2 md:p-3 text-center rounded-md duration-300 transform  shadow-sm hover:-translate-y-1.5 border-t border-slate-100 hover:bg-red-10 hover:text-[#18568C]"
+                      className="color-b bg-white p-2 md:p-3 text-center rounded-md duration-300 transform  shadow-sm hover:-translate-y-1.5 border-t border-slate-100 hover:bg-red-10 hover:text-[#18568C] hover:bg-gradient-to-r from-cyan-500 to-blue-500"
                       data-aos="fade-up" // Add AOS animation attribute
                       data-aos-duration="1000" // Set animation duration in milliseconds
                       key={_id}
@@ -51,13 +50,13 @@ const ShopByCategories = () => {
                       <Link href={`/category/${name}`}>
                         <Image
                           alt="image"
-                          src={icon}
+                          src={icons}
                           className="inline-flex items-center justify-center chele"
                           width={65}
                           height={65}
                         />
 
-                        <div className="text-sm font-semibold tracking-wide cursor-pointer dark:text-black">
+                        <div className="text-sm font-semibold tracking-wide cursor-pointer dark:text-black ">
                           {name}
                         </div>
                       </Link>
@@ -69,7 +68,7 @@ const ShopByCategories = () => {
               className="flex justify-end items-center text-black hover:[#29679e] text-[14px] my-4 px-2 pr-4 tracking-wide  hover:text-red-10 cursor-pointer"
               onClick={() => showCard()}
             >
-              {`Read ${updateData === 10 ? "More" : "Less"}`}{" "}
+              {`Show ${updateData === 10 ? "More" : "Less"}`}{" "}
               {updateData === 10 ? (
                 <AiFillCaretDown className="mt-1 text-[15px]" />
                 ) : (

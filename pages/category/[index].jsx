@@ -131,8 +131,8 @@ const category_product = () => {
                 />
             </div>
             <section className="container px-4 " >
-                <h3 className='font-semibold md:text-3xl text-lg my-[40px]'>Category {categoryName}</h3>
-                <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
+                <h3 className='font-semibold md:text-3xl text-lg my-[40px] text-center pt-30 '>Category {categoryName}</h3>
+                <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3 ">
                     {
                         categoriesProductsToDisplay && categoriesProductsToDisplay?.map(product => (
                             <Link href={`/products/${product?._id}`}>
@@ -242,8 +242,8 @@ const category_product = () => {
                     </div>
                 </div>
 
-                <h3 className='font-semibold md:text-3xl text-lg my-8'>Tranding Products</h3>
-                <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
+                <h3 className='font-semibold md:text-3xl text-lg my-8 text-center'>Trending Products</h3>
+                <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
                     {
                         productsToDisplay && productsToDisplay?.map(product => (
                             <Link href={`/products/${product?._id}`}
@@ -283,7 +283,7 @@ const category_product = () => {
                                     </div>
                                     <div className='absolute left-[5%] top-[5%]'>
                                         <p className='bg-[#FCC50B] px-4 rounded-md shadow'>
-                                           Tranding 
+                                           Trending 
                                         </p>
                                     </div>
                                     <div className="flex p-2 flex-col border rounded-b-md">

@@ -1,157 +1,561 @@
 [
-
   {
-    "name": "High-Intensity HID Bulbs",
-    "categories": "HIDs",
+    "name": "High-Intensity Camera kit with 360 Camera",
+    "categories": "Camera kit",
     "brand": "BrandY",
     "price": 34.99,
     "quantity": 60,
     "images": [
-      "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
-      "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306484/Daps%20Images/Camera%20Kit/360%20Camera/IMG_20231012_151826925_mmfc7s.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306484/Daps%20Images/Camera%20Kit/360%20Camera/IMG_20231012_151758001_qjx2ze.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306483/Daps%20Images/Camera%20Kit/360%20Camera/IMG_20231012_151856384_luutvs.jpg"
     ],
     "discount": 8,
     "type": "HID Bulbs",
-    "status": "Tranding",
+    "status": "New Arrivals",
+    "carName": "",
+    "carModel": "",
     "details": "Upgrade your vehicle's lighting with high-intensity HID bulbs.",
     "features": [
       "Bright and Durable",
       "Easy Replacement"
     ],
     "coupons": [
-      "couponId22"
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
+    ]
+  },
+  {
+    "name": "High-Intensity Camera kit with F-B Camera",
+    "categories": "Camera kit",
+    "brand": "BrandY",
+    "price": 34.99,
+    "quantity": 60,
+    "images": [
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306485/Daps%20Images/Camera%20Kit/F-B%20Camera/IMG_20231012_151336611_zvrwdx.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306487/Daps%20Images/Camera%20Kit/F-B%20Camera/IMG_20231012_151232846_cpfnzs.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306486/Daps%20Images/Camera%20Kit/F-B%20Camera/IMG_20231012_151327016_clwatc.jpg"
+    ],
+    "discount": 8,
+    "type": "Camera",
+    "status": "New Arrivals",
+    "carName": "",
+    "carModel": "",
+    "details": "Upgrade your vehicle's lighting with high-intensity HID bulbs.",
+    "features": [
+      "Bright and Durable",
+      "Easy Replacement"
+    ],
+    "coupons": [
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
+    ]
+  },
+  {
+    "name": "High-Intensity HID Bulbs 55W Canbus",
+    "categories": "HIDs",
+    "brand": "BrandY",
+    "price": 34.99,
+    "quantity": 60,
+    "images": [
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306460/Daps%20Images/HID/55W%20Canbus/YKS-6570_zbe0tj.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306460/Daps%20Images/HID/55W%20Canbus/YKS-6565_nranzv.jpg"
+    ],
+    "discount": 8,
+    "type": "HID Bulbs",
+    "status": "New Arrivals",
+    "carName": "",
+    "carModel": "",
+    "details": "Upgrade your vehicle's lighting with high-intensity HID bulbs.",
+    "features": [
+      "Bright and Durable",
+      "Easy Replacement"
+    ],
+    "coupons": [
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
+    ]
+  },
+  {
+    "name": "High-Intensity HID Bulbs 65W",
+    "categories": "HIDs",
+    "brand": "BrandY",
+    "price": 34.99,
+    "quantity": 60,
+    "images": [
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306458/Daps%20Images/HID/65W/mmexport1649587683556_omboq0.jpg"
+    ],
+    "discount": 8,
+    "type": "HID Bulbs",
+    "status": "Tranding",
+    "carName": "",
+    "carModel": "",
+    "details": "Upgrade your vehicle's lighting with high-intensity HID bulbs.",
+    "features": [
+      "Bright and Durable",
+      "Easy Replacement"
+    ],
+    "coupons": [
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
+    ]
+  },
+  {
+    "name": "High-Intensity HID Bulbs 95W",
+    "categories": "HIDs",
+    "brand": "BrandY",
+    "price": 34.99,
+    "quantity": 60,
+    "images": [
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306459/Daps%20Images/HID/95W/YKS-6576_umaxup.jpg"
+    ],
+    "discount": 8,
+    "type": "HID Bulbs",
+    "status": "Tranding",
+    "carName": "",
+    "carModel": "",
+    "details": "Upgrade your vehicle's lighting with high-intensity HID bulbs.",
+    "features": [
+      "Bright and Durable",
+      "Easy Replacement"
+    ],
+    "coupons": [
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
     ]
   },
   {
     "name": "D-Series Off-Road Lights Set",
-    "categories": "D-Series",
+    "categories": "LED",
     "brand": "BrandZ",
     "price": 129.99,
     "quantity": 40,
     "images": [
-      "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
-      "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306452/Daps%20Images/LED/D%20Series/daps_catlouge_2023_FINAL-39_ji6xnr.png",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306452/Daps%20Images/LED/D%20Series/daps_catlouge_2023_FINAL-33_d9fhey.png",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306452/Daps%20Images/LED/D%20Series/daps_catlouge_2023_FINAL-38_wnkgyu.png",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306452/Daps%20Images/LED/D%20Series/daps_catlouge_2023_FINAL-34_dt4ueb.png",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306451/Daps%20Images/LED/D%20Series/daps_catlouge_2023_FINAL-32_mlocm0.png",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306450/Daps%20Images/LED/D%20Series/daps_catlouge_2023_FINAL-37_fvgvwe.png"
     ],
     "discount": 15,
     "type": "Off-Road Lights Set",
-    "status": "Tranding",
+    "status": "New Arrivals",
+    "carName": "",
+    "carModel": "",
     "details": "Equip your off-road vehicle with this D-Series lights set for superior illumination.",
     "features": [
       "Spot and Flood Beam",
       "Rugged Construction"
     ],
     "coupons": [
-      "couponId23"
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
     ]
   },
   {
-    "name": "Car Android Player with Bluetooth",
-    "categories": "Car Android Player",
+    "name": "Android Player with Bluetooth",
+    "categories": "Android",
     "brand": "BrandA",
     "price": 139.99,
     "quantity": 70,
     "images": [
-      "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
-      "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306439/Daps%20Images/Android/IMG_8174_ht8b7j.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306437/Daps%20Images/Android/IMG_8173_cewkfo.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306438/Daps%20Images/Android/IMG_8178_r9spav.jpg"
     ],
     "discount": 10,
     "type": "Android Player with Bluetooth",
     "status": "Tranding",
+    "carName": "",
+    "carModel": "",
     "details": "Upgrade your car's entertainment system with Bluetooth-enabled Android player.",
     "features": [
       "Bluetooth Connectivity",
       "Touchscreen Display"
     ],
     "coupons": [
-      "couponId24"
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
     ]
   },
   {
-    "name": "Fiat Punto Brake Pads",
-    "categories": "Fiat Punto",
+    "name": "New Punto",
+    "categories": "OEM-Sepcial Android Player",
     "brand": "BrandB",
     "price": 29.99,
     "quantity": 90,
     "images": [
-      "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
-      "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306474/Daps%20Images/OEM-Special%20Android%20Player/New%20Punto/Fiat-Punto-EVO-FIAT-Linea-Android-Player-OEM-Style_ygs9oy.webp",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306472/Daps%20Images/OEM-Special%20Android%20Player/New%20Punto/daps_catlouge_2023_FINAL-77_urrozt.png",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306472/Daps%20Images/OEM-Special%20Android%20Player/New%20Punto/daps_catlouge_2023_FINAL-81_tbofcc.png"
     ],
     "discount": 5,
     "type": "Brake Pads",
-    "status": "Tranding",
+    "status": "New Arrivals",
+    "carName": "",
+    "carModel": "",
     "details": "Ensure safe braking with high-quality Fiat Punto brake pads.",
     "features": [
       "Long-Lasting",
       "Noise-Free"
     ],
     "coupons": [
-      "couponId25"
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
     ]
   },
   {
-    "name": "FM-BT Car Radio with USB",
+    "name": "12.3 Audi Style Android",
+    "categories": "OEM-Sepcial Android Player",
+    "brand": "BrandB",
+    "price": 29.99,
+    "quantity": 90,
+    "images": [
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306469/Daps%20Images/OEM-Special%20Android%20Player/12.3%20Audi%20Style%20Android/d4a1adea-341a-4d4b-90d5-3e1bd61e7751_mb5dh3.jpg"
+    ],
+    "discount": 5,
+    "type": "Brake Pads",
+    "status": "New Arrivals",
+    "carName": "",
+    "carModel": "",
+    "details": "Ensure safe braking with high-quality Fiat Punto brake pads.",
+    "features": [
+      "Long-Lasting",
+      "Noise-Free"
+    ],
+    "coupons": [
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
+    ]
+  },
+  {
+    "name": "12.3 Merc Style Android",
+    "categories": "OEM-Sepcial Android Player",
+    "brand": "BrandB",
+    "price": 29.99,
+    "quantity": 90,
+    "images": [
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306470/Daps%20Images/OEM-Special%20Android%20Player/12.3%20Merc%20Style%20Android/d6a41ae6-a2f9-4011-ab2a-e91a0e6bcebb_ux3q2l.jpg"
+    ],
+    "discount": 5,
+    "type": "Brake Pads",
+    "status": "New Arrivals",
+    "carName": "",
+    "carModel": "",
+    "details": "Ensure safe braking with high-quality Fiat Punto brake pads.",
+    "features": [
+      "Long-Lasting",
+      "Noise-Free"
+    ],
+    "coupons": [
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
+    ]
+  },
+  {
+    "name": "Creta 2+32 OEM",
+    "categories": "OEM-Sepcial Android Player",
+    "brand": "BrandB",
+    "price": 29.99,
+    "quantity": 90,
+    "images": [
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306472/Daps%20Images/OEM-Special%20Android%20Player/Creta%202%2B32%20OEM/YKS-6535_s4az3w.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306472/Daps%20Images/OEM-Special%20Android%20Player/Creta%202%2B32%20OEM/YKS-6540_at0rtl.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306471/Daps%20Images/OEM-Special%20Android%20Player/Creta%202%2B32%20OEM/YKS-6536_mlxrcs.jpg"
+    ],
+    "discount": 5,
+    "type": "Brake Pads",
+    "status": "Tranding",
+    "carName": "",
+    "carModel": "",
+    "details": "Ensure safe braking with high-quality Fiat Punto brake pads.",
+    "features": [
+      "Long-Lasting",
+      "Noise-Free"
+    ],
+    "coupons": [
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
+    ]
+  },
+  {
+    "name": "Tesla Style Android",
+    "categories": "OEM-Sepcial Android Player",
+    "brand": "BrandB",
+    "price": 29.99,
+    "quantity": 90,
+    "images": [
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306477/Daps%20Images/OEM-Special%20Android%20Player/Tesla%20Style%20Android/YKS-6528_fillrd.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306475/Daps%20Images/OEM-Special%20Android%20Player/Tesla%20Style%20Android/YKS-6532_izdks6.jpg"
+    ],
+    "discount": 5,
+    "type": "Brake Pads",
+    "status": "Tranding",
+    "carName": "",
+    "carModel": "",
+    "details": "Ensure safe braking with high-quality Fiat Punto brake pads.",
+    "features": [
+      "Long-Lasting",
+      "Noise-Free"
+    ],
+    "coupons": [
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
+    ]
+  },
+  {
+    "name": "Old Punto ",
+    "categories": "OEM-Sepcial Android Player",
+    "brand": "BrandB",
+    "price": 29.99,
+    "quantity": 90,
+    "images": [
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306474/Daps%20Images/OEM-Special%20Android%20Player/Old%20Punto/daps_catlouge_2023_FINAL-78_zoehfu.png",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306474/Daps%20Images/OEM-Special%20Android%20Player/Old%20Punto/download_qnrrbx.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306474/Daps%20Images/OEM-Special%20Android%20Player/Old%20Punto/daps_catlouge_2023_FINAL-79_gwhchy.png"
+    ],
+    "discount": 5,
+    "type": "Brake Pads",
+    "status": "Tranding",
+    "carName": "",
+    "carModel": "",
+    "details": "Ensure safe braking with high-quality Fiat Punto brake pads.",
+    "features": [
+      "Long-Lasting",
+      "Noise-Free"
+    ],
+    "coupons": [
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
+    ]
+  },
+  {
+    "name": "FM-BT Car Radio RGB",
     "categories": "FM-BT",
     "brand": "BrandC",
     "price": 99.99,
     "quantity": 55,
     "images": [
-      "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
-      "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306461/Daps%20Images/FM-BT/RGB/daps_catlouge_2023_FINAL-93_mvksjn.png",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306461/Daps%20Images/FM-BT/RGB/daps_catlouge_2023_FINAL-94_jcdko2.png",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306464/Daps%20Images/FM-BT/RGB/YKS-6032_mksdh5.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306463/Daps%20Images/FM-BT/RGB/YKS-6030_ysf7ry.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306462/Daps%20Images/FM-BT/RGB/daps_catlouge_2023_FINAL-96_fpmi7p.png"
     ],
     "discount": 12,
     "type": "Car Radio with USB",
     "status": "Tranding",
+    "carName": "",
+    "carModel": "",
     "details": "Stay connected and enjoy music on the go with this FM-BT car radio with USB.",
     "features": [
       "USB Playback",
       "Bluetooth Streaming"
     ],
     "coupons": [
-      "couponId26"
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
     ]
   },
   {
-    "name": "Sound Damping Mat",
+    "name": "FM-BT Car Radio Static",
+    "categories": "FM-BT",
+    "brand": "BrandC",
+    "price": 99.99,
+    "quantity": 55,
+    "images": [
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306463/Daps%20Images/FM-BT/Static/YKS-6031_m4msfy.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306461/Daps%20Images/FM-BT/Static/YKS-6038_nog33q.jpg"
+    ],
+    "discount": 12,
+    "type": "Car Radio with USB",
+    "status": "Tranding",
+    "carName": "",
+    "carModel": "",
+    "details": "Stay connected and enjoy music on the go with this FM-BT car radio with USB.",
+    "features": [
+      "USB Playback",
+      "Bluetooth Streaming"
+    ],
+    "coupons": [
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
+    ]
+  },
+  {
+    "name": "Sound Damping Mat 1.8mm",
     "categories": "Damping Sheets",
     "brand": "BrandD",
     "price": 19.99,
     "quantity": 120,
     "images": [
-      "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
-      "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306447/Daps%20Images/Damping/1.8mm/daps_catlouge_2023_FINAL-103_tmmzxw.png",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306447/Daps%20Images/Damping/1.8mm/daps_catlouge_2023_FINAL-100_gllect.png",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306446/Daps%20Images/Damping/1.8mm/daps_catlouge_2023_FINAL-101_n38iix.png"
     ],
     "discount": 5,
     "type": "Damping Mat",
     "status": "Tranding",
+    "carName": "",
+    "carModel": "",
     "details": "Reduce noise and vibrations in your vehicle with this sound damping mat.",
     "features": [
       "Adhesive Backing",
       "Easy Installation"
     ],
     "coupons": [
-      "couponId27"
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
     ]
   },
   {
-    "name": "Car Speaker Pair",
+    "name": "Sound Damping Mat 2.5mm",
+    "categories": "Damping Sheets",
+    "brand": "BrandD",
+    "price": 19.99,
+    "quantity": 120,
+    "images": [
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306445/Daps%20Images/Damping/2.5mm/WhatsApp_Image_2023-10-12_at_14.38.43_8ec4cc29_pd6bsr.jpg"
+    ],
+    "discount": 5,
+    "type": "Damping Mat",
+    "status": "Tranding",
+    "carName": "",
+    "carModel": "",
+    "details": "Reduce noise and vibrations in your vehicle with this sound damping mat.",
+    "features": [
+      "Adhesive Backing",
+      "Easy Installation"
+    ],
+    "coupons": [
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
+    ]
+  },
+  {
+    "name": "Speaker Pair DP-144 Entry Level Coaxial 4 Inch",
     "categories": "Speakers",
     "brand": "BrandE",
     "price": 59.99,
     "quantity": 65,
     "images": [
-      "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
-      "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306464/Daps%20Images/Speaker/DP%20-%20144%20Entry%20Level%20Coaxial%204%20Inch/YKS-6499_mob8of.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306465/Daps%20Images/Speaker/DP%20-%20144%20Entry%20Level%20Coaxial%204%20Inch/YKS-6500_mnrrs0.jpg"
     ],
     "discount": 10,
     "type": "Speaker Pair",
-    "status": "Tranding",
+    "status": "Bestseller",
     "details": "Upgrade your car's audio with this high-quality speaker pair for clear sound.",
     "features": [
       "Crisp Audio",
       "Mounting Accessories Included"
     ],
     "coupons": [
-      "couponId28"
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
+    ]
+  },
+  {
+    "name": "Speaker Pair DP-164 Entry Level Coaxial 6 Inch",
+    "categories": "Speakers",
+    "brand": "BrandE",
+    "price": 59.99,
+    "quantity": 65,
+    "images": [
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306469/Daps%20Images/Speaker/DP%20-164%20Entry%20Level%20Coaxial%206%20Inch/YKS-6490_pjrnc7.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306470/Daps%20Images/Speaker/DP%20-164%20Entry%20Level%20Coaxial%206%20Inch/YKS-6468_rymdti.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306468/Daps%20Images/Speaker/DP%20-164%20Entry%20Level%20Coaxial%206%20Inch/YKS-6495_csmutu.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306469/Daps%20Images/Speaker/DP%20-164%20Entry%20Level%20Coaxial%206%20Inch/YKS-6491_x8cgug.jpg"
+    ],
+    "discount": 10,
+    "type": "Speaker Pair",
+    "status": "Tranding",
+    "carName": "",
+    "carModel": "",
+    "details": "Upgrade your car's audio with this high-quality speaker pair for clear sound.",
+    "features": [
+      "Crisp Audio",
+      "Mounting Accessories Included"
+    ],
+    "coupons": [
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
+    ]
+  },
+  {
+    "name": "Speaker Pair DP-194 Entry Level Coaxial",
+    "categories": "Speakers",
+    "brand": "BrandE",
+    "price": 59.99,
+    "quantity": 65,
+    "images": [
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306470/Daps%20Images/Speaker/DP-194%20Entry%20Level%20Coaxial%20Oval/YKS-6479_ugdveq.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306467/Daps%20Images/Speaker/DP-194%20Entry%20Level%20Coaxial%20Oval/YKS-6481_mmvwkr.jpg"
+    ],
+    "discount": 10,
+    "type": "Speaker Pair",
+    "status": "Tranding",
+    "carName": "",
+    "carModel": "",
+    "details": "Upgrade your car's audio with this high-quality speaker pair for clear sound.",
+    "features": [
+      "Crisp Audio",
+      "Mounting Accessories Included"
+    ],
+    "coupons": [
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
+    ]
+  },
+  {
+    "name": "Speaker Pair DP-2-60 Premium 2 way Component",
+    "categories": "Speakers",
+    "brand": "BrandE",
+    "price": 59.99,
+    "quantity": 65,
+    "images": [
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306467/Daps%20Images/Speaker/DP-2-60%20%20Premium%202%20Way%20Component/2_DP-2-60_185x92x376-_2023-07-03_2_-4_fm7a0r.png",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306466/Daps%20Images/Speaker/DP-2-60%20%20Premium%202%20Way%20Component/2_DP-2-60_185x92x376-_2023-07-03_2_-15_l3stip.png",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306465/Daps%20Images/Speaker/DP-2-60%20%20Premium%202%20Way%20Component/2_DP-2-60_185x92x376-_2023-07-03_2_-18_bbg8ze.png"
+    ],
+    "discount": 10,
+    "type": "Speaker Pair",
+    "status": "Tranding",
+    "carName": "",
+    "carModel": "",
+    "details": "Upgrade your car's audio with this high-quality speaker pair for clear sound.",
+    "features": [
+      "Crisp Audio",
+      "Mounting Accessories Included"
+    ],
+    "coupons": [
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
+    ]
+  },
+  {
+    "name": "Speaker Pair DP-1-60 Premium Coaxial",
+    "categories": "Speakers",
+    "brand": "BrandE",
+    "price": 59.99,
+    "quantity": 65,
+    "images": [
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306464/Daps%20Images/Speaker/DP-1-60%20%20Premium%20Coaxial/DP_60_185x92x376-_2023-07-03_2_-3_mfvpy4.png"
+    ],
+    "discount": 10,
+    "type": "Speaker Pair",
+    "status": "Bestseller",
+    "carName": "",
+    "carModel": "",
+    "details": "Upgrade your car's audio with this high-quality speaker pair for clear sound.",
+    "features": [
+      "Crisp Audio",
+      "Mounting Accessories Included"
+    ],
+    "coupons": [
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
     ]
   },
   {
@@ -161,63 +565,201 @@
     "price": 19.99,
     "quantity": 85,
     "images": [
-      "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
-      "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306489/Daps%20Images/Tweeter/Silk%20Dome%20Tweeter/daps_catlouge_2023_FINAL-125_vf6elm.png",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306488/Daps%20Images/Tweeter/Silk%20Dome%20Tweeter/daps_catlouge_2023_FINAL-121_w1twod.png",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306488/Daps%20Images/Tweeter/Silk%20Dome%20Tweeter/daps_catlouge_2023_FINAL-120_cqyfzh.png"
     ],
     "discount": 8,
     "type": "Tweeter Set",
-    "status": "Tranding",
+    "status": "Bestseller",
+    "carName": "",
+    "carModel": "",
     "details": "Enhance your car's audio with this tweeter set for improved highs.",
     "features": [
       "Silk Dome Material",
       "Easy Installation"
     ],
     "coupons": [
-      "couponId29"
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
     ]
   },
   {
-    "name": "Compact Bass Tube Subwoofer",
+    "name": "Compact Bass Tube Subwoofer 10 Inch",
     "categories": "Basstube",
     "brand": "BrandG",
     "price": 49.99,
     "quantity": 75,
     "images": [
-      "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
-      "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306441/Daps%20Images/Basstube/10%20Inch/YKS-6612_j6khwp.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306443/Daps%20Images/Basstube/10%20Inch/YKS-6606_rnm5xs.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306442/Daps%20Images/Basstube/10%20Inch/YKS-6610_yhj04z.jpg"
     ],
     "discount": 10,
     "type": "Compact Subwoofer",
     "status": "Tranding",
+    "carName": "",
+    "carModel": "",
     "details": "Experience deep bass in a compact package with this subwoofer.",
     "features": [
       "Powerful Bass",
       "Space-Saving Design"
     ],
     "coupons": [
-      "couponId30"
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
     ]
   },
   {
-    "name": "Car Backup Camera with Parking Lines",
+    "name": "Compact Bass Tube Subwoofer 8 Inch",
+    "categories": "Basstube",
+    "brand": "BrandG",
+    "price": 49.99,
+    "quantity": 75,
+    "images": [
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306441/Daps%20Images/Basstube/8%20Inch/YKS-6613_uhkxbb.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306437/Daps%20Images/Basstube/8%20Inch/YKS-6615_ca9lbj.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306442/Daps%20Images/Basstube/8%20Inch/YKS-6616_mwujjg.jpg"
+    ],
+    "discount": 10,
+    "type": "Compact Subwoofer",
+    "status": "Tranding",
+    "carName": "",
+    "carModel": "",
+    "details": "Experience deep bass in a compact package with this subwoofer.",
+    "features": [
+      "Powerful Bass",
+      "Space-Saving Design"
+    ],
+    "coupons": [
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
+    ]
+  },
+  {
+    "name": "AHD Camera Bumper",
     "categories": "Camera",
     "brand": "BrandH",
     "price": 59.99,
     "quantity": 90,
     "images": [
-      "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
-      "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306478/Daps%20Images/Camera/AHD%20Camera%20Bumper/YKS-5957_bpvq7a.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306478/Daps%20Images/Camera/AHD%20Camera%20Bumper/YKS-5958_ojlu4j.jpg"
     ],
     "discount": 7,
     "type": "Backup Camera with Lines",
-    "status": "Tranding",
+    "status": "Bestseller",
+    "carName": "",
+    "carModel": "",
     "details": "Enhance parking safety with this camera featuring parking lines and night vision.",
     "features": [
       "Parking Lines",
       "Night Vision"
     ],
     "coupons": [
-      "couponId31"
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
+    ]
+  },
+  {
+    "name": "AHD Fish Eye Bumper",
+    "categories": "Camera",
+    "brand": "BrandH",
+    "price": 59.99,
+    "quantity": 90,
+    "images": [
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306479/Daps%20Images/Camera/AHD%20Fish%20Eye%20Bumper/androidify-3rd-generation-car-ahd-rear-view-camera-only-for-original-imagh5yhuuegadyr_phogk7.webp"
+    ],
+    "discount": 7,
+    "type": "Backup Camera with Lines",
+    "status": "Tranding",
+    "carName": "",
+    "carModel": "",
+    "details": "Enhance parking safety with this camera featuring parking lines and night vision.",
+    "features": [
+      "Parking Lines",
+      "Night Vision"
+    ],
+    "coupons": [
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
+    ]
+  },
+  {
+    "name": "AHD Moving Bumper",
+    "categories": "Camera",
+    "brand": "BrandH",
+    "price": 59.99,
+    "quantity": 90,
+    "images": [
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306477/Daps%20Images/Camera/AHD%20Moving%20Bumper/YKS-5958_fwosrq.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306477/Daps%20Images/Camera/AHD%20Moving%20Bumper/YKS-5957_vkgkak.jpg"
+    ],
+    "discount": 7,
+    "type": "Backup Camera with Lines",
+    "status": "Tranding",
+    "carName": "",
+    "carModel": "",
+    "details": "Enhance parking safety with this camera featuring parking lines and night vision.",
+    "features": [
+      "Parking Lines",
+      "Night Vision"
+    ],
+    "coupons": [
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
+    ]
+  },
+  {
+    "name": "Gattu Moving ",
+    "categories": "Camera",
+    "brand": "BrandH",
+    "price": 59.99,
+    "quantity": 90,
+    "images": [
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306481/Daps%20Images/Camera/Gattu%20Moving/YKS-5961_xov0wp.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306481/Daps%20Images/Camera/Gattu%20Moving/YKS-5968_u7mr1b.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306481/Daps%20Images/Camera/Gattu%20Moving/YKS-5960_ssa2ix.jpg"
+    ],
+    "discount": 7,
+    "type": "Backup Camera with Lines",
+    "status": "Bestseller",
+    "carName": "",
+    "carModel": "",
+    "details": "Enhance parking safety with this camera featuring parking lines and night vision.",
+    "features": [
+      "Parking Lines",
+      "Night Vision"
+    ],
+    "coupons": [
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
+    ]
+  },
+  {
+    "name": "UHD Camera Bumper ",
+    "categories": "Camera",
+    "brand": "BrandH",
+    "price": 59.99,
+    "quantity": 90,
+    "images": [
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306481/Daps%20Images/Camera/UHD%20Camera%20Bumper/YKS-5970_cdmbih.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306480/Daps%20Images/Camera/UHD%20Camera%20Bumper/YKS-5958_p06vwd.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306481/Daps%20Images/Camera/UHD%20Camera%20Bumper/YKS-5957_eo2ect.jpg"
+    ],
+    "discount": 7,
+    "type": "Backup Camera with Lines",
+    "status": "Tranding",
+    "carName": "",
+    "carModel": "",
+    "details": "Enhance parking safety with this camera featuring parking lines and night vision.",
+    "features": [
+      "Parking Lines",
+      "Night Vision"
+    ],
+    "coupons": [
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
     ]
   },
   {
@@ -227,85 +769,202 @@
     "price": 8.99,
     "quantity": 150,
     "images": [
-      "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
-      "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306487/Daps%20Images/Charger/6.2%20A%20PD/YKS-5912_tgabfl.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306488/Daps%20Images/Charger/6.2%20A%20PD/YKS-5907_jehtkf.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306487/Daps%20Images/Charger/6.2%20A%20PD/YKS-5902_adajtn.jpg"
     ],
     "discount": 3,
     "type": "USB Charger",
     "status": "Tranding",
+    "carName": "",
+    "carModel": "",
     "details": "Charge your devices quickly with this fast charging USB charger cable.",
     "features": [
       "Quick Charge",
       "Universal Compatibility"
     ],
     "coupons": [
-      "couponId32"
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
     ]
   },
   {
-    "name": "Premium Wiper Blades Set",
-    "categories": "Wiper",
-    "brand": "BrandJ",
-    "price": 24.99,
-    "quantity": 110,
-    "images": [
-      "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
-      "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
-    ],
-    "discount": 5,
-    "type": "Wiper Blades Set",
-    "status": "Tranding",
-    "details": "Experience crystal-clear visibility in all weather conditions with premium wiper blades.",
-    "features": [
-      "Easy Installation",
-      "Long-Lasting"
-    ],
-    "coupons": [
-      "couponId33"
-    ]
-  },
-  {
-    "name": "Dual-Tone Car Horn Kit",
-    "categories": "Horn",
-    "brand": "BrandK",
-    "price": 19.99,
-    "quantity": 130,
-    "images": [
-      "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
-      "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
-    ],
-    "discount": 4,
-    "type": "Dual-Tone Horn Kit",
-    "status": "Tranding",
-    "details": "Upgrade your car's horn with a dual-tone horn kit for a distinctive sound.",
-    "features": [
-      "Loud and Unique Sound"
-    ],
-    "coupons": [
-      "couponId34"
-    ]
-  },
-  {
-    "name": "LED Fog Lights",
+    "name": "LED Fog Lights 160W",
     "categories": "LED",
     "brand": "BrandX",
     "price": 39.99,
     "quantity": 95,
     "images": [
-      "https://res.cloudinary.com/elpixala/image/upload/v1697442360/Daps/Categories/dgmlpe5ffz3b1jp1amlu.jpg",
-      "https://res.cloudinary.com/elpixala/image/upload/v1697454185/Daps/Products/v9giycr8qpwkmoqnwe1x.png"
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306457/Daps%20Images/LED/160W/IMG_20231012_141702112_q6pbud.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306457/Daps%20Images/LED/160W/IMG_20231012_141750370_xrtmvg.jpg"
     ],
     "discount": 6,
     "type": "Fog Lights",
-    "status": "Tranding",
+    "status": "Bestseller",
+    "carName": "",
+    "carModel": "",
     "details": "Enhance visibility in foggy conditions with these bright LED fog lights.",
     "features": [
       "Wide Illumination",
       "Easy Installation"
     ],
     "coupons": [
-      "couponId35"
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
+    ]
+  },
+  {
+    "name": "LED Fog Lights 220W",
+    "categories": "LED",
+    "brand": "BrandX",
+    "price": 39.99,
+    "quantity": 95,
+    "images": [
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306451/Daps%20Images/LED/220W/IMG_20231012_140151671_wemrcw.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306449/Daps%20Images/LED/220W/IMG_20231012_140310400_nghy5d.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306448/Daps%20Images/LED/220W/IMG_20231012_141807479_nmapxi.jpg"
+    ],
+    "discount": 6,
+    "type": "Fog Lights",
+    "status": "Tranding",
+    "carName": "",
+    "carModel": "",
+    "details": "Enhance visibility in foggy conditions with these bright LED fog lights.",
+    "features": [
+      "Wide Illumination",
+      "Easy Installation"
+    ],
+    "coupons": [
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
+    ]
+  },
+  {
+    "name": "LED Fog Lights 55WW",
+    "categories": "LED",
+    "brand": "BrandX",
+    "price": 39.99,
+    "quantity": 95,
+    "images": [
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306455/Daps%20Images/LED/55W/IMG_20231012_140429244_jctz0j.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306456/Daps%20Images/LED/55W/IMG_20231012_141106708_qno5vi.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306457/Daps%20Images/LED/55W/IMG_20231012_140405587_m0duk9.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306456/Daps%20Images/LED/55W/IMG_20231012_141106708_qno5vi.jpg"
+    ],
+    "discount": 6,
+    "type": "Fog Lights",
+    "status": "Tranding",
+    "carName": "",
+    "carModel": "",
+    "details": "Enhance visibility in foggy conditions with these bright LED fog lights.",
+    "features": [
+      "Wide Illumination",
+      "Easy Installation"
+    ],
+    "coupons": [
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
+    ]
+  },
+  {
+    "name": "LED Fog Lights 55WW",
+    "categories": "LED",
+    "brand": "BrandX",
+    "price": 39.99,
+    "quantity": 95,
+    "images": [
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306453/Daps%20Images/LED/65W/IMG_20231012_141921712_hi7q8v.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306454/Daps%20Images/LED/65W/IMG_20231012_141938843_idrqg8.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306454/Daps%20Images/LED/65W/IMG_20231012_141838547_kgbmia.jpg"
+    ],
+    "discount": 6,
+    "type": "Fog Lights",
+    "status": "Tranding",
+    "carName": "",
+    "carModel": "",
+    "details": "Enhance visibility in foggy conditions with these bright LED fog lights.",
+    "features": [
+      "Wide Illumination",
+      "Easy Installation"
+    ],
+    "coupons": [
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
+    ]
+  },
+  {
+    "name": "Amplifier 2000",
+    "categories": "Amplifier",
+    "brand": "BrandX",
+    "price": 39.99,
+    "quantity": 95,
+    "images": [
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306441/Daps%20Images/Amplifier/2000/IMG_5045_rzwc0d.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306444/Daps%20Images/Amplifier/2000/IMG_5042_hpraqw.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306444/Daps%20Images/Amplifier/2000/IMG_5040_vid3wk.jpg"
+    ],
+    "discount": 6,
+    "type": "Amplifier",
+    "status": "Tranding",
+    "carName": "",
+    "carModel": "",
+    "details": "Enhance visibility in foggy conditions with these bright LED fog lights.",
+    "features": [
+      "Wide Illumination",
+      "Easy Installation"
+    ],
+    "coupons": [
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
+    ]
+  },
+  {
+    "name": "Amplifier 2400",
+    "categories": "Amplifier",
+    "brand": "BrandX",
+    "price": 39.99,
+    "quantity": 95,
+    "images": [
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306445/Daps%20Images/Amplifier/2400/IMG_5044_mhgs5l.jpg"
+    ],
+    "discount": 6,
+    "type": "Amplifier",
+    "status": "Tranding",
+    "carName": "",
+    "carModel": "",
+    "details": "Enhance visibility in foggy conditions with these bright LED fog lights.",
+    "features": [
+      "Wide Illumination",
+      "Easy Installation"
+    ],
+    "coupons": [
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
+    ]
+  },
+  {
+    "name": "Amplifier 4800",
+    "categories": "Amplifier",
+    "brand": "BrandX",
+    "price": 39.99,
+    "quantity": 95,
+    "images": [
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306445/Daps%20Images/Amplifier/4800/IMG_5043_hgyai1.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306445/Daps%20Images/Amplifier/4800/IMG_5039_vgohk5.jpg"
+    ],
+    "discount": 6,
+    "type": "Amplifier",
+    "status": "Tranding",
+    "carName": "",
+    "carModel": "",
+    "details": "Enhance visibility in foggy conditions with these bright LED fog lights.",
+    "features": [
+      "Wide Illumination",
+      "Easy Installation"
+    ],
+    "coupons": [
+      "652fd27fd3b56d8440b2eede",
+      "6533e7c1deca0ee71e62f5f1"
     ]
   }
- 
 ]

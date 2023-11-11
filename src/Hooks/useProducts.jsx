@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
-import { deleteProductUrl, getAllCategoryUrl, deleteCategoryUrl, getAllCouponUrl, deleteCouponUrl, getProductsUrl, getAllCategorySubCategoryUrl } from "../Utils/Urls/ProductUrl";
+import {categoryMainData, deleteProductUrl, getAllCategoryUrl, deleteCategoryUrl, getAllCouponUrl, deleteCouponUrl, getProductsUrl, getAllCategorySubCategoryUrl ,getMainCategoryUrl} from "../Utils/Urls/ProductUrl";
 
 const useProducts = () => {
   const {
@@ -33,6 +33,19 @@ const useProducts = () => {
     queryKey: ["categoryData"],
     queryFn: async () => {
       const res = await fetch(getAllCategoryUrl);
+      const data = await res.json();
+      return data.data;
+    },
+  });
+
+  const {
+    data: categoryMainData,
+    isLoading: categoryMainLoaded,
+    refetch: refetchMainCategory,
+  } = useQuery({
+    queryKey: ["categoryMainData"],
+    queryFn: async () => {
+      const res = await fetch(getMainCategoryUrl);
       const data = await res.json();
       return data.data;
     },
@@ -238,6 +251,7 @@ const useProducts = () => {
     couponData,
     couponLoaded,
     refetchCoupon,
+    categoryMainData
 
   }
 };

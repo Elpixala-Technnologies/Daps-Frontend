@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react"
-import 'swiper/swiper-bundle.min.css';;
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.min.css";
 import Link from "next/link";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -23,7 +23,7 @@ const BestSealer = () => {
 
     return (
         <section className="mt-8 container">
-            <div className='title'>
+            <div className='title text-center pt-20 '>
                 <h1>Explore <span>Bestsellers</span></h1>
             </div>
 
@@ -31,32 +31,40 @@ const BestSealer = () => {
                 <Swiper
                     ref={sliderRef}
                     modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-                    breakpoints={{
-                        0: {
-                            slidesPerView: 1,
-                            spaceBetween: 10,
-                        },
-                        640: {
-                            slidesPerView: 2,
-                            spaceBetween: 20,
-                        },
-                        768: {
-                            slidesPerView: 3,
-                            spaceBetween: 30,
-                        },
-                        1024: {
-                            slidesPerView: 4,
-                            spaceBetween: 20,
-                        },
-                    }}
                     spaceBetween={20}
                     slidesPerView={3}
                     onSlideChange={() => {}}
                     onSwiper={(swiper) => {}}
                     data-aos="fade-up"
                     data-aos-anchor-placement="center-bottom"
+                    breakpoints={{
+                        320: {
+                            slidesPerView: 1,
+                            spaceBetween: 20,
+                          },
+                          360: {
+                            slidesPerView: 1,
+                            spaceBetween: 20,
+                          },
+                          480: {
+                            slidesPerView: 1,
+                            spaceBetween: 20,
+                          },
+                          640: {
+                            slidesPerView: 1,
+                            spaceBetween: 20,
+                          },
+                          768: {
+                            slidesPerView: 2,
+                            spaceBetween: 30,
+                          },
+                          1024: {
+                            slidesPerView: 4,
+                            spaceBetween: 20,
+                          },
+                    }}
                 >
-                    <div className="grid grid-cols-1 justify-center items-center mx-auto md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-2 md:grid-row-2 lg:grid-cols-3 gap-4 pt-20">
                         {filterProductData &&
                             filterProductData.map((product) => {
                                 return (

@@ -1,14 +1,15 @@
 import React from 'react';
 import Hero from '../Hero/Hero';
 import BestSealer from '../BestSealer/BestSealer';
-import TodayOffers from '../TodayOffers/TodayOffers';
+
 import ShopByCategories from '../ShopByCategories/ShopByCategories';
 import NewArrivals from '../NewArrivals/NewArrivals';
 import RecentBlogs from '../RecentBlogs/RecentBlogs';
 import NewOfferBanner from '../NewOfferBanner/NewOfferBanner';
 import AboutBanner from '../AboutBanner/AboutBanner'
 import HomeOffers from '../HomeOffers/HomeOffers';
-import OurProducts from "../OurProducts/OurProducts"
+import OurProducts from "../OurProducts/OurProducts";
+
 
 const Home = () => {
     return (
@@ -18,14 +19,17 @@ const Home = () => {
             {/* ====== Best Sealer */}
             <section>
                 <div>
+                <ShopByCategories />
                     <HomeOffers/>
                     <BestSealer />
                     <OurProducts/>
                     {/* <TodayOffers /> */}
                     <NewOfferBanner />
-                    <ShopByCategories />
-                    <AboutBanner />
+                    
+                    
                     <NewArrivals />
+                    <AboutBanner />
+                    
                     <RecentBlogs />
                 </div>
 

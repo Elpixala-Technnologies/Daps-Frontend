@@ -34,6 +34,7 @@ export const updateCategoryUrl = (id) => basedUrl + `/products/update-categories
 
 export const deleteCategoryUrl = (id) => basedUrl + `/products/delete-categories/${id}`
 
+export const getMainCategoryUrl = basedUrl + '/products/get-main-categories'
 
 // ===== Add to cart =======
 

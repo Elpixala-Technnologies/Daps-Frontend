@@ -34,7 +34,7 @@ const AboutBanner = () => {
                             slightly believable.
                         </p>
                         <p className="py-4">
-                            the majority have suffered alteration in some form, by injected
+                            The majority have suffered alteration in some form, by injected
                             humour, or randomised words which don't look even slightly
                             believable.
                         </p>

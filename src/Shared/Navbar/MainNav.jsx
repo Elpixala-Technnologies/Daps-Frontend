@@ -8,7 +8,7 @@ import { useContext, useState, useEffect, } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import the AOS CSS
 import { AiOutlineClose, AiOutlineMenu, AiOutlineSearch } from 'react-icons/ai';
-import { FaChevronDown, FaChevronUp, FaMicrosoft, FaPowerOff, FaUserAlt, FaAngleDown } from 'react-icons/fa';
+import { FaChevronDown, FaChevronUp, FaMicrosoft, FaPowerOff, FaUserAlt, FaAngleDown, FaAngleUp } from 'react-icons/fa';
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { CiUser } from 'react-icons/ci';
 import { BsCartPlus } from 'react-icons/bs';
@@ -36,25 +36,25 @@ const MainNav = () => {
   const animationSpeed = 300; // in milliseconds
 
   useEffect(() => {
-      let currentIndex = 0;
-      let intervalId;
+    let currentIndex = 0;
+    let intervalId;
 
-      // Function to update the placeholder text with typing animation
-      function updatePlaceholder() {
-          setPlaceholderText(searchText.slice(0, currentIndex));
-          currentIndex++;
-          if (currentIndex > searchText.length) {
-              currentIndex = 0;
-          }
+    // Function to update the placeholder text with typing animation
+    function updatePlaceholder() {
+      setPlaceholderText(searchText.slice(0, currentIndex));
+      currentIndex++;
+      if (currentIndex > searchText.length) {
+        currentIndex = 0;
       }
+    }
 
-      // Start the animation
-      intervalId = setInterval(updatePlaceholder, animationSpeed);
+    // Start the animation
+    intervalId = setInterval(updatePlaceholder, animationSpeed);
 
-      // Clean up the interval when the component unmounts
-      return () => {
-          clearInterval(intervalId);
-      };
+    // Clean up the interval when the component unmounts
+    return () => {
+      clearInterval(intervalId);
+    };
   }, []);
 
   useEffect(() => {
@@ -79,6 +79,7 @@ const MainNav = () => {
     setMegaMenuVisible((prevState) => ({
       ...prevState,
       [menu]: false,
+
     }));
   };
 
@@ -101,7 +102,7 @@ const MainNav = () => {
 
   const handelSearchBarToggle = () => {
     setSearchBarToggle(!searchBarToggle); // Toggle the search bar state
-}
+  }
 
 
   return (
@@ -111,35 +112,37 @@ const MainNav = () => {
       }}
     >
       <nav className="border-b py-4 flex items-center text-black container relative  md:px-4 px-2">
-        <div className="flex items-center mx-2 justify-between w-full md:mx-auto">
-        <div>
+        <div className="flex items-center mx-2 justify-between w-full md:mx-auto h-10">
+          <div>
             <Link className='text-2xl font-bold text-black' href="/">
-                <Image src={MainLogo} alt="logo" width={130} height={80}
-                  className='cursor-pointer hover:scale-105 duration-300 transform'
-                  />
+              <Image src={MainLogo} alt="logo" width={130} height={80}
+                className='cursor-pointer hover:scale-105 duration-300 transform'
+              />
             </Link>
-            </div>
-          <div className='manu-items md:flex gap-4 justify-center items-center hidden '>
+          </div>
+          <div className='manu-items md:flex md:py-10 gap-4 justify-center items-center hidden '>
             <ul className='flex gap-8 justify-center items-center border px-8 py-2 bg-[#F6F6F6] rounded-full'>
               <li>
                 <div
-                  onMouseLeave={() => handleMouseLeave('categorys')}
-                  onMouseEnter={() => handleMouseEnter('categorys')}
+                  onClick={() => toggleMegaMenu('categorys')}
+                  className=''
                 >
-                  <h1 className="relative cursor-pointer flex gap-2 text-[1.1rem] items-center  upercase">Shop By Categories <FaAngleDown className='text-[1.2rem] text-[#18568C]' /> </h1>
+                  <button className="relative cursor-pointer flex gap-2 text-[1.1rem] items-center  upercase">Shop By Categories <FaAngleDown className='text-[1.2rem] text-[#18568C] ' /></button>
                   {megaMenuVisible.categorys && (
                     <div
-                      className={`mega-menu border bg-white z-50 absolute  top-[85%]  left-[26%] rounded py-2 px-2 transition-opacity opacity-100`}
+                      className={`container mx-auto mega-menu border bg-white z-50 absolute top-[100%]  left-[0%] rounded py-2 px-2 transition-opacity opacity-100`}
                       data-aos="fade-up"
+
                     >
+
                       <ul>
-                        <div className='flex flex-col px-4 gap-4'>
+                        <div className='grid grid-cols-3 text-left mx-20 flex flex-rows-3 py-4 px-4  gap-5'>
                           {
                             categoryData && categoryData?.slice(0, 8).map((item, index) => {
                               return (
                                 <div key={index} >
                                   <Link href={`/category/${item?.name}`}
-                                    className='cursor-pointer hover:scale-105 duration-300 transform'
+                                    className='cursor-pointer text-left hover:scale-105 duration-300 transform hover:bg-gray-200'
                                   >
                                     <h1 className="font-normal text-black">
                                       {item?.name}
@@ -176,16 +179,7 @@ const MainNav = () => {
                   Products
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/blogs"
-                  className={`common-hover ${selectedMenu === "Blogs" ? "selected-manu" : ""
-                    }`}
-                  onClick={() => setSelectedMenu("Blogs")}
-                >
-                  Blogs
-                </Link>
-              </li>
+
               <li>
                 <Link
                   href="/products"
@@ -196,6 +190,16 @@ const MainNav = () => {
                   Hot Deals
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/blogs"
+                  className={`common-hover ${selectedMenu === "Blogs" ? "selected-manu" : ""
+                    }`}
+                  onClick={() => setSelectedMenu("Blogs")}
+                >
+                  Blogs
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -204,24 +208,24 @@ const MainNav = () => {
               onClick={() => handelSearchBarToggle()}
             >
               <h1 className='border p-2 rounded-full bg-[#000]'>
-              <AiOutlineSearch className='text-[#fff] text-[1.5rem]'/>
+                <AiOutlineSearch className='text-[#fff] text-[1.5rem]' />
               </h1>
               <div>
-                    {
-                      searchBarToggle && (
-                        <div  className="absolute right-0 w-full h-[4rem] bg-white px-5 py-3  rounded-lg shadow border mt-5">
-                           <li className="flex items-center relative rounded-md w-full border-2 border-[#29679e]">
-                                    <input type="text"
-                                        placeholder={placeholderText}
-                                        className='pl-2 w-full border-2 border-[#29679e] text-black py-2 px-8  rounded-md' />
-                                    <div className="absolute right-0">
-                                        <AiOutlineSearch className='text-black text-[1.6rem] mx-2' />
-                                    </div>
-                                </li>
+                {
+                  searchBarToggle && (
+                    <div className="absolute right-0 w-full h-[4rem] bg-white px-5 py-3  rounded-lg shadow border mt-5">
+                      <li className="flex items-center relative rounded-md w-full border-2 border-[#29679e]">
+                        <input type="text"
+                          placeholder={placeholderText}
+                          className='pl-2 w-full border-2 border-[#29679e] text-black py-2 px-8  rounded-md' />
+                        <div className="absolute right-0">
+                          <AiOutlineSearch className='text-black text-[1.6rem] mx-2' />
                         </div>
-                      )
-                    }
-              </div>      
+                      </li>
+                    </div>
+                  )
+                }
+              </div>
             </div>
 
             <div className='cursor-pointer'
@@ -229,7 +233,7 @@ const MainNav = () => {
 
             >
               <h1 className='border p-2 rounded-full bg-[#000]'>
-              <CiUser className='text-[1.5rem] text-[#fff] ' />
+                <CiUser className='text-[1.5rem] text-[#fff] ' />
               </h1>
               <div>
                 {
@@ -289,10 +293,10 @@ const MainNav = () => {
             style={{ zIndex: 1000 }}
           >
             <button className='float-right' onClick={() => setOpen(!open)}>
-              <AiOutlineClose className='text-5xl' />
-            </button><br />
+              <AiOutlineClose className='text-4xl px-2' />
+            </button>
             <ul className="flex flex-col gap-6">
-            <li className="flex items-center  bg-[white] p-1 rounded-md gap-2">
+              <li className="flex items-center  bg-[white] p-1 rounded-md gap-2">
                 <input type="text" className='w-full pl-2 text-black' placeholder='Search' />
                 <AiOutlineSearch className='text-black' />
               </li>
@@ -313,10 +317,10 @@ const MainNav = () => {
                 </div>
                 {megaMenuVisible.categorys && (
                   <div
-                    className={`mega-menu border bg-white z-50 absolute w-[100%] left-0 right-0 top-[19%] rounded  transition-opacity opacity-100`}
+                    className={`mega-menu border bg-white z-50 absolute w-[100%] left-0 right-0 top-[21%] rounded  transition-opacity opacity-100`}
                     data-aos="fade-up"
                     style={{
-                      maxHeight: '80vh',
+                      maxHeight: '50vh',
                       overflowY: 'auto',
                     }}
                   >
@@ -326,17 +330,18 @@ const MainNav = () => {
                           categoryData && categoryData?.map((item, index) => {
                             return (
                               <div key={index} >
-                                  <Link href={`/category/${item?.name}`}
-                                    className='cursor-pointer hover:scale-105 duration-300 transform'
-                                  >
-                                    <h1 className="font-normal text-black">
-                                      {item?.name}
-                                    </h1>
-                                  </Link>
-                                </div>
+                                <Link href={`/category/${item?.name}`}
+                                  className='cursor-pointer hover:scale-105 duration-300 transform'
+                                >
+                                  <h1 className="font-normal text-black">
+                                    {item?.name}
+                                  </h1>
+                                </Link>
+                              </div>
                             )
                           })
                         }
+
                       </div>
                     </ul>
                   </div>
@@ -349,7 +354,7 @@ const MainNav = () => {
                 <Link href="/blogs" >Blogs</Link>
               </li>
 
-            
+
 
             </ul>
           </div>
