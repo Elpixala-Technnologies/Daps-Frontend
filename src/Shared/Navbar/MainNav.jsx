@@ -219,7 +219,7 @@ const MainNav = () => {
       <span className="flex  md:w-[550px]  m-auto text-center w-[300px] md:text-[16px] text-[10px]"> <AiTwotoneFire/> Catch the killer deals on best daps shop and earn 5% daps rewards.</span>
     </div>     */}
       <header
-      className={`${isSticky ? ' bg-[white] fixed top-0' : 'md:bg-[white] bg-[transparent]'} fixed w-full shadow z-50 mx-auto`}
+      className={`${isSticky ? ' bg-[white] fixed top-0 duration-200' : 'md:bg-[white] bg-[transparent] duration-200 relative'} duration-200 w-full shadow z-50 mx-auto`}
       style={{
         zIndex: "9999",
       }}
@@ -228,7 +228,7 @@ const MainNav = () => {
         <div className="flex items-center mx-2 justify-between w-full md:mx-auto h-10">
          <div className="flex  md:gap-4 gap-2 md:hidden">
               <button
-                className={`${isSticky ? 'text-black' : 'text-white'} block md:hidden p-2 `}
+                className={`${isSticky ? 'text-white' : 'text-black'} block md:hidden p-2 `}
                 onClick={() => setOpen(!open)}
               >
                 <AiOutlineMenu className="text-[1.5rem] " />
@@ -259,17 +259,17 @@ const MainNav = () => {
                        data-aos="fade-up"
                     >
                       <ul>
-                        <div className="grid grid-cols-6 text-left mx-20  py-4 px-4  gap-5">
+                        <div className="grid grid-cols-6 text-left mx-20  py-4 px-4  gap-6">
                           {carsInfo?.map((itm) => (
                             <Link href={`/category/3`}>
                               {" "}
-                              <div className="flex relative items-center justify-center gap-2 flex-col">
+                              <div className="flex relative items-end justify-center gap-2 flex-col">
                                 <Image
                                   src={itm?.image}
                                   alt="logo"
                                   width={50}
                                   height={40}
-                                  className="cursor-pointer relative z-[1] hover:scale-105 duration-300 transform"
+                                  className="cursor-pointer relative bg-[red] w-auto h-[200px] z-[1] hover:scale-105 duration-300 transform"
                                 />
                                 <div className="bg-gray-200  w-[40px] h-[40px] rounded rotate-[60deg] absolute top-[-40px] left-0 right-0 bottom-0 m-auto">.</div>
                                 <h1 className="">{itm?.name}</h1>
@@ -504,9 +504,9 @@ const MainNav = () => {
                             return (
                               <div key={index} >
                                 <Link href={`/category/${item?.name}`}
-                                  className='cursor-pointer hover:scale-105 flex justify-center flex-col gap-2 duration-300 transform'
+                                  className='cursor-pointer  hover:scale-105 flex justify-center flex-col gap-2 duration-300 transform'
                                 >
-                                  <Image src={item?.image} width={90} height={90} alt="" />
+                                  <Image className="w-[70px] h-[70px] m-auto" src={item?.image} width={90} height={90} alt="" />
                                   <h1 className="font-normal text-center pb-4 text-white">
                                     {item?.name}
                                   </h1>

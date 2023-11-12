@@ -301,7 +301,7 @@ const HeroSlider = () => {
   }, []);
 
   return (
-    <>
+    <dic className="overflow-hidden">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -334,7 +334,7 @@ const HeroSlider = () => {
             );
           })}
       </Swiper>
-    </>
+    </dic>
   );
 };
 
