@@ -9,37 +9,37 @@ import 'swiper/css/navigation';
             id: 0,
             name: 'Maruti FRONX',
             thum: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/FRONX/9243/1697697928533/front-left-side-47.jpg?tr=w-456',
-            video: "https://www.w3schools.com/html/mov_bbb.mp4" 
+            video: "https://res.cloudinary.com/elpixala/video/upload/v1699800441/wctmjqjihiwzaliblvzg.mp4" 
         },
         {
             id: 1,
             name: 'TATA',
             thum: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Tata/Harrier/9368/1697532960290/front-left-side-47.jpg?tr=w-456',
-            video: 'https://www.w3schools.com/html/mov_bbb.mp4' 
+            video: 'https://res.cloudinary.com/elpixala/video/upload/v1699800523/lta4x6koaneo4fnsx8hk.mp4' 
         },
         {
             id: 2,
             name: 'Hyundai Verna',
             thum: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Hyundai/Verna/9744/1694602806760/front-left-side-47.jpg?tr=w-456',
-            video: 'https://www.w3schools.com/html/mov_bbb.mp4' 
+            video: 'https://res.cloudinary.com/elpixala/video/upload/v1699800441/wctmjqjihiwzaliblvzg.mp4' 
         } ,
         {
             id: 0,
             name: 'Maruti FRONX',
             thum: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/FRONX/9243/1697697928533/front-left-side-47.jpg?tr=w-456',
-            video: 'https://www.w3schools.com/html/mov_bbb.mp4' 
+            video: 'https://res.cloudinary.com/elpixala/video/upload/v1699800523/lta4x6koaneo4fnsx8hk.mp4' 
         },
         {
             id: 1,
             name: 'TATA',
             thum: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Tata/Harrier/9368/1697532960290/front-left-side-47.jpg?tr=w-456',
-            video: 'https://www.w3schools.com/html/mov_bbb.mp4' 
+            video: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/FRONX/9243/1697697928533/front-left-side-47.jpg?tr=w-456' 
         },
         {
             id: 2,
             name: 'Hyundai Verna',
             thum: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Hyundai/Verna/9744/1694602806760/front-left-side-47.jpg?tr=w-456',
-            video: 'https://www.w3schools.com/html/mov_bbb.mp4' 
+            video: 'https://res.cloudinary.com/elpixala/video/upload/v1699800523/lta4x6koaneo4fnsx8hk.mp4' 
         } 
     ];
 
@@ -73,10 +73,10 @@ import 'swiper/css/navigation';
                     {
                         videoInfo?.map(itm =>   <SwiperSlide>
                          <div>
-                        <div className="rounded-3xl h-[380px] relative overflow-hidden hover-box duration-200">
+                        <div className="rounded-3xl h-[480px] relative overflow-hidden hover-box duration-200">
                         <img src={itm?.thum} className="w-full h-full "/>
-                             <video className="absolute top-[100px]  left-0 bottom-0 right-0 duration-200 hover-img opacity-0" width="940" height="880" muted controls autoPlay>
-                                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+                             <video className="absolute top-[0px]  left-0 bottom-0 right-0 duration-200 hover-img opacity-0" width="940" height="480" muted controls autoPlay>
+                                <source src={itm?.video} type="video/mp4" />
                              </video>
                          </div>
                           <h3 className ="text-2xl text-black mt-4">{itm?.name}</h3> 

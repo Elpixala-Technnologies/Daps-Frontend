@@ -30,6 +30,7 @@ import 'slick-carousel/slick/slick-theme.css';
 
 
 const ProductDetailsPage = () => {
+    const [mOn, setMOn] = useState(false)
     const { productData } = useProducts();
     const { CarData } = useCar()
     const { user } = useContext(AuthContext);
@@ -182,6 +183,14 @@ const ProductDetailsPage = () => {
     return (
         <RootLayout>
             <section className='container'>
+                {
+                    mOn ? <div className="bg-white p-4 border rounded-xl md:w-[600px] h-[400px] fixed top-[20px]  left-0 right-0 z-[200] shadow-xl shadow-[gray] w-[90%] m-auto mt-[10%]">
+                   <button onClick={()=> setMOn(!mOn)} className="text-2xl float-right">
+                    x
+                   </button>
+                    <h2 className="text-2xl mt-12 text-black text-center">The sale will ho live on 16 November 2023 GMT +05:30</h2>
+                </div> : <></>
+                }
                 <section className="py-8">
                     <div className="container mx-auto px-4">
                         <div className="lg:col-gap-12 xl:col-gap-16  grid grid-cols-1 gap-12 lg:mt-12 lg:grid-cols-5 lg:gap-16">
@@ -293,15 +302,15 @@ const ProductDetailsPage = () => {
 
                                 <div className="mt-4 flex flex-col items-center  space-y-4 border-t border-b py-4  w-full">
                                     <button
-                                        onClick={() => addToCart(product?._id)}
+                                        onClick={() => setMOn(!mOn)}
                                         className="font-semibold hover:before:bg-blackborder-black relative h-[50px] w-full rounded overflow-hidden border border-black bg-white px-3 text-black shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-black before:transition-all before:duration-500 hover:text-white hover:shadow-white hover:before:left-0 hover:before:w-full">
                                         <span className="relative z-10 flex items-center gap-2 justify-center">
-                                            <BsCart className='text-[1.2rem]' />   Add to cart
+                                            <BsCart className='md:text-[1.2rem]' />   Add to cart
                                         </span>
                                     </button>
 
                                     <button
-                                        onClick={() => handelBuyNow(product?._id)}
+                                         onClick={()=> setMOn(!mOn)}
                                         className="relative flex h-[50px] w-full items-center justify-center overflow-hidden bg-blue-600 font-medium text-white shadow-2xl transition-all duration-300 before:absolute before:inset-0 before:border-0 before:border-white before:duration-100 before:ease-linear hover:bg-white hover:text-blue-600 hover:shadow-blue-600 hover:before:border-[25px]">
                                         <span className="relative z-10 flex items-center gap-2 justify-center">
                                             <BsCart className='text-[1.2rem]' />  Buy Now

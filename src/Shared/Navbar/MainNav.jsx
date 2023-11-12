@@ -259,17 +259,17 @@ const MainNav = () => {
                        data-aos="fade-up"
                     >
                       <ul>
-                        <div className="grid grid-cols-6 text-left mx-20  py-4 px-4  gap-6">
+                        <div className="grid grid-cols-6 text-left mx-20  py-4 px-4  gap-5">
                           {carsInfo?.map((itm) => (
                             <Link href={`/category/3`}>
                               {" "}
-                              <div className="flex relative items-end justify-center gap-2 flex-col">
+                              <div className="flex relative items-center justify-center gap-2 flex-col">
                                 <Image
                                   src={itm?.image}
                                   alt="logo"
                                   width={50}
                                   height={40}
-                                  className="cursor-pointer relative bg-[red] w-auto h-[200px] z-[1] hover:scale-105 duration-300 transform"
+                                  className="cursor-pointer relative z-[1] hover:scale-105 duration-300 transform"
                                 />
                                 <div className="bg-gray-200  w-[40px] h-[40px] rounded rotate-[60deg] absolute top-[-40px] left-0 right-0 bottom-0 m-auto">.</div>
                                 <h1 className="">{itm?.name}</h1>
