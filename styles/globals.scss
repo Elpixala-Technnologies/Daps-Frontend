@@ -570,3 +570,28 @@ $letterStagger: 0.1s;
 .hover-box:hover .hover-img{
     opacity : 100%;
 }
+
+ 
+.swiper-pagination {
+    border-radius : 8px!important;
+    background : #7a0d0d9e!important;
+    margin: auto;
+    border-dadius: 44px!important;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    transition: .3s opacity;
+    transform: translate3d(0,0,0);
+    z-index: 10;
+    left: 0!important;
+    right: 0!important;
+    width: 59px!important;
+ }
+
+.swiper-pagination-bullet {
+  background: white!important; /* Change the default color of bullets */
+}
+
+.swiper-pagination-bullet-active {
+  background: red!important; /* Change the active bullet color to red */
+}
