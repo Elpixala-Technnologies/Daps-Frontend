@@ -1,3 +1,4 @@
+
 // import RootLayout from '@/src/Layouts/RootLayout';
 // import React from 'react';
 // import useBlogs from "@/src/Hooks/useBlogs";
@@ -70,10 +71,11 @@
 // export default BlogPage;
 
 
-import { blogData } from '@/src/Utils/Mock/CommonData';
 import React from 'react';
+import useBlogs from "@/src/Hooks/useBlogs";
 
 const BlogPage = () => {
+  const { blogData } = useBlogs();
     return (
         <section className='my-6'>
             <div className="mx-auto max-w-screen-sm">
@@ -122,4 +124,4 @@ const BlogPage = () => {
     );
 };
 
-export BlogPage;
+export default BlogPage;
