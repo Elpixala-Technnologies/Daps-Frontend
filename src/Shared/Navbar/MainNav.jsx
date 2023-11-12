@@ -226,11 +226,11 @@ const MainNav = () => {
     >
       <nav className="py-4 flex items-center text-black container relative  md:px-4 px-2">
         <div className="flex items-center mx-2 justify-between w-full md:mx-auto h-10">
-         <div className="flex  md:gap-4 gap-2 md:hidden">
+     <div className="flex items-center gap-2">
+          <div className="flex  md:gap-4 gap-2 md:hidden">
               <button
-                className={`${isSticky ? 'text-white' : 'text-black'} block md:hidden p-2 `}
-                onClick={() => setOpen(!open)}
-              >
+                className={`${isSticky ? 'text-black' : 'text-black'} block md:hidden p-2 `}
+                onClick={() => setOpen(!open)}>
                 <AiOutlineMenu className="text-[1.5rem] " />
               </button>
             </div>
@@ -241,10 +241,11 @@ const MainNav = () => {
                 alt="logo"
                 width={130}
                 height={80}
-                className="cursor-pointer hover:scale-105 duration-300 transform"
+                className="cursor-pointer md:w-[115px] w-[110px] d-none hover:scale-105 duration-300 transform"
               />
             </Link>
           </div>
+     </div>
           <div className="manu-items md:flex md:py-10 gap-4 justify-center items-center hidden ">
             <ul className={`${isSticky ? 'bg-white text-black' : 'bg-transparent text-black'} flex gap-8 justify-center items-center border px-8 py-2 rounded-full`}>
               <li>
@@ -472,7 +473,7 @@ const MainNav = () => {
               setAON2(false)
 
             }} className="common-hover">
-                <div className="w-full flex justify-between items-center"><Link href="/">Categorys</Link> <span className="text-xl">{aOn ? <>-</> : <>+</>}</span> </div>
+                <div className="w-full flex justify-between items-center"><Link href="/">Category</Link> <span className="text-xl">{aOn ? <>-</> : <>+</>}</span> </div>
                 <div className={`${aOn ? 'h-[300px] p-4 overflow-y-scroll mt-3' : 'h-[0px] '} rounded-lg bg-[#243c72]  duration-300 overflow-hidden`}>
                      {
                           categoryMainData && categoryMainData?.map((item, index) => {
