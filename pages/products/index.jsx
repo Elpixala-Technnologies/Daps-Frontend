@@ -73,6 +73,25 @@ const ProductPage = () => {
         setSelectedCategories(['All']);
     };
 
+    const filters = {
+        category: false,
+        size: false,
+        color: false,
+        price: false,
+      };
+    
+    
+      const [activeFilter, setActiveFilter] = useState(null);
+    
+      const handleToggleFilter = (filter) => {
+        if (activeFilter === filter) {
+          setActiveFilter(null); // Close the currently active filter
+        } else {
+          setActiveFilter(filter); // Open the selected filter and close any previously active filter
+        }
+      };
+    
+
 
     return (
         <RootLayout>
@@ -235,49 +254,37 @@ const ProductPage = () => {
                         <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
                             {/* Filters */}
                             <div className="hidden lg:block">
-                                {
-                                  CarData && CarData?.map((car) => {
-                                        return (
-                                            <Disclosure as="div" className="border-b border-gray-200 py-6">
-                                                {({ open }) => (
-                                                    <>
-                                                        <h3 className="-my-3 flow-root">
-                                                            <Disclosure.Button className="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500">
-                                                                <span className="font-medium text-gray-900">{car?.name}</span>
-                                                            </Disclosure.Button>
-                                                        </h3>
-                                                        <Disclosure.Panel className="pt-6 sticky">
-                                                            <div className="space-y-4 flex flex-col my-2 ">
-                                                                {car.model && car.model.length > 0 ? (
-                                                                   car?.model?.map((carModel) => {
-                                                                        return (
-                                                                            <li
-                                                                                key={category._id} // or key={category.slug} depending on your unique identifier
-                                                                                className={`cursor-pointer ${selectedCategories.includes(category.name) ? 'text-[#18568C]' : ''}`}
-                                                                                onClick={() => toggleCategory(category.name)}
-                                                                            >
-                                                                                <input
-                                                                                    type="checkbox"
-                                                                                    checked={selectedCategories.includes(category.name)}
-                                                                                    readOnly
-                                                                                    className="mr-2"
-                                                                                />
-                                                                                {carModel}
-                                                                            </li>
-                                                                        );
-                                                                    })
-                                                                ) : (
-                                                                    <div>Loading car...</div>
-                                                                )}
-                                                            </div>
-                                                        </Disclosure.Panel>
-                                                    </>
-                                                )}
-                                            </Disclosure>
-                                        )
-                                    })
-                                }
+                               
+                <div className="border-b border-gray-200 py-6">
+                  <button onClick={() => handleToggleFilter('category')} className=" font-semibold">Category</button>
 
+                  {activeFilter === 'category' && <>
+                    <div className="space-y-4">
+                      {categoryData && categoryData.length > 0 ? (
+                        categoryData.map((category) => {
+                          return (
+                            <li
+                              key={category._id}
+                              className={`cursor-pointer mt-2 ${selectedCategories.includes(category.name) ? 'text-[#18568C]' : ''}`}
+                              onClick={() => toggleCategory(category.name)}
+                            >
+                              <input
+                                type="checkbox"
+                                checked={selectedCategories.includes(category.name)}
+                                readOnly
+                                className="mr-2"
+                              />
+                              {category.name}
+                            </li>
+                          )
+                        })
+                      ) : (
+                        <div>Loading categories...</div>
+                      )}
+                    </div>
+                  </>}
+
+                </div>
 
                             </div>
 

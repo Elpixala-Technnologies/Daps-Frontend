@@ -33,7 +33,7 @@ const ProductSlider = () => {
     const slidesData = [
         {
             id: 1,
-            desktopImage:  OfferBannerTwo,
+            desktopImage:  "https://res.cloudinary.com/elpixala/image/upload/v1699784132/Daps/Slider/kqirwpqmxb54hvyozrpx.png",
             mobileImage: OfferBannerTwo, // Add mobile image for slide 1
         },
         {

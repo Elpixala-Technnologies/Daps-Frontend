@@ -41,7 +41,7 @@ const MainNav = () => {
   const { handleLogout } = useCommonApiData();
   const userEmail = user?.email;
   const [isAdmin] = useAdmin();
-  const { categoryData } = useProducts();
+  const { categoryMainData} = useProducts();
   const [profileToggle, setProfileToggle] = useState(false);
   const [selectedMenu, setSelectedMenu] = useState("");
 
@@ -55,7 +55,7 @@ const MainNav = () => {
   // Animation speed (adjust as needed)
   const animationSpeed = 300; // in milliseconds
 
-  console.log(categoryData)
+ 
   useEffect(() => {
     let currentIndex = 0;
     let intervalId;
@@ -87,6 +87,7 @@ const MainNav = () => {
 
   const [megaMenuVisible, setMegaMenuVisible] = useState({
     categorys: false,
+    carsmanu: false
   });
 
   const handleMouseEnter = (menu) => {
@@ -214,11 +215,11 @@ const MainNav = () => {
 
   return (
     <div>
-   <div className="bg-[blue-100] text-black h-[50px] text-center flex items-center">
-      <span className="flex  md:w-[550px]  m-auto text-center w-[300px] md:text-[16px] text-[10px]"> <AiTwotoneFire/> Catch the killer deals on best boat shop and earn 5% boat rewards.</span>
-    </div>    
+   {/* <div className="bg-[blue-100] text-black h-[50px] text-center flex items-center">
+      <span className="flex  md:w-[550px]  m-auto text-center w-[300px] md:text-[16px] text-[10px]"> <AiTwotoneFire/> Catch the killer deals on best daps shop and earn 5% daps rewards.</span>
+    </div>     */}
       <header
-      className={`${isSticky ? ' bg-[white] fixed top-0' : ' bg-[transparent]'} fixed w-full shadow z-50 mx-auto`}
+      className={`${isSticky ? ' bg-[white] fixed top-0' : 'md:bg-[white] bg-[transparent]'} fixed w-full shadow z-50 mx-auto`}
       style={{
         zIndex: "9999",
       }}
@@ -245,14 +246,14 @@ const MainNav = () => {
             </Link>
           </div>
           <div className="manu-items md:flex md:py-10 gap-4 justify-center items-center hidden ">
-            <ul className={`${isSticky ? 'bg-white text-black' : 'bg-transparent text-white'} flex gap-8 justify-center items-center border px-8 py-2 rounded-full`}>
+            <ul className={`${isSticky ? 'bg-white text-black' : 'bg-transparent text-black'} flex gap-8 justify-center items-center border px-8 py-2 rounded-full`}>
               <li>
-                <div onClick={() => toggleMegaMenu("categorys")} className="">
+                <div onClick={() => toggleMegaMenu("carsmanu")} className="">
                   <button className="relative cursor-pointer flex gap-2 text-[1.1rem] items-center  upercase">
                     Shop By Cars{" "}
                     <FaAngleDown className="text-[1.2rem] text-[#18568C] " />
                   </button>
-                  {megaMenuVisible?.categorys && (
+                  {megaMenuVisible?.carsmanu && (
                     <div
                       className={`${isSticky ? 'text-black bg-[white]' : 'text-black bg-[lightgray]'} container mx-auto mega-menu border z-50 absolute top-[100%]  left-[0%] rounded py-2 px-2 transition-opacity opacity-100`}
                        data-aos="fade-up"
@@ -281,18 +282,42 @@ const MainNav = () => {
                   )}
                 </div>
               </li>
-
               <li>
-                <Link
-                  href="/"
-                  className={`common-hover text-[#29679e]:hover ${
-                    selectedMenu === "Home" ? "selected-manu" : ""
-                  }`}
-                  onClick={() => setSelectedMenu("Home")}
-                >
-                  Home helllsad
-                </Link>
+                <div onClick={() => toggleMegaMenu("categorys")} className="">
+                  <button className="relative cursor-pointer flex gap-2 text-[1.1rem] items-center  upercase">
+                    Shop By Category{" "}
+                    <FaAngleDown className="text-[1.2rem] text-[#18568C] " />
+                  </button>
+                  {megaMenuVisible?.categorys && (
+                    <div
+                      className={`${isSticky ? 'text-black bg-[white]' : 'text-black bg-[lightgray]'} container mx-auto mega-menu border z-50 absolute top-[100%]  left-[0%] rounded py-2 px-2 transition-opacity opacity-100`}
+                       data-aos="fade-up"
+                    >
+                      <ul>
+                        <div className="grid grid-cols-6 text-left mx-20  py-4 px-4  gap-5">
+                          {categoryMainData?.map((itm) => (
+                            <Link href={`/category/3`}>
+                              {" "}
+                              <div className="flex relative items-center justify-center gap-2 flex-col">
+                                <Image
+                                  src={itm?.icons}
+                                  alt="logo"
+                                  width={50}
+                                  height={40}
+                                  className="cursor-pointer relative z-[1] hover:scale-105 duration-300 transform"
+                                />
+                                <div className="bg-gray-200  w-[40px] h-[40px] rounded rotate-[60deg] absolute top-[-40px] left-0 right-0 bottom-0 m-auto">.</div>
+                                <h1 className="">{itm?.name}</h1>
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+                      </ul>
+                    </div>
+                  )}
+                </div>
               </li>
+
               <li>
                 <Link
                   href="/products"
@@ -450,7 +475,7 @@ const MainNav = () => {
                 <div className="w-full flex justify-between items-center"><Link href="/">Categorys</Link> <span className="text-xl">{aOn ? <>-</> : <>+</>}</span> </div>
                 <div className={`${aOn ? 'h-[300px] p-4 overflow-y-scroll mt-3' : 'h-[0px] '} rounded-lg bg-[#243c72]  duration-300 overflow-hidden`}>
                      {
-                          categoryData && categoryData?.map((item, index) => {
+                          categoryMainData && categoryMainData?.map((item, index) => {
                             return (
                               <div onClick={() => setOpen(!open)} key={index} >
                                 <Link href={`/category/${item?.name}`}

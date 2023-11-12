@@ -9,6 +9,7 @@ import { addToCartUrl } from '@/src/Utils/Urls/ProductUrl';
 import Swal from 'sweetalert2';
 import { AuthContext } from '@/src/Context/UserContext';
 import useProducts from '@/src/Hooks/useProducts';
+import useCar from '@/src/Hooks/useCar';
 import { PaymentIcons } from '@/src/Assets';
 import { BsCart } from 'react-icons/bs'
 import {
@@ -30,6 +31,7 @@ import 'slick-carousel/slick/slick-theme.css';
 
 const ProductDetailsPage = () => {
     const { productData } = useProducts();
+    const { CarData } = useCar()
     const { user } = useContext(AuthContext);
     const router = useRouter();
     const { productId } = router.query;
@@ -158,6 +160,25 @@ const ProductDetailsPage = () => {
         setSelectedImage(image);
     };
 
+    // ======
+    // State to track the selected car and model
+     const [selectedCar, setSelectedCar] = useState(null);
+     const [selectedModel, setSelectedModel] = useState(null);
+
+     console.log(CarData , 'CarData')
+     // Handler for car selection
+     const handleCarSelect = (carName) => {
+         const selectedCarData = CarData?.find(car => car.name === carName);
+         setSelectedCar(selectedCarData);
+         setSelectedModel(null); // Reset selected model when changing the car
+     };
+
+     // Handler for model selection
+     const handleModelSelect = (model) => {
+         setSelectedModel(model);
+     };
+
+
     return (
         <RootLayout>
             <section className='container'>
@@ -216,13 +237,58 @@ const ProductDetailsPage = () => {
                                     </p>
                                 </div>
 
-                                <h2 className="my-2">{product?.details.slice(0, 150)}</h2>
 
                                 <div className='border p-2 rounded bg-[#E7F3EC]'>
                                     <h1 className='font-bold text-[1.2rem]'>Get this for as low as  <span className='text-[#29679e]'>Rs. {Math.round(product?.price)}</span> </h1>
                                     <p>
                                         with these offers.
                                     </p>
+                                </div>
+
+                                <div className='my-4'>
+                                    {
+                                        product?.categories[0] === '9”/10” Car Specific Stereos' && (
+                                            <>
+                                                <div>
+                                                    <label htmlFor="carSelect" className="block text-sm font-medium text-gray-700">
+                                                        Select Car:
+                                                    </label>
+                                                    <select
+                                                        id="carSelect"
+                                                        name="carSelect"
+                                                        onChange={(e) => handleCarSelect(e.target.value)}
+                                                        value={selectedCar ? selectedCar.name : ''}
+                                                        className="mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                                                    >
+                                                        <option value="" disabled>Select a car</option>
+                                                        {CarData && CarData?.map(car => (
+                                                            <option key={car.name} value={car.name}>{car.name}</option>
+                                                        ))}
+                                                    </select>
+                                                </div>
+
+                                                {selectedCar && (
+                                                    <div className='my-4 flex '>
+                                                        <label htmlFor="modelSelect" className="block text-sm font-medium text-gray-700">
+                                                            Select Model:
+                                                        </label>
+                                                        <select
+                                                            id="modelSelect"
+                                                            name="modelSelect"
+                                                            onChange={(e) => handleModelSelect(e.target.value)}
+                                                            value={selectedModel || ''}
+                                                            className="mt-1 w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                                                        >
+                                                            <option value="" disabled>Select a model</option>
+                                                            {selectedCar.models.map(model => (
+                                                                <option key={model} value={model}>{model}</option>
+                                                            ))}
+                                                        </select>
+                                                    </div>
+                                                )}
+                                            </>
+                                        )
+                                    }
                                 </div>
 
                                 <div className="mt-4 flex flex-col items-center  space-y-4 border-t border-b py-4  w-full">
@@ -241,6 +307,12 @@ const ProductDetailsPage = () => {
                                             <BsCart className='text-[1.2rem]' />  Buy Now
                                         </span>
                                     </button>
+                                </div>
+
+                                <div>
+                                    {
+
+                                    }
                                 </div>
 
                                 <div class='border text-center p-2 mt-4 flex flex-col md:flex-row items-center justify-center gap-4 rounded bg-[#E7F3EC]'>
@@ -346,9 +418,19 @@ const ProductDetailsPage = () => {
                                         </AccordionSummary>
                                         <AccordionDetails>
                                             <div className='flex flex-col gap-4'>
-                                                <h1 className='flex items-center border p-4 rounded-full gap-2'>
-                                                    {product?.details}
-                                                </h1>
+                                                <div className='flex flex-col my-2  gap-4'>
+                                                    {
+                                                        product?.details && product?.details?.map((dt) => {
+                                                            return (
+                                                                <div className='gap-2 flex-col flex'>
+                                                                    <h1 className='font-bold'> ✅ {dt?.heading} :</h1>
+                                                                    <hr />
+                                                                    <h2>{dt?.description}</h2>
+                                                                </div>
+                                                            )
+                                                        })
+                                                    }
+                                                </div>
                                             </div>
                                         </AccordionDetails>
                                     </Accordion>
@@ -472,28 +554,78 @@ const ProductDetailsPage = () => {
                                     </nav>
                                 </div>
                                 <div className="mt-8 flow-root sm:mt-12">
-                                    <h1 className="text-3xl font-bold">Details</h1>
-                                    <p className="mt-4">
-                                        {product?.details}
-                                    </p>
-                                    <h1 className="mt-8 text-3xl font-bold">
-                                        Features
-                                    </h1>
-                                    <p className="mt-4">
+                                    <div className="mt-8 flow-root sm:mt-12">
+                                        <h1 className="text-3xl font-bold">Details</h1>
+                                        <div className='flex flex-col my-2  gap-4'>
+
+                                            {
+                                                product?.details && product?.details?.map((dt) => {
+                                                    return (
+                                                        <div className='flex  gap-2'>
+                                                            <h1 className='font-bold'> ✅ {dt?.heading} :</h1>
+                                                            <h2>{dt?.description}</h2>
+                                                        </div>
+                                                    )
+                                                })
+                                            }
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h1 className="mt-8 text-3xl font-bold">
+                                            Features
+                                        </h1>
+                                        <div className='flex flex-col my-2 gap-4'>
+                                            {
+                                                product?.features && product?.features?.map((fct, index) => {
+
+                                                    console.log(fct, 'features')
+                                                    return (
+                                                        <div className='flex gap-2 flex-col'>
+                                                            <h1 className='font-bold'> {index + 1}. {fct?.heading} :</h1>
+                                                            <hr />
+                                                            <h2>✅ {fct?.description}</h2>
+                                                        </div>
+                                                    )
+                                                })
+                                            }
+                                        </div>
+                                    </div>
+
+                                    {/* ========== is android ========= */}
+
+                                    <div>
                                         {
-                                            product?.features && product?.features?.map((feature, index) => {
-                                                return (
-                                                    <li key={index} className='relative after:w-[10px] mt-2 after:rounded-full after:top-0 after:bottom-0 after:my-auto after:h-[10px] after:bg-[#3d3c3c] after:absolute after:left-0 pl-4'>{feature}</li>
-                                                )
-                                            })
+                                            product?.android[0]?.isAndroid && (
+                                                <div>
+                                                    {
+                                                        product.android && product?.android?.map((andro) => {
+                                                            return (
+                                                                <div className='flex gap-2 flex-col'>
+                                                                    <h2>✅ Processor : {andro?.processor}</h2>
+                                                                    <h2>✅ Ram : {andro?.ram}</h2>
+                                                                    <h2>✅ Rom : {andro?.rom}</h2>
+                                                                    <h2>✅ Display Size : {andro?.displaySize}</h2>
+                                                                    <h2>✅ Wlcpaa : {andro?.wlcpaa}</h2>
+                                                                    <h2>✅ Dvr : {andro?.dvr}</h2>
+                                                                    <h2>✅ Camera 360 : {andro?.camera360}</h2>
+                                                                    <h2>✅ Sim : {andro?.sim}</h2>
+                                                                    <h2>✅ Optical Input : {andro?.opticalInput}</h2>
+                                                                    <h2>✅ Qled : {andro?.qled}</h2>
+                                                                    <h2>✅ Warranty : {andro?.warranty}</h2>
+                                                                </div>
+                                                            )
+                                                        })
+                                                    }
+                                                </div>
+                                            )
                                         }
-                                    </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-
             </section>
         </RootLayout>
     );

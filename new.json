@@ -1,0 +1,238 @@
+[
+  {
+    "name": "Example Product",
+    "categories": [
+      "9”/10” Car Specific Stereos"
+    ],
+    "brand": "Example Brand",
+    "price": 499.99,
+    "quantity": 100,
+    "images": [
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306484/Daps%20Images/Camera%20Kit/360%20Camera/IMG_20231012_151826925_mmfc7s.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306484/Daps%20Images/Camera%20Kit/360%20Camera/IMG_20231012_151758001_qjx2ze.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306483/Daps%20Images/Camera%20Kit/360%20Camera/IMG_20231012_151856384_luutvs.jpg"
+    ],
+    "discount": 10,
+    "carName": "Example Car",
+    "carModel": "XYZ123",
+    "type": "Gadget",
+    "status": "Active",
+    "details": [
+      {
+        "heading": "Overview",
+        "description": "This is an example product with detailed features."
+      },
+      {
+        "heading": "Specifications",
+        "description": "Various technical specifications go here."
+      }
+    ],
+    "features": [
+      {
+        "heading": "Feature 1",
+        "description": "Description of feature 1."
+      },
+      {
+        "heading": "Feature 2",
+        "description": "Description of feature 2."
+      }
+    ],
+    "coupon": [
+      "couponId1",
+      "couponId2"
+    ],
+    "android": [
+      {
+        "isAndroid": true,
+        "processor": "Snapdragon 865",
+        "ram": "8GB",
+        "rom": "128GB",
+        "displaySize": "6.5 inches",
+        "wlcpaa": "Yes",
+        "dvr": "No",
+        "camera360": "20MP",
+        "sim": "Dual SIM",
+        "opticalInput": "Yes",
+        "qled": "No",
+        "warranty": "1 year"
+      }
+    ]
+  },
+  {
+    "name": "Example Product",
+    "categories": [
+      "Styled Stereos"
+    ],
+    "brand": "Example Brand",
+    "price": 499.99,
+    "quantity": 100,
+    "images": [
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306484/Daps%20Images/Camera%20Kit/360%20Camera/IMG_20231012_151826925_mmfc7s.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306484/Daps%20Images/Camera%20Kit/360%20Camera/IMG_20231012_151758001_qjx2ze.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306483/Daps%20Images/Camera%20Kit/360%20Camera/IMG_20231012_151856384_luutvs.jpg"
+    ],
+    "discount": 10,
+    "carName": "Example Car",
+    "carModel": "XYZ123",
+    "type": "Gadget",
+    "status": "Active",
+    "details": [
+      {
+        "heading": "Overview",
+        "description": "This is an example product with detailed features."
+      },
+      {
+        "heading": "Specifications",
+        "description": "Various technical specifications go here."
+      }
+    ],
+    "features": [
+      {
+        "heading": "Feature 1",
+        "description": "Description of feature 1."
+      },
+      {
+        "heading": "Feature 2",
+        "description": "Description of feature 2."
+      }
+    ],
+    "coupon": [
+      "couponId1",
+      "couponId2"
+    ],
+    "android": [
+      {
+        "isAndroid": true,
+        "processor": "Snapdragon 865",
+        "ram": "8GB",
+        "rom": "128GB",
+        "displaySize": "6.5 inches",
+        "wlcpaa": "Yes",
+        "dvr": "No",
+        "camera360": "20MP",
+        "sim": "Dual SIM",
+        "opticalInput": "Yes",
+        "qled": "No",
+        "warranty": "1 year"
+      }
+    ]
+  },
+  {
+    "name": "Example Product",
+    "categories": [
+      "LED"
+    ],
+    "brand": "Example Brand",
+    "price": 499.99,
+    "quantity": 100,
+    "images": [
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306484/Daps%20Images/Camera%20Kit/360%20Camera/IMG_20231012_151826925_mmfc7s.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306484/Daps%20Images/Camera%20Kit/360%20Camera/IMG_20231012_151758001_qjx2ze.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306483/Daps%20Images/Camera%20Kit/360%20Camera/IMG_20231012_151856384_luutvs.jpg"
+    ],
+    "discount": 10,
+    "carName": "Example Car",
+    "carModel": "XYZ123",
+    "type": "Gadget",
+    "status": "Active",
+    "details": [
+      {
+        "heading": "Overview",
+        "description": "This is an example product with detailed features."
+      },
+      {
+        "heading": "Specifications",
+        "description": "Various technical specifications go here."
+      }
+    ],
+    "features": [
+      {
+        "heading": "Feature 1",
+        "description": "Description of feature 1."
+      },
+      {
+        "heading": "Feature 2",
+        "description": "Description of feature 2."
+      }
+    ],
+    "coupon": [
+      "couponId1",
+      "couponId2"
+    ],
+    "android": [
+      {
+        "isAndroid": false,
+        "processor": "Snapdragon 865",
+        "ram": "8GB",
+        "rom": "128GB",
+        "displaySize": "6.5 inches",
+        "wlcpaa": "Yes",
+        "dvr": "No",
+        "camera360": "20MP",
+        "sim": "Dual SIM",
+        "opticalInput": "Yes",
+        "qled": "No",
+        "warranty": "1 year"
+      }
+    ]
+  },
+  {
+    "name": "Example Product",
+    "categories": [
+      "Amplifer"
+    ],
+    "brand": "Example Brand",
+    "price": 499.99,
+    "quantity": 100,
+    "images": [
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306484/Daps%20Images/Camera%20Kit/360%20Camera/IMG_20231012_151826925_mmfc7s.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306484/Daps%20Images/Camera%20Kit/360%20Camera/IMG_20231012_151758001_qjx2ze.jpg",
+      "https://res.cloudinary.com/ddx2daqmx/image/upload/w_500/q_auto/f_auto/v1698306483/Daps%20Images/Camera%20Kit/360%20Camera/IMG_20231012_151856384_luutvs.jpg"
+    ],
+    "discount": 10,
+    "carName": "Example Car",
+    "carModel": "XYZ123",
+    "type": "Gadget",
+    "status": "Active",
+    "details": [
+      {
+        "heading": "Overview",
+        "description": "This is an example product with detailed features."
+      },
+      {
+        "heading": "Specifications",
+        "description": "Various technical specifications go here."
+      }
+    ],
+    "features": [
+      {
+        "heading": "Feature 1",
+        "description": "Description of feature 1."
+      },
+      {
+        "heading": "Feature 2",
+        "description": "Description of feature 2."
+      }
+    ],
+    "coupon": [
+      "couponId1",
+      "couponId2"
+    ],
+    "android": [
+      {
+        "isAndroid": false,
+        "processor": "Snapdragon 865",
+        "ram": "8GB",
+        "rom": "128GB",
+        "displaySize": "6.5 inches",
+        "wlcpaa": "Yes",
+        "dvr": "No",
+        "camera360": "20MP",
+        "sim": "Dual SIM",
+        "opticalInput": "Yes",
+        "qled": "No",
+        "warranty": "1 year"
+      }
+    ]
+  }
+]

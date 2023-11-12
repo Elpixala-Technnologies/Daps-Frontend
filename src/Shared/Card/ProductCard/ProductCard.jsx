@@ -55,6 +55,7 @@ const ProductCard = ({ productValueData }) => {
 
   return (
     <div className="group relative overflow-hidden">
+      <Link href={`/products/${_id}`}>
       <div className="aspect-h-1 border aspect-w-1 w-full overflow-hidden rounded-t-md bg-transparent lg:aspect-none group-hover:opacity-75 h-80">
         <img
           src={images[0]}
@@ -62,6 +63,7 @@ const ProductCard = ({ productValueData }) => {
           className="h-full w-full object-cover object-center lg:h-full lg:w-full"
         />
       </div>
+  
       <div className="aspect-h-1 border aspect-w-1 w-full overflow-hidden rounded-t-md bg-transparent lg:aspect-none group-hover:opacity-75 h-80 absolute top-0 left-0 opacity-0 transition duration-300"
       >
         <img
@@ -70,6 +72,7 @@ const ProductCard = ({ productValueData }) => {
           className="h-full w-full object-cover object-center lg:h-full lg:w-full"
         />
       </div>
+      </Link>
 
       <div className="absolute -right-16 bottom-20 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
         <button
