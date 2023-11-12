@@ -5,7 +5,7 @@ import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
 import useProducts from "@/src/Hooks/useProducts";
-
+ 
 const ShopByCategories = () => {
   const { categoryMainData } = useProducts();
   const [updateData, setUpdateData] = React.useState(10);

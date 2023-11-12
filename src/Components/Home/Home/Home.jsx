@@ -9,7 +9,9 @@ import NewOfferBanner from '../NewOfferBanner/NewOfferBanner';
 import AboutBanner from '../AboutBanner/AboutBanner'
 import HomeOffers from '../HomeOffers/HomeOffers';
 import OurProducts from "../OurProducts/OurProducts";
-
+import InstraStoryEffect from '../../InstraStoryEffect/InstraStoryEffect';
+import ExploreBestSeal from '../ExploreBestSeal/ExploreBestSeal';
+ 
 
 const Home = () => {
     return (
@@ -19,6 +21,9 @@ const Home = () => {
             {/* ====== Best Sealer */}
             <section>
                 <div>
+                      <InstraStoryEffect/> <br />
+                      <ExploreBestSeal/>
+                      <br/>
                 <ShopByCategories />
                     <HomeOffers/>
                     <BestSealer />

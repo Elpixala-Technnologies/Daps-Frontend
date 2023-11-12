@@ -169,21 +169,24 @@ const OurProducts = () => {
                       <SwiperSlide className="cursor-grab" key={product?._id}
                       >
                         <div className="group relative overflow-hidden">
-                          <div className="aspect-h-1 border aspect-w-1 w-full overflow-hidden rounded-t-md bg-transparent lg:aspect-none group-hover:opacity-75 h-80">
+                          <div className="relative aspect-h-1 border aspect-w-1 w-full overflow-hidden rounded-xl bg-transparent lg:aspect-none group-hover:opacity-75 h-80">
+                              <div className="bg-black text-white absolute top-2 left-2 px-4 py-1 rounded text-sm">20%  Discount</div>
                             <img
                               src={product?.images[0]}
                               alt={product?.name}
                               className="h-full w-full object-cover object-center lg:h-full lg:w-full"
                             />
                           </div>
-                          <div className="aspect-h-1 border aspect-w-1 w-full overflow-hidden rounded-t-md bg-transparent lg:aspect-none group-hover:opacity-75 h-80 absolute top-0 left-0 opacity-0 transition duration-300"
+                          <div className=" aspect-h-1 border aspect-w-1 w-full overflow-hidden rounded-t-md bg-transparent lg:aspect-none group-hover:opacity-75 h-80 absolute top-0 left-0 opacity-0 transition duration-300"
                           >
+                          
                             <img
                               src={product?.images[1] || product?.images[0]}
                               alt={product?.name}
                               className="h-full w-full object-cover object-center lg:h-full lg:w-full"
                             />
                           </div>
+                          <span className="bg-yellow-400 px-3 py-2 rounded-lg relative z-[1] mt-[-60px]">Highest Ever Discount</span>
 
                           <div className="absolute -right-16 bottom-20 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
                             <button
