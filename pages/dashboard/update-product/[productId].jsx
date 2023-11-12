@@ -57,7 +57,19 @@ const UpdatePorductPage = () => {
         features,
         coupon,
         quantity,
-        _id
+        _id,
+        isAndroid,
+        processor,
+        ram,
+        rom,
+        displaySize,
+        wlcpaa,
+        dvr,
+        camera360,
+        sim,
+        opticalInput,
+        qled,
+        warranty 
     } = singleProductData;
 
     useEffect(() => {
@@ -72,6 +84,20 @@ const UpdatePorductPage = () => {
         setValue("features", features?.join(', '));
         setValue("coupon", coupon);
         setValue("quantity", quantity)
+        setValue("isAndroid", isAndroid);
+        setValue("processor", processor);
+        setValue("ram", ram);
+        setValue("rom", rom);
+        setValue("displaySize", displaySize);
+        setValue("wlcpaa", wlcpaa);
+        setValue("dvr", dvr);
+        setValue("camera360", camera360);
+        setValue("sim", sim);
+        setValue("opticalInput", opticalInput);
+        setValue("qled", qled);
+        setValue("warranty", warranty);
+
+
     }, [
         name,
         categories,
@@ -85,6 +111,19 @@ const UpdatePorductPage = () => {
         features,
         coupon,
         quantity,
+        isAndroid,
+        processor,
+        ram,
+        rom,
+        displaySize,
+        wlcpaa,
+        dvr,
+        camera360,
+        sim,
+        opticalInput,
+        qled,
+        warranty
+
     ]);
 
     const couponOptions = couponData?.map((couponResponse) => {
@@ -176,6 +215,18 @@ const UpdatePorductPage = () => {
                 features: featuresArray,
                 coupon: couponSelected,
                 quantity: inputValue?.quantity,
+                processor: inputValue?.android[0]?.processor,
+                ram: inputValue?.android[0]?.ram,
+                rom: inputValue?.android[0]?.rom,
+                displaySize: inputValue?.android[0]?.displaySize,
+                wlcpaa: inputValue?.android[0]?.wlcpaa,
+                dvr: inputValue?.android[0]?.dvr,
+                camera360: inputValue?.android[0]?.camera360,
+                sim: inputValue?.android[0]?.sim,
+                opticalInput: inputValue?.android[0]?.opticalInput,
+                qled: inputValue?.android[0]?.qled,
+                warranty: inputValue?.android[0]?.warranty,
+                
             }
 
             const res = await fetch(updateProductsUrl(_id), {
@@ -245,6 +296,7 @@ const UpdatePorductPage = () => {
                         <div
                             className="add-Porduct-form w-full md:w-full mx-auto flex flex-col gap-4 "
                         >
+                            <div className='border'>
                             <input
                                 placeholder="Porduct Name"
                                 name="name"
@@ -253,7 +305,7 @@ const UpdatePorductPage = () => {
                                 defaultValue={name}
                                 {...register("name")}
                             />
-
+                            </div>
                             <select
                                 id="category"
                                 className="border-2 border-gray-300 rounded-md p-2"
@@ -350,15 +402,170 @@ const UpdatePorductPage = () => {
                                 options={couponOptions}
                             />
 
-                            <textarea id="txtid" name="txtname" rows="4" cols="50" maxlength="200"
+                            <div className='flex flex-col gap-3'>
+                                {
+                                   details && details?.map((detail, index) => {
+                                        return (
+                                            <div key={index}>
+                                                <div className='border-2 border-gray-300 rounded-md p-2 my-3'>
+                                                <input type="text"
+                                                    placeholder="Details"
+                                                    className=' p-2'
+                                                    defaultValue={detail.heading}
+                                                    {...register("details")}
+                                                />
+                                                </div>
+                                                <div className='border-2 border-gray-300 rounded-md p-2'>
+                                                <input type="text"
+                                                    placeholder="Details"
+                                                    className='  rounded-md p-2'
+                                                    defaultValue={detail.description}
+                                                    {...register("details")}
+                                                />
+                                                </div>
+                                            </div>
+                                        )
+                                    })
+                                }
+                            
+                            </div>
+
+                            <div className='flex flex-col gap-3'>
+                                {
+                                   features && features?.map((feature, index) => {
+                                        return (
+                                            <div key={index}>
+                                                <div className='border-2 border-gray-300 rounded-md p-2 my-2'>
+                                                <input type="text"
+                                                    placeholder="Details"
+                                                    className='border-2 border-gray-300 rounded-md p-2'
+                                                    defaultValue={feature.heading}
+                                                    {...register("features")}
+                                                />
+                                                </div>
+                                                <div className='border-2 border-gray-300 rounded-md p-2'>
+                                                <input type="text"
+                                                    placeholder="Details"
+                                                    className='border-2 border-gray-300 rounded-md p-2'
+                                                    defaultValue={feature.description}
+                                                    {...register("features")}
+                                                />
+                                                </div>
+                                            </div>
+                                        )
+                                    })
+                                }
+                            
+                            </div>
+
+                                <div>
+                                    {
+                                        isAndroid && (
+                                            <div>
+<div className='border-2 border-gray-300 rounded-md p-2'>
+                <input
+                    type="text"
+                    placeholder="Processor"
+                    defaultValue={processor}
+                    {...register("processor")}
+                />
+            </div>
+            <div className='border-2 border-gray-300 rounded-md p-2'>
+                <input
+                    type="text"
+                    placeholder="RAM"
+                    defaultValue={ram}
+                    {...register("ram")}
+                />
+            </div>
+            <div className='border-2 border-gray-300 rounded-md p-2'>
+                <input
+                    type="text"
+                    placeholder="ROM"
+                    defaultValue={rom}
+                    {...register("rom")}
+                />
+            </div>
+            <div className='border-2 border-gray-300 rounded-md p-2'>
+                <input
+                    type="text"
+                    placeholder="Display Size"
+                    defaultValue={displaySize}
+                    {...register("displaySize")}
+                />
+            </div>
+            <div className='border-2 border-gray-300 rounded-md p-2'>
+                <input
+                    type="text"
+                    placeholder="wlcpaa"
+                    defaultValue={wlcpaa}
+                    {...register("wlcpaa")}
+                />
+            </div>
+            <div className='border-2 border-gray-300 rounded-md p-2'>
+                <input
+                    type="text"
+                    placeholder="Dvr"
+                    defaultValue={dvr}
+                    {...register("dvr")}
+                />
+            </div>
+            <div className='border-2 border-gray-300 rounded-md p-2'>
+                <input
+                    type="text"
+                    placeholder="Camera 360"
+                    defaultValue={camera360}
+                    {...register("camera360")}
+                />
+            </div>
+            <div className='border-2 border-gray-300 rounded-md p-2'>
+                <input
+                    type="text"
+                    placeholder="Sim"
+                    defaultValue={sim}
+                    {...register("sim")}
+                />
+            </div>
+            <div className='border-2 border-gray-300 rounded-md p-2'>
+                <input
+                    type="text"
+                    placeholder="Optical Input"
+                    defaultValue={opticalInput}
+                    {...register("opticalInput")}
+                />
+            </div>
+            <div className='border-2 border-gray-300 rounded-md p-2'>
+                <input
+                    type="text"
+                    placeholder="Qled"
+                    defaultValue={qled}
+                    {...register("qled")}
+                />
+            </div>
+            <div className='border-2 border-gray-300 rounded-md p-2'>
+                <input
+                    type="text"
+                    placeholder="Warranty"
+                    defaultValue={warranty}
+                    {...register("warranty")}
+                />
+            </div>
+                                            </div>
+                                        )
+                                    }
+                                </div>
+
+                            {/* <textarea id="txtid" name="txtname" rows="4" cols="50" maxlength="200"
                                 placeholder="Description"
                                 defaultValue={details}
                                 {...register("details")}
                                 className="border-[2px] border-[#000] text-[15px] font-[500] text-gray-700 outline-none w-full rounded-lg shadow-md pl-10 pr-2.5 py-3"
                             >
-                            </textarea>
+                            </textarea> */}
 
-                            <textarea name="txtname" rows="4" cols="50" maxlength="200"
+
+
+                            {/* <textarea name="txtname" rows="4" cols="50" maxlength="200"
                                 placeholder="Features"
                                 defaultValue={features}
                                 {...register("productFeatures", {
@@ -371,7 +578,7 @@ const UpdatePorductPage = () => {
                                 })}
                                 className="border-[2px] border-[#090606] text-[15px] font-[500] text-gray-700 outline-none w-full rounded-lg shadow-md pl-10 pr-2.5 py-3"
                             >
-                            </textarea>
+                            </textarea> */}
 
                             <div className="w-full h-full">
                                 <div className="p-4 rounded-lg shadow-xl bg-gray-50">
