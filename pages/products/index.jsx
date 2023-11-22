@@ -25,7 +25,7 @@ const ProductPage = () => {
     const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
     const { productData, categoryData } = useProducts();
     const { CarData } = useCar()
-    const itemsPerPage = 8; // Number of items per page
+    const itemsPerPage =9; // Number of items per page
     const [page, setPage] = useState(1);
     const [currentPageData, setCurrentPageData] = useState([]);
     const [selectedCategories, setSelectedCategories] = useState(['All']);

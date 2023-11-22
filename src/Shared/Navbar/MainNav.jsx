@@ -215,9 +215,7 @@ const MainNav = () => {
 
   return (
     <div>
-   {/* <div className="bg-[blue-100] text-black h-[50px] text-center flex items-center">
-      <span className="flex  md:w-[550px]  m-auto text-center w-[300px] md:text-[16px] text-[10px]"> <AiTwotoneFire/> Catch the killer deals on best daps shop and earn 5% daps rewards.</span>
-    </div>     */}
+    
       <header
       className={`${isSticky ? ' bg-[white] fixed top-0 duration-200' : 'md:bg-[white] bg-[transparent] duration-200 relative'} duration-200 w-full shadow z-50 mx-auto`}
       style={{

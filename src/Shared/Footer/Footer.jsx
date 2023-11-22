@@ -83,10 +83,10 @@ const Footer = () => {
                             <div className="uppercase font-semibold">Social media</div>
 
                             <div className="flex  flex-col  gap-4 mt-4">
-                                <Link href="https://www.facebook.com/" className='flex gap-2 items-center text-[1.1rem] transition duration-200 ease-out transform hover:scale-105'>
+                                <Link href="https://instagram.com/dapsindia?igshid=Z28yemtlcHFhMTRt" className='flex gap-2 items-center text-[1.1rem] transition duration-200 ease-out transform hover:scale-105'>
                                     <FaFacebook className="w-8 h-8 text-gray-500 cursor-pointer hover:text-[#fff] dark:hover:text-gray-50 text-[1.5rem]" /> Facebook
                                 </Link>
-                                <Link href="https://www.instagram.com/" className='transition duration-200 ease-out transform hover:scale-105 flex gap-2 items-center text-[1.1rem]'>
+                                <Link href="https://instagram.com/dapsindia?igshid=Z28yemtlcHFhMTRt" className='transition duration-200 ease-out transform hover:scale-105 flex gap-2 items-center text-[1.1rem]'>
                                     <FaInstagram className="w-8 h-8 text-gray-500 cursor-pointer hover:text-[#fff] dark:hover:text-gray-50  text-[1.5rem]" /> Instagram
                                 </Link>
                                 <Link href="https://www.twitter.com/" className='flex gap-2 items-center text-[1.1rem] transition duration-200 ease-out transform hover:scale-105'>

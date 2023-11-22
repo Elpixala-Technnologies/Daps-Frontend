@@ -1,51 +1,39 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import 'swiper/css/pagination'; 
+import 'swiper/css/pagination';
 import 'swiper/css/navigation';
- const ExploreBestSeal = () => {
+const ExploreBestSeal = () => {
     const videoInfo = [
         {
             id: 0,
-            name: 'Maruti FRONX',
+            name: '360 Cameras',
             thum: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/FRONX/9243/1697697928533/front-left-side-47.jpg?tr=w-456',
-            video: "https://res.cloudinary.com/elpixala/video/upload/v1699800441/wctmjqjihiwzaliblvzg.mp4" 
+            video: "https://res.cloudinary.com/elpixala/video/upload/v1699818085/Daps/Video/vuy4w20q6yzxwytwsain.mp4"
         },
         {
             id: 1,
-            name: 'TATA',
+            name: 'Damping Sheets',
             thum: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Tata/Harrier/9368/1697532960290/front-left-side-47.jpg?tr=w-456',
-            video: 'https://res.cloudinary.com/elpixala/video/upload/v1699800523/lta4x6koaneo4fnsx8hk.mp4' 
+            video: 'https://res.cloudinary.com/elpixala/video/upload/v1699818101/Daps/Video/udwdrakltqhai6zjil0b.mp4'
         },
         {
             id: 2,
-            name: 'Hyundai Verna',
+            name: 'Styled Stereos',
             thum: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Hyundai/Verna/9744/1694602806760/front-left-side-47.jpg?tr=w-456',
-            video: 'https://res.cloudinary.com/elpixala/video/upload/v1699800441/wctmjqjihiwzaliblvzg.mp4' 
-        } ,
+            video: 'https://res.cloudinary.com/elpixala/video/upload/v1699818110/Daps/Video/wbkf6svvxaskagjfmebg.mp4'
+        },
         {
-            id: 0,
-            name: 'Maruti FRONX',
+            id: 3,
+            name: 'Universal LEDs',
             thum: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/FRONX/9243/1697697928533/front-left-side-47.jpg?tr=w-456',
-            video: 'https://res.cloudinary.com/elpixala/video/upload/v1699800523/lta4x6koaneo4fnsx8hk.mp4' 
-        },
-        {
-            id: 1,
-            name: 'TATA',
-            thum: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Tata/Harrier/9368/1697532960290/front-left-side-47.jpg?tr=w-456',
-            video: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/FRONX/9243/1697697928533/front-left-side-47.jpg?tr=w-456' 
-        },
-        {
-            id: 2,
-            name: 'Hyundai Verna',
-            thum: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Hyundai/Verna/9744/1694602806760/front-left-side-47.jpg?tr=w-456',
-            video: 'https://res.cloudinary.com/elpixala/video/upload/v1699800523/lta4x6koaneo4fnsx8hk.mp4' 
-        } 
+            video: 'https://res.cloudinary.com/elpixala/video/upload/v1699818177/Daps/Video/ubo474a030zdreweg2no.mp4'
+        }
     ];
 
     return (
         <div className="container mt-14">
-            <h3 className="font-semibold text-3xl text-black">Shop By Cars</h3>
+            <h3 className="font-semibold text-3xl text-black">Trending Products</h3>
 
             <Swiper
                 slidesPerView={3}
@@ -70,20 +58,22 @@ import 'swiper/css/navigation';
                         spaceBetween: 40
                     }
                 }}>
-                    {
-                        videoInfo?.map(itm =>   <SwiperSlide>
-                         <div>
-                        <div className="rounded-3xl h-[480px] relative overflow-hidden hover-box duration-200">
-                        <img src={itm?.thum} className="w-full h-full "/>
-                             <video className="absolute top-[0px]  left-0 bottom-0 right-0 duration-200 hover-img opacity-0" width="940" height="480" muted controls autoPlay>
-                                <source src={itm?.video} type="video/mp4" />
-                             </video>
-                         </div>
-                          <h3 className ="text-2xl text-black mt-4">{itm?.name}</h3> 
-                         </div>
-                 </SwiperSlide>)
-                    }
-              
+                {
+                    videoInfo?.map(itm => <SwiperSlide>
+                        <div>
+                            <div className="rounded-3xl h-[480px] relative overflow-hidden hover-box duration-200">
+                                <img src={itm?.thum} className="w-full h-full " />
+                                <video className="absolute top-[0px]  left-0 bottom-0 right-0 duration-200 hover-img opacity-0" width="940" height="480" muted controls autoPlay>
+                                    <source src={itm?.video} type="video/mp4" 
+                                        autoplay loop
+                                    />
+                                </video>
+                            </div>
+                            <h3 className="text-2xl text-black mt-4">{itm?.name}</h3>
+                        </div>
+                    </SwiperSlide>)
+                }
+
             </Swiper>
         </div>
     );

@@ -455,7 +455,6 @@ const UpdatePorductPage = () => {
                                         )
                                     })
                                 }
-                            
                             </div>
 
                                 <div>
