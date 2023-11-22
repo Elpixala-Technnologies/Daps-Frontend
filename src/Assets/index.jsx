@@ -1,4 +1,4 @@
-import MainLogo from "./Logo/logo.png"
+import MainLogo from "./Logo/daps-blue.png"
 import BlackLogo from './Logo/black-logo.png'
 import NotFoundIcon from "./Images/NotFoundImag.png";
 import AuthIcons from "./Images/usersignUp.jpeg";

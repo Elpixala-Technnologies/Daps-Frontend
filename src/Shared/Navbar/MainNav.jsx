@@ -247,7 +247,7 @@ const MainNav = () => {
           <div className="manu-items md:flex md:py-10 gap-4 justify-center items-center hidden ">
             <ul className={`${isSticky ? 'bg-white text-black' : 'bg-transparent text-black'} flex gap-8 justify-center items-center border px-8 py-2 rounded-full`}>
               <li>
-                <div onClick={() => toggleMegaMenu("carsmanu")} className="">
+                <div onMouseOver={() => toggleMegaMenu("carsmanu")} className="">
                   <button className="relative cursor-pointer flex gap-2 text-[1.1rem] items-center  upercase">
                     Shop By Cars{" "}
                     <FaAngleDown className="text-[1.2rem] text-[#18568C] " />
@@ -282,7 +282,7 @@ const MainNav = () => {
                 </div>
               </li>
               <li>
-                <div onClick={() => toggleMegaMenu("categorys")} className="">
+                <div onMouseOver={() => toggleMegaMenu("categorys")} className="">
                   <button className="relative cursor-pointer flex gap-2 text-[1.1rem] items-center  upercase">
                     Shop By Category{" "}
                     <FaAngleDown className="text-[1.2rem] text-[#18568C] " />
