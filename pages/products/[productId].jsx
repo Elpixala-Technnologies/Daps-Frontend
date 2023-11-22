@@ -107,8 +107,8 @@ const ProductDetailsPage = () => {
     const formattedPhoneNumber = phoneNumber.replace(/\D/g, '');
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${formattedPhoneNumber}&text=${encodeURIComponent(message)}`;
     return (
-        <a href={whatsappUrl} className='text-lg flex my-4 items-center justify-center align-middle' target="_blank" rel="noopener noreferrer">
-       <WhatsAppIcon /> <span className='ml-2 bg-green-500 p-2 text-white rounded-sm hover:bg-green-600'>+91 99964 44445</span>
+        <a href={whatsappUrl} className='text-lg bg-green-500 p-2 text-white rounded-sm hover:bg-green-600 flex my-6 items-center justify-center align-middle' target="_blank" rel="noopener noreferrer">
+       <WhatsAppIcon /> <span className='ml-2 '>+91 99964 44445</span>
         </a>
     );
     };
