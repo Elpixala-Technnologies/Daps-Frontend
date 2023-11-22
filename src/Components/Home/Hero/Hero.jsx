@@ -268,18 +268,18 @@ import Image from "next/image";
 const HomeSliderData = [
   {
     id: 1,
-    desktopImage: "https://res.cloudinary.com/elpixala/image/upload/v1699784132/Daps/Slider/kqirwpqmxb54hvyozrpx.png",
-    mobileImage: "https://res.cloudinary.com/elpixala/image/upload/v1699784436/Daps/Slider/r23rhw1szrbattjlfat7.png", // Add mobile image for slide 1
+    desktopImage: "https://res.cloudinary.com/elpixala/image/upload/v1699858749/Daps/Slider/DAPS%20Banner/DAPS%20Banner%20PC/ubdrk3vfkbsxwtyxnaox.png",
+    mobileImage: "https://res.cloudinary.com/elpixala/image/upload/v1699858745/Daps/Slider/DAPS%20Banner/Mobile/tpvoo9d8vsi9qiafpo9u.png", // Add mobile image for slide 1
   },
   {
     id: 2,
-    desktopImage: "https://res.cloudinary.com/elpixala/image/upload/v1699784132/Daps/Slider/p0rhcuwtgi8vaa5g2i7n.png",
-    mobileImage: "https://res.cloudinary.com/elpixala/image/upload/v1699784436/Daps/Slider/zrfj8vkuilyphputfdgn.png", // Add mobile image for slide 2
+    desktopImage: "https://res.cloudinary.com/elpixala/image/upload/v1699858749/Daps/Slider/DAPS%20Banner/DAPS%20Banner%20PC/ztevzp1jh4tfcmc4fqoc.png",
+    mobileImage: "https://res.cloudinary.com/elpixala/image/upload/v1699858745/Daps/Slider/DAPS%20Banner/Mobile/nr6s9szlrwgynmyporwb.png", // Add mobile image for slide 2
   },
   {
     id: 3,
-    desktopImage: "https://res.cloudinary.com/elpixala/image/upload/v1699784131/Daps/Slider/edf01ej5rfawxvm7y0ok.png",
-    mobileImage: "https://res.cloudinary.com/elpixala/image/upload/v1699784435/Daps/Slider/ickmzwmvaz3g2q45hmdo.png", // Add mobile image for slide 3
+    desktopImage: "https://res.cloudinary.com/elpixala/image/upload/v1699858748/Daps/Slider/DAPS%20Banner/DAPS%20Banner%20PC/nwwrm7drid3yaarzzfkp.png",
+    mobileImage: "https://res.cloudinary.com/elpixala/image/upload/v1699858744/Daps/Slider/DAPS%20Banner/Mobile/vwi0vtegwzwrmjju2myz.png", // Add mobile image for slide 3
   },
  
 ];
@@ -312,7 +312,7 @@ const HeroSlider = () => {
         }}
         loop={true}
         modules={[Autoplay, Pagination, Navigation]}
-        navigation={true}
+        // navigation={true}
         className="mySwiper heroSlider"
       >
         {HomeSliderData &&
@@ -327,8 +327,6 @@ const HeroSlider = () => {
                     width={isMobile ? 768 : 1920}
                     height={isMobile ? 768 : 500}
                   />
-
-
                 </div>
               </SwiperSlide>
             );

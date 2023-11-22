@@ -429,7 +429,6 @@ const AddProduct = () => {
           </button>
           </div>
 
-
           <div>
           <label className='flex items-center'>
             Is Android
