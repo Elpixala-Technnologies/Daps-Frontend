@@ -11,6 +11,7 @@ import { AuthContext } from '@/src/Context/UserContext';
 import useProducts from '@/src/Hooks/useProducts';
 import useCar from '@/src/Hooks/useCar';
 import { PaymentIcons } from '@/src/Assets';
+import { FaWhatsapp } from 'react-icons/fa';
 import { BsCart } from 'react-icons/bs'
 import {
     PolicyIcons,
@@ -36,6 +37,10 @@ const ProductDetailsPage = () => {
     const { user } = useContext(AuthContext);
     const router = useRouter();
     const { productId } = router.query;
+    const phoneNumber = '+91 99964 44445';
+    const WhatsAppIcon = () => {
+        return <FaWhatsapp />;
+      };
     let mainProductData;
 
     const filterproductData = productData?.filter((data) => {
@@ -97,7 +102,15 @@ const ProductDetailsPage = () => {
             router.push('/cart');
         }
     }
-
+    const WhatsAppLink = ({ phoneNumber, message }) => {
+        const formattedPhoneNumber = phoneNumber.replace(/\D/g, '');
+        const whatsappUrl = `https://api.whatsapp.com/send?phone=${formattedPhoneNumber}&text=${encodeURIComponent(message)}`;
+        return (
+            <a href={whatsappUrl} className='text-lg bg-green-500 p-2 text-white rounded-sm hover:bg-green-600 flex my-6 items-center justify-center align-middle' target="_blank" rel="noopener noreferrer">
+           <WhatsAppIcon /> <span className='ml-2 '>+91 99964 44445</span>
+            </a>
+        );
+    };
     const handelBuyNow = async (id) => {
         const convertPrice = parseInt(product?.price);
         // Check if the user is logged in
@@ -184,11 +197,14 @@ const ProductDetailsPage = () => {
         <RootLayout>
             <section className='container'>
                 {
-                    mOn ? <div className="bg-white p-4 border rounded-xl md:w-[600px] h-[400px] fixed top-[20px]  left-0 right-0 z-[200] shadow-xl shadow-[gray] w-[90%] m-auto mt-[10%]">
+                    mOn ? <div className="bg-white p-4 border rounded-xl md:w-[600px] pb-4 fixed top-[20px]  left-0 right-0 z-[200] shadow-xl shadow-[gray] w-[90%] m-auto mt-[10%]">
                    <button onClick={()=> setMOn(!mOn)} className="text-2xl float-right">
                     x
                    </button>
-                    <h2 className="text-2xl mt-12 text-black text-center">The sale will ho live on 16 November 2023 GMT +05:30</h2>
+                    <div className='mx-auto my-auto'>
+                        <h2 className="text-sm animate-pulse mt-12 mx-12 text-black text-center">This website is under maintaienence if you want to buy this product then share screenshot to this whatsaap number</h2>
+                        <WhatsAppLink phoneNumber={phoneNumber} message="Hello from Daps" />
+                    </div>
                 </div> : <></>
                 }
                 <section className="py-8">
