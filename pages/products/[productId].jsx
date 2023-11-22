@@ -197,13 +197,13 @@ const ProductDetailsPage = () => {
         <RootLayout>
             <section className='container'>
                 {
-                    mOn ? <div className="bg-white p-4 border rounded-xl md:w-[600px] pb-4 fixed top-[20px]  left-0 right-0 z-[200] shadow-xl shadow-[gray] w-[90%] m-auto mt-[10%]">
+                    mOn ? <div className="bg-white p-4 border rounded-xl md:w-[600px] pb-4 fixed top-[50%] -translate-y-1/2  left-0 right-0 z-[200] shadow-xl shadow-[gray] w-[90%] m-auto">
                    <button onClick={()=> setMOn(!mOn)} className="text-2xl float-right">
                     x
                    </button>
                     <div className='mx-auto my-auto'>
                         <h2 className="text-sm animate-pulse mt-12 mx-12 text-black text-center">This website is under maintaienence if you want to buy this product then share screenshot to this whatsaap number</h2>
-                        <WhatsAppLink phoneNumber={phoneNumber} message="Hello from Daps" />
+                        <WhatsAppLink phoneNumber={phoneNumber} message="I want to Buy {Product Name} worth Rs {Product Price} From You, can you please inform me More" />
                     </div>
                 </div> : <></>
                 }
