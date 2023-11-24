@@ -3,6 +3,7 @@ import { AuthContext } from "@/src/Context/UserContext";
 import useAdmin from "@/src/Hooks/useAdmin";
 import useCommonApiData from "@/src/Hooks/useCommonApiData";
 import { AiTwotoneFire } from "react-icons/ai";
+import { debounce } from 'lodash';
 import Image from "next/image";
 import Link from "next/link";
 import img1 from "@/src/Assets/brands/2874749.webp";
@@ -29,11 +30,16 @@ import {
   FaUserAlt,
   FaAngleDown,
   FaAngleUp,
+  FaFontAwesome,
 } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { CiUser } from "react-icons/ci";
 import { BsCartPlus } from "react-icons/bs";
 import useProducts from "@/src/Hooks/useProducts";
+import Autocomplete from '@mui/joy/Autocomplete';
+import AutocompleteOption from '@mui/joy/AutocompleteOption';
+import ListItemContent from '@mui/joy/ListItemContent';
+import ListItemDecorator from '@mui/joy/ListItemDecorator';
 
 const MainNav = () => {
   const [open, setOpen] = useState(false);
@@ -44,10 +50,28 @@ const MainNav = () => {
   const { categoryMainData} = useProducts();
   const [profileToggle, setProfileToggle] = useState(false);
   const [selectedMenu, setSelectedMenu] = useState("");
+  const { productData } = useProducts();
 
   const [placeholderText, setPlaceholderText] = useState(""); // Initialize empty placeholder text
 
-  const [searchBarToggle, setSearchBarToggle] = useState(false); // Initialize the search bar state to false
+  const [searchBarToggle, setSearchBarToggle] = useState(false); 
+  const [searchQuery, setSearchQuery] = useState('');
+  const debouncedSearch = debounce((value) => {
+    setSearchQuery(value);
+  }, 300); // Adjust the debounce delay as needed
+
+  const handleSearchChange = (event) => {
+    const { value } = event.target;
+    debouncedSearch(value);
+  };
+
+  const styles = {
+    width: 300,
+    marginBottom: 10
+  };
+
+  
+  const product = productData?.map(item => ({ label: item.name, id: item._id, image: item.images[0] }));
 
   // Text to display in the placeholder
   const searchText = "Search for products, shops...";
@@ -96,6 +120,8 @@ const MainNav = () => {
       [menu]: true,
     }));
   };
+
+  console.log(productData,"Bito")
 
   const handleMouseLeave = (menu) => {
     setMegaMenuVisible((prevState) => ({
@@ -247,8 +273,8 @@ const MainNav = () => {
           <div className="manu-items md:flex md:py-10 gap-4 justify-center items-center hidden ">
             <ul className={`${isSticky ? 'bg-white text-black' : 'bg-transparent text-black'} flex gap-8 justify-center items-center border px-8 py-2 rounded-full`}>
               <li>
-                <div onClick={() => toggleMegaMenu("carsmanu")} className="">
-                  <button className="relative cursor-pointer flex gap-2 text-[1.1rem] items-center  upercase">
+                <div onMouseEnter={() => toggleMegaMenu("carsmanu")}>
+                  <button className="relative  cursor-pointer flex gap-2 text-[1.1rem] items-center  upercase   hover:font-semibold hover:border-b hover:border-gray-500  transition duration-300 ease-in-out">
                     Shop By Cars{" "}
                     <FaAngleDown className="text-[1.2rem] text-[#18568C] " />
                   </button>
@@ -256,22 +282,23 @@ const MainNav = () => {
                     <div
                       className={`${isSticky ? 'text-black bg-[white]' : 'text-black bg-[lightgray]'} container mx-auto mega-menu border z-50 absolute top-[100%]  left-[0%] rounded py-2 px-2 transition-opacity opacity-100`}
                        data-aos="fade-up"
+                       onMouseLeave={() => toggleMegaMenu("carsmanu")}
+                      onMouseEnter={() => toggleMegaMenu("carsmanu")}
                     >
                       <ul>
                         <div className="grid grid-cols-6 text-left mx-20  py-4 px-4  gap-5">
                           {carsInfo?.map((itm) => (
                             <Link href={`/category/3`}>
                               {" "}
-                              <div className="flex relative items-center justify-center gap-2 flex-col">
+                              <div className="flex relative items-center justify-center gap-2 flex-row">
                                 <Image
                                   src={itm?.image}
                                   alt="logo"
                                   width={50}
                                   height={40}
-                                  className="cursor-pointer relative z-[1] hover:scale-105 duration-300 transform"
+                                  className="cursor-pointer relative z-[1] hover:effect"
                                 />
-                                <div className="bg-gray-200  w-[40px] h-[40px] rounded rotate-[60deg] absolute top-[-40px] left-0 right-0 bottom-0 m-auto">.</div>
-                                <h1 className="">{itm?.name}</h1>
+                                <h1 className="text-slate-950 hover:text-slate-600">{itm?.name}</h1>
                               </div>
                             </Link>
                           ))}
@@ -282,8 +309,8 @@ const MainNav = () => {
                 </div>
               </li>
               <li>
-                <div onClick={() => toggleMegaMenu("categorys")} className="">
-                  <button className="relative cursor-pointer flex gap-2 text-[1.1rem] items-center  upercase">
+                <div onMouseEnter={() => toggleMegaMenu("categorys")} className="">
+                  <button className="relative cursor-pointer flex gap-2 text-[1.1rem] items-center  upercase hover:font-semibold hover:underline">
                     Shop By Category{" "}
                     <FaAngleDown className="text-[1.2rem] text-[#18568C] " />
                   </button>
@@ -291,22 +318,24 @@ const MainNav = () => {
                     <div
                       className={`${isSticky ? 'text-black bg-[white]' : 'text-black bg-[lightgray]'} container mx-auto mega-menu border z-50 absolute top-[100%]  left-[0%] rounded py-2 px-2 transition-opacity opacity-100`}
                        data-aos="fade-up"
+                       onMouseLeave={() => toggleMegaMenu("categorys")}
+                       onMouseEnter={() => toggleMegaMenu("categorys")}
                     >
                       <ul>
                         <div className="grid grid-cols-6 text-left mx-20  py-4 px-4  gap-5">
                           {categoryMainData?.map((itm) => (
                             <Link href={`/category/3`}>
                               {" "}
-                              <div className="flex relative items-center justify-center gap-2 flex-col">
+                              <div className="flex relative items-center justify-center gap-2 flex-row">
                                 <Image
                                   src={itm?.icons}
                                   alt="logo"
                                   width={50}
                                   height={40}
-                                  className="cursor-pointer relative z-[1] hover:scale-105 duration-300 transform"
+                                  className="cursor-pointer relative z-[1]"
                                 />
-                                <div className="bg-gray-200  w-[40px] h-[40px] rounded rotate-[60deg] absolute top-[-40px] left-0 right-0 bottom-0 m-auto">.</div>
-                                <h1 className="">{itm?.name}</h1>
+                                {/* <div className="bg-gray-200  w-[40px] h-[40px] rounded rotate-[60deg] absolute top-[-40px] left-0 right-0 bottom-0 m-auto">.</div> */}
+                                <h1 className="text-slate-950 hover:text-slate-600">{itm?.name}</h1>
                               </div>
                             </Link>
                           ))}
@@ -317,7 +346,8 @@ const MainNav = () => {
                 </div>
               </li>
 
-              <li>
+                  
+              <li className="hover:font-semibold hover:underline">
                 <Link
                   href="/products"
                   className={`common-hover ${
@@ -329,7 +359,7 @@ const MainNav = () => {
                 </Link>
               </li>
 
-              <li>
+              <li className="hover:font-semibold hover:underline">
                 <Link
                   href="/products"
                   className={`common-hover ${
@@ -340,7 +370,7 @@ const MainNav = () => {
                   Hot Deals
                 </Link>
               </li>
-              <li>
+              <li className="hover:font-semibold hover:underline">
                 <Link
                   href="/blogs"
                   className={`common-hover ${
@@ -360,26 +390,55 @@ const MainNav = () => {
           >
             <div
               className="cursor-pointer hidden md:block "
-              onClick={() => handelSearchBarToggle()}
+              // onClick={() => handelSearchBarToggle()}
             >
-              <h1 className="border p-2 rounded-full bg-[#000]">
-                <AiOutlineSearch className="text-[#fff] text-[1.5rem]" />
-              </h1>
-              <div>
-                {searchBarToggle && (
-                  <div className="absolute right-0 w-full h-[4rem] bg-white px-5 py-3  rounded-lg shadow border mt-5">
-                    <li className="flex items-center relative rounded-md w-full border-2 border-[#29679e]">
+               <div>
+                  <div>
+                  <Autocomplete
+                    placeholder="Search products..."
+                    options={product || []}
+                    sx={{ width: 300, zIndex: "99", outline: "none" }}
+                    id="searchBar"
+                    getOptionLabel={(option) => option.label}
+                    renderOption={(props, option) => (
+                      <Link href={`/products/${option.id}`}>
+                        <AutocompleteOption>
+                          <ListItemDecorator>
+                            <img
+                              loading="lazy"
+                              width="20"
+                              srcSet={`${option.image}`}
+                              src={`${option.image}`}
+                              alt={`${option.label}`}
+                            />
+                          </ListItemDecorator>
+                          <ListItemContent sx={{ fontSize: 'sm' }}>
+                            {option.label}
+                          </ListItemContent>
+                        </AutocompleteOption>
+                      </Link>
+                    )}
+                  />
+                        {/* <li className="flex item-center  relative rounded-md w-[20rem] border-2 ">
                       <input
                         type="text"
+                        value={searchQuery}
+                        onChange={handleSearchChange}
                         placeholder={placeholderText}
-                        className="pl-2 w-full border-2 border-[#29679e] text-black py-2 px-8  rounded-md"
+                        className="pl-2 w-full border-none outline-none text-black py-2 px-8  rounded-md"
                       />
+                       <ul className=" bg-white">
+                        {filteredProducts?.map((product) => (
+                        <li key={product._id}>
+                          {product.name} 
+                        </li>
+                          ))}
+                      </ul>
                       <div className="absolute right-0">
                         <AiOutlineSearch className="text-black text-[1.6rem] mx-2" />
                       </div>
-                    </li>
+                    </li> */}
                   </div>
-                )}
               </div>
             </div>
 
@@ -387,8 +446,8 @@ const MainNav = () => {
               className="cursor-pointer"
               onClick={() => handelProfileToggle()}
             >
-              <h1 className="border p-2 rounded-full bg-[#000]">
-                <CiUser className="text-[1.5rem] text-[#fff] " />
+              <h1 className="p-2 rounded-full ">
+                <CiUser className="text-[1.5rem] text-[#332828] " />
               </h1>
               <div>
                 {profileToggle && (
@@ -439,13 +498,11 @@ const MainNav = () => {
             </div>
             <Link
               href="/cart"
-              className="relative border p-2 rounded-full bg-[#000]"
+              className="relative  p-2 rounded-full"
             >
-              <BsCartPlus className="text-[1.5rem] text-[#fff]" />
+              <BsCartPlus className="text-[1.5rem] text-[#484343]" />
             </Link>
-            
           </div>
-
           {/* side bar for small device */}
           <div
             className={`${

@@ -11,6 +11,7 @@ export default function HomePage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
       </Head>
+      <h1 className='font-thin text-sm top-0 bg-[#EFF4F7] text-center py-2 '>Go extra on celebrations & saving with <strong className='font-bold'>Bond with Dav</strong>Bag <strong className='font-bold'>offers</strong> & personalized gifts.</h1>
       <RootLayout>
         <Home />
       </RootLayout>

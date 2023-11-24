@@ -85,12 +85,12 @@ const OurProducts = () => {
   };
 
 
-
+  
   return (
     <section className='bg-[#F6F6F6] py-10 mt-[20px]'>
       <div className='container'>
         <div className='title text-center'>
-          <h1>OUR PRODUCTS</h1>
+          <h1>POPULAR FROM DAVS</h1>
         </div>
 
         <div className='gelaryComponent'>

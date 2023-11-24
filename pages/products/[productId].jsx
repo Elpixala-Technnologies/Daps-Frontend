@@ -60,8 +60,6 @@ const ProductDetailsPage = () => {
     } else {
         console.error(`No data found for ID: ${productId}`);
     }
-
-
     const addToCart = async (id) => {
         const convertPrice = parseInt(product?.price);
         // Check if the user is logged in
@@ -102,6 +100,7 @@ const ProductDetailsPage = () => {
             router.push('/cart');
         }
     }
+
     const WhatsAppLink = ({ phoneNumber, message }) => {
         const formattedPhoneNumber = phoneNumber.replace(/\D/g, '');
         const whatsappUrl = `https://api.whatsapp.com/send?phone=${formattedPhoneNumber}&text=${encodeURIComponent(message)}`;
@@ -111,6 +110,7 @@ const ProductDetailsPage = () => {
             </a>
         );
     };
+
     const handelBuyNow = async (id) => {
         const convertPrice = parseInt(product?.price);
         // Check if the user is logged in
@@ -203,7 +203,7 @@ const ProductDetailsPage = () => {
                    </button>
                     <div className='mx-auto my-auto'>
                         <h2 className="text-sm animate-pulse mt-12 mx-12 text-black text-center">This website is under maintaienence if you want to buy this product then share screenshot to this whatsaap number</h2>
-                        <WhatsAppLink phoneNumber={phoneNumber} message="I want to Buy {Product Name} worth Rs {Product Price} From You, can you please inform me More" />
+                        <WhatsAppLink phoneNumber={phoneNumber} message={`I want to Buy ${product?.name} worth Rs ${product?.price} From You, can you please inform me More`} />
                     </div>
                 </div> : <></>
                 }
@@ -619,8 +619,6 @@ const ProductDetailsPage = () => {
                                         <div className='flex flex-col my-2 gap-4'>
                                             {
                                                 product?.features && product?.features?.map((fct, index) => {
-
-                                                    console.log(fct, 'features')
                                                     return (
                                                         <div className='flex gap-2 flex-col'>
                                                             <h1 className='font-bold'> {index + 1}. {fct?.heading} :</h1>
