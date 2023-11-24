@@ -13,6 +13,7 @@ const category_product = () => {
     const { productData } = useProducts()
     const router = useRouter();
     const categoryName = router?.query?.index;
+    
 
     useEffect(() => {
         window.scrollTo(0, 0);

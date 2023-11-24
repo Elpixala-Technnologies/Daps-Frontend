@@ -262,8 +262,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Autoplay, Pagination, Navigation } from "swiper";
+import { Autoplay, Pagination,Navigation } from "swiper";
 import Image from "next/image";
+
 
 const HomeSliderData = [
   {
@@ -305,14 +306,15 @@ const HeroSlider = () => {
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
+        slidesPerView={1}
         pagination={true}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
         }}
+        navigation={true}
         loop={true}
         modules={[Autoplay, Pagination, Navigation]}
-        // navigation={true}
         className="mySwiper heroSlider"
       >
         {HomeSliderData &&

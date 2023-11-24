@@ -36,7 +36,9 @@ const ShopByCategories = () => {
             <h1>Shop by <span>Categories</span></h1>
           </div>
           <div className="rounded-lg pb-[1px]">
-            <div className="grid grid-cols-2 gap-5 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 md:pt-5">
+            {/* <div className="grid grid-cols-1 gap-1 w-max-content overflow-hidden xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 md:pt-5"> */}
+            <div className="flex w-max-content overflow-hidden justify-around">
+           
               {categoryMainData &&
                 categoryMainData.slice(0, updateData).map((child) => {
                   const { _id, name, icons } = child;
@@ -64,7 +66,7 @@ const ShopByCategories = () => {
                   );
                 })}
             </div>
-            <p
+            {/* <p
               className="flex justify-end items-center text-black hover:[#29679e] text-[14px] my-4 px-2 pr-4 tracking-wide  hover:text-red-10 cursor-pointer"
               onClick={() => showCard()}
             >
@@ -74,7 +76,7 @@ const ShopByCategories = () => {
                 ) : (
                 <AiFillCaretUp className="mt-1 text-[15px]" />
               )}
-            </p>
+            </p> */}
           </div>
         </div>
       </div>

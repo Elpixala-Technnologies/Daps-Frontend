@@ -3,6 +3,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import Link from "next/link";
+
 const ExploreBestSeal = () => {
     const videoInfo = [
         {
@@ -58,21 +60,21 @@ const ExploreBestSeal = () => {
                         spaceBetween: 40
                     }
                 }}>
+                <div className='grid gap-10 grid-cols-1 lg:grid-cols-4 lg:gap-x-5 lg:gap-y-12'>
                 {
-                    videoInfo?.map(itm => <SwiperSlide>
-                        <div>
-                            <div className="rounded-3xl h-[480px] relative overflow-hidden hover-box duration-200">
+                    videoInfo?.map(itm => 
+                        <Link href={`/category/${itm?.id}`}>
+                            <div className="rounded-xl  relative overflow-hidden hover-box duration-200">
                                 <img src={itm?.thum} className="w-full h-full " />
-                                <video className="absolute top-[0px]  left-0 bottom-0 right-0 duration-200 hover-img opacity-0" width="940" height="480" muted controls autoPlay>
-                                    <source src={itm?.video} type="video/mp4" 
-                                        autoplay loop
-                                    />
+                                <video dblclick={e => e.preventDefault()} className="absolute  top-[0px]  left-0 bottom-0 right-0 duration-200 hover-img opacity-0" width="940" height="480" muted controls loop autoPlay>
+                                    <source src={itm?.video} type="video/mp4" />
                                 </video>
                             </div>
                             <h3 className="text-2xl text-black mt-4">{itm?.name}</h3>
-                        </div>
-                    </SwiperSlide>)
+                        </Link>
+                 )
                 }
+                </div>
 
             </Swiper>
         </div>
