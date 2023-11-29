@@ -22,17 +22,17 @@ const HomeOffers = () => {
                         className="rounded  w-full h-full object-cover transition duration-200 ease-out transform hover:scale-105"
                     />
 
-                    <div className='absolute top-[5%] md:top-[20%] bottom-0 left-[15%] right-0'>
+                    <div className='absolute top-[5%] md:top-[5%] bottom-0 left-[8%] right-0'>
                         <div>
                             <p className='font-semibold text-black'>TOOLS & ACCESSORIES</p>
-                            <h1 className='font-bold text-[1.5rem] md:text-[2rem] text-black'>
+                            <h1 className='font-bold leading-7 py-2 text-[1.3rem] md:text-[1.5rem] text-black'>
                                 SAVE TIME <br /> AND MONEY
                             </h1>
-                            <h4 className='font-semibold text-[#009EE2] text-[1.2rem] mb-4'>
+                            <h4 className='font-semibold pb-2 text-[#009EE2] text-[1.2rem] mb-4'>
                                 UP TO 20% OFF
                             </h4>
 
-                            <Link href='/products' className='common-btn-outline py-4 px-4 mt-6'>
+                            <Link href='/products' className='common-btn-outline py-2 px-4 mt-6'>
                                 Shop Now
                             </Link>
                         </div>
@@ -48,10 +48,10 @@ const HomeOffers = () => {
                             className="h-full w-full transition duration-200 ease-out transform hover:scale-105"
                         />
 
-                        <div className='absolute top-[15%] bottom-0 left-[10%] right-0'>
+                        <div className='absolute top-[11%] bottom-0 left-[8%] right-0'>
                             <div>
                                 <p className='font-semibold'>NEW ARRIVAL</p>
-                                <h1 className='font-bold text-[1.5rem] mt-2'>
+                                <h1 className='font-bold leading-7 text-[1.5rem] my-2'>
                                     POWER
                                     <br /> HAND TOOLS
                                 </h1>
@@ -73,10 +73,10 @@ const HomeOffers = () => {
                             className="h-full w-full transition duration-200 ease-out transform hover:scale-105"
                         />
 
-                        <div className='absolute top-[15%] bottom-0 left-[55%] right-0'>
+                        <div className='absolute top-[8%] bottom-0 left-[53%] right-0'>
                             <div>
                                 <p className='font-semibold text-black'>BEST PRICE</p>
-                                <h1 className='font-bold text-[1.5rem] text-black mt-2'>
+                                <h1 className='font-bold leading-7 text-[1.5rem] text-black my-2'>
                                     FLEX VOLT
                                     <br />60V BATTERY
                                 </h1>
@@ -98,10 +98,10 @@ const HomeOffers = () => {
                         height={510}
                         className="w-full h-full  rounded object-cover transition duration-200 ease-out transform hover:scale-105"
                     />
-                    <div className='absolute top-[5%] md:top-[15%]  bottom-0 left-[15%] right-0'>
+                    <div className='absolute top-[8%] md:top-[6%]  bottom-0 left-[8%] right-0'>
                         <div className='text-[#000]'>
-                            <p className='font-semibold'>ONLINE SHOP</p>
-                            <h1 className='font-bold text-[1.5rem] md:text-[2rem]'>
+                            <p className='font-semibold mb-2'>ONLINE SHOP</p>
+                            <h1 className='font-bold pb-2 leading-8 text-[1.5rem] md:text-[2rem]'>
                                 SAVE TIME <br /> AND MONEY
                             </h1>
                             <h4 className='font-semibold text-[#009EE2] text-[1.2rem] mb-4'>

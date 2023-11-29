@@ -12,6 +12,7 @@ import OurProducts from "../OurProducts/OurProducts";
 import InstraStoryEffect from '../../InstraStoryEffect/InstraStoryEffect';
 import ExploreBestSeal from '../ExploreBestSeal/ExploreBestSeal';
 import Image from 'next/image';
+import ExploreBrand from '../ExploreBrand/ExploreBrand';
 
 
 const Home = () => {
@@ -46,6 +47,7 @@ const Home = () => {
             <section>
 
                 <div>
+                   <ExploreBrand/>
                     <InstraStoryEffect /> <br />
                     <ExploreBestSeal />
                     <br />

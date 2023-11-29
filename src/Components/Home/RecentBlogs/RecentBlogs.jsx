@@ -295,15 +295,12 @@ const RecentBlog = () => {
 
   return (
     <section className='my-6'>
-      <div className="mx-auto max-w-screen-sm">
-      <div className='title text-center'>
-              <h1>Latest <span>Blogs </span></h1>
-            </div>
-
+      <div className="container">
+      <h3 className="font-light  text-3xl text-black">Latest <strong className='font-extrabold text-[#29679e]'>Blogs</strong></h3>
       </div>
 
 
-      <div className="my-10 p-4">
+      <div className="my-6 p-2">
         <div>
           <div className=" grid gap-14 grid-cols-1 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
             {blogData && blogData?.slice(0, 3)?.map((post) => {

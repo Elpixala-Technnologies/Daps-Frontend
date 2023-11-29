@@ -1,5 +1,6 @@
 import { PartsImage ,PersonImage} from '@/src/Assets';
 import Image from 'next/image';
+import Link from "next/link";
 import React from 'react';
 
 const AboutBanner = () => {
@@ -38,7 +39,15 @@ const AboutBanner = () => {
                             humour, or randomised words which don't look even slightly
                             believable.
                         </p>
+                        <div className="mt-4">
+                        <Link href={`/products`}> 
+                        <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">
+                            Shop Now
+                        </button>
+                        </Link>
                     </div>
+                    </div>
+                    
                 </div>
             </div>
         </section>
