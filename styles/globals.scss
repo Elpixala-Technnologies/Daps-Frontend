@@ -199,8 +199,8 @@ img {
     background-image: url("../src/Assets/OfferBanner/BannerOne.png");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
-    padding: 100px 0;
+    background-position: 50% 70%;
+    padding: 70px 0;
     background-blend-mode: color;
     // background-color: #000000a1;
 }
@@ -614,11 +614,12 @@ $letterStagger: 0.1s;
   .swiper {
     .swiper-button-next::after,
     .swiper-button-prev::after {
-      color: #edeaea !important;
-      font-size: 1rem !important;
+      color: #e4dbdb !important;
+      font-size: .9rem !important;
       background:#0000003b;
-      padding: 10px;
-      border-radius: 7px;
+      padding: 10px 15px;
+      border-radius: 50%;
+      
     }
   }
 
@@ -631,7 +632,65 @@ $letterStagger: 0.1s;
   }
 .swiper-pagination{
     font-size: 0;
-    padding:3px 0;
-    padding-left: 4px !important;
-    padding-right: 4px !important;
+    padding: 3px 0;
+    background-color: #f4f4f579 !important;
+    color: black !important;
+    .swiper-pagination-bullet{
+        background-color: #000 !important;
+        opacity: 1 !important;
+    }
+    
+    .swiper-pagination-bullet-active{
+        background-color: #f9f7f7 !important;
+    }
+}
+
+
+
+#searchBar {
+    position: relative;
+    overflow: hidden;
+    &::placeholder {
+      position: absolute;
+      animation: scrollUp infinite linear 5s;
+      white-space: nowrap;
+      transition: transform 1s ease-in-out; // Transition added for smoothness
+    }
+  
+    @keyframes scrollUp {
+      0% {
+        transform: translateY(100%); // Start from the bottom
+      }
+      100% {
+        transform: translateY(0); // Move upwards
+      }
+    }
+  
+    @at-root {
+      @keyframes scrollUp {
+        0% {
+          transform: translateY(100%);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+
+  .footer-border {
+   border-color: rgba(136, 133, 133, 0.84) !important;
+  }
+
+.adjustVideo {
+    padding-bottom: 56.25%
+}
+
+#demo {
+   
+        border: none !important;
+        border-width: 0px !important;
+        border-color: black !important;
+        border-top: black !important;
+    
 }

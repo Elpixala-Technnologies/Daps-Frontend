@@ -89,13 +89,12 @@ const OurProducts = () => {
   return (
     <section className='bg-[#F6F6F6] py-10 mt-[20px]'>
       <div className='container'>
-        <div className='title text-center'>
-          <h1>POPULAR FROM DAVS</h1>
-        </div>
+      <h3 className="font-light mb-4 text-3xl text-black">Popular <strong className='font-extrabold text-[#29679e]'>From Daps</strong></h3>
+
 
         <div className='gelaryComponent'>
           <div className="overflow-x-auto">
-            <div className="flex justify-center border-b border-gray-400 whitespace-nowrap ">
+            <div className="flex justify-center border-gray-400 whitespace-nowrap ">
               <button
                 onClick={() => setActiveCategory('FEATURED')}
                 className={`inline-flex font-extrabold items-center h-10 px-4 -mb-px text-sm text-center ${activeCategory === 'FEATURED' ? 'text-blue-600 border-b-2 border-blue-500' : ' border-transparent'
@@ -169,24 +168,24 @@ const OurProducts = () => {
                       <SwiperSlide className="cursor-grab" key={product?._id}
                       >
                         <div className="group relative overflow-hidden">
-                          <div className="relative aspect-h-1 border aspect-w-1 w-full overflow-hidden rounded-xl bg-transparent lg:aspect-none group-hover:opacity-75 h-80">
-                              <div className="bg-black text-white absolute top-2 left-2 px-4 py-1 rounded text-sm">20%  Discount</div>
-                            <img
+                          <div className="relative aspect-h-1 border aspect-w-1 w-full overflow-hidden rounded-xl bg-transparent lg:aspect-none  h-80">
+                              <div className="bg-black text-white absolute top-2 left-2 px-4 py-1  rounded text-sm">20%  Discount</div>
+                            {/* <img
                               src={product?.images[0]}
                               alt={product?.name}
                               className="h-full w-full object-cover object-center lg:h-full lg:w-full"
-                            />
+                            /> */}
                           </div>
-                          <div className=" aspect-h-1 border aspect-w-1 w-full overflow-hidden rounded-t-md bg-transparent lg:aspect-none group-hover:opacity-75 h-80 absolute top-0 left-0 opacity-0 transition duration-300"
+                          <div className=" aspect-h-1  border aspect-w-1 w-full overflow-hidden rounded-t-md  lg:aspect-none group-hover:opacity-60 h-80 absolute top-0 left-0  transition duration-300"
                           >
                           
                             <img
-                              src={product?.images[1] || product?.images[0]}
+                              src={"https://cdn.shopify.com/s/files/1/0057/8938/4802/files/rockerz_ea76e8ff-d95c-49da-b6c9-fca4304dce11.jpg?v=1685686978" || product?.images[0]}
                               alt={product?.name}
-                              className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                              className="h-full w-full relative object-cover object-center lg:h-full lg:w-full"
                             />
                           </div>
-                          <span className="bg-yellow-400 px-3 py-2 rounded-lg relative z-[1] mt-[-60px]">Highest Ever Discount</span>
+                          <div className="bg-yellow-500 absolute py-1  left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white rounded-xl border-white text-xs font-medium border px-4">Highest Discount</div>
 
                           <div className="absolute -right-16 bottom-20 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
                             <button
@@ -204,14 +203,14 @@ const OurProducts = () => {
                           </div>
                           <div className="flex p-2 flex-col border rounded-b-md">
                             <div>
-                              <h3 className="text-[14px] mt-2 font-semibold text-gray-700 text-left">
+                              <h3 className="text-[14px] mt-2 font-semibold text-gray-800 text-left">
                                 <Link href={`/products/${product?._id}`}>
                                   <span aria-hidden="true" className="absolute inset-0" />
                                   {product?.name}
                                 </Link>
                               </h3>
                             </div>
-                            <div >
+                            <div>
                               <p className="text-[16px] text-gray-900 mt-1 text-left">
                                 <span className='font-semibold'>
                                   {product?.discount
@@ -219,11 +218,11 @@ const OurProducts = () => {
                                     : `₹ ${Math.floor(product?.price)}`
                                   }
                                 </span>
-                                <span className="text-sm text-gray-300 line-through mx-2">
+                                <span className="text-sm text-gray-400 line-through mx-2">
                                   ₹ {Math.floor(product?.price)}
                                 </span>
-                                <span className='text-[#18568C] text-sm'>
-                                  {Math.floor(product?.discount)} % off
+                                <span className='text-[#2f9555] text-bold'>
+                                  {Math.floor(product?.discount)}% off
                                 </span>
                               </p>
                             </div>
@@ -241,5 +240,6 @@ const OurProducts = () => {
     </section>
   );
 };
+
 
 export default OurProducts;

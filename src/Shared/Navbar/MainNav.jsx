@@ -2,8 +2,6 @@ import { MainLogo } from "@/src/Assets";
 import { AuthContext } from "@/src/Context/UserContext";
 import useAdmin from "@/src/Hooks/useAdmin";
 import useCommonApiData from "@/src/Hooks/useCommonApiData";
-import { AiTwotoneFire } from "react-icons/ai";
-import { debounce } from 'lodash';
 import Image from "next/image";
 import Link from "next/link";
 import img1 from "@/src/Assets/brands/2874749.webp";
@@ -40,6 +38,9 @@ import Autocomplete from '@mui/joy/Autocomplete';
 import AutocompleteOption from '@mui/joy/AutocompleteOption';
 import ListItemContent from '@mui/joy/ListItemContent';
 import ListItemDecorator from '@mui/joy/ListItemDecorator';
+import TextField from '@mui/material/TextField';
+import Paper from '@mui/material/Paper';
+import MenuItem from '@mui/material/MenuItem';
 
 const MainNav = () => {
   const [open, setOpen] = useState(false);
@@ -51,24 +52,10 @@ const MainNav = () => {
   const [profileToggle, setProfileToggle] = useState(false);
   const [selectedMenu, setSelectedMenu] = useState("");
   const { productData } = useProducts();
-
+  const [searchPlaceholderText, setSearchPlaceholderText] = useState('Search');
   const [placeholderText, setPlaceholderText] = useState(""); // Initialize empty placeholder text
 
   const [searchBarToggle, setSearchBarToggle] = useState(false); 
-  const [searchQuery, setSearchQuery] = useState('');
-  const debouncedSearch = debounce((value) => {
-    setSearchQuery(value);
-  }, 300); // Adjust the debounce delay as needed
-
-  const handleSearchChange = (event) => {
-    const { value } = event.target;
-    debouncedSearch(value);
-  };
-
-  const styles = {
-    width: 300,
-    marginBottom: 10
-  };
 
   
   const product = productData?.map(item => ({ label: item.name, id: item._id, image: item.images[0] }));
@@ -103,6 +90,29 @@ const MainNav = () => {
   }, []);
 
   useEffect(() => {
+    // Function to generate random placeholder text
+    const generatePlaceholder = () => {
+      const texts = [
+        'Search Maruti',
+        'Search Hyundai',
+        'Search Tata',
+        'Search Kiya',
+        'Search Mahindra'
+      ]; 
+      const randomIndex = Math.floor(Math.random() * texts.length);
+      return texts[randomIndex];
+    };
+
+    // Update placeholder text periodically
+    const interval = setInterval(() => {
+      const newText = generatePlaceholder();
+      setSearchPlaceholderText(newText);
+    }, 5000); // Change the interval duration as needed
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
     AOS.init({
       duration: 1000, // Animation duration (in milliseconds)
       once: true, // Whether animation should only happen once
@@ -114,21 +124,6 @@ const MainNav = () => {
     carsmanu: false
   });
 
-  const handleMouseEnter = (menu) => {
-    setMegaMenuVisible((prevState) => ({
-      ...prevState,
-      [menu]: true,
-    }));
-  };
-
-  console.log(productData,"Bito")
-
-  const handleMouseLeave = (menu) => {
-    setMegaMenuVisible((prevState) => ({
-      ...prevState,
-      [menu]: false,
-    }));
-  };
 
   // Function to toggle mega menu visibility
   const toggleMegaMenu = (menu) => {
@@ -274,31 +269,33 @@ const MainNav = () => {
             <ul className={`${isSticky ? 'bg-white text-black' : 'bg-transparent text-black'} flex gap-8 justify-center items-center border px-8 py-2 rounded-full`}>
               <li>
                 <div onMouseEnter={() => toggleMegaMenu("carsmanu")}>
-                  <button className="relative  cursor-pointer flex gap-2 text-[1.1rem] items-center  upercase   hover:font-semibold hover:border-b hover:border-gray-500  transition duration-300 ease-in-out">
+                  <div className="group/edit relative hover:overflow-visible  group-hover/item:visible">
+                  <button className="relative  cursor-pointer flex gap-2 text-[1.1rem] items-center  upercase   hover:font-semibold  transition duration-300 ease-in-out">
                     Shop By Cars{" "}
                     <FaAngleDown className="text-[1.2rem] text-[#18568C] " />
                   </button>
+                  <span class="group-hover/edit:border-red-500 h-0 absolute text-0 group-hover/edit:translate-x-1 pr-10 border-t-[2px] border-solid border-white transition-all duration-500 transform translate-x-full"></span>
+                  </div>
                   {megaMenuVisible?.carsmanu && (
                     <div
-                      className={`${isSticky ? 'text-black bg-[white]' : 'text-black bg-[lightgray]'} container mx-auto mega-menu border z-50 absolute top-[100%]  left-[0%] rounded py-2 px-2 transition-opacity opacity-100`}
-                       data-aos="fade-up"
+                      className={`${isSticky ? 'text-black bg-[white]' : 'text-black bg-[white]'} container mx-auto mega-menu border z-50 absolute top-[100%]  left-[0%] rounded py-2 px-2  opacity-100`}
                        onMouseLeave={() => toggleMegaMenu("carsmanu")}
                       onMouseEnter={() => toggleMegaMenu("carsmanu")}
                     >
                       <ul>
-                        <div className="grid grid-cols-6 text-left mx-20  py-4 px-4  gap-5">
+                        <div className="grid grid-cols-6 text-left mx-20  py-4 px-4 justify-center items-center gap-7">
                           {carsInfo?.map((itm) => (
                             <Link href={`/category/3`}>
                               {" "}
-                              <div className="flex relative items-center justify-center gap-2 flex-row">
+                              <div className="flex hover:opacity-[.67] relative items-center justify-center gap-2 flex-row">
                                 <Image
                                   src={itm?.image}
                                   alt="logo"
                                   width={50}
                                   height={40}
-                                  className="cursor-pointer relative z-[1] hover:effect"
+                                  className="cursor-pointer relative z-[1] hover:drop-shadow-2xl text-gray-800"
                                 />
-                                <h1 className="text-slate-950 hover:text-slate-600">{itm?.name}</h1>
+                                <h1 >{itm?.name}</h1>
                               </div>
                             </Link>
                           ))}
@@ -310,29 +307,31 @@ const MainNav = () => {
               </li>
               <li>
                 <div onMouseEnter={() => toggleMegaMenu("categorys")} className="">
-                  <button className="relative cursor-pointer flex gap-2 text-[1.1rem] items-center  upercase hover:font-semibold hover:underline">
-                    Shop By Category{" "}
+                  <div className="group/edit relative hover:overflow-visible  group-hover/item:visible">
+                  <button className="relative  cursor-pointer flex gap-2 text-[1.1rem] items-center  upercase   hover:font-semibold  transition duration-300 ease-in-out">
+                  Shop By Category{" "}
                     <FaAngleDown className="text-[1.2rem] text-[#18568C] " />
                   </button>
+                  <span class="group-hover/edit:border-red-500 h-0 absolute text-0 group-hover/edit:translate-x-0.5 pr-10 border-t-[2px] border-solid border-white transition-all duration-500 transform translate-x-full"></span>
+                  </div>
                   {megaMenuVisible?.categorys && (
                     <div
-                      className={`${isSticky ? 'text-black bg-[white]' : 'text-black bg-[lightgray]'} container mx-auto mega-menu border z-50 absolute top-[100%]  left-[0%] rounded py-2 px-2 transition-opacity opacity-100`}
-                       data-aos="fade-up"
+                      className={`${isSticky ? 'text-black bg-[white]' : 'text-black bg-[white]'} container mx-auto mega-menu border z-50 absolute top-[100%]  left-[0%] rounded py-2 px-2 transition-opacity opacity-100`}
                        onMouseLeave={() => toggleMegaMenu("categorys")}
                        onMouseEnter={() => toggleMegaMenu("categorys")}
                     >
                       <ul>
-                        <div className="grid grid-cols-6 text-left mx-20  py-4 px-4  gap-5">
+                        <div className="grid grid-cols-5 text-left mx-20  py-4 px-4 justify-items-start items-center gap-5">
                           {categoryMainData?.map((itm) => (
                             <Link href={`/category/3`}>
                               {" "}
-                              <div className="flex relative items-center justify-center gap-2 flex-row">
+                              <div className="flex  hover:opacity-[.67] relative items-center justify-center gap-2 flex-row">
                                 <Image
                                   src={itm?.icons}
                                   alt="logo"
                                   width={50}
                                   height={40}
-                                  className="cursor-pointer relative z-[1]"
+                                  className="cursor-pointer relative  z-[1]"
                                 />
                                 {/* <div className="bg-gray-200  w-[40px] h-[40px] rounded rotate-[60deg] absolute top-[-40px] left-0 right-0 bottom-0 m-auto">.</div> */}
                                 <h1 className="text-slate-950 hover:text-slate-600">{itm?.name}</h1>
@@ -393,51 +392,43 @@ const MainNav = () => {
               // onClick={() => handelSearchBarToggle()}
             >
                <div>
-                  <div>
+                  <div className="relative">
                   <Autocomplete
-                    placeholder="Search products..."
+                    placeholder={searchPlaceholderText}
                     options={product || []}
-                    sx={{ width: 300, zIndex: "99", outline: "none" }}
+                    sx={{
+                      width: 300,
+                      zIndex: "50",
+                      outline: "none",
+                      color: "rgb(30 41 59)",
+                      fontWeight: 'bold',
+                      '&::-webkit-input-placeholder': {
+                        fontWeight: 'bold',
+                      },
+                      '&::-moz-placeholder': {
+                        fontWeight: 'bold',
+                      },
+                      '&:-ms-input-placeholder': {
+                        fontWeight: 'bold',
+                      },
+                      '&:-moz-placeholder': {
+                        fontWeight: 'bold',
+                      },
+                    }}
                     id="searchBar"
                     getOptionLabel={(option) => option.label}
                     renderOption={(props, option) => (
                       <Link href={`/products/${option.id}`}>
                         <AutocompleteOption>
-                          <ListItemDecorator>
-                            <img
-                              loading="lazy"
-                              width="20"
-                              srcSet={`${option.image}`}
-                              src={`${option.image}`}
-                              alt={`${option.label}`}
-                            />
-                          </ListItemDecorator>
-                          <ListItemContent sx={{ fontSize: 'sm' }}>
+                          <ListItemContent sx={{ fontSize: "sm", fontWeight:"bold" }}>
                             {option.label}
                           </ListItemContent>
                         </AutocompleteOption>
                       </Link>
                     )}
                   />
-                        {/* <li className="flex item-center  relative rounded-md w-[20rem] border-2 ">
-                      <input
-                        type="text"
-                        value={searchQuery}
-                        onChange={handleSearchChange}
-                        placeholder={placeholderText}
-                        className="pl-2 w-full border-none outline-none text-black py-2 px-8  rounded-md"
-                      />
-                       <ul className=" bg-white">
-                        {filteredProducts?.map((product) => (
-                        <li key={product._id}>
-                          {product.name} 
-                        </li>
-                          ))}
-                      </ul>
-                      <div className="absolute right-0">
-                        <AiOutlineSearch className="text-black text-[1.6rem] mx-2" />
-                      </div>
-                    </li> */}
+                      
+                  
                   </div>
               </div>
             </div>

@@ -22,11 +22,8 @@ const BestSealer = () => {
     const filterProductData = categoryData && categoryData?.filter((category) => category?.status === 'best sell');
 
     return (
-        <section className="mt-8 container">
-            <div className='title text-center pt-20 '>
-                <h1>Explore <span>Bestsellers</span></h1>
-            </div>
-
+        <section className="mt-6 container">
+            <h3 className="font-light mb-4 text-3xl text-black">Explore <strong className='font-extrabold text-[#29679e]'>Bestsellers</strong></h3>
             <div>
                 <Swiper
                     ref={sliderRef}
@@ -72,14 +69,14 @@ const BestSealer = () => {
                                         <Link href={`/category/${product?.name}`} className="cardBody md:m-0 mx-auto flex flex-col p-2 md:p-3 rounded-md duration-300 transform hover:-translate-y-1.5">
                                             <div className="productImage">
                                                 <Image
-                                                    src={product?.image}
+                                                    src={"https://cdn.shopify.com/s/files/1/0057/8938/4802/files/131_f04f74fd-45d4-4614-85cf-6ccf69c4cf90.jpg?v=1691395049" ||product?.image}
                                                     width={322}
                                                     height={320}
                                                     className="w-[320px] h-[320px] rounded-[1rem] object-cover shadow-sm"
                                                 />
                                             </div>
                                             <div className="productInfo p-2">
-                                                <h2 className="productName font-bold text-[16px]">
+                                                <h2 className="productName font-bold text-[16px] text-slate-700">
                                                     {product?.name}
                                                 </h2>
                                             </div>
