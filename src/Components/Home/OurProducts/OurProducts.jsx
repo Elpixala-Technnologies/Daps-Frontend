@@ -180,7 +180,7 @@ const OurProducts = () => {
                           >
                           
                             <img
-                              src={"https://cdn.shopify.com/s/files/1/0057/8938/4802/files/rockerz_ea76e8ff-d95c-49da-b6c9-fca4304dce11.jpg?v=1685686978" || product?.images[0]}
+                              src={"https://res.cloudinary.com/dlicwfgtq/image/upload/v1701522842/Daps/kpzpj9qmme0gokzxsgmi.png" || product?.images[0]}
                               alt={product?.name}
                               className="h-full w-full relative object-cover object-center lg:h-full lg:w-full"
                             />
