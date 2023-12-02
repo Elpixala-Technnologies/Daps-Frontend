@@ -148,7 +148,7 @@ const NewArrivals = () => {
                        >
                        
                          <img
-                           src={"https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Lunar_Peak.jpg?v=1698819324" || product?.images[0]}
+                           src={"https://res.cloudinary.com/dlicwfgtq/image/upload/v1701522757/Daps/u41o60rtharcmnrzecvc.png" || product?.images[0]}
                            alt={product?.name}
                            className="h-full w-full relative object-cover object-center lg:h-full lg:w-full"
                          />
