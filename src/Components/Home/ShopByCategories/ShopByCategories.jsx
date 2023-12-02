@@ -46,12 +46,10 @@ const ShopByCategories = () => {
               spaceBetween={30}
               centeredSlides={true}
               slidesPerView={8}
-              
               autoplay={{
                 delay: 2500,
                 disableOnInteraction: false,
               }}
-              navigation={true}
               loop={true}
               modules={[Autoplay, Pagination, Navigation]}
               className="mySwiper heroSlider"
@@ -62,18 +60,18 @@ const ShopByCategories = () => {
                 return (
                   <SwiperSlide key={_id}>
                     <div
-                      className="color-b bg-white p-2 md:p-3 text-center rounded-md duration-300 transform  shadow-sm hover:-translate-y-1.5 border-t border-slate-100 hover:bg-red-10 hover:text-[#18568C]" 
+                      className=" color-b bg-white p-2 md:p-3 text-center rounded-md duration-300 transform  shadow-sm hover:-translate-y-1.5 border-t border-slate-100 hover:bg-red-10 hover:text-[#18568C]" 
                       data-aos="fade-up" // Add AOS animation attribute
                       data-aos-duration="1000" // Set animation duration in milliseconds
-                      key={_id}
+                      key={_id} 
                     >
                       <Link href={`/category/${name}`}>
                         <Image
                           alt="image"
                           src={icons}
-                          className="inline-flex items-center justify-center chele"
-                          width={65}
-                          height={65}
+                          className="inline-flex chele items-center justify-center "
+                          width={100}
+                          height={100}
                         />
 
                         <div className="text-sm font-semibold tracking-wide cursor-pointer dark:text-black ">

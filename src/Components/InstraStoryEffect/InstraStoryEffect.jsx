@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState,useEffect } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import { Autoplay, Pagination,Navigation } from "swiper";
+import { Swiper, SwiperSlide } from 'swiper/react';
 import c1 from '@/../../src/Assets/car/1.png'
 import c2 from '@/../../src/Assets/car/c2.png'
 import c3 from '@/../../src/Assets/car/c3.png'
@@ -19,6 +21,47 @@ import img11 from "@/src/Assets/brands/pngimg.com - jeep_PNG95.png";
 import img12 from "@/src/Assets/brands/sdownload.jpeg";
 
 const InstraStoryEffect = () => {
+  const [selectedVideo, setSelectedVideo] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(0); // To track the current slide index
+
+  const openFullscreenVideo = (videoSrc, index) => {
+    setSelectedVideo(videoSrc);
+    setCurrentIndex(index);
+  };
+  
+  const closeFullscreenVideo = () => {
+    setSelectedVideo(null);
+  };
+  
+  const handleCarouselChange = (index) => {
+    // Pause the video when changing slides
+    if (selectedVideo) {
+      setSelectedVideo(null);
+    }
+    setCurrentIndex(index);
+  };
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      if (!document.fullscreenElement) {
+        setSelectedVideo(null);
+      }
+    };
+
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    document.addEventListener('mozfullscreenchange', handleFullscreenChange);
+    document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+    document.addEventListener('MSFullscreenChange', handleFullscreenChange);
+
+    return () => {
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+      document.removeEventListener('mozfullscreenchange', handleFullscreenChange);
+      document.removeEventListener('webkitfullscreenchange', handleFullscreenChange);
+      document.removeEventListener('MSFullscreenChange', handleFullscreenChange);
+    };
+  }, []);
+
+
     const responsive = {
         superLargeDesktop: {
             breakpoint: { max: 4000, min: 3000 },
@@ -37,85 +80,6 @@ const InstraStoryEffect = () => {
             items: 3
         }
     };
-
-    const carCdata = [
-        {
-            id: 0,
-            img : "https://i.ibb.co/5Ty9kgC/1.png",
-            name : "BMW"
-        },
-        {
-            id: 1,
-            img : "https://i.ibb.co/gRTqvzB/c2.png",
-            name : "HOND"
-        },
-        {
-            id: 2,
-            img : "https://i.ibb.co/cNcM9Cm/c3.png",
-            name : "TOYOTA"
-        },
-        {
-            id: 0,
-            img : "https://i.ibb.co/5Ty9kgC/1.png",
-            name : "BMW"
-        },
-        {
-            id: 1,
-            img : "https://i.ibb.co/gRTqvzB/c2.png",
-            name : "HOND"
-        },
-        {
-            id: 2,
-            img : "https://i.ibb.co/cNcM9Cm/c3.png",
-            name : "TOYOTA"
-        },
-        {
-            id: 0,
-            img : "https://i.ibb.co/5Ty9kgC/1.png",
-            name : "BMW"
-        },
-        {
-            id: 1,
-            img : "https://i.ibb.co/gRTqvzB/c2.png",
-            name : "HOND"
-        },
-        {
-            id: 2,
-            img : "https://i.ibb.co/cNcM9Cm/c3.png",
-            name : "TOYOTA"
-        },
-        {
-            id: 0,
-            img : "https://i.ibb.co/5Ty9kgC/1.png",
-            name : "BMW"
-        },
-        {
-            id: 1,
-            img : "https://i.ibb.co/gRTqvzB/c2.png",
-            name : "HOND"
-        },
-        {
-            id: 2,
-            img : "https://i.ibb.co/cNcM9Cm/c3.png",
-            name : "TOYOTA"
-        },
-        {
-            id: 0,
-            img : "https://i.ibb.co/5Ty9kgC/1.png",
-            name : "BMW"
-        },
-        {
-            id: 1,
-            img : "https://i.ibb.co/gRTqvzB/c2.png",
-            name : "HOND"
-        },
-        {
-            id: 2,
-            img : "https://i.ibb.co/cNcM9Cm/c3.png",
-            name : "TOYOTA"
-        },
-    ]
-
 
       const carsInfo = [
     {
@@ -175,30 +139,86 @@ const InstraStoryEffect = () => {
       thum: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/FRONX/9243/1697697928533/front-left-side-47.jpg?tr=w-456',
       video: "https://res.cloudinary.com/elpixala/video/upload/v1699818085/Daps/Video/vuy4w20q6yzxwytwsain.mp4"
     },
+    {
+      id: 10,
+      name: "Android Stereos",
+      image: "https://i.ibb.co/4PHxxGX/pngimg-com-jeep-PNG95.png",
+      thum: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/FRONX/9243/1697697928533/front-left-side-47.jpg?tr=w-456',
+      video: "https://res.cloudinary.com/elpixala/video/upload/v1699818085/Daps/Video/vuy4w20q6yzxwytwsain.mp4"
+    },
+    {
+      id: 11,
+      name: "Android Stereos",
+      image: "https://i.ibb.co/4PHxxGX/pngimg-com-jeep-PNG95.png",
+      thum: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/FRONX/9243/1697697928533/front-left-side-47.jpg?tr=w-456',
+      video: "https://res.cloudinary.com/elpixala/video/upload/v1699818085/Daps/Video/vuy4w20q6yzxwytwsain.mp4"
+    },
+    {
+      id: 12,
+      name: "Android Stereos",
+      image: "https://i.ibb.co/4PHxxGX/pngimg-com-jeep-PNG95.png",
+      thum: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/FRONX/9243/1697697928533/front-left-side-47.jpg?tr=w-456',
+      video: "https://res.cloudinary.com/elpixala/video/upload/v1699818085/Daps/Video/vuy4w20q6yzxwytwsain.mp4"
+    },
+    {
+      id: 13,
+      name: "Android Stereos",
+      image: "https://i.ibb.co/4PHxxGX/pngimg-com-jeep-PNG95.png",
+      thum: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/FRONX/9243/1697697928533/front-left-side-47.jpg?tr=w-456',
+      video: "https://res.cloudinary.com/elpixala/video/upload/v1699818085/Daps/Video/vuy4w20q6yzxwytwsain.mp4"
+    },
   ];
 
     return (
         <div className="container pt-8">
            <h3 className="font-light mb-3 text-3xl text-black">Latest <strong className='font-extrabold text-[#29679e] '>Stories</strong></h3>
-            <Carousel className="p-4" responsive={responsive} showDots={false} arrows={true}>
-                {
-                  carsInfo?.map(itm => (
-                    <div className="flex relative flex-col cursor-pointer items-center justify-center" key={itm?.id}>
-                      <div className="relative outline-8 outline-black md:w-[80px] w-[80px] md:h-[80px] overflow-hidden h-[80px] border-4 rounded-full flex items-center justify-center border-pink-500 ">
-                        <video className="absolute top-0 left-0 bottom-0 right-0 rounded-full border-r duration-200" autoPlay controls muted loop>
-                          <source src={itm?.video} type="video/mp4" />
-                        </video>
-                        {/* If you want to show an image fallback when the video is not supported */}
-                        {/* <img src={itm?.image} className="md:w-[60px] rounded-full w-[60px]" alt={itm?.name} /> */}
-                      </div>
-                      <h4 className="font-semibold text-[16px] mt-1 text-slate-700">{itm?.name}</h4>
-                    </div>
-                  ))
-                  
-                }
-            </Carousel>
+           <Carousel
+      className="p-4"
+      responsive={responsive}
+      showDots={false}
+      arrows={true}
+      selectedItem={currentIndex}
+      onChange={(index) => handleCarouselChange(index)}
+    >
+      {carsInfo?.map((itm, index) => (
+        <div className="flex relative flex-col cursor-pointer items-center justify-center" key={itm?.id}>
+          <div
+            className="relative hover-box outline-8 outline-black md:w-[80px] w-[80px] md:h-[80px] overflow-hidden h-[80px] border-4 rounded-full flex items-center justify-center border-pink-500"
+            onClick={() => openFullscreenVideo(itm?.video, index)}
+          >
+            <img src={itm?.thum} className="w-full h-full" />
+          </div>
+          <h4 className="font-semibold text-[16px] mt-1 text-slate-700">{itm?.name}</h4>
+        </div>
+      ))}
+    </Carousel>
+
+      {/* Fullscreen video display */}
+      {selectedVideo && (
+      <div className="fullscreen-video bg-white fixed top-0 left-0 w-full h-full z-50">
+        <button
+          className="close-btn mb-2 bg-gray-800 text-white px-3 py-1 rounded-md shadow-md hover:bg-gray-700 focus:outline-none"
+          onClick={closeFullscreenVideo}
+        >
+          Close
+        </button>
+        {/* Your video player */}
+        <video
+          src={selectedVideo}
+          className="top-0 left-0 bottom-0 right-0 w-full h-full"
+          autoPlay
+          loop
+          onClick={closeFullscreenVideo}
+        >
+          <source src={selectedVideo} type="video/mp4" />
+        </video>
+      </div>
+    )}
+    
         </div>
     );
 };
 
 export default InstraStoryEffect;
+
+

@@ -54,13 +54,13 @@ const ProductCard = ({ productValueData }) => {
   const { images, name, discount, price, _id } = productValueData
 
   return (
-    <div className="group relative overflow-hidden">
+    <div className="flex justify-center align-middle relative overflow-hidden">
       <Link href={`/products/${_id}`}>
-      <div className="aspect-h-1 border aspect-w-1 w-full overflow-hidden rounded-t-md bg-transparent lg:aspect-none group-hover:opacity-75 h-80">
+      <div className="aspect-h-1 border aspect-w-1 w-full overflow-hidden rounded-t-md bg-transparent lg:aspect-none group-hover:opacity-75 h-30">
         <img
-          src={images[0]}
+          src={"https://www.boat-lifestyle.com/cdn/shop/products/3_2_600x.png?v=1673002862" || images[0]}
           alt={name}
-          className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+          className=" w-full object-cover object-center lg:h-full lg:w-full"
         />
       </div>
   
@@ -74,7 +74,7 @@ const ProductCard = ({ productValueData }) => {
       </div>
       </Link>
 
-      <div className="absolute -right-16 bottom-20 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
+      {/* <div className="absolute -right-16 bottom-20 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
         <button
           onClick={() => addToCart(_id, price)}
           className="flex h-10 w-10 items-center justify-center bg-[#fff]text-white transition hover:bg-gray-700">
@@ -87,8 +87,8 @@ const ProductCard = ({ productValueData }) => {
             <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
           </svg>
         </button>
-      </div>
-      <div className="flex p-2 flex-col border rounded-b-md">
+      </div> */}
+      <div className="flex p-2 relative flex-col border rounded-b-md">
         <div>
           <h3 className="text-[14px] mt-1 font-semibold text-gray-700">
             <Link href={`/products/${_id}`}>
@@ -112,6 +112,9 @@ const ProductCard = ({ productValueData }) => {
               {Math.floor(discount)} % off
             </span>
           </p>
+        </div>
+        <div className='bg-black p-2 text-center bottom-0 left-0 right-0 text-white rounded absolute'>
+          <button>Add To Cart</button>
         </div>
       </div>
     </div>

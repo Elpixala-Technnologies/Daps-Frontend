@@ -82,12 +82,16 @@ const ProductPage = () => {
     
     
       const [activeFilter, setActiveFilter] = useState(null);
+      const [categoryVisible, setCategoryVisible] = useState(false);
     
       const handleToggleFilter = (filter) => {
         if (activeFilter === filter) {
           setActiveFilter(null); // Close the currently active filter
         } else {
           setActiveFilter(filter); // Open the selected filter and close any previously active filter
+          if (filter === 'category') {
+            setCategoryVisible(!categoryVisible); // Toggle category visibility
+          }
         }
       };
     
@@ -253,56 +257,52 @@ const ProductPage = () => {
 
                         <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
                             {/* Filters */}
-                            <div className="hidden lg:block">
                                
-                <div className="border-b border-gray-200 py-6">
-                  <button onClick={() => handleToggleFilter('category')} className=" font-semibold">Category</button>
+                            <div className="hidden  border-b border-gray-200 py-6">
+                                <button onClick={() => handleToggleFilter('category')} className="font-semibold">
+                                    Category
+                                </button>
 
-                  {activeFilter === 'category' && <>
-                    <div className="space-y-4">
-                      {categoryData && categoryData.length > 0 ? (
-                        categoryData.map((category) => {
-                          return (
-                            <li
-                              key={category._id}
-                              className={`cursor-pointer mt-2 ${selectedCategories.includes(category.name) ? 'text-[#18568C]' : ''}`}
-                              onClick={() => toggleCategory(category.name)}
-                            >
-                              <input
-                                type="checkbox"
-                                checked={selectedCategories.includes(category.name)}
-                                readOnly
-                                className="mr-2"
-                              />
-                              {category.name}
-                            </li>
-                          )
-                        })
-                      ) : (
-                        <div>Loading categories...</div>
-                      )}
-                    </div>
-                  </>}
-
-                </div>
-
+                                <div className={activeFilter === 'category' ? 'visible' : 'hidden'}>
+                                    {categoryData && categoryData.length > 0 ? (
+                                    <div className={categoryVisible ? 'space-y-4' : 'hidden'}>
+                                        {categoryData.map((category) => (
+                                        <li
+                                            key={category._id}
+                                            className={`cursor-pointer mt-2 ${selectedCategories.includes(category.name) ? 'text-[#18568C]' : ''}`}
+                                            onClick={() => toggleCategory(category.name)}
+                                        >
+                                            <input
+                                            type="checkbox"
+                                            checked={selectedCategories.includes(category.name)}
+                                            readOnly
+                                            className="mr-2"
+                                            />
+                                            {category.name}
+                                        </li>
+                                        ))}
+                                    </div>
+                                    ) : (
+                                    <div>Loading categories...</div>
+                                    )}
+                                </div>
                             </div>
 
 
-                            {/* Product grid */}
-                            <div className="lg:col-span-3">
-                                <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
-                                    {/* Product grid with category filtering */}
+
+
+
+                         
+                            <div className="lg:col-span-4">
+                                <div className="grid grid-cols-1 gap-x-2 gap-y-10 lg:grid-cols-4">
                                     <div className="lg:col-span-4">
-                                        {/* Product grid code */}
-                                        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
+                                        <div className="mt-6 grid grid-cols-1 gap-x-4 gap-y-4 sm:grid-cols-3 lg:grid-cols-3 xl:gap-x-8">
                                             {currentPageData.map((productValueData) => (
                                                 <ProductCard key={productValueData._id + "productvalue"} productValueData={productValueData} />
                                             ))}
                                         </div>
 
-                                        {/* Pagination */}
-                                        <div className="flex items-center justify-center gap-4 mt-11 mb-16">
+                                        {/* <div className="flex items-center justify-center gap-4 mt-11 mb-16">
                                             <button
                                                 title="Previous"
                                                 className={`h-14 w-14 rounded-full text-center ${page === 1 ? "bg-gray-400 cursor-not-allowed" : "hover:bg-red-10"
@@ -336,7 +336,7 @@ const ProductPage = () => {
                                             >
                                                 <FaArrowRight className="text-white" />
                                             </button>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                             </div>

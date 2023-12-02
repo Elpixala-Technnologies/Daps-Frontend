@@ -34,7 +34,7 @@ const Footer = () => {
         <section className=' bg-[#000000]'>
             <footer className="md:px-8 px-4 container  py-10 divide-y text-[#6f6e6efa] ">
       
-            <div className="grid  text-sm gap-x-3 gap-y-8 sm:grid-cols-5 p-6">
+            <div className="grid  text-sm gap-x-14 gap-y-8 sm:grid-cols-5 p-6">
                         <div className="flex flex-col gap-4 ">
                             <Link rel="noopener noreferrer" href="/" className="flex justify-center md:justify-start">
                                <div className='my-[-4rem] '>
@@ -102,10 +102,13 @@ const Footer = () => {
                             <div>
                                 <div className="flex  flex-col  gap-4 mt-4">
                                     <div className='flex gap-2 items-center  transition duration-200 ease-out transform hover:scale-105'>
-                                        <FaMapMarkerAlt className="w-6 h-6 text-gray-500 cursor-pointer hover:text-[#fff] dark:hover:text-gray-50" /> Xyz India
+                                        <FaMapMarkerAlt className="w-6 h-6 text-gray-500 cursor-pointer hover:text-[#fff] dark:hover:text-gray-50" /> Shop No. 10, 16/5, Abdul Road, Karol Bagh, New Delhi-110005
                                     </div>
                                     <div className='transition duration-200 ease-out transform hover:scale-105 flex gap-2 items-center '>
-                                        <FaPhoneAlt className="w-6 h-6 text-gray-500 cursor-pointer hover:text-[#fff] dark:hover:text-gray-50" /> +91 99964 44445
+                                        <FaPhoneAlt className="w-6 h-6 text-gray-500 cursor-pointer hover:text-[#fff] dark:hover:text-gray-50" /> 9729725060
+                                    </div>
+                                    <div className='transition duration-200 ease-out transform hover:scale-105 flex gap-2 items-center '>
+                                        <FaPhoneAlt className="w-6 h-6 text-gray-500 cursor-pointer hover:text-[#fff] dark:hover:text-gray-50" /> 8950322454
                                     </div>
                                     
                                 </div>
