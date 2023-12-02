@@ -19,37 +19,37 @@ const ExploreBestSeal = () => {
         {
             id: 0,
             name: '360 Cameras',
-            thum: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/FRONX/9243/1697697928533/front-left-side-47.jpg?tr=w-456',
+            thum: 'https://res.cloudinary.com/dlicwfgtq/image/upload/v1701522820/Daps/jurrirx4qagnwo0nv1ay.png',
             video: "https://res.cloudinary.com/elpixala/video/upload/v1699818085/Daps/Video/vuy4w20q6yzxwytwsain.mp4"
         },
         {
             id: 1,
             name: 'Damping Sheets',
-            thum: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Tata/Harrier/9368/1697532960290/front-left-side-47.jpg?tr=w-456',
+            thum: 'https://res.cloudinary.com/dlicwfgtq/image/upload/v1701522842/Daps/kpzpj9qmme0gokzxsgmi.png',
             video: 'https://res.cloudinary.com/elpixala/video/upload/v1699818101/Daps/Video/udwdrakltqhai6zjil0b.mp4'
         },
         {
             id: 2,
             name: 'Styled Stereos',
-            thum: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Hyundai/Verna/9744/1694602806760/front-left-side-47.jpg?tr=w-456',
+            thum: 'https://res.cloudinary.com/dlicwfgtq/image/upload/v1701522835/Daps/k9jwqbmtcoc4tt0nnn2d.png',
             video: 'https://res.cloudinary.com/elpixala/video/upload/v1699818110/Daps/Video/wbkf6svvxaskagjfmebg.mp4'
         },
         {
             id: 3,
             name: 'Universal LEDs',
-            thum: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/FRONX/9243/1697697928533/front-left-side-47.jpg?tr=w-456',
+            thum: 'https://res.cloudinary.com/dlicwfgtq/image/upload/v1701522802/Daps/tuxzbdyvvfku6zyqks6c.png',
             video: 'https://res.cloudinary.com/elpixala/video/upload/v1699818177/Daps/Video/ubo474a030zdreweg2no.mp4'
         },
         {
             id: 4,
             name: 'Styled Stereos',
-            thum: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Hyundai/Verna/9744/1694602806760/front-left-side-47.jpg?tr=w-456',
+            thum: 'https://res.cloudinary.com/dlicwfgtq/image/upload/v1701522757/Daps/u41o60rtharcmnrzecvc.png',
             video: 'https://res.cloudinary.com/elpixala/video/upload/v1699818110/Daps/Video/wbkf6svvxaskagjfmebg.mp4'
         },
         {
             id: 5,
             name: 'Universal LEDs',
-            thum: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/FRONX/9243/1697697928533/front-left-side-47.jpg?tr=w-456',
+            thum: 'https://res.cloudinary.com/dlicwfgtq/image/upload/v1701522754/Daps/ftwnscfaljvfr5567za6.png',
             video: 'https://res.cloudinary.com/elpixala/video/upload/v1699818177/Daps/Video/ubo474a030zdreweg2no.mp4'
         },
         {
