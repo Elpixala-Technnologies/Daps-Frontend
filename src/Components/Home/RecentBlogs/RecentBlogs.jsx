@@ -294,13 +294,13 @@ import Link from "next/link";
 const RecentBlog = () => {
 
   return (
-    <section className='my-6'>
-      <div className="container">
+    <section className='container my-6'>
+      <div className="">
       <h3 className="font-light  text-3xl text-black">Latest <strong className='font-extrabold text-[#29679e]'>Blogs</strong></h3>
       </div>
 
 
-      <div className="my-6 p-2">
+      <div className="my-6">
         <div>
           <div className=" grid gap-14 grid-cols-1 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
             {blogData && blogData?.slice(0, 3)?.map((post) => {

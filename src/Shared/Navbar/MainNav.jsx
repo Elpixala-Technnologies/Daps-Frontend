@@ -93,11 +93,11 @@ const MainNav = () => {
     // Function to generate random placeholder text
     const generatePlaceholder = () => {
       const texts = [
-        'Search Maruti',
-        'Search Hyundai',
-        'Search Tata',
-        'Search Kiya',
-        'Search Mahindra'
+        'Search Maruti Accessories',
+        'Search Hyundai Accessories',
+        'Search Tata Accessories',
+        'Search Kia Accessories',
+        'Search Mahindra Accessories'
       ]; 
       const randomIndex = Math.floor(Math.random() * texts.length);
       return texts[randomIndex];
