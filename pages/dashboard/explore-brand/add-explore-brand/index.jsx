@@ -17,18 +17,54 @@ const AddExploreBrand = () => {
     const handleOnSubmit = async (inputValue) => {
         console.log(inputValue);
         try {
-            // -------- uplodad image in cloudinary --------------------
+            // Upload video to Cloudinary
+            let videoUrl = '';
+            if (inputValue.video[0]) {
+                const videoUploadData = new FormData();
+                videoUploadData.append("file", inputValue.video[0]);
+                videoUploadData.append(
+                    "public_id",
+                    `${cloud_folder}/Category/${inputValue.video[0].name}`
+                );
+                videoUploadData.append("upload_preset", upload_preset);
+                videoUploadData.append("cloud_name", cloud_name);
 
-            // -------- uplodad vedio in cloudinary --------------------
+                const videoRes = await fetch(cloud_api, {
+                    method: "POST",
+                    body: videoUploadData,
+                });
+                const videoData = await videoRes.json();
+                videoUrl = videoData.secure_url;
+            }
+
+            // Upload image to Cloudinary
+            let imageUrl = '';
+            if (inputValue.image[0]) {
+                const imageUploadData = new FormData();
+                imageUploadData.append("file", inputValue.image[0]);
+                imageUploadData.append(
+                    "public_id",
+                    `${cloud_folder}/Category/${inputValue.image[0].name}`
+                );
+                imageUploadData.append("upload_preset", upload_preset);
+                imageUploadData.append("cloud_name", cloud_name);
+
+                const imageRes = await fetch(cloud_api, {
+                    method: "POST",
+                    body: imageUploadData,
+                });
+                const imageData = await imageRes.json();
+                imageUrl = imageData.secure_url;
+            }
 
 
+            
             // =============================================================
 
             const brandData = {
                 name: inputValue.name,
-                vedio: "Vedio Url",
-                image: "Image Url"
-
+                vedio: videoUrl,
+                image: imageUrl
             }
 
             const response = await fetch(addExploreBrandUrl, {
@@ -39,12 +75,34 @@ const AddExploreBrand = () => {
                 body: JSON.stringify(brandData),
             })
 
+            console.log(response)
+
+            if(response){
+                Swal.fire({
+                    position: "center",
+                    timerProgressBar: true,
+                    title: "Successfully Added!",
+                    iconColor: "#ED1C24",
+                    toast: true,
+                    icon: "success",
+                    showClass: {
+                        popup: "animate__animated animate__fadeInRight",
+                    },
+                    hideClass: {
+                        popup: "animate__animated animate__fadeOutRight",
+                    },
+                    showConfirmButton: false,
+                    timer: 3500,
+                });
+            }
+
+
 
         } catch (error) {
             Swal.fire({
                 position: "center",
                 timerProgressBar: true,
-                title: "Successfully Added!",
+                title: "Error",
                 iconColor: "#ED1C24",
                 toast: true,
                 icon: "success",
