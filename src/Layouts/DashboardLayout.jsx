@@ -107,6 +107,17 @@ const DashboardLayout = ({ children }) => {
             <Menu.Item key="/dashboard/blog" icon={<AiOutlineIdcard />}>
               <Link href="/dashboard/blog">Blog</Link>
             </Menu.Item>
+            <Menu.Item key="/dashboard/explore-brand/add-explore-brand" icon={<AiOutlineIdcard />}>
+              <Link href="/dashboard/explore-brand/add-explore-brand">Explore Brand</Link>
+            </Menu.Item>
+            <Menu.Item key="/dashboard/blog" icon={<AiOutlineIdcard />}>
+              <Link href="/dashboard/blog">Add Story</Link>
+            </Menu.Item>
+            <Menu.Item key="/dashboard/blog" icon={<AiOutlineIdcard />}>
+              <Link href="/dashboard/blog">Trending Product</Link>
+            </Menu.Item>
+
+
             <Menu.Item key="8" icon={<FaPowerOff />}>
               <button
                 onClick={() => handleLogout()}
