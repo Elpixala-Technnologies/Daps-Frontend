@@ -25,41 +25,41 @@ const ProductPage = () => {
     const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
     const { productData, categoryData } = useProducts();
     const { CarData } = useCar()
-    const itemsPerPage =9; // Number of items per page
+    // const itemsPerPage =9; 
     const [page, setPage] = useState(1);
     const [currentPageData, setCurrentPageData] = useState([]);
     const [selectedCategories, setSelectedCategories] = useState(['All']);
 
-    const updateCurrentPageData = () => {
-        const start = (page - 1) * itemsPerPage;
-        const end = page * itemsPerPage;
-        setCurrentPageData(filteredProducts.slice(start, end));
-    };
+    // const updateCurrentPageData = () => {
+    //     const start = (page - 1) * itemsPerPage;
+    //     const end = page * itemsPerPage;
+    //     setCurrentPageData(filteredProducts.slice(start, end));
+    // };
 
-    useEffect(() => {
-        if (productData) {
-            updateCurrentPageData();
-        }
-    }, [productData, page, selectedCategories]);
+    // useEffect(() => {
+    //     if (productData) {
+    //         updateCurrentPageData();
+    //     }
+    // }, [productData, page, selectedCategories]);
 
-    const filteredProducts = productData?.filter((product) => {
-        const categoryMatch = selectedCategories.includes('All') || selectedCategories.includes(product.categories);
-        return categoryMatch;
-    });
+    // const filteredProducts = productData?.filter((product) => {
+    //     const categoryMatch = selectedCategories.includes('All') || selectedCategories.includes(product.categories);
+    //     return categoryMatch;
+    // });
 
-    const totalPages = Math.ceil((filteredProducts?.length || 0) / itemsPerPage);
+    // const totalPages = Math.ceil((filteredProducts?.length || 0) / itemsPerPage);
 
-    const handleNextPage = () => {
-        if (page < totalPages) {
-            setPage(page + 1);
-        }
-    };
+    // const handleNextPage = () => {
+    //     if (page < totalPages) {
+    //         setPage(page + 1);
+    //     }
+    // };
 
-    const handlePrevPage = () => {
-        if (page > 1) {
-            setPage(page - 1);
-        }
-    };
+    // const handlePrevPage = () => {
+    //     if (page > 1) {
+    //         setPage(page - 1);
+    //     }
+    // };
 
     const toggleCategory = (category) => {
         if (selectedCategories.includes(category)) {
@@ -69,9 +69,9 @@ const ProductPage = () => {
         }
     };
 
-    const clearFilters = () => {
-        setSelectedCategories(['All']);
-    };
+    // const clearFilters = () => {
+    //     setSelectedCategories(['All']);
+    // };
 
     const filters = {
         category: false,
@@ -297,7 +297,7 @@ const ProductPage = () => {
                                 <div className="grid grid-cols-1 gap-x-2 gap-y-10 lg:grid-cols-4">
                                     <div className="lg:col-span-4">
                                         <div className="mt-6 grid grid-cols-1 gap-x-4 gap-y-4 sm:grid-cols-3 lg:grid-cols-3 xl:gap-x-8">
-                                            {currentPageData.map((productValueData) => (
+                                            {productData && productData?.map((productValueData) => (
                                                 <ProductCard key={productValueData._id + "productvalue"} productValueData={productValueData} />
                                             ))}
                                         </div>
