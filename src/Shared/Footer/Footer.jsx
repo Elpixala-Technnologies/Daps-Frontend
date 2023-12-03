@@ -34,8 +34,9 @@ const Footer = () => {
         <section className=' bg-[#000000]'>
             <footer className="md:px-8 px-4 container  py-10 divide-y text-[#6f6e6efa] ">
       
-            <div className="grid  text-sm gap-x-14 gap-y-8 sm:grid-cols-5 p-6">
-                        <div className="flex flex-col gap-4 ">
+            <div className="flex  text-sm gap-x-14 gap-y-8 grid-cols-6 sm:grid-cols-5 p-6">
+                      <div className='space-y-3'>
+                      <div className="flex flex-col gap-4 ">
                             <Link rel="noopener noreferrer" href="/" className="flex justify-center md:justify-start">
                                <div className='my-[-4rem] '>
                                <Image
@@ -125,6 +126,7 @@ const Footer = () => {
                                 </li>
                             </ul>
                         </div>
+                      </div>
                         <div className="space-y-3">
                             <h3 className="tracki uppercase text-[#cbc6c6] font-semibold">Categories</h3>
                             <ul className="space-y-2">
@@ -174,7 +176,7 @@ const Footer = () => {
                 <div className="py-6 footer-border text-sm text-center dark:text-gray-500 mt-4 flex justify-between items-center flex-col md:flex-row gap-4">
                     <p>© {new Date().getFullYear()} DAPS. All rights reserved.</p>
 
-                    {/* <div>
+                    <div>
                         <Image
                             src={PaymentIcons}
                             alt={"payment"}
@@ -182,7 +184,7 @@ const Footer = () => {
                             height={100}
                             className='w-full h-full'
                         />
-                    </div> */}
+                    </div>
                 </div>
             </footer>
         </section>

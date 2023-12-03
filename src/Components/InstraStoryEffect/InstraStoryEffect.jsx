@@ -183,7 +183,7 @@ const InstraStoryEffect = () => {
       {carsInfo?.map((itm, index) => (
         <div className="flex relative flex-col cursor-pointer items-center justify-center" key={itm?.id}>
           <div
-            className="relative hover-box outline-8 outline-black md:w-[80px] w-[80px] md:h-[80px] overflow-hidden h-[80px] border-4 rounded-full flex items-center justify-center border-pink-500"
+            className="relative storyOutline  hover-box  md:w-[80px] w-[80px] md:h-[80px] overflow-hidden h-[80px] border-4 rounded-full flex items-center justify-center border-transparent"
             onClick={() => openFullscreenVideo(itm?.video, index)}
           >
             <img src={itm?.thum} className="w-full h-full" />
