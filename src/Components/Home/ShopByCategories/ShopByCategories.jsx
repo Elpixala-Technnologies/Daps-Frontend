@@ -45,7 +45,7 @@ const ShopByCategories = () => {
             <Swiper
               spaceBetween={30}
               centeredSlides={true}
-              slidesPerView={8}
+              slidesPerView={10}
               autoplay={{
                 delay: 2500,
                 disableOnInteraction: false,
@@ -53,6 +53,32 @@ const ShopByCategories = () => {
               loop={true}
               modules={[Autoplay, Pagination, Navigation]}
               className="mySwiper heroSlider"
+              breakpoints={{
+                320: {
+                  slidesPerView: 3,
+                 
+                },
+                360: {
+                  slidesPerView: 3,
+                
+                },
+                480: {
+                  slidesPerView: 3,
+                  
+                },
+                640: {
+                  slidesPerView: 10,
+                
+                },
+                768: {
+                  slidesPerView: 10,
+                  
+                },
+                1024: {
+                  slidesPerView: 10,
+                  
+                },
+              }}
             >
               {categoryMainData &&
                 categoryMainData.slice(0, updateData).map((child) => {

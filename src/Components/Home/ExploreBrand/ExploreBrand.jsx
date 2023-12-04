@@ -4,7 +4,8 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import Link from "next/link";
-import { Autoplay, Pagination,Navigation } from "swiper";
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
+
 
 const ExploreBrand = () => {
     const [isMuted, setIsMuted] = useState(true);
@@ -85,15 +86,43 @@ const ExploreBrand = () => {
         <div className="container pt-8">
              <h3 className="font-light text-3xl text-black">Explore <strong className='font-extrabold text-[#29679e] '>Our Brands</strong></h3>
             <Swiper
-              centeredSlides={true}
-              slidesPerView={4}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
+             autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+              modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+              breakpoints={{
+                320: {
+                  slidesPerView: 1,
+                  spaceBetween: 20,
+                },
+                360: {
+                  slidesPerView: 1,
+                  spaceBetween: 20,
+                },
+                480: {
+                  slidesPerView: 1,
+                  spaceBetween: 20,
+                },
+                640: {
+                  slidesPerView: 1,
+                  spaceBetween: 20,
+                },
+                768: {
+                  slidesPerView: 2,
+                  spaceBetween: 30,
+                },
+                1024: {
+                  slidesPerView: 4,
+                  spaceBetween: 20,
+                },
               }}
-              loop={true}
-              modules={[Autoplay, Pagination, Navigation]}
-              className="mySwiper heroSlider"
+              spaceBetween={20}
+              slidesPerView={3}
+              onSlideChange={() => { }}
+              onSwiper={(swiper) => { }}
+              data-aos="fade-up"
+              data-aos-anchor-placement="center-bottom"
             >
               { videoInfo.map((itm) => {
                 return (

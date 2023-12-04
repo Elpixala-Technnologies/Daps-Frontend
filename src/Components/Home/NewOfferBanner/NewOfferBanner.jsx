@@ -60,10 +60,10 @@ const NewOfferBanner = () => {
         <section className="w-[100%] block md:hidden mobile-bottom-banner-section mt-8" data-aos="fade-up"> {/* Add data-aos attribute */}
             <div className="container relative">
                 <div >
-                    <div className="flex text-left flex-row items-center  gap-4 offer-banner-content">
+                    <div className="flex flex-wrap text-left flex-row items-center  gap-4 offer-banner-content">
                     <h2 className='text-[#ffff] text-[1.5rem] mr-12'>Explore Our Offer</h2>
-                        <div className="text-2xl flex items-center justify-around p-8 text-white rounded-md shadow-lg">
-                         Ending in  <strong className='text-5xl px-1'>{hours.toString().padStart(2, '0')}</strong> Hrs: <strong className='text-5xl px-1'>{minutes.toString().padStart(2, '0')}</strong> Mins: <strong className='text-5xl px-1'>{seconds.toString().padStart(2, '0')}</strong> Sec
+                        <div className="text-2xl  sm:text-sm md:text-xl flex-wrap flex items-center justify-around p-8  text-white rounded-md shadow-lg">
+                         <span>Ending in</span>  <strong className='text-5xl px-1'>{hours.toString().padStart(2, '0')}</strong> Hrs: <strong className='text-5xl px-1'>{minutes.toString().padStart(2, '0')}</strong> Mins: <strong className='text-5xl px-1'>{seconds.toString().padStart(2, '0')}</strong> Sec
                         </div>                      
                         <p className='text-[#ffff] text-center mr-12 font-bold md:text-[3rem]'>Up to <span className='text-[#f0ab4bf2]'>30% Off </span></p>
                         <Link href="/products" className='common-btn '>Shop Now</Link>

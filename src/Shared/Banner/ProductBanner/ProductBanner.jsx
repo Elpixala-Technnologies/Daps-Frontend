@@ -56,12 +56,12 @@ const ProductSlider = () => {
     return (
         <div>
               <Image
-                                        src={isMobile ? OfferBannerTwo : OfferBannerTwo}
-                                        alt="Banner Image"
-                                        className="w-full h-auto"
-                                        width={isMobile ? 768 : 1920}
-                                        height={isMobile ? 768 : 500}
-                                    />
+                src={isMobile ? OfferBannerTwo : OfferBannerTwo}
+                alt="Banner Image"
+                className="w-full h-auto"
+                width={isMobile ? 768 : 1920}
+                height={isMobile ? 768 : 500}
+            />
 
             {/* <Swiper
                 spaceBetween={30}
