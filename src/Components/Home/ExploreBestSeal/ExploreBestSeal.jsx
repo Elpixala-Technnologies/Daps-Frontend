@@ -4,7 +4,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import Link from "next/link";
-import { Autoplay, Pagination,Navigation } from "swiper";
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 
 const ExploreBestSeal = () => {
     const [isMuted, setIsMuted] = useState(true);
@@ -69,57 +69,44 @@ const ExploreBestSeal = () => {
     return (
         <div className="container ">
             <h3 className="font-light  text-3xl text-black">Trending <strong className='font-extrabold text-[#29679e]'>Products</strong></h3>
-            {/* <Swiper
-                slidesPerView={3}
-                spaceBetween={30}
-                modules={[]}
-                className="mySwiper mt-8"
-                
-                breakpoints={{
-                    320: {
-                        slidesPerView: 1,
-                        spaceBetween: 20
-                    },
-                    640: {
-                        slidesPerView: 1,
-                        spaceBetween: 20
-                    },
-                    768: {
-                        slidesPerView: 2,
-                        spaceBetween: 30
-                    },
-                    1024: {
-                        slidesPerView: 4,
-                        spaceBetween: 40
-                    }
-                }}>
-                <div className='grid gap-10 grid-cols-1 lg:grid-cols-4 lg:gap-x-5 lg:gap-y-12'>
-                {
-                    videoInfo?.map(itm => 
-                        <Link href={`/category/${itm?.id}`}>
-                            <div onMouseEnter={handleHover} onMouseLeave={handleLeave} className="rounded-xl relative overflow-hidden hover-box duration-200 w-full h-[33rem] ">
-                                <img src={itm?.thum} className="w-full h-full " />
-                                <video dblclick={e => e.preventDefault()} className="absolute  top-[0px]  left-0 bottom-0 right-0 duration-200 hover-img opacity-0 object-cover object-center sm:object-top md:object-top lg:object-top xl:object-top"  muted={isMuted}  loop autoPlay>
-                                    <source src={itm?.video} type="video/mp4" />
-                                </video>
-                            </div>
-                            <h3 className="text-[16px] text-center font-semibold text-slate-700 mt-1">{itm?.name}</h3>
-                        </Link>
-                 )
-                }
-                </div>
-
-            </Swiper> */}
             <Swiper
-              centeredSlides={true}
-              slidesPerView={5}
               autoplay={{
                 delay: 2500,
                 disableOnInteraction: false,
               }}
-              loop={true}
-              modules={[Autoplay, Pagination, Navigation]}
-              className="mySwiper heroSlider"
+                modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+                breakpoints={{
+                  320: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                  },
+                  360: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                  },
+                  480: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                  },
+                  640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                  },
+                  768: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                  },
+                  1024: {
+                    slidesPerView: 5,
+                    spaceBetween: 20,
+                  },
+                }}
+                spaceBetween={20}
+                slidesPerView={3}
+                onSlideChange={() => { }}
+                onSwiper={(swiper) => { }}
+                data-aos="fade-up"
+                data-aos-anchor-placement="center-bottom"
             >
               { videoInfo.map((itm) => {
                 return (

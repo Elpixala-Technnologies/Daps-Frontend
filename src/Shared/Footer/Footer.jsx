@@ -34,9 +34,9 @@ const Footer = () => {
         <section className=' bg-[#000000]'>
             <footer className="md:px-8 px-4 container  py-10 divide-y text-[#6f6e6efa] ">
       
-            <div className="flex  text-sm gap-x-14 gap-y-8 grid-cols-6 sm:grid-cols-5 p-6">
+            <div className="flex flex-wrap text-sm gap-x-14 gap-y-8 grid-cols-6 sm:grid-cols-5 p-6">
                       <div className='space-y-3'>
-                      <div className="flex flex-col gap-4 ">
+                        <div className="flex flex-wrap flex-col gap-4 ">
                             <Link rel="noopener noreferrer" href="/" className="flex justify-center md:justify-start">
                                <div className='my-[-4rem] '>
                                <Image
@@ -48,57 +48,57 @@ const Footer = () => {
                                </div>
                             </Link>
                             <div className='w-full py-4 align-center'>
-                <form onSubmit={handleSubmit} id="demo">
-                    <FormControl>
-                        <FormLabel
-                        sx={{  color: '#CBC6C6',paddingBottom:".2rem", fontSize:"1rem" }}
-                        >
-                        Subscribe to our email alerts!
-                        </FormLabel>
-                        <Input
-                        sx={{ '--Input-decoratorChildHeight': '45px' }}
-                        placeholder="Enter your email address"
-                        type="email"
-                        required
-                        value={data.email}
-                        onChange={(event) =>
-                            setData({ email: event.target.value, status: 'initial' })
-                        }
-                        error={data.status === 'failure'}
-                        endDecorator={
-                            <Button
-                            variant="solid"
-                            color="primary"
-                            loading={data.status === 'loading'}
-                            type="submit"
-                            sx={{ borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }}
-                            >
-                            Subscribe
-                            </Button>
-                        }
-                        />
-                        {data.status === 'failure' && (
-                        <FormHelperText
-                            sx={(theme) => ({ color: theme.vars.palette.danger[400] })}
-                        >
-                            Oops! something went wrong, please try again later.
-                        </FormHelperText>
-                        )}
+                            <form onSubmit={handleSubmit} id="demo">
+                                <FormControl>
+                                    <FormLabel
+                                    sx={{  color: '#CBC6C6',paddingBottom:".2rem", fontSize:"1rem" }}
+                                    >
+                                    Subscribe to our email alerts!
+                                    </FormLabel>
+                                    <Input
+                                    sx={{ '--Input-decoratorChildHeight': '45px' }}
+                                    placeholder="Enter your email address"
+                                    type="email"
+                                    required
+                                    value={data.email}
+                                    onChange={(event) =>
+                                        setData({ email: event.target.value, status: 'initial' })
+                                    }
+                                    error={data.status === 'failure'}
+                                    endDecorator={
+                                        <Button
+                                        variant="solid"
+                                        color="primary"
+                                        loading={data.status === 'loading'}
+                                        type="submit"
+                                        sx={{ borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }}
+                                        >
+                                        Subscribe
+                                        </Button>
+                                    }
+                                    />
+                                    {data.status === 'failure' && (
+                                    <FormHelperText
+                                        sx={(theme) => ({ color: theme.vars.palette.danger[400] })}
+                                    >
+                                        Oops! something went wrong, please try again later.
+                                    </FormHelperText>
+                                    )}
 
-                        {data.status === 'sent' && (
-                        <FormHelperText
-                            sx={(theme) => ({ color: theme.vars.palette.primary[400] })}
-                        >
-                            You are all set!
-                        </FormHelperText>
-                        )}
-                    </FormControl>
-                    </form>
-                </div>
+                                    {data.status === 'sent' && (
+                                    <FormHelperText
+                                        sx={(theme) => ({ color: theme.vars.palette.primary[400] })}
+                                    >
+                                        You are all set!
+                                    </FormHelperText>
+                                    )}
+                                </FormControl>
+                                </form>
+                            </div>
                             <div>
-                                <p>
-                                Welcome to DAPS, your ultimate online destination for the finest car accessories that elevate your driving experience to a whole new level. 
-                                </p>
+                            <p>
+                            Welcome to DAPS, your ultimate online destination for the finest car accessories that elevate your driving experience to a whole new level. 
+                            </p>
                             </div>
                             <div>
                                 <div className="flex  flex-col  gap-4 mt-4">
@@ -173,7 +173,7 @@ const Footer = () => {
                         </div>
                 </div>
                
-                <div className="py-6 footer-border text-sm text-center dark:text-gray-500 mt-4 flex justify-between items-center flex-col md:flex-row gap-4">
+                <div className="py-6 footer-border text-sm text-center dark:text-gray-500 mt-4 flex justify-between  items-center flex-col md:flex-row gap-4">
                     <p>© {new Date().getFullYear()} DAPS. All rights reserved.</p>
 
                     <div>

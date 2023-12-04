@@ -26,6 +26,10 @@ const BestSealer = () => {
             <h3 className="font-light mb-4 text-3xl text-black">Explore <strong className='font-extrabold text-[#29679e]'>Bestsellers</strong></h3>
             <div>
                 <Swiper
+                     autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                      }}
                     ref={sliderRef}
                     modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
                     spaceBetween={20}
