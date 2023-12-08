@@ -9,7 +9,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Autoplay, Pagination,Navigation } from "swiper";
+import 'swiper/css/scrollbar';
+import { Autoplay, Pagination,Navigation,Scrollbar } from "swiper";
  
 const ShopByCategories = () => {
   const { categoryMainData } = useProducts();
@@ -43,39 +44,40 @@ const ShopByCategories = () => {
             <div className="flex w-max-content overflow-hidden justify-around">
            
             <Swiper
-              spaceBetween={30}
+              // spaceBetween={30}
               centeredSlides={true}
-              slidesPerView={10}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
+              // slidesPerView={10}
+              // autoplay={{
+              //   delay: 2500,
+              //   disableOnInteraction: false,
+              // }}
+              scrollbar={{ draggable: true, hide: true }}
               loop={true}
               modules={[Autoplay, Pagination, Navigation]}
               className="mySwiper heroSlider"
               breakpoints={{
                 320: {
-                  slidesPerView: 3,
+                  slidesPerView: 4,
                  
                 },
                 360: {
-                  slidesPerView: 3,
+                  slidesPerView: 4,
                 
                 },
                 480: {
-                  slidesPerView: 3,
+                  slidesPerView: 8,
                   
                 },
                 640: {
-                  slidesPerView: 10,
+                  slidesPerView: 8,
                 
                 },
                 768: {
-                  slidesPerView: 10,
+                  slidesPerView: 8,
                   
                 },
                 1024: {
-                  slidesPerView: 10,
+                  slidesPerView: 8,
                   
                 },
               }}
