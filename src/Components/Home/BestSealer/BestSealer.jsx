@@ -6,6 +6,7 @@ import "swiper/swiper-bundle.min.css";
 import Link from "next/link";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import 'swiper/css/scrollbar';
 import useProducts from "@/src/Hooks/useProducts";
 
 const BestSealer = () => {
@@ -26,10 +27,10 @@ const BestSealer = () => {
             <h3 className="font-light mb-4 text-3xl text-black">Explore <strong className='font-extrabold text-[#29679e]'>Bestsellers</strong></h3>
             <div>
                 <Swiper
-                     autoplay={{
-                        delay: 2500,
-                        disableOnInteraction: false,
-                      }}
+                    //  autoplay={{
+                    //     delay: 2500,
+                    //     disableOnInteraction: false,
+                    //   }}
                     ref={sliderRef}
                     modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
                     spaceBetween={20}
@@ -64,6 +65,7 @@ const BestSealer = () => {
                             spaceBetween: 20,
                           },
                     }}
+                    scrollbar={{ draggable: true, hide: true }}
                 >
                     <div className="grid grid-cols-2 md:grid-row-2 lg:grid-cols-3 gap-4 pt-20">
                         {filterProductData &&

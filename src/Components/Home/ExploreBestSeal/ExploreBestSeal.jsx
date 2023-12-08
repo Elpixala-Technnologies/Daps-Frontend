@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import 'swiper/css/scrollbar';
 import Link from "next/link";
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 
@@ -70,10 +71,6 @@ const ExploreBestSeal = () => {
         <div className="container ">
             <h3 className="font-light  text-3xl text-black">Trending <strong className='font-extrabold text-[#29679e]'>Products</strong></h3>
             <Swiper
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
                 modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
                 breakpoints={{
                   320: {
@@ -94,38 +91,39 @@ const ExploreBestSeal = () => {
                   },
                   768: {
                     slidesPerView: 2,
-                    spaceBetween: 30,
                   },
                   1024: {
                     slidesPerView: 5,
-                    spaceBetween: 20,
                   },
                 }}
-                spaceBetween={20}
-                slidesPerView={3}
+                // spaceBetween={20}
+                // slidesPerView={3}
                 onSlideChange={() => { }}
                 onSwiper={(swiper) => { }}
                 data-aos="fade-up"
                 data-aos-anchor-placement="center-bottom"
+                scrollbar={{ draggable: true, hide: true }}
             >
               { videoInfo.map((itm) => {
                 return (
                   <SwiperSlide key={itm.id}>
                     <div
-                      className="color-b bg-white p-2 md:p-3 text-center rounded-md duration-300 transform  shadow-sm hover:-translate-y-1.5 border-t border-slate-100 hover:bg-red-10 hover:text-[#18568C]" 
+                      className="color-b  bg-white p-2 md:p-3 text-center rounded-md duration-300 transform  shadow-sm hover:-translate-y-1.5 border-t border-slate-100 hover:bg-red-10 hover:text-[#18568C]" 
                       data-aos="fade-up" // Add AOS animation attribute
                       data-aos-duration="1000" // Set animation duration in milliseconds
                       key={itm.id}
                     >
                       <Link href={`/category/${itm?.id}`}>
-                            <div onMouseEnter={handleHover} onMouseLeave={handleLeave} className="rounded-xl relative overflow-hidden hover-box duration-200 w-full h-[30rem] ">
+                            <div onMouseEnter={handleHover} onMouseLeave={handleLeave} className="rounded-xl relative overflow-hidden hover-box duration-200 w-full h-[22rem] ">
                                 <img src={itm?.thum} className="w-full h-full " />
                                 <video dblclick={e => e.preventDefault()} className="absolute  top-[0px]  left-0 bottom-0 right-0 duration-200 hover-img opacity-0 object-fit object-center sm:object-top md:object-top lg:object-top xl:object-top"  muted  loop autoPlay>
                                     <source src={itm?.video} type="video/mp4" />
                                 </video>
                             </div>
-                            <h3 className="text-[16px] text-center font-semibold text-slate-700 mt-1">{itm?.name}</h3>
+                              <h3 className="text-[16px]  text-center font-semibold text-slate-700 mt-1">{itm?.name}</h3>
+                            
                         </Link>
+                       
                     </div>
                   </SwiperSlide>
                     )

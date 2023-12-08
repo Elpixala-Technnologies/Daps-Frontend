@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import 'swiper/css/scrollbar';
 import { Autoplay, Pagination,Navigation } from "swiper";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import c1 from '@/../../src/Assets/car/1.png'
@@ -33,13 +34,13 @@ const InstraStoryEffect = () => {
     setSelectedVideo(null);
   };
   
-  const handleCarouselChange = (index) => {
-    // Pause the video when changing slides
-    if (selectedVideo) {
-      setSelectedVideo(null);
-    }
-    setCurrentIndex(index);
-  };
+  // const handleCarouselChange = (index) => {
+  //   // Pause the video when changing slides
+  //   if (selectedVideo) {
+  //     setSelectedVideo(null);
+  //   }
+  //   setCurrentIndex(index);
+  // };
 
   useEffect(() => {
     const handleFullscreenChange = () => {
@@ -65,19 +66,19 @@ const InstraStoryEffect = () => {
     const responsive = {
         superLargeDesktop: {
             breakpoint: { max: 4000, min: 3000 },
-            items: 10
+            items: 13
         },
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
-            items: 9
+            items: 13
         },
         tablet: {
             breakpoint: { max: 1024, min: 464 },
-            items: 6
+            items: 4
         },
         mobile: {
             breakpoint: { max: 464, min: 0 },
-            items: 3
+            items: 4
         }
     };
 
@@ -167,32 +168,91 @@ const InstraStoryEffect = () => {
       thum: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/FRONX/9243/1697697928533/front-left-side-47.jpg?tr=w-456',
       video: "https://res.cloudinary.com/elpixala/video/upload/v1699818085/Daps/Video/vuy4w20q6yzxwytwsain.mp4"
     },
-  ];
+    {
+      id: 14,
+      name: "Android Stereos",
+      image: "https://i.ibb.co/4PHxxGX/pngimg-com-jeep-PNG95.png",
+      thum: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/FRONX/9243/1697697928533/front-left-side-47.jpg?tr=w-456',
+      video: "https://res.cloudinary.com/elpixala/video/upload/v1699818085/Daps/Video/vuy4w20q6yzxwytwsain.mp4"
+    },
+    {
+      id: 15,
+      name: "Android Stereos",
+      image: "https://i.ibb.co/4PHxxGX/pngimg-com-jeep-PNG95.png",
+      thum: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/FRONX/9243/1697697928533/front-left-side-47.jpg?tr=w-456',
+      video: "https://res.cloudinary.com/elpixala/video/upload/v1699818085/Daps/Video/vuy4w20q6yzxwytwsain.mp4"
+    },
+    {
+      id: 16,
+      name: "Android Stereos",
+      image: "https://i.ibb.co/4PHxxGX/pngimg-com-jeep-PNG95.png",
+      thum: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/FRONX/9243/1697697928533/front-left-side-47.jpg?tr=w-456',
+      video: "https://res.cloudinary.com/elpixala/video/upload/v1699818085/Daps/Video/vuy4w20q6yzxwytwsain.mp4"
+    },
+    {
+      id: 17,
+      name: "Android Stereos",
+      image: "https://i.ibb.co/4PHxxGX/pngimg-com-jeep-PNG95.png",
+      thum: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/FRONX/9243/1697697928533/front-left-side-47.jpg?tr=w-456',
+      video: "https://res.cloudinary.com/elpixala/video/upload/v1699818085/Daps/Video/vuy4w20q6yzxwytwsain.mp4"
+    },
+    {
+      id: 18,
+      name: "Android Stereos",
+      image: "https://i.ibb.co/4PHxxGX/pngimg-com-jeep-PNG95.png",
+      thum: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/FRONX/9243/1697697928533/front-left-side-47.jpg?tr=w-456',
+      video: "https://res.cloudinary.com/elpixala/video/upload/v1699818085/Daps/Video/vuy4w20q6yzxwytwsain.mp4"
+    },
+    {
+      id: 19,
+      name: "Android Stereos",
+      image: "https://i.ibb.co/4PHxxGX/pngimg-com-jeep-PNG95.png",
+      thum: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/FRONX/9243/1697697928533/front-left-side-47.jpg?tr=w-456',
+      video: "https://res.cloudinary.com/elpixala/video/upload/v1699818085/Daps/Video/vuy4w20q6yzxwytwsain.mp4"
+    },
+    ];
+
+    // Inside your component
+const handleCarouselChange = (index) => {
+  const visibleItems = responsive.find((item) => item.breakpoint === currentBreakpoint)?.items || 1;
+  const totalItems = carsInfo?.length || 1;
+  const scrollableWidth = totalItems - visibleItems;
+  const scrollPercentage = (index / scrollableWidth) * 100;
+
+  // Adjust the thumb position based on scroll percentage
+  const thumb = document.querySelector('.carousel-scrollbar-thumb');
+  thumb.style.transform = `translateY(${scrollPercentage}%)`;
+};
+
 
     return (
         <div className="container pt-8">
            <h3 className="font-light mb-3 text-3xl text-black">Latest <strong className='font-extrabold text-[#29679e] '>Stories</strong></h3>
            <Carousel
-      className="p-4"
-      responsive={responsive}
-      showDots={false}
-      arrows={true}
-      selectedItem={currentIndex}
-      onChange={(index) => handleCarouselChange(index)}
-    >
-      {carsInfo?.map((itm, index) => (
-        <div className="flex relative flex-col cursor-pointer items-center justify-center" key={itm?.id}>
-          <div
-            className="relative storyOutline  hover-box  md:w-[80px] w-[80px] md:h-[80px] overflow-hidden h-[80px] border-4 rounded-full flex items-center justify-center border-transparent"
-            onClick={() => openFullscreenVideo(itm?.video, index)}
+            className="p-4"
+            responsive={responsive}
+            showDots={false}
+            arrows={false}
+            selectedItem={currentIndex}
+            removeArrowOnDeviceType={['tablet', 'mobile']}
+            customButtonGroup={<div />}
+            onChange={(index) => handleCarouselChange(index)}
           >
-            <img src={itm?.thum} className="w-full h-full" />
-          </div>
-          <h4 className="font-semibold text-[16px] mt-1 text-slate-700">{itm?.name}</h4>
-        </div>
-      ))}
-    </Carousel>
-
+            {carsInfo?.map((itm, index) => (
+              <div className="flex relative flex-col cursor-pointer items-center justify-center" key={itm?.id}>
+                <div
+                  className="relative storyOutline  hover-box  md:w-[80px] w-[80px] md:h-[80px] overflow-hidden h-[80px] border-4 rounded-full flex items-center justify-center border-transparent"
+                  onClick={() => openFullscreenVideo(itm?.video, index)}
+                >
+                  <img src={itm?.thum} className="w-full h-full" />
+                </div>
+                <h4 className="font-semibold text-[16px] mt-1 text-slate-700">{itm?.name}</h4>
+              </div>
+            ))}
+          </Carousel>
+              <div className="carousel-scrollbar">
+        <div className="carousel-scrollbar-thumb"></div>
+      </div>
       {/* Fullscreen video display */}
       {selectedVideo && (
       <div className="fullscreen-video bg-white fixed top-0 left-0 w-full h-full z-50">
@@ -220,5 +280,4 @@ const InstraStoryEffect = () => {
 };
 
 export default InstraStoryEffect;
-
 

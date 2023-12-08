@@ -8,6 +8,7 @@ import Link from "next/link";
 import useProducts from "@/src/Hooks/useProducts";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import 'swiper/css/scrollbar';
 import { AuthContext } from "@/src/Context/UserContext";
 import { useRouter } from "next/router";
 import { addToCartUrl } from "@/src/Utils/Urls/ProductUrl";

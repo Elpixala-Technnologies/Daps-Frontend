@@ -200,7 +200,7 @@ img {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 70%;
-    padding: 70px 0;
+    padding: 30px 0;
     background-blend-mode: color;
     // background-color: #000000a1;
 }
@@ -708,3 +708,48 @@ $letterStagger: 0.1s;
     outline: solid 3px rgb(212, 27, 58);
 }
 
+@media screen and (max-width: 767px) {
+    .flex-wrap-mobile {
+      display: flex;
+      flex-wrap: wrap;
+      /* Additional styles for mobile screens */
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .small-screen-font {
+      font-size: 1.5rem; 
+    }
+  }
+
+  .swiper-scrollbar {
+    display: none !important;
+  }
+
+  .carousel-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .carousel-scrollbar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 8px; /* Adjust width as needed */
+    background-color: #ccc; /* Color of the scrollbar */
+    border-radius: 4px; /* Adjust as needed */
+    opacity: 0.5;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .carousel-scrollbar:hover {
+    opacity: 1;
+  }
+  
+  .carousel-scrollbar-thumb {
+    width: 100%;
+    background-color: #888; /* Color of the scrollbar thumb */
+    border-radius: 4px; /* Adjust as needed */
+  }
+  
