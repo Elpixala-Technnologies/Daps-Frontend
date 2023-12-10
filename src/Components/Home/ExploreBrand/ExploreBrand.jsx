@@ -110,12 +110,10 @@ const ExploreBrand = () => {
                  
                 },
                 1024: {
-                  slidesPerView: 4,
+                  slidesPerView: 4.5,
                   
                 },
               }}
-              // spaceBetween={20}
-              // slidesPerView={3}
               onSlideChange={() => { }}
               onSwiper={(swiper) => { }}
               scrollbar={{ draggable: true, hide: true }}

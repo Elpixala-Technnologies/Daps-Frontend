@@ -93,7 +93,7 @@ const ExploreBestSeal = () => {
                     slidesPerView: 2,
                   },
                   1024: {
-                    slidesPerView: 5,
+                    slidesPerView: 5.5,
                   },
                 }}
                 spaceBetween={12}
