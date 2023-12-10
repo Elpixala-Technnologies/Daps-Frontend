@@ -2,23 +2,7 @@ import React, { useState,useEffect } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import 'swiper/css/scrollbar';
-import { Autoplay, Pagination,Navigation } from "swiper";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import c1 from '@/../../src/Assets/car/1.png'
-import c2 from '@/../../src/Assets/car/c2.png'
-import c3 from '@/../../src/Assets/car/c3.png'
 
-import img1 from "@/src/Assets/brands/2874749.webp";
-import img2 from "@/src/Assets/brands/download.jpg";
-import img3 from "@/src/Assets/brands/download.jpg";
-import img4 from "@/src/Assets/brands/free-hyundai-3215422-2673840.webp";
-import img5 from "@/src/Assets/brands/free-mahindra-3441189-2874294.webp";
-import img6 from "@/src/Assets/brands/j.jpeg";
-import img7 from "@/src/Assets/brands/Kia-logo.png";
-import img8 from "@/src/Assets/brands/Nissan_logo.png";
-import img9 from "@/src/Assets/brands/png-transparent-logo-ford-logo-car-car-standard-pattern-flag-cars.png";
-import img10 from "@/src/Assets/brands/pngimg.com - car_logo_PNG1643 (1).png";
-import img11 from "@/src/Assets/brands/pngimg.com - jeep_PNG95.png";
 import img12 from "@/src/Assets/brands/sdownload.jpeg";
 
 const InstraStoryEffect = () => {
@@ -239,14 +223,14 @@ const handleCarouselChange = (index) => {
             onChange={(index) => handleCarouselChange(index)}
           >
             {carsInfo?.map((itm, index) => (
-              <div className="flex relative flex-col cursor-pointer items-center justify-center" key={itm?.id}>
+              <div className="flex relative flex-col cursor-pointer align-middle justify-center" key={itm?.id}>
                 <div
                   className="relative storyOutline  hover-box  md:w-[80px] w-[80px] md:h-[80px] overflow-hidden h-[80px] border-4 rounded-full flex items-center justify-center border-transparent"
                   onClick={() => openFullscreenVideo(itm?.video, index)}
                 >
                   <img src={itm?.thum} className="w-full h-full" />
                 </div>
-                <h4 className="font-semibold text-[16px] mt-1 text-slate-700">{itm?.name}</h4>
+                <h4 className="font-semibold pl-2 text-[16px] mt-1 text-slate-700">{itm?.name}</h4>
               </div>
             ))}
           </Carousel>

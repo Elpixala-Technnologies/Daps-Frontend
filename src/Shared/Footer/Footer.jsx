@@ -100,22 +100,11 @@ const Footer = () => {
                             Welcome to DAPS, your ultimate online destination for the finest car accessories that elevate your driving experience to a whole new level. 
                             </p>
                             </div>
-                            <div>
-                                <div className="flex  flex-col  gap-4 mt-4">
-                                    <div className='flex gap-2 items-center  transition duration-200 ease-out transform hover:scale-105'>
-                                        <FaMapMarkerAlt className="w-6 h-6 text-gray-500 cursor-pointer hover:text-[#fff] dark:hover:text-gray-50" /> Shop No. 10, 16/5, Abdul Road, Karol Bagh, New Delhi-110005
-                                    </div>
-                                    <div className='transition duration-200 ease-out transform hover:scale-105 flex gap-2 items-center '>
-                                        <FaPhoneAlt className="w-6 h-6 text-gray-500 cursor-pointer hover:text-[#fff] dark:hover:text-gray-50" /> 9729725060
-                                    </div>
-                                    <div className='transition duration-200 ease-out transform hover:scale-105 flex gap-2 items-center '>
-                                        <FaPhoneAlt className="w-6 h-6 text-gray-500 cursor-pointer hover:text-[#fff] dark:hover:text-gray-50" /> 8950322454
-                                    </div>
-                                    
-                                </div>
-                            </div>
+                            
                         </div>
-                        <div className="space-y-3">
+                        
+                      </div>
+                       <div className="space-y-3">
                             <h3 className="tracki uppercase text-[#fff] font-semibold">Company</h3>
                             <ul className="space-y-2 ">
                                 <li>
@@ -126,7 +115,6 @@ const Footer = () => {
                                 </li>
                             </ul>
                         </div>
-                      </div>
                         <div className="space-y-3">
                             <h3 className="tracki uppercase text-[#cbc6c6] font-semibold">Categories</h3>
                             <ul className="space-y-2">
@@ -142,7 +130,7 @@ const Footer = () => {
                             </ul>
                         </div>
                        
-                        <div className="space-y-3">
+                        {/* <div className="space-y-3">
                             <h3 className="uppercase text-[#cbc6c6] font-semibold">Our Products</h3>
                             <ul className="space-y-2 ">
                             {
@@ -155,21 +143,31 @@ const Footer = () => {
                                     })
                                     }
                             </ul>
-                        </div>
+                        </div> */}
                         <div className="space-y-3">
-                            <div className="uppercase text-[#cbc6c6] font-semibold">Social media</div>
-
-                            <div className="flex  flex-col  gap-4 mt-3">
+                            <div className="uppercase text-[#cbc6c6] font-semibold">Contact Us</div>
+                            <div>
+                                <div className="flex  flex-col  gap-4 mt-4">
+                                    <div className='flex gap-2 items-center  transition duration-200 ease-out transform hover:scale-105'>
+                                        <FaMapMarkerAlt className="w-6 h-6 text-gray-500 cursor-pointer hover:text-[#fff] dark:hover:text-gray-50" /> Shop No. 10, 16/5, Abdul Road, Karol Bagh, New Delhi-110005
+                                    </div>
+                                    <div className='transition duration-200 ease-out transform hover:scale-105 flex gap-2 items-center '>
+                                        <FaPhoneAlt className="w-6 h-6 text-gray-500 cursor-pointer hover:text-[#fff] dark:hover:text-gray-50" /> 9729725060, 8950322454
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="flex  flex-row  gap-4 mt-3">
                                 <Link href="https://instagram.com/dapsindia?igshid=Z28yemtlcHFhMTRt" className='flex gap-2 items-center text-[1.1rem] transition duration-200 ease-out transform hover:scale-105'>
-                                    <FaFacebook className="w-8 h-8 text-gray-500 cursor-pointer hover:text-[#fff] dark:hover:text-gray-50 text-[1.5rem]" /> Facebook
+                                    <FaFacebook className="w-8 h-8 text-gray-500 cursor-pointer hover:text-[#fff] dark:hover:text-gray-50 text-[1.5rem]" /> 
                                 </Link>
                                 <Link href="https://instagram.com/dapsindia?igshid=Z28yemtlcHFhMTRt" className='transition duration-200 ease-out transform hover:scale-105 flex gap-2 items-center text-[1.1rem]'>
-                                    <FaInstagram className="w-8 h-8 text-gray-500 cursor-pointer hover:text-[#fff] dark:hover:text-gray-50  text-[1.5rem]" /> Instagram
+                                    <FaInstagram className="w-8 h-8 text-gray-500 cursor-pointer hover:text-[#fff] dark:hover:text-gray-50  text-[1.5rem]" />
                                 </Link>
                                 <Link href="https://www.twitter.com/" className='flex gap-2 items-center text-[1.1rem] transition duration-200 ease-out transform hover:scale-105'>
-                                    <FaTwitter className="w-8 h-8 text-gray-500 cursor-pointer hover:text-[#fff] dark:hover:text-gray-50 text-[1.5rem]" /> Twitter
+                                    <FaTwitter className="w-8 h-8 text-gray-500 cursor-pointer hover:text-[#fff] dark:hover:text-gray-50 text-[1.5rem]" /> 
                                 </Link>
                             </div>
+
                         </div>
                 </div>
                
