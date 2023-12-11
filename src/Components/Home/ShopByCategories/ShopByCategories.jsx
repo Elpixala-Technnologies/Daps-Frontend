@@ -44,13 +44,9 @@ const ShopByCategories = () => {
             <div className="flex w-max-content overflow-hidden justify-around">
            
             <Swiper
-              // spaceBetween={30}
-              centeredSlides={true}
-              // slidesPerView={10}
-              // autoplay={{
-              //   delay: 2500,
-              //   disableOnInteraction: false,
-              // }}
+              
+              // centeredSlides={true}
+              slidesPerView={8}
               scrollbar={{ draggable: true, hide: true }}
               loop={true}
               modules={[Autoplay, Pagination, Navigation]}

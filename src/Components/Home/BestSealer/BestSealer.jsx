@@ -41,23 +41,23 @@ const BestSealer = () => {
                     data-aos-anchor-placement="center-bottom"
                     breakpoints={{
                         320: {
-                            slidesPerView: 1,
+                            slidesPerView: 1.5,
                             spaceBetween: 20,
                           },
                           360: {
-                            slidesPerView: 1,
+                            slidesPerView: 1.5,
                             spaceBetween: 20,
                           },
                           480: {
-                            slidesPerView: 1,
+                            slidesPerView: 1.5,
                             spaceBetween: 20,
                           },
                           640: {
-                            slidesPerView: 1,
+                            slidesPerView: 1.5,
                             spaceBetween: 20,
                           },
                           768: {
-                            slidesPerView: 2,
+                            slidesPerView: 2.5,
                             spaceBetween: 30,
                           },
                           1024: {
