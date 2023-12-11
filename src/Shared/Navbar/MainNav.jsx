@@ -232,7 +232,7 @@ const MainNav = () => {
 
   // acordion
     const [aOn, setAON] = useState(false);
-    const [aOn2, setAON2] = useState(false);
+    const [aOn2, setAON2] = useState(true);
 
   return (
     <div>
@@ -501,25 +501,14 @@ const MainNav = () => {
             } duration-300 w-full overflow-hidden fixed bg-[#172733] h-screen top-0 p-4 text-white `}
             style={{ zIndex: 1000 }}
           >
-            <button className="float-right" onClick={() => setOpen(!open)}>
-              <AiOutlineClose className="text-4xl px-2" />
-            </button>
-            
-              <div className="flex items-center  bg-[white] p-1 rounded-md gap-2">
-                <input
-                  type="text"
-                  className="w-full pl-2 text-black"
-                  placeholder="Search"
-                />
-                <AiOutlineSearch className="text-black" />
-              </div>
-            <ul className="flex flex-col gap-6 mt-6">
+           
+            <ul className="flex flex-col gap-6 mt-10">
                <li onClick={()=> {
               setAON(!aOn)
               setAON2(false)
 
             }} className="common-hover">
-                <div className="w-full flex justify-between items-center"><Link href="/">Category</Link> <span className="text-xl">{aOn ? <>-</> : <>+</>}</span> </div>
+                <div className="w-full flex  justify-between items-center"><Link href="/">Category</Link> <span className="text-xl mr-4">{aOn ? <>-</> : <>+</>}</span> </div>
                 <div className={`${aOn ? 'h-[300px] p-4 overflow-y-scroll mt-3' : 'h-[0px] '} rounded-lg bg-[#243c72]  duration-300 overflow-hidden`}>
                      {
                           categoryMainData && categoryMainData?.map((item, index) => {
@@ -543,7 +532,7 @@ const MainNav = () => {
               setAON(false)
               setAON2(!aOn2)
             }} className="common-hover">
-                <div className="w-full flex justify-between items-center"><Link href="/">Shop By Car</Link> <span className="text-xl">{aOn ? <>-</> : <>+</>}</span> </div>
+                <div className="w-full flex justify-between items-center"><Link href="/">Shop By Car</Link> <span className="text-xl mr-4">{aOn ? <>-</> : <>+</>}</span> </div>
                 <div className={`${aOn2 ? 'h-[400px] p-4 overflow-y-scroll mt-3' : 'h-[0px] '} rounded-lg bg-[#243c72]   duration-300 overflow-hidden`}>
                     <div className="grid grid-cols-3 gap-3">
                        {

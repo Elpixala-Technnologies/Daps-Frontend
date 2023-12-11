@@ -223,14 +223,14 @@ const handleCarouselChange = (index) => {
             onChange={(index) => handleCarouselChange(index)}
           >
             {carsInfo?.map((itm, index) => (
-              <div className="flex relative flex-col cursor-pointer align-middle justify-center" key={itm?.id}>
+              <div className="flex relative flex-col cursor-pointer align-middle text-center justify-center" key={itm?.id}>
                 <div
                   className="relative storyOutline  hover-box  md:w-[80px] w-[80px] md:h-[80px] overflow-hidden h-[80px] border-4 rounded-full flex items-center justify-center border-transparent"
                   onClick={() => openFullscreenVideo(itm?.video, index)}
                 >
                   <img src={itm?.thum} className="w-full h-full" />
                 </div>
-                <h4 className="font-semibold pl-2 text-[16px] mt-1 text-slate-700">{itm?.name}</h4>
+                <h4 className="font-semibold pr-3 text-[16px] mt-1 text-slate-600">{itm?.name}</h4>
               </div>
             ))}
           </Carousel>

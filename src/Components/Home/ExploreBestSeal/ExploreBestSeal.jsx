@@ -74,19 +74,19 @@ const ExploreBestSeal = () => {
                 modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
                 breakpoints={{
                   320: {
-                    slidesPerView: 1,
+                    slidesPerView: 1.5,
                     spaceBetween: 20,
                   },
                   360: {
-                    slidesPerView: 1,
+                    slidesPerView: 1.5,
                     spaceBetween: 20,
                   },
                   480: {
-                    slidesPerView: 1,
+                    slidesPerView: 1.5,
                     spaceBetween: 20,
                   },
                   640: {
-                    slidesPerView: 1,
+                    slidesPerView: 1.5,
                     spaceBetween: 20,
                   },
                   768: {

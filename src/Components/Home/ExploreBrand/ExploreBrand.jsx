@@ -90,23 +90,23 @@ const ExploreBrand = () => {
               modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
               breakpoints={{
                 320: {
-                  slidesPerView: 1,
+                  slidesPerView: 1.5,
                   
                 },
                 360: {
-                  slidesPerView: 1,
+                  slidesPerView: 1.5,
                   
                 },
                 480: {
-                  slidesPerView: 1,
+                  slidesPerView: 1.5,
                   
                 },
                 640: {
-                  slidesPerView: 1,
+                  slidesPerView: 1.5,
                  
                 },
                 768: {
-                  slidesPerView: 2,
+                  slidesPerView: 2.5,
                  
                 },
                 1024: {
