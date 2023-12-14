@@ -12,13 +12,15 @@ import { FaTrashAlt } from "react-icons/fa";
 const AddProduct = () => {
   const { handleSubmit } = useForm();
   const [loading, setLoading] = useState(false);
-  const { categoryData, couponData } = useProducts();
+  const { categoryData, } = useProducts();
   const [category, setCategory] = useState("");
   const [name, setName] = useState("");
   const [discountPercentage, setDiscountPercentage] = useState("");
   const [status, setStatus] = useState("")
   const [isAndroid, setIsAndroid] = useState(false)
   const [showAndroidDetails, setShowAndroidDetails] = useState(false);
+
+
   const [processor, setProcessor] = useState("");
   const [ram, setRam] = useState("");
   const [rom, setRom] = useState("");
@@ -82,12 +84,603 @@ const AddProduct = () => {
     setFeatures(updatedFeatures);
   };
 
-  // ==============
-
+  // ============== android
   const handleAndroidCheckboxChange = (e) => {
     setIsAndroid(e.target.checked);
     setShowAndroidDetails(e.target.checked);
   };
+
+  const [android, setAndroid] = ([{
+    isAndroid: isAndroid,
+    screenSize: "",
+    variant: variantsAndroid
+  }])
+
+  const addAndroid = () => {
+    setAndroid([...android, {
+      isAndroid: false,
+      screenSize: "",
+      variant: variantsAndroid
+    }])
+  }
+
+  const removeAndroid = (index) => {
+    const newAndroid = [...vandroid];
+    newVariants.splice(index, 1);
+    setAndroid(newVariants);
+  };
+
+  const onChangeAndroid = (event, index) => {
+    const updatedAndroid = [...android];
+    updatedAndroid[index] = {
+      ...updatedAndroid[index],
+      [event.target.name]: event.target.value,
+    };
+    setAndroid(updatedAndroid);
+  };
+
+  const [variantsAndroid, setVariantsAndroid] = useState([{
+    processorName: "",
+    processLabel: "",
+    carsSupported: [],
+    ram: "",
+    rom: "",
+    isAppleCarplayAndAndroidAutoSupported: false,
+    wirelessWired: "",
+    isDVRSupported: false,
+    is360CameraSupported: "",
+    isSimSupported: "",
+    isWarrantyAvailable: "",
+    warrantyPeriod: "",
+    basePrice: 0,
+  }]);
+
+  const addAndroidVariant = () => {
+    setVariantsAndroid([...variantsAndroid, {
+      processorName: "",
+      processLabel: "",
+      carsSupported: [],
+      ram: "",
+      rom: "",
+      isAppleCarplayAndAndroidAutoSupported: false,
+      wirelessWired: "",
+      isDVRSupported: false,
+      is360CameraSupported: "",
+      isSimSupported: "",
+      isWarrantyAvailable: "",
+      warrantyPeriod: "",
+      basePrice: 0,
+    }]);
+  };
+
+  const removeAndroidVariant = (index) => {
+    const newVariants = [...variantsAndroid];
+    newVariants.splice(index, 1);
+    setVariantsAndroid(newVariants);
+  };
+
+  const onChangeAndroidVariant = (event, index) => {
+    const updatedVariants = [...variantsAndroid];
+    updatedVariants[index] = {
+      ...updatedVariants[index],
+      [event.target.name]: event.target.value,
+    };
+    setVariantsAndroid(updatedVariants);
+  };
+
+
+  // =================== led
+  const [isLed, setIsLed] = useState(false)
+
+  const handleLedCheckboxChange = (e) => {
+    setIsLed(e.target.checked);
+  };
+
+  const [led, setLed] = useState([
+    {
+      isLed: isLed,
+      "variant": ledVariant,
+    }
+  ])
+
+  const addLed = () => {
+    setLed([
+      ...led, {
+        isLed: isLed,
+        "variant": ledVariant,
+      }
+    ])
+  };
+
+  const removeLed = (index) => {
+    const newLed = [...led];
+    newLed.splice(index, 1);
+    setLed(newLed);
+  };
+
+  const onChangeLed = (event, index) => {
+    const updatedLed = [...led];
+    updatedLed[index] = {
+      ...updatedLed[index],
+      [event.target.name]: event.target.value,
+    };
+    setLed(updatedLed);
+  };
+
+  const [ledVariant, setLedVariant] = useState([
+    {
+      wattage: "",
+      socketsSupported: [],
+      basePrice: 0,
+    }
+  ])
+
+  const addLedVariant = () => {
+    setLedVariant([...ledVariant, {
+      wattage: "",
+      socketsSupported: [],
+      basePrice: 0,
+    }]);
+  };
+
+  const removeLedVariant = (index) => {
+    const newVariants = [...ledVariant];
+    newVariants.splice(index, 1);
+    setLedVariant(newVariants);
+  };
+
+  const onChangeLedVariant = (event, index) => {
+    const updatedVariants = [...ledVariant];
+    updatedVariants[index] = {
+      ...updatedVariants[index],
+      [event.target.name]: event.target.value,
+    };
+    setLedVariant(updatedVariants);
+  };
+
+  // ======== amplifiers
+
+  const [isAmplifiers, setIsAmplifiers] = useState(false)
+
+  const handleAmplifiersCheckboxChange = (e) => {
+    setIsAmplifiers(e.target.checked);
+  };
+
+  const [amplifiers, setAmplifiers] = useState([
+    {
+      "isAmplifiers": isAmplifiers,
+      "variant": amplifiersVariant
+    }
+  ])
+
+  const addAmplifiers = () => {
+    setLed([
+      ...led, {
+        "isAmplifiers": isAmplifiers,
+        "variant": amplifiersVariant
+      }
+    ])
+  };
+
+  const removeAmplifiers = (index) => {
+    const newAmplifiers = [...amplifiers];
+    newAmplifiers.splice(index, 1);
+    setAmplifiers(newAmplifiers);
+  };
+
+  const onChangeAmplifiers = (event, index) => {
+    const updatedAmplifiers = [...amplifiers];
+    updatedAmplifiers[index] = {
+      ...updatedAmplifiers[index],
+      [event.target.name]: event.target.value,
+    };
+    setAmplifiers(updatedAmplifiers);
+  };
+
+  const [amplifiersVariant, setAmplifiersVariant] = useState([
+    {
+      totalChannels: "",
+      wattage: "",
+      basePrice: 0,
+    }
+  ])
+
+  const addAmplifierVariant = () => {
+    setAmplifiersVariant([...amplifiersVariant, {
+      totalChannels: "",
+      wattage: "",
+      basePrice: 0,
+    }]);
+  };
+
+  const removeAmplifierVariant = (index) => {
+    const newVariants = [...amplifiersVariant];
+    newVariants.splice(index, 1);
+    setAmplifiersVariant(newVariants);
+  };
+
+  const onChangeAmplifierVariant = (event, index) => {
+    const updatedVariants = [...amplifiersVariant];
+    updatedVariants[index] = {
+      ...updatedVariants[index],
+      [event.target.name]: event.target.value,
+    };
+    setAmplifiersVariant(updatedVariants);
+  };
+
+
+  // ========== HID
+  const [isHID, setIsHID] = useState(false)
+
+  const handleHIDCheckboxChange = (e) => {
+    setIsHID(e.target.checked);
+  };
+
+  const [HID, setHID] = useState([
+    {
+      isHID: isHID,
+      variant: HIDVariant,
+    }
+  ])
+
+  const addHID = () => {
+    setHID([
+      ...HID, {
+        isHID: isHID,
+        variant: HIDVariant,
+      }
+    ])
+  };
+
+  const removeHID = (index) => {
+    const newHID = [...HID];
+    newHID.splice(index, 1);
+    setHID(newHID);
+  };
+
+  const onChangeHID = (event, index) => {
+    const updatedHID = [...HID];
+    updatedHID[index] = {
+      ...updatedHID[index],
+      [event.target.name]: event.target.value,
+    };
+    setHID(updatedHID);
+  };
+
+  const [HIDVariant, setHIDVariant] = useState([
+    {
+      wattage: "",
+      lightColor: "",
+      basePrice: 0,
+    }
+  ])
+
+  const addHIDVariant = () => {
+    setHIDVariant([...HIDVariant, {
+      wattage: "",
+      lightColor: "",
+      basePrice: 0,
+    }]);
+  };
+
+  const removeHIDVariant = (index) => {
+    const newVariants = [...HIDVariant];
+    newVariants.splice(index, 1);
+    setHIDVariant(newVariants);
+  };
+
+  const onChangeHIDVariant = (event, index) => {
+    const updatedVariants = [...HIDVariant];
+    updatedVariants[index] = {
+      ...updatedVariants[index],
+      [event.target.name]: event.target.value,
+    };
+    setHIDVariant(updatedVariants);
+  };
+
+  // ======= camera
+  const [isCamera, setIsCamera] = useState(false)
+
+  const handleCameraCheckboxChange = (e) => {
+    setIsCamera(e.target.checked);
+  };
+
+
+  const [camera, setCamera] = useState([
+    {
+      isCamera: isCamera,
+      variant: cameraVariant,
+    }
+  ])
+
+  const addCamera = () => {
+    setCamera([
+      ...camera, {
+        variant: cameraVariant,
+      }
+    ])
+  };
+
+  const removeCamera = (index) => {
+    const newCamera = [...camera];
+    newCamera.splice(index, 1);
+    setCamera(newCamera);
+  };
+
+  const onChangeCamera = (event, index) => {
+    const updatedCamera = [...camera];
+    updatedCamera[index] = {
+      ...updatedCamera[index],
+      [event.target.name]: event.target.value,
+    };
+    setCamera(updatedCamera);
+  };
+
+
+  const [cameraVariant, setCameraVariant] = useState([
+    {
+      cameraQuality: "",
+      areThereGuidelines: false,
+      guidelinesType: {
+        Static: false,
+        Dynamic: false,
+      },
+      fieldOfViewType: {
+        Wide: false,
+        UltraWide: false,
+      },
+      processorsSupported: [],
+      basePrice: 0,
+    }
+  ])
+
+  const addCameraVariant = () => {
+    setCameraVariant([...cameraVariant, {
+      cameraQuality: "",
+      areThereGuidelines: false,
+      guidelinesType: {
+        Static: false,
+        Dynamic: false,
+      },
+      fieldOfViewType: {
+        Wide: false,
+        UltraWide: false,
+      },
+      processorsSupported: [],
+      basePrice: 0,
+    }]);
+  };
+
+  const removeCameraVariant = (index) => {
+    const newVariants = [...cameraVariant];
+    newVariants.splice(index, 1);
+    setCameraVariant(newVariants);
+  };
+
+  const onChangeCameraVariant = (event, index) => {
+    const updatedVariants = [...cameraVariant];
+    updatedVariants[index] = {
+      ...updatedVariants[index],
+      [event.target.name]: event.target.value,
+    };
+    setCameraVariant(updatedVariants);
+  };
+
+  // =============dampingSheets
+
+  const [isDampingSheets, setIsDampingSheets] = useState(false)
+
+  const handleDampingSheetsCheckboxChange = (e) => {
+    setIsDampingSheets(e.target.checked);
+  };
+
+
+  const [dampingSheets, setDampingSheets] = useState([
+    {
+      "isDampingSheets": isDampingSheets,
+      "thickness": "",
+      "sheetsInOneBox": "",
+      "basePrice": 1
+    }
+  ])
+
+  const addDamping = () => {
+    setDampingSheets([
+      ...dampingSheets, {
+        "isDampingSheets": isDampingSheets,
+        "thickness": "",
+        "sheetsInOneBox": "",
+        "basePrice": 1
+      }
+    ])
+  };
+
+  const removeDamping = (index) => {
+    const newDamping = [...dampingSheets];
+    newDamping.splice(index, 1);
+    setDampingSheets(newDamping);
+  };
+
+  const onChangeDamping = (event, index) => {
+    const updatedDampingSheets = [...dampingSheets];
+    updatedDampingSheets[index] = {
+      ...updatedDampingSheets[index],
+      [event.target.name]: event.target.value,
+    };
+    setDampingSheets(updatedDampingSheets);
+  };
+
+  // ========== chargers 
+  const [isChargers, setIsChargers] = useState(false)
+
+  const handleChargersCheckboxChange = (e) => {
+    setIsChargers(e.target.checked);
+  };
+
+
+  const [chargers, setChargers] = useState([
+    {
+      "isChargers": isChargers,
+      "wattage": "",
+      "basePrice": 1
+    }
+  ])
+
+  const addChargers = () => {
+    setChargers([
+      ...chargers, {
+        "isChargers": isChargers,
+        "wattage": "",
+        "basePrice": 1
+      }
+    ])
+  };
+
+  const removeChargers = (index) => {
+    const newChargers = [...chargers];
+    newChargers.splice(index, 1);
+    setChargers(newChargers);
+  };
+
+  const onChangeChargers = (event, index) => {
+    const updatedChargers = [...chargers];
+    updatedChargers[index] = {
+      ...updatedChargers[index],
+      [event.target.name]: event.target.value,
+    };
+    setChargers(updatedChargers);
+  };
+
+  // ======== speakers
+
+  const [isSpeakers, setIsSpeakers] = useState(false)
+
+  const handleSpeakersCheckboxChange = (e) => {
+    setIsSpeakers(e.target.checked);
+  };
+
+
+  const [speakers, setSpeakers] = useState([
+    {
+      "isSpeakers": isSpeakers,
+      "speakerSize": "",
+      "basePrice": 1
+    }
+  ])
+
+  const addSpeakers = () => {
+    setIsSpeakers([
+      ...speakers, {
+        "isSpeakers": isSpeakers,
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ])
+  };
+
+  const removeSpeakers = (index) => {
+    const newSpeakers = [...speakers];
+    newSpeakers.splice(index, 1);
+    setSpeakers(newSpeakers);
+  };
+
+  const onChangeSpeakers = (event, index) => {
+    const updatedSpeakers = [...speakers];
+    updatedSpeakers[index] = {
+      ...updatedSpeakers[index],
+      [event.target.name]: event.target.value,
+    };
+    setSpeakers(updatedSpeakers);
+  };
+
+  // ======== bassTube 
+
+  const [isBassTube, setIsBassTube] = useState(false)
+
+  const handleBassTubeCheckboxChange = (e) => {
+    setIsBassTube(e.target.checked);
+  };
+
+
+  const [bassTube, setBassTube] = useState([
+    {
+      "isBassTube": isBassTube,
+      "wattage": "",
+      "speakerSize": "",
+      "basePrice": 1
+    }
+  ])
+
+  const addBassTube = () => {
+    setBassTube([
+      ...bassTube, {
+        "isBassTube": isBassTube,
+        "wattage": "",
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ])
+  };
+
+  const removeBassTube = (index) => {
+    const newBassTube = [...bassTube];
+    newBassTube.splice(index, 1);
+    setBassTube(newBassTube);
+  };
+
+  const onChangeBassTube = (event, index) => {
+    const updatedBassTube = [...bassTube];
+    updatedBassTube[index] = {
+      ...updatedBassTube[index],
+      [event.target.name]: event.target.value,
+    };
+    setIsBassTube(updatedBassTube);
+  };
+
+  // ========fMBT
+
+
+  const [isFMBT, setIsFMBT] = useState(false)
+
+  const handleFMBTCheckboxChange = (e) => {
+    setIsFMBT(e.target.checked);
+  };
+
+
+  const [fMBT, setFMBT] = useState([
+    {
+      "isFmBt": isFMBT,
+      "controlOption": "",
+      "basePrice": 1
+    }
+  ])
+
+  const addFMBT = () => {
+    setFMBT([
+      ...bassTube, {
+        "isFmBt": isFMBT,
+        "controlOption": "",
+        "basePrice": 1
+      }
+    ])
+  };
+
+  const removeFMBT = (index) => {
+    const newFMBT = [...fMBT];
+    newFMBT.splice(index, 1);
+    setFMBT(newFMBT);
+  };
+
+  const onChangeFMBT = (event, index) => {
+    const updatedFMBT = [...fMBT];
+    updatedFMBT[index] = {
+      ...updatedFMBT[index],
+      [event.target.name]: event.target.value,
+    };
+    setFMBT(updatedFMBT);
+  };
+
+
 
 
 
@@ -140,21 +733,7 @@ const AddProduct = () => {
         }
       }
 
-      const android = [{
-        isAndroid: isAndroid,
-        screenSize: screenSize,
-        processor: processor,
-        ram: ram,
-        rom: rom,
-        displaySize: displaySize,
-        wlcpaa: wlcpaa,
-        dvr: dvr,
-        camera360: camera360,
-        sim: sim,
-        opticalInput: opticalInput,
-        qled: qled,
-        warranty: warranty
-      }]
+ 
 
       const productData = {
         productName: name,
@@ -454,8 +1033,6 @@ const AddProduct = () => {
                 />
               </div>
             )}
-
-
 
           </div>
 

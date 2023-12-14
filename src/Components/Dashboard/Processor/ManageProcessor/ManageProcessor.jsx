@@ -14,12 +14,12 @@ const ManageProcessor = () => {
                 <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                   <thead className="bg-gray-50 dark:bg-gray-800">
                     <tr>
-                      <th
+                      {/* <th
                         scope="col"
                         className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                       >
                         S No.
-                      </th>
+                      </th> */}
 
                       <th
                         scope="col"
@@ -48,19 +48,19 @@ const ManageProcessor = () => {
                       ProcessorData?.map((Processor, Index) => {
                         return (
                           <tr key={Index}>
-                            <td className="px-4 py-4 text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap">
+                            {/* <td className="px-4 py-4 text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap">
                               <div className="inline-flex items-center gap-x-3">
                                 <span>{Index + 1}</span>
                               </div>
-                            </td>
+                            </td> */}
 
                             <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                              {Processor?.ProcessorName}
+                              {Processor?.processRank}
                             </td>
 
 
                             <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                              {Processor?.ProcessorName}
+                              {Processor?.processorName}
                             </td>
 
                             <td className="px-4 py-4 text-sm whitespace-nowrap">

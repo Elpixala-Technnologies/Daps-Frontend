@@ -36,15 +36,15 @@ export const updateSocketUrl = (id) => basedUrl + `/socket/update/${id}`
 export const getSocketByIdUrl = (id) => basedUrl + `/socket/get-singel/${id}`
 
 
-export const getProcessorsUrl = basedUrl + '/processors/get-all'
+export const getProcessorsUrl = basedUrl + '/processor/get-all'
 
-export const addProcessorsUrl = basedUrl + '/processors/create'
+export const addProcessorsUrl = basedUrl + '/processor/create'
 
-export const deleteProcessorsUrl = (id) => basedUrl + `/processors/delete/${id}`
+export const deleteProcessorsUrl = (id) => basedUrl + `/processor/delete/${id}`
 
-export const updateProcessorsUrl = (id) => basedUrl + `/processors/update/${id}`
+export const updateProcessorsUrl = (id) => basedUrl + `/processor/update/${id}`
 
-export const getProcessorsByIdUrl = (id) => basedUrl + `/processors/get-singel/${id}`
+export const getProcessorsByIdUrl = (id) => basedUrl + `/processor/get-singel/${id}`
 
 
 
