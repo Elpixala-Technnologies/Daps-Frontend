@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
-import {
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
-} from "@ant-design/icons";
-import useCommonApiData from '@/src/Hooks/useCommonApiData';
+import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
+import useCommonApiData from "@/src/Hooks/useCommonApiData";
 import { Layout, Menu, Button } from "antd";
 import { MdLocalOffer } from "react-icons/md";
 import Link from "next/link";
@@ -19,7 +16,7 @@ import { useRouter } from "next/router";
 const { Header, Sider, Content } = Layout;
 
 const DashboardLayout = ({ children }) => {
-  const { handleLogout } = useCommonApiData()
+  const { handleLogout } = useCommonApiData();
   const [collapsed, setCollapsed] = useState(false); // Start with the sidebar open on desktop devices
   const [sideNavVisible, setSideNavVisible] = useState(false);
   const router = useRouter();
@@ -51,8 +48,6 @@ const DashboardLayout = ({ children }) => {
     setSideNavVisible(!sideNavVisible);
   };
 
-
-
   return (
     <Layout className="bg-transparent">
       <style>{`
@@ -69,9 +64,10 @@ const DashboardLayout = ({ children }) => {
           collapsed={collapsed}
           className="text-white"
           style={{
-            position: "sticky", top: 0, height: "100vh",
-            zIndex: 999
-
+            position: "sticky",
+            top: 0,
+            height: "100vh",
+            zIndex: 999,
           }}
         >
           <Menu
@@ -79,7 +75,6 @@ const DashboardLayout = ({ children }) => {
             mode="inline"
             selectedKeys={[router.pathname]}
             defaultSelectedKeys={["1"]}
-
             className="text-white"
             style={{ height: "100%", width: "100%" }}
           >
@@ -89,14 +84,22 @@ const DashboardLayout = ({ children }) => {
             <Menu.Item key="/dashboard" icon={<FaThLarge />}>
               <Link href="/dashboard">Inventory</Link>
             </Menu.Item>
-            <Menu.Item key="/dashboard/product/add-product" icon={<FaCalendarAlt />}>
+            <Menu.Item
+              key="/dashboard/product/add-product"
+              icon={<FaCalendarAlt />}
+            >
               <Link href="/dashboard/product/add-product">Product</Link>
             </Menu.Item>
             <Menu.Item key="/dashboard/category" icon={<MdLocalOffer />}>
               <Link href="/dashboard/category">All Category</Link>
             </Menu.Item>
-            <Menu.Item key="/dashboard/popular-category/manage-popular-category" icon={<MdLocalOffer />}>
-              <Link href="/dashboard/popular-category/manage-popular-category">Popular Category</Link>
+            <Menu.Item
+              key="/dashboard/popular-category/manage-popular-category"
+              icon={<MdLocalOffer />}
+            >
+              <Link href="/dashboard/popular-category/manage-popular-category">
+                Popular Category
+              </Link>
             </Menu.Item>
             <Menu.Item key="/dashboard/copuon" icon={<FaDiceD6 />}>
               <Link href="/dashboard/copuon">Coupon</Link>
@@ -107,8 +110,13 @@ const DashboardLayout = ({ children }) => {
             <Menu.Item key="/dashboard/blog" icon={<AiOutlineIdcard />}>
               <Link href="/dashboard/blog">Blog</Link>
             </Menu.Item>
-            <Menu.Item key="/dashboard/explore-brand/add-explore-brand" icon={<AiOutlineIdcard />}>
-              <Link href="/dashboard/explore-brand/add-explore-brand">Explore Brand</Link>
+            <Menu.Item
+              key="/dashboard/explore-brand/add-explore-brand"
+              icon={<AiOutlineIdcard />}
+            >
+              <Link href="/dashboard/explore-brand/add-explore-brand">
+                Explore Brand
+              </Link>
             </Menu.Item>
             <Menu.Item key="/dashboard/blog" icon={<AiOutlineIdcard />}>
               <Link href="/dashboard/blog">Add Story</Link>
@@ -117,11 +125,27 @@ const DashboardLayout = ({ children }) => {
               <Link href="/dashboard/blog">Trending Product</Link>
             </Menu.Item>
 
+            <Menu.Item
+              key="/dashboard/brand/add-brand"
+              icon={<AiOutlineIdcard />}
+            >
+              <Link href="/dashboard/brand/add-brand">Brand</Link>
+            </Menu.Item>
+
+            <Menu.Item key="/dashboard/car/add-car" icon={<AiOutlineIdcard />}>
+              <Link href="/dashboard/car/add-car">Car</Link>
+            </Menu.Item>
+
+            <Menu.Item key="/dashboard/processors/add-processors" icon={<AiOutlineIdcard />}>
+              <Link href="/dashboard/processors/add-processors">Processors</Link>
+            </Menu.Item>
+
+            <Menu.Item key="/dashboard/sockets/add-sockets" icon={<AiOutlineIdcard />}>
+              <Link href="/dashboard/sockets/add-sockets">Sockets</Link>
+            </Menu.Item>
 
             <Menu.Item key="8" icon={<FaPowerOff />}>
-              <button
-                onClick={() => handleLogout()}
-              >Logout</button>
+              <button onClick={() => handleLogout()}>Logout</button>
             </Menu.Item>
           </Menu>
         </Sider>
@@ -133,7 +157,7 @@ const DashboardLayout = ({ children }) => {
             padding: 0,
             position: "sticky",
             top: 0,
-            zIndex: 999
+            zIndex: 999,
           }}
         >
           <Button
