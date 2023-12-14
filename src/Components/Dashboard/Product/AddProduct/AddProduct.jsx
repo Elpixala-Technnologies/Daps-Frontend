@@ -85,39 +85,6 @@ const AddProduct = () => {
   };
 
   // ============== android
-  const handleAndroidCheckboxChange = (e) => {
-    setIsAndroid(e.target.checked);
-    setShowAndroidDetails(e.target.checked);
-  };
-
-  const [android, setAndroid] = ([{
-    isAndroid: isAndroid,
-    screenSize: "",
-    variant: variantsAndroid
-  }])
-
-  const addAndroid = () => {
-    setAndroid([...android, {
-      isAndroid: false,
-      screenSize: "",
-      variant: variantsAndroid
-    }])
-  }
-
-  const removeAndroid = (index) => {
-    const newAndroid = [...vandroid];
-    newVariants.splice(index, 1);
-    setAndroid(newVariants);
-  };
-
-  const onChangeAndroid = (event, index) => {
-    const updatedAndroid = [...android];
-    updatedAndroid[index] = {
-      ...updatedAndroid[index],
-      [event.target.name]: event.target.value,
-    };
-    setAndroid(updatedAndroid);
-  };
 
   const [variantsAndroid, setVariantsAndroid] = useState([{
     processorName: "",
@@ -168,8 +135,76 @@ const AddProduct = () => {
     setVariantsAndroid(updatedVariants);
   };
 
+  const handleAndroidCheckboxChange = (e) => {
+    setIsAndroid(e.target.checked);
+    setShowAndroidDetails(e.target.checked);
+  };
+
+  const [android, setAndroid] = ([{
+    isAndroid: isAndroid,
+    screenSize: "",
+    variant:variantsAndroid
+  }])
+
+  const addAndroid = () => {
+    setAndroid([...android, {
+      isAndroid: false,
+      screenSize: "",
+      variant: variantsAndroid
+    }])
+  }
+
+  const removeAndroid = (index) => {
+    const newAndroid = [...vandroid];
+    newVariants.splice(index, 1);
+    setAndroid(newVariants);
+  };
+
+  const onChangeAndroid = (event, index) => {
+    const updatedAndroid = [...android];
+    updatedAndroid[index] = {
+      ...updatedAndroid[index],
+      [event.target.name]: event.target.value,
+    };
+    setAndroid(updatedAndroid);
+  };
+
+ 
+
 
   // =================== led
+
+  const [ledVariant, setLedVariant] = useState([
+    {
+      wattage: "",
+      socketsSupported: [],
+      basePrice: 0,
+    }
+  ])
+
+  const addLedVariant = () => {
+    setLedVariant([...ledVariant, {
+      wattage: "",
+      socketsSupported: [],
+      basePrice: 0,
+    }]);
+  };
+
+  const removeLedVariant = (index) => {
+    const newVariants = [...ledVariant];
+    newVariants.splice(index, 1);
+    setLedVariant(newVariants);
+  };
+
+  const onChangeLedVariant = (event, index) => {
+    const updatedVariants = [...ledVariant];
+    updatedVariants[index] = {
+      ...updatedVariants[index],
+      [event.target.name]: event.target.value,
+    };
+    setLedVariant(updatedVariants);
+  };
+
   const [isLed, setIsLed] = useState(false)
 
   const handleLedCheckboxChange = (e) => {
@@ -207,38 +242,42 @@ const AddProduct = () => {
     setLed(updatedLed);
   };
 
-  const [ledVariant, setLedVariant] = useState([
+
+  // ======== amplifiers
+
+
+  const [amplifiersVariant, setAmplifiersVariant] = useState([
     {
+      totalChannels: "",
       wattage: "",
-      socketsSupported: [],
       basePrice: 0,
     }
   ])
 
-  const addLedVariant = () => {
-    setLedVariant([...ledVariant, {
+  const addAmplifierVariant = () => {
+    setAmplifiersVariant([...amplifiersVariant, {
+      totalChannels: "",
       wattage: "",
-      socketsSupported: [],
       basePrice: 0,
     }]);
   };
 
-  const removeLedVariant = (index) => {
-    const newVariants = [...ledVariant];
+  const removeAmplifierVariant = (index) => {
+    const newVariants = [...amplifiersVariant];
     newVariants.splice(index, 1);
-    setLedVariant(newVariants);
+    setAmplifiersVariant(newVariants);
   };
 
-  const onChangeLedVariant = (event, index) => {
-    const updatedVariants = [...ledVariant];
+  const onChangeAmplifierVariant = (event, index) => {
+    const updatedVariants = [...amplifiersVariant];
     updatedVariants[index] = {
       ...updatedVariants[index],
       [event.target.name]: event.target.value,
     };
-    setLedVariant(updatedVariants);
+    setAmplifiersVariant(updatedVariants);
   };
 
-  // ======== amplifiers
+
 
   const [isAmplifiers, setIsAmplifiers] = useState(false)
 
@@ -277,39 +316,39 @@ const AddProduct = () => {
     setAmplifiers(updatedAmplifiers);
   };
 
-  const [amplifiersVariant, setAmplifiersVariant] = useState([
+  // ========== HID
+
+  const [HIDVariant, setHIDVariant] = useState([
     {
-      totalChannels: "",
       wattage: "",
+      lightColor: "",
       basePrice: 0,
     }
   ])
 
-  const addAmplifierVariant = () => {
-    setAmplifiersVariant([...amplifiersVariant, {
-      totalChannels: "",
+  const addHIDVariant = () => {
+    setHIDVariant([...HIDVariant, {
       wattage: "",
+      lightColor: "",
       basePrice: 0,
     }]);
   };
 
-  const removeAmplifierVariant = (index) => {
-    const newVariants = [...amplifiersVariant];
+  const removeHIDVariant = (index) => {
+    const newVariants = [...HIDVariant];
     newVariants.splice(index, 1);
-    setAmplifiersVariant(newVariants);
+    setHIDVariant(newVariants);
   };
 
-  const onChangeAmplifierVariant = (event, index) => {
-    const updatedVariants = [...amplifiersVariant];
+  const onChangeHIDVariant = (event, index) => {
+    const updatedVariants = [...HIDVariant];
     updatedVariants[index] = {
       ...updatedVariants[index],
       [event.target.name]: event.target.value,
     };
-    setAmplifiersVariant(updatedVariants);
+    setHIDVariant(updatedVariants);
   };
 
-
-  // ========== HID
   const [isHID, setIsHID] = useState(false)
 
   const handleHIDCheckboxChange = (e) => {
@@ -347,76 +386,8 @@ const AddProduct = () => {
     setHID(updatedHID);
   };
 
-  const [HIDVariant, setHIDVariant] = useState([
-    {
-      wattage: "",
-      lightColor: "",
-      basePrice: 0,
-    }
-  ])
-
-  const addHIDVariant = () => {
-    setHIDVariant([...HIDVariant, {
-      wattage: "",
-      lightColor: "",
-      basePrice: 0,
-    }]);
-  };
-
-  const removeHIDVariant = (index) => {
-    const newVariants = [...HIDVariant];
-    newVariants.splice(index, 1);
-    setHIDVariant(newVariants);
-  };
-
-  const onChangeHIDVariant = (event, index) => {
-    const updatedVariants = [...HIDVariant];
-    updatedVariants[index] = {
-      ...updatedVariants[index],
-      [event.target.name]: event.target.value,
-    };
-    setHIDVariant(updatedVariants);
-  };
 
   // ======= camera
-  const [isCamera, setIsCamera] = useState(false)
-
-  const handleCameraCheckboxChange = (e) => {
-    setIsCamera(e.target.checked);
-  };
-
-
-  const [camera, setCamera] = useState([
-    {
-      isCamera: isCamera,
-      variant: cameraVariant,
-    }
-  ])
-
-  const addCamera = () => {
-    setCamera([
-      ...camera, {
-        variant: cameraVariant,
-      }
-    ])
-  };
-
-  const removeCamera = (index) => {
-    const newCamera = [...camera];
-    newCamera.splice(index, 1);
-    setCamera(newCamera);
-  };
-
-  const onChangeCamera = (event, index) => {
-    const updatedCamera = [...camera];
-    updatedCamera[index] = {
-      ...updatedCamera[index],
-      [event.target.name]: event.target.value,
-    };
-    setCamera(updatedCamera);
-  };
-
-
   const [cameraVariant, setCameraVariant] = useState([
     {
       cameraQuality: "",
@@ -465,6 +436,46 @@ const AddProduct = () => {
     };
     setCameraVariant(updatedVariants);
   };
+
+  const [isCamera, setIsCamera] = useState(false)
+
+  const handleCameraCheckboxChange = (e) => {
+    setIsCamera(e.target.checked);
+  };
+
+
+  const [camera, setCamera] = useState([
+    {
+      isCamera: isCamera,
+      variant: cameraVariant,
+    }
+  ])
+
+  const addCamera = () => {
+    setCamera([
+      ...camera, {
+        variant: cameraVariant,
+      }
+    ])
+  };
+
+  const removeCamera = (index) => {
+    const newCamera = [...camera];
+    newCamera.splice(index, 1);
+    setCamera(newCamera);
+  };
+
+  const onChangeCamera = (event, index) => {
+    const updatedCamera = [...camera];
+    updatedCamera[index] = {
+      ...updatedCamera[index],
+      [event.target.name]: event.target.value,
+    };
+    setCamera(updatedCamera);
+  };
+
+
+
 
   // =============dampingSheets
 
@@ -808,6 +819,7 @@ const AddProduct = () => {
   };
 
 
+  
 
   return (
     <section className="my-4">
@@ -842,6 +854,30 @@ const AddProduct = () => {
               </option>
             ))}
           </select>
+
+          <select
+        name="productCategory"
+        id="productCategory"
+        className="border-2 border-gray-300 rounded-md p-2"
+        onChange={(e) => {
+          const selectedOptions = Array.from(e.target.selectedOptions).map(option => option.value);
+          setSelectedCategories(selectedOptions);
+        }}
+        multiple
+        size={categoryData.length + 1} // Set size to the number of options plus one for the "Category" option
+      >
+        <option className='my-2'>Category</option>
+        <hr className='my-2 p-4' />
+        {categoryData?.map((category) => (
+          <option
+            key={category?._id}
+            value={category?.name}
+            className="border-2 border-gray-300 rounded-md p-4 my-2"
+          >
+            {category?.name}
+          </option>
+        ))}
+      </select>
 
           <Input
             placeholder="Discount Percentage"
