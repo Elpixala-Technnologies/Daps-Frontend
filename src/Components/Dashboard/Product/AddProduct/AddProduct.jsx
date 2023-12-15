@@ -19,7 +19,7 @@ const AddProduct = () => {
   const { categoryData, } = useProducts();
   const { ProcessorData } = useProcessor()
   const { CarData } = useCar()
-  const {SocketData} =useSocket()
+  const { SocketData } = useSocket()
   const [category, setCategory] = useState("");
   const [name, setName] = useState("");
   const [discountPercentage, setDiscountPercentage] = useState("");
@@ -178,17 +178,17 @@ const AddProduct = () => {
       basePrice: 0,
     }
   ]);
-  
+
   const addLedVariant = () => {
     setLedVariant([...ledVariant, { wattage: "", socketsSupported: [], basePrice: 0 }]);
   };
-  
+
   const removeLedVariant = (index) => {
     const newVariants = [...ledVariant];
     newVariants.splice(index, 1);
     setLedVariant(newVariants);
   };
-  
+
   const onChangeLedVariant = (event, index) => {
     const updatedVariants = [...ledVariant];
     updatedVariants[index] = {
@@ -197,20 +197,17 @@ const AddProduct = () => {
     };
     setLedVariant(updatedVariants);
   };
-  
+
   const [isLed, setIsLed] = useState(false);
-  
-  const handleLedCheckboxChange = (e) => {
-    setIsLed(e.target.checked);
-  };
-  
+
+
   const [led, setLed] = useState(
     {
       isLed: isLed,
       variant: ledVariant,
     },
   );
-  
+
 
   // ======== amplifiers
   const [amplifiersVariant, setAmplifiersVariant] = useState([
@@ -220,17 +217,17 @@ const AddProduct = () => {
       basePrice: 0,
     }
   ]);
-  
+
   const addAmplifierVariant = () => {
     setAmplifiersVariant([...amplifiersVariant, { totalChannels: "", wattage: "", basePrice: 0 }]);
   };
-  
+
   const removeAmplifierVariant = (index) => {
     const newVariants = [...amplifiersVariant];
     newVariants.splice(index, 1);
     setAmplifiersVariant(newVariants);
   };
-  
+
   const onChangeAmplifierVariant = (event, index) => {
     const updatedVariants = [...amplifiersVariant];
     updatedVariants[index] = {
@@ -239,20 +236,20 @@ const AddProduct = () => {
     };
     setAmplifiersVariant(updatedVariants);
   };
-  
+
   const [isAmplifiers, setIsAmplifiers] = useState(false);
-  
+
   const handleAmplifiersCheckboxChange = (e) => {
     setIsAmplifiers(e.target.checked);
   };
-  
+
   const [amplifiers, setAmplifiers] = useState(
     {
       isAmplifiers: isAmplifiers,
       variant: amplifiersVariant,
     }
   );
-  
+
   // ========== HID
 
   const [HIDVariant, setHIDVariant] = useState([
@@ -288,132 +285,69 @@ const AddProduct = () => {
 
   const [isHID, setIsHID] = useState(false)
 
-  const handleHIDCheckboxChange = (e) => {
-    setIsHID(e.target.checked);
-  };
 
-  const [HID, setHID] = useState([
+  const [HID, setHID] = useState(
     {
       isHID: isHID,
       variant: HIDVariant,
     }
-  ])
-
-  const addHID = () => {
-    setHID([
-      ...HID, {
-        isHID: isHID,
-        variant: HIDVariant,
-      }
-    ])
-  };
-
-  const removeHID = (index) => {
-    const newHID = [...HID];
-    newHID.splice(index, 1);
-    setHID(newHID);
-  };
-
-  const onChangeHID = (event, index) => {
-    const updatedHID = [...HID];
-    updatedHID[index] = {
-      ...updatedHID[index],
-      [event.target.name]: event.target.value,
-    };
-    setHID(updatedHID);
-  };
+  )
 
 
   // ======= camera
+  const [areThereGuidelines, setAreThereGuidelines] = useState(false);
+
   const [cameraVariant, setCameraVariant] = useState([
     {
       cameraQuality: "",
-      areThereGuidelines: false,
-      guidelinesType: {
-        Static: false,
-        Dynamic: false,
-      },
-      fieldOfViewType: {
-        Wide: false,
-        UltraWide: false,
-      },
+      areThereGuidelines: areThereGuidelines,
+      guidelinesType: "",
+      fieldOfViewType: "",
       processorsSupported: [],
       basePrice: 0,
-    }
-  ])
-
+    },
+  ]);
+  
   const addCameraVariant = () => {
-    setCameraVariant([...cameraVariant, {
-      cameraQuality: "",
-      areThereGuidelines: false,
-      guidelinesType: {
-        Static: false,
-        Dynamic: false,
+    setCameraVariant((prevVariants) => [
+      ...prevVariants,
+      {
+        cameraQuality: "",
+        areThereGuidelines: false,
+        guidelinesType: "",
+        fieldOfViewType: "",
+        processorsSupported: [],
+        basePrice: 0,
       },
-      fieldOfViewType: {
-        Wide: false,
-        UltraWide: false,
-      },
-      processorsSupported: [],
-      basePrice: 0,
-    }]);
+    ]);
   };
-
+  
   const removeCameraVariant = (index) => {
-    const newVariants = [...cameraVariant];
-    newVariants.splice(index, 1);
-    setCameraVariant(newVariants);
+    setCameraVariant((prevVariants) => {
+      const newVariants = [...prevVariants];
+      newVariants.splice(index, 1);
+      return newVariants;
+    });
   };
-
+  
   const onChangeCameraVariant = (event, index) => {
-    const updatedVariants = [...cameraVariant];
-    updatedVariants[index] = {
-      ...updatedVariants[index],
-      [event.target.name]: event.target.value,
-    };
-    setCameraVariant(updatedVariants);
+    setCameraVariant((prevVariants) => {
+      const updatedVariants = [...prevVariants];
+      updatedVariants[index] = {
+        ...updatedVariants[index],
+        [event.target.name]: event.target.value,
+      };
+      return updatedVariants;
+    });
   };
-
-  const [isCamera, setIsCamera] = useState(false)
-
-  const handleCameraCheckboxChange = (e) => {
-    setIsCamera(e.target.checked);
-  };
-
-
-  const [camera, setCamera] = useState([
-    {
-      isCamera: isCamera,
-      variant: cameraVariant,
-    }
-  ])
-
-  const addCamera = () => {
-    setCamera([
-      ...camera, {
-        variant: cameraVariant,
-      }
-    ])
-  };
-
-  const removeCamera = (index) => {
-    const newCamera = [...camera];
-    newCamera.splice(index, 1);
-    setCamera(newCamera);
-  };
-
-  const onChangeCamera = (event, index) => {
-    const updatedCamera = [...camera];
-    updatedCamera[index] = {
-      ...updatedCamera[index],
-      [event.target.name]: event.target.value,
-    };
-    setCamera(updatedCamera);
-  };
-
-
-
-
+  
+  const [isCamera, setIsCamera] = useState(false);
+  
+  const [camera, setCamera] = useState({
+    isCamera: isCamera,
+    variant: cameraVariant,
+  });
+  
   // =============dampingSheets
 
   const [isDampingSheets, setIsDampingSheets] = useState(false)
@@ -500,30 +434,29 @@ const AddProduct = () => {
   };
 
   // ======== speakers
-
-  const [isSpeakers, setIsSpeakers] = useState(false)
+  const [isSpeakers, setIsSpeakers] = useState(false);
 
   const handleSpeakersCheckboxChange = (e) => {
     setIsSpeakers(e.target.checked);
   };
 
-
   const [speakers, setSpeakers] = useState([
     {
-      "isSpeakers": isSpeakers,
-      "speakerSize": "",
-      "basePrice": 1
-    }
-  ])
+      isSpeakers: isSpeakers,
+      speakerSize: "",
+      basePrice: 1,
+    },
+  ]);
 
   const addSpeakers = () => {
-    setIsSpeakers([
-      ...speakers, {
-        "isSpeakers": isSpeakers,
-        "speakerSize": "",
-        "basePrice": 1
-      }
-    ])
+    setSpeakers([
+      ...speakers,
+      {
+        isSpeakers: isSpeakers,
+        speakerSize: "",
+        basePrice: 1,
+      },
+    ]);
   };
 
   const removeSpeakers = (index) => {
@@ -540,6 +473,7 @@ const AddProduct = () => {
     };
     setSpeakers(updatedSpeakers);
   };
+
 
   // ======== bassTube 
 
@@ -1195,76 +1129,76 @@ const AddProduct = () => {
               <input
                 type="checkbox"
                 checked={isLed}
-                onChange={(e)=> setIsLed(e.target.checked)}
+                onChange={(e) => setIsLed(e.target.checked)}
                 className="border mx-2 my-4"
               />
             </label>
             {
               isLed && (
                 <>
-                <div className='flex flex-col gap-4 border p-2 rounded'>
-                {
-                  led?.variant?.map((ledData, index) => {
-                    return (
-                      <section
-                        key={index}
-                      >
-                        <div className="flex flex-col gap-4 border p-2 rounded">
-                           <div className='border my-4 rounded'>
-                              <input
-                                type="text"
-                                name="wattage"
-                                onChange={(event) => onChangeAndroidVariant(event, index)}
-                                value={ledData.wattage}
-                                placeholder="Wattage"
-                                className="input input-bordered w-full  p-2 rounded"
-                              />
-                            </div>
+                  <div className='flex flex-col gap-4 border p-2 rounded'>
+                    {
+                      led?.variant?.map((ledData, index) => {
+                        return (
+                          <section
+                            key={index}
+                          >
+                            <div className="flex flex-col gap-4 border p-2 rounded">
+                              <div className='border my-4 rounded'>
+                                <input
+                                  type="text"
+                                  name="wattage"
+                                  onChange={(event) => onChangeAndroidVariant(event, index)}
+                                  value={ledData.wattage}
+                                  placeholder="Wattage"
+                                  className="input input-bordered w-full  p-2 rounded"
+                                />
+                              </div>
 
-                            <Select
-                              mode="multiple"
-                              allowClear
-                              style={{
-                                width: '100%',
-                              }}
-                              placeholder="Select Sockets"
-                              onChange={(values) => onChangeLedVariant({ target: { name: 'socketsSupported', value: values } }, index)}
-                              value={ledData.socketsSupported}
-                              options={SocketData?.map((socket) => {
-                                return (
-                                  { value: socket?._id, label: socket?.socketName }
-                                )
-                              })}
-                            />
-
-                          <div className='border my-4 rounded'>
-                              <input
-                                type="number"
-                                name="basePrice"
-                                onChange={(event) => onChangeLedVariant(event, index)}
-                                value={ledData?.basePrice}
-                                placeholder="Base Price"
-                                className="input input-bordered w-full p-2 rounded"
+                              <Select
+                                mode="multiple"
+                                allowClear
+                                style={{
+                                  width: '100%',
+                                }}
+                                placeholder="Select Sockets"
+                                onChange={(values) => onChangeLedVariant({ target: { name: 'socketsSupported', value: values } }, index)}
+                                value={ledData.socketsSupported}
+                                options={SocketData?.map((socket) => {
+                                  return (
+                                    { value: socket?._id, label: socket?.socketName }
+                                  )
+                                })}
                               />
+
+                              <div className='border my-4 rounded'>
+                                <input
+                                  type="number"
+                                  name="basePrice"
+                                  onChange={(event) => onChangeLedVariant(event, index)}
+                                  value={ledData?.basePrice}
+                                  placeholder="Base Price"
+                                  className="input input-bordered w-full p-2 rounded"
+                                />
+                              </div>
+                              <div className='my-4'>
+                                <button
+                                  className="common-btn flex items-center gap-2"
+                                  onClick={() => removeLedVariant(index)}
+                                >
+                                  <FaTrashAlt className="text-2xl mr-2"></FaTrashAlt>
+                                  Remove Variant
+                                </button>
+                              </div>
                             </div>
-                          <div className='my-4'>
-                              <button
-                                className="common-btn flex items-center gap-2"
-                                onClick={() => removeLedVariant(index)}
-                              >
-                                <FaTrashAlt className="text-2xl mr-2"></FaTrashAlt>
-                                Remove Variant
-                              </button>
-                            </div>
-                        </div>
-                      </section>
-                    )
-                  })
-                }
-                <button className="common-btn" onClick={() => addLedVariant()}>
-                  Add Led Variant
-                </button>
-              </div>
+                          </section>
+                        )
+                      })
+                    }
+                    <button className="common-btn" onClick={() => addLedVariant()}>
+                      Add Led Variant
+                    </button>
+                  </div>
                 </>
               )
 
@@ -1272,13 +1206,13 @@ const AddProduct = () => {
 
           </div>
 
-          <div> 
-          <label className='flex items-center'>
-               Is Amplifiers
+          <div>
+            <label className='flex items-center'>
+              Is Amplifiers
               <input
                 type="checkbox"
                 checked={isAmplifiers}
-                onChange={(e)=> setIsAmplifiers(e.target.checked)}
+                onChange={(e) => setIsAmplifiers(e.target.checked)}
                 className="border mx-2 my-4"
               />
             </label>
@@ -1286,66 +1220,66 @@ const AddProduct = () => {
             {
               isAmplifiers && (
                 <>
-                <div className='flex flex-col gap-4 border p-2 rounded'>
-                {
-                  amplifiers?.variant?.map((amplifiersData, index) => {
-                    return (
-                      <section
-                        key={index}
-                      >
-                        <div className="flex flex-col gap-4 border p-2 rounded">
-                           <div className='border my-4 rounded'>
-                              <input
-                                type="text"
-                                name="Total Channels"
-                                onChange={(event) => onChangeAmplifierVariant(event, index)}
-                                value={amplifiersData.totalChannels}
-                                placeholder="TotalChannels"
-                                className="input input-bordered w-full  p-2 rounded"
-                              />
-                            </div>
+                  <div className='flex flex-col gap-4 border p-2 rounded'>
+                    {
+                      amplifiers?.variant?.map((amplifiersData, index) => {
+                        return (
+                          <section
+                            key={index}
+                          >
+                            <div className="flex flex-col gap-4 border p-2 rounded">
+                              <div className='border my-4 rounded'>
+                                <input
+                                  type="text"
+                                  name="Total Channels"
+                                  onChange={(event) => onChangeAmplifierVariant(event, index)}
+                                  value={amplifiersData.totalChannels}
+                                  placeholder="TotalChannels"
+                                  className="input input-bordered w-full  p-2 rounded"
+                                />
+                              </div>
 
 
-                            <div className='border my-4 rounded'>
-                              <input
-                                type="text"
-                                name="Wattage"
-                                onChange={(event) => onChangeAmplifierVariant(event, index)}
-                                value={amplifiersData.wattage}
-                                placeholder="Wattage"
-                                className="input input-bordered w-full  p-2 rounded"
-                              />
-                            </div>
+                              <div className='border my-4 rounded'>
+                                <input
+                                  type="text"
+                                  name="Wattage"
+                                  onChange={(event) => onChangeAmplifierVariant(event, index)}
+                                  value={amplifiersData.wattage}
+                                  placeholder="Wattage"
+                                  className="input input-bordered w-full  p-2 rounded"
+                                />
+                              </div>
 
-                            
-                          <div className='border my-4 rounded'>
-                              <input
-                                type="number"
-                                name="basePrice"
-                                onChange={(event) => onChangeAmplifierVariant(event, index)}
-                                value={amplifiersData?.basePrice}
-                                placeholder="Base Price"
-                                className="input input-bordered w-full p-2 rounded"
-                              />
+
+                              <div className='border my-4 rounded'>
+                                <input
+                                  type="number"
+                                  name="basePrice"
+                                  onChange={(event) => onChangeAmplifierVariant(event, index)}
+                                  value={amplifiersData?.basePrice}
+                                  placeholder="Base Price"
+                                  className="input input-bordered w-full p-2 rounded"
+                                />
+                              </div>
+                              <div className='my-4'>
+                                <button
+                                  className="common-btn flex items-center gap-2"
+                                  onClick={() => removeAmplifierVariant(index)}
+                                >
+                                  <FaTrashAlt className="text-2xl mr-2"></FaTrashAlt>
+                                  Remove Variant
+                                </button>
+                              </div>
                             </div>
-                          <div className='my-4'>
-                              <button
-                                className="common-btn flex items-center gap-2"
-                                onClick={() => removeAmplifierVariant(index)}
-                              >
-                                <FaTrashAlt className="text-2xl mr-2"></FaTrashAlt>
-                                Remove Variant
-                              </button>
-                            </div>
-                        </div>
-                      </section>
-                    )
-                  })
-                }
-                <button className="common-btn" onClick={() => addAmplifierVariant()}>
-                  Add  Variant
-                </button>
-              </div>
+                          </section>
+                        )
+                      })
+                    }
+                    <button className="common-btn" onClick={() => addAmplifierVariant()}>
+                      Add  Variant
+                    </button>
+                  </div>
                 </>
               )
             }
@@ -1353,6 +1287,580 @@ const AddProduct = () => {
 
           {/* =============== */}
 
+          <div>
+            <label className='flex items-center'>
+              Is HID
+              <input
+                type="checkbox"
+                checked={isHID}
+                onChange={(e) => setIsHID(e.target.checked)}
+                className="border mx-2 my-4"
+              />
+            </label>
+            {
+              isHID && (
+                <>
+                  <div className='flex flex-col gap-4 border p-2 rounded'>
+                    {
+                      HID?.variant?.map((HIDData, index) => {
+                        return (
+                          <section
+                            key={index}
+                          >
+                            <div className="flex flex-col gap-4 border p-2 rounded">
+                              <div className='border my-4 rounded'>
+                                <input
+                                  type="text"
+                                  name="Light Color"
+                                  onChange={(event) => onChangeHIDVariant(event, index)}
+                                  value={HIDData.lightColor}
+                                  placeholder="Light Color"
+                                  className="input input-bordered w-full  p-2 rounded"
+                                />
+                              </div>
+
+                              <div className='border my-4 rounded'>
+                                <input
+                                  type="text"
+                                  name="Wattage"
+                                  onChange={(event) => onChangeHIDVariant(event, index)}
+                                  value={HIDData.wattage}
+                                  placeholder="Wattage"
+                                  className="input input-bordered w-full  p-2 rounded"
+                                />
+                              </div>
+
+
+                              <div className='border my-4 rounded'>
+                                <input
+                                  type="number"
+                                  name="basePrice"
+                                  onChange={(event) => onChangeHIDVariant(event, index)}
+                                  value={HIDData?.basePrice}
+                                  placeholder="Base Price"
+                                  className="input input-bordered w-full p-2 rounded"
+                                />
+                              </div>
+                              <div className='my-4'>
+                                <button
+                                  className="common-btn flex items-center gap-2"
+                                  onClick={() => removeHIDVariant(index)}
+                                >
+                                  <FaTrashAlt className="text-2xl mr-2"></FaTrashAlt>
+                                  Remove Variant
+                                </button>
+                              </div>
+                            </div>
+                          </section>
+                        )
+                      })
+                    }
+                    <button className="common-btn" onClick={() => addHIDVariant()}>
+                      Add  Variant
+                    </button>
+                  </div>
+                </>
+              )
+            }
+          </div>
+
+
+          <div>
+            <label className='flex items-center'>
+              Is Camera
+              <input
+                type="checkbox"
+                checked={isCamera}
+                onChange={(e) => setIsCamera(e.target.checked)}
+                className="border mx-2 my-4"
+              />
+            </label>
+
+            {
+              isCamera && (
+                <>
+                  <div className='flex flex-col gap-4 border p-2 rounded'>
+                    {
+                      camera?.variant?.map((cameraData, index) => {
+                        return (
+                          <section
+                            key={index}
+                          >
+                            <div className="flex flex-col gap-4 border p-2 rounded">
+                              <div className='border my-4 rounded'>
+                                <input
+                                  type="text"
+                                  name="Camera Quality"
+                                  onChange={(event) => onChangeCameraVariant(event, index)}
+                                  value={cameraData.cameraQuality}
+                                  placeholder="Camera Quality"
+                                  className="input input-bordered w-full  p-2 rounded"
+                                />
+                              </div>
+
+                              <label className='flex items-center'>
+                                Are There Guidelines
+                                <input
+                                  type="checkbox"
+                                  checked={areThereGuidelines}
+                                  onChange={(e) => setAreThereGuidelines(e.target.checked)}
+                                  className="border mx-2 my-4"
+                                />
+                              </label>
+
+                              {
+                                areThereGuidelines && (
+                                  <select
+                                    name="guidelinesType"
+                                    id="guidelinesType"
+                                    className="border-2 my-2 border-gray-300 rounded-md p-2 w-full"
+                                    onChange={(event) => onChangeCameraVariant(event, index)}
+                                    value={cameraData?.guidelinesType}
+                                  >
+                                    <option className='my-2'>Select Guidelines</option>
+                                    <option className='my-2'
+                                      value={"Static"}
+                                    >
+                                      Static
+                                    </option>
+                                    <option className='my-2'
+                                      value={"Dynamic"}
+                                    >
+                                      Dynamic
+                                    </option>
+                                  </select>
+                                )
+                              }
+
+                              <select
+                                name="fieldOfViewType"
+                                id="fieldOfViewType"
+                                className="border-2 my-2 border-gray-300 rounded-md p-2 w-full"
+                                onChange={(event) => onChangeCameraVariant(event, index)}
+                                value={cameraData?.fieldOfViewType}
+                              >
+                                <option className='my-2'>Select Field Of View Type</option>
+                                <option className='my-2'
+                                  value={"Wide"}
+                                >
+                                  Wide
+                                </option>
+                                <option className='my-2'
+                                  value={"UltraWide"}
+                                >
+                                  UltraWide
+                                </option>
+                              </select>
+
+                              <Select
+                                mode="multiple"
+                                allowClear
+                                style={{
+                                  width: '100%',
+                                }}
+                                placeholder="Select processor"
+                                onChange={(values) => onChangeCameraVariant({ target: { name: 'processorsSupported', value: values } }, index)}
+                                value={cameraData.processorsSupported}
+                                options={ProcessorData?.map((processor) => {
+                                  return (
+                                    { value: processor?._id, label: processor?.processorName }
+                                  )
+                                })}
+                              />
+
+
+                              <div className='border my-4 rounded'>
+                                <input
+                                  type="number"
+                                  name="basePrice"
+                                  onChange={(event) => onChangeCameraVariant(event, index)}
+                                  value={cameraData?.basePrice}
+                                  placeholder="Base Price"
+                                  className="input input-bordered w-full p-2 rounded"
+                                />
+                              </div>
+
+
+                              <div className='my-4'>
+                                <button
+                                  className="common-btn flex items-center gap-2"
+                                  onClick={() => removeCameraVariant(index)}
+                                >
+                                  <FaTrashAlt className="text-2xl mr-2"></FaTrashAlt>
+                                  Remove Variant
+                                </button>
+                              </div>
+                            </div>
+                          </section>
+                        )
+                      })
+                    }
+                    <button className="common-btn" onClick={() => addCameraVariant()}>
+                      Add Variant
+                    </button>
+                  </div>
+                </>
+              )
+            }
+          </div>
+
+
+          <div>
+            <label className='flex items-center'>
+              Is DampingSheets
+              <input
+                type="checkbox"
+                checked={isDampingSheets}
+                onChange={(e) => setIsDampingSheets(e.target.checked)}
+                className="border mx-2 my-4"
+              />
+            </label>
+
+            {
+              isDampingSheets && (
+                <>
+                  <div className='flex flex-col gap-4 border p-2 rounded'>
+                    {
+                      dampingSheets?.map((dampingSheetsData, index) => {
+                        return (
+                          <section
+                            key={index}
+                          >
+                            <div className="flex flex-col gap-4 border p-2 rounded">
+                              <div className='border my-4 rounded'>
+                                <input
+                                  type="text"
+                                  name="thickness"
+                                  onChange={(event) => onChangeDamping(event, index)}
+                                  value={dampingSheetsData.thickness}
+                                  placeholder="Thickness"
+                                  className="input input-bordered w-full  p-2 rounded"
+                                />
+                              </div>
+
+                              <div className='border my-4 rounded'>
+                                <input
+                                  type="text"
+                                  name="sheetsInOneBox"
+                                  onChange={(event) => onChangeDamping(event, index)}
+                                  value={dampingSheetsData.sheetsInOneBox}
+                                  placeholder="Sheets In One Box"
+                                  className="input input-bordered w-full  p-2 rounded"
+                                />
+                              </div>
+
+                              <div className='border my-4 rounded'>
+                                <input
+                                  type="number"
+                                  name="basePrice"
+                                  onChange={(event) => onChangeDamping(event, index)}
+                                  value={dampingSheetsData?.basePrice}
+                                  placeholder="Base Price"
+                                  className="input input-bordered w-full p-2 rounded"
+                                />
+                              </div>
+
+
+                              <div className='my-4'>
+                                <button
+                                  className="common-btn flex items-center gap-2"
+                                  onClick={() => removeDamping(index)}
+                                >
+                                  <FaTrashAlt className="text-2xl mr-2"></FaTrashAlt>
+                                  Remove Damping
+                                </button>
+                              </div>
+                            </div>
+                          </section>
+                        )
+                      })
+                    }
+                    <button className="common-btn" onClick={() => addDamping()}>
+                      Add  Damping
+                    </button>
+                  </div>
+                </>
+              )
+            }
+          </div>
+
+          <div>
+            <label className='flex items-center'>
+              Is Chargers
+              <input
+                type="checkbox"
+                checked={isChargers}
+                onChange={(e) => setIsChargers(e.target.checked)}
+                className="border mx-2 my-4"
+              />
+            </label>
+
+            {
+              isChargers && (
+                <>
+                  <div className='flex flex-col gap-4 border p-2 rounded'>
+                    {
+                      chargers?.map((chargersData, index) => {
+                        return (
+                          <section
+                            key={index}
+                          >
+                            <div className="flex flex-col gap-4 border p-2 rounded">
+                              <div className='border my-4 rounded'>
+                                <input
+                                  type="text"
+                                  name="wattage"
+                                  onChange={(event) => onChangeChargers(event, index)}
+                                  value={chargersData.wattage}
+                                  placeholder="Wattage"
+                                  className="input input-bordered w-full  p-2 rounded"
+                                />
+                              </div>
+
+                              <div className='border my-4 rounded'>
+                                <input
+                                  type="number"
+                                  name="basePrice"
+                                  onChange={(event) => onChangeChargers(event, index)}
+                                  value={chargersData?.basePrice}
+                                  placeholder="Base Price"
+                                  className="input input-bordered w-full p-2 rounded"
+                                />
+                              </div>
+
+
+                              <div className='my-4'>
+                                <button
+                                  className="common-btn flex items-center gap-2"
+                                  onClick={() => removeChargers(index)}
+                                >
+                                  <FaTrashAlt className="text-2xl mr-2"></FaTrashAlt>
+                                  Remove Chargers
+                                </button>
+                              </div>
+                            </div>
+                          </section>
+                        )
+                      })
+                    }
+                    <button className="common-btn" onClick={() => addChargers()}>
+                      Add Chargers
+                    </button>
+                  </div>
+                </>
+              )
+            }
+          </div>
+
+          <div>
+            <label className='flex items-center'>
+              Is Speakers
+              <input
+                type="checkbox"
+                checked={isSpeakers}
+                onChange={(e) => setIsSpeakers(e.target.checked)}
+                className="border mx-2 my-4"
+              />
+            </label>
+
+            {
+              isSpeakers && (
+                <>
+                  <div className='flex flex-col gap-4 border p-2 rounded'>
+                    {
+                      speakers?.map((speakersData, index) => {
+                        return (
+                          <section
+                            key={index}
+                          >
+                            <div className="flex flex-col gap-4 border p-2 rounded">
+                              <div className='border my-4 rounded'>
+                                <input
+                                  type="text"
+                                  name="speakerSize"
+                                  onChange={(event) => onChangeSpeakers(event, index)}
+                                  value={speakersData.speakerSize}
+                                  placeholder="Speaker Size"
+                                  className="input input-bordered w-full  p-2 rounded"
+                                />
+                              </div>
+
+                              <div className='border my-4 rounded'>
+                                <input
+                                  type="number"
+                                  name="basePrice"
+                                  onChange={(event) => onChangeSpeakers(event, index)}
+                                  value={speakersData?.basePrice}
+                                  placeholder="Base Price"
+                                  className="input input-bordered w-full p-2 rounded"
+                                />
+                              </div>
+                              <div className='my-4'>
+                                <button
+                                  className="common-btn flex items-center gap-2"
+                                  onClick={() => removeSpeakers(index)}
+                                >
+                                  <FaTrashAlt className="text-2xl mr-2"></FaTrashAlt>
+                                  Remove Speakers
+                                </button>
+                              </div>
+                            </div>
+                          </section>
+                        )
+                      })
+                    }
+                    <button className="common-btn" onClick={() => addSpeakers()}>
+                      Add Speakers
+                    </button>
+                  </div>
+                </>
+              )
+            }
+          </div>
+
+          <div>
+            <label className='flex items-center'>
+              Is BassTube
+              <input
+                type="checkbox"
+                checked={isBassTube}
+                onChange={(e) => setIsBassTube(e.target.checked)}
+                className="border mx-2 my-4"
+              />
+            </label>
+
+            {
+              isBassTube && (
+                <>
+                  <div className='flex flex-col gap-4 border p-2 rounded'>
+                    {
+                      bassTube?.map((bassTubeData, index) => {
+                        return (
+                          <section
+                            key={index}
+                          >
+                            <div className="flex flex-col gap-4 border p-2 rounded">
+                              <div className='border my-4 rounded'>
+                                <input
+                                  type="text"
+                                  name="wattage"
+                                  onChange={(event) => onChangeBassTube(event, index)}
+                                  value={bassTubeData.wattage}
+                                  placeholder="Wattage"
+                                  className="input input-bordered w-full  p-2 rounded"
+                                />
+                              </div>
+
+                              <div className='border my-4 rounded'>
+                                <input
+                                  type="text"
+                                  name="speakerSize"
+                                  onChange={(event) => onChangeBassTube(event, index)}
+                                  value={bassTubeData?.speakerSize}
+                                  placeholder="Speaker Size"
+                                  className="input input-bordered w-full  p-2 rounded"
+                                />
+                              </div>
+
+                              <div className='border my-4 rounded'>
+                                <input
+                                  type="number"
+                                  name="basePrice"
+                                  onChange={(event) => onChangeBassTube(event, index)}
+                                  value={bassTubeData?.basePrice}
+                                  placeholder="Base Price"
+                                  className="input input-bordered w-full p-2 rounded"
+                                />
+                              </div>
+                              <div className='my-4'>
+                                <button
+                                  className="common-btn flex items-center gap-2"
+                                  onClick={() => removeBassTube(index)}
+                                >
+                                  <FaTrashAlt className="text-2xl mr-2"></FaTrashAlt>
+                                  Remove Bass Tube
+                                </button>
+                              </div>
+                            </div>
+                          </section>
+                        )
+                      })
+                    }
+                    <button className="common-btn" onClick={() => addBassTube()}>
+                      Add Bass Tube
+                    </button>
+                  </div>
+                </>
+              )
+            }
+          </div>
+
+
+          <div>
+            <label className='flex items-center'>
+              Is FMBT
+              <input
+                type="checkbox"
+                checked={isFMBT}
+                onChange={(e) => setIsFMBT(e.target.checked)}
+                className="border mx-2 my-4"
+              />
+            </label>
+
+            {
+              isFMBT && (
+                <>
+                  <div className='flex flex-col gap-4 border p-2 rounded'>
+                    {
+                      fMBT?.map((fMBTData, index) => {
+                        return (
+                          <section
+                            key={index}
+                          >
+                            <div className="flex flex-col gap-4 border p-2 rounded">
+                              <div className='border my-4 rounded'>
+                                <input
+                                  type="text"
+                                  name="controlOption"
+                                  onChange={(event) => onChangeFMBT(event, index)}
+                                  value={fMBTData.controlOption}
+                                  placeholder="Control Option"
+                                  className="input input-bordered w-full  p-2 rounded"
+                                />
+                              </div>
+
+                              <div className='border my-4 rounded'>
+                                <input
+                                  type="number"
+                                  name="basePrice"
+                                  onChange={(event) => onChangeFMBT(event, index)}
+                                  value={fMBTData?.basePrice}
+                                  placeholder="Base Price"
+                                  className="input input-bordered w-full p-2 rounded"
+                                />
+                              </div>
+                              <div className='my-4'>
+                                <button
+                                  className="common-btn flex items-center gap-2"
+                                  onClick={() => removeFMBT(index)}
+                                >
+                                  <FaTrashAlt className="text-2xl mr-2"></FaTrashAlt>
+                                  Remove FMBT
+                                </button>
+                              </div>
+                            </div>
+                          </section>
+                        )
+                      })
+                    }
+                    <button className="common-btn" onClick={() => addFMBT()}>
+                      Add FMBT
+                    </button>
+                  </div>
+                </>
+              )
+            }
+          </div>
 
 
           {/* =============== */}

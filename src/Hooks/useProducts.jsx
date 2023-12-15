@@ -18,6 +18,7 @@ const useProducts = () => {
           throw new Error("Failed to fetch product data");
         }
         const data = await res.json();
+        console.log(data, "data product++++++++++++++")
         return data?.data;
       } catch (error) {
         throw error;

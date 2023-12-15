@@ -269,19 +269,19 @@ import Image from "next/image";
 const HomeSliderData = [
   {
     id: 1,
-    desktopImage: "https://res.cloudinary.com/elpixala/image/upload/v1699858749/Daps/Slider/DAPS%20Banner/DAPS%20Banner%20PC/ubdrk3vfkbsxwtyxnaox.png",
-    mobileImage: "https://res.cloudinary.com/elpixala/image/upload/v1699858745/Daps/Slider/DAPS%20Banner/Mobile/tpvoo9d8vsi9qiafpo9u.png", // Add mobile image for slide 1
+    desktopImage: "https://res.cloudinary.com/dg8qpvmmh/image/upload/v1702655657/DAPS/Banner/PC%20Banner/qhy8khvkjdivp6o0ozpo.png",
+    mobileImage: "https://res.cloudinary.com/dg8qpvmmh/image/upload/v1702655607/DAPS/Banner/Mobile%20Banner/a1bnbtej5pg89lsbgage.png", // Add mobile image for slide 1
   },
   {
     id: 2,
-    desktopImage: "https://res.cloudinary.com/elpixala/image/upload/v1699858749/Daps/Slider/DAPS%20Banner/DAPS%20Banner%20PC/ztevzp1jh4tfcmc4fqoc.png",
-    mobileImage: "https://res.cloudinary.com/elpixala/image/upload/v1699858745/Daps/Slider/DAPS%20Banner/Mobile/nr6s9szlrwgynmyporwb.png", // Add mobile image for slide 2
+    desktopImage: "https://res.cloudinary.com/dg8qpvmmh/image/upload/v1702655656/DAPS/Banner/PC%20Banner/pxdlate8efpivdwbtqls.png",
+    mobileImage: "https://res.cloudinary.com/dg8qpvmmh/image/upload/v1702655607/DAPS/Banner/Mobile%20Banner/bbodmuregjf6fnfxmma0.png", // Add mobile image for slide 2
   },
   {
     id: 3,
-    desktopImage: "https://res.cloudinary.com/elpixala/image/upload/v1699858748/Daps/Slider/DAPS%20Banner/DAPS%20Banner%20PC/nwwrm7drid3yaarzzfkp.png",
-    mobileImage: "https://res.cloudinary.com/elpixala/image/upload/v1699858744/Daps/Slider/DAPS%20Banner/Mobile/vwi0vtegwzwrmjju2myz.png", // Add mobile image for slide 3
-  },
+    desktopImage: "https://res.cloudinary.com/dg8qpvmmh/image/upload/v1702655655/DAPS/Banner/PC%20Banner/snm5hzwqwvcy9mrawbly.png",
+    mobileImage: "https://res.cloudinary.com/dg8qpvmmh/image/upload/v1702655607/DAPS/Banner/Mobile%20Banner/k8wiahzzdklic5dojkep.png", // Add mobile image for slide 3
+  } 
  
 ];
 

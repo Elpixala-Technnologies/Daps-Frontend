@@ -323,7 +323,9 @@ const MainNav = () => {
                       <ul>
                         <div className="grid grid-cols-5 text-left mx-20  py-4 px-4 justify-items-start items-center gap-5">
                           {categoryMainData?.map((itm) => (
-                            <Link href={`/category/3`}>
+                            <Link 
+                              href={`/products?categoryName=${encodeURIComponent(itm?.name)}`}
+                            >
                               {" "}
                               <div className="flex  hover:opacity-[.67] relative items-center justify-center gap-2 flex-row">
                                 <Image

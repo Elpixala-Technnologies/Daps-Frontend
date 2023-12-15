@@ -5,10 +5,13 @@ import { AuthContext } from "@/src/Context/UserContext";
 import { useRouter } from "next/router";
 import { addToCartUrl } from "@/src/Utils/Urls/ProductUrl";
 import Swal from "sweetalert2";
+import { FaCartPlus, FaStar } from 'react-icons/fa';
 
 const ProductCard = ({ productValueData }) => {
   const { user } = useContext(AuthContext);
   const router = useRouter();
+
+  const product = productValueData;
 
   const addToCart = async (productId, price) => {
     const convertPrice = parseInt(price);
@@ -54,70 +57,76 @@ const ProductCard = ({ productValueData }) => {
   const { images, name, discount, price, _id } = productValueData
 
   return (
-    <div className="flex justify-center align-middle relative overflow-hidden">
-      <Link href={`/products/${_id}`}>
-      <div className="aspect-h-1 border aspect-w-1 w-full overflow-hidden rounded-t-md bg-transparent lg:aspect-none group-hover:opacity-75 h-30">
-        <img
-          src={"https://www.boat-lifestyle.com/cdn/shop/products/3_2_600x.png?v=1673002862" || images[0]}
-          alt={name}
-          className=" w-full object-cover object-center lg:h-full lg:w-full"
-        />
-      </div>
-  
-      <div className="aspect-h-1 border aspect-w-1 w-full overflow-hidden rounded-t-md bg-transparent lg:aspect-none group-hover:opacity-75 h-80 absolute top-0 left-0 opacity-0 transition duration-300"
-      >
-        <img
-          src={images[1] || images[0]}
-          alt={name}
-          className="h-full w-full object-cover object-center lg:h-full lg:w-full"
-        />
-      </div>
+    <div className='border rounded-[0.6rem] relative'>
+    <div>
+      <Link href={`/product/${product?._id}`}>
+        <div className="productImage">
+          <div className="h-menu border rounded-t-[0.6rem] overflow-hidden relative">
+            <img
+              src={product?.images[0]}
+              alt="First Image"
+              className="h-full w-full object-cover duration-200"
+            />
+            <img
+              src={product?.images[1]}
+              alt="Second Image"
+              className="hover-img absolute top-0 left-0 w-full h-full object-cover duration-300"
+            />
+          </div>
+        </div>
       </Link>
+    </div>
+    <div className='px-4 py-1 bg-[#000] rounded-r absolute top-4 text-[#fff] text-[0.6rem] font-semibold'>
+      🎉 New Launch
+    </div>
 
-      {/* <div className="absolute -right-16 bottom-20 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
-        <button
-          onClick={() => addToCart(_id, price)}
-          className="flex h-10 w-10 items-center justify-center bg-[#fff]text-white transition hover:bg-gray-700">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="mr-2 h-5 w-5"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-          </svg>
-        </button>
-      </div> */}
-      <div className="flex p-2 relative flex-col border rounded-b-md">
-        <div>
-          <h3 className="text-[14px] mt-1 font-semibold text-gray-700">
-            <Link href={`/products/${_id}`}>
-              <span aria-hidden="true" className="absolute inset-0" />
-              {name}
-            </Link>
-          </h3>
-        </div>
-        <div >
-          <p className="text-[16px] text-gray-900 mt-1">
-            <span className='font-semibold'>
-              {discount
-                ? `₹ ${Math.floor(price - (price * discount) / 100)}`
-                : `₹ ${Math.floor(price)}`
+    <div className='rounded-b-[0.6rem] bg-[#fafafa] p-4 relative'>
+      {
+        product?.brand !== "" && (
+          <div className='px-6 py-1 bg-[#fcc50b] w-[70%] rounded-md  absolute top-[-1rem] text-center left-[14%] font-semibold text-white text-[14px]'>
+            New Arrival
+          </div>
+        )
+      }
+      <div className='my-1 text-left '>
+        <Link href={`/product/${product?._id}`} className='font-semibold text-[14px]'>{product?.productName}</Link>
+        <div className="flex items-center justify-between ">
+          <div className='flex gap-2'>
+            {/* <h1 className="font-bold text-slate-900">
+              {product?.discount
+                ? `₹ ${Math.floor(product?.price - (product?.price * product?.discount) / 100)}`
+                : `₹ ${Math.floor(product?.price)}`
               }
+            </h1>
+            <span className="text-sm font-semibold text-gray-400 line-through mt-1">
+              ₹ {Math.floor(product?.price)}
             </span>
-            <span className="text-sm text-gray-300 line-through mx-2">
-              ₹ {Math.floor(price)}
-            </span>
-            <span className='text-[#18568C] text-sm'>
-              {Math.floor(discount)} % off
-            </span>
-          </p>
+            <span className='text-green-500 font-bold text-[13px] mt-1'>
+              {Math.floor(product?.discount)} % off
+            </span> */}
+            <h1 className="font-bold text-slate-900">
+               ₹ {Math.floor(product?.chargers[0]?.basePrice)}
+            </h1>
+          </div>
+          <div className='absolute right-2'>
+            <div className='flex flex-col  gap-3 justify-end'>
+              <Link href={`/product/${product?._id}`}
+                className='border px-4 text-[12px] font-semibold rounded-lg py-2 bg-black text-white flex items-center gap-2'
+              >
+                Add To Cart
+              </Link>
+            </div>
+          </div>
         </div>
-        <div className='bg-black p-2 text-center bottom-0 left-0 right-0 text-white rounded absolute'>
-          <button>Add To Cart</button>
+        <div className='flex justify-between items-center'>
+          <span className="flex items-center gap-2 text-[14px]">
+            <FaStar className="text-orange-500" />
+            Be first to review
+          </span>
         </div>
       </div>
     </div>
+  </div>
   );
 };
 

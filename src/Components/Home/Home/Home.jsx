@@ -28,7 +28,7 @@ const Home = () => {
     }, []);
     return (
         <section >
-            <div className={`${showModal ? 'd-none' : 'bg-[#0000005e] md:relative fixed md:d-none d-block top-0 left-0 right-0 bottom-0 w-full md:p-0 p-2 z-[200]'} `}>
+            {/* <div className={`${showModal ? 'd-none' : 'bg-[#0000005e] md:relative fixed md:d-none d-block top-0 left-0 right-0 bottom-0 w-full md:p-0 p-2 z-[200]'} `}>
                 <div className={`${showModal ? 'h-[0px]' : 'h-[66vh] pb-12 md:h-[0px] md:p-0 p-4'} overflow-hidden duration-300 modal md:d-none block  bottom-0 left-0 w-full rounded-t-3xl  fixed z-[1000] bg-white   text-black`}>
                     <button onClick={() => setShowModal(!showModal)} className="bg-gray-200 w-[30px] h-[30px] rounded-full   text-black flex items-center float-right justify-center">x</button>
                     <div className="modal-content justify-center flex flex-col align-center text-black pt-6 text-center">
@@ -40,7 +40,7 @@ const Home = () => {
                         <button className="common-btn w-full py-2 rounded-lg mt-3 mx-auto">Explore now</button>
                     </div>
                 </div>
-            </div>
+            </div> */}
             {/* ===== Hero =====  */}
             <Hero />
             {/* ====== Best Sealer */}
