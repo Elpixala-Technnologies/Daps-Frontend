@@ -10,13 +10,16 @@ import { createProductUrl } from '@/src/Utils/Urls/ProductUrl';
 import { FaTrashAlt } from "react-icons/fa";
 import useProcessor from '@/src/Hooks/useProcessor';
 import useCar from '@/src/Hooks/useCar';
+import useSocket from '@/src/Hooks/useSocket';
+
 
 const AddProduct = () => {
   const { handleSubmit } = useForm();
   const [loading, setLoading] = useState(false);
   const { categoryData, } = useProducts();
   const { ProcessorData } = useProcessor()
-  const {CarData} = useCar()
+  const { CarData } = useCar()
+  const {SocketData} =useSocket()
   const [category, setCategory] = useState("");
   const [name, setName] = useState("");
   const [discountPercentage, setDiscountPercentage] = useState("");
@@ -76,7 +79,7 @@ const AddProduct = () => {
   };
 
   // ============== android
-  const [isAppleCarplayAndAndroidAutoSupported, setIsAppleCarplayAndAndroidAutoSupported]=useState(false)
+  const [isAppleCarplayAndAndroidAutoSupported, setIsAppleCarplayAndAndroidAutoSupported] = useState(false)
   const [isDVRSupported, setIsDVRSupported] = useState(false)
 
   const [variantsAndroid, setVariantsAndroid] = useState([{
@@ -109,8 +112,8 @@ const AddProduct = () => {
     };
     setAndroid(updatedAndroid);
   };
-  
- 
+
+
   const handleAndroidCheckboxChange = (e) => {
     setIsAndroid(e.target.checked);
     setShowAndroidDetails(e.target.checked);
@@ -121,7 +124,7 @@ const AddProduct = () => {
     updatedAndroid[androidIndex].variant.splice(variantIndex, 1);
     setAndroid(updatedAndroid);
   };
-  
+
   const addAndroid = () => {
     setAndroid([...android, { isAndroid: false, screenSize: "", variant: [...variantsAndroid] }]);
   };
@@ -143,12 +146,12 @@ const AddProduct = () => {
       basePrice: 0,
     }];
     setVariantsAndroid(updatedVariants);
-  
+
     const updatedAndroid = [...android];
-    updatedAndroid[0].variant = updatedVariants;  
+    updatedAndroid[0].variant = updatedVariants;
     setAndroid(updatedAndroid);
   };
-  
+
 
   const removeAndroid = (index) => {
     const newAndroid = [...android];
@@ -164,33 +167,28 @@ const AddProduct = () => {
     };
     setAndroid(updatedAndroid);
   };
-  
+
 
 
   // =================== led
-
   const [ledVariant, setLedVariant] = useState([
     {
       wattage: "",
       socketsSupported: [],
       basePrice: 0,
     }
-  ])
-
+  ]);
+  
   const addLedVariant = () => {
-    setLedVariant([...ledVariant, {
-      wattage: "",
-      socketsSupported: [],
-      basePrice: 0,
-    }]);
+    setLedVariant([...ledVariant, { wattage: "", socketsSupported: [], basePrice: 0 }]);
   };
-
+  
   const removeLedVariant = (index) => {
     const newVariants = [...ledVariant];
     newVariants.splice(index, 1);
     setLedVariant(newVariants);
   };
-
+  
   const onChangeLedVariant = (event, index) => {
     const updatedVariants = [...ledVariant];
     updatedVariants[index] = {
@@ -199,70 +197,40 @@ const AddProduct = () => {
     };
     setLedVariant(updatedVariants);
   };
-
-  const [isLed, setIsLed] = useState(false)
-
+  
+  const [isLed, setIsLed] = useState(false);
+  
   const handleLedCheckboxChange = (e) => {
     setIsLed(e.target.checked);
   };
-
-  const [led, setLed] = useState([
+  
+  const [led, setLed] = useState(
     {
       isLed: isLed,
-      "variant": ledVariant,
-    }
-  ])
-
-  const addLed = () => {
-    setLed([
-      ...led, {
-        isLed: isLed,
-        "variant": ledVariant,
-      }
-    ])
-  };
-
-  const removeLed = (index) => {
-    const newLed = [...led];
-    newLed.splice(index, 1);
-    setLed(newLed);
-  };
-
-  const onChangeLed = (event, index) => {
-    const updatedLed = [...led];
-    updatedLed[index] = {
-      ...updatedLed[index],
-      [event.target.name]: event.target.value,
-    };
-    setLed(updatedLed);
-  };
-
+      variant: ledVariant,
+    },
+  );
+  
 
   // ======== amplifiers
-
-
   const [amplifiersVariant, setAmplifiersVariant] = useState([
     {
       totalChannels: "",
       wattage: "",
       basePrice: 0,
     }
-  ])
-
+  ]);
+  
   const addAmplifierVariant = () => {
-    setAmplifiersVariant([...amplifiersVariant, {
-      totalChannels: "",
-      wattage: "",
-      basePrice: 0,
-    }]);
+    setAmplifiersVariant([...amplifiersVariant, { totalChannels: "", wattage: "", basePrice: 0 }]);
   };
-
+  
   const removeAmplifierVariant = (index) => {
     const newVariants = [...amplifiersVariant];
     newVariants.splice(index, 1);
     setAmplifiersVariant(newVariants);
   };
-
+  
   const onChangeAmplifierVariant = (event, index) => {
     const updatedVariants = [...amplifiersVariant];
     updatedVariants[index] = {
@@ -271,46 +239,20 @@ const AddProduct = () => {
     };
     setAmplifiersVariant(updatedVariants);
   };
-
-
-
-  const [isAmplifiers, setIsAmplifiers] = useState(false)
-
+  
+  const [isAmplifiers, setIsAmplifiers] = useState(false);
+  
   const handleAmplifiersCheckboxChange = (e) => {
     setIsAmplifiers(e.target.checked);
   };
-
-  const [amplifiers, setAmplifiers] = useState([
+  
+  const [amplifiers, setAmplifiers] = useState(
     {
-      "isAmplifiers": isAmplifiers,
-      "variant": amplifiersVariant
+      isAmplifiers: isAmplifiers,
+      variant: amplifiersVariant,
     }
-  ])
-
-  const addAmplifiers = () => {
-    setLed([
-      ...led, {
-        "isAmplifiers": isAmplifiers,
-        "variant": amplifiersVariant
-      }
-    ])
-  };
-
-  const removeAmplifiers = (index) => {
-    const newAmplifiers = [...amplifiers];
-    newAmplifiers.splice(index, 1);
-    setAmplifiers(newAmplifiers);
-  };
-
-  const onChangeAmplifiers = (event, index) => {
-    const updatedAmplifiers = [...amplifiers];
-    updatedAmplifiers[index] = {
-      ...updatedAmplifiers[index],
-      [event.target.name]: event.target.value,
-    };
-    setAmplifiers(updatedAmplifiers);
-  };
-
+  );
+  
   // ========== HID
 
   const [HIDVariant, setHIDVariant] = useState([
@@ -1051,11 +993,11 @@ const AddProduct = () => {
                                 placeholder="Please select Car"
                                 onChange={(values) => onChangeAndroidVariant({ target: { name: 'carsSupported', value: values } }, index, vIndex)}
                                 value={variantData.carsSupported}
-                                options={CarData.map((car) =>{
-                                  return(
-                                       { value: car?._id, label: car?.carName } 
-                                    )
-                                } )}
+                                options={CarData.map((car) => {
+                                  return (
+                                    { value: car?._id, label: car?.carName }
+                                  )
+                                })}
                               />
 
                               <div className='border my-4 rounded'>
@@ -1084,108 +1026,108 @@ const AddProduct = () => {
                                 <input
                                   type="checkbox"
                                   checked={isAppleCarplayAndAndroidAutoSupported}
-                                  onChange={(e)=> setIsAppleCarplayAndAndroidAutoSupported(e.target.checked)}
+                                  onChange={(e) => setIsAppleCarplayAndAndroidAutoSupported(e.target.checked)}
                                   className="border mx-2 my-4"
                                 />
-                             </label>
+                              </label>
 
-                             {
-                              isAppleCarplayAndAndroidAutoSupported && (
-                                <>
-                                <select
-                                  name="processorName"
-                                  id="processorName"
-                                  className="border-2 border-gray-300 rounded-md p-2 w-full"
-                                  onChange={(event) => onChangeAndroidVariant(event, index, vIndex)}
-                                  value={variantData?.wirelessWired}
-                                >
-                                  <option className='my-2'>Select Wireless Wired</option>
-                                  <option className='my-2'
-                                    value={"Wireless"}
-                                  >
-                                      Wireless
-                                  </option>
-                                  <option className='my-2'
-                                    value={"Wired"}
-                                  >
-                                    Wired
-                                  </option>
-                                </select>
-                                </>
-                              )
-                             }
+                              {
+                                isAppleCarplayAndAndroidAutoSupported && (
+                                  <>
+                                    <select
+                                      name="processorName"
+                                      id="processorName"
+                                      className="border-2 border-gray-300 rounded-md p-2 w-full"
+                                      onChange={(event) => onChangeAndroidVariant(event, index, vIndex)}
+                                      value={variantData?.wirelessWired}
+                                    >
+                                      <option className='my-2'>Select Wireless Wired</option>
+                                      <option className='my-2'
+                                        value={"Wireless"}
+                                      >
+                                        Wireless
+                                      </option>
+                                      <option className='my-2'
+                                        value={"Wired"}
+                                      >
+                                        Wired
+                                      </option>
+                                    </select>
+                                  </>
+                                )
+                              }
 
-                             <label className='flex items-center'>
+                              <label className='flex items-center'>
                                 Is DVR Supported
                                 <input
                                   type="checkbox"
                                   checked={isDVRSupported}
-                                  onChange={(e)=> setIsDVRSupported(e.target.checked)}
+                                  onChange={(e) => setIsDVRSupported(e.target.checked)}
                                   className="border mx-2 my-4"
                                 />
-                             </label>
+                              </label>
 
-                                <select
-                                  name="is360CameraSupported"
-                                  id="is360CameraSupported"
-                                  className="border-2 my-2 border-gray-300 rounded-md p-2 w-full"
-                                  onChange={(event) => onChangeAndroidVariant(event, index, vIndex)}
-                                  value={variantData?.is360CameraSupported}
+                              <select
+                                name="is360CameraSupported"
+                                id="is360CameraSupported"
+                                className="border-2 my-2 border-gray-300 rounded-md p-2 w-full"
+                                onChange={(event) => onChangeAndroidVariant(event, index, vIndex)}
+                                value={variantData?.is360CameraSupported}
+                              >
+                                <option className='my-2'>Is 360 Camera Supported</option>
+                                <option className='my-2'
+                                  value={"Yes"}
                                 >
-                                  <option className='my-2'>Is 360 Camera Supported</option>
-                                  <option className='my-2'
-                                    value={"Yes"}
-                                  >
-                                      Yes
-                                  </option>
-                                  <option className='my-2'
-                                    value={"No"}
-                                  >
-                                    No
-                                  </option>
-                                </select>
-
-                                <select
-                                  name="processorName"
-                                  id="processorName"
-                                  className="border-2 my-2 border-gray-300 rounded-md p-2 w-full"
-                                  onChange={(event) => onChangeAndroidVariant(event, index, vIndex)}
-                                  value={variantData?.isSimSupported}
+                                  Yes
+                                </option>
+                                <option className='my-2'
+                                  value={"No"}
                                 >
-                                  <option className='my-2'>Select Is Sim Supported</option>
-                                  <option className='my-2'
-                                    value={"Yes"}
-                                  >
-                                      Yes
-                                  </option>
-                                  <option className='my-2'
-                                    value={"No"}
-                                  >
-                                    No
-                                  </option>
-                                </select>
+                                  No
+                                </option>
+                              </select>
 
-                                <select
-                                  name="processorName"
-                                  id="processorName"
-                                  className="border-2 border-gray-300 rounded-md p-2 my-2 w-full"
-                                  onChange={(event) => onChangeAndroidVariant(event, index, vIndex)}
-                                  value={variantData?.isWarrantyAvailable}
+                              <select
+                                name="processorName"
+                                id="processorName"
+                                className="border-2 my-2 border-gray-300 rounded-md p-2 w-full"
+                                onChange={(event) => onChangeAndroidVariant(event, index, vIndex)}
+                                value={variantData?.isSimSupported}
+                              >
+                                <option className='my-2'>Select Is Sim Supported</option>
+                                <option className='my-2'
+                                  value={"Yes"}
                                 >
-                                  <option className='my-2'>Select Is Warranty Available</option>
-                                  <option className='my-2'
-                                    value={"Yes"}
-                                  >
-                                      Yes
-                                  </option>
-                                  <option className='my-2'
-                                    value={"No"}
-                                  >
-                                    No
-                                  </option>
-                                </select>
+                                  Yes
+                                </option>
+                                <option className='my-2'
+                                  value={"No"}
+                                >
+                                  No
+                                </option>
+                              </select>
 
-                                <div className='border my-4 rounded'>
+                              <select
+                                name="processorName"
+                                id="processorName"
+                                className="border-2 border-gray-300 rounded-md p-2 my-2 w-full"
+                                onChange={(event) => onChangeAndroidVariant(event, index, vIndex)}
+                                value={variantData?.isWarrantyAvailable}
+                              >
+                                <option className='my-2'>Select Is Warranty Available</option>
+                                <option className='my-2'
+                                  value={"Yes"}
+                                >
+                                  Yes
+                                </option>
+                                <option className='my-2'
+                                  value={"No"}
+                                >
+                                  No
+                                </option>
+                              </select>
+
+                              <div className='border my-4 rounded'>
                                 <input
                                   type="text"
                                   name="warrantyPeriod"
@@ -1208,7 +1150,7 @@ const AddProduct = () => {
                                 />
                               </div>
 
-                            {/* ======== ====== */}
+                              {/* ======== ====== */}
                               <div className='my-4'>
                                 <button
                                   className="common-btn flex items-center gap-2"
@@ -1245,8 +1187,175 @@ const AddProduct = () => {
                 </button>
               </div>
             )}
+          </div>
+
+          <div>
+            <label className='flex items-center'>
+              Is LED
+              <input
+                type="checkbox"
+                checked={isLed}
+                onChange={(e)=> setIsLed(e.target.checked)}
+                className="border mx-2 my-4"
+              />
+            </label>
+            {
+              isLed && (
+                <>
+                <div className='flex flex-col gap-4 border p-2 rounded'>
+                {
+                  led?.variant?.map((ledData, index) => {
+                    return (
+                      <section
+                        key={index}
+                      >
+                        <div className="flex flex-col gap-4 border p-2 rounded">
+                           <div className='border my-4 rounded'>
+                              <input
+                                type="text"
+                                name="wattage"
+                                onChange={(event) => onChangeAndroidVariant(event, index)}
+                                value={ledData.wattage}
+                                placeholder="Wattage"
+                                className="input input-bordered w-full  p-2 rounded"
+                              />
+                            </div>
+
+                            <Select
+                              mode="multiple"
+                              allowClear
+                              style={{
+                                width: '100%',
+                              }}
+                              placeholder="Select Sockets"
+                              onChange={(values) => onChangeLedVariant({ target: { name: 'socketsSupported', value: values } }, index)}
+                              value={ledData.socketsSupported}
+                              options={SocketData?.map((socket) => {
+                                return (
+                                  { value: socket?._id, label: socket?.socketName }
+                                )
+                              })}
+                            />
+
+                          <div className='border my-4 rounded'>
+                              <input
+                                type="number"
+                                name="basePrice"
+                                onChange={(event) => onChangeLedVariant(event, index)}
+                                value={ledData?.basePrice}
+                                placeholder="Base Price"
+                                className="input input-bordered w-full p-2 rounded"
+                              />
+                            </div>
+                          <div className='my-4'>
+                              <button
+                                className="common-btn flex items-center gap-2"
+                                onClick={() => removeLedVariant(index)}
+                              >
+                                <FaTrashAlt className="text-2xl mr-2"></FaTrashAlt>
+                                Remove Variant
+                              </button>
+                            </div>
+                        </div>
+                      </section>
+                    )
+                  })
+                }
+                <button className="common-btn" onClick={() => addLedVariant()}>
+                  Add Led Variant
+                </button>
+              </div>
+                </>
+              )
+
+            }
 
           </div>
+
+          <div> 
+          <label className='flex items-center'>
+               Is Amplifiers
+              <input
+                type="checkbox"
+                checked={isAmplifiers}
+                onChange={(e)=> setIsAmplifiers(e.target.checked)}
+                className="border mx-2 my-4"
+              />
+            </label>
+
+            {
+              isAmplifiers && (
+                <>
+                <div className='flex flex-col gap-4 border p-2 rounded'>
+                {
+                  amplifiers?.variant?.map((amplifiersData, index) => {
+                    return (
+                      <section
+                        key={index}
+                      >
+                        <div className="flex flex-col gap-4 border p-2 rounded">
+                           <div className='border my-4 rounded'>
+                              <input
+                                type="text"
+                                name="Total Channels"
+                                onChange={(event) => onChangeAmplifierVariant(event, index)}
+                                value={amplifiersData.totalChannels}
+                                placeholder="TotalChannels"
+                                className="input input-bordered w-full  p-2 rounded"
+                              />
+                            </div>
+
+
+                            <div className='border my-4 rounded'>
+                              <input
+                                type="text"
+                                name="Wattage"
+                                onChange={(event) => onChangeAmplifierVariant(event, index)}
+                                value={amplifiersData.wattage}
+                                placeholder="Wattage"
+                                className="input input-bordered w-full  p-2 rounded"
+                              />
+                            </div>
+
+                            
+                          <div className='border my-4 rounded'>
+                              <input
+                                type="number"
+                                name="basePrice"
+                                onChange={(event) => onChangeAmplifierVariant(event, index)}
+                                value={amplifiersData?.basePrice}
+                                placeholder="Base Price"
+                                className="input input-bordered w-full p-2 rounded"
+                              />
+                            </div>
+                          <div className='my-4'>
+                              <button
+                                className="common-btn flex items-center gap-2"
+                                onClick={() => removeAmplifierVariant(index)}
+                              >
+                                <FaTrashAlt className="text-2xl mr-2"></FaTrashAlt>
+                                Remove Variant
+                              </button>
+                            </div>
+                        </div>
+                      </section>
+                    )
+                  })
+                }
+                <button className="common-btn" onClick={() => addAmplifierVariant()}>
+                  Add  Variant
+                </button>
+              </div>
+                </>
+              )
+            }
+          </div>
+
+          {/* =============== */}
+
+
+
+          {/* =============== */}
 
           <div className="w-full h-full">
             <div className="rounded-lg shadow-xl bg-gray-50 p-4">
