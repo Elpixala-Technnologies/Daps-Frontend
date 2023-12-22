@@ -8,7 +8,7 @@ const AddPorductPage = () => {
            <section>
                 <div className="add-Porduct-container">
                     <Link href="/dashboard/product/manage-product" className="common-btn">
-                        Update Porduct
+                        Update Products
                      </Link>   
                 </div>
 

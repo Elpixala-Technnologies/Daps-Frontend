@@ -10,18 +10,29 @@ export const deletExploreBrandUrl = (id) => basedUrl + `/media/delete/${id}/expl
 
 
 
-// =====
+// ===== story
 
-//     https://daps-server.vercel.app/media/create/story
-// https://daps-server.vercel.app/media/get/story
-// https://daps-server.vercel.app/media/get-singel/:id/story
-// https://daps-server.vercel.app/media/update/:id/story
-// https://daps-server.vercel.app/media/delete/:id/story
+export const addStoryUrl = basedUrl + '/media/create/story'
+export const getStoryUrl = basedUrl + '/media/get/story'
+export const getSingelStoryUrl = (id) => basedUrl + `/media/get-singel/${id}/story`
+export const updateStoryUrl = (id) => basedUrl + `/media/update/${id}/story`
+export const deletStoryUrl = (id) => basedUrl + `/media/delete/${id}/story`
 
-// ===
-//     https://daps-server.vercel.app/media/create/trending-product
-// https://daps-server.vercel.app/media/get/trending-product
-// https://daps-server.vercel.app/media/get-singel/:id/trending-product
-// https://daps-server.vercel.app/media/update/:id/trending-product
-// https://daps-server.vercel.app/media/delete/:id/trending-product
+
+// ===== trendingProduct
+
+export const addTrendingProductUrl = basedUrl + '/media/create/trending-product'
+export const getTrendingProductUrl = basedUrl + '/media/get/trending-product'
+export const getSingelTrendingProductUrl = (id) => basedUrl + `/media/get-singel/${id}/trending-product`
+export const updateTrendingProductUrl = (id) => basedUrl + `/media/update/${id}/trending-product`
+export const deletTrendingProductUrl = (id) => basedUrl + `/media/delete/${id}/trending-product`
+ 
+
+// ====== Banners
+
+export const addBannersUrl = basedUrl + '/banner/create'
+export const getBannersUrl = basedUrl + '/banner/get-all'
+export const getSingelBannersUrl = (id) => basedUrl + `/banner/${id}`
+export const updateBannersUrl = (id) => basedUrl + `/banner/update/${id}`
+export const deletBannersUrl = (id) => basedUrl + `/banner/delete/${id}`
 

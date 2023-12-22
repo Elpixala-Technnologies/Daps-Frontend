@@ -101,6 +101,11 @@ const DashboardLayout = ({ children }) => {
                 Popular Category
               </Link>
             </Menu.Item>
+
+            <Menu.Item key="/dashboard/home-slider" icon={<AiOutlineIdcard />}>
+              <Link href="/dashboard/home-slider">Home Slider</Link>
+            </Menu.Item>
+
             <Menu.Item key="/dashboard/copuon" icon={<FaDiceD6 />}>
               <Link href="/dashboard/copuon">Coupon</Link>
             </Menu.Item>
@@ -118,11 +123,11 @@ const DashboardLayout = ({ children }) => {
                 Explore Brand
               </Link>
             </Menu.Item>
-            <Menu.Item key="/dashboard/blog" icon={<AiOutlineIdcard />}>
-              <Link href="/dashboard/blog">Add Story</Link>
+            <Menu.Item key="/dashboard/story/add-story" icon={<AiOutlineIdcard />}>
+              <Link href="/dashboard/story/add-story">Add Story</Link>
             </Menu.Item>
-            <Menu.Item key="/dashboard/blog" icon={<AiOutlineIdcard />}>
-              <Link href="/dashboard/blog">Trending Product</Link>
+            <Menu.Item key="/dashboard/trending/add-trending" icon={<AiOutlineIdcard />}>
+              <Link href="/dashboard/trending/add-trending">Trending Product</Link>
             </Menu.Item>
 
             <Menu.Item
@@ -144,6 +149,7 @@ const DashboardLayout = ({ children }) => {
               <Link href="/dashboard/sockets/add-sockets">Sockets</Link>
             </Menu.Item>
 
+            
             <Menu.Item key="8" icon={<FaPowerOff />}>
               <button onClick={() => handleLogout()}>Logout</button>
             </Menu.Item>

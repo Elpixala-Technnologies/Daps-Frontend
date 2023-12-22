@@ -139,7 +139,7 @@
 //   }
 
 //   return (
-//     <div 
+//     <div
 //       style={{
 //         height:"70vh"
 //       }}
@@ -195,7 +195,7 @@
 //         left: "2%",
 //       }}
 //     />
-//     <div 
+//     <div
 //      style={{
 //       right: "2%",
 //     }}
@@ -255,38 +255,43 @@
 //   return windowWidth;
 // }
 
-
-
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Autoplay, Pagination,Navigation } from "swiper";
+import { Autoplay, Pagination, Navigation } from "swiper";
 import Image from "next/image";
-
+import useHomeSlider from "@/src/Hooks/useHomeSlider";
+import Link from "next/link";
 
 const HomeSliderData = [
   {
     id: 1,
-    desktopImage: "https://res.cloudinary.com/dg8qpvmmh/image/upload/v1702655657/DAPS/Banner/PC%20Banner/qhy8khvkjdivp6o0ozpo.png",
-    mobileImage: "https://res.cloudinary.com/dg8qpvmmh/image/upload/v1702655607/DAPS/Banner/Mobile%20Banner/a1bnbtej5pg89lsbgage.png", // Add mobile image for slide 1
+    desktopImage:
+      "https://res.cloudinary.com/dg8qpvmmh/image/upload/v1702655657/DAPS/Banner/PC%20Banner/qhy8khvkjdivp6o0ozpo.png",
+    mobileImage:
+      "https://res.cloudinary.com/dg8qpvmmh/image/upload/v1702655607/DAPS/Banner/Mobile%20Banner/a1bnbtej5pg89lsbgage.png", // Add mobile image for slide 1
   },
   {
     id: 2,
-    desktopImage: "https://res.cloudinary.com/dg8qpvmmh/image/upload/v1702655656/DAPS/Banner/PC%20Banner/pxdlate8efpivdwbtqls.png",
-    mobileImage: "https://res.cloudinary.com/dg8qpvmmh/image/upload/v1702655607/DAPS/Banner/Mobile%20Banner/bbodmuregjf6fnfxmma0.png", // Add mobile image for slide 2
+    desktopImage:
+      "https://res.cloudinary.com/dg8qpvmmh/image/upload/v1702655656/DAPS/Banner/PC%20Banner/pxdlate8efpivdwbtqls.png",
+    mobileImage:
+      "https://res.cloudinary.com/dg8qpvmmh/image/upload/v1702655607/DAPS/Banner/Mobile%20Banner/bbodmuregjf6fnfxmma0.png", // Add mobile image for slide 2
   },
   {
     id: 3,
-    desktopImage: "https://res.cloudinary.com/dg8qpvmmh/image/upload/v1702655655/DAPS/Banner/PC%20Banner/snm5hzwqwvcy9mrawbly.png",
-    mobileImage: "https://res.cloudinary.com/dg8qpvmmh/image/upload/v1702655607/DAPS/Banner/Mobile%20Banner/k8wiahzzdklic5dojkep.png", // Add mobile image for slide 3
-  } 
- 
+    desktopImage:
+      "https://res.cloudinary.com/dg8qpvmmh/image/upload/v1702655655/DAPS/Banner/PC%20Banner/snm5hzwqwvcy9mrawbly.png",
+    mobileImage:
+      "https://res.cloudinary.com/dg8qpvmmh/image/upload/v1702655607/DAPS/Banner/Mobile%20Banner/k8wiahzzdklic5dojkep.png", // Add mobile image for slide 3
+  },
 ];
 
 const HeroSlider = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const { homeSliderData } = useHomeSlider();
 
   useEffect(() => {
     const handleResize = () => {
@@ -317,18 +322,24 @@ const HeroSlider = () => {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper heroSlider"
       >
-        {HomeSliderData &&
-          HomeSliderData?.map((slide) => {
+        {homeSliderData &&
+          homeSliderData?.map((slide) => {
             return (
               <SwiperSlide key={slide?.id}>
                 <div className="slider-images">
-                  <Image
-                    src={isMobile ? slide?.mobileImage : slide?.desktopImage}
-                    alt="Banner Image"
-                    className="w-full h-full"
-                    width={isMobile ? 768 : 1920}
-                    height={isMobile ? 768 : 500}
-                  />
+                  <Link
+                    href={`/products?categoryName=${encodeURIComponent(
+                      slide?.category
+                    )}`}
+                  >
+                    <Image
+                      src={isMobile ? slide?.mobileImage : slide?.desktopImage}
+                      alt="Banner Image"
+                      className="w-full h-full"
+                      width={isMobile ? 768 : 1920}
+                      height={isMobile ? 768 : 500}
+                    />
+                  </Link>
                 </div>
               </SwiperSlide>
             );

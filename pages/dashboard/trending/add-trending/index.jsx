@@ -1,10 +1,10 @@
 import DashboardLayout from "@/src/Layouts/DashboardLayout";
-import { addExploreBrandUrl } from "@/src/Utils/Urls/MediaUrl";
+import { addTrendingProductUrl } from "@/src/Utils/Urls/MediaUrl";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 
-const AddExploreBrand = () => {
+const AddTrending = () => {
   const { handleSubmit, register, setValue } = useForm();
   const [isLoading, setIsLoading] = useState(false);
   const [videoPreview, setVideoPreview] = useState(null);
@@ -94,19 +94,19 @@ const AddExploreBrand = () => {
       const videoUrl = videoPreview;
       const imageUrl = imagePreview;
 
-      const ExploreBrandData = {
+      const trendingProductData = {
         name: inputValue.name,
         vedio: videoUrl,  
         image: imageUrl,
       };
 
       // Submit data to your server
-      const response = await fetch(addExploreBrandUrl, {
+      const response = await fetch(addTrendingProductUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(ExploreBrandData),
+        body: JSON.stringify(trendingProductData),
       });
 
       if (response.ok) {
@@ -248,4 +248,4 @@ const AddExploreBrand = () => {
   );
 };
 
-export default AddExploreBrand;
+export default AddTrending;
