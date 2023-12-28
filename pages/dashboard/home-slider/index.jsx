@@ -7,9 +7,9 @@ const HomeSliderPage = () => {
 	return (
 		<DashboardLayout>
 			<section className="container">
-				<div>
+				<div className="my-4">
 					<Link href="/dashboard/home-slider/manage-homeslider">
-						<div className="commonBtn">Manage Home Slider </div>
+						<div className="border px-4 py-2">Manage Home Slider </div>
 					</Link>
 				</div>
 

@@ -15,6 +15,7 @@ import { AuthContext } from "@/src/Context/UserContext";
 import { useRouter } from "next/router";
 import { addToCartUrl } from "@/src/Utils/Urls/ProductUrl";
 import Swal from "sweetalert2";
+import { FaStar } from "react-icons/fa";
 
 const OurProducts = () => {
   const { productData } = useProducts();
@@ -96,7 +97,7 @@ const OurProducts = () => {
         </h3>
 
         <div className="gelaryComponent">
-          <div className="overflow-x-auto">
+          <div className="">
             <div className="flex justify-center border-gray-400 whitespace-nowrap ">
               <button
                 onClick={() => setActiveCategory("FEATURED")}
@@ -200,11 +201,9 @@ const OurProducts = () => {
                           </div>
 
                           <div className="rounded-b-[0.6rem] bg-[#fafafa] p-4 relative">
-                            {product?.brand !== "" && (
-                              <div className="px-6 py-1 bg-[#fcc50b] w-[70%] rounded-md  absolute top-[-1rem] text-center left-[14%] font-semibold text-white text-[14px]">
-                                {product?.brand}
+                          <div className="px-6 py-1 bg-[#fcc50b] w-[70%] rounded-md  absolute top-[-1rem] text-center left-[14%] font-semibold text-white text-[14px]">
+                                DAPS
                               </div>
-                            )}
                             <div className="my-1 text-left ">
                               <Link
                                 href={`/products/${product?._id}`}

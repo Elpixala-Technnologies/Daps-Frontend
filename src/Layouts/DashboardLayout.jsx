@@ -123,9 +123,21 @@ const DashboardLayout = ({ children }) => {
                 Explore Brand
               </Link>
             </Menu.Item>
+
             <Menu.Item key="/dashboard/story/add-story" icon={<AiOutlineIdcard />}>
               <Link href="/dashboard/story/add-story">Add Story</Link>
             </Menu.Item>
+
+            <Menu.Item key="/dashboard/bestsellers/add-bestsellers" icon={<AiOutlineIdcard />}>
+              <Link href="/dashboard/bestsellers/add-bestsellers">Bestsellers</Link>
+            </Menu.Item>
+
+
+             
+            <Menu.Item key="/dashboard/home-offer-banner/add-home-offer-banner" icon={<AiOutlineIdcard />}>
+              <Link href="/dashboard/home-offer-banner/add-home-offer-banner">Add Offer Banner Four</Link>
+            </Menu.Item>
+          
             <Menu.Item key="/dashboard/trending/add-trending" icon={<AiOutlineIdcard />}>
               <Link href="/dashboard/trending/add-trending">Trending Product</Link>
             </Menu.Item>

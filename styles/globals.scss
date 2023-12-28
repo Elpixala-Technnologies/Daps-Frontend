@@ -21,119 +21,117 @@ $card_color: #eff4f7;
  */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family:
-        "Lucida" Grande,
-        sans-serif !important;
+  font-family: "Lucida" Grande, sans-serif !important;
 
-    font-weight: normal;
+  font-weight: normal;
 
-    font-style: normal;
+  font-style: normal;
 
-    background-color: #ffffff;
-    // background: linear-gradient(176.98deg, #fff3f8 -4.94%, #e1f9f0 42.2%, rgba(244, 213, 255, 0.96) 110.23%);
+  background-color: #ffffff;
+  // background: linear-gradient(176.98deg, #fff3f8 -4.94%, #e1f9f0 42.2%, rgba(244, 213, 255, 0.96) 110.23%);
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 ul,
 li {
-    list-style: none;
+  list-style: none;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 input,
 textarea {
-    outline: none;
-    border: none;
+  outline: none;
+  border: none;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 img {
-    max-width: 100%;
-    // height: auto;
-    // object-fit: cover
+  max-width: 100%;
+  // height: auto;
+  // object-fit: cover
 }
 
 @layer base {
-    .container {
-        @apply mx-auto;
-        @apply px-[1rem];
-        max-width: 1280px;
+  .container {
+    @apply mx-auto;
+    @apply px-[1rem];
+    max-width: 1280px;
 
-        @screen sm {
-            max-width: 720px;
-        }
+    @screen sm {
+      max-width: 720px;
     }
+  }
 }
 
 .common-btn {
-    padding: 0.6rem 2rem;
-    border-radius: 0.5rem;
-    background-color: $secondary_color;
-    color: $primary_color;
-    font-weight: 600;
-    transition: all 4s ease-in-out;
+  padding: 0.6rem 2rem;
+  border-radius: 0.5rem;
+  background-color: $secondary_color;
+  color: $primary_color;
+  font-weight: 600;
+  transition: all 4s ease-in-out;
 
-    &:hover {
-        border: 2px solid $secondary_color;
-    }
+  &:hover {
+    border: 2px solid $secondary_color;
+  }
 }
 
 .common-btn-outline {
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    background-color: $primary_color;
-    color: $secondary_color;
-    font-weight: 600;
-    transition: all 4s ease-in-out;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: $primary_color;
+  color: $secondary_color;
+  font-weight: 600;
+  transition: all 4s ease-in-out;
 
-    &:hover {
-        border: 2px solid $secondary_color;
-        background-color: $secondary_color;
-        color: $primary_color;
-    }
+  &:hover {
+    border: 2px solid $secondary_color;
+    background-color: $secondary_color;
+    color: $primary_color;
+  }
 }
 
 .hover {
-    @apply transition-all duration-300;
+  @apply transition-all duration-300;
 
-    &:hover {
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    }
+  &:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
 }
 
 .text-hover {
-    @apply transition-all duration-300;
+  @apply transition-all duration-300;
 
-    &:hover {
-        color: inherit;
-        box-shadow: 0 0 10px rgba(227, 224, 224, 0.51);
-    }
+  &:hover {
+    color: inherit;
+    box-shadow: 0 0 10px rgba(227, 224, 224, 0.51);
+  }
 }
 
 // ::-webkit-scrollbar {
@@ -142,87 +140,100 @@ img {
 
 // }
 .swiper {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
 
-    /* Center slide text vertically */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Add these styles to your CSS file or style block */
+.selected {
+  border-color: #ffae00;
+  font-weight: bold;
+}
+
+.disabled {
+  color: #a0a0a0; /* Gray text */
+  cursor: not-allowed; /* Cursor indicates the item is not selectable */
+  background-color: #f0f0f0; /* Lighter background */
+  border-color: #d0d0d0; /* Lighter border */
 }
 
 // =====
 .title {
-    font-size: 2rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    font-weight: 600;
+  font-size: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-weight: 600;
 
-    & span {
-        color: $secondary_color;
-        font-weight: 800;
+  & span {
+    color: $secondary_color;
+    font-weight: 800;
 
-        ::after {
-            content: "";
-            display: block;
-            width: 100%;
-            height: 2px;
-            background-color: $secondary_color;
-            margin-bottom: 0.5rem;
-        }
+    ::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: $secondary_color;
+      margin-bottom: 0.5rem;
     }
+  }
 }
 
 .nav-category-title {
-    padding-top: 0.5rem;
-    font-size: inherit;
-    padding-bottom: 0.5rem;
-    font-weight: 600;
-    color: $secondary_color;
-    letter-spacing: 1px;
+  padding-top: 0.5rem;
+  font-size: inherit;
+  padding-bottom: 0.5rem;
+  font-weight: 600;
+  color: $secondary_color;
+  letter-spacing: 1px;
 }
 
 .bottom-banner-section {
-    background-image: url("../src/Assets/OfferBanner/BannerOne.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 70%;
-    padding: 30px 0;
-    background-blend-mode: color;
-    // background-color: #000000a1;
+  background-image: url("../src/Assets/OfferBanner/BannerOne.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 70%;
+  padding: 30px 0;
+  background-blend-mode: color;
+  // background-color: #000000a1;
 }
 
 .mobile-bottom-banner-section {
-    background-image: url("../src/Assets/MobileBanner/MobileBanner-04.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    // background-position: center;
-    padding: 110px 0;
-    background-blend-mode: color;
-    // background-color: #000000a1;
+  background-image: url("../src/Assets/MobileBanner/MobileBanner-04.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  // background-position: center;
+  padding: 110px 0;
+  background-blend-mode: color;
+  // background-color: #000000a1;
 }
 
 // ===================
 
 .hero-slide-home {
-    background-repeat: no-repeat !important;
-    background-size: auto;
-    background-position: center;
-    background-blend-mode: color !important;
-    background-color: #000000a7 !important;
+  background-repeat: no-repeat !important;
+  background-size: auto;
+  background-position: center;
+  background-blend-mode: color !important;
+  background-color: #000000a7 !important;
 }
 
 //////
@@ -230,9 +241,9 @@ img {
 *,
 *:before,
 *:after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 $numOfParts: 4;
@@ -243,517 +254,549 @@ $maxLettersStagger: 6;
 $letterStagger: 0.1s;
 
 .slider {
-    overflow: hidden;
+  overflow: hidden;
+  position: relative;
+  height: 70vh;
+  color: #fff;
+
+  @mixin sliderReady {
+    .slider.s--ready & {
+      @content;
+    }
+  }
+
+  &__top-heading {
+    z-index: $numOfParts * 3;
+    position: absolute;
+    left: 0;
+    top: 100px;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    transition: $sliderReadyTrans;
+    transform: translateY(-30px);
+    opacity: 0;
+
+    @include sliderReady {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  &__slides {
     position: relative;
-    height: 70vh;
-    color: #fff;
+    height: 100%;
+  }
 
-    @mixin sliderReady {
-        .slider.s--ready & {
-            @content;
-        }
+  &__slide {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 90%;
+    pointer-events: none;
+
+    &.s--active {
+      pointer-events: auto;
     }
 
-    &__top-heading {
-        z-index: $numOfParts * 3;
-        position: absolute;
-        left: 0;
-        top: 100px;
-        width: 100%;
-        text-align: center;
-        font-size: 16px;
-        text-transform: uppercase;
-        letter-spacing: 2.5px;
-        transition: $sliderReadyTrans;
-        transform: translateY(-30px);
+    @mixin slidePrev {
+      .slider__slide.s--prev & {
+        @content;
+      }
+    }
+
+    @mixin slideActive {
+      .slider__slide.s--active & {
+        @content;
+      }
+    }
+
+    &-content {
+      z-index: $numOfParts + 2;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100%;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    @mixin subTextsActiveSlide {
+      opacity: 0;
+      transition: $animTime/2;
+
+      @include slideActive {
+        transition-delay: $animTime * 0.65;
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    &-subheading {
+      margin-bottom: 20px;
+      font-size: 24px;
+      letter-spacing: 2px;
+      transform: translateY(20px);
+
+      @include subTextsActiveSlide;
+    }
+
+    &-heading {
+      $fontSize: 40px;
+
+      display: flex;
+      margin-bottom: 20px;
+      // font-size: $fontSize;
+      letter-spacing: 10;
+
+      span {
+        display: block;
         opacity: 0;
+        transform: translateY($fontSize * -1);
+        transition: all $animTime/3;
 
-        @include sliderReady {
-            transform: translateY(0);
-            opacity: 1;
+        @include slidePrev {
+          transform: translateY($fontSize);
         }
+
+        @include slideActive {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        @for $i from 1 through $maxLettersStagger {
+          &:nth-child(#{$i}) {
+            $delay: $letterStagger * ($i - 1);
+
+            transition-delay: $delay;
+
+            @include slideActive {
+              transition-delay: $delay + $animTime/3;
+            }
+          }
+        }
+
+        &:nth-child(n + #{$maxLettersStagger + 1}) {
+          $delay: $letterStagger * $maxLettersStagger;
+
+          transition-delay: $delay;
+
+          @include slideActive {
+            transition-delay: $delay + $animTime/3;
+          }
+        }
+      }
     }
 
-    &__slides {
-        position: relative;
-        height: 100%;
+    &-readmore {
+      position: relative;
+      font-size: 14px;
+      text-transform: lowercase;
+      backface-visibility: hidden;
+      transform: translateY(-20px);
+      cursor: pointer;
+
+      @include subTextsActiveSlide;
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: -2px;
+        top: -3px;
+        width: calc(100% + 4px);
+        height: calc(100% + 6px);
+        // background: rgba(255, 255, 255, 0.4);
+        transform: scaleX(0.3);
+        transform-origin: 0 50%;
+        transition: transform 0.3s;
+      }
+
+      &:hover:before {
+        transform: scaleX(1);
+      }
     }
 
-    &__slide {
+    &-parts {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: flex;
+      width: 100%;
+      height: 100%;
+
+      &:after {
+        content: "";
+        z-index: $numOfParts + 1;
         position: absolute;
         left: 0;
         top: 0;
         width: 100%;
-        height: 90%;
-        pointer-events: none;
-
-        &.s--active {
-            pointer-events: auto;
-        }
-
-        @mixin slidePrev {
-            .slider__slide.s--prev & {
-                @content;
-            }
-        }
-
-        @mixin slideActive {
-            .slider__slide.s--active & {
-                @content;
-            }
-        }
-
-        &-content {
-            z-index: $numOfParts + 2;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: 100%;
-            text-transform: uppercase;
-            line-height: 1;
-        }
-
-        @mixin subTextsActiveSlide {
-            opacity: 0;
-            transition: $animTime/2;
-
-            @include slideActive {
-                transition-delay: $animTime * 0.65;
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        &-subheading {
-            margin-bottom: 20px;
-            font-size: 24px;
-            letter-spacing: 2px;
-            transform: translateY(20px);
-
-            @include subTextsActiveSlide;
-        }
-
-        &-heading {
-            $fontSize: 40px;
-
-            display: flex;
-            margin-bottom: 20px;
-            // font-size: $fontSize;
-            letter-spacing: 10;
-
-            span {
-                display: block;
-                opacity: 0;
-                transform: translateY($fontSize * -1);
-                transition: all $animTime/3;
-
-                @include slidePrev {
-                    transform: translateY($fontSize);
-                }
-
-                @include slideActive {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-
-                @for $i from 1 through $maxLettersStagger {
-                    &:nth-child(#{$i}) {
-                        $delay: $letterStagger * ($i - 1);
-
-                        transition-delay: $delay;
-
-                        @include slideActive {
-                            transition-delay: $delay + $animTime/3;
-                        }
-                    }
-                }
-
-                &:nth-child(n + #{$maxLettersStagger + 1}) {
-                    $delay: $letterStagger * $maxLettersStagger;
-
-                    transition-delay: $delay;
-
-                    @include slideActive {
-                        transition-delay: $delay + $animTime/3;
-                    }
-                }
-            }
-        }
-
-        &-readmore {
-            position: relative;
-            font-size: 14px;
-            text-transform: lowercase;
-            backface-visibility: hidden;
-            transform: translateY(-20px);
-            cursor: pointer;
-
-            @include subTextsActiveSlide;
-
-            &:before {
-                content: "";
-                position: absolute;
-                left: -2px;
-                top: -3px;
-                width: calc(100% + 4px);
-                height: calc(100% + 6px);
-                // background: rgba(255, 255, 255, 0.4);
-                transform: scaleX(0.3);
-                transform-origin: 0 50%;
-                transition: transform 0.3s;
-            }
-
-            &:hover:before {
-                transform: scaleX(1);
-            }
-        }
-
-        &-parts {
-            position: absolute;
-            left: 0;
-            top: 0;
-            display: flex;
-            width: 100%;
-            height: 100%;
-
-            &:after {
-                content: "";
-                z-index: $numOfParts + 1;
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.1);
-            }
-        }
-
-        &-part {
-            $partW: (100vw / $numOfParts);
-
-            position: relative;
-            width: percentage(1 / $numOfParts);
-            height: 100%;
-
-            $partRef: &;
-            $imageFadeAT: $animTime/4;
-
-            &-inner {
-                overflow: hidden;
-                position: relative;
-                width: 100%;
-                height: 100%;
-                background-size: 0 0;
-                background-repeat: no-repeat;
-                transition: transform $animTime/2 ease-in-out;
-
-                &:before {
-                    content: "";
-                    position: absolute;
-                    width: 100vw;
-                    height: 100%;
-                    background-image: inherit;
-                    background-size: cover;
-                    background-position: center center;
-                    transition: opacity $imageFadeAT;
-                    opacity: 0;
-                }
-
-                @for $i from 1 through $numOfParts {
-                    #{$partRef}:nth-child(#{$i}) & {
-                        $delayOut: ($numOfParts - $i) * $stagger;
-                        $delayIn: $i * $stagger + $animTime/5;
-
-                        z-index: $numOfParts - $i;
-                        transition-delay: $delayOut;
-                        transform: translateX(percentage($i / $numOfParts * -1.3));
-
-                        @include slideActive {
-                            transition-delay: $delayIn;
-                        }
-
-                        &:before {
-                            left: $partW * ($i - 1) * -1;
-                            transition-delay: $delayOut + $imageFadeAT/2;
-
-                            @include slideActive {
-                                transition-delay: $delayIn;
-                            }
-                        }
-                    }
-                }
-
-                @include slideActive {
-                    transform: translateX(0);
-                    transition-timing-function: ease;
-
-                    &:before {
-                        opacity: 1;
-                    }
-                }
-            }
-        }
+        height: 100%;
+        background: rgba(0, 0, 0, 0.1);
+      }
     }
 
-    &__control {
-        $size: 50px;
+    &-part {
+      $partW: (100vw / $numOfParts);
 
-        z-index: 100;
-        position: absolute;
-        left: 50px;
-        top: 50%;
-        width: $size;
-        height: $size;
-        margin-top: $size/-2;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.4);
-        transform: translateX($size * -1);
-        opacity: 0;
-        transition: $sliderReadyTrans;
-        cursor: pointer;
+      position: relative;
+      width: percentage(1 / $numOfParts);
+      height: 100%;
+
+      $partRef: &;
+      $imageFadeAT: $animTime/4;
+
+      &-inner {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-size: 0 0;
+        background-repeat: no-repeat;
+        transition: transform $animTime/2 ease-in-out;
 
         &:before {
-            content: "";
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            width: 20px;
-            height: 20px;
-            margin-left: -10px;
-            margin-top: -10px;
-            border: 2px solid #000;
-            border-bottom: none;
-            border-right: none;
-            transform: translateX(5px) rotate(-45deg);
+          content: "";
+          position: absolute;
+          width: 100vw;
+          height: 100%;
+          background-image: inherit;
+          background-size: cover;
+          background-position: center center;
+          transition: opacity $imageFadeAT;
+          opacity: 0;
         }
 
-        &--right {
-            left: auto;
-            right: 50px;
-            transform: translateX($size);
+        @for $i from 1 through $numOfParts {
+          #{$partRef}:nth-child(#{$i}) & {
+            $delayOut: ($numOfParts - $i) * $stagger;
+            $delayIn: $i * $stagger + $animTime/5;
+
+            z-index: $numOfParts - $i;
+            transition-delay: $delayOut;
+            transform: translateX(percentage($i / $numOfParts * -1.3));
+
+            @include slideActive {
+              transition-delay: $delayIn;
+            }
 
             &:before {
-                transform: translateX(-5px) rotate(135deg);
+              left: $partW * ($i - 1) * -1;
+              transition-delay: $delayOut + $imageFadeAT/2;
+
+              @include slideActive {
+                transition-delay: $delayIn;
+              }
             }
+          }
         }
 
-        @include sliderReady {
-            transform: translateX(0);
+        @include slideActive {
+          transform: translateX(0);
+          transition-timing-function: ease;
+
+          &:before {
             opacity: 1;
+          }
         }
+      }
     }
+  }
+
+  &__control {
+    $size: 50px;
+
+    z-index: 100;
+    position: absolute;
+    left: 50px;
+    top: 50%;
+    width: $size;
+    height: $size;
+    margin-top: $size/-2;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateX($size * -1);
+    opacity: 0;
+    transition: $sliderReadyTrans;
+    cursor: pointer;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 20px;
+      height: 20px;
+      margin-left: -10px;
+      margin-top: -10px;
+      border: 2px solid #000;
+      border-bottom: none;
+      border-right: none;
+      transform: translateX(5px) rotate(-45deg);
+    }
+
+    &--right {
+      left: auto;
+      right: 50px;
+      transform: translateX($size);
+
+      &:before {
+        transform: translateX(-5px) rotate(135deg);
+      }
+    }
+
+    @include sliderReady {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
 }
 
 .icon-link {
-    z-index: 100;
-    position: absolute;
-    left: 5px;
-    bottom: 5px;
-    width: 32px;
+  z-index: 100;
+  position: absolute;
+  left: 5px;
+  bottom: 5px;
+  width: 32px;
 
-    img {
-        width: 100%;
-        vertical-align: top;
-    }
+  img {
+    width: 100%;
+    vertical-align: top;
+  }
 
-    &--twitter {
-        left: auto;
-        right: 5px;
-    }
+  &--twitter {
+    left: auto;
+    right: 5px;
+  }
 }
 
 .sticky-bar {
-    box-shadow: 0px -8px 14px 0px #0000;
+  box-shadow: 0px -8px 14px 0px #0000;
 }
 .hover-box:hover .hover-img {
-    opacity: 100%;
+  opacity: 100%;
 }
 
 .swiper-pagination {
-    border-radius: 8px !important;
-    background: #f4f5f720 !important;
-    margin: auto;
-    border-radius: 44px !important;
-    left: 0;
-    position: absolute;
-    text-align: center;
-    transition: 0.3s opacity;
-    transform: translate3d(0, 0, 0);
-    z-index: 100;
-    left: 0 !important;
-    right: 0 !important;
-    width: 90px !important;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+  border-radius: 8px !important;
+  background: #f4f5f720 !important;
+  margin: auto;
+  border-radius: 44px !important;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  transition: 0.3s opacity;
+  transform: translate3d(0, 0, 0);
+  z-index: 100;
+  left: 0 !important;
+  right: 0 !important;
+  width: 90px !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
 }
 
 .swiper-pagination-bullet {
-    background: black !important; /* Change the default color of bullets */
+  background: black !important; /* Change the default color of bullets */
 }
 
 .swiper-pagination-bullet-active {
-    font-size: 4rem !important;
-    background: rgb(255, 255, 255) !important; /* Change the active bullet color to red */
+  font-size: 4rem !important;
+  background: rgb(
+    255,
+    255,
+    255
+  ) !important; /* Change the active bullet color to red */
 }
 
 @keyframes pulse {
-    0%,
-    100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
 }
 
 .animate-pulse {
-    animation: pulse 1.5s infinite;
+  animation: pulse 1.5s infinite;
 }
 
 .swiper {
-    .swiper-button-next::after,
-    .swiper-button-prev::after {
-        color: #e4dbdb !important;
-        font-size: 0.9rem !important;
-        background: #0000003b;
-        padding: 10px 15px;
-        border-radius: 50%;
-    }
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    color: #e4dbdb !important;
+    font-size: 0.9rem !important;
+    background: #0000003b;
+    padding: 10px 15px;
+    border-radius: 50%;
+  }
 }
 
 #searchBar.MuiAutocomplete-input {
-    outline: none;
+  outline: none;
 }
 
 .effect {
-    filter: grayscale(50%);
+  filter: grayscale(50%);
 }
 
-
 .swiper-pagination {
-    font-size: 0;
-    padding: 3px 0;
-    background-color: #f4f4f579 !important;
-    color: black !important;
-    .swiper-pagination-bullet {
-        background-color: #000 !important;
-        opacity: 1 !important;
-    }
+  font-size: 0;
+  padding: 3px 0;
+  background-color: #f4f4f579 !important;
+  color: black !important;
+  .swiper-pagination-bullet {
+    background-color: #000 !important;
+    opacity: 1 !important;
+  }
 
-    .swiper-pagination-bullet-active {
-        background-color: #f9f7f7 !important;
-    }
+  .swiper-pagination-bullet-active {
+    background-color: #f9f7f7 !important;
+  }
 }
 
 #searchBar {
-    position: relative;
-    overflow: hidden;
-    &::placeholder {
-        position: absolute;
-        animation: scrollUp infinite linear 5s;
-        white-space: nowrap;
-        transition: transform 1s ease-in-out; // Transition added for smoothness
-    }
+  position: relative;
+  overflow: hidden;
+  &::placeholder {
+    position: absolute;
+    animation: scrollUp infinite linear 5s;
+    white-space: nowrap;
+    transition: transform 1s ease-in-out; // Transition added for smoothness
+  }
 
+  @keyframes scrollUp {
+    0% {
+      transform: translateY(100%); // Start from the bottom
+    }
+    100% {
+      transform: translateY(0); // Move upwards
+    }
+  }
+
+  @at-root {
     @keyframes scrollUp {
-        0% {
-            transform: translateY(100%); // Start from the bottom
-        }
-        100% {
-            transform: translateY(0); // Move upwards
-        }
+      0% {
+        transform: translateY(100%);
+      }
+      100% {
+        transform: translateY(0);
+      }
     }
-
-    @at-root {
-        @keyframes scrollUp {
-            0% {
-                transform: translateY(100%);
-            }
-            100% {
-                transform: translateY(0);
-            }
-        }
-    }
+  }
 }
 
 .footer-border {
-    border-color: rgba(136, 133, 133, 0.84) !important;
+  border-color: rgba(136, 133, 133, 0.84) !important;
 }
 
 .adjustVideo {
-    padding-bottom: 56.25%;
+  padding-bottom: 56.25%;
 }
 
 #demo {
-    border: none !important;
-    border-width: 0px !important;
-    border-color: black !important;
-    border-top: black !important;
+  border: none !important;
+  border-width: 0px !important;
+  border-color: black !important;
+  border-top: black !important;
 }
 
-.chele{
-    height: 3.5rem !important;
+.chele {
+  height: 3.5rem !important;
 }
 .hidden {
-    display: none;
-  }
-  
-  .visible {
-    display: block;
-  }
-  
-.storyOutline{
-    outline: solid 3px rgb(212, 27, 58);
+  display: none;
 }
 
-.cardOutline{
-   border: solid 3px rgba(243, 239, 239, 0.455);
+.visible {
+  display: block;
+}
+
+.storyOutline {
+  outline: solid 3px rgb(212, 27, 58);
+}
+
+.cardOutline {
+  border: solid 3px rgba(243, 239, 239, 0.455);
 }
 
 @media screen and (max-width: 767px) {
-    .flex-wrap-mobile {
-      display: flex;
-      flex-wrap: wrap;
-      /* Additional styles for mobile screens */
-    }
+  .flex-wrap-mobile {
+    display: flex;
+    flex-wrap: wrap;
+    /* Additional styles for mobile screens */
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .small-screen-font {
+    font-size: 1.5rem;
+  }
+}
+
+.swiper-scrollbar {
+  display: none !important;
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-scrollbar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 8px; /* Adjust width as needed */
+  background-color: #ccc; /* Color of the scrollbar */
+  border-radius: 4px; /* Adjust as needed */
+  opacity: 0.5;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-scrollbar:hover {
+  opacity: 1;
+}
+
+.carousel-scrollbar-thumb {
+  width: 100%;
+  background-color: #888;
+  border-radius: 4px;
+}
+
+@media (max-width: 599px) {
+  .mobile-menu {
+    display: block !important;
   }
 
-  @media screen and (max-width: 767px) {
-    .small-screen-font {
-      font-size: 1.5rem; 
-    }
+  .manu-items {
+    display: none !important;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1279px) {
+  .mobile-menu {
+    display: block !important;
   }
 
-  .swiper-scrollbar {
+  .manu-items {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .mobile-menu {
     display: none !important;
   }
 
-  .carousel-container {
-    position: relative;
-    overflow: hidden;
+  .manu-items {
+    display: flex !important;
   }
-  
-  .carousel-scrollbar {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    width: 8px; /* Adjust width as needed */
-    background-color: #ccc; /* Color of the scrollbar */
-    border-radius: 4px; /* Adjust as needed */
-    opacity: 0.5;
-    transition: opacity 0.5s ease-in-out;
-  }
-  
-  .carousel-scrollbar:hover {
-    opacity: 1;
-  }
-  
-  .carousel-scrollbar-thumb {
-    width: 100%;
-    background-color: #888; /* Color of the scrollbar thumb */
-    border-radius: 4px; /* Adjust as needed */
-  }
-  
+}

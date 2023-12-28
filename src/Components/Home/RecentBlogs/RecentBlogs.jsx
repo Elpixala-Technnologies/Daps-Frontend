@@ -85,213 +85,218 @@
 
 // export default RecentBlogs;
 
-export const blogData = [
-  {
-    id: 1,
-    title: 'Boost your conversion rate',
-    href: '#',
-    description:
-      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-    date: 'Mar 16, 2020',
-    datetime: '2020-03-16',
-    category: { title: 'Marketing', href: '#' },
-    images: [
-      "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/khelxh6q8pupq8vwm1st.webp",
-      "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/nzwhoufrs5npnbnp3jyt.webp",
-      "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/l1la2kr8rknt2ggvu853.webp"
-    ],
-    author: {
-      name: 'Michael Foster',
-      role: 'Co-Founder / CTO',
-      href: '#',
-      imageUrl:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
-  },
-  {
-    id: 2,
-    title: 'Boost your conversion rate',
-    href: '#',
-    description:
-      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-    date: 'Mar 16, 2020',
-    datetime: '2020-03-16',
-    category: { title: 'Marketing', href: '#' },
-    images: [
-      "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/nzwhoufrs5npnbnp3jyt.webp",
-      "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/khelxh6q8pupq8vwm1st.webp",
-      "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/l1la2kr8rknt2ggvu853.webp"
-    ],
-    author: {
-      name: 'Michael Foster',
-      role: 'Co-Founder / CTO',
-      href: '#',
-      imageUrl:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
-  },
-  {
-    id: 3,
-    title: 'Boost your conversion rate',
-    href: '#',
-    description:
-      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-    date: 'Mar 16, 2020',
-    datetime: '2020-03-16',
-    category: { title: 'Marketing', href: '#' },
-    images: [
-      "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/l1la2kr8rknt2ggvu853.webp",
-      "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/khelxh6q8pupq8vwm1st.webp",
-      "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/nzwhoufrs5npnbnp3jyt.webp",
-    ],
-    author: {
-      name: 'Michael Foster',
-      role: 'Co-Founder / CTO',
-      href: '#',
-      imageUrl:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
-  },
-  {
-    id: 4,
-    title: 'Boost your conversion rate',
-    href: '#',
-    description:
-      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-    date: 'Mar 16, 2020',
-    datetime: '2020-03-16',
-    category: { title: 'Marketing', href: '#' },
-    images: [
-      "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/khelxh6q8pupq8vwm1st.webp",
-      "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/nzwhoufrs5npnbnp3jyt.webp",
-      "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/l1la2kr8rknt2ggvu853.webp"
-    ],
-    author: {
-      name: 'Michael Foster',
-      role: 'Co-Founder / CTO',
-      href: '#',
-      imageUrl:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
-  },
-  {
-    id: 5,
-    title: 'Boost your conversion rate',
-    href: '#',
-    description:
-      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-    date: 'Mar 16, 2020',
-    datetime: '2020-03-16',
-    category: { title: 'Marketing', href: '#' },
-    images: [
-      "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/nzwhoufrs5npnbnp3jyt.webp",
-      "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/khelxh6q8pupq8vwm1st.webp",
-      "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/l1la2kr8rknt2ggvu853.webp"
-    ],
-    author: {
-      name: 'Michael Foster',
-      role: 'Co-Founder / CTO',
-      href: '#',
-      imageUrl:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
-  },
-  {
-    id: 6,
-    title: 'Boost your conversion rate',
-    href: '#',
-    description:
-      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-    date: 'Mar 16, 2020',
-    datetime: '2020-03-16',
-    category: { title: 'Marketing', href: '#' },
-    images: [
-      "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/l1la2kr8rknt2ggvu853.webp",
-      "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/nzwhoufrs5npnbnp3jyt.webp",
-      "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/khelxh6q8pupq8vwm1st.webp",
-    ],
-    author: {
-      name: 'Michael Foster',
-      role: 'Co-Founder / CTO',
-      href: '#',
-      imageUrl:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
-  },
-  {
-    id: 7,
-    title: 'Boost your conversion rate',
-    href: '#',
-    description:
-      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-    date: 'Mar 16, 2020',
-    datetime: '2020-03-16',
-    category: { title: 'Marketing', href: '#' },
-    images: [
-      "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/nzwhoufrs5npnbnp3jyt.webp",
-      "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/khelxh6q8pupq8vwm1st.webp",
-      "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/l1la2kr8rknt2ggvu853.webp"
-    ],
-    author: {
-      name: 'Michael Foster',
-      role: 'Co-Founder / CTO',
-      href: '#',
-      imageUrl:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
-  },
-  {
-    id: 7,
-    title: 'Boost your conversion rate',
-    href: '#',
-    description:
-      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-    date: 'Mar 16, 2020',
-    datetime: '2020-03-16',
-    category: { title: 'Marketing', href: '#' },
-    images: [
-      "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/l1la2kr8rknt2ggvu853.webp",
-      "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/nzwhoufrs5npnbnp3jyt.webp",
-      "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/khelxh6q8pupq8vwm1st.webp",
-    ],
-    author: {
-      name: 'Michael Foster',
-      role: 'Co-Founder / CTO',
-      href: '#',
-      imageUrl:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
-  },
-  {
-    id: 8,
-    title: 'Boost your conversion rate',
-    href: '#',
-    description:
-      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-    date: 'Mar 16, 2020',
-    datetime: '2020-03-16',
-    category: { title: 'Marketing', href: '#' },
-    images: [
-      "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/l1la2kr8rknt2ggvu853.webp",
-      "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/nzwhoufrs5npnbnp3jyt.webp",
-      "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/khelxh6q8pupq8vwm1st.webp",
-    ],
-    author: {
-      name: 'Michael Foster',
-      role: 'Co-Founder / CTO',
-      href: '#',
-      imageUrl:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
-  },
-]
+// export const blogData = [
+//   {
+//     id: 1,
+//     title: 'Boost your conversion rate',
+//     href: '#',
+//     description:
+//       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+//     date: 'Mar 16, 2020',
+//     datetime: '2020-03-16',
+//     category: { title: 'Marketing', href: '#' },
+//     images: [
+//       "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/khelxh6q8pupq8vwm1st.webp",
+//       "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/nzwhoufrs5npnbnp3jyt.webp",
+//       "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/l1la2kr8rknt2ggvu853.webp"
+//     ],
+//     author: {
+//       name: 'Michael Foster',
+//       role: 'Co-Founder / CTO',
+//       href: '#',
+//       imageUrl:
+//         'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+//     },
+//   },
+//   {
+//     id: 2,
+//     title: 'Boost your conversion rate',
+//     href: '#',
+//     description:
+//       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+//     date: 'Mar 16, 2020',
+//     datetime: '2020-03-16',
+//     category: { title: 'Marketing', href: '#' },
+//     images: [
+//       "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/nzwhoufrs5npnbnp3jyt.webp",
+//       "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/khelxh6q8pupq8vwm1st.webp",
+//       "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/l1la2kr8rknt2ggvu853.webp"
+//     ],
+//     author: {
+//       name: 'Michael Foster',
+//       role: 'Co-Founder / CTO',
+//       href: '#',
+//       imageUrl:
+//         'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+//     },
+//   },
+//   {
+//     id: 3,
+//     title: 'Boost your conversion rate',
+//     href: '#',
+//     description:
+//       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+//     date: 'Mar 16, 2020',
+//     datetime: '2020-03-16',
+//     category: { title: 'Marketing', href: '#' },
+//     images: [
+//       "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/l1la2kr8rknt2ggvu853.webp",
+//       "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/khelxh6q8pupq8vwm1st.webp",
+//       "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/nzwhoufrs5npnbnp3jyt.webp",
+//     ],
+//     author: {
+//       name: 'Michael Foster',
+//       role: 'Co-Founder / CTO',
+//       href: '#',
+//       imageUrl:
+//         'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+//     },
+//   },
+//   {
+//     id: 4,
+//     title: 'Boost your conversion rate',
+//     href: '#',
+//     description:
+//       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+//     date: 'Mar 16, 2020',
+//     datetime: '2020-03-16',
+//     category: { title: 'Marketing', href: '#' },
+//     images: [
+//       "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/khelxh6q8pupq8vwm1st.webp",
+//       "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/nzwhoufrs5npnbnp3jyt.webp",
+//       "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/l1la2kr8rknt2ggvu853.webp"
+//     ],
+//     author: {
+//       name: 'Michael Foster',
+//       role: 'Co-Founder / CTO',
+//       href: '#',
+//       imageUrl:
+//         'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+//     },
+//   },
+//   {
+//     id: 5,
+//     title: 'Boost your conversion rate',
+//     href: '#',
+//     description:
+//       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+//     date: 'Mar 16, 2020',
+//     datetime: '2020-03-16',
+//     category: { title: 'Marketing', href: '#' },
+//     images: [
+//       "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/nzwhoufrs5npnbnp3jyt.webp",
+//       "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/khelxh6q8pupq8vwm1st.webp",
+//       "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/l1la2kr8rknt2ggvu853.webp"
+//     ],
+//     author: {
+//       name: 'Michael Foster',
+//       role: 'Co-Founder / CTO',
+//       href: '#',
+//       imageUrl:
+//         'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+//     },
+//   },
+//   {
+//     id: 6,
+//     title: 'Boost your conversion rate',
+//     href: '#',
+//     description:
+//       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+//     date: 'Mar 16, 2020',
+//     datetime: '2020-03-16',
+//     category: { title: 'Marketing', href: '#' },
+//     images: [
+//       "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/l1la2kr8rknt2ggvu853.webp",
+//       "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/nzwhoufrs5npnbnp3jyt.webp",
+//       "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/khelxh6q8pupq8vwm1st.webp",
+//     ],
+//     author: {
+//       name: 'Michael Foster',
+//       role: 'Co-Founder / CTO',
+//       href: '#',
+//       imageUrl:
+//         'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+//     },
+//   },
+//   {
+//     id: 7,
+//     title: 'Boost your conversion rate',
+//     href: '#',
+//     description:
+//       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+//     date: 'Mar 16, 2020',
+//     datetime: '2020-03-16',
+//     category: { title: 'Marketing', href: '#' },
+//     images: [
+//       "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/nzwhoufrs5npnbnp3jyt.webp",
+//       "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/khelxh6q8pupq8vwm1st.webp",
+//       "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/l1la2kr8rknt2ggvu853.webp"
+//     ],
+//     author: {
+//       name: 'Michael Foster',
+//       role: 'Co-Founder / CTO',
+//       href: '#',
+//       imageUrl:
+//         'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+//     },
+//   },
+//   {
+//     id: 7,
+//     title: 'Boost your conversion rate',
+//     href: '#',
+//     description:
+//       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+//     date: 'Mar 16, 2020',
+//     datetime: '2020-03-16',
+//     category: { title: 'Marketing', href: '#' },
+//     images: [
+//       "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/l1la2kr8rknt2ggvu853.webp",
+//       "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/nzwhoufrs5npnbnp3jyt.webp",
+//       "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/khelxh6q8pupq8vwm1st.webp",
+//     ],
+//     author: {
+//       name: 'Michael Foster',
+//       role: 'Co-Founder / CTO',
+//       href: '#',
+//       imageUrl:
+//         'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+//     },
+//   },
+//   {
+//     id: 8,
+//     title: 'Boost your conversion rate',
+//     href: '#',
+//     description:
+//       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+//     date: 'Mar 16, 2020',
+//     datetime: '2020-03-16',
+//     category: { title: 'Marketing', href: '#' },
+//     images: [
+//       "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/l1la2kr8rknt2ggvu853.webp",
+//       "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/nzwhoufrs5npnbnp3jyt.webp",
+//       "https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/khelxh6q8pupq8vwm1st.webp",
+//     ],
+//     author: {
+//       name: 'Michael Foster',
+//       role: 'Co-Founder / CTO',
+//       href: '#',
+//       imageUrl:
+//         'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+//     },
+//   },
+// ]
 
 
 
 import React from 'react';
 import Link from "next/link";
+import useBlogs from "@/src/Hooks/useBlogs";
 
 const RecentBlog = () => {
+const {blogData} = useBlogs()
+
+console.log(blogData, "blogDatablogData")
+
 
   return (
     <section className='container my-6'>
@@ -305,22 +310,22 @@ const RecentBlog = () => {
           <div className=" grid gap-14 grid-cols-1 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
             {blogData && blogData?.slice(0, 3)?.map((post) => {
               return (
-                <div key={post.id}
+                <div key={post?._id}
                 >
                   <div>
-                    <a href={post.id}>
-                      <img className="h-72 w-full object-cover rounded transition duration-200 ease-out transform hover:scale-105" src={post.images[0]} alt="" />
+                    <a href={`/blogs/${post?._id}`}>
+                      <img 
+                       src={post?.image}
+                      className="h-72 w-full object-cover rounded transition duration-200 ease-out transform hover:scale-105" alt="" />
                     </a>
                   </div>
-                  <p className="text-sm text-gray-500 mt-4">
-                    <time dateTime={post.datetime}>{post.date}</time>
-                  </p>
-                  <a href={post.href} className="mt-2 block">
+                 
+                  <div className="mt-2 block">
                     <p className="text-xl font-semibold text-gray-900">{post.title}</p>
-                    <p className="mt-3 text-base text-gray-500">{post.description}</p>
-                  </a>
+                    <p className="mt-3 text-base text-gray-500">{post.subtitle}</p>
+                  </div>
                   <div className="mt-3">
-                    <Link href={post.href} className="text-base font-semibold text-indigo-600 hover:text-indigo-500">
+                    <Link href={`/blogs/${post?._id}`} className="text-base font-semibold text-indigo-600 hover:text-indigo-500">
                       Read full story
                     </Link>
                   </div>

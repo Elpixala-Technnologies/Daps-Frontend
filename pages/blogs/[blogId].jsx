@@ -1,119 +1,238 @@
-import React from 'react';
-import { useRouter } from 'next/router';
+import React from "react";
+import { useRouter } from "next/router";
 import useBlogs from "@/src/Hooks/useBlogs";
 import Link from "next/link";
-import RootLayout from '@/src/Layouts/RootLayout';
+import RootLayout from "@/src/Layouts/RootLayout";
 
 const BlogDetailPage = () => {
-    const { blogData } = useBlogs();
-    const router = useRouter();
-    const { blogId } = router.query;
+  const { blogData } = useBlogs();
+  const router = useRouter();
+  const { blogId } = router?.query;
 
-    const filterBlogData = blogData?.filter((data) => {
-        return data?._id === blogId;
-    });
+  const filterBlogData = blogData?.filter((data) => {
+    return data?._id === blogId;
+  });
 
-    let blog
+  let blogs;
 
-    if (filterBlogData && filterBlogData.length > 0) {
-        blog = filterBlogData[0];
-        // Access other properties of 'product' as needed
-    } else {
-        console.error(`No data found for ID: ${blogId}`);
-    }
+  if (filterBlogData && filterBlogData?.length > 0) {
+    blogs = filterBlogData[0];
+    // Access other properties of 'product' as needed
+    const { title, subtitle, content, image, author, publisheDate } = blogs;
+    console.log(blogs);
+  } else {
+    console.error(`No data found for ID: ${blogId}`);
+  }
 
-
-
-    return (
-        <RootLayout>
-            <section className='container'>
-                <div className="mt-6 bg-gray-50">
-                    <div className=" px-10 py-6 mx-auto ">
-                        {/*author*/}
-                        <div className="mt-2 text-center pt-30 font-serif">
-                                {/*post heading*/}
-                                <a
-                                    href="#"
-                                    className="sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl font-bold text-[#18568C]  hover:underline"
-                                >
-                                    {blog?.title}
-                                </a>
-                            </div>
-                        <div className="max-w-5xl px-10 py-6 mx-auto bg-gray-50 pt-30   ">
-                            <a
-                                href="#_"
-                                className="block transition"
-                            >
-                                <img
-                                    className="object-cover w-full shadow-sm h-full max-w-3xl items-center"
-                                    src={blog?.image}
-                                    alt={blog?.title}
-                                />
-                            </a>
-                            {/*post categories*/}
-                            <div className="flex items-center justify-start mt-4 mb-4">
-                                {blog?.tags.map((tag) => {
-                                    return (
-                                        <span key={tag} className="px-2 py-1 font-bold bg-red-400 text-white rounded-lg hover:bg-gray-500 mr-4"> #{tag} </span>
-                                    )
-                                })}
-
-                            </div>
-                            
-                            <div className=" w-full  mx-auto text-2xl text-gray-700 mt-4 rounded bg-gray-100 flex flex-row">
-                                <div>
-                                    <p className="mt-2 p-8 font-bold">
-                                        {blog?.content}
-                                    </p>
-                                    <p className="mt-2 p-8 ">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam velit esse dolor corporis quas animi voluptate corrupti minus aliquam, obcaecati atque officia optio. Deleniti molestiae adipisci mollitia rem, dolores illum dignissimos neque odio quia amet fugit eum dolorum cum repudiandae temporibus laudantium placeat saepe iste corrupti! Explicabo magnam ab repellendus dolorum? Sapiente ipsa velit eos libero! Ad facilis sunt nam quam quod, unde qui praesentium, error ipsa iusto cupiditate et, eaque suscipit velit vitae magni dolore minus. Eius, facilis! Magni veritatis debitis maxime culpa, amet id, modi ratione et adipisci tempora ab quod fugit voluptate, aperiam aut placeat perferendis expedita.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <h2 className="text-2xl mt-4 text-gray-500 font-bold text-center">
-                            Related Posts
-                        </h2>
-                        <div className=" grid h-full grid-cols-12 gap-10 pb-10 mt-8 sm:mt-16 ">
-                            <div className="grid grid-cols-12 col-span-12 gap-7 ">
-                                {
-                                    blogData && blogData?.slice(0, 3)?.map((blogD) => {
-                                        return (
-                                            <div className="flex flex-col items-start col-span-12 overflow-hidden shadow-sm rounded-xl md:col-span-6 lg:col-span-4">
-                                                <a
-                                                    href="#_"
-                                                    className="w-full transition duration-200 ease-out transform hover:scale-110"
-                                                >
-                                                    <img
-                                                        className="object-cover w-full shadow-sm h-full"
-                                                        src={blogD?.image}
-                                                        alt={blogD?.title}
-                                                    />
-                                                </a>
-                                                <div className="relative flex flex-col items-start px-6 bg-white border border-t-0 border-gray-200 py-7 rounded-b-2xl">
-                                                    <div className="bg-indigo-400 absolute top-0 -mt-3 flex items-center px-3 py-1.5 leading-none w-auto  rounded-full text-xs font-medium uppercase text-white">
-                                                        <span>{blogD?.tags[0]}</span>
-                                                    </div>
-                                                    <h2 className="text-base text-gray-500 font-bold sm:text-lg md:text-xl">
-                                                        <Link href={`/blogs/${blog?._id}`}>
-                                                            {blogD?.title}
-                                                        </Link>
-                                                    </h2>
-                                                </div>
-                                            </div>
-                                        )
-                                    })
-                                }
-                            </div>
-                        </div>
-                      
-                    </div>
+  return (
+    <RootLayout>
+      <section className="container">
+        <div className="mx-auto">
+          <main className="mt-12">
+            <div className="flex justify-between gap-8">
+              {/* main post */}
+              <div className="md:w-[75%] w-full rounded">
+                <img
+                  src={blogs?.image}
+                  className="rounded-md object-cover w-full h-64"
+                />
+                <span className="text-green-700 text-sm hidden md:block mt-4">
+                  {" "}
+                  Technology{" "}
+                </span>
+                <h1 className="text-gray-800 text-4xl font-bold mt-2 mb-2 leading-tight">
+                  {blogs?.title}
+                </h1>
+                <div
+                  className="text-gray-600 mb-4"
+                  dangerouslySetInnerHTML={{ __html: blogs?.content }}
+                />
+              </div>
+              {/* sub-main posts */}
+              <div className="md:w-[25%] md:block hidden">
+                <div className="w-full relative flex pb-5 items-center">
+                  <div className="flex-grow border-t border-orange-400 border-2 rounded-xl"></div><span className="flex-shrink mx-4 text-[#05175E] text-base">Latest Post</span><div className="flex-grow border-t border-orange-400 border-2 rounded-xl"></div>
                 </div>
+                {blogData?.slice(0.7)?.map((blog) => {
+                  return (
+                    <div className="rounded w-full mb-4 flex flex-col md:flex-row">
+                      <img
+                        src={blog?.image}
+                        className="w-32 h-32  object-cover rounded-md m-2 md:m-0"
+                      />
+                      <div className="bg-white rounded px-4">
+                        <div className="md:mt-0 text-gray-800 font-semibold text-[12px] mb-2">
+                          {blog?.title}
+                        </div>
+                        <p className="block md:hidden p-2 pl-0 pt-1 text-sm text-gray-600">
+                          {blog?.subtitle?.slice(0, 100)}
+                        </p>
+                        <Link href={`/blog/${blog?._id}`}>
+                          <span className="text-blue-500 text-sm">Read More</span>
+                        </Link>
+                      </div>
+                    </div>
+                  );
+                })}
+                <div className="rounded flex md:shadow mt-12">
 
-            </section>
-        </RootLayout>
-    );
+                  <div className="px-4 py-2">
+                    <h3 className="text-3xl text-gray-800 font-bold">
+                      Subscribe to newsletter
+                    </h3>
+                    <p className="text-xl text-gray-700">
+                      We sent latest news and posts once in every week, fresh from
+                      the oven
+                    </p>
+                    <form className="mt-4 mb-10">
+                      <input
+                        type="email"
+                        className="rounded bg-gray-100 px-4 py-2 border focus:border-green-400"
+                        placeholder="john@tech.com"
+                      />
+                      <button className="px-4 py-2 my-3 rounded bg-green-800 text-gray-100">
+                        Subscribe
+                        <i className="bx bx-right-arrow-alt" />
+                      </button>
+                      <p className="text-green-900 opacity-50 text-sm mt-1">
+                        No spam. We promise
+                      </p>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex mt-16 mb-4 px-4 lg:px-0 items-center justify-between">
+              <h2 className="font-bold text-3xl">Latest blogs</h2>
+              <Link
+                href="/blogs"
+                className="bg-gray-200 hover:bg-green-200 text-gray-800 px-3 py-1 rounded cursor-pointer"
+              >
+                View all
+              </Link>
+            </div>
+            <div className="block space-x-0 lg:flex lg:space-x-6">
+              {blogData &&
+                blogData?.slice(0, 3).map((post) => {
+                  return (
+                    <div key={post?._id}>
+                      <div>
+                        <a href={`/blogs/${post?._id}`}>
+                          <img
+                            className="h-72 w-full object-cover rounded transition duration-200 ease-out transform hover:scale-105"
+                            src={post.image}
+                            alt=""
+                          />
+                        </a>
+                      </div>
+                      <p className="text-sm text-gray-500 mt-4">
+                        {/* <time dateTime={post.datetime}>{post.date}</time> */}
+                      </p>
+                      <div className="mt-2 block">
+                        <p className="text-xl font-semibold text-gray-900">
+                          {post.title}
+                        </p>
+                        <p className="mt-3 text-base text-gray-500">
+                          {post.subtitle}
+                        </p>
+                      </div>
+                      <div className="mt-3">
+                        <Link
+                          href={`/blogs/${post?._id}`}
+                          className="text-base font-semibold text-indigo-600 hover:text-indigo-500"
+                        >
+                          Read full story
+                        </Link>
+                      </div>
+                    </div>
+                  );
+                })}
+            </div>
+
+            <div className="rounded hidden md:flex md:shadow mt-12">
+              <img
+                src="https://images.unsplash.com/photo-1579275542618-a1dfed5f54ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
+                className="w-0 md:w-1/4 object-cover rounded-l"
+              />
+              <div className="px-4 py-2">
+                <h3 className="text-3xl text-gray-800 font-bold">
+                  Subscribe to newsletter
+                </h3>
+                <p className="text-xl text-gray-700">
+                  We sent latest news and posts once in every week, fresh from
+                  the oven
+                </p>
+                <form className="mt-4 mb-10">
+                  <input
+                    type="email"
+                    className="rounded bg-gray-100 px-4 py-2 border focus:border-green-400"
+                    placeholder="john@tech.com"
+                  />
+                  <button className="px-4 py-2 rounded bg-green-800 text-gray-100">
+                    Subscribe
+                    <i className="bx bx-right-arrow-alt" />
+                  </button>
+                  <p className="text-green-900 opacity-50 text-sm mt-1">
+                    No spam. We promise
+                  </p>
+                </form>
+              </div>
+            </div>
+
+            <div className="flex mt-16 mb-4 px-4 lg:px-0 items-center justify-between">
+              <h2 className="font-bold text-3xl">Popular news</h2>
+              <Link
+                href={"/blogs"}
+                className="bg-gray-200 hover:bg-green-200 text-gray-800 px-3 py-1 rounded cursor-pointer"
+              >
+                View all
+              </Link>
+            </div>
+            <div className="block space-x-0 lg:flex lg:space-x-6">
+              {blogData &&
+                blogData?.slice(0, 3).map((post) => {
+                  return (
+                    <div key={post?._id}>
+                      <div>
+                        <a href={`/blogs/${post?._id}`}>
+                          <img
+                            className="h-72 w-full object-cover rounded transition duration-200 ease-out transform hover:scale-105"
+                            src={post.image}
+                            alt=""
+                          />
+                        </a>
+                      </div>
+                      <p className="text-sm text-gray-500 mt-4">
+                        {/* <time dateTime={post.datetime}>{post.date}</time> */}
+                      </p>
+                      <div className="mt-2 block">
+                        <p className="text-xl font-semibold text-gray-900">
+                          {post.title}
+                        </p>
+                        <p className="mt-3 text-base text-gray-500">
+                          {post.subtitle}
+                        </p>
+                      </div>
+                      <div className="mt-3">
+                        <Link
+                          href={`/blogs/${post?._id}`}
+                          className="text-base font-semibold text-indigo-600 hover:text-indigo-500"
+                        >
+                          Read full story
+                        </Link>
+                      </div>
+                    </div>
+                  );
+                })}
+            </div>
+            {/* end popular posts */}
+          </main>
+
+        </div>
+      </section>
+    </RootLayout>
+  );
 };
 
 export default BlogDetailPage;
-

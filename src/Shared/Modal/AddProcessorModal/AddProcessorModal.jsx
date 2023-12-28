@@ -9,6 +9,7 @@ const AddProcessorModal = ({ isProcessorModalOpen, setIsProcessorModalOpen }) =>
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
   const [loading, setLoading] = useState(false);
@@ -28,12 +29,12 @@ const AddProcessorModal = ({ isProcessorModalOpen, setIsProcessorModalOpen }) =>
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          processorName: data.name,
-          processRank: data.processRank
+          processorName: data?.name,
+          processorRank: data?.processorRank
         }),
       });
 
-      console.log(res, "res++")
+      console.log(res, "res++ res")
 
       if (res.ok) {
         const dataRes = await res.json();
@@ -55,6 +56,7 @@ const AddProcessorModal = ({ isProcessorModalOpen, setIsProcessorModalOpen }) =>
             timer: 3500,
           });
           refetchProcessor();
+          // reset()
         } else {
           throw new Error("Something went wrong!");
         }
@@ -79,6 +81,7 @@ const AddProcessorModal = ({ isProcessorModalOpen, setIsProcessorModalOpen }) =>
         showConfirmButton: false,
         timer: 3500,
       });
+
     } finally {
       setLoading(false);
     }
@@ -109,9 +112,9 @@ const AddProcessorModal = ({ isProcessorModalOpen, setIsProcessorModalOpen }) =>
               <input
                 type="number"
                 className=" border-[2px] border-[#000] text-[15px] font-[500] text-gray-700 outline-none w-full rounded-lg shadow-md pl-10 pr-2.5 py-3"
-                placeholder="Process Rank"
-                name="ProcessRank"
-                {...register("processRank")}
+                placeholder="Processor Rank"
+                name="processorRank"
+                {...register("processorRank")}
                 required
               />
             </div>

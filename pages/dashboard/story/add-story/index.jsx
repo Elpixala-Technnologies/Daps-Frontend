@@ -3,6 +3,10 @@ import { addStoryUrl } from "@/src/Utils/Urls/MediaUrl";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import { Card, CardActions, CardContent, CardMedia, IconButton, Typography } from "@mui/material";
+import { FaRegTrashAlt } from "react-icons/fa";
+import useMediaHooks from "@/src/Hooks/useMediaHooks";
+
 
 const AddStory = () => {
   const { handleSubmit, register, setValue } = useForm();
@@ -10,23 +14,27 @@ const AddStory = () => {
   const [videoPreview, setVideoPreview] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
   const [uploadProgress, setUploadProgress] = useState(0);
- 
+  const { handelStoryDelete,
+    refetchStory,
+    storyData,
+  } = useMediaHooks()
+
   const cloudinaryUpload = async (file, resourceType) => {
     const cloudinaryApi = `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/${resourceType === "video" ? "video/upload" : "image/upload"}`;
     const cloudinaryUploadPreset = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET;
     const cloudinaryCloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
-  
+
     const formData = new FormData();
     formData.append("file", file);
     formData.append("upload_preset", cloudinaryUploadPreset);
     formData.append("cloud_name", cloudinaryCloudName);
-  
+
     try {
       const response = await fetch(cloudinaryApi, {
         method: "POST",
         body: formData,
       });
-  
+
       if (response.ok) {
         const responseData = await response.json();
         return responseData.secure_url;
@@ -64,7 +72,7 @@ const AddStory = () => {
       setUploadProgress(0);
     }
   };
- 
+
   const handleImageChange = async (e) => {
     const file = e.target.files[0];
     setValue("image", file);
@@ -96,7 +104,7 @@ const AddStory = () => {
 
       const storyData = {
         name: inputValue.name,
-        vedio: videoUrl,  
+        vedio: videoUrl,
         image: imageUrl,
       };
 
@@ -126,6 +134,7 @@ const AddStory = () => {
           showConfirmButton: false,
           timer: 3500,
         });
+        refetchStory()
       } else {
         throw new Error("Failed to add product");
       }
@@ -169,8 +178,6 @@ const AddStory = () => {
               />
             </div>
           </div>
-
- 
           <div>
             <h1>Video</h1>
             <div className="border-2 border-gray-300 rounded-md p-2">
@@ -235,12 +242,54 @@ const AddStory = () => {
           </div>
 
           <div>
+                
+          </div>
+
+          <div>
             <button
               onClick={handleSubmit(handleOnSubmit)}
               className="common-btn"
             >
               {isLoading ? "Loading" : "Submit"}
             </button>
+          </div>
+        </div>
+
+        <div>
+          <div className="my-4">
+            <div className="grid md:grid-cols-3 gap-4 justify-center items-center">
+              {storyData &&
+                storyData?.length &&
+                storyData?.map((pd) => {
+                  const { _id, image, name } = pd;
+                  return (
+                    <Card sx={{ maxWidth: 400 }} key={_id}>
+                      <CardMedia
+                        component="img"
+                        image={image}
+                        alt={"Brand Image  "}
+                        className="w-auto h-auto object-cover"
+                      />
+                      <div>
+                        <CardContent>
+                          <Typography gutterBottom variant="h5" component="div">
+                            {name}
+                          </Typography>
+                        </CardContent>
+                      </div>
+
+                      <CardActions disableSpacing>
+                        <IconButton
+                          aria-label="Delete"
+                          onClick={() => handelStoryDelete(_id)}
+                        >
+                          <FaRegTrashAlt className="text-[2.3rem] mr-3 text-red-500" />
+                        </IconButton>
+                      </CardActions>
+                    </Card>
+                  );
+                })}
+            </div>
           </div>
         </div>
       </section>

@@ -7,6 +7,8 @@ import LinearProgress from "@mui/material/LinearProgress";
 import { addHomeSliderUrl } from "@/src/Utils/Urls/HomeSliderUrl";
 import useProducts from "@/src/Hooks/useProducts";
 import { addBannersUrl } from "@/src/Utils/Urls/MediaUrl";
+import Link from 'next/link';
+import DashboardLayout from "@/src/Layouts/DashboardLayout";
 
 const HomeSlider = () => {
   const { handleSubmit } = useForm();
@@ -72,38 +74,38 @@ const HomeSlider = () => {
   const onSubmit = async (dataValue) => {
     try {
       setLoading(true);
-      const leftBanner = await uploadImageToCloudinary(
+      const uploadedLeftBanner = await uploadImageToCloudinary(
         leftBanner,
         setLeftBannerProgress
       );
-      const rightBanner = await uploadImageToCloudinary(
+      const uploadedRightBanner = await uploadImageToCloudinary(
         rightBanner,
         setRrightBannerProgress
       );
-
-      const centerBannerOne = await uploadImageToCloudinary(
+  
+      const uploadedCenterBannerOne = await uploadImageToCloudinary(
         centerBannerOne,
         setCenterBannerOneProgress
       );
-      const centerBannerTwo = await uploadImageToCloudinary(
+      const uploadedCenterBannerTwo = await uploadImageToCloudinary(
         centerBannerTwo,
         setCenterBannerTwoProgress
       );
-
+  
       const res = await fetch(addBannersUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          bannerOne: leftBanner,
-          bannerTow: centerBannerOne,
-          bannerThree: centerBannerTwo,
-          bannerFour: rightBanner,
+          bannerOne: uploadedLeftBanner,
+          bannerTow: uploadedCenterBannerOne,
+          bannerThree: uploadedCenterBannerTwo,
+          bannerFour: uploadedRightBanner,
         }),
       });
       const dataRes = await res.json();
-
+  
       if (dataRes.success) {
         Swal.fire({
           position: "center",
@@ -121,7 +123,7 @@ const HomeSlider = () => {
           showConfirmButton: false,
           timer: 3500,
         });
-
+  
         setLeftBanner(null);
         setRightBanner(null);
         setCenterBannerOne(null);
@@ -145,9 +147,20 @@ const HomeSlider = () => {
       setLoading(false);
     }
   };
+  
 
   return (
+    <DashboardLayout>
     <section className="flex flex-col gap-6">
+      <div>
+        <Link 
+        className="border px-4 py-2"
+        href={'/dashboard/home-offer-banner/manage-home-offer-banner'}>
+          Manage Home Offer Four
+        </Link>
+      </div>
+
+
       {/* Desktop Image Upload Section */}
       <div>
         <div className="w-full h-full my-4">
@@ -326,6 +339,7 @@ const HomeSlider = () => {
         </Button>
       </div>
     </section>
+    </DashboardLayout>
   );
 };
 

@@ -151,8 +151,7 @@ const ProductPage = () => {
     if (searchInput) {
       result = result.filter(
         (product) =>
-          product.name.toLowerCase().includes(searchInput.toLowerCase()) ||
-          product.brand.toLowerCase().includes(searchInput.toLowerCase())
+          product?.productName?.toLowerCase().includes(searchInput.toLowerCase())
       );
     }
 
@@ -162,12 +161,11 @@ const ProductPage = () => {
     ) {
       result = result.filter((product) =>
         selectedCategories.some((category) =>
-          product?.categories.includes(category)
+          product?.productCategory.includes(category)
         )
       );
     }
 
-    // Apply size filter
     if (selectedSizes.size > 0) {
       result = result?.filter((product) =>
         product?.colors?.some((color) =>
@@ -227,7 +225,7 @@ const ProductPage = () => {
       <div className="mt-[3.6rem] md:mt-[4.5rem]">
         <Image
           src={
-            "https://res.cloudinary.com/dg8qpvmmh/image/upload/v1702655657/DAPS/Banner/PC%20Banner/qhy8khvkjdivp6o0ozpo.png"
+            "https://res.cloudinary.com/dapscar/image/upload/v1703235519/Daps/Slider/qhy8khvkjdivp6o0ozpo.png.png"
           }
           alt="Product"
           width={250}
@@ -315,14 +313,14 @@ const ProductPage = () => {
                                     <li
                                       key={category._id}
                                       className={`cursor-pointer mt-2`}
-                                      onClick={() =>
-                                        handleCategoryChange(category.name)
-                                      }
+                                      // onClick={() =>
+                                      //   handleCategoryChange(category?.name)
+                                      // }
                                     >
                                       <input
                                         type="checkbox"
                                         checked={selectedCategories.includes(
-                                          category.name
+                                          category?.name
                                         )}
                                         onChange={() =>
                                           handleCategoryChange(category.name)
@@ -597,11 +595,9 @@ const ProductPage = () => {
                               </div>
 
                               <div className="rounded-b-[0.6rem] bg-[#fafafa] p-4 relative">
-                                {product?.brand !== "" && (
-                                  <div className="px-6 py-1 bg-[#fcc50b] w-[70%] rounded-md  absolute top-[-1rem] text-center left-[14%] font-semibold text-white text-[14px]">
-                                    {product?.brand}
-                                  </div>
-                                )}
+                              <div className="px-6 py-1 bg-[#fcc50b] w-[70%] rounded-md  absolute top-[-1rem] text-center left-[14%] font-semibold text-white text-[14px]">
+                                DAPS
+                              </div>
                                 <div className="my-1 text-left ">
                                   <Link
                                     href={`/products/${product?._id}`}

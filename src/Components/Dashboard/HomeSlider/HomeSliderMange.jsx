@@ -1,12 +1,12 @@
 import useHomeSlider from "@/src/Hooks/useHomeSlider";
-import { Card, CardActions, CardMedia, IconButton } from "@mui/material";
+import { Card, CardActions, CardMedia, IconButton ,Typography} from "@mui/material";
 import { FaRegTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 
 const ManegePhotoGelary = () => {
-    const {homeSliderData,handelHomeSliderDelete} = useHomeSlider()
+  const { homeSliderData, handelHomeSliderDelete} = useHomeSlider()
 
- 
+
   return (
     <section>
       <h2 className="py-4 text-2xl font-bold ">Manage Photo Gelary</h2>

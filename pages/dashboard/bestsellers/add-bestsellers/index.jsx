@@ -1,23 +1,24 @@
 import DashboardLayout from "@/src/Layouts/DashboardLayout";
-import { addTrendingProductUrl } from "@/src/Utils/Urls/MediaUrl";
+import { addBestsellersProductUrl, addBestsellersUrl } from "@/src/Utils/Urls/MediaUrl";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { Card, CardActions, CardContent, CardMedia, IconButton ,Typography} from "@mui/material";
 import { FaRegTrashAlt } from "react-icons/fa";
-import useProducts from '@/src/Hooks/useProducts';
-import useMediaHooks from "@/src/Hooks/useMediaHooks";
+import useBestsellers from "@/src/Hooks/useBestsellers";
+import useProducts from "@/src/Hooks/useProducts";
 
-const AddTrending = () => {
+const AddBestsellers = () => {
   const { handleSubmit, register, setValue } = useForm();
   const [isLoading, setIsLoading] = useState(false);
   const [videoPreview, setVideoPreview] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
   const [uploadProgress, setUploadProgress] = useState(0);
-  const { productData, refetchProducts } = useProducts();
-  const {handelTrendingProductDelete,
-    refetchTrendingProduct,
-    trendingProductData,} = useMediaHooks()
+  const { BestsellersData,
+    BestsellersLoaded,
+    refetchBestsellers,
+    handelBestsellersDelete } = useBestsellers()
+  const {categoryData} = useProducts()
 
   const cloudinaryUpload = async (file, resourceType) => {
     const cloudinaryApi = `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/${resourceType === "video" ? "video/upload" : "image/upload"}`;
@@ -41,7 +42,7 @@ const AddTrending = () => {
       } else {
         const errorData = await response.json();
         throw new Error(`Error uploading to Cloudinary: ${errorData.message}`);
-      }
+      } Bestsellers
     } catch (error) {
       console.error("Cloudinary Upload Error:", error.message);
       throw error;
@@ -102,18 +103,18 @@ const AddTrending = () => {
       const videoUrl = videoPreview;
       const imageUrl = imagePreview;
 
-      const trendingProductData = {
+      const BestsellersProductData = {
+        category: inputValue.category,
         image: imageUrl,
-        product: inputValue.product
       };
 
       // Submit data to your server
-      const response = await fetch(addTrendingProductUrl, {
+      const response = await fetch(addBestsellersUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(trendingProductData),
+        body: JSON.stringify(BestsellersProductData),
       });
 
       if (response.ok) {
@@ -133,7 +134,7 @@ const AddTrending = () => {
           showConfirmButton: false,
           timer: 3500,
         });
-        refetchTrendingProduct()
+        refetchBestsellers()
       } else {
         throw new Error("Failed to add product");
       }
@@ -156,13 +157,10 @@ const AddTrending = () => {
         timer: 3500,
       });
     } finally {
-      setVideoPreview(null);
       setImagePreview(null);
       setIsLoading(false);
     }
   };
-
-  console.log(trendingProductData , "trendingProductData")
 
   return (
     <DashboardLayout>
@@ -171,50 +169,15 @@ const AddTrending = () => {
           <div>
             <div>
               <select className="border-2 p-2 border-gray-300 rounded-md  w-full"
-                {...register("product")}
+                {...register("category")}
               >
-                <option className='my-2'>Select Product</option>
-                {productData && productData?.map((product) => (
-                  <option key={product?._id} value={product?._id}>{product?.productName}</option>
+                <option className='my-2'>Select Category</option>
+                {categoryData && categoryData?.map((category) => (
+                  <option key={category?._id} value={category?.name}>{category?.name}</option>
                 ))}
               </select>
             </div>
           </div>
-          {/* <div>
-            <h1>Video</h1>
-            <div className="border-2 border-gray-300 rounded-md p-2">
-              <input
-                type="file"
-                name="video"
-                onChange={handleVideoChange}
-                className="border-2 border-gray-300 rounded-md p-2"
-              />
-
-              {videoPreview === "loading" && (
-                <div className="mt-2">
-                  <div>Uploading...</div>
-                  <progress value={uploadProgress} max="100" />
-                </div>
-              )}
-
-              {videoPreview && videoPreview !== "loading" && (
-                <div className="mt-2">
-                  <video
-                    src={videoPreview}
-                    alt="Video Preview"
-                    className="h-[10rem]"
-                    controls
-                  />
-                  <button
-                    onClick={handleRemoveVideo}
-                    className="text-red-500 hover:underline"
-                  >
-                    Remove Video
-                  </button>
-                </div>
-              )}
-            </div>
-          </div> */}
 
           <div>
             <h1>Image</h1>
@@ -253,24 +216,27 @@ const AddTrending = () => {
           </div>
         </div>
 
+
+        {/* ====== */}
+
         <div className="my-4">
           <div className="grid md:grid-cols-3 gap-4 justify-center items-center">
-            {trendingProductData &&
-              trendingProductData?.length &&
-              trendingProductData?.map((pd) => {
-                const { _id,image, product } = pd;
+            {BestsellersData &&
+              BestsellersData?.length &&
+              BestsellersData?.map((pd) => {
+                const { _id, image, category } = pd;
                 return (
                   <Card sx={{ maxWidth: 400 }} key={_id}>
                     <CardMedia
                       component="img"
                       image={image}
-                      alt={"Brand Image  "}
+                      alt={"Brand Image"}
                       className="w-auto h-auto object-cover"
                     />
                     <div>
                       <CardContent>
                         <Typography gutterBottom variant="h5" component="div">
-                          {product?.productName}
+                          {category}
                         </Typography>
                       </CardContent>
                     </div>
@@ -278,7 +244,7 @@ const AddTrending = () => {
                     <CardActions disableSpacing>
                       <IconButton
                         aria-label="Delete"
-                        onClick={() => handelTrendingProductDelete(_id)}
+                        onClick={() => handelBestsellersDelete(_id)}
                       >
                         <FaRegTrashAlt className="text-[2.3rem] mr-3 text-red-500" />
                       </IconButton>
@@ -293,4 +259,4 @@ const AddTrending = () => {
   );
 };
 
-export default AddTrending;
+export default AddBestsellers;

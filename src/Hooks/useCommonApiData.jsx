@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 const useCommonApiData = () => {
     const {logOut} = useContext(AuthContext) 
     const router = useRouter();
-
+   
     const handleLogout = () => {
         logOut()
           .then(() => {

@@ -4,7 +4,8 @@ import DataContext from "@/src/Context/DataContext";
 import "@/styles/globals.scss";
 import UserContext from "@/src/Context/UserContext";
 import Preloader from "@/src/Shared/Preloader/Preloader";
-
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 const queryClient = new QueryClient();
 
 export default function App({ Component, pageProps }) {
@@ -15,16 +16,18 @@ export default function App({ Component, pageProps }) {
       setLoader(false);
     }, 1500);
   }, [loader]);
-  
+
   return (
     <>
       {loader && <Preloader />}
       <QueryClientProvider client={queryClient}>
-        <DataContext>
-          <UserContext>
-            <Component {...pageProps} />
-          </UserContext>
-        </DataContext>
+        <DndProvider backend={HTML5Backend}>
+          <DataContext>
+            <UserContext>
+              <Component {...pageProps} />
+            </UserContext>
+          </DataContext>
+        </DndProvider>
       </QueryClientProvider>
     </>
   );

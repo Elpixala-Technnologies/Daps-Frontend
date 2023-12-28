@@ -36,3 +36,12 @@ export const getSingelBannersUrl = (id) => basedUrl + `/banner/${id}`
 export const updateBannersUrl = (id) => basedUrl + `/banner/update/${id}`
 export const deletBannersUrl = (id) => basedUrl + `/banner/delete/${id}`
 
+// ======  
+
+export const addBestsellersUrl = basedUrl + '/media/create/bestsellers'
+export const getBestsellersUrl = basedUrl + '/media/get/bestsellers'
+export const getSingelBestsellersUrl = (id) => basedUrl + `/media/get-singel/${id}/bestsellers`
+export const updateBestsellersUrl = (id) => basedUrl + `/media/update/${id}/bestsellers`
+export const deletBestsellersUrl = (id) => basedUrl + `/media/delete/${id}/bestsellers`
+ 
+ 

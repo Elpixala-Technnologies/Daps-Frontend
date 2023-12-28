@@ -26,18 +26,10 @@ const HomeOffers = () => {
             />
           )}
 
-          <div className="absolute top-[5%] md:top-[5%] bottom-0 left-[8%] right-0">
+          <div className="absolute top-[40%] md:top-[40%] left-[40%]">
             <div>
-              <p className="font-semibold text-black">TOOLS & ACCESSORIES</p>
-              <h1 className="font-bold leading-7 py-2 text-[1.3rem] md:text-[1.5rem] text-black">
-                SAVE TIME <br /> AND MONEY
-              </h1>
-              <h4 className="font-semibold pb-2 text-[#009EE2] text-[1.2rem] mb-4">
-                UP TO 20% OFF
-              </h4>
-
               <Link
-                href="/products"
+                href={`/products?categoryName=${encodeURIComponent('Amplifiers')}`}
                 className="common-btn-outline py-2 px-4 mt-6"
               >
                 Shop Now
@@ -57,18 +49,10 @@ const HomeOffers = () => {
               />
             )}
 
-            <div className="absolute top-[11%] bottom-0 left-[8%] right-0">
+            <div className="absolute top-[30%] bottom-0 left-[10%] right-0">
               <div>
-                <p className="font-semibold">NEW ARRIVAL</p>
-                <h1 className="font-bold leading-7 text-[1.5rem] my-2">
-                  POWER
-                  <br /> HAND TOOLS
-                </h1>
-                <h4 className="font-semibold text-[#009EE2] text-[1.2rem] mb-4">
-                  ₹ 1562
-                </h4>
                 <Link
-                  href="products"
+                  href={`/products?categoryName=${encodeURIComponent('HIDs')}`}
                   className="common-btn-outline py-4 px-4 mt-6"
                 >
                   Shop Now
@@ -76,6 +60,8 @@ const HomeOffers = () => {
               </div>
             </div>
           </div>
+
+
           <div className="banner-content text-[#fff] relative">
             {bannersData && bannersData[0] && (
               <Image
@@ -87,19 +73,10 @@ const HomeOffers = () => {
               />
             )}
 
-            <div className="absolute top-[8%] bottom-0 left-[53%] right-0">
+            <div className="absolute top-[30%] bottom-0 left-[53%] right-0">
               <div>
-                <p className="font-semibold text-black">BEST PRICE</p>
-                <h1 className="font-bold leading-7 text-[1.5rem] text-black my-2">
-                  FLEX VOLT
-                  <br />
-                  60V BATTERY
-                </h1>
-                <h4 className="font-semibold text-[#009EE2] text-[1.2rem] mb-4">
-                  ₹153
-                </h4>
                 <Link
-                  href="products"
+                  href={`/products?categoryName=${encodeURIComponent('Android Stereos')}`}
                   className="common-btn-outline py-4 px-4 mt-6"
                 >
                   Shop Now
@@ -119,18 +96,10 @@ const HomeOffers = () => {
             />
           )}
 
-          <div className="absolute top-[8%] md:top-[6%]  bottom-0 left-[8%] right-0">
+          <div className="absolute top-[40%] md:top-[40%] left-[40%]">
             <div className="text-[#000]">
-              <p className="font-semibold mb-2">ONLINE SHOP</p>
-              <h1 className="font-bold pb-2 leading-8 text-[1.5rem] md:text-[2rem]">
-                SAVE TIME <br /> AND MONEY
-              </h1>
-              <h4 className="font-semibold text-[#009EE2] text-[1.2rem] mb-4">
-                UP TO 20% OFF
-              </h4>
-
               <Link
-                href="products"
+                href={`/products?categoryName=${encodeURIComponent('Amplifiers')}`}
                 className="common-btn-outline py-4 px-4 mt-6"
               >
                 Shop Now

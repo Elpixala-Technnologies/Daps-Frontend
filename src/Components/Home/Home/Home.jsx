@@ -47,7 +47,7 @@ const Home = () => {
             <section>
 
                 <div>
-                   <ExploreBrand/>
+                    <ExploreBrand />
                     <InstraStoryEffect /> <br />
                     <ExploreBestSeal />
                     <br />

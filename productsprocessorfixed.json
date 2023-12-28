@@ -1,0 +1,5049 @@
+[
+  {
+    "productName": "Daps Supreme Series Android Stereo",
+    "discount": "20",
+    "productDetails": [
+      {
+        "heading": "",
+        "description": ""
+      }
+    ],
+    "productFeatures": [
+      {
+        "heading": "Tech-Forward Interface",
+        "description": "A futuristic interface designed for tech enthusiasts."
+      },
+      {
+        "heading": "App Diversity",
+        "description": "Access a wide selection of apps for entertainment, productivity, and more."
+      },
+      {
+        "heading": "Integrated Convenience",
+        "description": "Seamlessly integrates into your vehicle's dashboard for a sleek look."
+      },
+      {
+        "heading": "Full-Featured Control",
+        "description": "Enjoy responsive touch controls and advanced navigation."
+      },
+      {
+        "heading": "Connectivity Hub",
+        "description": "Stay connected with Bluetooth, Wi-Fi, and USB connectivity options."
+      },
+      {
+        "heading": "Multimedia Marvel",
+        "description": "Delve into a world of multimedia possibilities with support for various file formats."
+      }
+      
+      
+    ],
+    "aPlusContent": {
+      "imageOne": "https://res.cloudinary.com/dapscar/image/upload/v1703605200/A%20plus%20Content/A%2B/Android/Supreme/5_b5sgst.png",
+      "imageTwo": "https://res.cloudinary.com/dapscar/image/upload/v1703605199/A%20plus%20Content/A%2B/Android/Supreme/1_owmk3u.png",
+      "imageThree": "https://res.cloudinary.com/dapscar/image/upload/v1703605199/A%20plus%20Content/A%2B/Android/Supreme/4_q7sjpk.png",
+      "imageFour": "https://res.cloudinary.com/dapscar/image/upload/v1703605199/A%20plus%20Content/A%2B/Android/Supreme/3_m6mucc.png",
+      "imageFive": "https://res.cloudinary.com/dapscar/image/upload/v1703605198/A%20plus%20Content/A%2B/Android/Supreme/2_ai9j8o.png",
+      "imageSix": "https://res.cloudinary.com/dapscar/image/upload/v1703605200/A%20plus%20Content/A%2B/Android/Supreme/6_zypz13.png"
+    },
+    "productCategory": ["Android Stereos", "Generic Stereos"],
+    "price": 6999,
+    "images": ["https://res.cloudinary.com/dapscar/image/upload/v1703603373/Products/Product%20Images/Android/Supreme/5_yichud.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603374/Products/Product%20Images/Android/Supreme/1_dipppa.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603374/Products/Product%20Images/Android/Supreme/2_vywctn.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603373/Products/Product%20Images/Android/Supreme/3_ooffik.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603372/Products/Product%20Images/Android/Supreme/4_tcwgr1.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603372/Products/Product%20Images/Android/Supreme/6_qixt5m.png"],
+    "status": "Tranding",
+    "android": [
+      {
+        "isAndroid": true,
+        "screenSize": "9/10 Inches",
+        "variant": [
+          {
+            "processorName": "TS7",
+            "processorLabel": "Ultra",
+            "carsSupported": [],
+            "ram": "2",
+            "rom": "32",
+            "isAppleCarplayAndAndroidAutoSupported": false,
+            "wirelessWired": "",
+            "isDVRSupported": false,
+            "is360CameraSupported": "No",
+            "isSimSupported": "Yes",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "1",
+            "basePrice": 6999
+          },
+          {
+            "processorName": "TS7",
+            "processorLabel": "Ultra",
+            "carsSupported": [],
+            "ram": "2",
+            "rom": "32",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "Wired",
+            "isDVRSupported": false,
+            "is360CameraSupported": "No",
+            "isSimSupported": "Yes",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "1",
+            "basePrice": 8999
+          },
+          {
+            "processorName": "MTK 6580",
+            "processorLabel": "Ultra Pro",
+            "carsSupported": [],
+            "ram": "4",
+            "rom": "32",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "Wireless",
+            "isDVRSupported": false,
+            "is360CameraSupported": "No",
+            "isSimSupported": "No",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "1",
+            "basePrice": 9999
+          },
+          {
+            "processorName": "FYT",
+            "processorLabel": "Ultra Pro Max",
+            "carsSupported": [],
+            "ram": "4",
+            "rom": "32",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "Wireless",
+            "isDVRSupported": false,
+            "is360CameraSupported": "No",
+            "isSimSupported": "Yes",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "1",
+            "basePrice": 12999
+          }
+        ]
+      }
+    ],
+    "fMBT": [
+      {
+        "isFmBt": false,
+        "controlOption": "",
+        "basePrice": 1
+      }
+    ],
+    "bassTube": [
+      {
+        "isBassTube": false,
+        "wattage": "",
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "led": [
+      {
+        "isLed": false,
+        "variant": [
+          {
+            "wattage": "",
+            "socketsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "speakers": [
+      {
+        "isSpeakers": false,
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "chargers": [
+      {
+        "isChargers": false,
+        "wattage": "38",
+        "basePrice": 1000
+      }
+    ],
+    "amplifiers": [
+      {
+        "isAmplifiers": false,
+        "variant": [
+          {
+            "totalChannels": "",
+            "wattage": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "dampingSheets": [
+      {
+        "isDampingSheets": false,
+        "thickness": "",
+        "sheetsInOneBox": "",
+        "basePrice": 1
+      }
+    ],
+    "HID": [
+      {
+        "isHID": false,
+        "variant": [
+          {
+            "wattage": "",
+            "lightColor": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "camera": [
+      {
+        "isCamera": false,
+        "variant": [
+          {
+            "cameraQuality": "",
+            "areThereGuidelines": false,
+            "guidelinesType": {
+              "Static": false,
+              "Dynamic": false
+            },
+            "fieldOfViewType": {
+              "Wide": false,
+              "UltraWide": false
+            },
+            "processorsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productName": "Daps Octa Series Android Stereo",
+    "discount": "20",
+    "productDetails": [
+      {
+        "heading": "",
+        "description": ""
+      }
+    ],
+    "productFeatures": [
+      {
+        "heading": "Advanced Processing",
+        "description": "A powerful Topway processor for smooth navigation and multimedia playback."
+      },
+      {
+        "heading": "Responsive Touch",
+        "description": "Enjoy a highly responsive touch interface for easy control."
+      },
+      {
+        "heading": "Entertainment Hub",
+        "description": "Turn your vehicle into an entertainment center with support for various media formats."
+      },
+      {
+        "heading": "Seamless Integration",
+        "description": "Fits seamlessly into your vehicle's dashboard for a clean and polished appearance."
+      },
+      {
+        "heading": "Connectivity Options",
+        "description": "Stay connected via Bluetooth, Wi-Fi, and USB connections."
+      },
+      {
+        "heading": "Safety Features",
+        "description": "Enhanced safety with voice control and hands-free operation."
+      }
+      
+    ],
+    "aPlusContent": {
+      "imageOne": "https://res.cloudinary.com/dapscar/image/upload/v1703605225/A%20plus%20Content/A%2B/Android/Octa/5_o4igct.png",
+      "imageTwo": "https://res.cloudinary.com/dapscar/image/upload/v1703605216/A%20plus%20Content/A%2B/Android/Octa/1_pwk10g.png",
+      "imageThree": "https://res.cloudinary.com/dapscar/image/upload/v1703605214/A%20plus%20Content/A%2B/Android/Octa/2_znbtpa.png",
+      "imageFour": "https://res.cloudinary.com/dapscar/image/upload/v1703605214/A%20plus%20Content/A%2B/Android/Octa/4_xd97yv.png",
+      "imageFive": "https://res.cloudinary.com/dapscar/image/upload/v1703605215/A%20plus%20Content/A%2B/Android/Octa/3_rsekk0.png",
+      "imageSix": "https://res.cloudinary.com/dapscar/image/upload/v1703605216/A%20plus%20Content/A%2B/Android/Octa/6_a2tz26.png"
+    },
+    "productCategory": ["Android Stereos", "Generic Stereos"],
+    "price": 9999,
+    "images": ["https://res.cloudinary.com/dapscar/image/upload/v1703603380/Products/Product%20Images/Android/Octa/6_lkl7bl.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603377/Products/Product%20Images/Android/Octa/3_fanni1.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603377/Products/Product%20Images/Android/Octa/7_ydcmz7.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603377/Products/Product%20Images/Android/Octa/1_r7fsrh.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603377/Products/Product%20Images/Android/Octa/5_yrqf5s.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603376/Products/Product%20Images/Android/Octa/4_haacwn.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603376/Products/Product%20Images/Android/Octa/2_dxesgf.png"],
+    "status": "Tranding",
+    "android": [
+      {
+        "isAndroid": true,
+        "screenSize": "9/10 Inches",
+        "variant": [
+          {
+            "processorName": "T5",
+            "processorLabel": "Ultra Pro Max",
+            "carsSupported": [],
+            "ram": "2",
+            "rom": "32",
+            "isAppleCarplayAndAndroidAutoSupported": false,
+            "wirelessWired": "",
+            "isDVRSupported": false,
+            "is360CameraSupported": "Yes",
+            "isSimSupported": "No",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "1",
+            "basePrice": 14999
+          },
+          {
+            "processorName": "T5",
+            "processorLabel": "Ultra Pro Max",
+            "carsSupported": [],
+            "ram": "2",
+            "rom": "32",
+            "isAppleCarplayAndAndroidAutoSupported": false,
+            "wirelessWired": "",
+            "isDVRSupported": true,
+            "is360CameraSupported": "No",
+            "isSimSupported": "No",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "1",
+            "basePrice": 13999
+          },
+          {
+            "processorName": "T5",
+            "processorLabel": "Ultra Pro Max",
+            "carsSupported": [],
+            "ram": "2",
+            "rom": "32",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "Wireless",
+            "isDVRSupported": false,
+            "is360CameraSupported": "Yes",
+            "isSimSupported": "No",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "1",
+            "basePrice": 15999
+          },
+          {
+            "processorName": "T5",
+            "processorLabel": "Ultra Pro Max",
+            "carsSupported": [],
+            "ram": "2",
+            "rom": "32",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "Wireless",
+            "isDVRSupported": true,
+            "is360CameraSupported": "No",
+            "isSimSupported": "No",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "1",
+            "basePrice": 14999
+          }
+        ]
+      }
+    ],
+    "fMBT": [
+      {
+        "isFmBt": false,
+        "controlOption": "",
+        "basePrice": 1
+      }
+    ],
+    "bassTube": [
+      {
+        "isBassTube": false,
+        "wattage": "",
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "led": [
+      {
+        "isLed": false,
+        "variant": [
+          {
+            "wattage": "",
+            "socketsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "speakers": [
+      {
+        "isSpeakers": false,
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "chargers": [
+      {
+        "isChargers": false,
+        "wattage": "38",
+        "basePrice": 1000
+      }
+    ],
+    "amplifiers": [
+      {
+        "isAmplifiers": false,
+        "variant": [
+          {
+            "totalChannels": "",
+            "wattage": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "dampingSheets": [
+      {
+        "isDampingSheets": false,
+        "thickness": "",
+        "sheetsInOneBox": "",
+        "basePrice": 1
+      }
+    ],
+    "HID": [
+      {
+        "isHID": false,
+        "variant": [
+          {
+            "wattage": "",
+            "lightColor": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "camera": [
+      {
+        "isCamera": false,
+        "variant": [
+          {
+            "cameraQuality": "",
+            "areThereGuidelines": false,
+            "guidelinesType": {
+              "Static": false,
+              "Dynamic": false
+            },
+            "fieldOfViewType": {
+              "Wide": false,
+              "UltraWide": false
+            },
+            "processorsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productName": "Daps Mighty Series Android Stereo",
+    "discount": "20",
+    "productDetails": [
+      {
+        "heading": "",
+        "description": ""
+      }
+    ],
+    "productFeatures": [
+      {
+        "heading": "Efficient Processing",
+        "description": "Equipped with a Topway processor for responsive and efficient operation."
+      },
+      {
+        "heading": "User-Friendly Interface",
+        "description": "An intuitive interface ensures hassle-free navigation."
+      },
+      {
+        "heading": "Media Diversity",
+        "description": "Supports a wide array of media formats for entertainment on the go."
+      },
+      {
+        "heading": "Integrated Aesthetics",
+        "description": "Seamlessly integrates into your vehicle's dashboard for a polished look."
+      },
+      {
+        "heading": "Connected Driving",
+        "description": "Stay connected with Bluetooth, Wi-Fi, and USB connectivity options."
+      },
+      {
+        "heading": "Safety First",
+        "description": "Voice control capabilities enhance safety during your journeys."
+      }      
+    ],
+    "aPlusContent": {
+      "imageOne": "https://res.cloudinary.com/dapscar/image/upload/v1703605232/A%20plus%20Content/A%2B/Android/Mighty/5_i8jguk.png",
+      "imageTwo": "https://res.cloudinary.com/dapscar/image/upload/v1703605231/A%20plus%20Content/A%2B/Android/Mighty/1_bx3gi3.png",
+      "imageThree": "https://res.cloudinary.com/dapscar/image/upload/v1703605225/A%20plus%20Content/A%2B/Android/Mighty/4_aipemt.png",
+      "imageFour": "https://res.cloudinary.com/dapscar/image/upload/v1703605229/A%20plus%20Content/A%2B/Android/Mighty/2_ksojs1.png",
+      "imageFive": "https://res.cloudinary.com/dapscar/image/upload/v1703605226/A%20plus%20Content/A%2B/Android/Mighty/3_nynn8o.png",
+      "imageSix": "https://res.cloudinary.com/dapscar/image/upload/v1703605232/A%20plus%20Content/A%2B/Android/Mighty/6_k2j1rm.png"
+    },
+    "productCategory": ["Android Stereos", "Generic Stereos"],
+    "price": 35999,
+    "images": ["https://res.cloudinary.com/dapscar/image/upload/v1703603439/Products/Product%20Images/Android/Mighty/7_joj4fg.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603440/Products/Product%20Images/Android/Mighty/6_fh941b.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603438/Products/Product%20Images/Android/Mighty/1_fs1ut3.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603438/Products/Product%20Images/Android/Mighty/1_fs1ut3.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603437/Products/Product%20Images/Android/Mighty/3_z9iabo.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603437/Products/Product%20Images/Android/Mighty/8_lkxafi.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603431/Products/Product%20Images/Android/Mighty/5_bvaekl.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603394/Products/Product%20Images/Android/Mighty/4_b1qips.png"],
+    "status": "Tranding",
+    "android": [
+      {
+        "isAndroid": true,
+        "screenSize": "9/10 Inches",
+        "variant": [
+          {
+            "processorName": "TS10",
+            "processorLabel": "Ultra Pro",
+            "carsSupported": [],
+            "ram": "4",
+            "rom": "32",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "Wireless",
+            "isDVRSupported": false,
+            "is360CameraSupported": "Yes",
+            "isSimSupported": "Yes",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "1",
+            "basePrice": 35999
+          },
+          {
+            "processorName": "TS10",
+            "processorLabel": "Ultra Pro",
+            "carsSupported": [],
+            "ram": "6",
+            "rom": "128",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "Wireless",
+            "isDVRSupported": false,
+            "is360CameraSupported": "Yes",
+            "isSimSupported": "Yes",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "1",
+            "basePrice": 39999
+          },
+          {
+            "processorName": "TS10",
+            "processorLabel": "Ultra Pro",
+            "carsSupported": [],
+            "ram": "8",
+            "rom": "128",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "Wireless",
+            "isDVRSupported": false,
+            "is360CameraSupported": "Yes",
+            "isSimSupported": "Yes",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "1",
+            "basePrice": 44999
+          },
+          {
+            "processorName": "TS18",
+            "processorLabel": "Ultra Pro Max",
+            "carsSupported": [],
+            "ram": "2",
+            "rom": "32",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "Wireless",
+            "isDVRSupported": false,
+            "is360CameraSupported": "Yes",
+            "isSimSupported": "Yes",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "1",
+            "basePrice": 32999
+          },
+          {
+            "processorName": "TS18",
+            "processorLabel": "Ultra Pro Max",
+            "carsSupported": [],
+            "ram": "4",
+            "rom": "64",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "Wireless",
+            "isDVRSupported": false,
+            "is360CameraSupported": "Yes",
+            "isSimSupported": "Yes",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "1",
+            "basePrice": 37999
+          }
+        ]
+      }
+    ],
+    "fMBT": [
+      {
+        "isFmBt": false,
+        "controlOption": "",
+        "basePrice": 1
+      }
+    ],
+    "bassTube": [
+      {
+        "isBassTube": false,
+        "wattage": "",
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "led": [
+      {
+        "isLed": false,
+        "variant": [
+          {
+            "wattage": "",
+            "socketsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "speakers": [
+      {
+        "isSpeakers": false,
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "chargers": [
+      {
+        "isChargers": false,
+        "wattage": "38",
+        "basePrice": 1000
+      }
+    ],
+    "amplifiers": [
+      {
+        "isAmplifiers": false,
+        "variant": [
+          {
+            "totalChannels": "",
+            "wattage": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "dampingSheets": [
+      {
+        "isDampingSheets": false,
+        "thickness": "",
+        "sheetsInOneBox": "",
+        "basePrice": 1
+      }
+    ],
+    "HID": [
+      {
+        "isHID": false,
+        "variant": [
+          {
+            "wattage": "",
+            "lightColor": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "camera": [
+      {
+        "isCamera": false,
+        "variant": [
+          {
+            "cameraQuality": "",
+            "areThereGuidelines": false,
+            "guidelinesType": {
+              "Static": false,
+              "Dynamic": false
+            },
+            "fieldOfViewType": {
+              "Wide": false,
+              "UltraWide": false
+            },
+            "processorsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productName": "Daps Tesla Styled Android Stereo",
+    "discount": "20",
+    "productDetails": [
+      {
+        "heading": "",
+        "description": ""
+      }
+    ],
+    "productFeatures": [
+      {
+        "heading": "Android 11.0",
+        "description": "Stay up-to-date with the latest Android technology for a feature-rich experience."
+      },
+      {
+        "heading": "Ample RAM and Storage",
+        "description": "With up to 2GB of RAM and up to 32GB of storage, it delivers smooth performance and ample space for apps and media."
+      },
+      {
+        "heading": "Digital Signal Processor (DSP)",
+        "description": "Elevates your audio quality, providing a premium sound experience."
+      },
+      {
+        "heading": "Car Play Functionality",
+        "description": "Seamlessly integrates with iPhone and Android devices, offering support for CarPlay."
+      },
+      {
+        "heading": "Crisp Display",
+        "description": "The BOE display with 100% IPS technology delivers crisp, vivid colors."
+      }
+      
+    ],
+    "aPlusContent": {
+      "imageOne": "https://res.cloudinary.com/dapscar/image/upload/v1703605186/A%20plus%20Content/A%2B/Android/Tesla/6_itjloz.png",
+      "imageTwo": "https://res.cloudinary.com/dapscar/image/upload/v1703605198/A%20plus%20Content/A%2B/Android/Tesla/3_x7tanh.png",
+      "imageThree": "https://res.cloudinary.com/dapscar/image/upload/v1703605198/A%20plus%20Content/A%2B/Android/Tesla/1_geg2iv.png",
+      "imageFour": "https://res.cloudinary.com/dapscar/image/upload/v1703605189/A%20plus%20Content/A%2B/Android/Tesla/2_hzzpcm.png",
+      "imageFive": "https://res.cloudinary.com/dapscar/image/upload/v1703605188/A%20plus%20Content/A%2B/Android/Tesla/4_tfewrq.png",
+      "imageSix": "https://res.cloudinary.com/dapscar/image/upload/v1703605187/A%20plus%20Content/A%2B/Android/Tesla/5_itobue.png"
+    },
+    "productCategory": ["Android Stereos", "Styled Stereos"],
+    "price": 9999,
+    "images": ["https://res.cloudinary.com/dapscar/image/upload/v1703603372/Products/Product%20Images/Android/Tesla/3_knnc6n.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603373/Products/Product%20Images/Android/Tesla/1_opczof.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603371/Products/Product%20Images/Android/Tesla/7_ekqyhh.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603370/Products/Product%20Images/Android/Tesla/2_yusroc.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603369/Products/Product%20Images/Android/Tesla/4_efovq1.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603369/Products/Product%20Images/Android/Tesla/5_jjczgd.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603369/Products/Product%20Images/Android/Tesla/6_kfj0zr.png"],
+    "status": "Tranding",
+    "android": [
+      {
+        "isAndroid": true,
+        "screenSize": "9.7 Inches",
+        "variant": [
+          {
+            "processorName": "TS7",
+            "processorLabel": "Ultra Pro Max",
+            "carsSupported": [],
+            "ram": "2",
+            "rom": "32",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "Wireless",
+            "isDVRSupported": false,
+            "is360CameraSupported": "Yes",
+            "isSimSupported": "No",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "1",
+            "basePrice": 9999
+          }
+        ]
+      }
+    ],
+    "fMBT": [
+      {
+        "isFmBt": false,
+        "controlOption": "",
+        "basePrice": 1
+      }
+    ],
+    "bassTube": [
+      {
+        "isBassTube": false,
+        "wattage": "",
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "led": [
+      {
+        "isLed": false,
+        "variant": [
+          {
+            "wattage": "",
+            "socketsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "speakers": [
+      {
+        "isSpeakers": false,
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "chargers": [
+      {
+        "isChargers": true,
+        "wattage": "38",
+        "basePrice": 1000
+      }
+    ],
+    "amplifiers": [
+      {
+        "isAmplifiers": false,
+        "variant": [
+          {
+            "totalChannels": "",
+            "wattage": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "dampingSheets": [
+      {
+        "isDampingSheets": false,
+        "thickness": "",
+        "sheetsInOneBox": "",
+        "basePrice": 1
+      }
+    ],
+    "HID": [
+      {
+        "isHID": false,
+        "variant": [
+          {
+            "wattage": "",
+            "lightColor": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "camera": [
+      {
+        "isCamera": false,
+        "variant": [
+          {
+            "cameraQuality": "",
+            "areThereGuidelines": false,
+            "guidelinesType": {
+              "Static": false,
+              "Dynamic": false
+            },
+            "fieldOfViewType": {
+              "Wide": false,
+              "UltraWide": false
+            },
+            "processorsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productName": "Daps Mercedes Styled Android Stereo",
+    "discount": "20",
+    "productDetails": [
+      {
+        "heading": "",
+        "description": ""
+      }
+    ],
+    "productFeatures": [
+      {
+        "heading": "Android 11.0",
+        "description": "Enjoy the latest Android technology for a feature-rich and up-to-date experience."
+      },
+      {
+        "heading": "Ample RAM and Storage",
+        "description": "With up to 2GB of RAM and up to 32GB of storage, it delivers smooth performance and ample storage for apps and media."
+      },
+      {
+        "heading": "Digital Signal Processor (DSP)",
+        "description": "Elevates your audio quality, delivering a premium sound experience."
+      },
+      {
+        "heading": "Car Play Functionality",
+        "description": "Seamlessly integrates with iPhone and Android devices, offering support for CarPlay."
+      },
+      {
+        "heading": "Polished Design",
+        "description": "Inspired by Mercedes's design, it seamlessly integrates with your vehicle's interior, providing a modern and sophisticated look."
+      }
+      
+    ],
+    "aPlusContent": {
+      "imageOne": "https://res.cloudinary.com/dapscar/image/upload/v1703605234/A%20plus%20Content/A%2B/Android/Mercedes/5_jwnmqm.png",
+      "imageTwo": "https://res.cloudinary.com/dapscar/image/upload/v1703605239/A%20plus%20Content/A%2B/Android/Mercedes/2_pnjh5p.png",
+      "imageThree": "https://res.cloudinary.com/dapscar/image/upload/v1703605237/A%20plus%20Content/A%2B/Android/Mercedes/1_v3unbm.png",
+      "imageFour": "https://res.cloudinary.com/dapscar/image/upload/v1703605237/A%20plus%20Content/A%2B/Android/Mercedes/3_blnvnj.png",
+      "imageFive": "https://res.cloudinary.com/dapscar/image/upload/v1703605236/A%20plus%20Content/A%2B/Android/Mercedes/4_fxgblx.png",
+      "imageSix": "https://res.cloudinary.com/dapscar/image/upload/v1703605232/A%20plus%20Content/A%2B/Android/Mercedes/6_wzffs2.png"
+    },
+    "productCategory": ["Android Stereos", "Styled Stereos"],
+    "price": 19450,
+    "images": ["https://res.cloudinary.com/dapscar/image/upload/v1703603461/Products/Product%20Images/Android/Mercedes%20Style/7_ls5cfg.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603499/Products/Product%20Images/Android/Mercedes%20Style/6_itymot.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603441/Products/Product%20Images/Android/Mercedes%20Style/1_ptvcbq.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603440/Products/Product%20Images/Android/Mercedes%20Style/2_vezoc5.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603440/Products/Product%20Images/Android/Mercedes%20Style/3_ev2ibw.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603439/Products/Product%20Images/Android/Mercedes%20Style/4_w8xrbt.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603438/Products/Product%20Images/Android/Mercedes%20Style/5_okzski.png"],
+    "status": "Tranding",
+    "android": [
+      {
+        "isAndroid": true,
+        "screenSize": "12.3 Inches",
+        "variant": [
+          {
+            "processorName": "TS18",
+            "processorLabel": "Ultra Pro Max",
+            "carsSupported": [],
+            "ram": "2",
+            "rom": "32",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "Wireless",
+            "isDVRSupported": false,
+            "is360CameraSupported": "Yes",
+            "isSimSupported": "No",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "1",
+            "basePrice": 19450
+          }
+        ]
+      }
+    ],
+    "fMBT": [
+      {
+        "isFmBt": false,
+        "controlOption": "",
+        "basePrice": 1
+      }
+    ],
+    "bassTube": [
+      {
+        "isBassTube": false,
+        "wattage": "",
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "led": [
+      {
+        "isLed": false,
+        "variant": [
+          {
+            "wattage": "",
+            "socketsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "speakers": [
+      {
+        "isSpeakers": false,
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "chargers": [
+      {
+        "isChargers": false,
+        "wattage": "38",
+        "basePrice": 1000
+      }
+    ],
+    "amplifiers": [
+      {
+        "isAmplifiers": false,
+        "variant": [
+          {
+            "totalChannels": "",
+            "wattage": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "dampingSheets": [
+      {
+        "isDampingSheets": false,
+        "thickness": "",
+        "sheetsInOneBox": "",
+        "basePrice": 1
+      }
+    ],
+    "HID": [
+      {
+        "isHID": false,
+        "variant": [
+          {
+            "wattage": "",
+            "lightColor": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "camera": [
+      {
+        "isCamera": false,
+        "variant": [
+          {
+            "cameraQuality": "",
+            "areThereGuidelines": false,
+            "guidelinesType": {
+              "Static": false,
+              "Dynamic": false
+            },
+            "fieldOfViewType": {
+              "Wide": false,
+              "UltraWide": false
+            },
+            "processorsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productName": "Daps Audi Styled Android Stereo",
+    "discount": "20",
+    "productDetails": [
+      {
+        "heading": "",
+        "description": ""
+      }
+    ],
+    "productFeatures": [
+      {
+        "heading": "Android 11.0",
+        "description": "Enjoy the latest Android technology for a feature-rich and up-to-date experience."
+      },
+      {
+        "heading": "Ample RAM and Storage",
+        "description": "With up to 2GB of RAM and up to 32GB of storage, it delivers smooth performance and ample storage for apps and media."
+      },
+      {
+        "heading": "Digital Signal Processor (DSP)",
+        "description": "Elevates your audio quality, delivering a premium sound experience."
+      },
+      {
+        "heading": "Car Play Functionality",
+        "description": "Seamlessly integrates with iPhone and Android devices, offering support for CarPlay."
+      },
+      {
+        "heading": "Polished Design",
+        "description": "Inspired by Audi's design, it seamlessly integrates with your vehicle's interior, providing a modern and sophisticated look."
+      }
+      
+    ],
+    "aPlusContent": {
+      "imageOne": "https://res.cloudinary.com/dapscar/image/upload/v1703605234/A%20plus%20Content/A%2B/Android/Mercedes/5_jwnmqm.png",
+      "imageTwo": "https://res.cloudinary.com/dapscar/image/upload/v1703605239/A%20plus%20Content/A%2B/Android/Mercedes/2_pnjh5p.png",
+      "imageThree": "https://res.cloudinary.com/dapscar/image/upload/v1703605237/A%20plus%20Content/A%2B/Android/Mercedes/1_v3unbm.png",
+      "imageFour": "https://res.cloudinary.com/dapscar/image/upload/v1703605237/A%20plus%20Content/A%2B/Android/Mercedes/3_blnvnj.png",
+      "imageFive": "https://res.cloudinary.com/dapscar/image/upload/v1703605236/A%20plus%20Content/A%2B/Android/Mercedes/4_fxgblx.png",
+      "imageSix": "https://res.cloudinary.com/dapscar/image/upload/v1703605232/A%20plus%20Content/A%2B/Android/Mercedes/6_wzffs2.png"
+    },
+    "productCategory": ["Android Stereos", "Styled Stereos"],
+    "price": 19450,
+    "images":["https://res.cloudinary.com/dapscar/image/upload/v1703603889/Products/Product%20Images/Android/Audi%20Style/8_ltjhxb.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603888/Products/Product%20Images/Android/Audi%20Style/6_wqrryn.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603887/Products/Product%20Images/Android/Audi%20Style/1_kdvw6x.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603887/Products/Product%20Images/Android/Audi%20Style/7_apbbuj.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603887/Products/Product%20Images/Android/Audi%20Style/2_qzbsvr.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603887/Products/Product%20Images/Android/Audi%20Style/4_m4uzfb.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603886/Products/Product%20Images/Android/Audi%20Style/3_venlpt.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603886/Products/Product%20Images/Android/Audi%20Style/5_zz5ovk.png"],
+    "status": "Tranding",
+    "android": [
+      {
+        "isAndroid": true,
+        "screenSize": "12.3 Inches",
+        "variant": [
+          {
+            "processorName": "TS18",
+            "processorLabel": "Ultra Pro Max",
+            "carsSupported": [],
+            "ram": "2",
+            "rom": "32",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "Wireless",
+            "isDVRSupported": false,
+            "is360CameraSupported": "Yes",
+            "isSimSupported": "No",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "1",
+            "basePrice": 19450
+          }
+        ]
+      }
+    ],
+    "fMBT": [
+      {
+        "isFmBt": false,
+        "controlOption": "",
+        "basePrice": 1
+      }
+    ],
+    "bassTube": [
+      {
+        "isBassTube": false,
+        "wattage": "",
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "led": [
+      {
+        "isLed": false,
+        "variant": [
+          {
+            "wattage": "",
+            "socketsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "speakers": [
+      {
+        "isSpeakers": false,
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "chargers": [
+      {
+        "isChargers": false,
+        "wattage": "38",
+        "basePrice": 1000
+      }
+    ],
+    "amplifiers": [
+      {
+        "isAmplifiers": false,
+        "variant": [
+          {
+            "totalChannels": "",
+            "wattage": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "dampingSheets": [
+      {
+        "isDampingSheets": false,
+        "thickness": "",
+        "sheetsInOneBox": "",
+        "basePrice": 1
+      }
+    ],
+    "HID": [
+      {
+        "isHID": false,
+        "variant": [
+          {
+            "wattage": "",
+            "lightColor": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "camera": [
+      {
+        "isCamera": false,
+        "variant": [
+          {
+            "cameraQuality": "",
+            "areThereGuidelines": false,
+            "guidelinesType": {
+              "Static": false,
+              "Dynamic": false
+            },
+            "fieldOfViewType": {
+              "Wide": false,
+              "UltraWide": false
+            },
+            "processorsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productName": "Daps Creta OEM Android Stereo",
+    "discount": "20",
+    "productDetails": [
+      {
+        "heading": "",
+        "description": ""
+      }
+    ],
+    "productFeatures": [
+      {
+        "heading": "Android 11.0",
+        "description": "Stay up-to-date with the latest Android technology, ensuring a feature-rich and contemporary experience."
+      },
+      {
+        "heading": "Ample RAM and Storage",
+        "description": "With up to 2GB of RAM and up to 32GB of storage, it delivers smooth performance and provides ample storage for apps and media."
+      },
+      {
+        "heading": "Digital Signal Processor (DSP)",
+        "description": "Elevates your audio quality, delivering a premium sound experience."
+      },
+      {
+        "heading": "Car Play Functionality",
+        "description": "Seamlessly integrates with iPhone and Android devices, offering support for CarPlay."
+      },
+      {
+        "heading": "Sleek Integration",
+        "description": "Seamlessly fits into your N Creta's dashboard, providing a modern and polished appearance that complements your vehicle's design."
+      }
+      
+    ],
+    "aPlusContent": {
+      "imageOne": "https://res.cloudinary.com/dapscar/image/upload/v1703605245/A%20plus%20Content/A%2B/Android/Creta/5_yb95uc.png",
+      "imageTwo": "https://res.cloudinary.com/dapscar/image/upload/v1703605247/A%20plus%20Content/A%2B/Android/Creta/1_mkhwhn.png",
+      "imageThree": "https://res.cloudinary.com/dapscar/image/upload/v1703605250/A%20plus%20Content/A%2B/Android/Creta/2_ahdycs.png",
+      "imageFour": "https://res.cloudinary.com/dapscar/image/upload/v1703605246/A%20plus%20Content/A%2B/Android/Creta/4_fvlrbx.png",
+      "imageFive": "https://res.cloudinary.com/dapscar/image/upload/v1703605245/A%20plus%20Content/A%2B/Android/Creta/3_zkevly.png",
+      "imageSix": "https://res.cloudinary.com/dapscar/image/upload/v1703605244/A%20plus%20Content/A%2B/Android/Creta/6_foenxd.png"
+    },
+    "productCategory": ["Android Stereos", "OEM Stereos"],
+    "price": 16450,
+    "images": ["https://res.cloudinary.com/dapscar/image/upload/v1703603885/Products/Product%20Images/Android/CRETA/7_lweyhr.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603885/Products/Product%20Images/Android/CRETA/6_cpgrki.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603884/Products/Product%20Images/Android/CRETA/2_zzlwvc.png","https://res.cloudinary.com/dapscar/image/upload/v1703603884/Products/Product%20Images/Android/CRETA/2_zzlwvc.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603884/Products/Product%20Images/Android/CRETA/1_wjqcwv.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603884/Products/Product%20Images/Android/CRETA/3_svupgm.png","https://res.cloudinary.com/dapscar/image/upload/v1703603883/Products/Product%20Images/Android/CRETA/5_bh7guz.png","https://res.cloudinary.com/dapscar/image/upload/v1703603882/Products/Product%20Images/Android/CRETA/4_a8dn9e.png"], 
+    "status": "Tranding",
+    "android": [
+      {
+        "isAndroid": true,
+        "screenSize": "12.3 Inches",
+        "variant": [
+          {
+            "processorName": "M2K 9270",
+            "processorLabel": "Ultra Pro Max",
+            "carsSupported": [],
+            "ram": "2",
+            "rom": "32",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "Wireless",
+            "isDVRSupported": false,
+            "is360CameraSupported": "Yes",
+            "isSimSupported": "No",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "1",
+            "basePrice": 16450
+          }
+        ]
+      }
+    ],
+    "fMBT": [
+      {
+        "isFmBt": false,
+        "controlOption": "",
+        "basePrice": 1
+      }
+    ],
+    "bassTube": [
+      {
+        "isBassTube": false,
+        "wattage": "",
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "led": [
+      {
+        "isLed": false,
+        "variant": [
+          {
+            "wattage": "",
+            "socketsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "speakers": [
+      {
+        "isSpeakers": false,
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "chargers": [
+      {
+        "isChargers": false,
+        "wattage": "38",
+        "basePrice": 1000
+      }
+    ],
+    "amplifiers": [
+      {
+        "isAmplifiers": false,
+        "variant": [
+          {
+            "totalChannels": "",
+            "wattage": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "dampingSheets": [
+      {
+        "isDampingSheets": false,
+        "thickness": "",
+        "sheetsInOneBox": "",
+        "basePrice": 1
+      }
+    ],
+    "HID": [
+      {
+        "isHID": false,
+        "variant": [
+          {
+            "wattage": "",
+            "lightColor": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "camera": [
+      {
+        "isCamera": false,
+        "variant": [
+          {
+            "cameraQuality": "",
+            "areThereGuidelines": false,
+            "guidelinesType": {
+              "Static": false,
+              "Dynamic": false
+            },
+            "fieldOfViewType": {
+              "Wide": false,
+              "UltraWide": false
+            },
+            "processorsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productName": "Daps Fiat & Punto OEM Android Stereo",
+    "discount": "20",
+    "productDetails": [
+      {
+        "heading": "",
+        "description": ""
+      }
+    ],
+    "productFeatures": [
+      {
+        "heading": "Tech-Forward Interface",
+        "description": "A futuristic interface designed for tech enthusiasts."
+      },
+      {
+        "heading": "App Diversity",
+        "description": "Access a wide selection of apps for entertainment, productivity, and more."
+      },
+      {
+        "heading": "Integrated Convenience",
+        "description": "Seamlessly integrates into your vehicle's dashboard for a sleek look."
+      },
+      {
+        "heading": "Full-Featured Control",
+        "description": "Enjoy responsive touch controls and advanced navigation."
+      },
+      {
+        "heading": "Connectivity Hub",
+        "description": "Stay connected with Bluetooth, Wi-Fi, and USB connectivity options."
+      },
+      {
+        "heading": "Multimedia Marvel",
+        "description": "Delve into a world of multimedia possibilities with support for various file formats."
+      }
+      
+    ],
+    "aPlusContent": {
+      "imageOne": "https://res.cloudinary.com/dapscar/image/upload/v1703605209/A%20plus%20Content/A%2B/Android/Punto/5_ydcpos.png",
+      "imageTwo": "https://res.cloudinary.com/dapscar/image/upload/v1703605213/A%20plus%20Content/A%2B/Android/Punto/1_czyb7h.png",
+      "imageThree": "https://res.cloudinary.com/dapscar/image/upload/v1703605211/A%20plus%20Content/A%2B/Android/Punto/2_gntaim.png",
+      "imageFour": "https://res.cloudinary.com/dapscar/image/upload/v1703605212/A%20plus%20Content/A%2B/Android/Punto/3_bjrznq.png",
+      "imageFive": "https://res.cloudinary.com/dapscar/image/upload/v1703605211/A%20plus%20Content/A%2B/Android/Punto/4_alwgl3.png",
+      "imageSix": "https://res.cloudinary.com/dapscar/image/upload/v1703605208/A%20plus%20Content/A%2B/Android/Punto/6_zqrio0.png"
+    },
+    "productCategory": ["Android Stereos", "OEM Stereos"],
+    "price": 6450,
+    "images": ["https://res.cloudinary.com/dapscar/image/upload/v1703603880/Products/Product%20Images/Android/FiatPunto%20Style/5_sgx53i.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603882/Products/Product%20Images/Android/FiatPunto%20Style/4_ni8wzt.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603882/Products/Product%20Images/Android/FiatPunto%20Style/1_zfntff.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603881/Products/Product%20Images/Android/FiatPunto%20Style/2_qdi1wr.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603880/Products/Product%20Images/Android/FiatPunto%20Style/5_sgx53i.png"],
+    "status": "Tranding",
+    "android": [
+      {
+        "isAndroid": true,
+        "screenSize": "7 Inches",
+        "variant": [
+          {
+            "processorName": "TS7",
+            "processorLabel": "Ultra Pro Max",
+            "carsSupported": [],
+            "ram": "2",
+            "rom": "32",
+            "isAppleCarplayAndAndroidAutoSupported": false,
+            "wirelessWired": "",
+            "isDVRSupported": false,
+            "is360CameraSupported": "Yes",
+            "isSimSupported": "No",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "1",
+            "basePrice": 6450
+          }
+        ]
+      }
+    ],
+    "fMBT": [
+      {
+        "isFmBt": false,
+        "controlOption": "",
+        "basePrice": 1
+      }
+    ],
+    "bassTube": [
+      {
+        "isBassTube": false,
+        "wattage": "",
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "led": [
+      {
+        "isLed": false,
+        "variant": [
+          {
+            "wattage": "",
+            "socketsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "speakers": [
+      {
+        "isSpeakers": false,
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "chargers": [
+      {
+        "isChargers": false,
+        "wattage": "38",
+        "basePrice": 1000
+      }
+    ],
+    "amplifiers": [
+      {
+        "isAmplifiers": false,
+        "variant": [
+          {
+            "totalChannels": "",
+            "wattage": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "dampingSheets": [
+      {
+        "isDampingSheets": false,
+        "thickness": "",
+        "sheetsInOneBox": "",
+        "basePrice": 1
+      }
+    ],
+    "HID": [
+      {
+        "isHID": false,
+        "variant": [
+          {
+            "wattage": "",
+            "lightColor": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "camera": [
+      {
+        "isCamera": false,
+        "variant": [
+          {
+            "cameraQuality": "",
+            "areThereGuidelines": false,
+            "guidelinesType": {
+              "Static": false,
+              "Dynamic": false
+            },
+            "fieldOfViewType": {
+              "Wide": false,
+              "UltraWide": false
+            },
+            "processorsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productName": "Daps Static Series Aesthetic FM/BT",
+    "discount": "20",
+    "productDetails": [
+      {
+        "heading": "",
+        "description": ""
+      }
+    ],
+    "productFeatures": [
+      {
+        "heading": "Bluetooth Streaming",
+        "description": "Seamlessly connect your mobile device to the transmitter via Bluetooth, enabling wireless music playback."
+      },
+      {
+        "heading": "Compact and Stylish",
+        "description": "The AD101 boasts a sleek and compact design, making it an unobtrusive and stylish addition to your car's interior."
+      },
+      {
+        "heading": "Smartphone Compatibility",
+        "description": "It's compatible with both Android and iOS devices, ensuring it works with a wide range of smartphones and tablets."
+      },
+      {
+        "heading": "Intuitive Controls",
+        "description": "The transmitter features user-friendly controls, allowing you to effortlessly adjust audio settings."
+      },
+      {
+        "heading": "Enhanced Sound",
+        "description": "Enjoy an improved audio experience with crisp and clear sound quality."
+      },
+      {
+        "heading": "Versatile Compatibility",
+        "description": "It's designed to work with a variety of car models, making it a versatile choice for many users."
+      }
+      
+    ],
+    "aPlusContent": {
+      "imageOne": "https://res.cloudinary.com/dapscar/image/upload/v1703605171/A%20plus%20Content/A%2B/FM%20BT/Static%20Series%20Aesthetic/1_t3ydg8.png",
+      "imageTwo": "https://res.cloudinary.com/dapscar/image/upload/v1703605167/A%20plus%20Content/A%2B/FM%20BT/Static%20Series%20Aesthetic/3_mjll3k.png",
+      "imageThree": "https://res.cloudinary.com/dapscar/image/upload/v1703605165/A%20plus%20Content/A%2B/FM%20BT/Static%20Series%20Aesthetic/4_qvr9ka.png",
+      "imageFour": "https://res.cloudinary.com/dapscar/image/upload/v1703605165/A%20plus%20Content/A%2B/FM%20BT/Static%20Series%20Minimal/3_mt1nzy.png",
+      "imageFive": "https://res.cloudinary.com/dapscar/image/upload/v1703605150/A%20plus%20Content/A%2B/FM%20BT/Static%20Series%20Minimal/4_nyytd5.png",
+      "imageSix": "https://res.cloudinary.com/dapscar/image/upload/v1703605171/A%20plus%20Content/A%2B/FM%20BT/Static%20Series%20Aesthetic/2_iuuqja.png"
+    },
+    "productCategory": ["FM-BTs"],
+    "price": 1800,
+    "images": ["https://res.cloudinary.com/dapscar/image/upload/v1703603351/Products/Product%20Images/FM%20BT/2_lqavpd.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603351/Products/Product%20Images/FM%20BT/1_nvt2sn.png"],
+    "status": "Tranding",
+    "android": [
+      {
+        "isAndroid": false,
+        "screenSize": "",
+        "variant": [
+          {
+            "processorName": "",
+            "processorLabel": "",
+            "carsSupported": [],
+            "ram": "",
+            "rom": "",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "",
+            "isDVRSupported": true,
+            "is360CameraSupported": "Yes",
+            "isSimSupported": "Yes",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "10",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "fMBT": [
+      {
+        "isFmBt": true,
+        "controlOption": "Remote and App Controlled",
+        "basePrice": 1800
+      }
+    ],
+    "bassTube": [
+      {
+        "isBassTube": false,
+        "wattage": "",
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "led": [
+      {
+        "isLed": false,
+        "variant": [
+          {
+            "wattage": "",
+            "socketsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "speakers": [
+      {
+        "isSpeakers": false,
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "chargers": [
+      {
+        "isChargers": false,
+        "wattage": "",
+        "basePrice": 1
+      }
+    ],
+    "amplifiers": [
+      {
+        "isAmplifiers": false,
+        "variant": [
+          {
+            "totalChannels": "",
+            "wattage": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "dampingSheets": [
+      {
+        "isDampingSheets": false,
+        "thickness": "",
+        "sheetsInOneBox": "",
+        "basePrice": 1
+      }
+    ],
+    "HID": [
+      {
+        "isHID": false,
+        "variant": [
+          {
+            "wattage": "",
+            "lightColor": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "camera": [
+      {
+        "isCamera": false,
+        "variant": [
+          {
+            "cameraQuality": "",
+            "areThereGuidelines": false,
+            "guidelinesType": {
+              "Static": false,
+              "Dynamic": false
+            },
+            "fieldOfViewType": {
+              "Wide": false,
+              "UltraWide": false
+            },
+            "processorsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productName": "Daps Static Series Minimal FM/BT",
+    "discount": "20",
+    "productDetails": [
+      {
+        "heading": "",
+        "description": ""
+      }
+    ],
+    "productFeatures": [
+      {
+        "heading": "Bluetooth Streaming",
+        "description": "Seamlessly connect your mobile device to the transmitter via Bluetooth, enabling wireless music playback."
+      },
+      {
+        "heading": "Compact and Stylish",
+        "description": "The AD101 boasts a sleek and compact design, making it an unobtrusive and stylish addition to your car's interior."
+      },
+      {
+        "heading": "Smartphone Compatibility",
+        "description": "It's compatible with both Android and iOS devices, ensuring it works with a wide range of smartphones and tablets."
+      },
+      {
+        "heading": "Intuitive Controls",
+        "description": "The transmitter features user-friendly controls, allowing you to effortlessly adjust audio settings."
+      },
+      {
+        "heading": "Enhanced Sound",
+        "description": "Enjoy an improved audio experience with crisp and clear sound quality."
+      },
+      {
+        "heading": "Versatile Compatibility",
+        "description": "It's designed to work with a variety of car models, making it a versatile choice for many users."
+      }
+      
+    ],
+    "aPlusContent": {
+      "imageOne": "https://res.cloudinary.com/dapscar/image/upload/v1703605171/A%20plus%20Content/A%2B/FM%20BT/Static%20Series%20Aesthetic/1_t3ydg8.png",
+      "imageTwo": "https://res.cloudinary.com/dapscar/image/upload/v1703605167/A%20plus%20Content/A%2B/FM%20BT/Static%20Series%20Aesthetic/3_mjll3k.png",
+      "imageThree": "https://res.cloudinary.com/dapscar/image/upload/v1703605165/A%20plus%20Content/A%2B/FM%20BT/Static%20Series%20Aesthetic/4_qvr9ka.png",
+      "imageFour": "https://res.cloudinary.com/dapscar/image/upload/v1703605165/A%20plus%20Content/A%2B/FM%20BT/Static%20Series%20Minimal/3_mt1nzy.png",
+      "imageFive": "https://res.cloudinary.com/dapscar/image/upload/v1703605150/A%20plus%20Content/A%2B/FM%20BT/Static%20Series%20Minimal/4_nyytd5.png",
+      "imageSix": "https://res.cloudinary.com/dapscar/image/upload/v1703605171/A%20plus%20Content/A%2B/FM%20BT/Static%20Series%20Aesthetic/2_iuuqja.png"
+    },
+    "productCategory": ["FM-BTs"],
+    "price": 1800,
+    "images": ["https://res.cloudinary.com/dapscar/image/upload/v1703603351/Products/Product%20Images/FM%20BT/2_lqavpd.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603351/Products/Product%20Images/FM%20BT/1_nvt2sn.png"],
+    "status": "Tranding",
+    "android": [
+      {
+        "isAndroid": false,
+        "screenSize": "",
+        "variant": [
+          {
+            "processorName": "",
+            "processorLabel": "",
+            "carsSupported": [],
+            "ram": "",
+            "rom": "",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "",
+            "isDVRSupported": true,
+            "is360CameraSupported": "Yes",
+            "isSimSupported": "Yes",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "10",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "fMBT": [
+      {
+        "isFmBt": true,
+        "controlOption": "Remote and App Controlled",
+        "basePrice": 1800
+      }
+    ],
+    "bassTube": [
+      {
+        "isBassTube": false,
+        "wattage": "",
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "led": [
+      {
+        "isLed": false,
+        "variant": [
+          {
+            "wattage": "",
+            "socketsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "speakers": [
+      {
+        "isSpeakers": false,
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "chargers": [
+      {
+        "isChargers": false,
+        "wattage": "",
+        "basePrice": 1
+      }
+    ],
+    "amplifiers": [
+      {
+        "isAmplifiers": false,
+        "variant": [
+          {
+            "totalChannels": "",
+            "wattage": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "dampingSheets": [
+      {
+        "isDampingSheets": false,
+        "thickness": "",
+        "sheetsInOneBox": "",
+        "basePrice": 1
+      }
+    ],
+    "HID": [
+      {
+        "isHID": false,
+        "variant": [
+          {
+            "wattage": "",
+            "lightColor": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "camera": [
+      {
+        "isCamera": false,
+        "variant": [
+          {
+            "cameraQuality": "",
+            "areThereGuidelines": false,
+            "guidelinesType": {
+              "Static": false,
+              "Dynamic": false
+            },
+            "fieldOfViewType": {
+              "Wide": false,
+              "UltraWide": false
+            },
+            "processorsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productName": "Daps Destruction Series Bass Tube",
+    "discount": "20",
+    "productDetails": [
+      {
+        "heading": "",
+        "description": ""
+      }
+    ],
+    "productFeatures": [
+      {
+        "heading": "Powerful Bass",
+        "description": "Experience deep and resonant bass that elevates your in-car audio."
+      },
+      {
+        "heading": "Compact Design",
+        "description": "The 8-inch Bass Tube's compact form factor fits easily in your car's interior."
+      },
+      {
+        "heading": "Reduced Distortion",
+        "description": "The cylindrical design minimizes sound distortion, ensuring clear and stable bass output."
+      },
+      {
+        "heading": "Versatile Application",
+        "description": "Suitable for a range of car models, offering flexibility and performance."
+      },
+      {
+        "heading": "Dynamic Frequency Response",
+        "description": "Enjoy a broad frequency range that brings out the richness of your music."
+      },
+      {
+        "heading": "Enhanced Audio",
+        "description": "The 8-inch subwoofer complements your audio content, enhancing the overall listening experience."
+      }
+      
+    ],
+    "aPlusContent": {
+      "imageOne": "https://res.cloudinary.com/dapscar/image/upload/v1703605184/A%20plus%20Content/A%2B/BassTube/Destruction%20Series%204000w/2_q7mu02.png",
+      "imageTwo": "https://res.cloudinary.com/dapscar/image/upload/v1703605183/A%20plus%20Content/A%2B/BassTube/Destruction%20Series%204000w/3_fzkt5z.png",
+      "imageThree": "https://res.cloudinary.com/dapscar/image/upload/v1703605182/A%20plus%20Content/A%2B/BassTube/Destruction%20Series%204000w/4_vz99ps.png",
+      "imageFour": "https://res.cloudinary.com/dapscar/image/upload/v1703605182/A%20plus%20Content/A%2B/BassTube/Destruction%20Series%204000w/4_vz99ps.png",
+      "imageFive": "https://res.cloudinary.com/dapscar/image/upload/v1703605183/A%20plus%20Content/A%2B/BassTube/Destruction%20Series%204000w/3_fzkt5z.png",
+      "imageSix": "https://res.cloudinary.com/dapscar/image/upload/v1703605184/A%20plus%20Content/A%2B/BassTube/Destruction%20Series%204000w/1_bm3ybu.png"
+    },
+    "productCategory": ["Basstubes"],
+    "price": 4400,
+    "images": ["https://res.cloudinary.com/dapscar/image/upload/v1703603369/Products/Product%20Images/BassTube/Destruction%20Series/1_mo3l9j.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603368/Products/Product%20Images/BassTube/Destruction%20Series/2_l4s8ti.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603367/Products/Product%20Images/BassTube/Destruction%20Series/3_a6asdx.png"],
+    "status": "Tranding",
+    "android": [
+      {
+        "isAndroid": false,
+        "screenSize": "",
+        "variant": [
+          {
+            "processorName": "",
+            "processorLabel": "",
+            "carsSupported": [],
+            "ram": "",
+            "rom": "",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "",
+            "isDVRSupported": true,
+            "is360CameraSupported": "Yes",
+            "isSimSupported": "Yes",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "10",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "fMBT": [
+      {
+        "isFmBt": false,
+        "controlOption": "",
+        "basePrice": 1
+      }
+    ],
+    "bassTube": [
+      {
+        "isBassTube": true,
+        "wattage": "4000",
+        "speakerSize": "8",
+        "basePrice": 4400
+      }
+    ],
+    "led": [
+      {
+        "isLed": false,
+        "variant": [
+          {
+            "wattage": "",
+            "socketsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "speakers": [
+      {
+        "isSpeakers": false,
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "chargers": [
+      {
+        "isChargers": false,
+        "wattage": "",
+        "basePrice": 1
+      }
+    ],
+    "amplifiers": [
+      {
+        "isAmplifiers": false,
+        "variant": [
+          {
+            "totalChannels": "",
+            "wattage": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "dampingSheets": [
+      {
+        "isDampingSheets": false,
+        "thickness": "",
+        "sheetsInOneBox": "",
+        "basePrice": 1
+      }
+    ],
+    "HID": [
+      {
+        "isHID": false,
+        "variant": [
+          {
+            "wattage": "",
+            "lightColor": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "camera": [
+      {
+        "isCamera": false,
+        "variant": [
+          {
+            "cameraQuality": "",
+            "areThereGuidelines": false,
+            "guidelinesType": {
+              "Static": false,
+              "Dynamic": false
+            },
+            "fieldOfViewType": {
+              "Wide": false,
+              "UltraWide": false
+            },
+            "processorsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productName": "Daps Ultimate Destruction Series Bass Tube",
+    "discount": "20",
+    "productDetails": [
+      {
+        "heading": "",
+        "description": ""
+      }
+    ],
+    "productFeatures": [
+      {
+        "heading": "Deep and Resonant Bass",
+        "description": "The 10-inch Bass Tube provides powerful and immersive bass for an exceptional in-car audio experience."
+      },
+      {
+        "heading": "Compact Form",
+        "description": "Despite its power, this subwoofer maintains a compact design, fitting seamlessly in your car's interior."
+      },
+      {
+        "heading": "Enhanced Clarity",
+        "description": "The cylindrical design minimizes sound distortion, ensuring clear and stable bass output."
+      },
+      {
+        "heading": "Versatile Compatibility",
+        "description": "Suitable for various car models, providing versatility without compromising on performance."
+      },
+      {
+        "heading": "Broad Frequency Range",
+        "description": "Enjoy a dynamic frequency response that enhances the fullness of your audio content."
+      },
+      {
+        "heading": "Audio Excellence",
+        "description": "This subwoofer elevates your audio experience, making every note and beat more pronounced and enjoyable."
+      }      
+    ],
+    "aPlusContent": {
+      "imageOne": "https://res.cloudinary.com/dapscar/image/upload/v1703605180/A%20plus%20Content/A%2B/BassTube/Ultimate%20Destruction%20Series%205600w/1_ukmwnc.png",
+      "imageTwo": "https://res.cloudinary.com/dapscar/image/upload/v1703605178/A%20plus%20Content/A%2B/BassTube/Ultimate%20Destruction%20Series%205600w/3_kh1mzn.png",
+      "imageThree": "https://res.cloudinary.com/dapscar/image/upload/v1703605177/A%20plus%20Content/A%2B/BassTube/Ultimate%20Destruction%20Series%205600w/4_tqtmmi.png",
+      "imageFour": "https://res.cloudinary.com/dapscar/image/upload/v1703605177/A%20plus%20Content/A%2B/BassTube/Ultimate%20Destruction%20Series%205600w/4_tqtmmi.png",
+      "imageFive": "https://res.cloudinary.com/dapscar/image/upload/v1703605178/A%20plus%20Content/A%2B/BassTube/Ultimate%20Destruction%20Series%205600w/3_kh1mzn.png",
+      "imageSix": "https://res.cloudinary.com/dapscar/image/upload/v1703605179/A%20plus%20Content/A%2B/BassTube/Ultimate%20Destruction%20Series%205600w/2_qvp8hl.png"
+    },
+    "productCategory": ["Basstubes"],
+    "price": 5100,
+    "images": ["https://res.cloudinary.com/dapscar/image/upload/v1703603367/Products/Product%20Images/BassTube/Ultimate%20Destruction%20Series/1_xlyebk.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603367/Products/Product%20Images/BassTube/Ultimate%20Destruction%20Series/2_oqbg5e.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603366/Products/Product%20Images/BassTube/Ultimate%20Destruction%20Series/3_vrkflh.png"],
+    "status": "Tranding",
+    "android": [
+      {
+        "isAndroid": false,
+        "screenSize": "",
+        "variant": [
+          {
+            "processorName": "",
+            "processorLabel": "",
+            "carsSupported": [],
+            "ram": "",
+            "rom": "",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "",
+            "isDVRSupported": true,
+            "is360CameraSupported": "Yes",
+            "isSimSupported": "Yes",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "10",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "fMBT": [
+      {
+        "isFmBt": false,
+        "controlOption": "",
+        "basePrice": 1
+      }
+    ],
+    "bassTube": [
+      {
+        "isBassTube": true,
+        "wattage": "5600",
+        "speakerSize": "10",
+        "basePrice": 51
+      }
+    ],
+    "led": [
+      {
+        "isLed": false,
+        "variant": [
+          {
+            "wattage": "",
+            "socketsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "speakers": [
+      {
+        "isSpeakers": false,
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "chargers": [
+      {
+        "isChargers": false,
+        "wattage": "",
+        "basePrice": 1
+      }
+    ],
+    "amplifiers": [
+      {
+        "isAmplifiers": false,
+        "variant": [
+          {
+            "totalChannels": "",
+            "wattage": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "dampingSheets": [
+      {
+        "isDampingSheets": false,
+        "thickness": "",
+        "sheetsInOneBox": "",
+        "basePrice": 1
+      }
+    ],
+    "HID": [
+      {
+        "isHID": false,
+        "variant": [
+          {
+            "wattage": "",
+            "lightColor": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "camera": [
+      {
+        "isCamera": false,
+        "variant": [
+          {
+            "cameraQuality": "",
+            "areThereGuidelines": false,
+            "guidelinesType": {
+              "Static": false,
+              "Dynamic": false
+            },
+            "fieldOfViewType": {
+              "Wide": false,
+              "UltraWide": false
+            },
+            "processorsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productName": "Daps Prime Series LED Lights",
+    "discount": "20",
+    "productDetails": [
+      {
+        "heading": "",
+        "description": ""
+      }
+    ],
+    "productFeatures": [
+      {
+        "heading": "Optimal Illumination",
+        "description": "Emitting a cool white light with a colour temperature of up to 6000K."
+      },
+      {
+        "heading": "Enhanced Brightness",
+        "description": "Designed to provide a noticeable increase in lumens, exceeding ECE R37 requirements."
+      },
+      {
+        "heading": "Improved Light Distribution",
+        "description": "Reduced blind spots and heightened road safety."
+      },
+      {
+        "heading": "Reliable Warranty",
+        "description": "Backed by a 1-year DAPS guarantee."
+      },
+      {
+        "heading": "Cooling Efficiency",
+        "description": "Intelligent fan design maintains a stable light output by regulating temperature."
+      },
+      {
+        "heading": "Universal Fit",
+        "description": "Suitable for more than 90% of car models."
+      },
+      {
+        "heading": "Effortless Upgrade",
+        "description": "Simple installation for an instant lighting enhancement."
+      },
+      {
+        "heading": "Advanced Technology",
+        "description": "Equipped with a high-end chipset (CSP) for superior performance."
+      }
+      
+    ],
+    "aPlusContent": {
+      "imageOne": "https://res.cloudinary.com/dapscar/image/upload/v1703605144/A%20plus%20Content/A%2B/LED/Prime%20Series/300w/2_bx9efe.png",
+      "imageTwo": "https://res.cloudinary.com/dapscar/image/upload/v1703605144/A%20plus%20Content/A%2B/LED/Prime%20Series/300w/3_ryjqy6.png",
+      "imageThree": "https://res.cloudinary.com/dapscar/image/upload/v1703605145/A%20plus%20Content/A%2B/LED/Prime%20Series/220w/4_w4pewg.png",
+      "imageFour": "https://res.cloudinary.com/dapscar/image/upload/v1703605146/A%20plus%20Content/A%2B/LED/Prime%20Series/220w/3_uhkkdw.png",
+      "imageFive": "https://res.cloudinary.com/dapscar/image/upload/v1703605143/A%20plus%20Content/A%2B/LED/Prime%20Series/300w/4_xyozx8.png",
+      "imageSix": "https://res.cloudinary.com/dapscar/image/upload/v1703605144/A%20plus%20Content/A%2B/LED/Prime%20Series/300w/1_t8rr6k.png"
+    },
+    "productCategory": ["LEDs"],
+    "price": 2500,
+    "images": ["https://res.cloudinary.com/dapscar/image/upload/v1703603338/Products/Product%20Images/LED/Prime%20Series/300w/3_epnilk.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603338/Products/Product%20Images/LED/Prime%20Series/300w/1_zktwtc.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603337/Products/Product%20Images/LED/Prime%20Series/300w/2_cmj7k6.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603336/Products/Product%20Images/LED/Prime%20Series/300w/4_iwk0x6.png"],
+    "status": "Tranding",
+    "android": [
+      {
+        "isAndroid": false,
+        "screenSize": "",
+        "variant": [
+          {
+            "processorName": "",
+            "processorLabel": "",
+            "carsSupported": [],
+            "ram": "",
+            "rom": "",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "",
+            "isDVRSupported": true,
+            "is360CameraSupported": "Yes",
+            "isSimSupported": "Yes",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "10",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "fMBT": [
+      {
+        "isFmBt": false,
+        "controlOption": "",
+        "basePrice": 1
+      }
+    ],
+    "bassTube": [
+      {
+        "isBassTube": false,
+        "wattage": "",
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "led": [
+      {
+        "isLed": true,
+        "variant": [
+          {
+            "wattage": "55W",
+            "socketsSupported": ["H1", "H4", "H7", "H8", "H27", "9005"],
+            "basePrice": 2500
+          },
+          {
+            "wattage": "65W",
+            "socketsSupported": ["H1", "H4", "H7", "H8", "H27", "9005"],
+            "basePrice": 2900
+          },
+          {
+            "wattage": "100W",
+            "socketsSupported": ["H1", "H4", "H7", "H8", "H27", "9005"],
+            "basePrice": 4300
+          },
+          {
+            "wattage": "160W",
+            "socketsSupported": ["H1", "H4", "H7", "H8", "H27", "9005"],
+            "basePrice": 5700
+          },
+          {
+            "wattage": "220W",
+            "socketsSupported": ["H1", "H4", "H7", "H8", "H27", "9005"],
+            "basePrice": 6200
+          },
+          {
+            "wattage": "300W",
+            "socketsSupported": ["H1", "H4", "H7", "H8", "H27", "9005"],
+            "basePrice": 6700
+          }
+
+          
+        ]
+      }
+    ],
+    "speakers": [
+      {
+        "isSpeakers": false,
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "chargers": [
+      {
+        "isChargers": false,
+        "wattage": "",
+        "basePrice": 1
+      }
+    ],
+    "amplifiers": [
+      {
+        "isAmplifiers": false,
+        "variant": [
+          {
+            "totalChannels": "",
+            "wattage": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "dampingSheets": [
+      {
+        "isDampingSheets": false,
+        "thickness": "",
+        "sheetsInOneBox": "",
+        "basePrice": 1
+      }
+    ],
+    "HID": [
+      {
+        "isHID": false,
+        "variant": [
+          {
+            "wattage": "",
+            "lightColor": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "camera": [
+      {
+        "isCamera": false,
+        "variant": [
+          {
+            "cameraQuality": "",
+            "areThereGuidelines": false,
+            "guidelinesType": {
+              "Static": false,
+              "Dynamic": false
+            },
+            "fieldOfViewType": {
+              "Wide": false,
+              "UltraWide": false
+            },
+            "processorsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productName": "Daps D-Series LED Lights",
+    "discount": "20",
+    "productDetails": [
+      {
+        "heading": "",
+        "description": ""
+      }
+    ],
+    "productFeatures": [
+      {
+        "heading": "Seamless Compatibility",
+        "description": "These LED headlights effortlessly integrate into your vehicle, matching original HIDs for a perfect fit."
+      },
+      {
+        "heading": "Versatile Voltage Range",
+        "description": "Operating across a wide voltage spectrum from 400V to 25kV, these headlights ensure reliable and efficient power."
+      },
+      {
+        "heading": "Streamlined Power",
+        "description": "Say goodbye to the search for a 12V power supply, as these LEDs require none."
+      },
+      {
+        "heading": "Extended Visibility",
+        "description": "Illuminate the road up to an impressive 500 meters ahead, enhancing your driving confidence."
+      }      
+    ],
+    "aPlusContent": {
+      "imageOne": "https://res.cloudinary.com/dapscar/image/upload/v1703605149/A%20plus%20Content/A%2B/LED/Prime%20Series/160w/1_f4zrxm.png",
+      "imageTwo": "https://res.cloudinary.com/dapscar/image/upload/v1703605148/A%20plus%20Content/A%2B/LED/Prime%20Series/160w/4_p7ygxl.png",
+      "imageThree": "https://res.cloudinary.com/dapscar/image/upload/v1703605148/A%20plus%20Content/A%2B/LED/Prime%20Series/160w/3_nou9c8.png",
+      "imageFour": "https://res.cloudinary.com/dapscar/image/upload/v1703605148/A%20plus%20Content/A%2B/LED/Prime%20Series/160w/4_p7ygxl.png",
+      "imageFive": "https://res.cloudinary.com/dapscar/image/upload/v1703605148/A%20plus%20Content/A%2B/LED/Prime%20Series/160w/3_nou9c8.png",
+      "imageSix": "https://res.cloudinary.com/dapscar/image/upload/v1703605149/A%20plus%20Content/A%2B/LED/Prime%20Series/160w/2_djqsfn.png"
+    },
+    "productCategory": ["LEDs"],
+    "price": 5500,
+    "images": ["https://res.cloudinary.com/dapscar/image/upload/v1703455563/Products/Charger/1_kk7lbu.png", "https://res.cloudinary.com/dapscar/image/upload/v1703455540/Products/Charger/2_g88iii.png", "https://res.cloudinary.com/dapscar/image/upload/v1703455539/Products/Charger/3_bcfze5.png", "https://res.cloudinary.com/dapscar/image/upload/v1703455539/Products/Charger/4_gru7d7.png"],
+    "status": "Tranding",
+    "android": [
+      {
+        "isAndroid": false,
+        "screenSize": "",
+        "variant": [
+          {
+            "processorName": "",
+            "processorLabel": "",
+            "carsSupported": [],
+            "ram": "",
+            "rom": "",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "",
+            "isDVRSupported": true,
+            "is360CameraSupported": "Yes",
+            "isSimSupported": "Yes",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "10",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "fMBT": [
+      {
+        "isFmBt": false,
+        "controlOption": "",
+        "basePrice": 1
+      }
+    ],
+    "bassTube": [
+      {
+        "isBassTube": false,
+        "wattage": "",
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "led": [
+      {
+        "isLed": true,
+        "variant": [
+          {
+            "wattage": "75W",
+            "socketsSupported": ["D1", "D2", "D3", "D4"],
+            "basePrice": 5500
+          },
+          {
+            "wattage": "100W",
+            "socketsSupported": ["D1", "D2", "D3", "D4"],
+            "basePrice": 6800
+          }
+        ]
+      }
+    ],
+    "speakers": [
+      {
+        "isSpeakers": false,
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "chargers": [
+      {
+        "isChargers": false,
+        "wattage": "",
+        "basePrice": 1
+      }
+    ],
+    "amplifiers": [
+      {
+        "isAmplifiers": false,
+        "variant": [
+          {
+            "totalChannels": "",
+            "wattage": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "dampingSheets": [
+      {
+        "isDampingSheets": false,
+        "thickness": "",
+        "sheetsInOneBox": "",
+        "basePrice": 1
+      }
+    ],
+    "HID": [
+      {
+        "isHID": false,
+        "variant": [
+          {
+            "wattage": "",
+            "lightColor": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "camera": [
+      {
+        "isCamera": false,
+        "variant": [
+          {
+            "cameraQuality": "",
+            "areThereGuidelines": false,
+            "guidelinesType": {
+              "Static": false,
+              "Dynamic": false
+            },
+            "fieldOfViewType": {
+              "Wide": false,
+              "UltraWide": false
+            },
+            "processorsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productName": "Daps Harmony Series Coaxial Speakers",
+    "discount": "20",
+    "productDetails": [
+      {
+        "heading": "",
+        "description": ""
+      }
+    ],
+    "productFeatures": [
+      {
+        "heading": "Compact Power",
+        "description": "Despite their smaller size, 6-inch Speakers deliver impressive sound quality, proving that great things come in compact packages."
+      },
+      {
+        "heading": "Efficient Sound",
+        "description": "These speakers prioritize efficiency and clarity, ensuring that your audio is both well-defined and crisp."
+      },
+      {
+        "heading": "Versatile Usage",
+        "description": "Perfect for a wide range of audio content, from music to spoken word, these speakers adapt to your needs."
+      },
+      {
+        "heading": "Built to Last",
+        "description": "Designed with longevity in mind, these speakers maintain consistent performance over time."
+      },
+      {
+        "heading": "Precision Sound",
+        "description": "Enjoy audio precision that brings out the subtleties of your favorite music or podcasts."
+      },
+      {
+        "heading": "Personalized Audio",
+        "description": "Customize the sound settings to match your individual audio preferences, tailoring your audio experience to your liking."
+      }
+      
+    ],
+    "aPlusContent": {
+      "imageOne": "https://res.cloudinary.com/dapscar/image/upload/v1703605140/A%20plus%20Content/A%2B/Speakers/Coaxial%20Speakers%20%28%20Surreal%20Series%20%29/1_kebcnu.png",
+      "imageTwo": "https://res.cloudinary.com/dapscar/image/upload/v1703605140/A%20plus%20Content/A%2B/Speakers/Coaxial%20Speakers%20%28%20Surreal%20Series%20%29/3_i0oh7m.png",
+      "imageThree": "https://res.cloudinary.com/dapscar/image/upload/v1703605138/A%20plus%20Content/A%2B/Speakers/Coaxial%20Speakers%20%28%20Surreal%20Series%20%29/4_etvwmo.png",
+      "imageFour": "https://res.cloudinary.com/dapscar/image/upload/v1703605138/A%20plus%20Content/A%2B/Speakers/Coaxial%20Speakers%20%28%20Surreal%20Series%20%29/4_etvwmo.png",
+      "imageFive": "https://res.cloudinary.com/dapscar/image/upload/v1703605140/A%20plus%20Content/A%2B/Speakers/Coaxial%20Speakers%20%28%20Surreal%20Series%20%29/3_i0oh7m.png",
+      "imageSix": "https://res.cloudinary.com/dapscar/image/upload/v1703605139/A%20plus%20Content/A%2B/Speakers/Coaxial%20Speakers%20%28%20Surreal%20Series%20%29/2_c0l3v8.png"
+    },
+    "productCategory": ["Speakers", "Coaxial Speakers"],
+    "price": 1000,
+    "images": ["https://res.cloudinary.com/dapscar/image/upload/v1703603334/Products/Product%20Images/Speakers/Coaxial%20Speakers%20%28%20Surreal%20Series%20%29/1_fu8qzi.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603334/Products/Product%20Images/Speakers/Coaxial%20Speakers%20%28%20Surreal%20Series%20%29/1_fu8qzi.png"],
+    "status": "Tranding",
+    "android": [
+      {
+        "isAndroid": false,
+        "screenSize": "",
+        "variant": [
+          {
+            "processorName": "",
+            "processorLabel": "",
+            "carsSupported": [],
+            "ram": "",
+            "rom": "",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "",
+            "isDVRSupported": true,
+            "is360CameraSupported": "Yes",
+            "isSimSupported": "Yes",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "10",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "fMBT": [
+      {
+        "isFmBt": false,
+        "controlOption": "",
+        "basePrice": 1
+      }
+    ],
+    "bassTube": [
+      {
+        "isBassTube": false,
+        "wattage": "",
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "led": [
+      {
+        "isLed": false,
+        "variant": [
+          {
+            "wattage": "",
+            "socketsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "speakers": [
+      {
+        "isSpeakers": true,
+        "speakerSize": "6 Inches",
+        "basePrice": 1000
+      }
+    ],
+    "chargers": [
+      {
+        "isChargers": false,
+        "wattage": "",
+        "basePrice": 1
+      }
+    ],
+    "amplifiers": [
+      {
+        "isAmplifiers": false,
+        "variant": [
+          {
+            "totalChannels": "",
+            "wattage": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "dampingSheets": [
+      {
+        "isDampingSheets": false,
+        "thickness": "",
+        "sheetsInOneBox": "",
+        "basePrice": 1
+      }
+    ],
+    "HID": [
+      {
+        "isHID": false,
+        "variant": [
+          {
+            "wattage": "",
+            "lightColor": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "camera": [
+      {
+        "isCamera": false,
+        "variant": [
+          {
+            "cameraQuality": "",
+            "areThereGuidelines": false,
+            "guidelinesType": {
+              "Static": false,
+              "Dynamic": false
+            },
+            "fieldOfViewType": {
+              "Wide": false,
+              "UltraWide": false
+            },
+            "processorsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productName": "Daps Unity Series Coaxial Speakers",
+    "discount": "20",
+    "productDetails": [
+      {
+        "heading": "",
+        "description": ""
+      }
+    ],
+    "productFeatures": [
+      {
+        "heading": "Compact Power",
+        "description": "Despite their smaller size, 6-inch Speakers deliver impressive sound quality, proving that great things come in compact packages."
+      },
+      {
+        "heading": "Efficient Sound",
+        "description": "These speakers prioritize efficiency and clarity, ensuring that your audio is both well-defined and crisp."
+      },
+      {
+        "heading": "Versatile Usage",
+        "description": "Perfect for a wide range of audio content, from music to spoken word, these speakers adapt to your needs."
+      },
+      {
+        "heading": "Built to Last",
+        "description": "Designed with longevity in mind, these speakers maintain consistent performance over time."
+      },
+      {
+        "heading": "Precision Sound",
+        "description": "Enjoy audio precision that brings out the subtleties of your favorite music or podcasts."
+      },
+      {
+        "heading": "Personalized Audio",
+        "description": "Customize the sound settings to match your individual audio preferences, tailoring your audio experience to your liking."
+      }
+      
+    ],
+    "aPlusContent": {
+      "imageOne": "https://res.cloudinary.com/dapscar/image/upload/v1703605140/A%20plus%20Content/A%2B/Speakers/Coaxial%20Speakers%20%28%20Surreal%20Series%20%29/1_kebcnu.png",
+      "imageTwo": "https://res.cloudinary.com/dapscar/image/upload/v1703605140/A%20plus%20Content/A%2B/Speakers/Coaxial%20Speakers%20%28%20Surreal%20Series%20%29/3_i0oh7m.png",
+      "imageThree": "https://res.cloudinary.com/dapscar/image/upload/v1703605138/A%20plus%20Content/A%2B/Speakers/Coaxial%20Speakers%20%28%20Surreal%20Series%20%29/4_etvwmo.png",
+      "imageFour": "https://res.cloudinary.com/dapscar/image/upload/v1703605138/A%20plus%20Content/A%2B/Speakers/Coaxial%20Speakers%20%28%20Surreal%20Series%20%29/4_etvwmo.png",
+      "imageFive": "https://res.cloudinary.com/dapscar/image/upload/v1703605140/A%20plus%20Content/A%2B/Speakers/Coaxial%20Speakers%20%28%20Surreal%20Series%20%29/3_i0oh7m.png",
+      "imageSix": "https://res.cloudinary.com/dapscar/image/upload/v1703605139/A%20plus%20Content/A%2B/Speakers/Coaxial%20Speakers%20%28%20Surreal%20Series%20%29/2_c0l3v8.png"
+    },
+    "productCategory": ["Speakers", "Coaxial Speakers"],
+    "price": 3000,
+    "images": ["https://res.cloudinary.com/dapscar/image/upload/v1703603334/Products/Product%20Images/Speakers/Coaxial%20Speakers%20%28%20Surreal%20Series%20%29/1_fu8qzi.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603334/Products/Product%20Images/Speakers/Coaxial%20Speakers%20%28%20Surreal%20Series%20%29/1_fu8qzi.png"],
+    "status": "Tranding",
+    "android": [
+      {
+        "isAndroid": false,
+        "screenSize": "",
+        "variant": [
+          {
+            "processorName": "",
+            "processorLabel": "",
+            "carsSupported": [],
+            "ram": "",
+            "rom": "",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "",
+            "isDVRSupported": true,
+            "is360CameraSupported": "Yes",
+            "isSimSupported": "Yes",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "10",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "fMBT": [
+      {
+        "isFmBt": false,
+        "controlOption": "",
+        "basePrice": 1
+      }
+    ],
+    "bassTube": [
+      {
+        "isBassTube": false,
+        "wattage": "",
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "led": [
+      {
+        "isLed": false,
+        "variant": [
+          {
+            "wattage": "",
+            "socketsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "speakers": [
+      {
+        "isSpeakers": true,
+        "speakerSize": "6 Inches",
+        "basePrice": 3000
+      }
+    ],
+    "chargers": [
+      {
+        "isChargers": false,
+        "wattage": "",
+        "basePrice": 1
+      }
+    ],
+    "amplifiers": [
+      {
+        "isAmplifiers": false,
+        "variant": [
+          {
+            "totalChannels": "",
+            "wattage": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "dampingSheets": [
+      {
+        "isDampingSheets": false,
+        "thickness": "",
+        "sheetsInOneBox": "",
+        "basePrice": 1
+      }
+    ],
+    "HID": [
+      {
+        "isHID": false,
+        "variant": [
+          {
+            "wattage": "",
+            "lightColor": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "camera": [
+      {
+        "isCamera": false,
+        "variant": [
+          {
+            "cameraQuality": "",
+            "areThereGuidelines": false,
+            "guidelinesType": {
+              "Static": false,
+              "Dynamic": false
+            },
+            "fieldOfViewType": {
+              "Wide": false,
+              "UltraWide": false
+            },
+            "processorsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productName": "Daps Euphony Series Boot Speakers",
+    "discount": "20",
+    "productDetails": [
+      {
+        "heading": "",
+        "description": ""
+      }
+    ],
+    "productFeatures": [
+      {
+        "heading": "Deep Bass Immersion",
+        "description": "OVAL Speakers are expertly crafted to deliver rich and resonant bass that immerses you in the music."
+      },
+      {
+        "heading": "Crystal-Clear Voice",
+        "description": "These speakers ensure that every word is delivered with pristine clarity, enhancing your audio experience."
+      },
+      {
+        "heading": "V-Shaped Sound Signature",
+        "description": "The v-shaped design enhances bass output while maintaining exceptional voice clarity for a balanced and immersive sound."
+      },
+      {
+        "heading": "Premium Sound Quality",
+        "description": "Enjoy high-quality audio that resonates with every note and lyric, creating an immersive audio experience."
+      },
+      {
+        "heading": "Durable Build",
+        "description": "Crafted with durability in mind, these speakers are built to withstand long-term usage without compromising on performance."
+      },
+      {
+        "heading": "Customizable Sound",
+        "description": "Adjust the sound settings to match your personal audio preferences, tailoring your experience."
+      }      
+    ],
+    "aPlusContent": {
+      "imageOne": "https://res.cloudinary.com/dapscar/image/upload/v1703605140/A%20plus%20Content/A%2B/Speakers/Coaxial%20Speakers%20%28%20Surreal%20Series%20%29/1_kebcnu.png",
+      "imageTwo": "https://res.cloudinary.com/dapscar/image/upload/v1703605140/A%20plus%20Content/A%2B/Speakers/Coaxial%20Speakers%20%28%20Surreal%20Series%20%29/3_i0oh7m.png",
+      "imageThree": "https://res.cloudinary.com/dapscar/image/upload/v1703605138/A%20plus%20Content/A%2B/Speakers/Coaxial%20Speakers%20%28%20Surreal%20Series%20%29/4_etvwmo.png",
+      "imageFour": "https://res.cloudinary.com/dapscar/image/upload/v1703605138/A%20plus%20Content/A%2B/Speakers/Coaxial%20Speakers%20%28%20Surreal%20Series%20%29/4_etvwmo.png",
+      "imageFive": "https://res.cloudinary.com/dapscar/image/upload/v1703605140/A%20plus%20Content/A%2B/Speakers/Coaxial%20Speakers%20%28%20Surreal%20Series%20%29/3_i0oh7m.png",
+      "imageSix": "https://res.cloudinary.com/dapscar/image/upload/v1703605139/A%20plus%20Content/A%2B/Speakers/Coaxial%20Speakers%20%28%20Surreal%20Series%20%29/2_c0l3v8.png"
+    },
+    "productCategory": ["Speakers", "Boot Oval Speakers"],
+    "price": 1800,
+    "images": ["https://res.cloudinary.com/dapscar/image/upload/v1703603334/Products/Product%20Images/Speakers/Coaxial%20Speakers%20%28%20Surreal%20Series%20%29/1_fu8qzi.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603334/Products/Product%20Images/Speakers/Coaxial%20Speakers%20%28%20Surreal%20Series%20%29/1_fu8qzi.png"],
+    "status": "Tranding",
+    "android": [
+      {
+        "isAndroid": false,
+        "screenSize": "",
+        "variant": [
+          {
+            "processorName": "",
+            "processorLabel": "",
+            "carsSupported": [],
+            "ram": "",
+            "rom": "",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "",
+            "isDVRSupported": true,
+            "is360CameraSupported": "Yes",
+            "isSimSupported": "Yes",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "10",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "fMBT": [
+      {
+        "isFmBt": false,
+        "controlOption": "",
+        "basePrice": 1
+      }
+    ],
+    "bassTube": [
+      {
+        "isBassTube": false,
+        "wattage": "",
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "led": [
+      {
+        "isLed": false,
+        "variant": [
+          {
+            "wattage": "",
+            "socketsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "speakers": [
+      {
+        "isSpeakers": true,
+        "speakerSize": "6/9 Inches",
+        "basePrice": 1800
+      }
+    ],
+    "chargers": [
+      {
+        "isChargers": false,
+        "wattage": "",
+        "basePrice": 1
+      }
+    ],
+    "amplifiers": [
+      {
+        "isAmplifiers": false,
+        "variant": [
+          {
+            "totalChannels": "",
+            "wattage": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "dampingSheets": [
+      {
+        "isDampingSheets": false,
+        "thickness": "",
+        "sheetsInOneBox": "",
+        "basePrice": 1
+      }
+    ],
+    "HID": [
+      {
+        "isHID": false,
+        "variant": [
+          {
+            "wattage": "",
+            "lightColor": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "camera": [
+      {
+        "isCamera": false,
+        "variant": [
+          {
+            "cameraQuality": "",
+            "areThereGuidelines": false,
+            "guidelinesType": {
+              "Static": false,
+              "Dynamic": false
+            },
+            "fieldOfViewType": {
+              "Wide": false,
+              "UltraWide": false
+            },
+            "processorsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productName": "Daps Surreal Series Component Speakers",
+    "discount": "20",
+    "productDetails": [
+      {
+        "heading": "",
+        "description": ""
+      }
+    ],
+    "productFeatures": [
+      {
+        "heading": "Powerful Sound Fusion",
+        "description": "6-inch Speakers offer a harmonious blend of powerful sound and balanced acoustics, providing a dynamic and immersive audio experience."
+      },
+      {
+        "heading": "Bass and Treble Harmony",
+        "description": "Experience the perfect balance between bass and treble, transforming your in-car audio into a vivid and well-rounded soundscape."
+      },
+      {
+        "heading": "Versatile Performance",
+        "description": "Ideal for both music enthusiasts and podcast lovers, these speakers excel in various audio content."
+      },
+      {
+        "heading": "Durable Construction",
+        "description": "Designed to withstand the test of time and deliver consistent performance throughout your journeys."
+      },
+      {
+        "heading": "Precise Sound Reproduction",
+        "description": "Enjoy precise sound reproduction that captures the nuances of your favorite music or spoken word content."
+      },
+      {
+        "heading": "Sound Customization",
+        "description": "Tailor the sound settings to match your specific audio preferences, ensuring a personalized listening experience."
+      }
+      
+    ],
+    "aPlusContent": {
+      "imageOne": "https://res.cloudinary.com/dapscar/image/upload/v1703605140/A%20plus%20Content/A%2B/Speakers/Coaxial%20Speakers%20%28%20Surreal%20Series%20%29/1_kebcnu.png",
+      "imageTwo": "https://res.cloudinary.com/dapscar/image/upload/v1703605140/A%20plus%20Content/A%2B/Speakers/Coaxial%20Speakers%20%28%20Surreal%20Series%20%29/3_i0oh7m.png",
+      "imageThree": "https://res.cloudinary.com/dapscar/image/upload/v1703605138/A%20plus%20Content/A%2B/Speakers/Coaxial%20Speakers%20%28%20Surreal%20Series%20%29/4_etvwmo.png",
+      "imageFour": "https://res.cloudinary.com/dapscar/image/upload/v1703605138/A%20plus%20Content/A%2B/Speakers/Coaxial%20Speakers%20%28%20Surreal%20Series%20%29/4_etvwmo.png",
+      "imageFive": "https://res.cloudinary.com/dapscar/image/upload/v1703605140/A%20plus%20Content/A%2B/Speakers/Coaxial%20Speakers%20%28%20Surreal%20Series%20%29/3_i0oh7m.png",
+      "imageSix": "https://res.cloudinary.com/dapscar/image/upload/v1703605139/A%20plus%20Content/A%2B/Speakers/Coaxial%20Speakers%20%28%20Surreal%20Series%20%29/2_c0l3v8.png"
+    },
+    "productCategory": ["Speakers", "Component Speakers"],
+    "price": 4400,
+    "images": ["https://res.cloudinary.com/dapscar/image/upload/v1703603331/Products/Product%20Images/Speakers/Euphony%20Series/2_behvac.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603330/Products/Product%20Images/Speakers/Harmony%20Series/2_qvhjte.png"],
+    "status": "Tranding",
+    "android": [
+      {
+        "isAndroid": false,
+        "screenSize": "",
+        "variant": [
+          {
+            "processorName": "",
+            "processorLabel": "",
+            "carsSupported": [],
+            "ram": "",
+            "rom": "",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "",
+            "isDVRSupported": true,
+            "is360CameraSupported": "Yes",
+            "isSimSupported": "Yes",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "10",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "fMBT": [
+      {
+        "isFmBt": false,
+        "controlOption": "",
+        "basePrice": 1
+      }
+    ],
+    "bassTube": [
+      {
+        "isBassTube": false,
+        "wattage": "",
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "led": [
+      {
+        "isLed": false,
+        "variant": [
+          {
+            "wattage": "",
+            "socketsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "speakers": [
+      {
+        "isSpeakers": true,
+        "speakerSize": "6 Inches",
+        "basePrice": 4400
+      }
+    ],
+    "chargers": [
+      {
+        "isChargers": false,
+        "wattage": "",
+        "basePrice": 1
+      }
+    ],
+    "amplifiers": [
+      {
+        "isAmplifiers": false,
+        "variant": [
+          {
+            "totalChannels": "",
+            "wattage": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "dampingSheets": [
+      {
+        "isDampingSheets": false,
+        "thickness": "",
+        "sheetsInOneBox": "",
+        "basePrice": 1
+      }
+    ],
+    "HID": [
+      {
+        "isHID": false,
+        "variant": [
+          {
+            "wattage": "",
+            "lightColor": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "camera": [
+      {
+        "isCamera": false,
+        "variant": [
+          {
+            "cameraQuality": "",
+            "areThereGuidelines": false,
+            "guidelinesType": {
+              "Static": false,
+              "Dynamic": false
+            },
+            "fieldOfViewType": {
+              "Wide": false,
+              "UltraWide": false
+            },
+            "processorsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productName": "Daps Melody Series Tweeters",
+    "discount": "20",
+    "productDetails": [
+      {
+        "heading": "",
+        "description": ""
+      }
+    ],
+    "productFeatures": [
+      {
+        "heading": "High-Frequency Precision",
+        "description": "Experience crystal-clear high-frequency audio that adds depth to your music."
+      },
+      {
+        "heading": "Compact Design",
+        "description": "The 2-inch silk dome tweeter offers a sleek and unobtrusive presence in your vehicle's interior."
+      },
+      {
+        "heading": "Multiple Mounting Options",
+        "description": "Customize your tweeter's placement to achieve the perfect audio angle."
+      },
+      {
+        "heading": "Sound Enhancement",
+        "description": "The high-energy interface capacitor refines sound precision, enhancing every note."
+      },
+      {
+        "heading": "Performance Specifications",
+        "description": "Enjoy a 4-ohm impedance, 60W RMS, and 80W RMS power output, covering a frequency range from 1.5k to 22kHZ."
+      },
+      {
+        "heading": "Sensitivity",
+        "description": "These tweeters boast a sensitivity of 90db/mw, ensuring powerful and precise audio output."
+      }
+      
+    ],
+    "aPlusContent": {
+      "imageOne": "https://res.cloudinary.com/dapscar/image/upload/v1703605122/A%20plus%20Content/A%2B/Speakers/Tweeters%20%28%20Melody%20Series%20%29/1_c23e2t.png",
+      "imageTwo": "https://res.cloudinary.com/dapscar/image/upload/v1703605119/A%20plus%20Content/A%2B/Speakers/Tweeters%20%28%20Melody%20Series%20%29/3_vvj2me.png",
+      "imageThree": "https://res.cloudinary.com/dapscar/image/upload/v1703605118/A%20plus%20Content/A%2B/Speakers/Tweeters%20%28%20Melody%20Series%20%29/4_q8ztan.png",
+      "imageFour": "https://res.cloudinary.com/dapscar/image/upload/v1703605119/A%20plus%20Content/A%2B/Speakers/Tweeters%20%28%20Melody%20Series%20%29/3_vvj2me.png",
+      "imageFive": "https://res.cloudinary.com/dapscar/image/upload/v1703605118/A%20plus%20Content/A%2B/Speakers/Tweeters%20%28%20Melody%20Series%20%29/4_q8ztan.png",
+      "imageSix": "https://res.cloudinary.com/dapscar/image/upload/v1703605119/A%20plus%20Content/A%2B/Speakers/Tweeters%20%28%20Melody%20Series%20%29/2_ekiqya.png"
+    },
+    "productCategory": ["Speakers", "Tweeters"],
+    "price": 2000,
+    "images": ["https://res.cloudinary.com/dapscar/image/upload/v1703455563/Products/Charger/1_kk7lbu.png", "https://res.cloudinary.com/dapscar/image/upload/v1703455540/Products/Charger/2_g88iii.png", "https://res.cloudinary.com/dapscar/image/upload/v1703455539/Products/Charger/3_bcfze5.png", "https://res.cloudinary.com/dapscar/image/upload/v1703455539/Products/Charger/4_gru7d7.png"],
+    "status": "Tranding",
+    "android": [
+      {
+        "isAndroid": false,
+        "screenSize": "",
+        "variant": [
+          {
+            "processorName": "",
+            "processorLabel": "",
+            "carsSupported": [],
+            "ram": "",
+            "rom": "",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "",
+            "isDVRSupported": true,
+            "is360CameraSupported": "Yes",
+            "isSimSupported": "Yes",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "10",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "fMBT": [
+      {
+        "isFmBt": false,
+        "controlOption": "",
+        "basePrice": 1
+      }
+    ],
+    "bassTube": [
+      {
+        "isBassTube": false,
+        "wattage": "",
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "led": [
+      {
+        "isLed": false,
+        "variant": [
+          {
+            "wattage": "",
+            "socketsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "speakers": [
+      {
+        "isSpeakers": true,
+        "speakerSize": "1.25 Inches",
+        "basePrice": 2000
+      }
+    ],
+    "chargers": [
+      {
+        "isChargers": false,
+        "wattage": "",
+        "basePrice": 1
+      }
+    ],
+    "amplifiers": [
+      {
+        "isAmplifiers": false,
+        "variant": [
+          {
+            "totalChannels": "",
+            "wattage": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "dampingSheets": [
+      {
+        "isDampingSheets": false,
+        "thickness": "",
+        "sheetsInOneBox": "",
+        "basePrice": 1
+      }
+    ],
+    "HID": [
+      {
+        "isHID": false,
+        "variant": [
+          {
+            "wattage": "",
+            "lightColor": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "camera": [
+      {
+        "isCamera": false,
+        "variant": [
+          {
+            "cameraQuality": "",
+            "areThereGuidelines": false,
+            "guidelinesType": {
+              "Static": false,
+              "Dynamic": false
+            },
+            "fieldOfViewType": {
+              "Wide": false,
+              "UltraWide": false
+            },
+            "processorsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productName": "Daps Zap Zoom Charger",
+    "discount": "20",
+    "productDetails": [
+      {
+        "heading": "",
+        "description": ""
+      }
+    ],
+    "productFeatures": [
+      {
+        "heading": "Rapid Charging",
+        "description": "This charger provides swift and efficient charging, perfect for those with busy lifestyles."
+      },
+      {
+        "heading": "Dual USB Ports",
+        "description": "With double USB ports, it supports simultaneous charging of two devices."
+      },
+      {
+        "heading": "Universal Compatibility",
+        "description": "Compatible with micro USB, Type C, and Apple Lightning cables, ensuring versatility for various devices."
+      },
+      {
+        "heading": "Advanced Safety",
+        "description": "The built-in smart IC protection safeguards your devices against excessive current, voltage, overheating, and overcharging."
+      },
+      {
+        "heading": "Durable Design",
+        "description": "Encased in a high-grade metal design for durability and long-lasting performance."
+      },
+      {
+        "heading": "High-Quality Cable",
+        "description": "Included with a high-quality 3-pin braided cable for added convenience and reliability."
+      },
+      {
+        "heading": "Warranty",
+        "description": "Comes with a 1-year warranty for peace of mind."
+      }
+      
+    ],
+    "aPlusContent": {
+      "imageOne": "https://res.cloudinary.com/dapscar/image/upload/v1703605177/A%20plus%20Content/A%2B/Charger/2_ltik8i.png",
+      "imageTwo": "https://res.cloudinary.com/dapscar/image/upload/v1703605173/A%20plus%20Content/A%2B/Charger/4_ec1dk6.png",
+      "imageThree": "https://res.cloudinary.com/dapscar/image/upload/v1703605173/A%20plus%20Content/A%2B/Charger/3_mwqsvx.png",
+      "imageFour": "https://res.cloudinary.com/dapscar/image/upload/v1703605173/A%20plus%20Content/A%2B/Charger/3_mwqsvx.png",
+      "imageFive": "https://res.cloudinary.com/dapscar/image/upload/v1703605173/A%20plus%20Content/A%2B/Charger/4_ec1dk6.png",
+      "imageSix": "https://res.cloudinary.com/dapscar/image/upload/v1703605176/A%20plus%20Content/A%2B/Charger/1_ulatsm.png"
+    },
+    "productCategory": ["Chargers"],
+    "price": 1000,
+    "images": ["https://res.cloudinary.com/dapscar/image/upload/v1703603355/Products/Product%20Images/Charger/2_gq5ykw.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603355/Products/Product%20Images/Charger/1_sjur1m.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603355/Products/Product%20Images/Charger/3_eynvjp.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603354/Products/Product%20Images/Charger/4_jirbly.png"],
+    "status": "Tranding",
+    "android": [
+      {
+        "isAndroid": false,
+        "screenSize": "",
+        "variant": [
+          {
+            "processorName": "",
+            "processorLabel": "",
+            "carsSupported": [],
+            "ram": "",
+            "rom": "",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "",
+            "isDVRSupported": true,
+            "is360CameraSupported": "Yes",
+            "isSimSupported": "Yes",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "10",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "fMBT": [
+      {
+        "isFmBt": false,
+        "controlOption": "",
+        "basePrice": 1
+      }
+    ],
+    "bassTube": [
+      {
+        "isBassTube": false,
+        "wattage": "",
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "led": [
+      {
+        "isLed": false,
+        "variant": [
+          {
+            "wattage": "",
+            "socketsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "speakers": [
+      {
+        "isSpeakers": false,
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "chargers": [
+      {
+        "isChargers": true,
+        "wattage": "38",
+        "basePrice": 1000
+      }
+    ],
+    "amplifiers": [
+      {
+        "isAmplifiers": false,
+        "variant": [
+          {
+            "totalChannels": "",
+            "wattage": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "dampingSheets": [
+      {
+        "isDampingSheets": false,
+        "thickness": "",
+        "sheetsInOneBox": "",
+        "basePrice": 1
+      }
+    ],
+    "HID": [
+      {
+        "isHID": false,
+        "variant": [
+          {
+            "wattage": "",
+            "lightColor": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "camera": [
+      {
+        "isCamera": false,
+        "variant": [
+          {
+            "cameraQuality": "",
+            "areThereGuidelines": false,
+            "guidelinesType": {
+              "Static": false,
+              "Dynamic": false
+            },
+            "fieldOfViewType": {
+              "Wide": false,
+              "UltraWide": false
+            },
+            "processorsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productName": "Daps Bi Series Amplifier",
+    "discount": "20",
+    "productDetails": [
+      {
+        "heading": "",
+        "description": ""
+      }
+    ],
+    "productFeatures": [
+      {
+        "heading": "Versatile Input Options",
+        "description": "Multiple input options for varied audio sources."
+      },
+      {
+        "heading": "Effective Cooling System",
+        "description": "Advanced cooling system to prevent overheating, ensuring longevity."
+      },
+      {
+        "heading": "High Power Output",
+        "description": "High power output to drive even the most demanding speakers."
+      },
+      {
+        "heading": "Built-in Protection",
+        "description": "Built-in protection circuits to safeguard against short circuits and overloads."
+      }
+      
+    ],
+    "aPlusContent": {
+      "imageOne": "https://res.cloudinary.com/dapscar/image/upload/v1703605118/A%20plus%20Content/A%2B/Amplifiers/2000w/1_at9ole.png",
+      "imageTwo": "https://res.cloudinary.com/dapscar/image/upload/v1703605115/A%20plus%20Content/A%2B/Amplifiers/2000w/3_rhbqj9.png",
+      "imageThree": "https://res.cloudinary.com/dapscar/image/upload/v1703605115/A%20plus%20Content/A%2B/Amplifiers/2000w/3_rhbqj9.png",
+      "imageFour": "https://res.cloudinary.com/dapscar/image/upload/v1703605111/A%20plus%20Content/A%2B/Amplifiers/2000w/4_brfnc1.png",
+      "imageFive": "https://res.cloudinary.com/dapscar/image/upload/v1703605111/A%20plus%20Content/A%2B/Amplifiers/2000w/4_brfnc1.png",
+      "imageSix": "https://res.cloudinary.com/dapscar/image/upload/v1703605118/A%20plus%20Content/A%2B/Amplifiers/2000w/2_tbrcbe.png"
+    },
+    "productCategory": ["Amplifiers", "Two Way Amplifiers"],
+    "price": 3900,
+    "images": ["https://res.cloudinary.com/dapscar/image/upload/v1703603895/Products/Product%20Images/Amplifier/Bi-Series/2000w/1_yb9rxp.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603893/Products/Product%20Images/Amplifier/Bi-Series/2000w/3_ouyw6y.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603893/Products/Product%20Images/Amplifier/Bi-Series/2000w/2_hwnzdn.png"],
+    "status": "Tranding",
+    "android": [
+      {
+        "isAndroid": false,
+        "screenSize": "",
+        "variant": [
+          {
+            "processorName": "",
+            "processorLabel": "",
+            "carsSupported": [],
+            "ram": "",
+            "rom": "",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "",
+            "isDVRSupported": true,
+            "is360CameraSupported": "Yes",
+            "isSimSupported": "Yes",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "10",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "fMBT": [
+      {
+        "isFmBt": false,
+        "controlOption": "",
+        "basePrice": 1
+      }
+    ],
+    "bassTube": [
+      {
+        "isBassTube": false,
+        "wattage": "",
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "led": [
+      {
+        "isLed": false,
+        "variant": [
+          {
+            "wattage": "",
+            "socketsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "speakers": [
+      {
+        "isSpeakers": false,
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "chargers": [
+      {
+        "isChargers": false,
+        "wattage": "",
+        "basePrice": 1
+      }
+    ],
+    "amplifiers": [
+      {
+        "isAmplifiers": true,
+        "variant": [
+          {
+            "totalChannels": "2",
+            "wattage": "2000",
+            "basePrice": 3900
+          },
+          {
+            "totalChannels": "2",
+            "wattage": "2400",
+            "basePrice": 4700
+          }
+        ]
+      }
+    ],
+    "dampingSheets": [
+      {
+        "isDampingSheets": false,
+        "thickness": "",
+        "sheetsInOneBox": "",
+        "basePrice": 1
+      }
+    ],
+    "HID": [
+      {
+        "isHID": false,
+        "variant": [
+          {
+            "wattage": "",
+            "lightColor": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "camera": [
+      {
+        "isCamera": false,
+        "variant": [
+          {
+            "cameraQuality": "",
+            "areThereGuidelines": false,
+            "guidelinesType": {
+              "Static": false,
+              "Dynamic": false
+            },
+            "fieldOfViewType": {
+              "Wide": false,
+              "UltraWide": false
+            },
+            "processorsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productName": "Daps Quad Series Amplifier",
+    "discount": "20",
+    "productDetails": [
+      {
+        "heading": "",
+        "description": ""
+      }
+    ],
+    "productFeatures": [
+      {
+        "heading": "Maximum Sound Clarity",
+        "description": "High output capability to ensure maximum sound clarity."
+      },
+      {
+        "heading": "Effective Cooling System",
+        "description": "Built-in cooling system to prevent overheating, ensuring longevity."
+      },
+      {
+        "heading": "Versatile Input Options",
+        "description": "Multiple input options to suit various audio sources."
+      },
+      {
+        "heading": "User-Friendly Controls",
+        "description": "User-friendly controls for easy customization of sound profiles."
+      },
+      {
+        "heading": "Durable Construction",
+        "description": "Durable construction for sustained high performance."
+      }      
+    ],
+    "aPlusContent": {
+      "imageOne": "https://res.cloudinary.com/dapscar/image/upload/v1703605108/A%20plus%20Content/A%2B/Amplifiers/4800w/1_gk6mhb.png",
+      "imageTwo": "https://res.cloudinary.com/dapscar/image/upload/v1703605102/A%20plus%20Content/A%2B/Amplifiers/4800w/3_pdfzor.png",
+      "imageThree": "https://res.cloudinary.com/dapscar/image/upload/v1703605101/A%20plus%20Content/A%2B/Amplifiers/4800w/4_vp6pzz.png",
+      "imageFour": "https://res.cloudinary.com/dapscar/image/upload/v1703605101/A%20plus%20Content/A%2B/Amplifiers/4800w/4_vp6pzz.png",
+      "imageFive": "https://res.cloudinary.com/dapscar/image/upload/v1703605102/A%20plus%20Content/A%2B/Amplifiers/4800w/3_pdfzor.png",
+      "imageSix": "https://res.cloudinary.com/dapscar/image/upload/v1703605107/A%20plus%20Content/A%2B/Amplifiers/4800w/2_lclp9j.png"
+    },
+    "productCategory": ["Amplifiers", "Four Way Amplifiers"],
+    "price": 6200,
+    "images": ["https://res.cloudinary.com/dapscar/image/upload/v1703603893/Products/Product%20Images/Amplifier/Bi-Series/2000w/3_ouyw6y.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603893/Products/Product%20Images/Amplifier/Bi-Series/2000w/2_hwnzdn.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603895/Products/Product%20Images/Amplifier/Bi-Series/2000w/1_yb9rxp.png"],
+    "status": "Tranding",
+    "android": [
+      {
+        "isAndroid": false,
+        "screenSize": "",
+        "variant": [
+          {
+            "processorName": "",
+            "processorLabel": "",
+            "carsSupported": [],
+            "ram": "",
+            "rom": "",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "",
+            "isDVRSupported": true,
+            "is360CameraSupported": "Yes",
+            "isSimSupported": "Yes",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "10",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "fMBT": [
+      {
+        "isFmBt": false,
+        "controlOption": "",
+        "basePrice": 1
+      }
+    ],
+    "bassTube": [
+      {
+        "isBassTube": false,
+        "wattage": "",
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "led": [
+      {
+        "isLed": false,
+        "variant": [
+          {
+            "wattage": "",
+            "socketsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "speakers": [
+      {
+        "isSpeakers": false,
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "chargers": [
+      {
+        "isChargers": false,
+        "wattage": "",
+        "basePrice": 1
+      }
+    ],
+    "amplifiers": [
+      {
+        "isAmplifiers": true,
+        "variant": [
+          {
+            "totalChannels": "2",
+            "wattage": "4800",
+            "basePrice": 6200
+          }
+        ]
+      }
+    ],
+    "dampingSheets": [
+      {
+        "isDampingSheets": false,
+        "thickness": "",
+        "sheetsInOneBox": "",
+        "basePrice": 1
+      }
+    ],
+    "HID": [
+      {
+        "isHID": false,
+        "variant": [
+          {
+            "wattage": "",
+            "lightColor": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "camera": [
+      {
+        "isCamera": false,
+        "variant": [
+          {
+            "cameraQuality": "",
+            "areThereGuidelines": false,
+            "guidelinesType": {
+              "Static": false,
+              "Dynamic": false
+            },
+            "fieldOfViewType": {
+              "Wide": false,
+              "UltraWide": false
+            },
+            "processorsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productName": "Daps Pro Series Damping Sheets",
+    "discount": "20",
+    "productDetails": [
+      {
+        "heading": "",
+        "description": ""
+      }
+    ],
+    "productFeatures": [
+      {
+        "heading": "Vibration Reduction",
+        "description": "Advanced Vibration Absorption: Effectively absorbs vibrations to significantly reduce noise levels."
+      },
+      {
+        "heading": "Temperature Performance",
+        "description": "Temperature Versatility: Engineered to perform exceptionally well in diverse climate conditions."
+      },
+      {
+        "heading": "Acoustic Comfort",
+        "description": "Superior Comfort: Provides an unparalleled level of acoustic comfort for your vehicle."
+      },
+      {
+        "heading": "Versatile Application",
+        "description": "Broad Application: Suitable for use in various climate zones."
+      },
+      {
+        "heading": "High-Quality Material",
+        "description": "Premium Material: Crafted from the highest-quality materials for exceptional durability, with a thickness of 1.8mm."
+      },
+      {
+        "heading": "Customizable Performance",
+        "description": "Tailored Performance: Customize the damping sheets to meet your specific preferences and requirements."
+      }
+      
+    ],
+    "aPlusContent": {
+      "imageOne": "https://res.cloudinary.com/dapscar/image/upload/v1703605100/A%20plus%20Content/A%2B/Damping%20Sheets/1.8mm/1_rvkr1y.png",
+      "imageTwo": "https://res.cloudinary.com/dapscar/image/upload/v1703605097/A%20plus%20Content/A%2B/Damping%20Sheets/1.8mm/3_iqjh1l.png",
+      "imageThree": "https://res.cloudinary.com/dapscar/image/upload/v1703605096/A%20plus%20Content/A%2B/Damping%20Sheets/1.8mm/4_xkunnu.png",
+      "imageFour": "https://res.cloudinary.com/dapscar/image/upload/v1703605096/A%20plus%20Content/A%2B/Damping%20Sheets/1.8mm/4_xkunnu.png",
+      "imageFive": "https://res.cloudinary.com/dapscar/image/upload/v1703605097/A%20plus%20Content/A%2B/Damping%20Sheets/1.8mm/3_iqjh1l.png",
+      "imageSix": "https://res.cloudinary.com/dapscar/image/upload/v1703605097/A%20plus%20Content/A%2B/Damping%20Sheets/1.8mm/2_pccnkj.png"
+    },
+    "productCategory": ["Damping Sheets"],
+    "price": 8300,
+    "images": ["https://res.cloudinary.com/dapscar/image/upload/v1703603354/Products/Product%20Images/Damping%20Sheets/Pro%20Series/2_jbx289.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603353/Products/Product%20Images/Damping%20Sheets/Pro%20Series/1_qieg2g.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603352/Products/Product%20Images/Damping%20Sheets/Pro%20Series/3_dzefh8.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603352/Products/Product%20Images/Damping%20Sheets/Pro%20Series/5_dbkwes.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603351/Products/Product%20Images/Damping%20Sheets/Pro%20Series/4_qswpit.png"],
+    "status": "Tranding",
+    "android": [
+      {
+        "isAndroid": false,
+        "screenSize": "",
+        "variant": [
+          {
+            "processorName": "",
+            "processorLabel": "",
+            "carsSupported": [],
+            "ram": "",
+            "rom": "",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "",
+            "isDVRSupported": true,
+            "is360CameraSupported": "Yes",
+            "isSimSupported": "Yes",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "10",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "fMBT": [
+      {
+        "isFmBt": false,
+        "controlOption": "",
+        "basePrice": 1
+      }
+    ],
+    "bassTube": [
+      {
+        "isBassTube": false,
+        "wattage": "",
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "led": [
+      {
+        "isLed": false,
+        "variant": [
+          {
+            "wattage": "",
+            "socketsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "speakers": [
+      {
+        "isSpeakers": false,
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "chargers": [
+      {
+        "isChargers": false,
+        "wattage": "",
+        "basePrice": 1
+      }
+    ],
+    "amplifiers": [
+      {
+        "isAmplifiers": false,
+        "variant": [
+          {
+            "totalChannels": "",
+            "wattage": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "dampingSheets": [
+      {
+        "isDampingSheets": true,
+        "thickness": "1.8 mm",
+        "sheetsInOneBox": "12",
+        "basePrice": 8300
+      }
+    ],
+    "HID": [
+      {
+        "isHID": false,
+        "variant": [
+          {
+            "wattage": "",
+            "lightColor": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "camera": [
+      {
+        "isCamera": false,
+        "variant": [
+          {
+            "cameraQuality": "",
+            "areThereGuidelines": false,
+            "guidelinesType": {
+              "Static": false,
+              "Dynamic": false
+            },
+            "fieldOfViewType": {
+              "Wide": false,
+              "UltraWide": false
+            },
+            "processorsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productName": "Daps Pro Max Series Damping Sheets",
+    "discount": "20",
+    "productDetails": [
+      {
+        "heading": "",
+        "description": ""
+      }
+    ],
+    "productFeatures": [
+      {
+        "heading": "Exceptional Noise Control",
+        "description": "Superior noise control: Provides exceptional soundproofing, making your car interior remarkably quiet."
+      },
+      {
+        "heading": "Versatile Application",
+        "description": "Multi-surface compatibility: Ideal for use on doors, roofs, hoods, and other vehicle areas."
+      },
+      {
+        "heading": "Long-Lasting Durability",
+        "description": "Longevity: Designed to last for years, even in harsh weather conditions."
+      },
+      {
+        "heading": "Sustainability Focus",
+        "description": "Eco-friendly materials: Manufactured with a focus on sustainability and reducing environmental impact."
+      },
+      {
+        "heading": "Enhanced Driving Experience",
+        "description": "Enhanced driving experience: Ensures clear audio quality and a serene driving atmosphere."
+      },
+      {
+        "heading": "Customized Installation",
+        "description": "Customizable fit: Easy to cut and shape for a precise installation tailored to your vehicle."
+      }
+      
+    ],
+    "aPlusContent": {
+      "imageOne": "https://res.cloudinary.com/dapscar/image/upload/v1703605096/A%20plus%20Content/A%2B/Damping%20Sheets/2.5mm/1_cp0j0v.png",
+      "imageTwo": "https://res.cloudinary.com/dapscar/image/upload/v1703605085/A%20plus%20Content/A%2B/Damping%20Sheets/2.5mm/3_fz6yv4.png",
+      "imageThree": "https://res.cloudinary.com/dapscar/image/upload/v1703605085/A%20plus%20Content/A%2B/Damping%20Sheets/2.5mm/4_jcqh3a.png",
+      "imageFour": "https://res.cloudinary.com/dapscar/image/upload/v1703605085/A%20plus%20Content/A%2B/Damping%20Sheets/2.5mm/4_jcqh3a.png",
+      "imageFive": "https://res.cloudinary.com/dapscar/image/upload/v1703605085/A%20plus%20Content/A%2B/Damping%20Sheets/2.5mm/3_fz6yv4.png",
+      "imageSix": "https://res.cloudinary.com/dapscar/image/upload/v1703605094/A%20plus%20Content/A%2B/Damping%20Sheets/2.5mm/2_djtpok.png"
+    },
+    "productCategory": ["Damping Sheets"],
+    "price": 8700,
+    "images": ["https://res.cloudinary.com/dapscar/image/upload/v1703603354/Products/Product%20Images/Damping%20Sheets/Pro%20Series/2_jbx289.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603353/Products/Product%20Images/Damping%20Sheets/Pro%20Series/1_qieg2g.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603352/Products/Product%20Images/Damping%20Sheets/Pro%20Series/3_dzefh8.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603352/Products/Product%20Images/Damping%20Sheets/Pro%20Series/5_dbkwes.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603351/Products/Product%20Images/Damping%20Sheets/Pro%20Series/4_qswpit.png"],
+    "status": "Tranding",
+    "android": [
+      {
+        "isAndroid": false,
+        "screenSize": "",
+        "variant": [
+          {
+            "processorName": "",
+            "processorLabel": "",
+            "carsSupported": [],
+            "ram": "",
+            "rom": "",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "",
+            "isDVRSupported": true,
+            "is360CameraSupported": "Yes",
+            "isSimSupported": "Yes",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "10",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "fMBT": [
+      {
+        "isFmBt": false,
+        "controlOption": "",
+        "basePrice": 1
+      }
+    ],
+    "bassTube": [
+      {
+        "isBassTube": false,
+        "wattage": "",
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "led": [
+      {
+        "isLed": false,
+        "variant": [
+          {
+            "wattage": "",
+            "socketsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "speakers": [
+      {
+        "isSpeakers": false,
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "chargers": [
+      {
+        "isChargers": false,
+        "wattage": "",
+        "basePrice": 1
+      }
+    ],
+    "amplifiers": [
+      {
+        "isAmplifiers": false,
+        "variant": [
+          {
+            "totalChannels": "",
+            "wattage": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "dampingSheets": [
+      {
+        "isDampingSheets": true,
+        "thickness": "2.5 mm",
+        "sheetsInOneBox": "10",
+        "basePrice": 8700
+      }
+    ],
+    "HID": [
+      {
+        "isHID": false,
+        "variant": [
+          {
+            "wattage": "",
+            "lightColor": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "camera": [
+      {
+        "isCamera": false,
+        "variant": [
+          {
+            "cameraQuality": "",
+            "areThereGuidelines": false,
+            "guidelinesType": {
+              "Static": false,
+              "Dynamic": false
+            },
+            "fieldOfViewType": {
+              "Wide": false,
+              "UltraWide": false
+            },
+            "processorsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productName": "Daps Grandeur Series HIDs",
+    "discount": "20",
+    "productDetails": [
+      {
+        "heading": "",
+        "description": ""
+      }
+    ],
+    "productFeatures": [
+      {
+        "heading": "DAPS HID Technology",
+        "description": "Enjoy the brilliance of DAPS HIDs with a 6000K white Xenon HID headlight bulbs kit."
+      },
+      {
+        "heading": "Superior Brightness",
+        "description": "Experience superior brightness that outperforms halogen bulbs."
+      },
+      {
+        "heading": "Long-Lasting Lifespan",
+        "description": "Designed for longevity, these HID kits provide a durable and long-lasting lighting solution."
+      },
+      {
+        "heading": "Customizable Lighting",
+        "description": "Choose from a variety of color temperatures to match your style and driving conditions."
+      },
+      {
+        "heading": "Efficient Performance",
+        "description": "Operating with efficiency and reliability in a wide temperature range."
+      },
+      {
+        "heading": "Easy Installation",
+        "description": "Plug-and-play installation: User-friendly process for a quick and hassle-free lighting upgrade."
+      }      
+    ],
+    "aPlusContent": {
+      "imageOne": "https://res.cloudinary.com/dapscar/image/upload/v1703605079/A%20plus%20Content/A%2B/HID/95W/1_ipzj7p.png",
+      "imageTwo": "https://res.cloudinary.com/dapscar/image/upload/v1703605078/A%20plus%20Content/A%2B/HID/95W/4_yltbak.png",
+      "imageThree": "https://res.cloudinary.com/dapscar/image/upload/v1703605077/A%20plus%20Content/A%2B/HID/95W/3_fjksgu.png",
+      "imageFour": "https://res.cloudinary.com/dapscar/image/upload/v1703605077/A%20plus%20Content/A%2B/HID/95W/3_fjksgu.png",
+      "imageFive": "https://res.cloudinary.com/dapscar/image/upload/v1703605078/A%20plus%20Content/A%2B/HID/95W/4_yltbak.png",
+      "imageSix": "https://res.cloudinary.com/dapscar/image/upload/v1703605078/A%20plus%20Content/A%2B/HID/95W/2_pw5jiz.png"
+    },
+    "productCategory": ["HIDs"],
+    "price": 5100,
+    "images": ["https://res.cloudinary.com/dapscar/image/upload/v1703603345/Products/Product%20Images/HID/95w/1_fhqkwt.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603344/Products/Product%20Images/HID/95w/2_u7dxft.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603347/Products/Product%20Images/HID/65W/3_anhwwv.png"],
+    "status": "Tranding",
+    "android": [
+      {
+        "isAndroid": false,
+        "screenSize": "",
+        "variant": [
+          {
+            "processorName": "",
+            "processorLabel": "",
+            "carsSupported": [],
+            "ram": "",
+            "rom": "",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "",
+            "isDVRSupported": true,
+            "is360CameraSupported": "Yes",
+            "isSimSupported": "Yes",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "10",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "fMBT": [
+      {
+        "isFmBt": false,
+        "controlOption": "",
+        "basePrice": 1
+      }
+    ],
+    "bassTube": [
+      {
+        "isBassTube": false,
+        "wattage": "",
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "led": [
+      {
+        "isLed": false,
+        "variant": [
+          {
+            "wattage": "",
+            "socketsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "speakers": [
+      {
+        "isSpeakers": false,
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "chargers": [
+      {
+        "isChargers": false,
+        "wattage": "",
+        "basePrice": 1
+      }
+    ],
+    "amplifiers": [
+      {
+        "isAmplifiers": false,
+        "variant": [
+          {
+            "totalChannels": "",
+            "wattage": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "dampingSheets": [
+      {
+        "isDampingSheets": false,
+        "thickness": "",
+        "sheetsInOneBox": "",
+        "basePrice": 1
+      }
+    ],
+    "HID": [
+      {
+        "isHID": true,
+        "variant": [
+          {
+            "wattage": "55W",
+            "lightColor": "Yellow",
+            "basePrice": 5100
+          },
+          {
+            "wattage": "55W",
+            "lightColor": "White",
+            "basePrice": 5100
+          },
+          {
+            "wattage": "65W",
+            "lightColor": "Yellow",
+            "basePrice": 5300
+          },
+          {
+            "wattage": "65W",
+            "lightColor": "White",
+            "basePrice": 5300
+          },
+          {
+            "wattage": "95W",
+            "lightColor": "Yellow",
+            "basePrice": 6900
+          },
+          {
+            "wattage": "95W",
+            "lightColor": "White",
+            "basePrice": 6900
+          }
+        ]
+      }
+    ],
+    "camera": [
+      {
+        "isCamera": false,
+        "variant": [
+          {
+            "cameraQuality": "",
+            "areThereGuidelines": false,
+            "guidelinesType": {
+              "Static": false,
+              "Dynamic": false
+            },
+            "fieldOfViewType": {
+              "Wide": false,
+              "UltraWide": false
+            },
+            "processorsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productName": "Daps Prime Series Camera",
+    "discount": "20",
+    "productDetails": [
+      {
+        "heading": "",
+        "description": ""
+      }
+    ],
+    "productFeatures": [
+      {
+        "heading": "High-Definition Clarity",
+        "description": "Capture clear and detailed footage of your vehicle's surroundings for a safer driving experience."
+      },
+      {
+        "heading": "Versatile Compatibility",
+        "description": "Compatible with most 12V DC vehicle types, ensuring accessibility and functionality across various vehicles."
+      },
+      {
+        "heading": "All-Weather Performance",
+        "description": "With a true IP68 waterproof rating, this camera excels in combating challenging weather conditions like rain, snow, and fog."
+      },
+      {
+        "heading": "Exceptional Image Quality",
+        "description": "The upgraded 1/3-inch high-end CMOS colour sensor ensures excellent image clarity."
+      },
+      {
+        "heading": "Dynamic Trajectory",
+        "description": "The dynamic trajectory feature aids you in parking more conveniently and safely, enhancing your driving confidence."
+      }      
+    ],
+    "aPlusContent": {
+      "imageOne": "https://res.cloudinary.com/dapscar/image/upload/v1703605077/A%20plus%20Content/A%2B/Camera/DA-101/2_pmblx5.png",
+      "imageTwo": "https://res.cloudinary.com/dapscar/image/upload/v1703605076/A%20plus%20Content/A%2B/Camera/DA-101/3_va50gr.png",
+      "imageThree": "https://res.cloudinary.com/dapscar/image/upload/v1703605075/A%20plus%20Content/A%2B/Camera/DA-101/4_qpo2dg.png",
+      "imageFour": "https://res.cloudinary.com/dapscar/image/upload/v1703605075/A%20plus%20Content/A%2B/Camera/DA-101/4_qpo2dg.png",
+      "imageFive": "https://res.cloudinary.com/dapscar/image/upload/v1703605076/A%20plus%20Content/A%2B/Camera/DA-101/3_va50gr.png",
+      "imageSix": "https://res.cloudinary.com/dapscar/image/upload/v1703605076/A%20plus%20Content/A%2B/Camera/DA-101/1_zcrrsk.png"
+    },
+    "productCategory": ["Cameras", "Generic Cameras"],
+    "price": 1500,
+    "images": ["https://res.cloudinary.com/dapscar/image/upload/v1703603364/Products/Product%20Images/Camera/DA-101/1_ntef74.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603363/Products/Product%20Images/Camera/DA-101/2_i9cpum.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603362/Products/Product%20Images/Camera/DA-101/4_iqcj93.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603362/Products/Product%20Images/Camera/DA-101/3_rviflv.png"],
+    "status": "Tranding",
+    "android": [
+      {
+        "isAndroid": false,
+        "screenSize": "",
+        "variant": [
+          {
+            "processorName": "",
+            "processorLabel": "",
+            "carsSupported": [],
+            "ram": "",
+            "rom": "",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "",
+            "isDVRSupported": true,
+            "is360CameraSupported": "Yes",
+            "isSimSupported": "Yes",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "10",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "fMBT": [
+      {
+        "isFmBt": false,
+        "controlOption": "",
+        "basePrice": 1
+      }
+    ],
+    "bassTube": [
+      {
+        "isBassTube": false,
+        "wattage": "",
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "led": [
+      {
+        "isLed": false,
+        "variant": [
+          {
+            "wattage": "",
+            "socketsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "speakers": [
+      {
+        "isSpeakers": false,
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "chargers": [
+      {
+        "isChargers": false,
+        "wattage": "",
+        "basePrice": 1
+      }
+    ],
+    "amplifiers": [
+      {
+        "isAmplifiers": false,
+        "variant": [
+          {
+            "totalChannels": "",
+            "wattage": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "dampingSheets": [
+      {
+        "isDampingSheets": false,
+        "thickness": "",
+        "sheetsInOneBox": "",
+        "basePrice": 1
+      }
+    ],
+    "HID": [
+      {
+        "isHID": false,
+        "variant": [
+          {
+            "wattage": "",
+            "lightColor": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "camera": [
+      {
+        "isCamera": true,
+        "variant": [
+          {
+            "cameraQuality": "Ultra High Definition",
+            "areThereGuidelines": true,
+            "guidelinesType": {
+              "Static": true,
+              "Dynamic": false
+            },
+            "fieldOfViewType": {
+              "Wide": true,
+              "UltraWide": false
+            },
+            "processorsSupported": [],
+            "basePrice": 1500
+          },
+          {
+            "cameraQuality": "Ultra High Definition",
+            "areThereGuidelines": false,
+            "guidelinesType": {
+              "Static": false,
+              "Dynamic": false
+            },
+            "fieldOfViewType": {
+              "Wide": false,
+              "UltraWide": false
+            },
+            "processorsSupported": [],
+            "basePrice": 1400
+          },
+          {
+            "cameraQuality": "Analog High Definition",
+            "areThereGuidelines": true,
+            "guidelinesType": {
+              "Static": true,
+              "Dynamic": false
+            },
+            "fieldOfViewType": {
+              "Wide": true,
+              "UltraWide": false
+            },
+            "processorsSupported": [],
+            "basePrice": 1700
+          },
+          {
+            "cameraQuality": "Analog High Definition",
+            "areThereGuidelines": true,
+            "guidelinesType": {
+              "Static": true,
+              "Dynamic": false
+            },
+            "fieldOfViewType": {
+              "Wide": false,
+              "UltraWide": true
+            },
+            "processorsSupported": [],
+            "basePrice": 1900
+          },
+          {
+            "cameraQuality": "Analog High Definition",
+            "areThereGuidelines": true,
+            "guidelinesType": {
+              "Static": false,
+              "Dynamic": true
+            },
+            "fieldOfViewType": {
+              "Wide": true,
+              "UltraWide": false
+            },
+            "processorsSupported": [],
+            "basePrice": 1900
+          },
+          {
+            "cameraQuality": "Analog High Definition",
+            "areThereGuidelines": true,
+            "guidelinesType": {
+              "Static": false,
+              "Dynamic": true
+            },
+            "fieldOfViewType": {
+              "Wide": false,
+              "UltraWide": true
+            },
+            "processorsSupported": [],
+            "basePrice": 1900
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productName": "Daps Prime Front Series Camera",
+    "discount": "20",
+    "productDetails": [
+      {
+        "heading": "",
+        "description": ""
+      }
+    ],
+    "productFeatures": [
+      {
+        "heading": "Ultra-High Definition Imaging",
+        "description": "This camera captures details with incredible precision, enhancing your driving safety."
+      },
+      {
+        "heading": "Universal Compatibility",
+        "description": "Compatible with most 12V DC vehicle types, ensuring seamless integration across a variety of vehicles."
+      },
+      {
+        "heading": "All-Weather Resilience",
+        "description": "The true IP68 waterproof rating ensures reliable performance even in challenging weather conditions."
+      },
+      {
+        "heading": "Exceptional Image Clarity",
+        "description": "Equipped with a 1/3-inch high-end CMOS colour sensor for superior image quality."
+      },
+      {
+        "heading": "Moving Camera Feature",
+        "description": "Enjoy the convenience of parking with ease and confidence, thanks to the moving camera feature."
+      }      
+    ],
+    "aPlusContent": {
+      "imageOne": "https://res.cloudinary.com/dapscar/image/upload/v1703605054/A%20plus%20Content/A%2B/Camera/DA-201/2_qqtu08.png",
+      "imageTwo": "https://res.cloudinary.com/dapscar/image/upload/v1703605053/A%20plus%20Content/A%2B/Camera/DA-201/3_kuq7pl.png",
+      "imageThree": "https://res.cloudinary.com/dapscar/image/upload/v1703605052/A%20plus%20Content/A%2B/Camera/DA-201/4_qrqqxg.png",
+      "imageFour": "https://res.cloudinary.com/dapscar/image/upload/v1703605052/A%20plus%20Content/A%2B/Camera/DA-201/4_qrqqxg.png",
+      "imageFive": "https://res.cloudinary.com/dapscar/image/upload/v1703605053/A%20plus%20Content/A%2B/Camera/DA-201/3_kuq7pl.png",
+      "imageSix": "https://res.cloudinary.com/dapscar/image/upload/v1703605053/A%20plus%20Content/A%2B/Camera/DA-201/1_ms6mr1.png"
+    },
+    "productCategory": ["Cameras", "Generic Cameras"],
+    "price": 2100,
+    "images": ["https://res.cloudinary.com/dapscar/image/upload/v1703603361/Products/Product%20Images/Camera/DA-201/2_s1awnd.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603361/Products/Product%20Images/Camera/DA-201/1_rhzezi.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603360/Products/Product%20Images/Camera/DA-201/3_qw2h3n.png"],
+    "status": "Tranding",
+    "android": [
+      {
+        "isAndroid": false,
+        "screenSize": "",
+        "variant": [
+          {
+            "processorName": "",
+            "processorLabel": "",
+            "carsSupported": [],
+            "ram": "",
+            "rom": "",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "",
+            "isDVRSupported": true,
+            "is360CameraSupported": "Yes",
+            "isSimSupported": "Yes",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "10",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "fMBT": [
+      {
+        "isFmBt": false,
+        "controlOption": "",
+        "basePrice": 1
+      }
+    ],
+    "bassTube": [
+      {
+        "isBassTube": false,
+        "wattage": "",
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "led": [
+      {
+        "isLed": false,
+        "variant": [
+          {
+            "wattage": "",
+            "socketsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "speakers": [
+      {
+        "isSpeakers": false,
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "chargers": [
+      {
+        "isChargers": false,
+        "wattage": "",
+        "basePrice": 1
+      }
+    ],
+    "amplifiers": [
+      {
+        "isAmplifiers": false,
+        "variant": [
+          {
+            "totalChannels": "",
+            "wattage": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "dampingSheets": [
+      {
+        "isDampingSheets": false,
+        "thickness": "",
+        "sheetsInOneBox": "",
+        "basePrice": 1
+      }
+    ],
+    "HID": [
+      {
+        "isHID": false,
+        "variant": [
+          {
+            "wattage": "",
+            "lightColor": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "camera": [
+      {
+        "isCamera": true,
+        "variant": [
+          {
+            "cameraQuality": "Analog High Defintiion",
+            "areThereGuidelines": true,
+            "guidelinesType": {
+              "Static": true,
+              "Dynamic": false
+            },
+            "fieldOfViewType": {
+              "Wide": true,
+              "UltraWide": false
+            },
+            "processorsSupported": [],
+            "basePrice": 1900
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productName": "Daps DVR Series Camera",
+    "discount": "20",
+    "productDetails": [
+      {
+        "heading": "",
+        "description": ""
+      }
+    ],
+    "productFeatures": [
+      {
+        "heading": "Extraordinary Visuals",
+        "description": "This camera offers an extraordinary view of your surroundings, enhancing your driving safety."
+      },
+      {
+        "heading": "Universal Compatibility",
+        "description": "Compatible with most 12V DC vehicle types, ensuring integration into various vehicles."
+      },
+      {
+        "heading": "Weather-Resistant",
+        "description": "The true IP68 waterproof rating ensures consistent performance, even in unfavorable weather conditions."
+      },
+      {
+        "heading": "Superior Image Clarity",
+        "description": "Equipped with a 1/3-inch high-end CMOS color sensor for outstanding image quality."
+      },
+      {
+        "heading": "FishEye Feature",
+        "description": "The Fish Eye feature provides a panoramic view, adding convenience and safety to your driving experience."
+      }      
+    ],
+    "aPlusContent": {
+      "imageOne": "https://res.cloudinary.com/dapscar/image/upload/v1703605049/A%20plus%20Content/A%2B/Camera/DA-401/2_cpgdvb.png",
+      "imageTwo": "https://res.cloudinary.com/dapscar/image/upload/v1703605048/A%20plus%20Content/A%2B/Camera/DA-401/4_qiwwyz.png",
+      "imageThree": "https://res.cloudinary.com/dapscar/image/upload/v1703605049/A%20plus%20Content/A%2B/Camera/DA-401/3_vpabbz.png",
+      "imageFour": "https://res.cloudinary.com/dapscar/image/upload/v1703605049/A%20plus%20Content/A%2B/Camera/DA-401/3_vpabbz.png",
+      "imageFive": "https://res.cloudinary.com/dapscar/image/upload/v1703605048/A%20plus%20Content/A%2B/Camera/DA-401/4_qiwwyz.png",
+      "imageSix": "https://res.cloudinary.com/dapscar/image/upload/v1703605049/A%20plus%20Content/A%2B/Camera/DA-401/1_ddeegq.png"
+    },
+    "productCategory": ["Cameras", "DVR Cameras"],
+    "price": 2100,
+    "images": ["https://res.cloudinary.com/dapscar/image/upload/v1703603358/Products/Product%20Images/Camera/DA-401/3_gkggui.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603357/Products/Product%20Images/Camera/DA-401/1_szon6d.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603357/Products/Product%20Images/Camera/DA-401/2_l0hwzu.png"],
+    "status": "Tranding",
+    "android": [
+      {
+        "isAndroid": false,
+        "screenSize": "",
+        "variant": [
+          {
+            "processorName": "",
+            "processorLabel": "",
+            "carsSupported": [],
+            "ram": "",
+            "rom": "",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "",
+            "isDVRSupported": true,
+            "is360CameraSupported": "Yes",
+            "isSimSupported": "Yes",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "10",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "fMBT": [
+      {
+        "isFmBt": false,
+        "controlOption": "",
+        "basePrice": 1
+      }
+    ],
+    "bassTube": [
+      {
+        "isBassTube": false,
+        "wattage": "",
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "led": [
+      {
+        "isLed": false,
+        "variant": [
+          {
+            "wattage": "",
+            "socketsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "speakers": [
+      {
+        "isSpeakers": false,
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "chargers": [
+      {
+        "isChargers": false,
+        "wattage": "",
+        "basePrice": 1
+      }
+    ],
+    "amplifiers": [
+      {
+        "isAmplifiers": false,
+        "variant": [
+          {
+            "totalChannels": "",
+            "wattage": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "dampingSheets": [
+      {
+        "isDampingSheets": false,
+        "thickness": "",
+        "sheetsInOneBox": "",
+        "basePrice": 1
+      }
+    ],
+    "HID": [
+      {
+        "isHID": false,
+        "variant": [
+          {
+            "wattage": "",
+            "lightColor": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "camera": [
+      {
+        "isCamera": true,
+        "variant": [
+          {
+            "cameraQuality": "Analog High Defintiion",
+            "areThereGuidelines": true,
+            "guidelinesType": {
+              "Static": true,
+              "Dynamic": false
+            },
+            "fieldOfViewType": {
+              "Wide": true,
+              "UltraWide": false
+            },
+            "processorsSupported": ["T5"],
+            "basePrice": 3400
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productName": "Daps Surround Series Camera",
+    "discount": "20",
+    "productDetails": [
+      {
+        "heading": "",
+        "description": ""
+      }
+    ],
+    "productFeatures": [
+      {
+        "heading": "360-Degree View",
+        "description": "Capture a complete 360-degree view of your surroundings, enhancing your driving safety."
+      },
+      {
+        "heading": "Universal Compatibility",
+        "description": "Compatible with most 12V DC vehicle types, ensuring seamless integration into various vehicles."
+      },
+      {
+        "heading": "Weather-Resistant",
+        "description": "The true IP68 waterproof rating ensures consistent performance, even in unfavorable weather conditions."
+      },
+      {
+        "heading": "High-Quality Imaging",
+        "description": "Equipped with a high-end CMOS sensor for outstanding image quality and clarity."
+      },
+      {
+        "heading": "360-Degree Recording",
+        "description": "Record your entire driving experience with a 360-degree view, providing valuable footage for safety and documentation."
+      }      
+    ],
+    "aPlusContent": {
+      "imageOne": "https://res.cloudinary.com/dapscar/image/upload/v1703605044/A%20plus%20Content/A%2B/Camera/360%20Camera/1_hqqots.png",
+      "imageTwo": "https://res.cloudinary.com/dapscar/image/upload/v1703605043/A%20plus%20Content/A%2B/Camera/360%20Camera/3_xs0yys.png",
+      "imageThree": "https://res.cloudinary.com/dapscar/image/upload/v1703605043/A%20plus%20Content/A%2B/Camera/360%20Camera/4_ki1fk5.png",
+      "imageFour": "https://res.cloudinary.com/dapscar/image/upload/v1703605043/A%20plus%20Content/A%2B/Camera/360%20Camera/4_ki1fk5.png",
+      "imageFive": "https://res.cloudinary.com/dapscar/image/upload/v1703605043/A%20plus%20Content/A%2B/Camera/360%20Camera/3_xs0yys.png",
+      "imageSix": "https://res.cloudinary.com/dapscar/image/upload/v1703605044/A%20plus%20Content/A%2B/Camera/360%20Camera/2_zlumho.png"
+    },
+    "productCategory": ["Cameras", "360 Cameras"],
+    "price": 2100,
+    "images": ["https://res.cloudinary.com/dapscar/image/upload/v1703603366/Products/Product%20Images/Camera/360%20Camera/1_eucd3a.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603365/Products/Product%20Images/Camera/360%20Camera/2_sg750n.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603364/Products/Product%20Images/Camera/360%20Camera/4_vlx8ni.png", "https://res.cloudinary.com/dapscar/image/upload/v1703603364/Products/Product%20Images/Camera/360%20Camera/3_jkgzca.png"],
+    "status": "Tranding",
+    "android": [
+      {
+        "isAndroid": false,
+        "screenSize": "",
+        "variant": [
+          {
+            "processorName": "",
+            "processorLabel": "",
+            "carsSupported": [],
+            "ram": "",
+            "rom": "",
+            "isAppleCarplayAndAndroidAutoSupported": true,
+            "wirelessWired": "",
+            "isDVRSupported": true,
+            "is360CameraSupported": "Yes",
+            "isSimSupported": "Yes",
+            "isWarrantyAvailable": "Yes",
+            "warrantyPeriod": "10",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "fMBT": [
+      {
+        "isFmBt": false,
+        "controlOption": "",
+        "basePrice": 1
+      }
+    ],
+    "bassTube": [
+      {
+        "isBassTube": false,
+        "wattage": "",
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "led": [
+      {
+        "isLed": false,
+        "variant": [
+          {
+            "wattage": "",
+            "socketsSupported": [],
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "speakers": [
+      {
+        "isSpeakers": false,
+        "speakerSize": "",
+        "basePrice": 1
+      }
+    ],
+    "chargers": [
+      {
+        "isChargers": false,
+        "wattage": "",
+        "basePrice": 1
+      }
+    ],
+    "amplifiers": [
+      {
+        "isAmplifiers": false,
+        "variant": [
+          {
+            "totalChannels": "",
+            "wattage": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "dampingSheets": [
+      {
+        "isDampingSheets": false,
+        "thickness": "",
+        "sheetsInOneBox": "",
+        "basePrice": 1
+      }
+    ],
+    "HID": [
+      {
+        "isHID": false,
+        "variant": [
+          {
+            "wattage": "",
+            "lightColor": "",
+            "basePrice": 1
+          }
+        ]
+      }
+    ],
+    "camera": [
+      {
+        "isCamera": true,
+        "variant": [
+          {
+            "cameraQuality": "Analog High Defintiion",
+            "areThereGuidelines": true,
+            "guidelinesType": {
+              "Static": false,
+              "Dynamic": true
+            },
+            "fieldOfViewType": {
+              "Wide": true,
+              "UltraWide": false
+            },
+            "processorsSupported": ["T5"],
+            "basePrice": 7100
+          }
+        ]
+      }
+    ]
+  }
+  ]
