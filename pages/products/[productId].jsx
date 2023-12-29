@@ -171,6 +171,7 @@ const ProductDetailsPage = () => {
   const [selectedLedVariantData, setSelectedLedVariantData] = useState(null);
   const [selectLowBeamWattage, setSelectLowBeamWattage] = useState(null);
   const [selectHighBeamWattage, setSelectHighBeamWattage] = useState(null);
+  const [selectBeamSingelWattage, setSelectBeamSingelWattage] = useState(null)
   const [availableWattage, setAvailableWattage] = useState([]);
   const [availableLowBeamVariant, setAvailableLowBeamVariant] = useState([]);
   const [availableHighBeamVariant, setAvailableHighBeamVariant] = useState([]);
@@ -213,15 +214,16 @@ const ProductDetailsPage = () => {
       const variants = product.led[0].variant;
       const wattages = [...new Set(variants.map(v => v.wattage))].sort((a, b) => a - b);
 
-      setAvailableWattage(wattages.map(w => `${w}`));
-      setAvailableLowBeamVariant(wattages.map(w => `${w}`));
-      setAvailableHighBeamVariant(wattages.map(w => `${w}`));
-
+      setAvailableWattage(wattages?.map(w => `${w}`));
+      setAvailableLowBeamVariant(wattages?.map(w => `${w}`));
+      setAvailableHighBeamVariant(wattages?.map(w => `${w}`));
+  
       // Set default variant
       const defaultVariant = variants[0];
       setSelectedLedVariantData(defaultVariant);
       setSelectLowBeamWattage(`${defaultVariant.wattage}`);
       setSelectHighBeamWattage(`${defaultVariant.wattage}`);
+      setSelectBeamSingelWattage(`${defaultVariant.wattage}`)
       updateSelectedVariant(`${defaultVariant.wattage}`, `${defaultVariant.wattage}`);
     }
   }, [product]);
@@ -231,7 +233,6 @@ const ProductDetailsPage = () => {
   const updateSelectedVariant = (lowBeamWattage, highBeamWattage) => {
     const lowBeamVariant = product?.led[0]?.variant.find(v => `${v.wattage}` === lowBeamWattage);
     setSelectedLowBeamVariantData(lowBeamVariant);
-
     const highBeamVariant = product?.led[0]?.variant.find(v => `${v.wattage}` === highBeamWattage);
     setSelectedHighBeamVariantData(highBeamVariant);
   };
@@ -245,13 +246,14 @@ const ProductDetailsPage = () => {
     setSelectHighBeamWattage(wattage);
     updateSelectedVariant(selectLowBeamWattage, wattage);
   };
-
-  const handleSingleBeamWattageChange = wattage => {
-    setSelectLowBeamWattage(wattage);
-    setSelectHighBeamWattage(wattage);
-    updateSelectedVariant(wattage, wattage);
+  const handleSingleBeamWattageChange = (wattage) => {
+    setSelectBeamSingelWattage(wattage)
+    // updateSelectedVariant(selectLowBeamWattage, selectHighBeamWattage, wattage);
+    const newVariant = product?.led[0]?.variant?.find(v => `${v?.wattage}` === wattage);
+    if (newVariant) {
+      setSelectedLedVariantData(newVariant);
+    }
   };
-
 
   // ======= led price 
 
@@ -269,6 +271,125 @@ const ProductDetailsPage = () => {
 
   const totalPriceForLed = calculateTotalPrice();
   const mainPriceForLed = isBeamsSeparate ? (lowBeemsBasedPrice + highBeemBasedPrice) : basedPriceForLed;
+
+  // ========== Hids Varient ============
+  // State for HID variant selection
+
+  // State for HID variant selection
+  const [selectedHIDVariantData, setSelectedHIDVariantData] = useState(null);
+  const [selectHIDLowBeamData, setSelectHIDLowBeamData] = useState(null);
+  const [selectHIDHighBeamData, setSelectHIDHighBeamData] = useState(null);
+
+
+  const [selectHIDLowBeamWattage, setSelectHIDLowBeamWattage] = useState(null);
+  const [selectHIDHighBeamWattage, setSelectHIDHighBeamWattage] = useState(null);
+  const [selectHIDWattage, setSelectHIDWattage] = useState(null);
+  const [selectHIDWattageLightColor, setSelectHIDWattageLightColor] = useState(null)
+  const [selectHIDLowBeamWattageLightColor, setSelectHIDLowBeamWattageLightColor] = useState(null);
+  const [selectHIDHighBeamWattageLightColor, setSelectHIDHighBeamWattageLightColor] = useState(null);
+
+
+  const [availableHIDWattage, setAvailableHIDWattage] = useState([]);
+  const [availableHIDLowBeamVariant, setAvailableHIDLowBeamVariant] = useState([]);
+  const [availableHIDHighBeamVariant, setAvailableHIDHighBeamVariant] = useState([]);
+  const [availableHIDWattageLightColor, setAvailableHIDWattageLightColor] = useState([])
+  const [availableHIDLowBeamWattageLightColor, setAvailableHIDLowBeamWattageLightColor] = useState(null);
+  const [availableHIDHighBeamWattageLightColor, setAvailableHIDHighBeamWattageLightColor] = useState(null);
+
+
+
+  // HID variant selection handlers
+  useEffect(() => {
+    if (product?.HID[0]?.variant) {
+      const variants = product.HID[0].variant;
+      const wattages = [...new Set(variants.map(v => v.wattage))].sort((a, b) => a - b);
+      const lightColor = [...new Set(variants.map(v => v.lightColor))]
+
+      setAvailableHIDWattage(wattages.map(w => `${w}`));
+      setAvailableHIDLowBeamVariant(wattages.map(w => `${w}`));
+      setAvailableHIDHighBeamVariant(wattages.map(w => `${w}`));
+      setAvailableHIDLowBeamWattageLightColor(lightColor.map(l => l))
+      setAvailableHIDHighBeamWattageLightColor(lightColor.map(l => l))
+      setAvailableHIDWattageLightColor(lightColor.map(l => l))
+
+      // Set default variant
+      const defaultVariant = variants[0];
+      setSelectedHIDVariantData(defaultVariant);
+      setSelectHIDLowBeamData(defaultVariant)
+      setSelectHIDHighBeamData(defaultVariant)
+      setSelectHIDLowBeamWattage(`${defaultVariant.wattage}`);
+      setSelectHIDHighBeamWattage(`${defaultVariant.wattage}`)
+      setSelectHIDWattage(`${defaultVariant.wattage}`)
+      setSelectHIDLowBeamWattageLightColor(`${defaultVariant.lightColor}`)
+      setSelectHIDHighBeamWattageLightColor(`${defaultVariant.lightColor}`)
+      updateSelectedHIDVariant(`${defaultVariant.wattage}`, `${defaultVariant.wattage}`);
+    }
+  }, [product]);
+
+
+  // Update HID variant selection
+  const updateSelectedHIDVariant = (lowBeamWattage, highBeamWattage, lowBeamlightColor, highBeamLightColor) => {
+    const lowBeamVariant = product?.HID[0]?.variant?.find(v => `${v.wattage}` === lowBeamWattage && `${v?.lightColor}` === lowBeamlightColor);
+    setSelectHIDLowBeamData(lowBeamVariant);
+
+    const highBeamVariant = product?.HID[0]?.variant.find(v => `${v.wattage}` === highBeamWattage && `${v.lightColor}` === highBeamLightColor);
+    setSelectHIDHighBeamData(highBeamVariant);
+
+  };
+
+  const handleLowBeamHIDWattageChange = wattage => {
+    setSelectHIDLowBeamWattage(wattage);
+    updateSelectedHIDVariant(wattage, selectHIDLowBeamWattage, selectHIDLowBeamWattageLightColor);
+  };
+
+  const handleHighBeamHIDWattageChange = wattage => {
+    setSelectHIDHighBeamWattage(wattage);
+    updateSelectedHIDVariant(wattage, selectHIDHighBeamWattage, selectHIDHighBeamWattageLightColor);
+  };
+
+  // const handleSingleBeamHIDWattageChange = wattage => {
+  //   setSelectHIDLowBeamWattage(wattage);
+  //   setSelectHIDHighBeamWattage(wattage);
+  //   updateSelectedHIDVariant(wattage, wattage);
+  // };
+
+  const handleHIDWattageChange = wattage => {
+    setSelectHIDWattage(wattage);
+  };
+
+  const handleHIDLowBeamLightColorChange = lightColor => {
+    setSelectHIDLowBeamWattageLightColor(lightColor);
+  };
+
+  const handleHIDHighBeamLightColorChange = lightColor => {
+    setSelectHIDHighBeamWattageLightColor(lightColor);
+  };
+
+  const handleHIDLightColorChange = lightColor => {
+    setSelectHIDWattageLightColor(lightColor);
+  };
+
+  // console.log(selectedHIDVariantData)
+  console.log(selectHIDLowBeamData, "01")
+  console.log(selectHIDHighBeamData, "2")
+
+
+  // ======= hid price 
+
+  const basedPriceForHid = selectedHIDVariantData?.basePrice || 0;
+  const lowBeemsBasedPriceHid = selectHIDLowBeamData?.basePrice || 0;
+  const highBeemBasedPriceHid = selectHIDHighBeamData?.basePrice || 0;
+
+  // Function to calculate total price
+  const calculateTotalPriceHid = () => {
+    let price = isBeamsSeparate ? (lowBeemsBasedPriceHid + highBeemBasedPriceHid) : basedPriceForHid;
+    let discountAmount = (price * discount) / 100;
+    return price - discountAmount;
+  };
+
+  const totalPriceForHid = calculateTotalPrice();
+  const mainPriceForHid = isBeamsSeparate ? (lowBeemsBasedPriceHid + highBeemBasedPriceHid) : basedPriceForHid;
+
 
   // ========= for the android ==========
 
@@ -475,22 +596,6 @@ const ProductDetailsPage = () => {
                 <hr
                   className='my-2'
                 />
-                {/* <div className="flex gap-2 mt-2 mb-0 text-[1.25rem]">
-                  <h1 className="font-bold text-slate-900">
-                    {product?.discount
-                      ? `₹ ${Math.floor(
-                        product?.price -
-                        (product?.price * product?.discount) / 100
-                      )}`
-                      : `₹ ${Math.floor(product?.price)}`}
-                  </h1>
-                  <span className="font-bold text-gray-400 ">
-                    MRP:₹ <span className='line-through'>{Math.floor(product?.price)}</span>
-                  </span>
-                  <span className="text-green-500 font-bold">
-                    {Math.floor(product?.discount)} % off
-                  </span>
-                </div> */}
                 {
                   product?.android[0]?.isAndroid && (
                     <>
@@ -506,10 +611,15 @@ const ProductDetailsPage = () => {
                         </span>
                       </div>
                       <p className='text-[13px] mt-0'>
+
                         {
-                          selectedModelData?.beams?.isLowAndHighBeamsSeparate && (
+                          selectedModelData?.canbus?.isCanbusRequired ? (
                             <span>
-                              {`Since you car supports 2 Lights, therefore cost of 2 lights is applicable`}
+                              {`Since Canbus is also required, so extra cost of Rs. ${canbusPriceForAndroid} is added`}
+                            </span>
+                          ) : (
+                            <span>
+                              {`MRP incl. all taxes, Add'l charges may apply on discounted price`}
                             </span>
                           )
                         }
@@ -534,9 +644,45 @@ const ProductDetailsPage = () => {
                       </div>
                       <p className='text-[13px] mt-0'>
                         {
-                          selectedModelData?.canbus?.isCanbusRequired && (
+                          selectedModelData?.beams?.isLowAndHighBeamsSeparate ? (
                             <span>
-                              {`Since Canbus is also required, so extra cost of Rs. ${canbusPriceForAndroid} is added`}
+                              {`Since you car supports 2 Lights, therefore cost of 2 lights is applicable`}
+                            </span>
+                          ) : (
+                            <span>
+                              {`MRP incl. all taxes, Add'l charges may apply on discounted price`}
+                            </span>
+                          )
+                        }
+                      </p>
+                    </>
+                  )
+                }
+
+
+                {
+                  product?.HID[0]?.isHid && (
+                    <>
+                      <div className="flex gap-2 mt-2 mb-0 text-[1.25rem]">
+                        <h1 className="font-bold text-slate-900">
+                          ₹ {Math.floor(totalPriceForHid)}
+                        </h1>
+                        <span className="font-bold text-gray-400 ">
+                          MRP:₹ <span className='line-through'>{Math.floor(mainPriceForHid)}</span>
+                        </span>
+                        <span className="text-green-500 font-bold">
+                          {Math.floor(product?.discount)} % off
+                        </span>
+                      </div>
+                      <p className='text-[13px] mt-0'>
+                        {
+                          selectedModelData?.beams?.isLowAndHighBeamsSeparate ? (
+                            <span>
+                              {`Since you car supports 2 Lights, therefore cost of 2 lights is applicable`}
+                            </span>
+                          ) : (
+                            <span>
+                              {`MRP incl. all taxes, Add'l charges may apply on discounted price`}
                             </span>
                           )
                         }
@@ -778,10 +924,10 @@ const ProductDetailsPage = () => {
                         <div>
                           <label className="font-bold text-slate-900">Select Variant (Wattage)</label>
                           <div className="flex items-center gap-4 my-2">
-                            {availableWattage.map((wattage, index) => (
+                            {availableWattage?.map((wattage, index) => (
                               <div
                                 key={index}
-                                className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectLowBeamWattage === wattage ? 'selected' : ''}`}
+                                className={`border-[0.3px] rounded px-4 py-[2px] text-center min-w-[4.55rem] cursor-pointer ${selectBeamSingelWattage === wattage ? 'selected' : ''}`}
                                 onClick={() => handleSingleBeamWattageChange(wattage)}
                               >
                                 {wattage}
@@ -795,6 +941,115 @@ const ProductDetailsPage = () => {
                 </div>
                 {/* ======== Led varient ========= */}
 
+                {/* ============Hids Varient============= */}
+                <div>
+                  {selectedModelData && product?.HID[0]?.isHID && (
+                    <div>
+                      {selectedModelData?.beams?.isLowAndHighBeamsSeparate ? (
+                        <>
+                          {/* Low Beam Wattage Selection */}
+                          <div>
+                            <label className="font-bold text-slate-900">Select Low Beam Variant (Wattage)</label>
+                            <div className="flex items-center gap-4 my-2">
+                              {availableHIDLowBeamVariant.map((wattage, index) => (
+                                <div
+                                  key={index}
+                                  className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectHIDLowBeamWattage === wattage ? 'selected' : ''}`}
+                                  onClick={() => handleLowBeamHIDWattageChange(wattage)}
+                                >
+                                  {wattage}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                          {/* Low Beam Light Color Selection */}
+                          <div>
+                            <label className="font-bold text-slate-900">Select Low Beam Variant (Light Color)</label>
+                            <div className="flex items-center gap-4 my-2">
+                              {availableHIDWattageLightColor.map((light, index) => (
+                                <div
+                                  key={index}
+                                  className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectHIDLowBeamWattageLightColor === light ? 'selected' : ''}`}
+                                  onClick={() => handleHIDLowBeamLightColorChange(light)}
+                                >
+                                  {light}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* High Beam Wattage Selection */}
+                          <div>
+                            <label className="font-bold text-slate-900">Select High Beam Variant (Wattage)</label>
+                            <div className="flex items-center gap-4 my-2">
+                              {availableHIDHighBeamVariant.map((wattage, index) => (
+                                <div
+                                  key={index}
+                                  className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectHIDHighBeamWattage === wattage ? 'selected' : ''}`}
+                                  onClick={() => handleHighBeamHIDWattageChange(wattage)}
+                                >
+                                  {wattage}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                          {/* High Beam Light Color Selection */}
+                          <div>
+                            <label className="font-bold text-slate-900">Select High Beam Variant (Light Color)</label>
+                            <div className="flex items-center gap-4 my-2">
+                              {availableHIDWattageLightColor.map((light, index) => (
+                                <div
+                                  key={index}
+                                  className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectHIDHighBeamWattageLightColor === light ? 'selected' : ''}`}
+                                  onClick={() => handleHIDHighBeamLightColorChange(light)}
+                                >
+                                  {light}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </>
+                      ) : (
+                        // Single Beam Wattage Selection
+                        <>
+                          {/* Single Beam Wattage Selection */}
+                          <div>
+                            <label className="font-bold text-slate-900">Select Variant (Wattage)</label>
+                            <div className="flex items-center gap-4 my-2">
+                              {availableHIDWattage.map((wattage, index) => (
+                                <div
+                                  key={index}
+                                  className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectHIDLowBeamWattage === wattage ? 'selected' : ''}`}
+                                  onClick={() => handleSingleBeamHIDWattageChange(wattage)}
+                                >
+                                  {wattage}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* Single Beam Light Color Selection */}
+                          <div>
+                            <label className="font-bold text-slate-900">Select Variant (Light Color)</label>
+                            <div className="flex items-center gap-4 my-2">
+                              {availableHIDWattageLightColor.map((lightColor, index) => (
+                                <div
+                                  key={index}
+                                  className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectHIDWattageLightColor === lightColor ? 'selected' : ''}`}
+                                  onClick={() => handleHIDLightColorChange(lightColor)}
+                                >
+                                  {lightColor}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </>
+
+                      )}
+                    </div>
+                  )}
+                </div>
+                {/* ============Hids Varient============= */}
                 <hr
                   className='my-2'
                 />
@@ -1004,16 +1259,14 @@ const ProductDetailsPage = () => {
 
                     <div>
                       {
-
                         selectedModelData?.beams?.isLowAndHighBeamsSeparate ? (
                           <>
                             {
-
                               selectedModelData && product?.led[0]?.isLed && selectedLowBeamVariantData && selectedHighBeamVariantData && (
                                 <div className="flex gap-2 flex-col">
                                   <h1 className="text-[1.2rem]">
                                     <span className="font-bold">
-                                      ✅ Wattage For Low Beem:
+                                      ✅ Wattage For Low Beam:
                                     </span>
                                     <span className='mx-2'>
                                       {selectedLowBeamVariantData?.wattage}
@@ -1022,7 +1275,7 @@ const ProductDetailsPage = () => {
 
                                   <h1 className="text-[1.2rem]">
                                     <span className="font-bold">
-                                      ✅ Wattage For High Beem:
+                                      ✅ Wattage For High Beam:
                                     </span>
                                     <span className='mx-2'>
                                       {selectedHighBeamVariantData?.wattage}
@@ -1031,12 +1284,12 @@ const ProductDetailsPage = () => {
 
                                   <h1 className="text-[1.2rem]">
                                     <span className="font-bold">
-                                      ✅ Sockets Support Low Beem:
+                                      ✅ Sockets Support Low Beam:
                                     </span>
                                     <span className='mx-2 flex gap-2 items-center'>
                                       {selectedLowBeamVariantData?.socketsSupported.map((soket) => {
                                         return (
-                                          <span className='border p-3 rounded'>{soket}</span>
+                                          <span className='border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem]'>{soket}</span>
                                         )
                                       })}
                                     </span>
@@ -1044,12 +1297,12 @@ const ProductDetailsPage = () => {
 
                                   <h1 className="text-[1.2rem]">
                                     <span className="font-bold">
-                                      ✅ Sockets Support High Beem:
+                                      ✅ Sockets Support High Beam:
                                     </span>
                                     <span className='mx-2 flex gap-2 items-center'>
                                       {selectedHighBeamVariantData?.socketsSupported.map((soket) => {
                                         return (
-                                          <span className='border p-3 rounded'>{soket}</span>
+                                          <span className='border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem]'>{soket}</span>
                                         )
                                       })}
                                     </span>
@@ -1058,7 +1311,7 @@ const ProductDetailsPage = () => {
 
                                   <h1 className="text-[1.2rem]">
                                     <span className="font-bold">
-                                      ✅ Base Price Low Beem:
+                                      ✅ Base Price Low Beam:
                                     </span>
                                     <span className='mx-2'>
                                       Rs. {selectedLowBeamVariantData?.basePrice}
@@ -1068,15 +1321,12 @@ const ProductDetailsPage = () => {
 
                                   <h1 className="text-[1.2rem]">
                                     <span className="font-bold">
-                                      ✅ Base Price High Beem:
+                                      ✅ Base Price High Beam:
                                     </span>
                                     <span className='mx-2'>
                                       Rs. {selectedHighBeamVariantData?.basePrice}
                                     </span>
                                   </h1>
-
- 
-
                                   <h1 className="text-[1.2rem]">
                                     <span className="font-bold">
                                       ✅ Brand :
