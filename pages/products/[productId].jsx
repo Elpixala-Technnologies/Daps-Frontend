@@ -152,32 +152,49 @@ const ProductDetailsPage = () => {
 
   const [selectedImage, setSelectedImage] = useState(product?.images[0]);
 
+  const discount = product?.discount || 0;
+
   const handleImageClick = (image) => {
     setSelectedImage(image);
   };
 
-  // ======
-  // State to track the selected car and model
-
+  // State for car selection
   const [selectedBrand, setSelectedBrand] = useState(null);
   const [selectedCar, setSelectedCar] = useState(null);
   const [selectedGeneration, setSelectedGeneration] = useState(null);
   const [selectedModel, setSelectedModel] = useState(null);
   const [selectedModelData, setSelectedModelData] = useState(null);
 
+  // State for LED variant selection
+  const [selectedLowBeamVariantData, setSelectedLowBeamVariantData] = useState(null);
+  const [selectedHighBeamVariantData, setSelectedHighBeamVariantData] = useState(null);
+  const [selectedLedVariantData, setSelectedLedVariantData] = useState(null);
+  const [selectLowBeamWattage, setSelectLowBeamWattage] = useState(null);
+  const [selectHighBeamWattage, setSelectHighBeamWattage] = useState(null);
+  const [availableWattage, setAvailableWattage] = useState([]);
+  const [availableLowBeamVariant, setAvailableLowBeamVariant] = useState([]);
+  const [availableHighBeamVariant, setAvailableHighBeamVariant] = useState([]);
+
+  // Car selection handlers
   const handleBrandSelect = (brand) => {
     setSelectedBrand(brand);
     setSelectedCar(null);
     setSelectedGeneration(null);
+    setSelectedModel(null);
+    setSelectedModelData(null);
   };
 
   const handleCarSelect = (car) => {
     setSelectedCar(car);
     setSelectedGeneration(null);
+    setSelectedModel(null);
+    setSelectedModelData(null);
   };
 
   const handleGenerationSelect = (generation) => {
     setSelectedGeneration(generation);
+    setSelectedModel(null);
+    setSelectedModelData(null);
   };
 
   const handleModelSelect = (model) => {
@@ -189,6 +206,69 @@ const ProductDetailsPage = () => {
       ?.find(m => m?.modelName === model);
     setSelectedModelData(modelData);
   };
+
+  // LED variant selection handlers
+  useEffect(() => {
+    if (product?.led[0]?.variant) {
+      const variants = product.led[0].variant;
+      const wattages = [...new Set(variants.map(v => v.wattage))].sort((a, b) => a - b);
+
+      setAvailableWattage(wattages.map(w => `${w}`));
+      setAvailableLowBeamVariant(wattages.map(w => `${w}`));
+      setAvailableHighBeamVariant(wattages.map(w => `${w}`));
+
+      // Set default variant
+      const defaultVariant = variants[0];
+      setSelectedLedVariantData(defaultVariant);
+      setSelectLowBeamWattage(`${defaultVariant.wattage}`);
+      setSelectHighBeamWattage(`${defaultVariant.wattage}`);
+      updateSelectedVariant(`${defaultVariant.wattage}`, `${defaultVariant.wattage}`);
+    }
+  }, [product]);
+
+
+  // Update LED variant selection
+  const updateSelectedVariant = (lowBeamWattage, highBeamWattage) => {
+    const lowBeamVariant = product?.led[0]?.variant.find(v => `${v.wattage}` === lowBeamWattage);
+    setSelectedLowBeamVariantData(lowBeamVariant);
+
+    const highBeamVariant = product?.led[0]?.variant.find(v => `${v.wattage}` === highBeamWattage);
+    setSelectedHighBeamVariantData(highBeamVariant);
+  };
+
+  const handleLowBeamWattageChange = wattage => {
+    setSelectLowBeamWattage(wattage);
+    updateSelectedVariant(wattage, selectHighBeamWattage);
+  };
+
+  const handleHighBeamWattageChange = wattage => {
+    setSelectHighBeamWattage(wattage);
+    updateSelectedVariant(selectLowBeamWattage, wattage);
+  };
+
+  const handleSingleBeamWattageChange = wattage => {
+    setSelectLowBeamWattage(wattage);
+    setSelectHighBeamWattage(wattage);
+    updateSelectedVariant(wattage, wattage);
+  };
+
+
+  // ======= led price 
+
+  const isBeamsSeparate = selectedModelData?.beams?.isLowAndHighBeamsSeparate;
+  const basedPriceForLed = selectedLedVariantData?.basePrice || 0;
+  const lowBeemsBasedPrice = selectedLowBeamVariantData?.basePrice || 0;
+  const highBeemBasedPrice = selectedHighBeamVariantData?.basePrice || 0;
+
+  // Function to calculate total price
+  const calculateTotalPrice = () => {
+    let price = isBeamsSeparate ? (lowBeemsBasedPrice + highBeemBasedPrice) : basedPriceForLed;
+    let discountAmount = (price * discount) / 100;
+    return price - discountAmount;
+  };
+
+  const totalPriceForLed = calculateTotalPrice();
+  const mainPriceForLed = isBeamsSeparate ? (lowBeemsBasedPrice + highBeemBasedPrice) : basedPriceForLed;
 
   // ========= for the android ==========
 
@@ -246,16 +326,6 @@ const ProductDetailsPage = () => {
     setSelectedVariant(updatedVariant);
   }, [selectedProcessor, selectedRam, selectedRom, selectedCarplay, isSelected360CameraSupported, isSelectedSim, product]);
 
-  // const handleProcessorChange = processor => {
-  //   setSelectedProcessor(processor);
-  //   // Reset other selections when processor changes
-  //   setSelectedRam('');
-  //   setSelectedRom('');
-  //   setSelectedCarplay('');
-  //   setIsSelected360CameraSupported('');
-  //   setIsSelectedSim('');
-  // };
-
   const handleProcessorChange = processor => {
     setSelectedProcessor(processor);
 
@@ -279,19 +349,11 @@ const ProductDetailsPage = () => {
     }
   };
 
-
   const handleRamChange = ram => setSelectedRam(ram);
   const handleRomChange = rom => setSelectedRom(rom);
   const handleCarplayChange = carplay => setSelectedCarplay(carplay);
   const handleCameraSupportChange = support => setIsSelected360CameraSupported(support);
   const handleSimSupportChange = support => setIsSelectedSim(support);
-
-  // const isOptionAvailable = (option, type) => {
-  //   return product?.android[0]?.variant.some(v =>
-  //     v.processorLabel === selectedProcessor &&
-  //     (type === 'carplay' ? (v.isAppleCarplayAndAndroidAutoSupported ? v.wirelessWired : 'Not Supported') === option : `${v[type]} GB` === option)
-  //   );
-  // };
 
   const isOptionAvailable = (option, type) => {
     if (type === 'support') {
@@ -310,21 +372,11 @@ const ProductDetailsPage = () => {
     }
   };
 
-
-
-  console.log(selectedVariant, "selectedVariant ===== av")
-
-  const discount = product?.discount || 0;
   const basedPriceForAndroid = selectedVariant?.basePrice || 0;
   const canbusPriceForAndroid = selectedModelData?.canbus?.isCanbusRequired ? (selectedModelData?.canbus?.canbusPrice || 0) : 0;
   const framecostForAndroid = selectedModelData?.frameCost || 0;
-
   const totalPirceAndroid = basedPriceForAndroid + canbusPriceForAndroid + framecostForAndroid
-
-  // Calculate the Android price
   const androidPrice = basedPriceForAndroid - (discount * basedPriceForAndroid / 100) + framecostForAndroid + canbusPriceForAndroid;
-
-  console.log(selectedModelData)
 
 
 
@@ -455,6 +507,33 @@ const ProductDetailsPage = () => {
                       </div>
                       <p className='text-[13px] mt-0'>
                         {
+                          selectedModelData?.beams?.isLowAndHighBeamsSeparate && (
+                            <span>
+                              {`Since you car supports 2 Lights, therefore cost of 2 lights is applicable`}
+                            </span>
+                          )
+                        }
+                      </p>
+                    </>
+                  )
+                }
+
+                {
+                  product?.led[0]?.isLed && (
+                    <>
+                      <div className="flex gap-2 mt-2 mb-0 text-[1.25rem]">
+                        <h1 className="font-bold text-slate-900">
+                          ₹ {Math.floor(totalPriceForLed)}
+                        </h1>
+                        <span className="font-bold text-gray-400 ">
+                          MRP:₹ <span className='line-through'>{Math.floor(mainPriceForLed)}</span>
+                        </span>
+                        <span className="text-green-500 font-bold">
+                          {Math.floor(product?.discount)} % off
+                        </span>
+                      </div>
+                      <p className='text-[13px] mt-0'>
+                        {
                           selectedModelData?.canbus?.isCanbusRequired && (
                             <span>
                               {`Since Canbus is also required, so extra cost of Rs. ${canbusPriceForAndroid} is added`}
@@ -465,7 +544,6 @@ const ProductDetailsPage = () => {
                     </>
                   )
                 }
-
                 {/* ========== Varient Select For Android======== */}
                 <div>
                   <div>
@@ -533,44 +611,6 @@ const ProductDetailsPage = () => {
                             ))}
                           </div>
                         </div>
-
-                      
-                        {/* 360 Camera Support */}
-                        {/* <div>
-                          <label className="font-bold text-slate-900">360 Camera Support</label>
-                          <div className="flex items-center gap-4 my-2">
-                            {Array.from(new Set(product?.android[0]?.variant.map(variant => variant.is360CameraSupported)))
-                              .map((support, index) => (
-                                <div
-                                  key={index}
-                                  className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${isSelected360CameraSupported === support ? 'selected' : ''} ${!isOptionAvailable(support, 'support') ? 'disabled' : ''}`}
-                                  onClick={() => handleCameraSupportChange(support)}
-                                >
-                                  {support}
-                                </div>
-                              ))
-                            }
-                          </div>
-                        </div> */}
-
-                        {/* Sim Support */}
-                        {/* <div>
-                          <label className="font-bold text-slate-900">Sim Support</label>
-                          <div className="flex items-center gap-4 my-2">
-                            {Array.from(new Set(product?.android[0]?.variant.map(variant => variant.isSimSupported)))
-                              .map((support, index) => (
-                                <div
-                                  key={index}
-                                  className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${isSelectedSim === support ? 'selected' : ''} ${!isOptionAvailable(support, 'support') ? 'disabled' : ''}`}
-                                  onClick={() => handleSimSupportChange(support)}
-                                >
-                                  {support}
-                                </div>
-                              ))
-                            }
-                          </div>
-                        </div> */}
-
                       </div>
                     )}
                   </div>
@@ -695,6 +735,66 @@ const ProductDetailsPage = () => {
                   )}
                 </div>
 
+                {/* ======== Led varient ========= */}
+                <div>
+                  {selectedModelData && product?.led[0]?.isLed && (
+                    <div>
+                      {selectedModelData?.beams?.isLowAndHighBeamsSeparate ? (
+                        <>
+                          {/* Low Beam Wattage Selection */}
+                          <div>
+                            <label className="font-bold text-slate-900">Select Low Beam Variant (Wattage)</label>
+                            <div className="flex items-center gap-4 my-2">
+                              {availableLowBeamVariant.map((wattage, index) => (
+                                <div
+                                  key={index}
+                                  className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectLowBeamWattage === wattage ? 'selected' : ''}`}
+                                  onClick={() => handleLowBeamWattageChange(wattage)}
+                                >
+                                  {wattage}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* High Beam Wattage Selection */}
+                          <div>
+                            <label className="font-bold text-slate-900">Select High Beam Variant (Wattage)</label>
+                            <div className="flex items-center gap-4 my-2">
+                              {availableHighBeamVariant.map((wattage, index) => (
+                                <div
+                                  key={index}
+                                  className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectHighBeamWattage === wattage ? 'selected' : ''}`}
+                                  onClick={() => handleHighBeamWattageChange(wattage)}
+                                >
+                                  {wattage}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </>
+                      ) : (
+                        // Single Beam Wattage Selection
+                        <div>
+                          <label className="font-bold text-slate-900">Select Variant (Wattage)</label>
+                          <div className="flex items-center gap-4 my-2">
+                            {availableWattage.map((wattage, index) => (
+                              <div
+                                key={index}
+                                className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectLowBeamWattage === wattage ? 'selected' : ''}`}
+                                onClick={() => handleSingleBeamWattageChange(wattage)}
+                              >
+                                {wattage}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+                {/* ======== Led varient ========= */}
+
                 <hr
                   className='my-2'
                 />
@@ -795,7 +895,7 @@ const ProductDetailsPage = () => {
                   <h1 className="text-3xl font-bold">Details</h1>
                   <div className="flex flex-col my-2  gap-4">
                     {
-                      selectedVariant && (
+                      product?.android[0]?.isAndroid && selectedVariant && (
                         <div className="flex gap-2 flex-col">
                           <h1 className="text-[1.2rem]">
                             <span className="font-bold">
@@ -901,6 +1001,144 @@ const ProductDetailsPage = () => {
                         </div>
                       )
                     }
+
+                    <div>
+                      {
+
+                        selectedModelData?.beams?.isLowAndHighBeamsSeparate ? (
+                          <>
+                            {
+
+                              selectedModelData && product?.led[0]?.isLed && selectedLowBeamVariantData && selectedHighBeamVariantData && (
+                                <div className="flex gap-2 flex-col">
+                                  <h1 className="text-[1.2rem]">
+                                    <span className="font-bold">
+                                      ✅ Wattage For Low Beem:
+                                    </span>
+                                    <span className='mx-2'>
+                                      {selectedLowBeamVariantData?.wattage}
+                                    </span>
+                                  </h1>
+
+                                  <h1 className="text-[1.2rem]">
+                                    <span className="font-bold">
+                                      ✅ Wattage For High Beem:
+                                    </span>
+                                    <span className='mx-2'>
+                                      {selectedHighBeamVariantData?.wattage}
+                                    </span>
+                                  </h1>
+
+                                  <h1 className="text-[1.2rem]">
+                                    <span className="font-bold">
+                                      ✅ Sockets Support Low Beem:
+                                    </span>
+                                    <span className='mx-2 flex gap-2 items-center'>
+                                      {selectedLowBeamVariantData?.socketsSupported.map((soket) => {
+                                        return (
+                                          <span className='border p-3 rounded'>{soket}</span>
+                                        )
+                                      })}
+                                    </span>
+                                  </h1>
+
+                                  <h1 className="text-[1.2rem]">
+                                    <span className="font-bold">
+                                      ✅ Sockets Support High Beem:
+                                    </span>
+                                    <span className='mx-2 flex gap-2 items-center'>
+                                      {selectedHighBeamVariantData?.socketsSupported.map((soket) => {
+                                        return (
+                                          <span className='border p-3 rounded'>{soket}</span>
+                                        )
+                                      })}
+                                    </span>
+                                  </h1>
+
+
+                                  <h1 className="text-[1.2rem]">
+                                    <span className="font-bold">
+                                      ✅ Base Price Low Beem:
+                                    </span>
+                                    <span className='mx-2'>
+                                      Rs. {selectedLowBeamVariantData?.basePrice}
+                                    </span>
+                                  </h1>
+
+
+                                  <h1 className="text-[1.2rem]">
+                                    <span className="font-bold">
+                                      ✅ Base Price High Beem:
+                                    </span>
+                                    <span className='mx-2'>
+                                      Rs. {selectedHighBeamVariantData?.basePrice}
+                                    </span>
+                                  </h1>
+
+ 
+
+                                  <h1 className="text-[1.2rem]">
+                                    <span className="font-bold">
+                                      ✅ Brand :
+                                    </span>
+                                    <span className='mx-2'>
+                                      DAPS
+                                    </span>
+                                  </h1>
+
+                                </div>
+                              )
+                            }
+                          </>
+                        ) : (
+                          <>
+                            {
+                              selectedModelData && product?.led[0]?.isLed && selectedLedVariantData && (
+                                <div className="flex gap-2 flex-col">
+                                  <h1 className="text-[1.2rem]">
+                                    <span className="font-bold">
+                                      ✅ Wattage :
+                                    </span>
+                                    <span className='mx-2'>
+                                      {selectedLedVariantData?.wattage}
+                                    </span>
+                                  </h1>
+                                  <h1 className="text-[1.2rem]">
+                                    <span className="font-bold">
+                                      ✅ Sockets Support :
+                                    </span>
+                                    <span className='mx-2 flex gap-2 items-center'>
+                                      {selectedLedVariantData?.socketsSupported.map((soket) => {
+                                        return (
+                                          <span className='border p-3 rounded'>{soket}</span>
+                                        )
+                                      })}
+                                    </span>
+                                  </h1>
+                                  <h1 className="text-[1.2rem]">
+                                    <span className="font-bold">
+                                      ✅ Base Price :
+                                    </span>
+                                    <span className='mx-2'>
+                                      Rs. {selectedLedVariantData?.basePrice}
+                                    </span>
+                                  </h1>
+                                  <h1 className="text-[1.2rem]">
+                                    <span className="font-bold">
+                                      ✅ Brand :
+                                    </span>
+                                    <span className='mx-2'>
+                                      DAPS
+                                    </span>
+                                  </h1>
+
+                                </div>
+                              )
+                            }
+                          </>
+                        )
+                      }
+                    </div>
                   </div>
                 </div>
               </div>
