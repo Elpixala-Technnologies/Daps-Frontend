@@ -163,6 +163,7 @@ const ProductDetailsPage = () => {
   const [selectedCar, setSelectedCar] = useState(null);
   const [selectedGeneration, setSelectedGeneration] = useState(null);
   const [selectedModel, setSelectedModel] = useState(null);
+  const [selectedModelData, setSelectedModelData] = useState(null);
 
   const handleBrandSelect = (brand) => {
     setSelectedBrand(brand);
@@ -181,10 +182,16 @@ const ProductDetailsPage = () => {
 
   const handleModelSelect = (model) => {
     setSelectedModel(model);
+
+    // Find and set the selected model data
+    const modelData = CarData
+      ?.flatMap(car => car.generation?.flatMap(gen => gen?.model))
+      ?.find(m => m?.modelName === model);
+    setSelectedModelData(modelData);
   };
 
   // ========= for the android ==========
- 
+
   const [selectedVariant, setSelectedVariant] = useState(null);
   const [selectedProcessor, setSelectedProcessor] = useState('');
   const [selectedRam, setSelectedRam] = useState('');
@@ -239,27 +246,85 @@ const ProductDetailsPage = () => {
     setSelectedVariant(updatedVariant);
   }, [selectedProcessor, selectedRam, selectedRom, selectedCarplay, isSelected360CameraSupported, isSelectedSim, product]);
 
+  // const handleProcessorChange = processor => {
+  //   setSelectedProcessor(processor);
+  //   // Reset other selections when processor changes
+  //   setSelectedRam('');
+  //   setSelectedRom('');
+  //   setSelectedCarplay('');
+  //   setIsSelected360CameraSupported('');
+  //   setIsSelectedSim('');
+  // };
+
   const handleProcessorChange = processor => {
     setSelectedProcessor(processor);
-    // Reset other selections when processor changes
-    setSelectedRam('');
-    setSelectedRom('');
-    setSelectedCarplay('');
-    setIsSelected360CameraSupported('');
-    setIsSelectedSim('');
+
+    // Find the first variant matching the selected processor
+    const firstVariantForProcessor = product?.android[0]?.variant.find(v => v.processorLabel === processor);
+
+    if (firstVariantForProcessor) {
+      setSelectedVariant(firstVariantForProcessor);
+      setSelectedRam(`${firstVariantForProcessor.ram} GB`);
+      setSelectedRom(`${firstVariantForProcessor.rom} GB`);
+      setSelectedCarplay(firstVariantForProcessor.isAppleCarplayAndAndroidAutoSupported ? firstVariantForProcessor.wirelessWired : 'Not Supported');
+      setIsSelected360CameraSupported(firstVariantForProcessor.is360CameraSupported);
+      setIsSelectedSim(firstVariantForProcessor.isSimSupported);
+    } else {
+      // Reset other selections if no variant matches the processor
+      setSelectedRam('');
+      setSelectedRom('');
+      setSelectedCarplay('');
+      setIsSelected360CameraSupported('');
+      setIsSelectedSim('');
+    }
   };
+
+
   const handleRamChange = ram => setSelectedRam(ram);
   const handleRomChange = rom => setSelectedRom(rom);
   const handleCarplayChange = carplay => setSelectedCarplay(carplay);
   const handleCameraSupportChange = support => setIsSelected360CameraSupported(support);
   const handleSimSupportChange = support => setIsSelectedSim(support);
 
+  // const isOptionAvailable = (option, type) => {
+  //   return product?.android[0]?.variant.some(v =>
+  //     v.processorLabel === selectedProcessor &&
+  //     (type === 'carplay' ? (v.isAppleCarplayAndAndroidAutoSupported ? v.wirelessWired : 'Not Supported') === option : `${v[type]} GB` === option)
+  //   );
+  // };
+
   const isOptionAvailable = (option, type) => {
-    return product?.android[0]?.variant.some(v =>
-      v.processorLabel === selectedProcessor && `${v[type]} GB` === option);
+    if (type === 'support') {
+      // For 360 Camera Support or Sim Support
+      return product?.android[0]?.variant.some(v =>
+        v.processorLabel === selectedProcessor &&
+        ((type === '360Camera' && v.is360CameraSupported === option) ||
+          (type === 'Sim' && v.isSimSupported === option))
+      );
+    } else {
+      // For Carplay, RAM, ROM, etc.
+      return product?.android[0]?.variant.some(v =>
+        v.processorLabel === selectedProcessor &&
+        (type === 'carplay' ? (v.isAppleCarplayAndAndroidAutoSupported ? v.wirelessWired : 'Not Supported') === option : `${v[type]} GB` === option)
+      );
+    }
   };
 
+
+
   console.log(selectedVariant, "selectedVariant ===== av")
+
+  const discount = product?.discount || 0;
+  const basedPriceForAndroid = selectedVariant?.basePrice || 0;
+  const canbusPriceForAndroid = selectedModelData?.canbus?.isCanbusRequired ? (selectedModelData?.canbus?.canbusPrice || 0) : 0;
+  const framecostForAndroid = selectedModelData?.frameCost || 0;
+
+  const totalPirceAndroid = basedPriceForAndroid + canbusPriceForAndroid + framecostForAndroid
+
+  // Calculate the Android price
+  const androidPrice = basedPriceForAndroid - (discount * basedPriceForAndroid / 100) + framecostForAndroid + canbusPriceForAndroid;
+
+  console.log(selectedModelData)
 
 
 
@@ -358,7 +423,7 @@ const ProductDetailsPage = () => {
                 <hr
                   className='my-2'
                 />
-                <div className="flex gap-2 mt-2 mb-0 text-[1.25rem]">
+                {/* <div className="flex gap-2 mt-2 mb-0 text-[1.25rem]">
                   <h1 className="font-bold text-slate-900">
                     {product?.discount
                       ? `₹ ${Math.floor(
@@ -373,12 +438,33 @@ const ProductDetailsPage = () => {
                   <span className="text-green-500 font-bold">
                     {Math.floor(product?.discount)} % off
                   </span>
-                </div>
-
-                <p className='text-[13px] mt-0'>
-                  MRP incl. all taxes, Add'l charges may apply on discounted price
-                </p>
-
+                </div> */}
+                {
+                  product?.android[0]?.isAndroid && (
+                    <>
+                      <div className="flex gap-2 mt-2 mb-0 text-[1.25rem]">
+                        <h1 className="font-bold text-slate-900">
+                          ₹ {Math.floor(androidPrice)}
+                        </h1>
+                        <span className="font-bold text-gray-400 ">
+                          MRP:₹ <span className='line-through'>{Math.floor(totalPirceAndroid)}</span>
+                        </span>
+                        <span className="text-green-500 font-bold">
+                          {Math.floor(product?.discount)} % off
+                        </span>
+                      </div>
+                      <p className='text-[13px] mt-0'>
+                        {
+                          selectedModelData?.canbus?.isCanbusRequired && (
+                            <span>
+                              {`Since Canbus is also required, so extra cost of Rs. ${canbusPriceForAndroid} is added`}
+                            </span>
+                          )
+                        }
+                      </p>
+                    </>
+                  )
+                }
 
                 {/* ========== Varient Select For Android======== */}
                 <div>
@@ -432,8 +518,6 @@ const ProductDetailsPage = () => {
                             ))}
                           </div>
                         </div>
-
-
                         {/* Carplay Selection */}
                         <div>
                           <label className="font-bold text-slate-900">Select Your Carplay</label>
@@ -441,7 +525,7 @@ const ProductDetailsPage = () => {
                             {availableCarplays.map((carplay, index) => (
                               <div
                                 key={index}
-                                className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectedCarplay === carplay ? 'selected' : ''}`}
+                                className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectedCarplay === carplay ? 'selected' : ''} ${!isOptionAvailable(carplay, 'carplay') ? 'disabled' : ''}`}
                                 onClick={() => handleCarplayChange(carplay)}
                               >
                                 {carplay}
@@ -450,15 +534,16 @@ const ProductDetailsPage = () => {
                           </div>
                         </div>
 
+                      
                         {/* 360 Camera Support */}
-                        <div>
+                        {/* <div>
                           <label className="font-bold text-slate-900">360 Camera Support</label>
                           <div className="flex items-center gap-4 my-2">
                             {Array.from(new Set(product?.android[0]?.variant.map(variant => variant.is360CameraSupported)))
                               .map((support, index) => (
                                 <div
                                   key={index}
-                                  className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${isSelected360CameraSupported === support ? 'selected' : ''}`}
+                                  className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${isSelected360CameraSupported === support ? 'selected' : ''} ${!isOptionAvailable(support, 'support') ? 'disabled' : ''}`}
                                   onClick={() => handleCameraSupportChange(support)}
                                 >
                                   {support}
@@ -466,17 +551,17 @@ const ProductDetailsPage = () => {
                               ))
                             }
                           </div>
-                        </div>
+                        </div> */}
 
                         {/* Sim Support */}
-                        <div>
+                        {/* <div>
                           <label className="font-bold text-slate-900">Sim Support</label>
                           <div className="flex items-center gap-4 my-2">
                             {Array.from(new Set(product?.android[0]?.variant.map(variant => variant.isSimSupported)))
                               .map((support, index) => (
                                 <div
                                   key={index}
-                                  className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${isSelectedSim === support ? 'selected' : ''}`}
+                                  className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${isSelectedSim === support ? 'selected' : ''} ${!isOptionAvailable(support, 'support') ? 'disabled' : ''}`}
                                   onClick={() => handleSimSupportChange(support)}
                                 >
                                   {support}
@@ -484,17 +569,15 @@ const ProductDetailsPage = () => {
                               ))
                             }
                           </div>
-                        </div>
+                        </div> */}
 
                       </div>
                     )}
                   </div>
                 </div>
-
                 <hr
                   className='my-2'
                 />
-
                 {/* ======== cars input here ========== */}
                 <div>
                   <div className="mt-4">
