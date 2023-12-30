@@ -1,4 +1,5 @@
 import { MainLogo } from "@/src/Assets";
+import useMediaHooks from "@/src/Hooks/useMediaHooks";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -36,10 +37,20 @@ const stories = [
 ];
 
 const FullscreenStory = () => {
+  const { storyData } = useMediaHooks();
   const router = useRouter();
-  const { index } = router.query;
+  const { index } = router?.query;
 
-  console.log(index);
+  // Assuming storyData is an array and index is the identifier you're matching against
+  const filteredStoryData = storyData?.filter(story => story?._id === index);
+
+  // Initialize mainStory as an empty array if filteredStoryData is empty
+  let mainStory = filteredStoryData?.length > 0 ? filteredStoryData[0].storyData : [];
+
+  console.log(mainStory, "mainStory");
+  console.log(filteredStoryData)
+
+
 
   return (
     <div
@@ -49,37 +60,37 @@ const FullscreenStory = () => {
       }}
     >
       <div className="relative">
-      <div className="top-nav flex items-center justify-between">
-        <div>
-          <Link href={"/"}>
-            <Image
-              src={MainLogo}
-              alt="logo"
-              width={130}
-              height={80}
-              className="cursor-pointer md:w-[115px] w-[110px] d-none hover:scale-105 duration-300 transform"
-            />
-          </Link>
+        <div className="top-nav flex items-center justify-between">
+          <div>
+            <Link href={"/"}>
+              <Image
+                src={MainLogo}
+                alt="logo"
+                width={130}
+                height={80}
+                className="cursor-pointer md:w-[115px] w-[110px] d-none hover:scale-105 duration-300 transform"
+              />
+            </Link>
+          </div>
+          <div>
+            <Link href={"/"}>
+              <RxCross1 className="text-[2rem]" />
+            </Link>
+          </div>
         </div>
-        <div>
-          <Link href={"/"}>
-            <RxCross1 className="text-[2rem]" />
-          </Link>
-        </div>
-      </div>
 
-      <div className="w-full flex-col mx-auto my-auto flex items-center justify-center">
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            width: '100%',
-            marginBottom: '16px',
-          }}
-        >
-          <Stories width="400px" height="600px" stories={stories} />
+        <div className="w-full flex-col mx-auto my-auto flex items-center justify-center">
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              width: '100%',
+              marginBottom: '16px',
+            }}
+          >
+            <Stories width="400px" height="600px" stories={mainStory} />
+          </div>
         </div>
-      </div>
       </div>
     </div>
   );

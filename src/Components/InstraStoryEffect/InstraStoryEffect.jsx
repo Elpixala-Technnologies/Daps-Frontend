@@ -96,7 +96,7 @@ const InstraStoryEffect = () => {
         Latest{" "}
         <strong className="font-extrabold text-[#29679e] ">Stories</strong>
       </h3>
-      <div className="h-[15rem] py-4">
+      <div className="h-[8rem]">
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
           breakpoints={{
@@ -137,7 +137,7 @@ const InstraStoryEffect = () => {
                   key={itm?._id}
                 >
                   <Link
-                    href={`/fullscreen-story/${index}`}
+                    href={`/fullscreen-story/${itm?._id}`}
                   >
                   <div
                     className="relative storyOutline  hover-box  md:w-[80px] w-[80px] md:h-[80px] overflow-hidden h-[80px] border-4 rounded-full flex items-center justify-center border-transparent"

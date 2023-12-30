@@ -68,7 +68,7 @@ const ExploreBestSeal = () => {
             return (
               <SwiperSlide key={itm._id}>
                 <div
-                  className="  bg-white p-2 md:p-3 text-center rounded-md duration-300 transform  shadow-sm hover:-translate-y-1.5 cardOutline hover:bg-red-10 hover:text-[#18568C]"
+                  className=" bg-white p-2 md:p-3 text-center rounded-md duration-300 transform  shadow-sm hover:-translate-y-1.5 cardOutline hover:bg-red-10 hover:text-[#18568C]"
                   data-aos="fade-up" // Add AOS animation attribute
                   data-aos-duration="1000" // Set animation duration in milliseconds
                   key={itm._id}

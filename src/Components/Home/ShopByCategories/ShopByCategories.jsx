@@ -44,7 +44,7 @@ const ShopByCategories = () => {
           </h3>
           <div className="rounded-lg pb-[1px]">
             {/* <div className="grid grid-cols-1 gap-1 w-max-content overflow-hidden xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 md:pt-5"> */}
-            <div className="flex h-[15rem] w-max-content overflow-hidden justify-around">
+            <div className="flex h-[5rem] w-max-content overflow-hidden justify-around">
               <Swiper
                 // centeredSlides={true}
                 slidesPerView={8}
