@@ -619,15 +619,14 @@ const ProductDetailsPage = () => {
       v.wattage === selectedWattageForAmplifire
     );
     setSelectedCameraVerientData(updatedVariant);
-  }, [selectedCameraQuality, selectedCameraGuidline, selectedCameraFieldView, product]);
+  }, [selectedTotalChannels, selectedCameraGuidline, selectedWattageForAmplifire, product]);
 
   const handleTotalChannelsChange = chanel => {
     setSelectedCameraQuality(chanel);
  
-    if (firstVariantForCameraQuality) {
-      setSelectedCameraVerientData(firstVariantForCameraQuality);
+    if (firstVariantForAmolifireQuality) {
+      setSelectedAmplifiersVerientData(firstVariantForCameraQuality);
       setSelectedCameraQuality(firstVariantForCameraQuality.cameraQuality)
-      setSelectedCameraGuidline(firstVariantForCameraQuality.areThereGuidelines ? firstVariantForCameraQuality?.guidelinesType : "No")
       setsSelectedCameraFieldView(firstVariantForCameraQuality.fieldOfViewType)
     } else {
       // Reset other selections if no variant matches the processor
@@ -637,25 +636,25 @@ const ProductDetailsPage = () => {
     }
   };
 
-  const handleCameraGuidelineChange = cameraGuid => setSelectedCameraGuidline(cameraGuid);
-  const handleCameraFieldViewChange = cameraFieldView => setsSelectedCameraFieldView(cameraFieldView);
+  // const handleCameraGuidelineChange = cameraGuid => setSelectedCameraGuidline(cameraGuid);
+  // const handleCameraFieldViewChange = cameraFieldView => setsSelectedCameraFieldView(cameraFieldView);
 
-  const isOptionAvailableForCamera = () => {
-    return product?.camera[0]?.variant.some(v =>
-      v.cameraQuality === selectedCameraQuality &&
-      (v.areThereGuidelines ? v.guidelinesType : "No") === selectedCameraGuidline &&
-      v.fieldOfViewType === selectedCameraFieldView
-    );
-  };
+  // const isOptionAvailableForCamera = () => {
+  //   return product?.camera[0]?.variant.some(v =>
+  //     v.cameraQuality === selectedCameraQuality &&
+  //     (v.areThereGuidelines ? v.guidelinesType : "No") === selectedCameraGuidline &&
+  //     v.fieldOfViewType === selectedCameraFieldView
+  //   );
+  // };
 
-  const basedPriceForCamera = selectedCameraVerientData?.basePrice || 0
-  // Function to calculate total price
-  const calculateTotalPriceCamera = () => {
-    let discountAmount = (basedPriceForCamera * discount) / 100;
-    return basedPriceForCamera - discountAmount;
-  };
+  // const basedPriceForCamera = selectedCameraVerientData?.basePrice || 0
+  // // Function to calculate total price
+  // const calculateTotalPriceCamera = () => {
+  //   let discountAmount = (basedPriceForCamera * discount) / 100;
+  //   return basedPriceForCamera - discountAmount;
+  // };
 
-  const totalPriceForCamera = calculateTotalPriceCamera();
+  // const totalPriceForCamera = calculateTotalPriceCamera();
 
 
 
