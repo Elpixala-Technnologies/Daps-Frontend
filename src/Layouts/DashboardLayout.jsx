@@ -90,9 +90,16 @@ const DashboardLayout = ({ children }) => {
             >
               <Link href="/dashboard/product/add-product">Product</Link>
             </Menu.Item>
+            
+            <Menu.Item key="/dashboard/order" icon={<MdLocalOffer />}>
+              <Link href="/dashboard/order">Order</Link>
+            </Menu.Item>
+            
             <Menu.Item key="/dashboard/category" icon={<MdLocalOffer />}>
               <Link href="/dashboard/category">All Category</Link>
             </Menu.Item>
+
+
             <Menu.Item
               key="/dashboard/popular-category/manage-popular-category"
               icon={<MdLocalOffer />}

@@ -92,9 +92,9 @@ const ShopByCategories = () => {
                             <Image
                               alt="image"
                               src={icons}
-                              className="inline-flex w-full h-full chele items-center justify-center "
-                              width={90}
-                              height={90}
+                              className="!object-contain inline-flex h-full chele items-center justify-center"
+                              width={10}
+                              height={10}
                             />
 
                             <div className="text-[12px] font-semibold tracking-wide cursor-pointer dark:text-black ">

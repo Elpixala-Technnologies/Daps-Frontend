@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Hero from '../Hero/Hero';
 import BestSealer from '../BestSealer/BestSealer';
-
 import ShopByCategories from '../ShopByCategories/ShopByCategories';
 import NewArrivals from '../NewArrivals/NewArrivals';
 import RecentBlogs from '../RecentBlogs/RecentBlogs';
@@ -11,9 +10,8 @@ import HomeOffers from '../HomeOffers/HomeOffers';
 import OurProducts from "../OurProducts/OurProducts";
 import InstraStoryEffect from '../../InstraStoryEffect/InstraStoryEffect';
 import ExploreBestSeal from '../ExploreBestSeal/ExploreBestSeal';
-import Image from 'next/image';
 import ExploreBrand from '../ExploreBrand/ExploreBrand';
-
+import Image from 'next/image';
 
 const Home = () => {
     const [showModal, setShowModal] = useState(true);
@@ -26,6 +24,7 @@ const Home = () => {
 
         return () => clearTimeout(timeout);
     }, []);
+    
     return (
         <section >
             {/* <div className={`${showModal ? 'd-none' : 'bg-[#0000005e] md:relative fixed md:d-none d-block top-0 left-0 right-0 bottom-0 w-full md:p-0 p-2 z-[200]'} `}>
@@ -45,26 +44,21 @@ const Home = () => {
             <Hero />
             {/* ====== Best Sealer */}
             <section>
-
                 <div>
                     <ExploreBrand />
-                    <InstraStoryEffect /> <br />
+                    <InstraStoryEffect /> 
+                    <br />
                     <ExploreBestSeal />
                     <br />
                     <ShopByCategories />
                     <HomeOffers />
                     <BestSealer />
                     <OurProducts />
-                    {/* <TodayOffers /> */}
                     <NewOfferBanner />
-
-
                     <NewArrivals />
                     <AboutBanner />
-
                     <RecentBlogs />
                 </div>
-
             </section>
         </section>
     );

@@ -84,7 +84,6 @@ const useProcessor = () => {
         ProcessorLoaded,
         refetchProcessor,
         handelProcessorDelete
-
     };
 };
 

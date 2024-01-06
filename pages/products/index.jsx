@@ -38,14 +38,21 @@ const ProductPage = () => {
   const { productData, productLoaded, categoryData } = useProducts();
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [activeFilter, setActiveFilter] = useState(null);
-  const [selectedCategories, setSelectedCategories] = useState(["All"]);
+  const [selectedCategories, setSelectedCategories] = useState([]);
   const [selectedSizes, setSelectedSizes] = useState(new Set());
   const [selectedPriceRange, setSelectedPriceRange] = useState([0, 10000]);
   const [selectedSortOption, setSelectedSortOption] =
     useState("Price: Low to High");
   const [searchInput, setSearchInput] = useState("");
-  const [page, setPage] = useState(1);
-  const itemsPerPage = 9;
+
+  const [displayedProducts, setDisplayedProducts] = useState([]);
+  const [itemCount, setItemCount] = useState(12); // Initial number of items to display
+
+  const loadMoreItems = () => {
+    setItemCount(prevItemCount => prevItemCount + 12); // Load 12 more items on each request
+  };
+  // const [page, setPage] = useState(1);
+  // const itemsPerPage = 12;
 
   const router = useRouter();
 
@@ -66,58 +73,35 @@ const ProductPage = () => {
     ? prepareCategoryOptions(categoryData)
     : [];
 
-  const totalPages = Math.ceil(productData?.length / itemsPerPage);
-  useEffect(() => {
-    if (page > totalPages) {
-      setPage(1);
-    }
-  }, [page, productData]);
-
   const handleToggleFilter = (filter) => {
     if (activeFilter === filter) {
       setActiveFilter(null);
     } else {
       setActiveFilter(filter);
     }
-    console.log("Toggled Filter: ", filter, "Active Filter: ", activeFilter);
+
   };
 
   const handleCategoryChange = (category) => {
-    setSelectedCategories((prevSelected) => {
-      const isSelected = prevSelected.includes(category);
-      if (isSelected) {
-        return prevSelected.filter((c) => c !== category);
+    setSelectedCategories(prevSelected => {
+      if (prevSelected.includes(category)) {
+        // If already selected, remove it
+        return prevSelected.filter(c => c !== category);
       } else {
+        // If not selected, add it
         return [...prevSelected, category];
       }
     });
   };
 
+
   useEffect(() => {
     const categoryName = router.query.categoryName;
     if (categoryName) {
-      const selectedCat = Array.isArray(categoryName)
-        ? categoryName
-        : [categoryName];
+      const selectedCat = Array.isArray(categoryName) ? categoryName : [categoryName];
       setSelectedCategories(selectedCat);
-      setActiveFilter("category");
-    } else {
-      setSelectedCategories(["All"]);
-      setActiveFilter(null);
     }
-  }, [router.query]);
-
-  const handleSizeChange = (size) => {
-    setSelectedSizes((prevSizes) => {
-      const newSizes = new Set(prevSizes);
-      if (newSizes.has(size)) {
-        newSizes.delete(size);
-      } else {
-        newSizes.add(size);
-      }
-      return newSizes;
-    });
-  };
+  }, [router.query.categoryName]);
 
   const handlePriceChange = (event, newValue) => {
     setSelectedPriceRange(newValue);
@@ -136,96 +120,98 @@ const ProductPage = () => {
   };
 
   const resetFilters = () => {
-    setSelectedCategories(["All"]);
+    setSelectedCategories([]);
     setSelectedSizes(new Set());
     setSelectedPriceRange([0, 10000]);
     setSearchInput("");
-    setPage(1);
     setActiveFilter(null);
   };
 
   const filteredAndSortedProducts = useMemo(() => {
     let result = productData || [];
 
+    console.log('Initial product count:', result.length);
+
     // Apply search filter
     if (searchInput) {
-      result = result.filter(
-        (product) =>
-          product?.productName?.toLowerCase().includes(searchInput.toLowerCase())
+      result = result.filter(product =>
+        product?.productName?.toLowerCase().includes(searchInput.toLowerCase())
       );
+      console.log('After search filter:', result.length);
     }
 
-    if (
-      Array.isArray(selectedCategories) &&
-      !selectedCategories?.includes("All")
-    ) {
-      result = result.filter((product) =>
-        selectedCategories.some((category) =>
-          product?.productCategory.includes(category)
-        )
+    // Apply category filter
+    if (selectedCategories.length > 0) {
+      result = result.filter(product =>
+        product?.productCategory?.some(category => selectedCategories.includes(category))
       );
+      console.log('After category filter:', result.length);
     }
 
-    if (selectedSizes.size > 0) {
-      result = result?.filter((product) =>
-        product?.colors?.some((color) =>
-          color?.sizes?.some((sizeObj) => selectedSizes?.has(sizeObj.size))
-        )
-      );
-    }
 
-    const calculateDiscountPrice = (product) => {
+
+    // Apply price range filter
+    const calculateDiscountPrice = product => {
       return product.price - (product.price * product.discount) / 100;
     };
 
-    result = result.filter((product) => {
-      // Calculate discount price
-      const discountPrice =
-        product.price - (product.price * product.discount) / 100;
-
-      // Check if the discount price is within the selected price range
-      return (
-        discountPrice >= selectedPriceRange[0] &&
-        discountPrice <= selectedPriceRange[1]
-      );
-    });
-
-    if (selectedSortOption === "Price: Low to High") {
-      result.sort(
-        (a, b) => calculateDiscountPrice(a) - calculateDiscountPrice(b)
-      );
-    } else if (selectedSortOption === "Price: High to Low") {
-      result.sort(
-        (a, b) => calculateDiscountPrice(b) - calculateDiscountPrice(a)
-      );
+    if (selectedPriceRange[0] > 0 || selectedPriceRange[1] < 10000) { // Assuming 10000 is your max price
+      const calculateDiscountPrice = product => {
+        return product.price - (product.price * product.discount) / 100;
+      };
+  
+      result = result.filter(product => {
+        const discountPrice = calculateDiscountPrice(product);
+        return discountPrice >= selectedPriceRange[0] && discountPrice <= selectedPriceRange[1];
+      });
     }
+
+    // Apply sorting
+    if (selectedSortOption === "Price: Low to High") {
+      result.sort((a, b) => calculateDiscountPrice(a) - calculateDiscountPrice(b));
+    } else if (selectedSortOption === "Price: High to Low") {
+      result.sort((a, b) => calculateDiscountPrice(b) - calculateDiscountPrice(a));
+    }
+
+    console.log('Final product count:', result.length);
 
     return result;
   }, [
-    productData,
-    searchInput,
-    selectedCategories,
-    selectedSizes,
-    selectedPriceRange,
-    selectedSortOption,
+    productData, searchInput, selectedCategories, selectedSizes, selectedPriceRange, selectedSortOption
   ]);
 
-  const currentPageData = useMemo(() => {
-    const start = (page - 1) * itemsPerPage;
-    const end = page * itemsPerPage;
-    return filteredAndSortedProducts.slice(start, end);
-  }, [filteredAndSortedProducts, page]);
 
-  // if (productLoaded) {
-  //   return <div>Loading...</div>;
-  // }
+  useEffect(() => {
+    // Adjust this logic according to how you fetch your products
+    const newProducts = filteredAndSortedProducts?.slice(0, itemCount);
+    setDisplayedProducts(newProducts);
+  }, [itemCount, filteredAndSortedProducts]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight) return;
+      loadMoreItems(); // Load more items when scrolled to bottom
+    };
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      // Clean up the event listener
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  console.log(displayedProducts, "displayedProducts0000000")
+
+  console.log(filteredAndSortedProducts, productData, "productData]]]]")
 
   return (
     <RootLayout>
       <div className="mt-[3.6rem] md:mt-[4.5rem]">
         <Image
           src={
-            "https://res.cloudinary.com/dapscar/image/upload/v1703235519/Daps/Slider/qhy8khvkjdivp6o0ozpo.png.png"
+            "https://res.cloudinary.com/dapscar/image/upload/q_auto:low,w_1000/v1703235519/Daps/Slider/qhy8khvkjdivp6o0ozpo.png.png"
           }
           alt="Product"
           width={250}
@@ -313,9 +299,6 @@ const ProductPage = () => {
                                     <li
                                       key={category._id}
                                       className={`cursor-pointer mt-2`}
-                                      // onClick={() =>
-                                      //   handleCategoryChange(category?.name)
-                                      // }
                                     >
                                       <input
                                         type="checkbox"
@@ -474,36 +457,27 @@ const ProductPage = () => {
                       <MdExpandMore className="text-2xl" />
                     )}
                   </button>
+
                   {activeFilter === "category" && (
-                    <>
-                      <div className="space-y-4">
-                        {categoryOptions?.map((option) => (
-                          <li
-                            key={option.value}
-                            className={`cursor-pointer mt-2 ${
-                              selectedCategories.includes(option.value)
-                                ? "text-[#18568C]"
-                                : ""
-                            }`}
-                            onClick={() => handleCategoryChange(option.value)}
-                            style={{ paddingLeft: `${option.level * 20}px` }}
-                          >
-                            <input
-                              type="checkbox"
-                              checked={selectedCategories.includes(
-                                option.value
-                              )}
-                              onChange={() =>
-                                handleCategoryChange(option.value)
-                              }
-                              className="mr-2"
-                            />
-                            {option.label}
-                          </li>
-                        ))}
-                      </div>
-                    </>
+                    <div className="space-y-4">
+                      {categoryOptions?.map((option) => (
+                        <li
+                          key={option.value}
+                          className={`cursor-pointer mt-2 ${selectedCategories.includes(option.value) ? "text-[#18568C]" : ""}`}
+                          style={{ paddingLeft: `${option.level * 20}px` }}
+                        >
+                          <input
+                            type="checkbox"
+                            checked={selectedCategories.includes(option.value)}
+                            onChange={() => handleCategoryChange(option.value)}
+                            className="mr-2"
+                          />
+                          {option.label}
+                        </li>
+                      ))}
+                    </div>
                   )}
+
                 </div>
 
                 <div className="border-b border-gray-200 py-6">
@@ -567,9 +541,9 @@ const ProductPage = () => {
 
                 <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
                   <div className="lg:col-span-4">
-                    <div className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
-                      {currentPageData &&
-                        currentPageData?.map((product) => {
+                    <div className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
+                      {displayedProducts &&
+                        displayedProducts?.map((product) => {
                           return (
                             <div className="border rounded-[0.6rem] relative">
                               <div>
@@ -595,9 +569,9 @@ const ProductPage = () => {
                               </div>
 
                               <div className="rounded-b-[0.6rem] bg-[#fafafa] p-4 relative">
-                              <div className="px-6 py-1 bg-[#fcc50b] w-[70%] rounded-md  absolute top-[-1rem] text-center left-[14%] font-semibold text-white text-[14px]">
-                                DAPS
-                              </div>
+                                <div className="px-6 py-1 bg-[#fcc50b] w-[70%] rounded-md  absolute top-[-1rem] text-center left-[14%] font-semibold text-white text-[14px]">
+                                  DAPS
+                                </div>
                                 <div className="my-1 text-left ">
                                   <Link
                                     href={`/products/${product?._id}`}
@@ -610,11 +584,11 @@ const ProductPage = () => {
                                       <h1 className="font-bold text-slate-900">
                                         {product?.discount
                                           ? `₹ ${Math.floor(
-                                              product?.price -
-                                                (product?.price *
-                                                  product?.discount) /
-                                                  100
-                                            )}`
+                                            product?.price -
+                                            (product?.price *
+                                              product?.discount) /
+                                            100
+                                          )}`
                                           : `₹ ${Math.floor(product?.price)}`}
                                       </h1>
                                       <span className="text-sm font-semibold text-gray-400 line-through mt-1">
@@ -650,77 +624,7 @@ const ProductPage = () => {
                   </div>
                 </div>
 
-                <div>
-                  {/* Pagination controls */}
-                  <div className="flex justify-center mt-6">
-                    <nav
-                      aria-label="Pagination"
-                      className="inline-flex -space-x-px rounded-md shadow-sm dark:bg-gray-800 dark:text-gray-100"
-                    >
-                      <button
-                        onClick={handlePrevPage}
-                        disabled={page === 1}
-                        className={`inline-flex items-center px-2 py-2 text-sm font-semibold border rounded-l-md dark:border-gray-700 ${
-                          page === 1
-                            ? "text-gray-400 cursor-not-allowed"
-                            : "text-indigo-600 hover:bg-indigo-50"
-                        }`}
-                      >
-                        <span className="sr-only">Previous</span>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          aria-hidden="true"
-                          className="w-5 h-5"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                            clipRule="evenodd"
-                          ></path>
-                        </svg>
-                      </button>
-                      {Array.from({ length: totalPages }, (_, i) => (
-                        <button
-                          key={i}
-                          onClick={() => setPage(i + 1)}
-                          className={`inline-flex items-center px-4 py-2 text-sm font-semibold border ${
-                            i + 1 === page
-                              ? "bg-indigo-600 text-white"
-                              : "dark:bg-violet-400 dark:text-gray-900 dark:border-gray-700"
-                          }`}
-                        >
-                          {i + 1}
-                        </button>
-                      ))}
-                      <button
-                        onClick={handleNextPage}
-                        disabled={page === totalPages}
-                        className={`inline-flex items-center px-2 py-2 text-sm font-semibold border rounded-r-md dark:border-gray-700 ${
-                          page === totalPages
-                            ? "text-gray-400 cursor-not-allowed"
-                            : "text-indigo-600 hover:bg-indigo-50"
-                        }`}
-                      >
-                        <span className="sr-only">Next</span>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          aria-hidden="true"
-                          className="w-5 h-5"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                            clipRule="evenodd"
-                          ></path>
-                        </svg>
-                      </button>
-                    </nav>
-                  </div>
-                </div>
+
               </div>
             </div>
           </section>

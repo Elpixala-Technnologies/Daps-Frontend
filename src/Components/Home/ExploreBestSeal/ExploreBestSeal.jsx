@@ -79,7 +79,7 @@ const ExploreBestSeal = () => {
                       onMouseLeave={handleLeave}
                       className="rounded-xl relative overflow-hidden hover-box duration-200 w-full h-[22rem] "
                     >
-                      <img src={itm?.image} className="w-full h-full " />
+                      <img src={itm?.image} className="!object-fill w-full h-full " />
                       <video
                         dblclick={(e) => e.preventDefault()}
                         className="absolute  top-[0px]  left-0 bottom-0 right-0 duration-200 hover-img opacity-0 object-fit object-center sm:object-top md:object-top lg:object-top xl:object-top"

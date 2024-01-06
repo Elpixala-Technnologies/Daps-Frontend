@@ -174,10 +174,10 @@ img {
 }
 
 .disabled {
-  color: #a0a0a0; /* Gray text */
-  cursor: not-allowed; /* Cursor indicates the item is not selectable */
-  background-color: #f0f0f0; /* Lighter background */
-  border-color: #d0d0d0; /* Lighter border */
+  color: #a0a0a0 !important; /* Gray text */
+  cursor: not-allowed !important; /* Cursor indicates the item is not selectable */
+  background-color: #f0f0f0 !important; /* Lighter background */
+  border-color: #d0d0d0 !important; /* Lighter border */
 }
 
 // =====

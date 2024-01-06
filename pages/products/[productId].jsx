@@ -11,13 +11,15 @@ import Swal from "sweetalert2";
 import { AuthContext } from "@/src/Context/UserContext";
 import useProducts from "@/src/Hooks/useProducts";
 import useCar from "@/src/Hooks/useCar";
-import { PaymentIcons } from "@/src/Assets";
 import { FaWhatsapp } from "react-icons/fa";
 import { BsCart } from "react-icons/bs";
-import { PolicyIcons, MapIcons, DelivaryIcons } from "@/src/Assets";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import RecomendationProduct from "@/src/Components/RecomendationProduct/RecomendationProduct";
+import { checkoutOrderUrl, paymentverificationUrl } from "@/src/Utils/Urls/PaymentUrl";
+import axios from 'axios';
+import useAddress from "@/src/Hooks/useAddress";
+import { addOrderUrl } from "@/src/Utils/Urls/OrderUrl";
 
 const ProductDetailsPage = () => {
   const [mOn, setMOn] = useState(false);
@@ -25,6 +27,7 @@ const ProductDetailsPage = () => {
   const { CarData } = useCar();
   const { user } = useContext(AuthContext);
   const router = useRouter();
+  const { addressData } = useAddress()
   const { productId } = router.query;
   const phoneNumber = "+91 99964 44445";
   const WhatsAppIcon = () => {
@@ -49,46 +52,9 @@ const ProductDetailsPage = () => {
   } else {
     console.error(`No data found for ID: ${productId}`);
   }
-  const addToCart = async (id) => {
-    const convertPrice = parseInt(product?.price);
-    // Check if the user is logged in
-    if (!user) {
-      // User is not logged in, show an alert
-      Swal.fire({
-        icon: "error",
-        title: "Please log in to add the product to your cart",
-        showConfirmButton: true
-      });
-      return;
-    }
 
-    const res = await fetch(addToCartUrl(id), {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        product: product?._id,
-        quantity: 1,
-        totalPrice: convertPrice,
-        email: user?.email,
-        status: "unpaid"
-      })
-    });
 
-    const data = await res.json();
-    console.log(data);
 
-    if (data.success) {
-      Swal.fire({
-        icon: "success",
-        title: "Your product added to cart",
-        showConfirmButton: false,
-        timer: 1500
-      });
-      router.push("/cart");
-    }
-  };
 
   const sliderRef = useRef(null);
 
@@ -273,14 +239,108 @@ const ProductDetailsPage = () => {
   const mainPriceForLed = isBeamsSeparate ? (lowBeemsBasedPrice + highBeemBasedPrice) : basedPriceForLed;
 
   // ========== Hids Varient ============
-  // State for HID variant selection
+
+  // HID variant selection handlers
+  // useEffect(() => {
+  //   if (product?.HID[0]?.variant) {
+  //     const variants = product.HID[0].variant;
+  //     const wattages = [...new Set(variants.map(v => v.wattage))].sort((a, b) => a - b);
+  //     const lightColor = [...new Set(variants.map(v => v?.lightColor))]
+
+  //     setAvailableHIDWattage(wattages.map(w => `${w}`));
+  //     setAvailableHIDLowBeamVariant(wattages.map(w => `${w}`));
+  //     setAvailableHIDHighBeamVariant(wattages.map(w => `${w}`));
+
+  //     setAvailableHIDWattageLightColor(lightColor.map(l => l))
+  //     setAvailableHIDLowBeamWattageLightColor(lightColor.map(l => l))
+  //     setAvailableHIDHighBeamWattageLightColor(lightColor.map(l => l))
+
+  //     // Set default variant
+  //     const defaultVariant = variants[0];
+  //     setSelectedHIDVariantData(defaultVariant);
+  //     setSelectHIDLowBeamData(defaultVariant)
+  //     setSelectHIDHighBeamData(defaultVariant)
+  //     setSelectHIDLowBeamWattage(`${defaultVariant.wattage}`);
+  //     setSelectHIDHighBeamWattage(`${defaultVariant.wattage}`)
+  //     setSelectHIDWattage(`${defaultVariant.wattage}`)
+  //     setSelectHIDLowBeamWattageLightColor(`${defaultVariant?.lightColor}`)
+  //     setSelectHIDHighBeamWattageLightColor(`${defaultVariant?.lightColor}`)
+  //     updateSelectedHIDVariant(`${defaultVariant.wattage}`, `${defaultVariant.wattage}`, `${defaultVariant.lightColor}`, `${defaultVariant.lightColor}`);
+
+  //   }
+  // }, [product]);
+
+  // Update HID variant selection
+  // const updateSelectedHIDVariant = (lowBeamWattage, highBeamWattage, lowBeamlightColor, highBeamLightColor) => {
+  //   const lowBeamVariant = product?.HID[0]?.variant?.find(v => `${v.wattage}` === lowBeamWattage && `${v?.lightColor}` === lowBeamlightColor);
+  //   setSelectHIDLowBeamData(lowBeamVariant);
+
+  //   const highBeamVariant = product?.HID[0]?.variant.find(v => `${v.wattage}` === highBeamWattage && `${v.lightColor}` === highBeamLightColor);
+  //   setSelectHIDHighBeamData(highBeamVariant);
+
+  // };
+
+  // const handleLowBeamHIDWattageChange = (wattage) => {
+  //   setSelectHIDLowBeamWattage(wattage);
+  //   updateSelectedHIDVariant(wattage, selectHIDHighBeamWattage, selectHIDLowBeamWattageLightColor, selectHIDHighBeamWattageLightColor);
+  // };
+
+  // const handleHighBeamHIDWattageChange = (wattage) => {
+  //   setSelectHIDHighBeamWattage(wattage);
+  //   updateSelectedHIDVariant(selectHIDLowBeamWattage, wattage, selectHIDLowBeamWattageLightColor, selectHIDHighBeamWattageLightColor);
+  // };
+
+  // const handleHIDLowBeamLightColorChange = (lightColor) => {
+  //   setSelectHIDLowBeamWattageLightColor(lightColor);
+  //   if (selectHIDLowBeamWattage) {
+  //     updateSelectedHIDVariant(selectHIDLowBeamWattage, selectHIDHighBeamWattage, lightColor, selectHIDHighBeamWattageLightColor);
+  //   }
+  // };
+
+  // const handleHIDHighBeamLightColorChange = (lightColor) => {
+  //   setSelectHIDHighBeamWattageLightColor(lightColor);
+  //   if (selectHIDHighBeamWattage) {
+  //     updateSelectedHIDVariant(selectHIDLowBeamWattage, selectHIDHighBeamWattage, selectHIDLowBeamWattageLightColor, lightColor);
+  //   }
+  // };
+
+
+  // //  this is for singel
+  // const handleSingleBeamHIDWattageChange = wattage => {
+  //   setSelectHIDWattage(wattage)
+  //   const newVariant = product?.HID[0]?.variant?.find(v => `${v?.wattage}` === wattage);
+  //   if (newVariant) {
+  //     setSelectedHIDVariantData(newVariant);
+  //   }
+  // };
+
+  // const handelSingelBeamHIDLightColorChange = lightColor => {
+  //   setSelectHIDWattageLightColor(lightColor)
+  //   const newVariant = product?.HID[0]?.variant?.find(v => `${v?.lightColor}` === lightColor);
+  //   if (newVariant) {
+  //     setSelectedHIDVariantData(newVariant);
+  //   }
+  // }
+  // // ======= hid price 
+  // const basedPriceForHid = selectedHIDVariantData?.basePrice || 0;
+  // const lowBeemsBasedPriceHid = selectHIDLowBeamData?.basePrice || 0;
+  // const highBeemBasedPriceHid = selectHIDHighBeamData?.basePrice || 0;
+
+  // // Function to calculate total price
+  // const calculateTotalPriceHid = () => {
+  //   let price = isBeamsSeparate ? (lowBeemsBasedPriceHid + highBeemBasedPriceHid) : basedPriceForHid;
+  //   let discountAmount = (price * discount) / 100;
+  //   return price - discountAmount;
+  // };
+
+  // const totalPriceForHid = calculateTotalPriceHid();
+  // const mainPriceForHid = isBeamsSeparate ? (lowBeemsBasedPriceHid + highBeemBasedPriceHid) : basedPriceForHid;
+
 
   // State for HID variant selection
   const [selectedHIDVariantData, setSelectedHIDVariantData] = useState(null);
   const [selectHIDLowBeamData, setSelectHIDLowBeamData] = useState(null);
   const [selectHIDHighBeamData, setSelectHIDHighBeamData] = useState(null);
-
-
   const [selectHIDLowBeamWattage, setSelectHIDLowBeamWattage] = useState(null);
   const [selectHIDHighBeamWattage, setSelectHIDHighBeamWattage] = useState(null);
   const [selectHIDWattage, setSelectHIDWattage] = useState(null);
@@ -295,15 +355,14 @@ const ProductDetailsPage = () => {
   const [availableHIDLowBeamWattageLightColor, setAvailableHIDLowBeamWattageLightColor] = useState(null);
   const [availableHIDHighBeamWattageLightColor, setAvailableHIDHighBeamWattageLightColor] = useState(null);
 
-
-
-  // HID variant selection handlers
   useEffect(() => {
-    if (product?.HID[0]?.variant) {
+    if (product?.HID[0]?.variant.length > 0) {
+      // Initialize available options
       const variants = product.HID[0].variant;
       const wattages = [...new Set(variants.map(v => v.wattage))].sort((a, b) => a - b);
       const lightColor = [...new Set(variants.map(v => v?.lightColor))]
 
+      // Set states for available options
       setAvailableHIDWattage(wattages.map(w => `${w}`));
       setAvailableHIDLowBeamVariant(wattages.map(w => `${w}`));
       setAvailableHIDHighBeamVariant(wattages.map(w => `${w}`));
@@ -312,74 +371,72 @@ const ProductDetailsPage = () => {
       setAvailableHIDLowBeamWattageLightColor(lightColor.map(l => l))
       setAvailableHIDHighBeamWattageLightColor(lightColor.map(l => l))
 
-      // Set default variant
-      const defaultVariant = variants[0];
-      setSelectedHIDVariantData(defaultVariant);
-      setSelectHIDLowBeamData(defaultVariant)
-      setSelectHIDHighBeamData(defaultVariant)
-      setSelectHIDLowBeamWattage(`${defaultVariant.wattage}`);
-      setSelectHIDHighBeamWattage(`${defaultVariant.wattage}`)
-      setSelectHIDWattage(`${defaultVariant.wattage}`)
-      setSelectHIDLowBeamWattageLightColor(`${defaultVariant?.lightColor}`)
-      setSelectHIDHighBeamWattageLightColor(`${defaultVariant?.lightColor}`)
-      updateSelectedHIDVariant(`${defaultVariant.wattage}`, `${defaultVariant.wattage}`, `${defaultVariant.lightColor}`, `${defaultVariant.lightColor}`);
-
+      // Set the first variant as the default variant
+      updateVariantHID(product.HID[0]?.variant[0]);
     }
   }, [product]);
 
-
-  // Update HID variant selection
-  const updateSelectedHIDVariant = (lowBeamWattage, highBeamWattage, lowBeamlightColor, highBeamLightColor) => {
-    const lowBeamVariant = product?.HID[0]?.variant?.find(v => `${v.wattage}` === lowBeamWattage && `${v?.lightColor}` === lowBeamlightColor);
-    setSelectHIDLowBeamData(lowBeamVariant);
-
-    const highBeamVariant = product?.HID[0]?.variant.find(v => `${v.wattage}` === highBeamWattage && `${v.lightColor}` === highBeamLightColor);
-    setSelectHIDHighBeamData(highBeamVariant);
-
-  };
-
-  const handleLowBeamHIDWattageChange = (wattage) => {
-    setSelectHIDLowBeamWattage(wattage);
-    updateSelectedHIDVariant(wattage, selectHIDHighBeamWattage, selectHIDLowBeamWattageLightColor, selectHIDHighBeamWattageLightColor);
-  };
-
-  const handleHighBeamHIDWattageChange = (wattage) => {
-    setSelectHIDHighBeamWattage(wattage);
-    updateSelectedHIDVariant(selectHIDLowBeamWattage, wattage, selectHIDLowBeamWattageLightColor, selectHIDHighBeamWattageLightColor);
-  };
-
-  const handleHIDLowBeamLightColorChange = (lightColor) => {
-    setSelectHIDLowBeamWattageLightColor(lightColor);
-    if (selectHIDLowBeamWattage) {
-      updateSelectedHIDVariant(selectHIDLowBeamWattage, selectHIDHighBeamWattage, lightColor, selectHIDHighBeamWattageLightColor);
+  const handleOptionChangeHID = (option, featureType) => {
+    if (!isOptionAvailableHID(option, featureType)) {
+      return;
     }
-  };
 
-  const handleHIDHighBeamLightColorChange = (lightColor) => {
-    setSelectHIDHighBeamWattageLightColor(lightColor);
-    if (selectHIDHighBeamWattage) {
-      updateSelectedHIDVariant(selectHIDLowBeamWattage, selectHIDHighBeamWattage, selectHIDLowBeamWattageLightColor, lightColor);
-    }
-  };
+    const newVariant = product.HID[0].variant.find(v => {
+      switch (featureType) {
+        case 'lowBeam':
+          return `${v.wattage} W` === option;
+        case 'highBeam':
+          return `${v.wattage} W` === option;
+        case 'wattage':
+          return `${v.wattage} W` === option;
+        case 'lowBeemColor':
+          return v.lightColor === option;
+        case 'highBeemColor':
+          return v.lightColor === option;
+        case 'lightColor':
+          return v.lightColor === option;
+        default:
+          return false;
+      }
+    });
 
-
-  //  this is for singel
-  const handleSingleBeamHIDWattageChange = wattage => {
-    setSelectHIDWattage(wattage)
-    const newVariant = product?.HID[0]?.variant?.find(v => `${v?.wattage}` === wattage);
     if (newVariant) {
-      setSelectedHIDVariantData(newVariant);
+      updateVariantHID(newVariant);
     }
   };
 
-  const handelSingelBeamHIDLightColorChange = lightColor => {
-    setSelectHIDWattageLightColor(lightColor)
-    const newVariant = product?.HID[0]?.variant?.find(v => `${v?.lightColor}` === lightColor);
-    if (newVariant) {
-      setSelectedHIDVariantData(newVariant);
-    }
-  }
-  // ======= hid price 
+  const updateVariantHID = (variant) => {
+    setSelectedHIDVariantData(variant);
+    setSelectHIDLowBeamData(`${variant.wattage} W`);
+    setSelectHIDHighBeamData(`${variant.wattage} W`);
+    setSelectHIDWattage(`${variant.wattage} W`);
+    setSelectHIDWattageLightColor(variant.lightColor);
+    setSelectHIDLowBeamWattageLightColor(variant.lightColor);
+    setSelectHIDHighBeamWattageLightColor(variant.lightColor);
+
+  };
+
+  const isOptionAvailableHID = (option, type) => {
+    return product.HID[0].variant.some(v => {
+      switch (type) {
+        case 'lowBeam':
+          return `${v.wattage} W` === option;
+        case 'highBeam':
+          return `${v.wattage} W` === option;
+        case 'lowBeemColor':
+          return v.lightColor === option;
+        case 'highBeemColor':
+          return v.lightColor === option;
+        case 'wattage':
+          return `${v.wattage} W` === option;
+        case 'lightColor':
+          return v.lightColor === option;
+        default:
+          return false;
+      }
+    });
+  };
+
   const basedPriceForHid = selectedHIDVariantData?.basePrice || 0;
   const lowBeemsBasedPriceHid = selectHIDLowBeamData?.basePrice || 0;
   const highBeemBasedPriceHid = selectHIDHighBeamData?.basePrice || 0;
@@ -393,6 +450,7 @@ const ProductDetailsPage = () => {
 
   const totalPriceForHid = calculateTotalPriceHid();
   const mainPriceForHid = isBeamsSeparate ? (lowBeemsBasedPriceHid + highBeemBasedPriceHid) : basedPriceForHid;
+
 
 
   // ========= for the android ==========
@@ -413,88 +471,87 @@ const ProductDetailsPage = () => {
   const [availableSimSupport, setAvailableSimSupport] = useState([]);
 
   useEffect(() => {
-    const processors = new Set(product?.android[0]?.variant.map(v => v.processorLabel));
-    const rams = new Set(product?.android[0]?.variant.map(v => v.ram));
-    const roms = new Set(product?.android[0]?.variant.map(v => v.rom));
-    const carplays = new Set(product?.android[0]?.variant.map(v => v.isAppleCarplayAndAndroidAutoSupported ? v.wirelessWired : 'Not Supported'));
-    const cameraSupports = new Set(product?.android[0]?.variant.map(v => v.is360CameraSupported));
-    const simSupports = new Set(product?.android[0]?.variant.map(v => v.isSimSupported));
-
-    setAvailableProcessors([...processors]);
-    setAvailableRams([...rams].sort((a, b) => parseInt(a) - parseInt(b)).map(r => `${r} GB`));
-    setAvailableRoms([...roms].sort((a, b) => parseInt(a) - parseInt(b)).map(r => `${r} GB`));
-    setAvailableCarplays([...carplays]);
-    setAvailable360CameraSupport([...cameraSupports]);
-    setAvailableSimSupport([...simSupports]);
-
     if (product?.android[0]?.variant.length > 0) {
-      const defaultVariant = product.android[0].variant[0];
-      setSelectedVariant(defaultVariant);
-      setSelectedProcessor(defaultVariant.processorLabel);
-      setSelectedRam(`${defaultVariant.ram} GB`);
-      setSelectedRom(`${defaultVariant.rom} GB`);
-      setSelectedCarplay(defaultVariant.isAppleCarplayAndAndroidAutoSupported ? defaultVariant.wirelessWired : 'Not Supported');
-      setIsSelected360CameraSupported(defaultVariant.is360CameraSupported);
-      setIsSelectedSim(defaultVariant.isSimSupported);
+      // Initialize available options
+      const processors = new Set(product.android[0].variant.map(v => v.processorLabel));
+      const rams = new Set(product.android[0].variant.map(v => v.ram));
+      const roms = new Set(product.android[0].variant.map(v => v.rom));
+      const carplays = new Set(product.android[0].variant.map(v => v.isAppleCarplayAndAndroidAutoSupported ? v.wirelessWired : 'Not Supported'));
+      const cameraSupports = new Set(product.android[0].variant.map(v => v.is360CameraSupported));
+      const simSupports = new Set(product.android[0].variant.map(v => v.isSimSupported));
+
+      // Set states for available options
+      setAvailableProcessors([...processors]);
+      setAvailableRams([...rams].sort((a, b) => parseInt(a) - parseInt(b)).map(r => `${r} GB`));
+      setAvailableRoms([...roms].sort((a, b) => parseInt(a) - parseInt(b)).map(r => `${r} GB`));
+      setAvailableCarplays([...carplays]);
+      setAvailable360CameraSupport([...cameraSupports]);
+      setAvailableSimSupport([...simSupports]);
+
+      // Set the first variant as the default variant
+      updateVariant(product.android[0].variant[0]);
     }
   }, [product]);
 
-  useEffect(() => {
-    const updatedVariant = product?.android[0]?.variant.find(v =>
-      v.processorLabel === selectedProcessor &&
-      `${v.ram} GB` === selectedRam &&
-      `${v.rom} GB` === selectedRom &&
-      (v.isAppleCarplayAndAndroidAutoSupported ? v?.wirelessWired : 'Not Supported') === selectedCarplay &&
-      v.is360CameraSupported === isSelected360CameraSupported &&
-      v.isSimSupported === isSelectedSim
-    );
-    setSelectedVariant(updatedVariant);
-  }, [selectedProcessor, selectedRam, selectedRom, selectedCarplay, isSelected360CameraSupported, isSelectedSim, product]);
 
-  const handleProcessorChange = processor => {
-    setSelectedProcessor(processor);
+  const handleOptionChangeAndroid = (option, featureType) => {
+    if (!isOptionAvailable(option, featureType)) {
+      return; // Do nothing if the option is disabled
+    }
 
-    // Find the first variant matching the selected processor
-    const firstVariantForProcessor = product?.android[0]?.variant.find(v => v.processorLabel === processor);
+    const newVariant = product.android[0].variant.find(v => {
+      switch (featureType) {
+        case 'processor':
+          return v.processorLabel === option;
+        case 'ram':
+          return `${v.ram} GB` === option;
+        case 'rom':
+          return `${v.rom} GB` === option;
+        case 'carplay':
+          return (v.isAppleCarplayAndAndroidAutoSupported ? v.wirelessWired : 'Not Supported') === option;
+        case '360Camera':
+          return v.is360CameraSupported === option;
+        case 'sim':
+          return v.isSimSupported === option;
+        default:
+          return false;
+      }
+    });
 
-    if (firstVariantForProcessor) {
-      setSelectedVariant(firstVariantForProcessor);
-      setSelectedRam(`${firstVariantForProcessor.ram} GB`);
-      setSelectedRom(`${firstVariantForProcessor.rom} GB`);
-      setSelectedCarplay(firstVariantForProcessor.isAppleCarplayAndAndroidAutoSupported ? firstVariantForProcessor.wirelessWired : 'Not Supported');
-      setIsSelected360CameraSupported(firstVariantForProcessor.is360CameraSupported);
-      setIsSelectedSim(firstVariantForProcessor.isSimSupported);
-    } else {
-      // Reset other selections if no variant matches the processor
-      setSelectedRam('');
-      setSelectedRom('');
-      setSelectedCarplay('');
-      setIsSelected360CameraSupported('');
-      setIsSelectedSim('');
+    if (newVariant) {
+      updateVariant(newVariant);
     }
   };
 
-  const handleRamChange = ram => setSelectedRam(ram);
-  const handleRomChange = rom => setSelectedRom(rom);
-  const handleCarplayChange = carplay => setSelectedCarplay(carplay);
-  const handleCameraSupportChange = support => setIsSelected360CameraSupported(support);
-  const handleSimSupportChange = support => setIsSelectedSim(support);
+  const updateVariant = (variant) => {
+    setSelectedVariant(variant);
+    setSelectedProcessor(variant.processorLabel);
+    setSelectedRam(`${variant.ram} GB`);
+    setSelectedRom(`${variant.rom} GB`);
+    setSelectedCarplay(variant.isAppleCarplayAndAndroidAutoSupported ? variant.wirelessWired : 'Not Supported');
+    setIsSelected360CameraSupported(variant.is360CameraSupported);
+    setIsSelectedSim(variant.isSimSupported);
+  };
 
   const isOptionAvailable = (option, type) => {
-    if (type === 'support') {
-      // For 360 Camera Support or Sim Support
-      return product?.android[0]?.variant.some(v =>
-        v.processorLabel === selectedProcessor &&
-        ((type === '360Camera' && v.is360CameraSupported === option) ||
-          (type === 'Sim' && v.isSimSupported === option))
-      );
-    } else {
-      // For Carplay, RAM, ROM, etc.
-      return product?.android[0]?.variant.some(v =>
-        v.processorLabel === selectedProcessor &&
-        (type === 'carplay' ? (v.isAppleCarplayAndAndroidAutoSupported ? v.wirelessWired : 'Not Supported') === option : `${v[type]} GB` === option)
-      );
-    }
+    return product.android[0].variant.some(v => {
+      switch (type) {
+        case 'processor':
+          return v.processorLabel === option;
+        case 'ram':
+          return v.processorLabel === selectedProcessor && `${v.ram} GB` === option;
+        case 'rom':
+          return v.processorLabel === selectedProcessor && `${v.rom} GB` === option;
+        case 'carplay':
+          return v.processorLabel === selectedProcessor && (v.isAppleCarplayAndAndroidAutoSupported ? v.wirelessWired : 'Not Supported') === option;
+        case '360Camera':
+          return v.processorLabel === selectedProcessor && v.is360CameraSupported === option;
+        case 'sim':
+          return v.processorLabel === selectedProcessor && v.isSimSupported === option;
+        default:
+          return false;
+      }
+    });
   };
 
   const basedPriceForAndroid = selectedVariant?.basePrice || 0;
@@ -503,78 +560,87 @@ const ProductDetailsPage = () => {
   const totalPirceAndroid = basedPriceForAndroid + canbusPriceForAndroid + framecostForAndroid
   const androidPrice = basedPriceForAndroid - (discount * basedPriceForAndroid / 100) + framecostForAndroid + canbusPriceForAndroid;
 
-  // ========= this is for camera varient ==========
-  const [selectedCameraVerientData, setSelectedCameraVerientData] = useState(null)
+  // ========= this is for camera variant ==========
 
+  const [selectedCameraVariantData, setSelectedCameraVariantData] = useState(null);
+  const [selectedCameraQuality, setSelectedCameraQuality] = useState(null);
+  const [selectedCameraGuideline, setSelectedCameraGuideline] = useState(null);
+  const [selectedCameraFieldView, setSelectedCameraFieldView] = useState(null);
 
-  const [availableCameraQuality, setAvailableCameraQuality] = useState([])
-  const [availableCameraGuideline, setAvailableCameraGuideline] = useState([])
-  const [availableCameraFieldView, setAvailableCameraFieldView] = useState([])
-
-  const [selectedCameraQuality, setSelectedCameraQuality] = useState(null)
-  const [selectedCameraGuidline, setSelectedCameraGuidline] = useState(null)
-  const [selectedCameraFieldView, setsSelectedCameraFieldView] = useState(null)
+  const [availableCameraQuality, setAvailableCameraQuality] = useState([]);
+  const [availableCameraGuideline, setAvailableCameraGuideline] = useState([]);
+  const [availableCameraFieldView, setAvailableCameraFieldView] = useState([]);
 
   useEffect(() => {
-    const cameraQuality = new Set(product?.camera[0]?.variant.map(v => v.cameraQuality));
-    const cameraGuide = new Set(product?.camera[0]?.variant.map(v => v.areThereGuidelines ? v?.guidelinesType : "No"));
-    const cameraFieldView = new Set(product?.camera[0]?.variant.map(v => v.fieldOfViewType));
-
-    setAvailableCameraQuality([...cameraQuality]);
-    setAvailableCameraGuideline([...cameraGuide]);
-    setAvailableCameraFieldView([...cameraFieldView]);
-
     if (product?.camera[0]?.variant.length > 0) {
-      const defaultVariant = product.camera[0].variant[0];
-      setSelectedCameraVerientData(defaultVariant);
-      setSelectedCameraQuality(defaultVariant.cameraQuality)
-      setSelectedCameraGuidline(defaultVariant.areThereGuidelines ? defaultVariant?.guidelinesType : "No")
-      setsSelectedCameraFieldView(defaultVariant.fieldOfViewType)
+      initializeAvailableOptions();
+      updateSelectionWithVariant(product.camera[0].variant[0]);
     }
   }, [product]);
 
-  useEffect(() => {
-    const updatedVariant = product?.camera[0]?.variant?.find(v =>
-      v.cameraQuality === selectedCameraQuality &&
-      (v.areThereGuidelines ? v?.guidelinesType : "No") === selectedCameraGuidline &&
-      v.fieldOfViewType === selectedCameraFieldView
-    );
-    setSelectedCameraVerientData(updatedVariant);
-  }, [selectedCameraQuality, selectedCameraGuidline, selectedCameraFieldView, product]);
+  const initializeAvailableOptions = () => {
+    const uniqueCameraQualities = new Set();
+    const uniqueCameraGuidelines = new Set();
+    const uniqueCameraFieldViews = new Set();
 
-  const handleCameraQualityChange = cameraQuality => {
-    setSelectedCameraQuality(cameraQuality);
+    product.camera[0].variant.forEach(v => {
+      uniqueCameraQualities.add(v.cameraQuality);
+      uniqueCameraGuidelines.add(v.areThereGuidelines ? v.guidelinesType : "No");
+      uniqueCameraFieldViews.add(v.fieldOfViewType);
+    });
 
-    // Find the first variant matching the selected processor
-    const firstVariantForCameraQuality = product?.camera[0]?.variant.find(v => v.cameraQuality === cameraQuality);
+    setAvailableCameraQuality([...uniqueCameraQualities]);
+    setAvailableCameraGuideline([...uniqueCameraGuidelines]);
+    setAvailableCameraFieldView([...uniqueCameraFieldViews]);
+  };
 
-    if (firstVariantForCameraQuality) {
-      setSelectedCameraVerientData(firstVariantForCameraQuality);
-      setSelectedCameraQuality(firstVariantForCameraQuality.cameraQuality)
-      setSelectedCameraGuidline(firstVariantForCameraQuality.areThereGuidelines ? firstVariantForCameraQuality?.guidelinesType : "No")
-      setsSelectedCameraFieldView(firstVariantForCameraQuality.fieldOfViewType)
-    } else {
-      // Reset other selections if no variant matches the processor
-      setSelectedCameraQuality(null)
-      setSelectedCameraGuidline(null)
-      setsSelectedCameraFieldView(null)
+  const updateSelectionWithVariant = (variant) => {
+    setSelectedCameraVariantData(variant);
+    setSelectedCameraQuality(variant.cameraQuality);
+    setSelectedCameraGuideline(variant.areThereGuidelines ? variant.guidelinesType : "No");
+    setSelectedCameraFieldView(variant.fieldOfViewType);
+  };
+
+  const isOptionAvailableForCamera = (option, featureType) => {
+    return product?.camera[0]?.variant.some(variant => {
+      switch (featureType) {
+        case 'quality':
+          return variant.cameraQuality === option;
+        case 'guideline':
+          return (variant.areThereGuidelines ? variant.guidelinesType : "No") === option;
+        case 'fieldView':
+          return variant.fieldOfViewType === option;
+        default:
+          return false;
+      }
+    });
+  };
+
+  const handleOptionChange = (option, featureType) => {
+    if (!isOptionAvailableForCamera(option, featureType)) {
+      return; // Do nothing if the option is disabled
+    }
+
+    const newVariant = product.camera[0].variant.find(v => {
+      switch (featureType) {
+        case 'quality':
+          return v.cameraQuality === option;
+        case 'guideline':
+          return (v.areThereGuidelines ? v.guidelinesType : "No") === option;
+        case 'fieldView':
+          return v.fieldOfViewType === option;
+        default:
+          return false;
+      }
+    });
+
+    if (newVariant) {
+      updateSelectionWithVariant(newVariant);
     }
   };
 
-  const handleCameraGuidelineChange = cameraGuid => setSelectedCameraGuidline(cameraGuid);
-  const handleCameraFieldViewChange = cameraFieldView => setsSelectedCameraFieldView(cameraFieldView);
+  const basedPriceForCamera = selectedCameraVariantData?.basePrice || 0;
 
-  const isOptionAvailableForCamera = () => {
-    return product?.camera[0]?.variant.some(v =>
-      v.cameraQuality === selectedCameraQuality &&
-      (v.areThereGuidelines ? v.guidelinesType : "No") === selectedCameraGuidline &&
-      v.fieldOfViewType === selectedCameraFieldView
-    );
-  };
-
-
-
-  const basedPriceForCamera = selectedCameraVerientData?.basePrice || 0
   // Function to calculate total price
   const calculateTotalPriceCamera = () => {
     let discountAmount = (basedPriceForCamera * discount) / 100;
@@ -582,84 +648,383 @@ const ProductDetailsPage = () => {
   };
 
   const totalPriceForCamera = calculateTotalPriceCamera();
-
-
-
   // ========= this is for camera varient ==========
 
+  // ========= this is for  amplifire ==========
+  const [selectedAmplifierVariantData, setSelectedAmplifierVariantData] = useState(null);
+  const [availableTotalChannels, setAvailableTotalChannels] = useState([]);
+  const [availableWattageForAmplifier, setAvailableWattageForAmplifier] = useState([]);
 
-  // ========= this is for   ==========
-  const [selectedAmplifiersVerientData, setSelectedAmplifiersVerientData] = useState(null)
-
-
-  const [availableTotalChannels, setAvailableTotalChannels] = useState([])
-  const [availableWattageForAmplifire, setAvailableWattageForAmplifire] = useState([])
-
-  const [selectedTotalChannels, setSelectedTotalChannels] = useState(null)
-  const [selectedWattageForAmplifire, setSelectedWattageForAmplifire] = useState(null)
+  const [selectedTotalChannels, setSelectedTotalChannels] = useState(null);
+  const [selectedWattageForAmplifier, setSelectedWattageForAmplifier] = useState(null);
 
   useEffect(() => {
-    const totalChanels = new Set(product?.amplifiers[0]?.variant.map(v => v.totalChannels));
-    const wattage = new Set(product?.amplifiers[0]?.variant.map(v => v.wattage));
-
-    setAvailableTotalChannels([...totalChanels]);
-    setAvailableWattageForAmplifire([...wattage]);
-
     if (product?.amplifiers[0]?.variant.length > 0) {
-      const defaultVariant = product?.amplifiers[0]?.variant[0];
-      setSelectedAmplifiersVerientData(defaultVariant);
-      setSelectedTotalChannels(defaultVariant.totalChannels)
-      setSelectedWattageForAmplifire(defaultVariant.wattage)
+      initializeAvailableOptionsAmplifiers();
+      updateSelectionWithVariantAmplifiers(product.amplifiers[0].variant[0]);
     }
   }, [product]);
 
-  useEffect(() => {
-    const updatedVariant = product?.amplifiers[0]?.variant?.find(v =>
-      v.totalChannels === selectedTotalChannels &&
-      v.wattage === selectedWattageForAmplifire
-    );
-    setSelectedCameraVerientData(updatedVariant);
-  }, [selectedTotalChannels, selectedCameraGuidline, selectedWattageForAmplifire, product]);
+  const initializeAvailableOptionsAmplifiers = () => {
+    const uniqueTotalChannels = new Set();
+    const uniqueWattage = new Set();
 
-  const handleTotalChannelsChange = chanel => {
-    setSelectedCameraQuality(chanel);
- 
-    if (firstVariantForAmolifireQuality) {
-      setSelectedAmplifiersVerientData(firstVariantForCameraQuality);
-      setSelectedCameraQuality(firstVariantForCameraQuality.cameraQuality)
-      setsSelectedCameraFieldView(firstVariantForCameraQuality.fieldOfViewType)
-    } else {
-      // Reset other selections if no variant matches the processor
-      setSelectedCameraQuality(null)
-      setSelectedCameraGuidline(null)
-      setsSelectedCameraFieldView(null)
+    product.amplifiers[0].variant.forEach(v => {
+      uniqueTotalChannels.add(v.totalChannels);
+      uniqueWattage.add(v.wattage);
+    });
+
+    setAvailableTotalChannels([...uniqueTotalChannels]);
+    setAvailableWattageForAmplifier([...uniqueWattage]);
+  };
+
+  const updateSelectionWithVariantAmplifiers = (variant) => {
+    setSelectedAmplifierVariantData(variant);
+    setSelectedTotalChannels(variant?.totalChannels);
+    setSelectedWattageForAmplifier(variant?.wattage);
+  };
+
+  const isOptionAvailableForAmplifiers = (option, featureType) => {
+    return product?.amplifiers[0]?.variant.some(variant => {
+      switch (featureType) {
+        case 'totalChannels':
+          return variant.totalChannels === option;
+        case 'wattage':
+          return variant.wattage === option;
+        default:
+          return false;
+      }
+    });
+  };
+
+  const handleOptionChangeAmplifiers = (option, featureType) => {
+    if (!isOptionAvailableForAmplifiers(option, featureType)) {
+      return; // Do nothing if the option is disabled
+    }
+
+    const newVariant = product.amplifiers[0].variant.find(v => {
+      switch (featureType) {
+        case 'totalChannels':
+          return v.totalChannels === option;
+        case 'wattage':
+          return v.wattage === option;
+        default:
+          return false;
+      }
+    });
+
+    if (newVariant) {
+      updateSelectionWithVariantAmplifiers(newVariant);
     }
   };
 
-  // const handleCameraGuidelineChange = cameraGuid => setSelectedCameraGuidline(cameraGuid);
-  // const handleCameraFieldViewChange = cameraFieldView => setsSelectedCameraFieldView(cameraFieldView);
+  const basedPriceForAmplifire = selectedAmplifierVariantData?.basePrice || 0;
 
-  // const isOptionAvailableForCamera = () => {
-  //   return product?.camera[0]?.variant.some(v =>
-  //     v.cameraQuality === selectedCameraQuality &&
-  //     (v.areThereGuidelines ? v.guidelinesType : "No") === selectedCameraGuidline &&
-  //     v.fieldOfViewType === selectedCameraFieldView
-  //   );
-  // };
+  // Function to calculate total price
+  const calculateTotalPriceAmplifire = () => {
+    let discountAmount = (basedPriceForAmplifire * discount) / 100;
+    return basedPriceForAmplifire - discountAmount;
+  };
 
-  // const basedPriceForCamera = selectedCameraVerientData?.basePrice || 0
-  // // Function to calculate total price
-  // const calculateTotalPriceCamera = () => {
-  //   let discountAmount = (basedPriceForCamera * discount) / 100;
-  //   return basedPriceForCamera - discountAmount;
-  // };
+  const totalPriceForAmplifire = calculateTotalPriceAmplifire();
 
-  // const totalPriceForCamera = calculateTotalPriceCamera();
+  // ========= this is for isFmBt varient ==========
+  const basedPriceForFmBt = product?.fMBT[0]?.basePrice || 0;
+
+  // Function to calculate total price
+  const calculateTotalPriceFmBt = () => {
+    let discountAmount = (basedPriceForFmBt * discount) / 100;
+    return basedPriceForFmBt - discountAmount;
+  };
+
+  const totalPriceForFmBt = calculateTotalPriceFmBt();
 
 
+  // ========= this is for bassTube varient ==========
+  const basedPriceForbassTube = product?.bassTube[0]?.basePrice || 0;
 
-  // ========= this is for camera varient ==========
+  // Function to calculate total price
+  const calculateTotalPriceBassTube = () => {
+    let discountAmount = (basedPriceForbassTube * discount) / 100;
+    return basedPriceForbassTube - discountAmount;
+  };
 
+  const totalPriceForBassTube = calculateTotalPriceBassTube();
+
+
+  // ========= this is for speakers varient ==========
+  const basedPriceForSpeakers = product?.speakers[0]?.basePrice || 0;
+
+  // Function to calculate total price
+  const calculateTotalPriceSpeakers = () => {
+    let discountAmount = (basedPriceForSpeakers * discount) / 100;
+    return basedPriceForSpeakers - discountAmount;
+  };
+
+  const totalPriceForSpeakers = calculateTotalPriceSpeakers();
+
+  // ========= this is for chargers varient ==========
+  const basedPriceForChargers = product?.chargers[0]?.basePrice || 0;
+
+  // Function to calculate total price
+  const calculateTotalPriceChargers = () => {
+    let discountAmount = (basedPriceForChargers * discount) / 100;
+    return basedPriceForChargers - discountAmount;
+  };
+
+  const totalPriceForChargers = calculateTotalPriceChargers();
+
+
+  // ========= this is for DampingSheets varient ==========
+  const basedPriceForDampingSheets = product?.dampingSheets[0]?.basePrice || 0;
+
+  // Function to calculate total price
+  const calculateTotalPriceDampingSheets = () => {
+    let discountAmount = (basedPriceForDampingSheets * discount) / 100;
+    return basedPriceForDampingSheets - discountAmount;
+  };
+
+  const totalPriceForDampingSheets = calculateTotalPriceDampingSheets();
+
+  // ============ Poroduct verient details
+  const productVarientDetails = {
+    led: {
+      variantData: selectedLedVariantData,
+      totalPrice: totalPriceForLed,
+      mainPrice: mainPriceForLed,
+      isBeamsSeparate: isBeamsSeparate,
+    },
+    hid: {
+      variantData: selectedHIDVariantData,
+      totalPrice: totalPriceForHid,
+      mainPrice: mainPriceForHid,
+      isBeamsSeparate: isBeamsSeparate,
+    },
+    android: {
+      variantData: selectedVariant,
+      totalPrice: androidPrice,
+      basedPrice: basedPriceForAndroid,
+      canbusPrice: canbusPriceForAndroid,
+      frameCost: framecostForAndroid,
+    },
+    camera: {
+      variantData: selectedCameraVariantData,
+      totalPrice: totalPriceForCamera,
+      basedPrice: basedPriceForCamera,
+    },
+    amplifiers: {
+      variantData: selectedAmplifierVariantData,
+      totalPrice: totalPriceForAmplifire,
+      basedPrice: basedPriceForAmplifire,
+    },
+    fmBt: {
+      variantData: product?.fMBT?.map(fm => ({
+        controlOption: fm?.controlOption,
+        price: fm?.basePrice
+      })),
+      basedPrice: basedPriceForFmBt,
+      totalPrice: totalPriceForFmBt,
+    },
+    bassTube: {
+      variantData: product?.bassTube?.map(bass => ({
+        wattage: bass?.wattage,
+        speakerSize: bass?.speakerSize,
+        price: bass?.basePrice
+      })),
+      basedPrice: basedPriceForbassTube,
+      totalPrice: totalPriceForBassTube,
+    },
+    speakers: {
+      variantData: product?.speakers?.map(speaker => ({
+        speakerSize: speaker?.speakerSize,
+        price: speaker?.basePrice
+      })),
+      basedPrice: basedPriceForSpeakers,
+      totalPrice: totalPriceForSpeakers,
+    },
+    chargers: {
+      variantData: product?.chargers?.map(charger => ({
+        thickness: charger?.thickness,
+        sheetsInOneBox: charger?.sheetsInOneBox,
+        price: charger?.basePrice
+      })),
+      basedPrice: basedPriceForChargers,
+      totalPrice: totalPriceForChargers,
+    },
+    dampingSheets: {
+      variantData: product?.dampingSheets?.map(dampingSheet => ({
+        wattage: dampingSheet?.wattage,
+        price: dampingSheet?.basePrice
+      })),
+      basedPrice: basedPriceForDampingSheets,
+      totalPrice: totalPriceForDampingSheets,
+    }
+  };
+
+  const selectedCarInfo = {
+    carBrand: selectedBrand,
+    carName: selectedCar,
+    carGeneration: selectedGeneration,
+    carModel: selectedModel,
+    carModelData: selectedModelData,
+  }
+  // =========== add to card =============
+
+  const selectedProductPrice = () => {
+    if (product?.dampingSheets[0]?.isDampingSheets) {
+      return totalPriceForDampingSheets
+    } else if (product?.speakers[0]?.isSpeakers) {
+      return totalPriceForSpeakers
+    } else if (product?.bassTube[0]?.isBassTube) {
+      return totalPriceForBassTube
+    } else if (product?.fMBT[0]?.isFmBt) {
+      return totalPriceForFmBt
+    } else if (product?.android[0]?.isAndroid) {
+      return androidPrice
+    } else if (product?.led[0]?.isLed) {
+      return totalPriceForLed
+    } else if (product?.HID[0]?.isHID) {
+      return totalPriceForHid
+    } else if (product?.camera[0]?.isCamera) {
+      return totalPriceForCamera
+    } else if (product?.amplifiers[0]?.isAmplifiers) {
+      return totalPriceForAmplifire
+    }
+  }
+
+  // Call the function to get the selected product price
+  const priceTotalSelectedProduct = selectedProductPrice();
+
+
+  const addToCart = async (id) => {
+    const convertPrice = parseInt(product?.price);
+    // Check if the user is logged in
+    console.log(id, "form add to cart ")
+
+    if (!user) {
+      // User is not logged in, show an alert
+      Swal.fire({
+        icon: "error",
+        title: "Please log in to add the product to your cart",
+        showConfirmButton: true
+      });
+      return;
+    }
+
+    const cardData = {
+      product: product?._id,
+      carInfo: selectedCarInfo,
+      productDetails: productVarientDetails,
+      quantity: 1,
+      totalPrice: priceTotalSelectedProduct,
+      email: user?.email,
+      discount: discount,
+      basedPrice: priceTotalSelectedProduct,
+      status: "unpaid"
+    }
+
+    const res = await fetch(addToCartUrl(id), {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(cardData)
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      Swal.fire({
+        icon: "success",
+        title: "Your product added to cart",
+        showConfirmButton: false,
+        timer: 1500
+      });
+      router.push("/cart");
+    }
+  };
+
+  //  ======= payment ======
+  const checkoutHandler = async (amount) => {
+    const { data: { order } } = await axios.post(checkoutOrderUrl, {
+      amount
+    });
+
+    const handlePaymentSuccess = async (response) => {
+      // Construct the order object
+      const orderData = {
+        shippingAddress: addressData[0],
+        clientName: user?.displayName,
+        clientPhone: user?.phone,
+        paymentDetails: JSON.stringify({
+          razorpayPaymentId: response.razorpay_payment_id,
+          razorpayOrderId: response.razorpay_order_id,
+          razorpaySignature: response.razorpay_signature,
+        }),
+        productDetails: [
+          {
+            productDetails: productVarientDetails,
+            productId: product?._id,
+            quantity: 1,
+            price: priceTotalSelectedProduct,
+            discount: discount,
+          }
+        ],
+        carInfo: selectedCarInfo,
+        product: product?._id,
+        totalPrice: priceTotalSelectedProduct,
+        email: user?.email,
+        quantity: 1,
+        status: 'pending',
+      };
+
+      // Call your order API
+      try {
+        const orderResponse = await axios.post(addOrderUrl, orderData);
+        console.log('Order created:', orderResponse.data);
+        router.push(`/paymentsuccess`);
+      } catch (error) {
+        console.error('Error creating order:', error);
+      }
+    };
+
+    const productSummary = `${product?.productName}, Price: ₹${priceTotalSelectedProduct}, Discount: ${discount}%`;
+
+  // Razorpay options
+    const options = {
+      key: process.env.RAZORPAY_API_KEY,
+      amount: order.amount,
+      currency: "INR",
+      name: user?.displayName,
+      description: productSummary, 
+      image: product?.images[0],
+      order_id: order?.id,
+      callback_url: paymentverificationUrl,
+      prefill: {
+        name: user?.displayName,
+        email: user?.email,
+        contact: user?.email
+      },
+      notes: {
+        "address": addressData[0],
+        "productDetails": JSON.stringify({
+          productId: product?._id,
+          variant: productVarientDetails,
+          quantity: 1,
+          price: priceTotalSelectedProduct,
+          discount: discount
+        })
+      },
+      theme: {
+        "color": "#121212"
+      },
+      handler: handlePaymentSuccess,
+    };
+
+    // Initialize and open Razorpay payment gateway
+    const razor = new window.Razorpay(options);
+    razor.open();
+  };
 
 
 
@@ -688,6 +1053,7 @@ const ProductDetailsPage = () => {
         ) : (
           <></>
         )}
+
         <section className="py-2 mb-8">
           <div className="mx-auto px-4">
             <div className="lg:col-gap-12 xl:col-gap-16  grid grid-cols-1 gap-12 lg:mt-12 lg:grid-cols-5">
@@ -711,7 +1077,6 @@ const ProductDetailsPage = () => {
                     />
                   )}
                 </div>
-
                 <br />
                 <div className="h-[15%] w-full">
                   <Swiper
@@ -758,6 +1123,99 @@ const ProductDetailsPage = () => {
                 <hr
                   className='my-2'
                 />
+
+                {
+                  product?.dampingSheets[0]?.isDampingSheets && (
+                    <>
+                      <div className="flex gap-2 mt-2 mb-0 text-[1.25rem]">
+                        <h1 className="font-bold text-slate-900">
+                          ₹ {Math.floor(totalPriceForDampingSheets)}
+                        </h1>
+                        <span className="font-bold text-gray-400 ">
+                          MRP:₹ <span className='line-through'>{Math.floor(basedPriceForDampingSheets)}</span>
+                        </span>
+                        <span className="text-green-500 font-bold">
+                          {Math.floor(product?.discount)} % off
+                        </span>
+                      </div>
+                      <p className='text-[13px] mt-0'>
+                        <span>
+                          {`MRP incl. all taxes, Add'l charges may apply on discounted price`}
+                        </span>
+                      </p>
+                    </>
+                  )
+                }
+
+                {
+                  product?.speakers[0]?.isSpeakers && (
+                    <>
+                      <div className="flex gap-2 mt-2 mb-0 text-[1.25rem]">
+                        <h1 className="font-bold text-slate-900">
+                          ₹ {Math.floor(totalPriceForSpeakers)}
+                        </h1>
+                        <span className="font-bold text-gray-400 ">
+                          MRP:₹ <span className='line-through'>{Math.floor(basedPriceForSpeakers)}</span>
+                        </span>
+                        <span className="text-green-500 font-bold">
+                          {Math.floor(product?.discount)} % off
+                        </span>
+                      </div>
+                      <p className='text-[13px] mt-0'>
+                        <span>
+                          {`MRP incl. all taxes, Add'l charges may apply on discounted price`}
+                        </span>
+                      </p>
+                    </>
+                  )
+                }
+
+                {
+                  product?.bassTube[0]?.isBassTube && (
+                    <>
+                      <div className="flex gap-2 mt-2 mb-0 text-[1.25rem]">
+                        <h1 className="font-bold text-slate-900">
+                          ₹ {Math.floor(totalPriceForBassTube)}
+                        </h1>
+                        <span className="font-bold text-gray-400 ">
+                          MRP:₹ <span className='line-through'>{Math.floor(basedPriceForbassTube)}</span>
+                        </span>
+                        <span className="text-green-500 font-bold">
+                          {Math.floor(product?.discount)} % off
+                        </span>
+                      </div>
+                      <p className='text-[13px] mt-0'>
+                        <span>
+                          {`MRP incl. all taxes, Add'l charges may apply on discounted price`}
+                        </span>
+                      </p>
+                    </>
+                  )
+                }
+
+                {
+                  product?.fMBT[0]?.isFmBt && (
+                    <>
+                      <div className="flex gap-2 mt-2 mb-0 text-[1.25rem]">
+                        <h1 className="font-bold text-slate-900">
+                          ₹ {Math.floor(totalPriceForFmBt)}
+                        </h1>
+                        <span className="font-bold text-gray-400 ">
+                          MRP:₹ <span className='line-through'>{Math.floor(basedPriceForFmBt)}</span>
+                        </span>
+                        <span className="text-green-500 font-bold">
+                          {Math.floor(product?.discount)} % off
+                        </span>
+                      </div>
+                      <p className='text-[13px] mt-0'>
+                        <span>
+                          {`MRP incl. all taxes, Add'l charges may apply on discounted price`}
+                        </span>
+                      </p>
+                    </>
+                  )
+                }
+
                 {
                   product?.android[0]?.isAndroid && (
                     <>
@@ -821,7 +1279,6 @@ const ProductDetailsPage = () => {
                   )
                 }
 
-
                 {
                   product?.HID[0]?.isHID && (
                     <>
@@ -881,10 +1338,10 @@ const ProductDetailsPage = () => {
                     <>
                       <div className="flex gap-2 mt-2 mb-0 text-[1.25rem]">
                         <h1 className="font-bold text-slate-900">
-                          ₹ {Math.floor(totalPriceForCamera)}
+                          ₹ {Math.floor(totalPriceForAmplifire)}
                         </h1>
                         <span className="font-bold text-gray-400 ">
-                          MRP:₹ <span className='line-through'>{Math.floor(basedPriceForCamera)}</span>
+                          MRP:₹ <span className='line-through'>{Math.floor(basedPriceForAmplifire)}</span>
                         </span>
                         <span className="text-green-500 font-bold">
                           {Math.floor(product?.discount)} % off
@@ -899,128 +1356,160 @@ const ProductDetailsPage = () => {
                   )
                 }
 
+                {
+                  product?.chargers[0]?.isChargers && (
+                    <>
+                      <div className="flex gap-2 mt-2 mb-0 text-[1.25rem]">
+                        <h1 className="font-bold text-slate-900">
+                          ₹ {Math.floor(totalPriceForChargers)}
+                        </h1>
+                        <span className="font-bold text-gray-400 ">
+                          MRP:₹ <span className='line-through'>{Math.floor(basedPriceForChargers)}</span>
+                        </span>
+                        <span className="text-green-500 font-bold">
+                          {Math.floor(product?.discount)} % off
+                        </span>
+                      </div>
+                      <p className='text-[13px] mt-0'>
+                        <span>
+                          {`MRP incl. all taxes, Add'l charges may apply on discounted price`}
+                        </span>
+                      </p>
+                    </>
+                  )
+                }
 
                 {/* =========== Amplifiers Varient ========== */}
-
                 <div>
                   {
-                      product?.amplifiers[0]?.isAmplifiers &&(
+                    product?.amplifiers[0]?.isAmplifiers && (
                       <div className='my-4'>
-                        {/* Select Your totalChannels */}
+                        {/* Total Channels Selection */}
                         <div>
-                          <label className="font-bold text-slate-900">Select Your Total Channels</label>
+                          <label className="font-bold text-slate-900">Select Total Channel</label>
                           <div className="flex items-center gap-4 my-2">
-                            {availableTotalChannels.map((chanel, index) => (
-                              <div
-                                key={index}
-                                className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectedTotalChannels === chanel ? 'selected' : ''}`}
-                                onClick={() => handleTotalChannelsChange(chanel)}
-                              >
-                                {chanel}
-                              </div>
-                            ))}
+                            {availableTotalChannels.map((totalChannels, index) => {
+                              const isOptionEnabled = isOptionAvailableForAmplifiers(totalChannels, 'totalChannels');
+                              return (
+                                <div
+                                  key={index}
+                                  className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectedTotalChannels === totalChannels ? 'selected' : ''} ${!isOptionEnabled ? 'disabled cursor-none' : ''}`}
+                                  onClick={() => handleOptionChangeAmplifiers(totalChannels, 'totalChannels')}
+                                >
+                                  {totalChannels}
+                                </div>
+                              );
+                            })}
                           </div>
                         </div>
 
-                        {/* Select Your "wattage": "" */}
-
+                        {/* Wattage Selection */}
                         <div>
-                          <label className="font-bold text-slate-900">Select Your Wattage</label>
+                          <label className="font-bold text-slate-900">Select Total Wattage</label>
                           <div className="flex items-center gap-4 my-2">
-                            {availableWattageForAmplifire?.map((wattage, index) => (
-                              <div
-                                key={index}
-                                className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectedWattageForAmplifire === wattage ? 'selected' : ''}`}
-                                onClick={() => handleWattageForAmplifireChange(wattage)}
-                              >
-                                {wattage}
-                              </div>
-                            ))}
+                            {availableWattageForAmplifier?.map((wattage, index) => {
+                              const isOptionEnabled = isOptionAvailableForAmplifiers(wattage, 'wattage');
+                              return (
+                                <div
+                                  key={index}
+                                  className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectedWattageForAmplifier === wattage ? 'selected' : ''} ${!isOptionEnabled ? 'disabled cursor-none' : ''}`}
+                                  onClick={() => handleOptionChangeAmplifiers(wattage, 'wattage')}
+                                >
+                                  {wattage} W
+                                </div>
+                              );
+                            })}
                           </div>
                         </div>
- 
                       </div>
                     )
                   }
                 </div>
-
- 
                 {/*============ varient select for camera======== */}
                 <div>
-                  {
-                    product?.camera[0]?.isCamera && (
-                      <div className='my-4'>
-                        {/* Select Your Camera Quality */}
-                        <div>
-                          <label className="font-bold text-slate-900">Select Your Camera Quality</label>
-                          <div className="flex items-center gap-4 my-2">
-                            {availableCameraQuality.map((camera, index) => (
+                  {product?.camera[0]?.isCamera && (
+                    <div className='my-4'>
+                      {/* Select Your Camera Quality */}
+                      <div>
+                        <label className="font-bold text-slate-900">Select Your Camera Quality</label>
+                        <div className="flex items-center gap-4 my-2">
+                          {availableCameraQuality.map((cameraQuality, index) => {
+                            const isOptionEnabled = isOptionAvailableForCamera(cameraQuality, 'quality');
+                            return (
                               <div
                                 key={index}
-                                className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectedCameraQuality === camera ? 'selected' : ''}`}
-                                onClick={() => handleCameraQualityChange(camera)}
+                                className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectedCameraQuality === cameraQuality ? 'selected' : ''} ${!isOptionEnabled ? 'disabled cursor-none' : ''}`}
+                                onClick={() => handleOptionChange(cameraQuality, 'quality')}
                               >
-                                {camera}
+                                {cameraQuality}
                               </div>
-                            ))}
-                          </div>
+                            );
+                          })}
                         </div>
+                      </div>
 
-                        {/* Select Your Camera Guidelines */}
-                        <div>
-                          <label className="font-bold text-slate-900">Select Your Camera Guidelines</label>
-                          <div className="flex items-center gap-4 my-2">
-                            {availableCameraGuideline.map((cameraGuide, index) => (
+                      {/* Select Your Camera Guidelines */}
+                      <div>
+                        <label className="font-bold text-slate-900">Select Your Camera Guidelines</label>
+                        <div className="flex items-center gap-4 my-2">
+                          {availableCameraGuideline.map((cameraGuide, index) => {
+                            const isOptionEnabled = isOptionAvailableForCamera(cameraGuide, 'guideline');
+                            return (
                               <div
                                 key={index}
-                                className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectedCameraGuidline === cameraGuide ? 'selected' : ''}`}
-                                onClick={() => handleCameraGuidelineChange(cameraGuide)}
+                                className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectedCameraGuideline === cameraGuide ? 'selected' : ''} ${!isOptionEnabled ? 'disabled cursor-none' : ''}`}
+                                onClick={() => handleOptionChange(cameraGuide, 'guideline')}
                               >
                                 {cameraGuide}
                               </div>
-                            ))}
-                          </div>
+                            );
+                          })}
                         </div>
+                      </div>
 
-                        {/* Select Your Camera Field Of View */}
-                        <div>
-                          <label className="font-bold text-slate-900">Select Your Camera Field Of View</label>
-                          <div className="flex items-center gap-4 my-2">
-                            {availableCameraFieldView.map((cameraView, index) => (
+                      {/* Select Your Camera Field Of View */}
+                      <div>
+                        <label className="font-bold text-slate-900">Select Your Camera Field Of View</label>
+                        <div className="flex items-center gap-4 my-2">
+                          {availableCameraFieldView.map((cameraView, index) => {
+                            const isOptionEnabled = isOptionAvailableForCamera(cameraView, 'fieldView');
+                            return (
                               <div
                                 key={index}
-                                className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectedCameraFieldView === cameraView ? 'selected' : ''}`}
-                                onClick={() => handleCameraFieldViewChange(cameraView)}
+                                className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectedCameraFieldView === cameraView ? 'selected' : ''} ${!isOptionEnabled ? 'disabled cursor-none' : ''}`}
+                                onClick={() => handleOptionChange(cameraView, 'fieldView')}
                               >
                                 {cameraView}
                               </div>
-                            ))}
-                          </div>
+                            );
+                          })}
                         </div>
-
                       </div>
-                    )
-                  }
+                    </div>
+                  )}
                 </div>
-
                 {/* ========== Varient Select For Android======== */}
                 <div>
                   <div>
                     {product?.android[0]?.isAndroid && (
+
                       <div className='my-4'>
                         {/* Select Your Processor */}
                         <div>
                           <label className="font-bold text-slate-900">Select Your Processor</label>
                           <div className="flex items-center gap-4 my-2">
-                            {availableProcessors.map((processor, index) => (
-                              <div
-                                key={index}
-                                className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectedProcessor === processor ? 'selected' : ''}`}
-                                onClick={() => handleProcessorChange(processor)}
-                              >
-                                {processor}
-                              </div>
-                            ))}
+                            {availableProcessors.map((processor, index) => {
+                              const isOptionEnabled = isOptionAvailable(processor, 'processor');
+                              return (
+                                <div
+                                  key={index}
+                                  className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectedProcessor === processor ? 'selected' : ''} ${!isOptionEnabled ? 'disabled cursor-none' : ''}`}
+                                  onClick={() => handleOptionChangeAndroid(processor, 'processor')}
+                                >
+                                  {processor}
+                                </div>
+                              )
+                            })}
                           </div>
                         </div>
 
@@ -1028,15 +1517,18 @@ const ProductDetailsPage = () => {
                         <div>
                           <label className="font-bold text-slate-900">Select Your Ram</label>
                           <div className="flex items-center gap-4 my-2">
-                            {availableRams.map((ram, index) => (
-                              <div
-                                key={index}
-                                className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectedRam === ram ? 'selected' : ''} ${!isOptionAvailable(ram, 'ram') ? 'disabled' : ''}`}
-                                onClick={() => isOptionAvailable(ram, 'ram') && handleRamChange(ram)}
-                              >
-                                {ram}
-                              </div>
-                            ))}
+                            {availableRams.map((ram, index) => {
+                              const isOptionEnabled = isOptionAvailable(ram, 'ram');
+                              return (
+                                <div
+                                  key={index}
+                                  className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectedRam === ram ? 'selected' : ''} ${!isOptionEnabled ? 'disabled cursor-none' : ''}`}
+                                  onClick={() => handleOptionChangeAndroid(ram, 'ram')}
+                                >
+                                  {ram}
+                                </div>
+                              )
+                            })}
                           </div>
                         </div>
 
@@ -1044,30 +1536,37 @@ const ProductDetailsPage = () => {
                         <div>
                           <label className="font-bold text-slate-900">Select Your ROM</label>
                           <div className="flex items-center gap-4 my-2">
-                            {availableRoms.map((rom, index) => (
-                              <div
-                                key={index}
-                                className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectedRom === rom ? 'selected' : ''} ${!isOptionAvailable(rom, 'rom') ? 'disabled' : ''}`}
-                                onClick={() => isOptionAvailable(rom, 'rom') && handleRomChange(rom)}
-                              >
-                                {rom}
-                              </div>
-                            ))}
+                            {availableRoms.map((rom, index) => {
+                              const isOptionEnabled = isOptionAvailable(rom, 'rom');
+                              return (
+                                <div
+                                  key={index}
+                                  className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectedRom === rom ? 'selected' : ''} ${!isOptionEnabled ? 'disabled cursor-none' : ''}`}
+                                  onClick={() => handleOptionChangeAndroid(rom, 'rom')}
+                                >
+                                  {rom}
+                                </div>
+                              )
+                            })}
                           </div>
                         </div>
                         {/* Carplay Selection */}
                         <div>
                           <label className="font-bold text-slate-900">Select Your Carplay</label>
                           <div className="flex items-center gap-4 my-2">
-                            {availableCarplays.map((carplay, index) => (
-                              <div
-                                key={index}
-                                className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectedCarplay === carplay ? 'selected' : ''} ${!isOptionAvailable(carplay, 'carplay') ? 'disabled' : ''}`}
-                                onClick={() => handleCarplayChange(carplay)}
-                              >
-                                {carplay}
-                              </div>
-                            ))}
+                            {availableCarplays.map((carplay, index) => {
+                              const isOptionEnabled = isOptionAvailable(carplay, 'carplay');
+
+                              return (
+                                <div
+                                  key={index}
+                                  className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectedCarplay === carplay ? 'selected' : ''} ${!isOptionEnabled ? 'disabled cursor-none' : ''}`}
+                                  onClick={() => handleOptionChangeAndroid(carplay, 'carplay')}
+                                >
+                                  {carplay}
+                                </div>
+                              )
+                            })}
                           </div>
                         </div>
                       </div>
@@ -1264,63 +1763,82 @@ const ProductDetailsPage = () => {
                           <div>
                             <label className="font-bold text-slate-900">Select Low Beam Variant (Wattage)</label>
                             <div className="flex items-center gap-4 my-2">
-                              {availableHIDLowBeamVariant.map((wattage, index) => (
-                                <div
-                                  key={index}
-                                  className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectHIDLowBeamWattage === wattage ? 'selected' : ''}`}
-                                  onClick={() => handleLowBeamHIDWattageChange(wattage)}
-                                >
-                                  {wattage}
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                          {/* Low Beam Light Color Selection */}
-                          <div>
-                            <label className="font-bold text-slate-900">Select Low Beam Variant (Light Color)</label>
-                            <div className="flex items-center gap-4 my-2">
-                              {availableHIDWattageLightColor.map((light, index) => (
-                                <div
-                                  key={index}
-                                  className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectHIDLowBeamWattageLightColor === light ? 'selected' : ''}`}
-                                  onClick={() => handleHIDLowBeamLightColorChange(light)}
-                                >
-                                  {light}
-                                </div>
-                              ))}
+                              {availableHIDLowBeamVariant.map((lowBeam, index) => {
+                                const isOptionEnabled = isOptionAvailableHID(lowBeam, 'lowBeam');
+
+                                return (
+                                  <div
+                                    key={index}
+                                    className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectHIDLowBeamWattage === lowBeam ? 'selected' : ''} ${!isOptionEnabled ? 'disabled cursor-none' : ''}`}
+                                    onClick={() => handleOptionChangeHID(lowBeam, 'wattage')}
+                                  >
+                                    {lowBeam}
+                                  </div>
+                                )
+                              })}
                             </div>
                           </div>
 
-                          {/* High Beam Wattage Selection */}
                           <div>
-                            <label className="font-bold text-slate-900">Select High Beam Variant (Wattage)</label>
+                            <label className="font-bold text-slate-900">Select Low Beam Variant (Light Color)</label>
                             <div className="flex items-center gap-4 my-2">
-                              {availableHIDHighBeamVariant?.map((wattage, index) => (
-                                <div
-                                  key={index}
-                                  className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectHIDHighBeamWattage === wattage ? 'selected' : ''}`}
-                                  onClick={() => handleHighBeamHIDWattageChange(wattage)}
-                                >
-                                  {wattage}
-                                </div>
-                              ))}
+                              {availableHIDLowBeamWattageLightColor.map((lowBeemColor, index) => {
+                                const isOptionEnabled = isOptionAvailableHID(lowBeemColor, 'lowBeemColor');
+
+                                return (
+                                  <div
+                                    key={index}
+                                    className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectHIDLowBeamWattageLightColor === lowBeemColor ? 'selected' : ''} ${!isOptionEnabled ? 'disabled cursor-none' : ''}`}
+                                    onClick={() => handleOptionChangeHID(lowBeemColor, 'lowBeemColor')}
+                                  >
+                                    {lowBeemColor}
+                                  </div>
+                                )
+                              })}
                             </div>
                           </div>
+
+
+
                           {/* High Beam Light Color Selection */}
+                          <div>
+                            <label className="font-bold text-slate-900">Select Low Beam Variant (Light Color)</label>
+                            <div className="flex items-center gap-4 my-2">
+                              {availableHIDHighBeamVariant.map((highBeam, index) => {
+                                const isOptionEnabled = isOptionAvailableHID(highBeam, 'highBeam');
+                                return (
+                                  <div
+                                    key={index}
+                                    className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectHIDHighBeamWattage === highBeam ? 'selected' : ''} ${!isOptionEnabled ? 'disabled cursor-none' : ''}`}
+                                    onClick={() => handleOptionChangeHID(highBeam, 'highBeam')}
+                                  >
+                                    {highBeam}
+                                  </div>
+                                )
+                              })}
+                            </div>
+                          </div>
+
                           <div>
                             <label className="font-bold text-slate-900">Select High Beam Variant (Light Color)</label>
                             <div className="flex items-center gap-4 my-2">
-                              {availableHIDWattageLightColor?.map((light, index) => (
-                                <div
-                                  key={index}
-                                  className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectHIDHighBeamWattageLightColor === light ? 'selected' : ''}`}
-                                  onClick={() => handleHIDHighBeamLightColorChange(light)}
-                                >
-                                  {light}
-                                </div>
-                              ))}
+                              {availableHIDHighBeamWattageLightColor.map((highBeemColor, index) => {
+                                const isOptionEnabled = isOptionAvailableHID(highBeemColor, 'highBeemColor');
+
+                                return (
+                                  <div
+                                    key={index}
+                                    className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectHIDHighBeamWattageLightColor === highBeemColor ? 'selected' : ''} ${!isOptionEnabled ? 'disabled cursor-none' : ''}`}
+                                    onClick={() => handleOptionChangeHID(highBeemColor, 'highBeemColor')}
+                                  >
+                                    {highBeemColor}
+                                  </div>
+                                )
+                              })}
                             </div>
                           </div>
+
+ 
                         </>
                       ) : (
                         // Single Beam Wattage Selection
@@ -1329,15 +1847,19 @@ const ProductDetailsPage = () => {
                           <div>
                             <label className="font-bold text-slate-900">Select Variant (Wattage)</label>
                             <div className="flex items-center gap-4 my-2">
-                              {availableHIDWattage.map((wattage, index) => (
-                                <div
-                                  key={index}
-                                  className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectHIDLowBeamWattage === wattage ? 'selected' : ''}`}
-                                  onClick={() => handleSingleBeamHIDWattageChange(wattage)}
-                                >
-                                  {wattage}
-                                </div>
-                              ))}
+                              {availableHIDWattage.map((wattage, index) => {
+                                const isOptionEnabled = isOptionAvailableHID(wattage, 'wattage');
+                                return (
+                                  <div
+                                    key={index}
+                                    className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectHIDWattage === wattage ? 'selected' : ''} ${!isOptionEnabled ? 'disabled cursor-none' : ''}`}
+                                    onClick={() => handleOptionChangeHID(wattage, 'wattage')}
+                                  >
+                                    {wattage}
+                                  </div>
+                                )
+                                
+                              })}
                             </div>
                           </div>
 
@@ -1345,15 +1867,20 @@ const ProductDetailsPage = () => {
                           <div>
                             <label className="font-bold text-slate-900">Select Variant (Light Color)</label>
                             <div className="flex items-center gap-4 my-2">
-                              {availableHIDWattageLightColor.map((lightColor, index) => (
-                                <div
-                                  key={index}
-                                  className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectHIDWattageLightColor === lightColor ? 'selected' : ''}`}
-                                  onClick={() => handelSingelBeamHIDLightColorChange(lightColor)}
-                                >
-                                  {lightColor}
-                                </div>
-                              ))}
+                              {availableHIDWattageLightColor.map((lightColor, index) => {
+                                const isOptionEnabled = isOptionAvailableHID(lightColor, 'lightColor');
+
+                                return (
+                                  <div
+                                    key={index}
+                                    className={`border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem] cursor-pointer ${selectHIDWattageLightColor === lightColor ? 'selected' : ''} ${!isOptionEnabled ? 'disabled cursor-none' : ''}`}
+                                    onClick={() => handleOptionChangeHID(lightColor, 'lightColor')}
+                                  >
+                                    {lightColor}
+                                  </div>
+                                )
+                                 
+                              })}
                             </div>
                           </div>
                         </>
@@ -1367,10 +1894,11 @@ const ProductDetailsPage = () => {
                   className='my-2'
                 />
 
-                <div className="mt-4 flex flex-col items-center  space-y-4 border-t border-b py-4  w-full">
+                <div className="mt-4 flex flex-col items-center space-y-4 border-t border-b py-4 w-full">
                   <button
-                    onClick={() => setMOn(!mOn)}
-                    className="font-semibold hover:before:bg-blackborder-black relative h-[50px] w-full rounded overflow-hidden border border-black bg-white px-3 text-black shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-black before:transition-all before:duration-500 hover:text-white hover:shadow-white hover:before:left-0 hover:before:w-full"
+                    onClick={() => checkoutHandler(priceTotalSelectedProduct)}
+                    className={`font-semibold hover:before:bg-blackborder-black relative h-[50px] w-full rounded overflow-hidden border border-black bg-white px-3 text-black shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-black before:transition-all before:duration-500 ${selectedModel ? 'hover:text-white hover:shadow-white hover:before:left-0 hover:before:w-full' : 'opacity-50 cursor-not-allowed'}`}
+                    disabled={!selectedModel}
                   >
                     <span className="relative z-10 flex items-center gap-2 justify-center">
                       <BsCart className="text-[1.2rem]" /> Buy Now
@@ -1378,14 +1906,16 @@ const ProductDetailsPage = () => {
                   </button>
 
                   <button
-                    onClick={() => setMOn(!mOn)}
-                    className="font-semibold hover:before:bg-blackborder-black relative h-[50px] w-full rounded overflow-hidden border border-black bg-black px-3 text-white shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-white before:transition-all before:duration-500 hover:text-black hover:shadow-white hover:before:left-0 hover:before:w-full"
+                    onClick={() => addToCart(product?._id)}
+                    className={`font-semibold hover:before:bg-blackborder-black relative h-[50px] w-full rounded overflow-hidden border border-black bg-black px-3 text-white shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-white before:transition-all before:duration-500 ${selectedModel ? 'hover:text-black hover:shadow-white hover:before:left-0 hover:before:w-full' : 'opacity-50 cursor-not-allowed'}`}
+                    disabled={!selectedModel}
                   >
                     <span className="relative z-10 flex items-center gap-2 justify-center">
                       <BsCart className="text-[1.2rem]" /> Add to Cart
                     </span>
                   </button>
                 </div>
+
 
                 <div>
                   <h1 className="mt-8 text-3xl font-bold">Features</h1>
@@ -1462,118 +1992,332 @@ const ProductDetailsPage = () => {
                 <div className="mt-8 flow-root sm:mt-12">
                   <h1 className="text-3xl font-bold">Details</h1>
                   <div className="flex flex-col my-2  gap-4">
+                    <div>
+                      <div>
+                        {
+                          product?.fMBT[0]?.isFmBt && (
+                            <div>
+                              {product?.fMBT?.map((fm) => {
+                                return (
+                                  <div className="flex gap-2 flex-col">
+                                    <h1 className="text-[1.2rem]">
+                                      <span className="font-bold">
+                                        ✅ Control Option :
+                                      </span>
+                                      <span className='mx-2'>
+                                        {fm?.controlOption}
+                                      </span>
+                                    </h1>
 
-                    {
-                      product?.android[0]?.isAndroid && selectedVariant && (
-                        <div className="flex gap-2 flex-col">
-                          <h1 className="text-[1.2rem]">
-                            <span className="font-bold">
-                              ✅ Processor :
-                            </span>
-                            <span className='mx-2'>
-                              {selectedVariant?.processorName}
-                            </span>
-                          </h1>
-                          <h1 className="text-[1.2rem]">
-                            <span className="font-bold">
-                              ✅ Processor Type :
-                            </span>
-                            <span className='mx-2'>
-                              {selectedVariant?.processorLabel}
-                            </span>
-                          </h1>
-                          <h1 className="text-[1.2rem]">
-                            <span className="font-bold">
-                              ✅ RAM :
-                            </span>
-                            <span className='mx-2'>
-                              {selectedVariant?.ram} GB
-                            </span>
-                          </h1>
-                          <h1 className="text-[1.2rem]">
-                            <span className="font-bold">
-                              ✅ ROM :
-                            </span>
-                            <span className='mx-2'>
-                              {selectedVariant?.rom} GB
-                            </span>
-                          </h1>
-                          <h1 className="text-[1.2rem]">
-                            <span className="font-bold">
-                              ✅ Apple Carplay & Android Auto Support :
-                            </span>
-                            <span className='mx-2'>
+                                    <h1 className="text-[1.2rem]">
+                                      <span className="font-bold">
+                                        ✅ Control Option :
+                                      </span>
+                                      <span className='mx-2'>
+                                        {fm?.controlOption}
+                                      </span>
+                                    </h1>
 
-                              {
-                                selectedVariant?.isAppleCarplayAndAndroidAutoSupported ? (
-                                  <span>
-                                    {selectedVariant?.wirelessWired}
-                                  </span>
-                                ) : "Not Supported"
-                              }
-                            </span>
-                          </h1>
-                          <h1 className="text-[1.2rem]">
-                            <span className="font-bold">
-                              ✅ DVR Support :
-                            </span>
-                            <span className='mx-2'>
-                              {selectedVariant?.isDVRSupported ? "Yes" : "No"}
-                            </span>
-                          </h1>
-                          <h1 className="text-[1.2rem]">
-                            <span className='font-bold'>
-                              ✅ 360 Camera Support :
-                            </span>
-                            <span className="mx-2">
-                              {selectedVariant?.is360CameraSupported}
-                            </span>
-                          </h1>
-                          <h1 className="text-[1.2rem]">
-                            <span className='font-bold'>
-                              ✅ Sim Support :
-                            </span>
-                            <span className='mx-2'>
-                              {selectedVariant?.isSimSupported}
-                            </span>
-                          </h1>
-                          <h1 className="text-[1.2rem]">
-                            <span className="font-bold">
-                              ✅ Warranty Available :
-                            </span>
-                            <span className='mx-2'>
-                              {selectedVariant?.isWarrantyAvailable}
-                            </span>
-                          </h1>
-                          <h1 className="text-[1.2rem]">
-                            {
-                              selectedVariant?.isWarrantyAvailable === "Yes" && (
-                                <>
-                                  <span className='font-bold'>
-                                    ✅ Warranty Period :
-                                  </span>
-                                  <span className='mx-2'>
-                                    {selectedVariant?.warrantyPeriod} Year
-                                  </span>
-                                </>
-                              )
-                            }
-                          </h1>
-                          <h1 className="text-[1.2rem]">
-                            <span className='font-bold'>
-                              ✅ Price :
-                            </span>
-                            <span className="mx-2">
-                              Rs. {selectedVariant?.basePrice}
-                            </span>
-                          </h1>
-                        </div>
-                      )
-                    }
+                                    <h1 className="text-[1.2rem]">
+                                      <span className="font-bold">
+                                        ✅ Price :
+                                      </span>
+                                      <span className='mx-2'>
+                                        {fm?.basePrice}
+                                      </span>
+                                    </h1>
+                                  </div>
+                                )
+                              })}
+                            </div>
+                          )
+                        }
+                      </div>
+
+                      <div>
+                        {
+                          product?.bassTube[0]?.isBassTube && (
+                            <div>
+                              {product?.bassTube?.map((bass) => {
+                                return (
+                                  <div className="flex gap-2 flex-col">
+                                    <h1 className="text-[1.2rem]">
+                                      <span className="font-bold">
+                                        ✅ Wattage :
+                                      </span>
+                                      <span className='mx-2'>
+                                        {bass?.wattage}
+                                      </span>
+                                    </h1>
+
+                                    <h1 className="text-[1.2rem]">
+                                      <span className="font-bold">
+                                        ✅ Speaker Size :
+                                      </span>
+                                      <span className='mx-2'>
+                                        {bass?.speakerSize}
+                                      </span>
+                                    </h1>
+
+                                    <h1 className="text-[1.2rem]">
+                                      <span className="font-bold">
+                                        ✅ Price :
+                                      </span>
+                                      <span className='mx-2'>
+                                        {bass?.basePrice}
+                                      </span>
+                                    </h1>
+                                  </div>
+                                )
+                              })}
+                            </div>
+                          )
+                        }
+                      </div>
+
+                      <div>
+                        {
+                          product?.speakers[0]?.isSpeakers && (
+                            <div>
+                              {product?.speakers?.map((specker) => {
+                                return (
+                                  <div className="flex gap-2 flex-col">
+                                    <h1 className="text-[1.2rem]">
+                                      <span className="font-bold">
+                                        ✅ Speaker Size :
+                                      </span>
+                                      <span className='mx-2'>
+                                        {specker?.speakerSize}
+                                      </span>
+                                    </h1>
+                                    <h1 className="text-[1.2rem]">
+                                      <span className="font-bold">
+                                        ✅ Price :
+                                      </span>
+                                      <span className='mx-2'>
+                                        {specker?.basePrice}
+                                      </span>
+                                    </h1>
+                                  </div>
+                                )
+                              })}
+                            </div>
+                          )
+                        }
+                      </div>
+
+                      <div>
+                        {
+                          product?.dampingSheets[0]?.isDampingSheets && (
+                            <div>
+                              {product?.dampingSheets?.map((carger) => {
+                                return (
+                                  <div className="flex gap-2 flex-col">
+                                    <h1 className="text-[1.2rem]">
+                                      <span className="font-bold">
+                                        ✅ Wattage :
+                                      </span>
+                                      <span className='mx-2'>
+                                        {carger?.wattage} w
+                                      </span>
+                                    </h1>
+                                    <h1 className="text-[1.2rem]">
+                                      <span className="font-bold">
+                                        ✅ Price :
+                                      </span>
+                                      <span className='mx-2'>
+                                        {demping?.basePrice}
+                                      </span>
+                                    </h1>
+                                  </div>
+                                )
+                              })}
+                            </div>
+                          )
+                        }
+                      </div>
+
+                      <div>
+                        {
+                          product?.chargers[0]?.isChargers && (
+                            <div>
+                              {product?.chargers?.map((carger) => {
+                                return (
+                                  <div className="flex gap-2 flex-col">
+                                    <h1 className="text-[1.2rem]">
+                                      <span className="font-bold">
+                                        ✅ Wattage :
+                                      </span>
+                                      <span className='mx-2'>
+                                        {carger?.wattage} W
+                                      </span>
+                                    </h1>
+
+                                    <h1 className="text-[1.2rem]">
+                                      <span className="font-bold">
+                                        ✅ Price :
+                                      </span>
+                                      <span className='mx-2'>
+                                        Rs. {carger?.basePrice}
+                                      </span>
+                                    </h1>
+                                  </div>
+                                )
+                              })}
+                            </div>
+                          )
+                        }
+                      </div>
+                    </div>
 
                     <div>
                       {
-                        product?.camera[0]?.isCamera && selectedCameraVerientData && (
+                        product?.amplifiers[0]?.isAmplifiers && selectedAmplifierVariantData && (
+                          <div className="flex gap-2 flex-col">
+                            <h1 className="text-[1.2rem]">
+                              <span className="font-bold">
+                                ✅ Total Channels :
+                              </span>
+                              <span className='mx-2'>
+                                {selectedAmplifierVariantData?.totalChannels}
+                              </span>
+                            </h1>
+
+                            <h1 className="text-[1.2rem]">
+                              <span className="font-bold">
+                                ✅ Wattage :
+                              </span>
+                              <span className='mx-2'>
+                                {selectedAmplifierVariantData?.wattage}
+                              </span>
+                            </h1>
+
+                            <h1 className="text-[1.2rem]">
+                              <span className="font-bold">
+                                ✅ Price :
+                              </span>
+                              <span className='mx-2'>
+                                {selectedAmplifierVariantData?.basePrice}
+                              </span>
+                            </h1>
+                          </div>
+                        )
+                      }
+                    </div>
+
+                    <div>
+                      {
+                        product?.android[0]?.isAndroid && selectedVariant && (
+                          <div className="flex gap-2 flex-col">
+                            <h1 className="text-[1.2rem]">
+                              <span className="font-bold">
+                                ✅ Processor :
+                              </span>
+                              <span className='mx-2'>
+                                {selectedVariant?.processorName}
+                              </span>
+                            </h1>
+                            <h1 className="text-[1.2rem]">
+                              <span className="font-bold">
+                                ✅ Processor Type :
+                              </span>
+                              <span className='mx-2'>
+                                {selectedVariant?.processorLabel}
+                              </span>
+                            </h1>
+                            <h1 className="text-[1.2rem]">
+                              <span className="font-bold">
+                                ✅ RAM :
+                              </span>
+                              <span className='mx-2'>
+                                {selectedVariant?.ram} GB
+                              </span>
+                            </h1>
+                            <h1 className="text-[1.2rem]">
+                              <span className="font-bold">
+                                ✅ ROM :
+                              </span>
+                              <span className='mx-2'>
+                                {selectedVariant?.rom} GB
+                              </span>
+                            </h1>
+                            <h1 className="text-[1.2rem]">
+                              <span className="font-bold">
+                                ✅ Apple Carplay & Android Auto Support :
+                              </span>
+                              <span className='mx-2'>
+
+                                {
+                                  selectedVariant?.isAppleCarplayAndAndroidAutoSupported ? (
+                                    <span>
+                                      {selectedVariant?.wirelessWired}
+                                    </span>
+                                  ) : "Not Supported"
+                                }
+                              </span>
+                            </h1>
+                            <h1 className="text-[1.2rem]">
+                              <span className="font-bold">
+                                ✅ DVR Support :
+                              </span>
+                              <span className='mx-2'>
+                                {selectedVariant?.isDVRSupported ? "Yes" : "No"}
+                              </span>
+                            </h1>
+                            <h1 className="text-[1.2rem]">
+                              <span className='font-bold'>
+                                ✅ 360 Camera Support :
+                              </span>
+                              <span className="mx-2">
+                                {selectedVariant?.is360CameraSupported}
+                              </span>
+                            </h1>
+                            <h1 className="text-[1.2rem]">
+                              <span className='font-bold'>
+                                ✅ Sim Support :
+                              </span>
+                              <span className='mx-2'>
+                                {selectedVariant?.isSimSupported}
+                              </span>
+                            </h1>
+                            <h1 className="text-[1.2rem]">
+                              <span className="font-bold">
+                                ✅ Warranty Available :
+                              </span>
+                              <span className='mx-2'>
+                                {selectedVariant?.isWarrantyAvailable}
+                              </span>
+                            </h1>
+                            <h1 className="text-[1.2rem]">
+                              {
+                                selectedVariant?.isWarrantyAvailable === "Yes" && (
+                                  <>
+                                    <span className='font-bold'>
+                                      ✅ Warranty Period :
+                                    </span>
+                                    <span className='mx-2'>
+                                      {selectedVariant?.warrantyPeriod} Year
+                                    </span>
+                                  </>
+                                )
+                              }
+                            </h1>
+                            <h1 className="text-[1.2rem]">
+                              <span className='font-bold'>
+                                ✅ Price :
+                              </span>
+                              <span className="mx-2">
+                                Rs. {selectedVariant?.basePrice}
+                              </span>
+                            </h1>
+                          </div>
+                        )
+                      }
+                    </div>
+
+                    <div>
+                      {
+                        product?.camera[0]?.isCamera && selectedCameraVariantData && (
                           <div className="flex gap-2 flex-col">
 
                             <h1 className="text-[1.2rem]">
@@ -1581,7 +2325,7 @@ const ProductDetailsPage = () => {
                                 ✅ Camera Quality :
                               </span>
                               <span className='mx-2'>
-                                {selectedCameraVerientData?.cameraQuality}
+                                {selectedCameraVariantData?.cameraQuality}
                               </span>
                             </h1>
                             <h1 className="text-[1.2rem]">
@@ -1589,7 +2333,7 @@ const ProductDetailsPage = () => {
                                 ✅ Price :
                               </span>
                               <span className='mx-2'>
-                                {selectedCameraVerientData?.basePrice}
+                                {selectedCameraVariantData?.basePrice}
                               </span>
                             </h1>
                             <h1 className="text-[1.2rem]">
@@ -1597,32 +2341,18 @@ const ProductDetailsPage = () => {
                                 ✅ Field Of View Type :
                               </span>
                               <span className='mx-2'>
-                                {selectedCameraVerientData?.fieldOfViewType}
+                                {selectedCameraVariantData?.fieldOfViewType}
                               </span>
                             </h1>
-                            <h1 className="text-[1.2rem]">
-                              <span className="font-bold">
-                                ✅ Processors Supported :
-                              </span>
-                              <span className='mx-2 flex gap-2 items-center'>
-                                {selectedCameraVerientData?.processorsSupported.map((soket) => {
-                                  return (
-                                    <span className='border-[0.3px] rounded px-4 py-[3px] text-center min-w-[4.55rem]'>{soket}</span>
-                                  )
-                                })}
-                              </span>
-                            </h1>
-
                             <h1 className="text-[1.2rem]">
                               <span className="font-bold">
                                 ✅ Guidelines :
                               </span>
                               <span className='mx-2'>
-
                                 {
-                                  selectedCameraVerientData?.isAppleCarplayAndAndroidAutoSupported ? (
+                                  selectedCameraVariantData?.isAppleCarplayAndAndroidAutoSupported ? (
                                     <span>
-                                      {selectedCameraVerientData?.guidelinesType}
+                                      {selectedCameraVariantData?.guidelinesType}
                                     </span>
                                   ) : "Not Supported"
                                 }
@@ -1631,7 +2361,6 @@ const ProductDetailsPage = () => {
                           </div>
                         )
                       }
-
                     </div>
 
                     <div>
@@ -1685,7 +2414,6 @@ const ProductDetailsPage = () => {
                                     </span>
                                   </h1>
 
-
                                   <h1 className="text-[1.2rem]">
                                     <span className="font-bold">
                                       ✅ Base Price Low Beam:
@@ -1694,7 +2422,6 @@ const ProductDetailsPage = () => {
                                       Rs. {selectedLowBeamVariantData?.basePrice}
                                     </span>
                                   </h1>
-
 
                                   <h1 className="text-[1.2rem]">
                                     <span className="font-bold">
@@ -1712,7 +2439,6 @@ const ProductDetailsPage = () => {
                                       DAPS
                                     </span>
                                   </h1>
-
                                 </div>
                               )
                             }
